@@ -1624,6 +1624,32 @@ main{
   font-size:12px;
 }
 
+.card-images{
+  margin:20px 0;
+}
+
+.card-images figure{
+  margin:0;
+}
+
+.card-images img{
+  display:block;
+  width:100%;
+  height:auto;
+
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-paper);
+}
+
+.card-images figcaption{
+  margin-top:8px;
+
+  color:var(--muted);
+  font:500 12px var(--mono);
+  text-align:center;
+}
+
 .chain{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -6329,6 +6355,31 @@ function articleItemHTML(link){
       </summary>
 
       <div class="a-body">
+        ${
+          (article.images || []).length
+            ? `
+              <div class="card-images">
+                ${article.images
+                  .map(img => `
+                    <figure>
+                      <img
+                        src="${esc(img.url)}"
+                        alt="${esc(img.caption || article.title)}"
+                        loading="lazy"
+                      >
+                      ${
+                        img.caption
+                          ? `<figcaption>${esc(img.caption)}</figcaption>`
+                          : ""
+                      }
+                    </figure>
+                  `)
+                  .join("")}
+              </div>
+            `
+            : ""
+        }
+
         ${(article.body || [])
           .map(paragraph => `
             <p>${esc(paragraph)}</p>
@@ -6534,6 +6585,31 @@ function openDialog(id,options = {}){
           class="tab-panel ${state.activeTab === "card" ? "active" : ""}"
           data-tab-panel="card"
         >
+        ${
+          (item.images || []).length
+            ? `
+              <div class="card-images">
+                ${item.images
+                  .map(img => `
+                    <figure>
+                      <img
+                        src="${esc(img.url)}"
+                        alt="${esc(img.caption || item.title)}"
+                        loading="lazy"
+                      >
+                      ${
+                        img.caption
+                          ? `<figcaption>${esc(img.caption)}</figcaption>`
+                          : ""
+                      }
+                    </figure>
+                  `)
+                  .join("")}
+              </div>
+            `
+            : ""
+        }
+
         <div class="chain">
           <div class="block">
             <div class="lbl">
