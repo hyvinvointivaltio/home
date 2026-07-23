@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "title": "Murrosmatriisin artikkelit",
+    "description": "Murroskortteihin kytkeytyvä tulkinnallinen artikkelikerros. Artikkelit selittävät MIKSI murros merkitsee; kortit kertovat MITÄ tapahtui.",
+    "count": 4,
+    "link_count": 20,
+    "status": "Tekoälyavusteinen luonnos -- kaikki artikkelit vaativat kuratoijan katselmoinnin ennen julkaisua. Sisältö on tiivistetty ja paraphrasoitu murrosmatriisin ja atlaksen jo olemassa olevista, tutkitusta korteista; ei sisällä niiden ulkopuolisia uusia faktaväitteitä.",
+    "created": "2026-07-23",
+    "schema_note": "Kytkentä murroskortteihin tehdään erillisessä 'links'-taulukossa (article_id / item_id / relation_type / weight / sort_order), ei upottamalla linkkejä artikkelin sisään. Tämä mahdollistaa saman artikkelin liittämisen useaan korttiin ja saman kortin useaan artikkeliin ilman duplikointia."
+  },
+  "relation_types": {
+    "primary": "artikkelin pääaihe -- kortti on se, mistä artikkeli ensisijaisesti kertoo",
+    "supports": "artikkeli selittää tai perustelee murrosta laajemmin",
+    "context": "murros antaa artikkelille taustan tai lähtökohdan",
+    "case_example": "murros toimii artikkelin väitteen konkreettisena esimerkkinä",
+    "contrasts": "artikkeli vertaa murrosta toiseen, erilaiseen tapaukseen"
+  },
+  "articles": [
+    {
+      "id": "huoltosuhde-kuka-kantaa",
+      "title": "Huoltosuhde – kuka kantaa, ketä ja miten?",
+      "dek": "Suomen väestörakenne ei muuttunut hetkessä. Se on viiden vuosikymmenen ketju, jonka jokainen vaihe oli ennakoitavissa jo edellisen aikana.",
+      "tags": [
+        "väestö",
+        "hyvinvointivaltio",
+        "julkinen talous"
+      ],
+      "status": "ai_draft",
+      "note": "Kuratoitu 2026-07-23 (tekoälyavusteinen luonnos) -- vaatii kuratoijan katselmoinnin ennen julkaisua.",
+      "body": [
+        "Kun puhutaan huoltosuhteen heikkenemisestä, puhutaan usein kuin kyseessä olisi äkillinen ongelma. Todellisuudessa kyse on ketjusta, joka alkoi jo 1940-luvun lopulla eikä ole vieläkään päättynyt.",
+        "Sodan jälkeen syntyneet suuret ikäluokat olivat poikkeuksellisen suuria kohortteja: rauha, taloudellinen optimismi ja perhepolitiikan vahvistuminen nostivat syntyvyyden lyhyeksi ajaksi tavallista korkeammaksi. Tuo kohortin koko ei ollut pelkkä tilastopiikki – se määritti vuosikymmeniä myöhemmin koko ikääntymiskehityksen mittakaavan.",
+        "Jo 1960-luvun lopulla tilanne alkoi kääntyä toiseen suuntaan. Naisten koulutustason nousu, työssäkäynnin yleistyminen, ehkäisyn saatavuus ja kaupungistuminen pienensivät perhekokoa pysyvästi. Tästä tuli rakenteellinen, ei tilapäinen, ilmiö: syntyvyyden lasku ei kääntynyt takaisin, vaikka talous ja elintaso paranivat.",
+        "Näiden kahden liikkeen – suurten ikäluokkien ja pysyvästi laskevan syntyvyyden – yhteisvaikutus on se, mitä 1975 alkaen kutsutaan väestön ikääntymiseksi: työikäisten suhteellinen osuus pienenee samalla kun huollettavien määrä kasvaa. 2010-luvulla syntyvyys laski vielä uudelle, historiallisen matalalle tasolle ilman sotaa tai muuta äkillistä yhteiskunnallista kriisiä – vain jatkumo, joka syveni.",
+        "Kysymys 'kuka kantaa' ei siis ole retorinen. Se on kirjaimellinen: kun huoltosuhde heikkenee, harvempi työikäinen rahoittaa useamman eläkkeen, hoivan ja terveydenhuollon palvelut. Eläkejärjestelmää on jouduttu sopeuttamaan tähän toistuvasti – ensin maksuja nostamalla ja rahastointia vahvistamalla, myöhemmin sitomalla eläkeikä suoraan elinajan kehitykseen.",
+        "Se, mikä tekee tästä ketjusta erityisen: jokainen vaihe oli tilastollisesti ennakoitavissa vuosikymmeniä etukäteen. Syntyneet ikäluokat tiedettiin. Silti sopeutuminen – työurien pidentäminen, tuottavuuden kasvattaminen, palvelurakenteen uudistaminen – on osoittautunut poliittisesti ja hallinnollisesti paljon hitaammaksi kuin itse väestökehitys."
+      ]
+    },
+    {
+      "id": "kun-korjaava-kierre-katkeaa",
+      "title": "Kun korjaava kierre katkeaa",
+      "dek": "Osa ongelmista räjähtää käsiin yhtäkkiä. Toiset hiipivät vuosikymmenten ajan täysin näkyvissä – ja juuri se tekee niistä vaikeita korjata.",
+      "tags": [
+        "julkinen talous",
+        "instituutiot",
+        "riskienhallinta"
+      ],
+      "status": "ai_draft",
+      "note": "Kuratoitu 2026-07-23 (tekoälyavusteinen luonnos) -- vaatii kuratoijan katselmoinnin ennen julkaisua.",
+      "body": [
+        "On kahdenlaisia yhteiskunnallisia ongelmia. Toiset syntyvät nopeasti ja yllättäen: pankkijärjestelmä horjuu viikoissa, vientimarkkina romahtaa kuukausissa. Toiset taas etenevät niin hitaasti, että jokainen yksittäinen vuosi näyttää hallittavalta – vaikka koko kaari ei sitä ole.",
+        "Eläkejärjestelmän kestävyys on jälkimmäistä tyyppiä. Jo 1990-luvulta lähtien oli tiedossa, että eläkeläisten määrä kasvaa ja työikäisten suhteellinen osuus pienenee. Tämä ei ollut ennuste vaan lähes matemaattinen varmuus: syntyneet ikäluokat olivat jo olemassa, niiden ikääntyminen oli vain ajan kysymys.",
+        "Silti järjestelmää jouduttiin sopeuttamaan toistuvasti, ei kertaluonteisesti. Ensin nostettiin maksuja ja vahvistettiin rahastointia. Myöhemmin, 2000-luvun puolivälin uudistuksissa, eläkeikä ja -etuudet kytkettiin suoremmin elinajan kehitykseen elinaikakertoimen ja joustavan eläkeiän kautta. Kumpikaan uudistus ei ollut ongelman lopullinen ratkaisu – kumpikin oli reaktio siihen, että edellinen sopeutus ei enää riittänyt.",
+        "Tässä piilee korjaavan kierteen katkeamisen ydin: ongelma, joka olisi periaatteessa voitu ratkaista kerralla ja ajoissa, koska se oli ennakoitavissa, ratkaistaankin toistuvasti ja osittain, koska poliittinen ja hallinnollinen järjestelmä reagoi vasta kun paine kasvaa riittävän näkyväksi.",
+        "Vertailun vuoksi: 1990-luvun lama oli päinvastainen tapaus. Se ei ollut ennakoitavissa samalla tavalla – luottotalouden ylikuumeneminen, idänkaupan romahdus ja korkea korkotaso yhdistyivät nopeasti kriisiksi, johon piti reagoida viikkojen ja kuukausien, ei vuosikymmenten, aikajänteellä. Nopea kriisi ja hidas rakenteellinen ansa vaativat siis täysin erilaista poliittista reagointikykyä – ja usein juuri hitaat, ennakoitavat ongelmat osoittautuvat vaikeimmiksi, koska mikään yksittäinen hetki ei koskaan tunnu riittävän kiireelliseltä pakottaakseen lopullisen ratkaisun."
+      ]
+    },
+    {
+      "id": "1990-luvun-laman-pitka-varjo",
+      "title": "1990-luvun lama ja sen pitkä varjo",
+      "dek": "Suomen 1990-luvun talouskriisi ei ollut vain neljän vuoden notkahdus. Se muutti pysyvästi sitä, miten valtio hoitaa rahaa – ja miten varovaiseksi se siitä opetteli.",
+      "tags": [
+        "talous",
+        "julkinen talous",
+        "instituutiot"
+      ],
+      "status": "ai_draft",
+      "note": "Kuratoitu 2026-07-23 (tekoälyavusteinen luonnos) -- vaatii kuratoijan katselmoinnin ennen julkaisua. HUOM: aineistossa on kaksi lähes identtistä korttia rahoitusmarkkinoiden vapauttamisesta (rahoitusmarkkinoiden-vapautuminen 1983-1990 ja rahoitusmarkkinoiden_vapauttaminen 1986-1988) -- kuratoijan syytä harkita yhdistämistä.",
+      "body": [
+        "1980-luvun puolivälissä Suomen rahoitusmarkkinat olivat vielä vahvasti säänneltyjä: korot, luotonanto ja valuutan liikkeet olivat viranomaisten tiukassa otteessa. Muutamassa vuodessa tämä sääntely purettiin nopeasti, mikä lisäsi äkillisesti velan saatavuutta ja pääomien liikkuvuutta.",
+        "Vapautuminen ei ollut virhe sinänsä – se loi edellytykset nykyaikaisille rahoitusmarkkinoille. Mutta se tapahtui ilman riittäviä vakauttavia rakenteita, ja seurauksena luottotalous ylikuumeni nopeasti. Kun tähän yhdistyivät idänkaupan romahdus ja korkea korkotaso, syntyi täydellinen myrsky: 1990-luvun alun lama.",
+        "Pankit ajautuivat laajoihin luottotappioihin, ja valtio joutui tukemaan pankkijärjestelmää poikkeuksellisen laajasti. Seuraukset eivät jääneet vain talouden tunnuslukuihin – massatyöttömyys ja yrityskaadot jättivät jäljen, joka näkyy edelleen työttömyyden rakenteessa ja koko sukupolven talouskokemuksessa.",
+        "Kriisin opetus näkyi myöhemmin konkreettisena instituutiona. 2000-luvun alussa valtiontalouden menot alettiin sitoa hallituskausittaisiin, sitoviin kehyksiin – suoraan vastauksena siihen, että laman aikana ja sitä ennen julkisen talouden hallittavuus oli osoittautunut riittämättömäksi. Kehysmenettelystä tuli pysyvä osa suomalaista finanssipolitiikkaa, joka edelleen ohjaa jokaista hallitusta.",
+        "Samaan aikaan Suomi haki myös ulkoista ankkuria: EU-jäsenyys 1995 kytki pienen, avoimen talouden kiinteämmin eurooppalaiseen sääntely- ja päätöksentekojärjestelmään juuri kylmän sodan jälkeisessä tilanteessa, jossa vanha idänsuhde oli menettänyt merkityksensä. Lama, kehysohjaus ja EU-jäsenyys eivät olleet kolme erillistä tapahtumaa, vaan saman vuosikymmenen kolme toisiinsa kietoutunutta vastausta samaan perustavaan kysymykseen: miten pieni talous suojautuu seuraavalta kertaa varten."
+      ]
+    },
+    {
+      "id": "kriittinen-infrastruktuuri-kaupan-kohteena",
+      "title": "Kriittinen infrastruktuuri kaupan kohteena",
+      "dek": "Sähköverkko, datakeskukset, tekoälyn laskentakapasiteetti – yhä useampi asia, jota pidämme itsestäänselvyytenä, on samalla sekä kansallista infrastruktuuria että kansainvälistä sijoitusomaisuutta.",
+      "tags": [
+        "energia",
+        "digitalisaatio",
+        "infrastruktuuri",
+        "huoltovarmuus"
+      ],
+      "status": "ai_draft",
+      "note": "Kuratoitu 2026-07-23 (tekoälyavusteinen luonnos) -- vaatii kuratoijan katselmoinnin ennen julkaisua.",
+      "body": [
+        "Vuonna 2013 Fortum myi sähkön jakeluverkkonsa kansainväliselle sijoittajaryhmälle, jonka pohjalta muodostui Caruna. Kauppa oli looginen jatko 1990-luvulla alkaneelle valtionyhtiöiden yhtiöittämis- ja yksityistämispolitiikalle: julkinen omistaja halusi vapauttaa pääomaa, ja vakaata tuottoa tarjoava sähköverkko oli sijoittajille houkutteleva kohde.",
+        "Kauppa muutti kuitenkin jotain periaatteellisempaa kuin vain omistuspohjan. Se pakotti kysymään, missä määrin kriittinen infrastruktuuri – sellainen, jota ilman yhteiskunta ei yksinkertaisesti toimi – voi olla markkinaehtoisen ja kansainvälisen omistuksen piirissä. Sähkön siirtohinnoista tuli sen jälkeen toistuvasti laajan yhteiskunnallisen keskustelun kohde, ja luonnollisten monopolien sääntelyn merkitys korostui.",
+        "Kymmenisen vuotta myöhemmin sama kysymys nousi uudessa muodossa, kun datakeskusten rakentaminen alkoi kiihtyä. Pilvipalvelujen ja tekoälyn kasvava laskentatarve teki Suomesta kiinnostavan kohteen vakaan toimintaympäristön, uusiutuvan sähkön, viileän ilmaston ja toimivan sähköverkon ansiosta – osin sen saman verkon, joka oli jo aiemmin siirtynyt kansainväliseen omistukseen.",
+        "Datakeskuksista on tulossa osa kansallista kriittistä infrastruktuuria samalla tavoin kuin sähkö-, liikenne- ja tietoliikenneverkoista aiemmin. Ja koska generatiivisen tekoälyn hyödyntäminen vaatii vielä suurempaa laskentakapasiteettia, energiaa ja tietoliikenneyhteyksiä, tekoälyinfrastruktuurista on muodostumassa yksi yhteiskunnan uusista tuotantorakenteista sähköverkkojen ja tietoliikenneverkkojen rinnalle.",
+        "Yhteinen lanka näissä kolmessa tapauksessa – sähköverkko, datakeskukset, tekoälyinfrastruktuuri – on sama: kun jokin muuttuu riittävän välttämättömäksi arjen toiminnalle, sen omistuksesta, sijainnista ja sääntelystä tulee väistämättä myös poliittinen kysymys, riippumatta siitä, kuka sen alun perin rakensi tai omistaa."
+      ]
+    }
+  ],
+  "links": [
+    {
+      "article_id": "huoltosuhde-kuka-kantaa",
+      "item_id": "vaeston-ikaantyminen-1975",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "huoltosuhde-kuka-kantaa",
+      "item_id": "vaeston-ikaantyminen",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 2
+    },
+    {
+      "article_id": "huoltosuhde-kuka-kantaa",
+      "item_id": "suuret-ikaluokat-1945",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 3
+    },
+    {
+      "article_id": "huoltosuhde-kuka-kantaa",
+      "item_id": "syntyvyyden-rakennemuutos-1969",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 4
+    },
+    {
+      "article_id": "huoltosuhde-kuka-kantaa",
+      "item_id": "historiallisen-matala-syntyvyys-2010",
+      "relation_type": "context",
+      "weight": 3,
+      "sort_order": 5
+    },
+    {
+      "article_id": "huoltosuhde-kuka-kantaa",
+      "item_id": "elakejarjestelman-kestavyys-1990",
+      "relation_type": "supports",
+      "weight": 3,
+      "sort_order": 6
+    },
+    {
+      "article_id": "huoltosuhde-kuka-kantaa",
+      "item_id": "elakeuudistukset-2005",
+      "relation_type": "supports",
+      "weight": 3,
+      "sort_order": 7
+    },
+    {
+      "article_id": "kun-korjaava-kierre-katkeaa",
+      "item_id": "elakejarjestelman-kestavyys-1990",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "kun-korjaava-kierre-katkeaa",
+      "item_id": "elakeuudistukset-2005",
+      "relation_type": "case_example",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "kun-korjaava-kierre-katkeaa",
+      "item_id": "vaeston-ikaantyminen",
+      "relation_type": "context",
+      "weight": 3,
+      "sort_order": 3
+    },
+    {
+      "article_id": "kun-korjaava-kierre-katkeaa",
+      "item_id": "1990-luvun-lama",
+      "relation_type": "contrasts",
+      "weight": 3,
+      "sort_order": 4
+    },
+    {
+      "article_id": "1990-luvun-laman-pitka-varjo",
+      "item_id": "1990-luvun-lama",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "1990-luvun-laman-pitka-varjo",
+      "item_id": "pankkikriisi",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 2
+    },
+    {
+      "article_id": "1990-luvun-laman-pitka-varjo",
+      "item_id": "rahoitusmarkkinoiden-vapautuminen",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 3
+    },
+    {
+      "article_id": "1990-luvun-laman-pitka-varjo",
+      "item_id": "rahoitusmarkkinoiden_vapauttaminen",
+      "relation_type": "context",
+      "weight": 3,
+      "sort_order": 4
+    },
+    {
+      "article_id": "1990-luvun-laman-pitka-varjo",
+      "item_id": "kehysmenettely",
+      "relation_type": "case_example",
+      "weight": 4,
+      "sort_order": 5
+    },
+    {
+      "article_id": "1990-luvun-laman-pitka-varjo",
+      "item_id": "eu-jasenyys-1995",
+      "relation_type": "supports",
+      "weight": 3,
+      "sort_order": 6
+    },
+    {
+      "article_id": "kriittinen-infrastruktuuri-kaupan-kohteena",
+      "item_id": "sahkon-jakeluverkkojen-yksityistaminen-2013",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "kriittinen-infrastruktuuri-kaupan-kohteena",
+      "item_id": "datakeskusten-rakentamisen-kiihtyminen-2023",
+      "relation_type": "case_example",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "kriittinen-infrastruktuuri-kaupan-kohteena",
+      "item_id": "tekoalyinfrastruktuurin-rakentuminen-2024",
+      "relation_type": "case_example",
+      "weight": 3,
+      "sort_order": 3
+    }
+  ]
+}
