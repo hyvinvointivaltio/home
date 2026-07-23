@@ -1,0 +1,1221 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Murrosmatriisin editori</title>
+<style>
+:root{
+  --radius:.65rem;
+  --paper:#fdfcf7;
+  --paper-2:#f7f4ec;
+  --birch:#f4f0e6;
+  --ink:#1c2624;
+  --muted:#6c766f;
+  --line:#e2dcce;
+  --forest:#3a6b64;
+  --forest-deep:#1f4642;
+  --forest-shadow:#12332f;
+  --copper:#b56a34;
+  --ochre:#d69642;
+  --red:#a6402f;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --serif: "Iowan Old Style","Palatino Linotype", Georgia, serif;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font:15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+header.top{
+  position:sticky;
+  top:0;
+  z-index:20;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+  padding:16px 24px;
+  background:rgba(253,252,247,.96);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+
+header.top h1{
+  margin:0;
+  font-family:var(--serif);
+  font-size:1.3rem;
+  color:var(--forest-deep);
+}
+
+header.top .sub{
+  color:var(--muted);
+  font:500 11px var(--mono);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.exports{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+button{
+  font:inherit;
+  cursor:pointer;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:9px 16px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:var(--paper);
+  color:var(--ink);
+  font:600 12.5px var(--mono);
+  letter-spacing:.02em;
+  transition:.15s ease;
+}
+.btn:hover{border-color:var(--copper);color:var(--copper)}
+.btn.primary{background:var(--forest-deep);border-color:var(--forest-deep);color:var(--paper)}
+.btn.primary:hover{background:var(--forest);border-color:var(--forest);color:var(--paper)}
+.btn.danger{color:var(--red)}
+.btn.danger:hover{border-color:var(--red)}
+.btn.small{padding:5px 11px;font-size:11.5px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+
+nav.tabs{
+  display:flex;
+  gap:4px;
+  padding:0 24px;
+  border-bottom:1px solid var(--line);
+  background:var(--paper);
+  position:sticky;
+  top:65px;
+  z-index:19;
+  overflow-x:auto;
+}
+nav.tabs button{
+  padding:12px 18px;
+  border:none;
+  border-bottom:2px solid transparent;
+  background:transparent;
+  color:var(--muted);
+  font:600 12.5px var(--mono);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+nav.tabs button.active{color:var(--forest-deep);border-bottom-color:var(--copper)}
+nav.tabs button .count{
+  margin-left:6px;
+  padding:1px 7px;
+  border-radius:999px;
+  background:var(--birch);
+  font-size:10.5px;
+}
+
+main{padding:20px 24px 80px;max-width:1200px;margin:0 auto}
+
+.panel{display:none}
+.panel.active{display:block}
+
+.toolbar{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  margin-bottom:16px;
+  flex-wrap:wrap;
+}
+.toolbar input[type="search"]{
+  flex:1;
+  min-width:200px;
+  padding:9px 14px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:var(--paper);
+  color:var(--ink);
+  font:14px inherit;
+}
+.toolbar input[type="search"]:focus{outline:2px solid var(--forest);outline-offset:1px}
+
+table.data{
+  width:100%;
+  border-collapse:collapse;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+}
+table.data th{
+  text-align:left;
+  padding:10px 12px;
+  background:var(--birch);
+  color:var(--forest-deep);
+  font:600 11px var(--mono);
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  border-bottom:1px solid var(--line);
+}
+table.data td{
+  padding:10px 12px;
+  border-bottom:1px solid var(--line);
+  vertical-align:top;
+}
+table.data tr:last-child td{border-bottom:none}
+table.data tr:hover td{background:var(--paper-2)}
+td.actions{white-space:nowrap;text-align:right}
+td.mono{font:12px var(--mono);color:var(--muted)}
+.pill{
+  display:inline-block;
+  padding:2px 8px;
+  border-radius:999px;
+  background:var(--birch);
+  color:var(--forest-deep);
+  font:500 10.5px var(--mono);
+  text-transform:uppercase;
+  letter-spacing:.04em;
+}
+
+.empty{padding:40px 20px;text-align:center;color:var(--muted);font-family:var(--serif);font-size:1.05rem}
+
+/* SLIDE-OVER MUOKKAUSPANEELI */
+.overlay{
+  position:fixed;inset:0;z-index:50;
+  background:rgba(18,51,47,.35);
+  display:none;
+}
+.overlay.open{display:block}
+.sheet{
+  position:fixed;
+  top:0;right:0;bottom:0;
+  width:min(560px, 100vw);
+  background:var(--paper);
+  border-left:1px solid var(--line);
+  box-shadow:-12px 0 30px rgba(18,51,47,.15);
+  display:flex;
+  flex-direction:column;
+  transform:translateX(100%);
+  transition:transform .2s ease;
+}
+.overlay.open .sheet{transform:translateX(0)}
+.sheet-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 22px;
+  border-bottom:1px solid var(--line);
+}
+.sheet-head h2{margin:0;font-family:var(--serif);font-size:1.15rem;color:var(--forest-deep)}
+.sheet-body{padding:20px 22px;overflow-y:auto;flex:1}
+.sheet-foot{
+  padding:16px 22px;
+  border-top:1px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.close-x{
+  width:32px;height:32px;border-radius:50%;border:1px solid var(--line);
+  background:transparent;font-size:18px;line-height:1;color:var(--muted);
+}
+.close-x:hover{border-color:var(--copper);color:var(--copper)}
+
+.field{margin-bottom:16px}
+.field label{
+  display:block;
+  margin-bottom:5px;
+  color:var(--forest-deep);
+  font:600 11px var(--mono);
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.field .hint{
+  display:block;margin-top:4px;
+  color:var(--muted);font-size:11.5px;
+}
+.field input[type="text"],
+.field input[type="number"],
+.field select,
+.field textarea{
+  width:100%;
+  padding:9px 11px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:var(--paper);
+  color:var(--ink);
+  font:14px inherit;
+  resize:vertical;
+}
+.field textarea{min-height:70px;font-family:var(--serif);line-height:1.5}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:2px solid var(--forest);outline-offset:0;border-color:var(--forest);
+}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+.linked-list{
+  display:flex;flex-direction:column;gap:8px;margin-bottom:14px;
+}
+.linked-item{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:9px 12px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:var(--paper-2);
+  font-size:13px;
+}
+.linked-item .li-title{font-weight:600}
+.linked-item .li-meta{color:var(--muted);font:11px var(--mono)}
+
+.add-link-form{
+  display:grid;
+  grid-template-columns:2fr 1.2fr .7fr .7fr auto;
+  gap:8px;
+  align-items:end;
+  padding:12px;
+  border:1px dashed var(--line);
+  border-radius:8px;
+  margin-bottom:18px;
+}
+.add-link-form .field{margin-bottom:0}
+.add-link-form label{font-size:10px}
+
+.status{
+  position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+  z-index:100;
+  padding:11px 20px;
+  border-radius:999px;
+  background:var(--forest-deep);
+  color:var(--paper);
+  font:600 13px var(--mono);
+  box-shadow:0 8px 24px rgba(18,51,47,.25);
+  opacity:0;pointer-events:none;
+  transition:opacity .2s ease, transform .2s ease;
+}
+.status.show{opacity:1;transform:translateX(-50%) translateY(-6px)}
+.status.error{background:var(--red)}
+
+.section-title{
+  margin:26px 0 12px;
+  padding-top:16px;
+  border-top:1px solid var(--line);
+  font-family:var(--serif);
+  font-size:1rem;
+  color:var(--forest-deep);
+}
+.section-title:first-child{border-top:none;padding-top:0;margin-top:0}
+
+.warn-banner{
+  margin:0 24px 16px;
+  padding:12px 16px;
+  border:1px solid var(--ochre);
+  border-radius:8px;
+  background:#fbf3e4;
+  color:#6b4a12;
+  font-size:12.5px;
+  line-height:1.5;
+}
+
+@media (max-width:640px){
+  .row2{grid-template-columns:1fr}
+  .add-link-form{grid-template-columns:1fr 1fr}
+  .sheet{width:100vw}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div>
+    <h1>Murrosmatriisin editori</h1>
+    <div class="sub" id="connStatus">yhdistetään…</div>
+  </div>
+  <div class="exports">
+    <button class="btn" id="exportMurros">⬇ Vie murrosvaiheet.json</button>
+    <button class="btn" id="exportArtikkelit">⬇ Vie artikkelit.json</button>
+  </div>
+</header>
+
+<div class="warn-banner">
+  Tämä tiedosto sisältää suoran yhteyden tietokantaan ja on tarkoitettu vain omaan käyttöösi.
+  Älä julkaise sitä julkisesti saatavilla olevalla verkko-osoitteessa ilman lisäsuojausta.
+</div>
+
+<nav class="tabs">
+  <button data-tab="items" class="active">Kortit <span class="count" id="countItems">–</span></button>
+  <button data-tab="relations">Relaatiot <span class="count" id="countRelations">–</span></button>
+  <button data-tab="articles">Artikkelit <span class="count" id="countArticles">–</span></button>
+</nav>
+
+<main>
+
+  <!-- ============ KORTIT ============ -->
+  <section class="panel active" id="panel-items">
+    <div class="toolbar">
+      <input type="search" id="searchItems" placeholder="Hae otsikosta, id:stä tai tyypistä…" />
+      <button class="btn primary" id="newItem">+ Uusi kortti</button>
+    </div>
+    <table class="data">
+      <thead>
+        <tr>
+          <th>Vuodet</th><th>Otsikko</th><th>Tyyppi</th><th>Merk.</th><th>Luott.</th><th></th>
+        </tr>
+      </thead>
+      <tbody id="itemsBody"></tbody>
+    </table>
+    <div class="empty" id="itemsEmpty" style="display:none">Ei tuloksia.</div>
+  </section>
+
+  <!-- ============ RELAATIOT ============ -->
+  <section class="panel" id="panel-relations">
+    <div class="toolbar">
+      <input type="search" id="searchRelations" placeholder="Hae kortin nimestä tai relaatiotyypistä…" />
+      <button class="btn primary" id="newRelation">+ Uusi relaatio</button>
+    </div>
+    <table class="data">
+      <thead>
+        <tr>
+          <th>Mistä</th><th>Mihin</th><th>Tyyppi</th><th>Luokka</th><th>Luott.</th><th></th>
+        </tr>
+      </thead>
+      <tbody id="relationsBody"></tbody>
+    </table>
+    <div class="empty" id="relationsEmpty" style="display:none">Ei tuloksia.</div>
+  </section>
+
+  <!-- ============ ARTIKKELIT ============ -->
+  <section class="panel" id="panel-articles">
+    <div class="toolbar">
+      <input type="search" id="searchArticles" placeholder="Hae artikkelin otsikosta…" />
+      <button class="btn primary" id="newArticle">+ Uusi artikkeli</button>
+    </div>
+    <table class="data">
+      <thead>
+        <tr><th>Otsikko</th><th>Tila</th><th>Kytkentöjä</th><th></th></tr>
+      </thead>
+      <tbody id="articlesBody"></tbody>
+    </table>
+    <div class="empty" id="articlesEmpty" style="display:none">Ei tuloksia.</div>
+  </section>
+
+</main>
+
+<!-- ============ MUOKKAUSPANEELI: KORTTI ============ -->
+<div class="overlay" id="overlayItem">
+  <div class="sheet">
+    <div class="sheet-head">
+      <h2 id="itemFormTitle">Uusi kortti</h2>
+      <button class="close-x" data-close="overlayItem">×</button>
+    </div>
+    <div class="sheet-body">
+      <div class="field">
+        <label>ID (slug)</label>
+        <input type="text" id="f_id" placeholder="esim. esimerkki-murros-2030">
+        <span class="hint">Pieniä kirjaimia, numeroita ja väliviivoja. Ei muutettavissa tallennuksen jälkeen.</span>
+      </div>
+      <div class="field"><label>Otsikko</label><input type="text" id="f_title"></div>
+      <div class="row2">
+        <div class="field"><label>Alkuvuosi</label><input type="number" id="f_year_start"></div>
+        <div class="field"><label>Loppuvuosi</label><input type="number" id="f_year_end"></div>
+      </div>
+      <div class="field"><label>Tyyppi</label><input type="text" id="f_type"></div>
+      <div class="field"><label>Vaihe (phase)</label><input type="text" id="f_phase"></div>
+      <div class="field">
+        <label>Domainit</label>
+        <input type="text" id="f_domains" placeholder="pilkuilla eroteltuna: väestö, talous, työ">
+      </div>
+      <div class="field"><label>Havaittu ongelma</label><textarea id="f_problem"></textarea></div>
+      <div class="field"><label>Mekanismi</label><textarea id="f_mechanism"></textarea></div>
+      <div class="field">
+        <label>Seuraukset</label>
+        <textarea id="f_effects" placeholder="yksi rivi per seuraus"></textarea>
+        <span class="hint">Yksi rivi per seuraus.</span>
+      </div>
+      <div class="field"><label>Pitkä vaikutus</label><textarea id="f_long_effect"></textarea></div>
+      <div class="field"><label>Nykymerkitys</label><textarea id="f_current_relevance"></textarea></div>
+      <div class="row2">
+        <div class="field">
+          <label>Merkittävyys</label>
+          <select id="f_importance">
+            <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+            <option value="4">4</option><option value="5" selected>5</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Luottamus</label>
+          <select id="f_confidence">
+            <option value="vahva">vahva</option>
+            <option value="kohtalainen">kohtalainen</option>
+            <option value="heikko">heikko</option>
+            <option value="kehittyvä">kehittyvä</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label>Lähteet (valinnainen)</label>
+        <input type="text" id="f_sources" placeholder="pilkuilla eroteltuna">
+      </div>
+    </div>
+    <div class="sheet-foot">
+      <button class="btn danger" id="deleteItem" style="display:none">Poista kortti</button>
+      <button class="btn primary" id="saveItem">Tallenna</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MUOKKAUSPANEELI: RELAATIO ============ -->
+<div class="overlay" id="overlayRelation">
+  <div class="sheet">
+    <div class="sheet-head">
+      <h2 id="relFormTitle">Uusi relaatio</h2>
+      <button class="close-x" data-close="overlayRelation">×</button>
+    </div>
+    <div class="sheet-body">
+      <div class="field">
+        <label>Mistä (from)</label>
+        <input list="itemOptions" id="r_from" placeholder="kirjoita hakeaksesi kortin…">
+      </div>
+      <div class="field">
+        <label>Mihin (to)</label>
+        <input list="itemOptions" id="r_to" placeholder="kirjoita hakeaksesi kortin…">
+      </div>
+      <datalist id="itemOptions"></datalist>
+      <div class="field">
+        <label>Relaatiotyyppi (type)</label>
+        <input list="relTypeOptions" id="r_type" placeholder="esim. enabled, triggered, created_pressure_for…">
+        <datalist id="relTypeOptions"></datalist>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label>Luokka (rel_class)</label>
+          <select id="r_class">
+            <option value="tapahtuma">tapahtuma</option>
+            <option value="rakenne">rakenne</option>
+            <option value="kaari">kaari</option>
+            <option value="tulkinta">tulkinta</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Luottamus</label>
+          <select id="r_confidence">
+            <option value="vahva">vahva</option>
+            <option value="kohtalainen">kohtalainen</option>
+            <option value="heikko">heikko</option>
+          </select>
+        </div>
+      </div>
+      <div class="field"><label>Perustelu (rationale)</label><textarea id="r_rationale"></textarea></div>
+    </div>
+    <div class="sheet-foot">
+      <button class="btn danger" id="deleteRelation" style="display:none">Poista relaatio</button>
+      <button class="btn primary" id="saveRelation">Tallenna</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MUOKKAUSPANEELI: ARTIKKELI ============ -->
+<div class="overlay" id="overlayArticle">
+  <div class="sheet">
+    <div class="sheet-head">
+      <h2 id="artFormTitle">Uusi artikkeli</h2>
+      <button class="close-x" data-close="overlayArticle">×</button>
+    </div>
+    <div class="sheet-body">
+
+      <div class="section-title">Artikkelin sisältö</div>
+      <div class="field">
+        <label>ID (slug)</label>
+        <input type="text" id="a_id" placeholder="esim. kun-korjaava-kierre-katkeaa">
+        <span class="hint">Ei muutettavissa tallennuksen jälkeen.</span>
+      </div>
+      <div class="field"><label>Otsikko</label><input type="text" id="a_title"></div>
+      <div class="field"><label>Ingressi (dek)</label><textarea id="a_dek"></textarea></div>
+      <div class="field">
+        <label>Tagit</label>
+        <input type="text" id="a_tags" placeholder="pilkuilla eroteltuna">
+      </div>
+      <div class="field">
+        <label>Leipäteksti</label>
+        <textarea id="a_body" style="min-height:220px" placeholder="yksi kappale per rivi"></textarea>
+        <span class="hint">Yksi kappale per rivi.</span>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label>Tila</label>
+          <select id="a_status">
+            <option value="ai_draft">ai_draft</option>
+            <option value="reviewed">reviewed</option>
+            <option value="published">published</option>
+          </select>
+        </div>
+      </div>
+      <div class="field"><label>Kuratointihuomautus</label><textarea id="a_note"></textarea></div>
+
+      <div class="section-title">Kytketyt murroskortit</div>
+      <div class="linked-list" id="articleLinksList"></div>
+      <div class="add-link-form" id="addLinkForm" style="display:none">
+        <div class="field">
+          <label>Kortti</label>
+          <input list="itemOptions" id="link_item">
+        </div>
+        <div class="field">
+          <label>Suhde</label>
+          <select id="link_type"></select>
+        </div>
+        <div class="field"><label>Paino</label><input type="number" id="link_weight" min="1" max="5" value="3"></div>
+        <div class="field"><label>Järj.</label><input type="number" id="link_sort" min="1" value="1"></div>
+        <button class="btn small primary" id="addLinkBtn">Lisää</button>
+      </div>
+      <p class="hint" id="linksHint" style="display:none">Tallenna artikkeli ensin, jotta voit lisätä kytkentöjä.</p>
+
+    </div>
+    <div class="sheet-foot">
+      <button class="btn danger" id="deleteArticle" style="display:none">Poista artikkeli</button>
+      <button class="btn primary" id="saveArticle">Tallenna</button>
+    </div>
+  </div>
+</div>
+
+<div class="status" id="statusBox"></div>
+
+<script type="module">
+"use strict";
+
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+
+/* ==========================================================
+   ASETUKSET -- Supabase-yhteys
+   ========================================================== */
+const SUPABASE_URL = "https://zzbubbrsgiqsvsovkkmf.supabase.co";
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp6YnViYnJzZ2lxc3Zzb3Zra21mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ4MTg3OTQsImV4cCI6MjEwMDM5NDc5NH0.alzzcbSj2yY-pcGwMqCInV3PUaUCn6HHv0143V7P-u4";
+
+const sb = createClient(SUPABASE_URL, SUPABASE_KEY, {
+  auth: { persistSession: true, autoRefreshToken: true }
+});
+
+/* ==========================================================
+   TILA
+   ========================================================== */
+const state = {
+  items: [],
+  relations: [],
+  articles: [],
+  articleLinks: [],
+  relationTypes: {},   // {type: label}
+  editingItemId: null,
+  editingRelationId: null,
+  editingArticleId: null
+};
+
+const $ = id => document.getElementById(id);
+const esc = v => String(v ?? "");
+
+function toast(msg, isError){
+  const box = $("statusBox");
+  box.textContent = msg;
+  box.className = "status show" + (isError ? " error" : "");
+  clearTimeout(toast._t);
+  toast._t = setTimeout(() => { box.className = "status"; }, 3200);
+}
+
+function openSheet(id){ $(id).classList.add("open"); }
+function closeSheet(id){ $(id).classList.remove("open"); }
+
+document.querySelectorAll("[data-close]").forEach(btn => {
+  btn.addEventListener("click", () => closeSheet(btn.dataset.close));
+});
+document.querySelectorAll(".overlay").forEach(ov => {
+  ov.addEventListener("click", e => { if(e.target === ov) ov.classList.remove("open"); });
+});
+
+/* ==========================================================
+   VÄLILEHDET
+   ========================================================== */
+document.querySelectorAll("nav.tabs button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll("nav.tabs button").forEach(b => b.classList.remove("active"));
+    document.querySelectorAll(".panel").forEach(p => p.classList.remove("active"));
+    btn.classList.add("active");
+    $("panel-" + btn.dataset.tab).classList.add("active");
+  });
+});
+
+/* ==========================================================
+   DATAN LATAUS
+   ========================================================== */
+async function loadAll(){
+  $("connStatus").textContent = "ladataan dataa…";
+  try{
+    const itemsRes = await sb.from("items").select("*").order("year_start", { ascending: true });
+    if(itemsRes.error) throw itemsRes.error;
+
+    const relRes = await sb.from("relations").select("*").order("id", { ascending: true });
+    if(relRes.error) throw relRes.error;
+
+    const artRes = await sb.from("articles").select("*").order("id", { ascending: true });
+    if(artRes.error) throw artRes.error;
+
+    const linksRes = await sb.from("article_links").select("*").order("sort_order", { ascending: true });
+    if(linksRes.error) throw linksRes.error;
+
+    const typesRes = await sb.from("article_relation_types").select("*");
+    if(typesRes.error) throw typesRes.error;
+
+    state.items = itemsRes.data;
+    state.relations = relRes.data;
+    state.articles = artRes.data;
+    state.articleLinks = linksRes.data;
+    state.relationTypes = {};
+    for(const row of typesRes.data){ state.relationTypes[row.type] = row.label; }
+
+    $("connStatus").textContent =
+      `yhdistetty · ${state.items.length} korttia · ${state.relations.length} relaatiota · ${state.articles.length} artikkelia`;
+
+    populateItemOptions();
+    populateRelTypeOptions();
+    populateLinkTypeSelect();
+    renderItems();
+    renderRelations();
+    renderArticles();
+  }catch(err){
+    $("connStatus").textContent = "virhe ladattaessa dataa -- katso selaimen konsoli (F12 / Kehittäjätyökalut)";
+    const detail = (err && err.message) ? err.message : "Verkkovirhe tai CORS-esto -- tarkista että yhteys internetiin toimii ja että osoite https://zzbubbrsgiqsvsovkkmf.supabase.co ei ole estetty.";
+    toast("Latausvirhe: " + detail, true);
+    console.error("Supabase-latausvirhe:", err);
+  }
+}
+
+function itemLabel(id){
+  const it = state.items.find(i => i.id === id);
+  return it ? `${it.title} (${it.year_start})` : id;
+}
+
+function populateItemOptions(){
+  const dl = $("itemOptions");
+  dl.innerHTML = state.items
+    .map(it => `<option value="${esc(it.id)}">${esc(it.title)} (${it.year_start})</option>`)
+    .join("");
+}
+
+function populateRelTypeOptions(){
+  const types = [...new Set(state.relations.map(r => r.type))].sort();
+  $("relTypeOptions").innerHTML = types.map(t => `<option value="${esc(t)}">`).join("");
+}
+
+function populateLinkTypeSelect(){
+  const sel = $("link_type");
+  sel.innerHTML = Object.entries(state.relationTypes)
+    .map(([type, label]) => `<option value="${esc(type)}">${esc(type)} -- ${esc(label)}</option>`)
+    .join("");
+}
+
+/* ==========================================================
+   RENDER: KORTIT
+   ========================================================== */
+function renderItems(){
+  const q = $("searchItems").value.trim().toLowerCase();
+  const rows = state.items.filter(it =>
+    !q ||
+    it.id.toLowerCase().includes(q) ||
+    it.title.toLowerCase().includes(q) ||
+    (it.type || "").toLowerCase().includes(q)
+  );
+
+  $("countItems").textContent = state.items.length;
+  $("itemsEmpty").style.display = rows.length ? "none" : "block";
+
+  $("itemsBody").innerHTML = rows.map(it => `
+    <tr>
+      <td class="mono">${it.year_start}${it.year_end !== it.year_start ? "–" + it.year_end : ""}</td>
+      <td><strong>${esc(it.title)}</strong><br><span class="mono" style="color:var(--muted)">${esc(it.id)}</span></td>
+      <td>${esc(it.type)}</td>
+      <td>${it.importance}/5</td>
+      <td><span class="pill">${esc(it.confidence)}</span></td>
+      <td class="actions">
+        <button class="btn small" data-edit-item="${esc(it.id)}">Muokkaa</button>
+      </td>
+    </tr>
+  `).join("");
+
+  document.querySelectorAll("[data-edit-item]").forEach(btn => {
+    btn.addEventListener("click", () => openItemForm(btn.dataset.editItem));
+  });
+}
+
+$("searchItems").addEventListener("input", renderItems);
+
+/* ==========================================================
+   LOMAKE: KORTTI
+   ========================================================== */
+function openItemForm(id){
+  state.editingItemId = id || null;
+  const it = id ? state.items.find(i => i.id === id) : null;
+
+  $("itemFormTitle").textContent = it ? "Muokkaa korttia" : "Uusi kortti";
+  $("f_id").value = it ? it.id : "";
+  $("f_id").disabled = !!it;
+  $("f_title").value = it ? it.title : "";
+  $("f_year_start").value = it ? it.year_start : "";
+  $("f_year_end").value = it ? it.year_end : "";
+  $("f_type").value = it ? it.type : "";
+  $("f_phase").value = it ? it.phase : "";
+  $("f_domains").value = it ? (it.domains || []).join(", ") : "";
+  $("f_problem").value = it ? it.problem : "";
+  $("f_mechanism").value = it ? it.mechanism : "";
+  $("f_effects").value = it ? (it.effects || []).join("\n") : "";
+  $("f_long_effect").value = it ? it.long_effect : "";
+  $("f_current_relevance").value = it ? it.current_relevance : "";
+  $("f_importance").value = it ? it.importance : "5";
+  $("f_confidence").value = it ? it.confidence : "kohtalainen";
+  $("f_sources").value = it ? (it.sources || []).join(", ") : "";
+
+  $("deleteItem").style.display = it ? "inline-flex" : "none";
+  openSheet("overlayItem");
+}
+
+$("newItem").addEventListener("click", () => openItemForm(null));
+
+$("saveItem").addEventListener("click", async () => {
+  const id = $("f_id").value.trim();
+  if(!id){ toast("ID on pakollinen", true); return; }
+  if(!/^[a-z0-9_-]+$/.test(id)){ toast("ID saa sisältää vain pieniä kirjaimia, numeroita, - ja _", true); return; }
+
+  const payload = {
+    id,
+    title: $("f_title").value.trim(),
+    year_start: Number($("f_year_start").value),
+    year_end: Number($("f_year_end").value || $("f_year_start").value),
+    type: $("f_type").value.trim(),
+    phase: $("f_phase").value.trim(),
+    domains: splitList($("f_domains").value),
+    problem: $("f_problem").value.trim(),
+    mechanism: $("f_mechanism").value.trim(),
+    effects: splitLines($("f_effects").value),
+    long_effect: $("f_long_effect").value.trim(),
+    current_relevance: $("f_current_relevance").value.trim(),
+    importance: Number($("f_importance").value),
+    confidence: $("f_confidence").value,
+    sources: splitList($("f_sources").value)
+  };
+
+  try{
+    if(state.editingItemId){
+      const { error } = await sb.from("items").update(payload).eq("id", state.editingItemId);
+      if(error) throw error;
+    }else{
+      const { error } = await sb.from("items").insert(payload);
+      if(error) throw error;
+    }
+    toast("Kortti tallennettu.");
+    closeSheet("overlayItem");
+    await loadAll();
+  }catch(err){
+    toast("Tallennus epäonnistui: " + err.message, true);
+  }
+});
+
+$("deleteItem").addEventListener("click", async () => {
+  if(!state.editingItemId) return;
+  if(!confirm(`Poistetaanko kortti "${state.editingItemId}"? Tämä poistaa myös siihen liittyvät relaatiot ja artikkelikytkennät.`)) return;
+  try{
+    const { error } = await sb.from("items").delete().eq("id", state.editingItemId);
+    if(error) throw error;
+    toast("Kortti poistettu.");
+    closeSheet("overlayItem");
+    await loadAll();
+  }catch(err){
+    toast("Poisto epäonnistui: " + err.message, true);
+  }
+});
+
+function splitList(str){
+  return str.split(",").map(s => s.trim()).filter(Boolean);
+}
+function splitLines(str){
+  return str.split("\n").map(s => s.trim()).filter(Boolean);
+}
+
+/* ==========================================================
+   RENDER: RELAATIOT
+   ========================================================== */
+function renderRelations(){
+  const q = $("searchRelations").value.trim().toLowerCase();
+  const rows = state.relations.filter(r =>
+    !q ||
+    r.from_id.toLowerCase().includes(q) ||
+    r.to_id.toLowerCase().includes(q) ||
+    r.type.toLowerCase().includes(q) ||
+    itemLabel(r.from_id).toLowerCase().includes(q) ||
+    itemLabel(r.to_id).toLowerCase().includes(q)
+  );
+
+  $("countRelations").textContent = state.relations.length;
+  $("relationsEmpty").style.display = rows.length ? "none" : "block";
+
+  $("relationsBody").innerHTML = rows.map(r => `
+    <tr>
+      <td>${esc(itemLabel(r.from_id))}</td>
+      <td>${esc(itemLabel(r.to_id))}</td>
+      <td class="mono">${esc(r.type)}</td>
+      <td><span class="pill">${esc(r.rel_class)}</span></td>
+      <td><span class="pill">${esc(r.confidence)}</span></td>
+      <td class="actions"><button class="btn small" data-edit-rel="${r.id}">Muokkaa</button></td>
+    </tr>
+  `).join("");
+
+  document.querySelectorAll("[data-edit-rel]").forEach(btn => {
+    btn.addEventListener("click", () => openRelationForm(Number(btn.dataset.editRel)));
+  });
+}
+
+$("searchRelations").addEventListener("input", renderRelations);
+
+/* ==========================================================
+   LOMAKE: RELAATIO
+   ========================================================== */
+function openRelationForm(id){
+  state.editingRelationId = id || null;
+  const r = id ? state.relations.find(x => x.id === id) : null;
+
+  $("relFormTitle").textContent = r ? "Muokkaa relaatiota" : "Uusi relaatio";
+  $("r_from").value = r ? r.from_id : "";
+  $("r_to").value = r ? r.to_id : "";
+  $("r_type").value = r ? r.type : "";
+  $("r_class").value = r ? r.rel_class : "rakenne";
+  $("r_confidence").value = r ? r.confidence : "kohtalainen";
+  $("r_rationale").value = r ? r.rationale : "";
+
+  $("deleteRelation").style.display = r ? "inline-flex" : "none";
+  openSheet("overlayRelation");
+}
+
+$("newRelation").addEventListener("click", () => openRelationForm(null));
+
+$("saveRelation").addEventListener("click", async () => {
+  const from_id = $("r_from").value.trim();
+  const to_id = $("r_to").value.trim();
+  const type = $("r_type").value.trim();
+
+  if(!from_id || !to_id || !type){ toast("Mistä, mihin ja tyyppi ovat pakollisia", true); return; }
+  if(!state.items.some(i => i.id === from_id)){ toast(`Korttia "${from_id}" ei löydy`, true); return; }
+  if(!state.items.some(i => i.id === to_id)){ toast(`Korttia "${to_id}" ei löydy`, true); return; }
+
+  const payload = {
+    from_id, to_id, type,
+    rel_class: $("r_class").value,
+    confidence: $("r_confidence").value,
+    rationale: $("r_rationale").value.trim()
+  };
+
+  try{
+    if(state.editingRelationId){
+      const { error } = await sb.from("relations").update(payload).eq("id", state.editingRelationId);
+      if(error) throw error;
+    }else{
+      const { error } = await sb.from("relations").insert(payload);
+      if(error) throw error;
+    }
+    toast("Relaatio tallennettu.");
+    closeSheet("overlayRelation");
+    await loadAll();
+  }catch(err){
+    toast("Tallennus epäonnistui: " + err.message, true);
+  }
+});
+
+$("deleteRelation").addEventListener("click", async () => {
+  if(!state.editingRelationId) return;
+  if(!confirm("Poistetaanko tämä relaatio?")) return;
+  try{
+    const { error } = await sb.from("relations").delete().eq("id", state.editingRelationId);
+    if(error) throw error;
+    toast("Relaatio poistettu.");
+    closeSheet("overlayRelation");
+    await loadAll();
+  }catch(err){
+    toast("Poisto epäonnistui: " + err.message, true);
+  }
+});
+
+/* ==========================================================
+   RENDER: ARTIKKELIT
+   ========================================================== */
+function renderArticles(){
+  const q = $("searchArticles").value.trim().toLowerCase();
+  const rows = state.articles.filter(a =>
+    !q || a.title.toLowerCase().includes(q) || a.id.toLowerCase().includes(q)
+  );
+
+  $("countArticles").textContent = state.articles.length;
+  $("articlesEmpty").style.display = rows.length ? "none" : "block";
+
+  $("articlesBody").innerHTML = rows.map(a => {
+    const linkCount = state.articleLinks.filter(l => l.article_id === a.id).length;
+    return `
+      <tr>
+        <td><strong>${esc(a.title)}</strong><br><span class="mono" style="color:var(--muted)">${esc(a.id)}</span></td>
+        <td><span class="pill">${esc(a.status)}</span></td>
+        <td>${linkCount}</td>
+        <td class="actions"><button class="btn small" data-edit-art="${esc(a.id)}">Muokkaa</button></td>
+      </tr>
+    `;
+  }).join("");
+
+  document.querySelectorAll("[data-edit-art]").forEach(btn => {
+    btn.addEventListener("click", () => openArticleForm(btn.dataset.editArt));
+  });
+}
+
+$("searchArticles").addEventListener("input", renderArticles);
+
+/* ==========================================================
+   LOMAKE: ARTIKKELI
+   ========================================================== */
+function openArticleForm(id){
+  state.editingArticleId = id || null;
+  const a = id ? state.articles.find(x => x.id === id) : null;
+
+  $("artFormTitle").textContent = a ? "Muokkaa artikkelia" : "Uusi artikkeli";
+  $("a_id").value = a ? a.id : "";
+  $("a_id").disabled = !!a;
+  $("a_title").value = a ? a.title : "";
+  $("a_dek").value = a ? (a.dek || "") : "";
+  $("a_tags").value = a ? (a.tags || []).join(", ") : "";
+  $("a_body").value = a ? (a.body || []).join("\n") : "";
+  $("a_status").value = a ? a.status : "ai_draft";
+  $("a_note").value = a ? (a.note || "") : "";
+
+  $("deleteArticle").style.display = a ? "inline-flex" : "none";
+  $("addLinkForm").style.display = a ? "grid" : "none";
+  $("linksHint").style.display = a ? "none" : "block";
+
+  renderArticleLinks();
+  openSheet("overlayArticle");
+}
+
+$("newArticle").addEventListener("click", () => openArticleForm(null));
+
+function renderArticleLinks(){
+  const list = $("articleLinksList");
+  if(!state.editingArticleId){
+    list.innerHTML = "";
+    return;
+  }
+  const links = state.articleLinks
+    .filter(l => l.article_id === state.editingArticleId)
+    .sort((x,y) => (x.sort_order||0) - (y.sort_order||0));
+
+  list.innerHTML = links.length ? links.map(l => `
+    <div class="linked-item">
+      <div>
+        <div class="li-title">${esc(itemLabel(l.item_id))}</div>
+        <div class="li-meta">${esc(l.relation_type)} · paino ${l.weight} · järj. ${l.sort_order}</div>
+      </div>
+      <button class="btn small danger" data-remove-link="${l.id}">Poista</button>
+    </div>
+  `).join("") : `<div class="hint">Ei vielä kytkettyjä kortteja.</div>`;
+
+  document.querySelectorAll("[data-remove-link]").forEach(btn => {
+    btn.addEventListener("click", async () => {
+      const linkId = Number(btn.dataset.removeLink);
+      try{
+        const { error } = await sb.from("article_links").delete().eq("id", linkId);
+        if(error) throw error;
+        state.articleLinks = state.articleLinks.filter(l => l.id !== linkId);
+        renderArticleLinks();
+        toast("Kytkentä poistettu.");
+      }catch(err){
+        toast("Poisto epäonnistui: " + err.message, true);
+      }
+    });
+  });
+}
+
+$("addLinkBtn").addEventListener("click", async () => {
+  if(!state.editingArticleId){ toast("Tallenna artikkeli ensin.", true); return; }
+  const item_id = $("link_item").value.trim();
+  const relation_type = $("link_type").value;
+  const weight = Number($("link_weight").value) || 3;
+  const sort_order = Number($("link_sort").value) || 1;
+
+  if(!item_id){ toast("Valitse kortti", true); return; }
+  if(!state.items.some(i => i.id === item_id)){ toast(`Korttia "${item_id}" ei löydy`, true); return; }
+
+  try{
+    const { data, error } = await sb.from("article_links").insert({
+      article_id: state.editingArticleId, item_id, relation_type, weight, sort_order
+    }).select();
+    if(error) throw error;
+    state.articleLinks.push(data[0]);
+    renderArticleLinks();
+    $("link_item").value = "";
+    toast("Kytkentä lisätty.");
+  }catch(err){
+    toast("Lisäys epäonnistui: " + err.message, true);
+  }
+});
+
+$("saveArticle").addEventListener("click", async () => {
+  const id = $("a_id").value.trim();
+  if(!id){ toast("ID on pakollinen", true); return; }
+  if(!/^[a-z0-9_-]+$/.test(id)){ toast("ID saa sisältää vain pieniä kirjaimia, numeroita, - ja _", true); return; }
+
+  const payload = {
+    id,
+    title: $("a_title").value.trim(),
+    dek: $("a_dek").value.trim(),
+    tags: splitList($("a_tags").value),
+    body: splitLines($("a_body").value),
+    status: $("a_status").value,
+    note: $("a_note").value.trim()
+  };
+
+  try{
+    const wasNew = !state.editingArticleId;
+    if(state.editingArticleId){
+      const { error } = await sb.from("articles").update(payload).eq("id", state.editingArticleId);
+      if(error) throw error;
+    }else{
+      const { error } = await sb.from("articles").insert(payload);
+      if(error) throw error;
+    }
+    toast("Artikkeli tallennettu.");
+    if(wasNew){
+      // Pidetään paneeli auki, jotta käyttäjä voi heti lisätä kytkentöjä.
+      state.editingArticleId = id;
+      await loadAll();
+      openArticleForm(id);
+    }else{
+      closeSheet("overlayArticle");
+      await loadAll();
+    }
+  }catch(err){
+    toast("Tallennus epäonnistui: " + err.message, true);
+  }
+});
+
+$("deleteArticle").addEventListener("click", async () => {
+  if(!state.editingArticleId) return;
+  if(!confirm(`Poistetaanko artikkeli "${state.editingArticleId}"? Tämä poistaa myös sen kytkennät.`)) return;
+  try{
+    const { error } = await sb.from("articles").delete().eq("id", state.editingArticleId);
+    if(error) throw error;
+    toast("Artikkeli poistettu.");
+    closeSheet("overlayArticle");
+    await loadAll();
+  }catch(err){
+    toast("Poisto epäonnistui: " + err.message, true);
+  }
+});
+
+/* ==========================================================
+   EXPORT: suomen_murrosvaiheet_syvennetty.json
+   ========================================================== */
+function downloadJSON(obj, filename){
+  const blob = new Blob([JSON.stringify(obj, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+
+$("exportMurros").addEventListener("click", async () => {
+  $("exportMurros").disabled = true;
+  try{
+    const itemsRes = await sb.from("items").select("*").order("year_start", { ascending: true });
+    if(itemsRes.error) throw itemsRes.error;
+
+    const relRes = await sb.from("relations").select("*").order("id", { ascending: true });
+    if(relRes.error) throw relRes.error;
+
+    const metaRes = await sb.from("dataset_meta").select("data").eq("id", "murrosvaiheet").single();
+    if(metaRes.error) throw metaRes.error;
+
+    const items = itemsRes.data.map(it => {
+      const out = {
+        id: it.id, title: it.title,
+        year_start: it.year_start, year_end: it.year_end,
+        type: it.type, domains: it.domains, phase: it.phase,
+        problem: it.problem, mechanism: it.mechanism, effects: it.effects,
+        long_effect: it.long_effect, current_relevance: it.current_relevance,
+        importance: it.importance, confidence: it.confidence
+      };
+      if(it.sources && it.sources.length){ out.sources = it.sources; }
+      return out;
+    });
+
+    const relations = relRes.data.map(r => ({
+      from: r.from_id, to: r.to_id, type: r.type,
+      rel_class: r.rel_class, confidence: r.confidence, rationale: r.rationale
+    }));
+
+    const meta = { ...metaRes.data.data, count: items.length, relation_count: relations.length };
+
+    downloadJSON({ meta, items, relations }, "suomen_murrosvaiheet_syvennetty.json");
+    toast("suomen_murrosvaiheet_syvennetty.json ladattu.");
+  }catch(err){
+    toast("Export epäonnistui: " + err.message, true);
+  }finally{
+    $("exportMurros").disabled = false;
+  }
+});
+
+/* ==========================================================
+   EXPORT: artikkelit.json
+   ========================================================== */
+$("exportArtikkelit").addEventListener("click", async () => {
+  $("exportArtikkelit").disabled = true;
+  try{
+    const artRes = await sb.from("articles").select("*").order("id", { ascending: true });
+    if(artRes.error) throw artRes.error;
+
+    const linksRes = await sb.from("article_links").select("article_id,item_id,relation_type,weight,sort_order").order("sort_order", { ascending: true });
+    if(linksRes.error) throw linksRes.error;
+
+    const typesRes = await sb.from("article_relation_types").select("*");
+    if(typesRes.error) throw typesRes.error;
+
+    const metaRes = await sb.from("article_dataset_meta").select("data").eq("id", "artikkelit").single();
+    if(metaRes.error) throw metaRes.error;
+
+    const articles = artRes.data.map(a => ({
+      id: a.id, title: a.title, dek: a.dek, tags: a.tags,
+      status: a.status, note: a.note, body: a.body
+    }));
+
+    const relation_types = {};
+    for(const row of typesRes.data){ relation_types[row.type] = row.label; }
+
+    const meta = {
+      ...metaRes.data.data,
+      count: articles.length,
+      link_count: linksRes.data.length
+    };
+
+    downloadJSON({ meta, relation_types, articles, links: linksRes.data }, "artikkelit.json");
+    toast("artikkelit.json ladattu.");
+  }catch(err){
+    toast("Export epäonnistui: " + err.message, true);
+  }finally{
+    $("exportArtikkelit").disabled = false;
+  }
+});
+
+/* ==========================================================
+   KÄYNNISTYS
+   ========================================================== */
+loadAll();
+</script>
+</body>
+</html>
