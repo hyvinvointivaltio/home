@@ -1,0 +1,6819 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Suomen murrosvaiheet 1800–2035 · Atlas</title>
+
+<meta
+  name="description"
+  content="Interaktiivinen atlas Suomen yhteiskunnallisista murroksista, rakenteista ja vaikutusketjuista."
+>
+
+<meta property="og:title" content="Suomen murrosvaiheet 1800–2035">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+>
+
+<style>
+/* ==========================================================
+   PERUSTYYLI
+   ========================================================== */
+
+:root{
+  --radius:.75rem;
+
+  --paper:#fdfcf7;
+  --paper-2:#f7f4ec;
+  --birch:#f4f0e6;
+
+  --ink:#1c2624;
+  --muted:#6c766f;
+  --line:#e2dcce;
+
+  --forest:#3a6b64;
+  --forest-deep:#1f4642;
+  --forest-shadow:#12332f;
+
+  --copper:#b56a34;
+  --ochre:#d69642;
+  --violet:#79608d;
+
+  --shadow-paper:
+    0 1px 0 rgba(20,30,27,.04),
+    0 18px 40px -20px rgba(20,30,27,.18);
+
+  --shadow-lift:
+    0 2px 0 rgba(20,30,27,.05),
+    0 30px 60px -25px rgba(20,30,27,.32);
+
+  --serif:
+    "Fraunces",
+    Georgia,
+    "Cormorant Garamond",
+    serif;
+
+  --sans:
+    "Inter",
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+
+  --mono:
+    "JetBrains Mono",
+    ui-monospace,
+    "SFMono-Regular",
+    monospace;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+body{
+  margin:0;
+  font:16px/1.55 var(--sans);
+  color:var(--ink);
+
+  background:
+    radial-gradient(
+      1200px 600px at 90% -10%,
+      #f5efdf 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at -10% 10%,
+      #dfe9e3 0%,
+      transparent 60%
+    ),
+    var(--paper-2);
+
+  background-attachment:fixed;
+}
+
+h1,
+h2,
+h3,
+.serif{
+  font-family:var(--serif);
+  font-feature-settings:"ss01","ss02";
+  letter-spacing:-.01em;
+}
+
+button{
+  padding:0;
+  border:0;
+  background:none;
+  color:inherit;
+  font:inherit;
+  cursor:pointer;
+}
+
+input,
+select{
+  font:inherit;
+}
+
+:where(button,a,input,select,textarea):focus-visible{
+  outline:2px solid var(--forest);
+  outline-offset:2px;
+  border-radius:6px;
+}
+
+/* ==========================================================
+   HERO
+   ========================================================== */
+
+header.hero{
+  position:relative;
+  overflow:hidden;
+  color:var(--paper);
+  border-bottom:1px solid var(--line);
+}
+
+header.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+    radial-gradient(
+      1200px 800px at 80% 20%,
+      #2e5e58 0%,
+      transparent 60%
+    ),
+    linear-gradient(
+      135deg,
+      var(--forest-shadow),
+      var(--forest-deep) 60%,
+      #1a3c38
+    );
+}
+
+header.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  opacity:.55;
+
+  background-image:
+    radial-gradient(
+      rgba(255,255,255,.05) 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      rgba(0,0,0,.10) 1px,
+      transparent 1px
+    );
+
+  background-size:3px 3px,7px 7px;
+  background-position:0 0,1px 2px;
+}
+
+.hero-inner{
+  position:relative;
+  max-width:1500px;
+  margin:auto;
+  padding:64px max(24px,6vw) 72px;
+}
+
+.eyebrow{
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  font:500 11px/1 var(--mono);
+  letter-spacing:.25em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.7);
+}
+
+.eyebrow .rule{
+  width:32px;
+  height:1px;
+  background:var(--copper);
+}
+
+.hero-inner h1{
+  max-width:1050px;
+  margin:20px 0 0;
+
+  font-weight:600;
+  line-height:.98;
+  font-size:clamp(2.4rem,6vw,5.2rem);
+}
+
+.hero-inner h1 em{
+  color:var(--ochre);
+  font-style:italic;
+}
+
+.hero-inner h1 span{
+  display:block;
+  color:rgba(255,255,255,.8);
+}
+
+.lede{
+  max-width:760px;
+  margin:24px 0 0;
+
+  color:rgba(255,255,255,.82);
+  font-size:1.075rem;
+  line-height:1.6;
+}
+
+.chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:28px;
+}
+
+.chips span{
+  padding:5px 12px;
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:999px;
+
+  color:rgba(255,255,255,.85);
+  font:500 12px var(--mono);
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:24px;
+
+  max-width:680px;
+  margin-top:40px;
+}
+
+.stats .n{
+  color:var(--ochre);
+  font-family:var(--serif);
+  font-size:clamp(1.8rem,3.5vw,2.6rem);
+  line-height:1;
+}
+
+.stats .l{
+  margin-top:6px;
+
+  font:500 11px/1 var(--mono);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.6);
+}
+
+/* ==========================================================
+   VUOSIKYMMENHISTOGRAMMI
+   ========================================================== */
+
+.decades{
+  border-bottom:1px solid var(--line);
+  background:rgba(253,252,247,.7);
+  backdrop-filter:blur(8px);
+}
+
+.decades-inner{
+  max-width:1500px;
+  margin:auto;
+  padding:24px max(24px,6vw);
+}
+
+.decades-head{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  margin-bottom:12px;
+}
+
+.decades-head h2{
+  margin:0;
+  color:var(--forest-deep);
+  font-size:1.05rem;
+}
+
+.decades-head span{
+  color:var(--muted);
+  font:500 11px var(--mono);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.bars{
+  display:flex;
+  align-items:flex-end;
+  gap:2px;
+  height:96px;
+}
+
+.bars button{
+  position:relative;
+
+  display:flex;
+  flex:1;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-end;
+
+  height:100%;
+}
+
+.bars .bar{
+  width:100%;
+  border-radius:4px 4px 0 0;
+
+  transition:
+    opacity .2s ease,
+    transform .2s ease;
+}
+
+.bars button:hover .bar{
+  opacity:1 !important;
+  transform:translateY(-2px);
+}
+
+.bars .count{
+  position:absolute;
+  top:-16px;
+
+  color:var(--forest-deep);
+  font:500 10px var(--mono);
+  opacity:0;
+
+  transition:opacity .2s ease;
+}
+
+.bars button:hover .count{
+  opacity:1;
+}
+
+.axis{
+  display:flex;
+  justify-content:space-between;
+  margin-top:6px;
+
+  color:var(--muted);
+  font:500 10px var(--mono);
+}
+
+.periods{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:14px;
+}
+
+.periods button{
+  padding:6px 12px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:var(--paper);
+
+  color:var(--ink);
+  font:500 12px var(--mono);
+
+  transition:.15s ease;
+}
+
+.periods button:hover{
+  border-color:var(--forest);
+}
+
+.periods button.active{
+  border-color:var(--copper);
+  background:var(--copper);
+  color:var(--paper);
+}
+
+/* ==========================================================
+   RAKENNEMATRIISI
+   ========================================================== */
+
+.matrix-section{
+  border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(
+      900px 360px at 10% 0%,
+      rgba(58,107,100,.08),
+      transparent 66%
+    ),
+    rgba(253,252,247,.84);
+}
+
+.matrix-inner{
+  max-width:1500px;
+  margin:auto;
+  padding:34px max(18px,5vw) 36px;
+}
+
+.matrix-header{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:24px;
+  margin-bottom:17px;
+}
+
+.matrix-header h2{
+  margin:0;
+
+  color:var(--forest-deep);
+  font-size:clamp(1.55rem,3vw,2.45rem);
+  line-height:1.04;
+}
+
+.matrix-header p{
+  max-width:790px;
+  margin:8px 0 0;
+
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+.matrix-stats{
+  display:flex;
+  gap:18px;
+  flex-shrink:0;
+}
+
+.matrix-stat{
+  text-align:right;
+  color:var(--muted);
+  font:500 9px var(--mono);
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+.matrix-stat strong{
+  display:block;
+
+  color:var(--forest-deep);
+  font:600 1.55rem var(--serif);
+  letter-spacing:0;
+  line-height:1;
+}
+
+.matrix-tools{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:9px;
+  margin-bottom:14px;
+}
+
+.matrix-toolset{
+  display:flex;
+  align-items:center;
+  gap:3px;
+
+  padding:3px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:rgba(253,252,247,.9);
+}
+
+.matrix-toolset > span{
+  padding-left:7px;
+
+  color:var(--muted);
+  font:500 9px var(--mono);
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+
+.matrix-chip{
+  padding:5px 9px;
+  border-radius:999px;
+
+  color:var(--muted);
+  font:500 10px var(--mono);
+
+  transition:
+    background .25s ease,
+    color .25s ease,
+    transform .25s ease;
+}
+
+.matrix-chip:hover{
+  background:var(--birch);
+  color:var(--forest-deep);
+}
+
+.matrix-chip.active{
+  background:var(--forest-deep);
+  color:var(--paper);
+}
+
+.matrix-reset{
+  margin-left:auto;
+  padding:6px 11px;
+
+  border:1px solid var(--line);
+  border-radius:999px;
+
+  color:var(--muted);
+  font:500 10px var(--mono);
+
+  transition:.2s ease;
+}
+
+.matrix-reset:not(:disabled):hover{
+  border-color:var(--copper);
+  color:var(--copper);
+}
+
+.matrix-reset:disabled{
+  cursor:default;
+  opacity:.35;
+}
+
+.matrix-selection{
+  display:none;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+
+  margin-bottom:13px;
+  padding:10px 13px;
+
+  border-left:3px solid var(--copper);
+  border-radius:0 9px 9px 0;
+  background:rgba(244,240,230,.7);
+}
+
+.matrix-selection.visible{
+  display:flex;
+}
+
+.matrix-selection-title{
+  font:600 1.05rem var(--serif);
+  color:var(--ink);
+}
+
+.matrix-selection-meta{
+  margin-top:2px;
+  color:var(--muted);
+  font-size:.73rem;
+}
+
+.matrix-analysis{
+  flex-shrink:0;
+
+  padding:6px 10px;
+  border:1px solid var(--forest);
+  border-radius:999px;
+
+  color:var(--forest-deep);
+  font-size:.78rem;
+  font-weight:600;
+}
+
+.matrix-analysis:hover{
+  background:var(--forest-deep);
+  color:var(--paper);
+}
+
+.matrix-layout{
+  display:grid;
+  grid-template-columns:minmax(94px,150px) minmax(0,1fr);
+
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:var(--paper);
+}
+
+.matrix-labels{
+  display:grid;
+
+  border-right:1px solid var(--line);
+  background:rgba(247,244,236,.94);
+}
+
+.matrix-label-spacer{
+  height:28px;
+  border-bottom:1px solid var(--line);
+}
+
+.matrix-label{
+  display:flex;
+  align-items:center;
+
+  min-height:0;
+  padding:5px 9px;
+
+  border-bottom:1px solid rgba(226,220,206,.76);
+
+  color:var(--forest-deep);
+  font-size:clamp(.56rem,.82vw,.75rem);
+  font-weight:600;
+  line-height:1.15;
+}
+
+.matrix-label:last-child{
+  border-bottom:0;
+}
+
+.matrix-main{
+  min-width:0;
+}
+
+.matrix-years{
+  position:relative;
+  height:28px;
+
+  border-bottom:1px solid var(--line);
+  background:rgba(244,240,230,.48);
+}
+
+.matrix-year{
+  position:absolute;
+  bottom:6px;
+  transform:translateX(-50%);
+
+  color:var(--muted);
+  font:500 clamp(6px,.66vw,9px) var(--mono);
+}
+
+.matrix-grid{
+  --matrix-columns:28;
+  --matrix-rows:10;
+
+  position:relative;
+
+  display:grid;
+  grid-template-columns:
+    repeat(var(--matrix-columns),minmax(0,1fr));
+  grid-template-rows:
+    repeat(var(--matrix-rows),minmax(0,1fr));
+
+  width:100%;
+  min-height:220px;
+
+  overflow:hidden;
+
+  background:
+    linear-gradient(
+      to right,
+      rgba(253,252,247,.34) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(253,252,247,.30) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    calc(100% / var(--matrix-columns)) 100%,
+    100% calc(100% / var(--matrix-rows));
+}
+
+.matrix-heat{
+  position:relative;
+  z-index:1;
+
+  transition:
+    background-color .75s cubic-bezier(.22,.61,.36,1),
+    box-shadow .75s cubic-bezier(.22,.61,.36,1),
+    opacity .65s ease;
+}
+
+.matrix-node{
+  position:relative;
+  z-index:5;
+
+  align-self:center;
+  justify-self:center;
+
+  width:62%;
+  aspect-ratio:1;
+  min-width:5px;
+  min-height:5px;
+
+  border:0;
+  border-radius:2px;
+  background:rgba(58,107,100,.76);
+
+  opacity:1;
+  box-shadow:
+    0 0 0 1px rgba(253,252,247,.58),
+    0 1px 4px rgba(22,48,45,.18);
+
+  transition:
+    background-color .65s cubic-bezier(.22,.61,.36,1),
+    opacity .65s cubic-bezier(.22,.61,.36,1),
+    transform .35s cubic-bezier(.22,.61,.36,1),
+    box-shadow .35s cubic-bezier(.22,.61,.36,1);
+}
+
+.matrix-node:hover{
+  z-index:20;
+
+  opacity:1;
+  transform:scale(1.28);
+
+  box-shadow:
+    0 0 0 2px var(--paper),
+    0 0 0 4px rgba(31,70,66,.5),
+    0 4px 12px rgba(22,48,45,.24);
+}
+
+.matrix-links{
+  position:absolute;
+  inset:0;
+  z-index:3;
+  width:100%;
+  height:100%;
+  overflow:visible;
+  pointer-events:none;
+}
+
+.matrix-link{
+  fill:none;
+  stroke:rgba(31,70,66,.22);
+  stroke-width:1.15;
+  vector-effect:non-scaling-stroke;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  transition:stroke .35s ease,opacity .35s ease,stroke-width .35s ease;
+}
+
+.matrix-link.interpretive{
+  stroke-dasharray:2.2 3.2;
+  opacity:.42;
+}
+
+.matrix-link.active{
+  stroke:rgba(181,106,52,.82);
+  stroke-width:2.25;
+  opacity:1;
+}
+
+.matrix-node.filtered{
+  opacity:.06;
+  pointer-events:none;
+}
+
+.matrix-node.unrelated{
+  opacity:.12;
+  transform:scale(.72);
+}
+
+.matrix-node.depth-3{
+  opacity:.38;
+  transform:scale(.78);
+}
+
+.matrix-node.depth-2{
+  opacity:.68;
+  transform:scale(.9);
+}
+
+.matrix-node.depth-1{
+  opacity:1;
+  transform:scale(1.08);
+}
+
+.matrix-node.predecessor{
+  background:var(--forest-deep);
+}
+
+.matrix-node.successor{
+  background:var(--copper);
+}
+
+.matrix-node.mixed{
+  background:var(--violet);
+}
+
+.matrix-node.selected{
+  z-index:25;
+
+  opacity:1;
+  transform:scale(1.2);
+  background:var(--ochre);
+
+  box-shadow:
+    0 0 0 2px var(--paper),
+    0 0 0 4px rgba(181,106,52,.72),
+    0 4px 12px rgba(80,49,28,.22);
+}
+
+.matrix-boundary{
+  position:absolute;
+  left:0;
+  right:0;
+  z-index:3;
+
+  height:1px;
+  background:rgba(58,107,100,.28);
+  pointer-events:none;
+}
+
+.matrix-legend{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:10px;
+
+  color:var(--muted);
+  font-size:.7rem;
+}
+
+.matrix-legend span{
+  display:flex;
+  align-items:center;
+  gap:5px;
+}
+
+.matrix-legend i{
+  width:7px;
+  height:7px;
+  border-radius:1px;
+  background:var(--forest);
+}
+
+.matrix-legend .before{
+  background:var(--forest-deep);
+}
+
+.matrix-legend .after{
+  background:var(--copper);
+}
+
+.matrix-legend .selected{
+  background:var(--ochre);
+}
+
+.matrix-tooltip{
+  position:fixed;
+  z-index:100;
+
+  display:none;
+  max-width:280px;
+  padding:8px 10px;
+
+  border-radius:9px;
+  background:rgba(31,70,66,.97);
+  color:var(--paper);
+
+  pointer-events:none;
+  box-shadow:var(--shadow-lift);
+}
+
+.matrix-tooltip.visible{
+  display:block;
+}
+
+.matrix-tooltip-year{
+  color:var(--ochre);
+  font:500 8px var(--mono);
+}
+
+.matrix-tooltip-title{
+  margin-top:2px;
+  font:600 .86rem/1.2 var(--serif);
+}
+
+.matrix-tooltip-meta{
+  margin-top:4px;
+  color:rgba(255,255,255,.68);
+  font-size:.67rem;
+}
+
+/* ==========================================================
+   SUODATTIMET
+   ========================================================== */
+
+.controls{
+  position:sticky;
+  top:0;
+  z-index:20;
+
+  border-bottom:1px solid var(--line);
+  background:rgba(247,244,236,.92);
+  backdrop-filter:blur(12px);
+}
+
+.controls-inner{
+  max-width:1500px;
+  margin:auto;
+  padding:16px max(24px,6vw);
+}
+
+.control-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr auto;
+  gap:12px;
+}
+
+.field{
+  position:relative;
+
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  padding:0 12px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:var(--paper);
+}
+
+.field input[type="search"],
+.field select{
+  width:100%;
+  padding:11px 0;
+
+  border:0;
+  background:transparent;
+  color:var(--ink);
+}
+
+.field svg{
+  flex-shrink:0;
+  color:var(--muted);
+}
+
+.field.range{
+  padding:0 14px;
+}
+
+.field.range .lbl{
+  white-space:nowrap;
+
+  color:var(--muted);
+  font:500 11px var(--mono);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.field.range input[type="range"]{
+  flex:1;
+  accent-color:var(--copper);
+}
+
+.field.range .val{
+  width:16px;
+
+  color:var(--forest-deep);
+  font:500 14px var(--mono);
+  text-align:right;
+}
+
+.meta-row{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:12px;
+
+  margin-top:12px;
+
+  color:var(--muted);
+  font:500 12px var(--mono);
+}
+
+.meta-row strong{
+  color:var(--ink);
+}
+
+.reset{
+  margin-left:auto;
+  padding:5px 12px;
+
+  border:1px solid var(--line);
+  border-radius:999px;
+
+  transition:.15s ease;
+}
+
+.reset:hover{
+  border-color:var(--copper);
+  color:var(--copper);
+}
+
+/* ==========================================================
+   KORTTIRUUDUKKO
+   ========================================================== */
+
+main{
+  max-width:1500px;
+  margin:auto;
+  padding:40px max(24px,6vw);
+}
+
+.list{
+  display:grid;
+  grid-template-columns:
+    repeat(auto-fill,minmax(340px,1fr));
+  gap:20px;
+}
+
+.empty{
+  padding:80px 20px;
+
+  border:1px dashed var(--line);
+  border-radius:20px;
+  background:rgba(253,252,247,.5);
+
+  text-align:center;
+}
+
+.empty p{
+  margin:0 0 16px;
+
+  color:var(--forest-deep);
+  font-family:var(--serif);
+  font-size:1.5rem;
+}
+
+.empty button{
+  padding:8px 16px;
+  border:1px solid var(--forest);
+  border-radius:999px;
+
+  color:var(--forest);
+  font-size:14px;
+
+  transition:.15s ease;
+}
+
+.empty button:hover{
+  background:var(--forest);
+  color:var(--paper);
+}
+
+/* ==========================================================
+   KORTTI
+   ========================================================== */
+
+.card{
+  display:flex;
+  flex-direction:column;
+
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:var(--paper);
+
+  box-shadow:var(--shadow-paper);
+
+  transition:.2s ease;
+  animation:fadeUp .4s ease both;
+}
+
+.card:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--shadow-lift);
+}
+
+.card-top{
+  display:flex;
+  align-items:stretch;
+}
+
+.card-year{
+  min-width:92px;
+  padding:16px 12px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  background:var(--forest-deep);
+  color:var(--paper);
+}
+
+.card-year .y1{
+  font-family:var(--serif);
+  font-size:1.15rem;
+  line-height:1;
+}
+
+.card-year .sep{
+  width:24px;
+  height:1px;
+  margin:6px 0;
+  background:rgba(255,255,255,.4);
+}
+
+.card-year .y2{
+  color:rgba(255,255,255,.7);
+  font:500 11px var(--mono);
+}
+
+.card-head{
+  flex:1;
+  padding:18px 20px;
+}
+
+.card-head .row1{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.card-head h3{
+  margin:0;
+
+  color:var(--ink);
+  font-size:1.25rem;
+  line-height:1.15;
+}
+
+.card-type{
+  margin-top:4px;
+
+  color:var(--copper);
+  font:500 11px var(--mono);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.card-phase{
+  margin-top:8px;
+
+  color:var(--forest-deep);
+  font-size:.9rem;
+  font-style:italic;
+}
+
+.card-body{
+  flex:1;
+
+  display:flex;
+  flex-direction:column;
+
+  padding:0 20px 20px;
+}
+
+.card-problem{
+  display:-webkit-box;
+  overflow:hidden;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:3;
+
+  color:rgba(28,38,36,.85);
+  font-size:.9rem;
+  line-height:1.55;
+}
+
+.card-domains{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+  margin-top:14px;
+}
+
+.card-domains span{
+  padding:2px 8px;
+
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:rgba(244,240,230,.6);
+
+  color:var(--muted);
+  font-size:11px;
+}
+
+.card-foot{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+
+  margin-top:auto;
+  padding-top:18px;
+}
+
+.dots{
+  display:flex;
+  gap:3px;
+}
+
+.dots i{
+  display:block;
+
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--line);
+}
+
+.dots i.on{
+  background:var(--copper);
+}
+
+.pip{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+
+  color:var(--muted);
+  font:500 11px var(--mono);
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.pip i{
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--muted);
+}
+
+.pip.vahva i{
+  background:var(--forest);
+}
+
+.pip.kohtalainen i{
+  background:var(--ochre);
+}
+
+.open{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+
+  color:var(--forest-deep);
+  font-size:.9rem;
+  font-weight:600;
+
+  transition:color .15s ease;
+}
+
+.open:hover{
+  color:var(--copper);
+}
+
+.open span{
+  transition:transform .15s ease;
+}
+
+.open:hover span{
+  transform:translateX(2px);
+}
+
+/* ==========================================================
+   KORTIN RAKENNEKAAVIO
+   ========================================================== */
+
+.card-org{
+  overflow:hidden;
+
+  margin-top:16px;
+  padding:13px 10px 11px;
+
+  border:1px solid var(--line);
+  border-radius:13px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(244,240,230,.52),
+      rgba(253,252,247,.88)
+    );
+}
+
+.org-caption{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+
+  margin-bottom:9px;
+
+  color:var(--muted);
+  font:500 9px var(--mono);
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.org-caption strong{
+  color:var(--forest-deep);
+  font-weight:600;
+}
+
+.org-tier{
+  position:relative;
+  z-index:1;
+
+  display:grid;
+  grid-template-columns:
+    repeat(var(--cols,1),minmax(0,1fr));
+  gap:6px;
+}
+
+.org-node{
+  min-width:0;
+  padding:7px 7px 6px;
+
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:var(--paper);
+
+  text-align:left;
+  box-shadow:0 1px 0 rgba(20,30,27,.03);
+
+  transition:
+    border-color .15s ease,
+    transform .15s ease,
+    box-shadow .15s ease;
+}
+
+.org-node:hover{
+  transform:translateY(-1px);
+  border-color:var(--copper);
+  box-shadow:0 7px 14px -12px rgba(20,30,27,.55);
+}
+
+.org-node .org-year{
+  display:block;
+
+  color:var(--copper);
+  font:500 8px var(--mono);
+  letter-spacing:.05em;
+}
+
+.org-node .org-title{
+  display:-webkit-box;
+  overflow:hidden;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+
+  margin-top:2px;
+
+  color:var(--ink);
+  font-size:.71rem;
+  font-weight:650;
+  line-height:1.2;
+}
+
+.org-node.rakenne{
+  border-top:3px solid var(--forest);
+}
+
+.org-node.tapahtuma{
+  border-top:3px solid var(--copper);
+}
+
+.org-node.kaari{
+  border-top:3px solid var(--violet);
+}
+
+.org-node.tulkinta{
+  border-top:3px solid #98854e;
+}
+
+.org-more{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  min-height:43px;
+
+  border:1px dashed var(--line);
+  border-radius:8px;
+  background:rgba(253,252,247,.55);
+
+  color:var(--muted);
+  font:500 9px var(--mono);
+}
+
+.org-stem{
+  position:relative;
+  height:17px;
+}
+
+.org-stem::before{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:50%;
+
+  width:1px;
+  background:var(--line);
+}
+
+.org-stem.down::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:calc(50% - 3px);
+
+  width:6px;
+  height:6px;
+
+  border-right:1px solid var(--copper);
+  border-bottom:1px solid var(--copper);
+
+  transform:rotate(45deg);
+}
+
+.org-current{
+  display:block;
+
+  width:84%;
+  margin:0 auto;
+  padding:8px 10px;
+
+  border:1px solid var(--forest);
+  border-radius:10px;
+  background:var(--forest-deep);
+  color:var(--paper);
+
+  text-align:center;
+
+  transition:
+    transform .15s ease,
+    background .15s ease;
+}
+
+.org-current:hover{
+  transform:translateY(-1px);
+  background:var(--forest);
+}
+
+.org-current .org-year{
+  display:block;
+
+  color:var(--ochre);
+  font:500 8px var(--mono);
+  letter-spacing:.08em;
+}
+
+.org-current .org-title{
+  display:block;
+  margin-top:2px;
+
+  font-family:var(--serif);
+  font-size:.82rem;
+  font-weight:600;
+  line-height:1.18;
+}
+
+.org-empty{
+  padding:5px 0;
+  color:var(--muted);
+  font-size:.68rem;
+  text-align:center;
+}
+
+/* ==========================================================
+   DIALOGI
+   ========================================================== */
+
+.overlay{
+  position:fixed;
+  inset:0;
+  z-index:50;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:24px;
+
+  background:rgba(31,70,66,.5);
+  backdrop-filter:blur(6px);
+
+  animation:overlayIn .2s ease;
+}
+
+.dialog{
+  position:relative;
+
+  width:100%;
+  max-width:920px;
+  max-height:95vh;
+
+  overflow-y:auto;
+
+  border:1px solid var(--line);
+  border-radius:24px;
+  background:var(--paper);
+
+  box-shadow:var(--shadow-lift);
+  animation:dialogIn .3s ease;
+}
+
+.dialog-head{
+  position:sticky;
+  top:0;
+  z-index:2;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:14px 24px;
+
+  border-bottom:1px solid var(--line);
+  background:rgba(253,252,247,.95);
+  backdrop-filter:blur(8px);
+}
+
+.dialog-head .cat{
+  color:var(--copper);
+  font:500 11px var(--mono);
+  letter-spacing:.2em;
+  text-transform:uppercase;
+}
+
+.dialog-head-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.share-link{
+  display:flex;
+  align-items:center;
+  gap:6px;
+
+  padding:8px 14px;
+
+  border:1px solid var(--line);
+  border-radius:20px;
+
+  font:500 12px var(--mono);
+  letter-spacing:.02em;
+  white-space:nowrap;
+
+  transition:.15s ease;
+}
+
+.share-link:hover{
+  border-color:var(--copper);
+  color:var(--copper);
+}
+
+.close{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  width:36px;
+  height:36px;
+
+  border:1px solid var(--line);
+  border-radius:50%;
+
+  font-size:22px;
+  line-height:1;
+
+  transition:.15s ease;
+}
+
+.close:hover{
+  border-color:var(--copper);
+  color:var(--copper);
+}
+
+.dialog-body{
+  padding:32px max(24px,4vw) 40px;
+}
+
+.dialog-body .phase{
+  color:var(--forest-deep);
+  font-size:.9rem;
+  font-style:italic;
+}
+
+.dialog-body h2{
+  margin:8px 0 0;
+
+  font-size:clamp(1.75rem,4vw,3rem);
+  line-height:1.05;
+}
+
+.dialog-domains{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-top:20px;
+}
+
+.dialog-domains span{
+  padding:4px 10px;
+
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:rgba(244,240,230,.7);
+
+  color:rgba(28,38,36,.8);
+  font-size:12px;
+}
+
+.chain{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-top:32px;
+}
+
+.chain-2{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+  margin-top:14px;
+}
+
+.block{
+  padding:16px;
+
+  border-left:3px solid var(--forest);
+  border-radius:12px;
+  background:rgba(244,240,230,.5);
+}
+
+.block.copper{
+  border-left-color:var(--copper);
+}
+
+.block .lbl{
+  margin-bottom:8px;
+
+  color:var(--forest);
+  font:500 10px var(--mono);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.block.copper .lbl{
+  color:var(--copper);
+}
+
+.block p{
+  margin:0;
+
+  color:rgba(28,38,36,.9);
+  font-size:.9rem;
+  line-height:1.6;
+}
+
+.block ul{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+.block ul li{
+  display:flex;
+  gap:10px;
+
+  font-size:.9rem;
+  line-height:1.55;
+}
+
+.block ul li i{
+  flex-shrink:0;
+
+  margin-top:3px;
+
+  color:var(--copper);
+  font-family:var(--mono);
+  font-size:11px;
+  font-style:normal;
+}
+
+.dialog-foot{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:16px;
+
+  margin-top:32px;
+  padding-top:20px;
+
+  border-top:1px solid var(--line);
+
+  color:var(--muted);
+  font-size:.85rem;
+}
+
+.dialog-foot .grp{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.dialog-foot .grp .lbl{
+  font:500 10px var(--mono);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.dialog-foot code{
+  margin-left:auto;
+  color:rgba(108,118,111,.7);
+  font:500 11px var(--mono);
+}
+
+/* ==========================================================
+   RELAATIOT DIALOGISSA
+   ========================================================== */
+
+.dialog-tabs{
+  display:flex;
+  gap:6px;
+  margin:20px 0 24px;
+
+  border-bottom:1px solid var(--line);
+}
+
+.dialog-tab{
+  display:flex;
+  align-items:center;
+  gap:6px;
+
+  padding:10px 4px 12px;
+  margin-bottom:-1px;
+
+  border-bottom:2px solid transparent;
+
+  color:var(--muted);
+  font:600 12px var(--mono);
+  letter-spacing:.1em;
+  text-transform:uppercase;
+
+  transition:.15s ease;
+}
+
+.dialog-tab + .dialog-tab{
+  margin-left:14px;
+}
+
+.dialog-tab i{
+  padding:1px 6px;
+
+  border-radius:999px;
+  background:var(--birch);
+
+  color:var(--forest-deep);
+  font-style:normal;
+  font-size:10px;
+}
+
+.dialog-tab:hover{
+  color:var(--copper);
+}
+
+.dialog-tab.active{
+  border-bottom-color:var(--copper);
+  color:var(--forest-deep);
+}
+
+.tab-panel{
+  display:none;
+}
+
+.tab-panel.active{
+  display:block;
+
+  animation:fadeIn .2s ease;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(4px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.articles-panel .relation-head{
+  margin-bottom:16px;
+}
+
+.article-item{
+  margin-bottom:12px;
+  padding:16px 18px;
+
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:rgba(244,240,230,.35);
+}
+
+.article-item + .article-item{
+  margin-top:12px;
+}
+
+.article-item summary{
+  cursor:pointer;
+  list-style:none;
+}
+
+.article-item summary::-webkit-details-marker{
+  display:none;
+}
+
+.article-item summary::before{
+  content:"▸";
+  display:inline-block;
+  margin-right:8px;
+
+  color:var(--copper);
+  transition:transform .15s ease;
+}
+
+.article-item[open] summary::before{
+  transform:rotate(90deg);
+}
+
+.article-item .a-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.article-item .a-title{
+  color:var(--forest-deep);
+  font-family:var(--serif);
+  font-size:1.05rem;
+  font-weight:650;
+}
+
+.article-item .a-dek{
+  display:block;
+  margin:6px 0 0 18px;
+
+  color:var(--muted);
+  font-size:.86rem;
+  line-height:1.4;
+}
+
+.article-item .a-body{
+  margin:14px 0 0 18px;
+
+  color:var(--ink);
+  font-family:var(--serif);
+  font-size:.98rem;
+  line-height:1.65;
+}
+
+.article-item .a-body p{
+  margin:0 0 12px;
+}
+
+.article-item .a-body p:last-child{
+  margin-bottom:0;
+}
+
+.article-item .a-note{
+  margin-top:14px;
+  padding-top:12px;
+
+  border-top:1px dashed var(--line);
+
+  color:var(--muted) !important;
+  font-family:var(--mono) !important;
+  font-size:.74rem !important;
+  font-style:italic;
+}
+
+.relation-panel{
+  margin-top:0;
+  padding-top:0;
+}
+
+.relation-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:14px;
+}
+
+.relation-head h3{
+  margin:0;
+  color:var(--forest-deep);
+  font-size:1.25rem;
+}
+
+.relation-head span{
+  color:var(--muted);
+  font:500 11px var(--mono);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.relation-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.relation-col{
+  padding:14px;
+
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:rgba(244,240,230,.35);
+}
+
+.relation-col-title{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:10px;
+
+  color:var(--forest-deep);
+  font:600 11px var(--mono);
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.relation-list{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.relation-item{
+  width:100%;
+  padding:10px 11px;
+
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:var(--paper);
+
+  text-align:left;
+
+  transition:.15s ease;
+}
+
+.relation-item:hover{
+  transform:translateY(-1px);
+  border-color:var(--copper);
+}
+
+.relation-item .r-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.relation-item .r-title{
+  color:var(--ink);
+  font-weight:650;
+  line-height:1.25;
+}
+
+.relation-item .r-year{
+  white-space:nowrap;
+  color:var(--muted);
+  font:500 10px var(--mono);
+}
+
+.relation-item .r-meta{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:5px;
+  margin-top:5px;
+}
+
+.rel-badge{
+  padding:2px 7px;
+
+  border-radius:999px;
+  background:var(--birch);
+
+  color:var(--forest-deep);
+  font:500 9px var(--mono);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.rel-badge.tapahtuma{
+  background:#f5e3d4;
+  color:#8b4d25;
+}
+
+.rel-badge.rakenne{
+  background:#ddebe7;
+  color:#28584f;
+}
+
+.rel-badge.kaari{
+  background:#e9e1ef;
+  color:#65477a;
+}
+
+.rel-badge.tulkinta{
+  background:#eee9dc;
+  color:#756632;
+}
+
+.relation-item .r-rationale{
+  display:block;
+  margin-top:6px;
+
+  color:var(--muted);
+  font-size:.79rem;
+  line-height:1.4;
+}
+
+.relation-empty{
+  padding:14px 4px;
+
+  color:var(--muted);
+  font-size:.86rem;
+}
+
+.rel-count{
+  color:var(--muted);
+  font:500 11px var(--mono);
+}
+
+.article-count{
+  color:var(--copper);
+  font:500 11px var(--mono);
+}
+
+/* ==========================================================
+   MUUT
+   ========================================================== */
+
+.load{
+  padding:120px 20px;
+
+  color:var(--muted);
+  font-family:var(--serif);
+  font-size:1.2rem;
+  text-align:center;
+}
+
+footer.foot{
+  max-width:1500px;
+  margin:auto;
+  padding:8px max(24px,6vw) 60px;
+
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+footer.foot .rule{
+  padding-top:24px;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      var(--line) 15%,
+      var(--line) 85%,
+      transparent
+    )
+    top / 100% 1px no-repeat;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(6px);
+  }
+
+  to{
+    opacity:1;
+    transform:none;
+  }
+}
+
+@keyframes overlayIn{
+  from{
+    opacity:0;
+  }
+
+  to{
+    opacity:1;
+  }
+}
+
+@keyframes dialogIn{
+  from{
+    opacity:0;
+    transform:translateY(20px) scale(.98);
+  }
+
+  to{
+    opacity:1;
+    transform:none;
+  }
+}
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media(max-width:900px){
+  .control-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .field.range{
+    grid-column:1/-1;
+  }
+
+  .stats{
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+  }
+
+  .matrix-header{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .matrix-stat{
+    text-align:left;
+  }
+}
+
+@media(max-width:820px){
+  .chain,
+  .chain-2,
+  .relation-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:768px){
+  .overlay{
+    align-items:flex-end;
+    padding:0;
+  }
+
+  .dialog{
+    max-height:92vh;
+    border-radius:24px 24px 0 0;
+  }
+}
+
+@media(max-width:620px){
+  .matrix-inner{
+    padding-left:10px;
+    padding-right:10px;
+  }
+
+  .matrix-layout{
+    grid-template-columns:76px minmax(0,1fr);
+  }
+
+  .matrix-label{
+    padding:3px 5px;
+    font-size:.5rem;
+  }
+
+  .matrix-tools{
+    align-items:flex-start;
+  }
+
+  .matrix-reset{
+    margin-left:0;
+  }
+
+  .matrix-selection{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .matrix-grid{
+    min-height:245px;
+  }
+}
+
+@media(max-width:560px){
+  .control-grid{
+    grid-template-columns:1fr;
+  }
+
+  .card-top{
+    flex-direction:column;
+  }
+
+  .card-year{
+    flex-direction:row;
+    gap:10px;
+
+    min-width:0;
+    padding:10px 20px;
+  }
+
+  .card-year .sep{
+    width:1px;
+    height:14px;
+    margin:0;
+  }
+}
+
+@media(max-width:420px){
+  .org-node .org-title{
+    font-size:.66rem;
+  }
+
+  .card-org{
+    padding-right:7px;
+    padding-left:7px;
+  }
+
+  .org-tier{
+    gap:4px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{
+    scroll-behavior:auto;
+  }
+
+  .matrix-node,
+  .matrix-heat,
+  .card,
+  .matrix-chip{
+    animation:none;
+    transition:none;
+  }
+}
+
+/* ===== ENHANCEMENT LAYER ===== */
+/* ==========================================================
+   VISUAL ENHANCEMENT LAYER
+   Cinematic, editorial upgrade. JS/DOM untouched.
+   ========================================================== */
+
+:root{
+  --paper:#f6f1e6;
+  --paper-2:#ece5d3;
+  --birch:#e9e1cc;
+
+  --ink:#0e1a19;
+  --muted:#5a6b64;
+  --line:#d6cdb8;
+
+  --forest:#2f7a70;
+  --forest-deep:#0f3d38;
+  --forest-shadow:#061c1a;
+
+  --copper:#c66a2e;
+  --copper-glow:#f0a869;
+  --ochre:#e8b34a;
+  --violet:#8f6fb0;
+
+  --shadow-paper:
+    0 1px 0 rgba(6,28,26,.06),
+    0 24px 60px -28px rgba(6,28,26,.35);
+
+  --shadow-lift:
+    0 2px 0 rgba(6,28,26,.08),
+    0 40px 80px -30px rgba(6,28,26,.5);
+}
+
+html,body{
+  background:
+    radial-gradient(1400px 700px at 92% -8%, #f4e4c3 0%, transparent 55%),
+    radial-gradient(1000px 600px at -10% 12%, #cfe1dc 0%, transparent 55%),
+    radial-gradient(800px 500px at 50% 120%, #efe0c5 0%, transparent 55%),
+    var(--paper-2) !important;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background-image:
+    radial-gradient(rgba(14,26,25,.06) 1px, transparent 1px),
+    radial-gradient(rgba(14,26,25,.04) 1px, transparent 1px);
+  background-size:3px 3px, 7px 7px;
+  background-position:0 0, 1px 2px;
+  mix-blend-mode:multiply;
+  opacity:.55;
+}
+body > *{ position:relative; z-index:1; }
+
+/* ---------- HERO -- cinematic aurora ---------- */
+
+header.hero::before{
+  background:
+    radial-gradient(1000px 700px at 82% 18%, #1d5f57 0%, transparent 62%),
+    radial-gradient(700px 500px at 12% 84%, #2a4d78 0%, transparent 60%),
+    radial-gradient(600px 400px at 60% 90%, rgba(198,106,46,.35) 0%, transparent 60%),
+    linear-gradient(135deg, #05201e, #0a2f2b 55%, #061c1a) !important;
+}
+
+header.hero::after{
+  opacity:.35 !important;
+  background-image:
+    radial-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+    radial-gradient(rgba(0,0,0,.18) 1px, transparent 1px) !important;
+}
+
+.hero-inner{
+  padding:96px max(24px,6vw) 108px !important;
+}
+
+.hero-inner::before{
+  content:"";
+  position:absolute;
+  right:-160px;
+  top:-160px;
+  width:520px;
+  height:520px;
+  border-radius:50%;
+  background:radial-gradient(circle at 30% 30%, rgba(240,168,105,.55), transparent 60%);
+  filter:blur(30px);
+  pointer-events:none;
+  animation:auroraFloat 14s ease-in-out infinite alternate;
+}
+.hero-inner::after{
+  content:"";
+  position:absolute;
+  left:-140px;
+  bottom:-140px;
+  width:460px;
+  height:460px;
+  border-radius:50%;
+  background:radial-gradient(circle at 60% 60%, rgba(47,122,112,.6), transparent 62%);
+  filter:blur(40px);
+  pointer-events:none;
+  animation:auroraFloat 18s ease-in-out infinite alternate-reverse;
+}
+@keyframes auroraFloat{
+  0%{ transform:translate(0,0) scale(1); }
+  100%{ transform:translate(-40px,30px) scale(1.15); }
+}
+
+.eyebrow{
+  gap:14px !important;
+  font-size:12px !important;
+  letter-spacing:.32em !important;
+  color:rgba(240,168,105,.9) !important;
+}
+.eyebrow .rule{
+  width:56px !important;
+  height:2px !important;
+  background:linear-gradient(90deg, var(--copper-glow), transparent) !important;
+}
+
+.hero-inner h1{
+  font-weight:500 !important;
+  font-size:clamp(2.8rem, 7vw, 6.4rem) !important;
+  line-height:.94 !important;
+  letter-spacing:-.03em !important;
+  text-shadow:0 4px 40px rgba(0,0,0,.35);
+}
+.hero-inner h1 em{
+  color:var(--ochre) !important;
+  background:linear-gradient(180deg, #f4c777 0%, #c88a2e 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  font-style:italic !important;
+}
+.hero-inner h1 span{
+  color:rgba(246,241,230,.72) !important;
+  font-weight:400 !important;
+}
+
+.lede{
+  font-size:1.15rem !important;
+  line-height:1.65 !important;
+  color:rgba(246,241,230,.85) !important;
+  max-width:720px !important;
+}
+
+.chips span{
+  padding:6px 14px !important;
+  border:1px solid rgba(240,168,105,.35) !important;
+  background:rgba(255,255,255,.04);
+  backdrop-filter:blur(8px);
+  color:rgba(246,241,230,.92) !important;
+  transition:.3s ease;
+}
+.chips span:hover{
+  border-color:var(--copper-glow) !important;
+  background:rgba(240,168,105,.14);
+  transform:translateY(-1px);
+}
+
+.stats{
+  gap:32px !important;
+  margin-top:56px !important;
+  padding-top:32px;
+  border-top:1px solid rgba(246,241,230,.15);
+}
+.stats .n{
+  font-size:clamp(2.2rem, 4vw, 3.2rem) !important;
+  background:linear-gradient(180deg, #f4c777, #c66a2e);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  font-weight:600 !important;
+}
+.stats .l{
+  letter-spacing:.22em !important;
+  color:rgba(246,241,230,.55) !important;
+}
+
+/* ---------- DECADES ---------- */
+
+.decades{
+  background:
+    linear-gradient(180deg, rgba(246,241,230,.9), rgba(246,241,230,.75)) !important;
+  backdrop-filter:blur(14px) saturate(1.1) !important;
+  border-bottom:1px solid var(--line) !important;
+  box-shadow:0 20px 40px -30px rgba(6,28,26,.25);
+}
+
+.decades-head h2{
+  font-size:1.25rem !important;
+  letter-spacing:-.01em;
+}
+
+.bars{
+  height:120px !important;
+  gap:3px !important;
+  padding:8px 0;
+}
+.bars .bar{
+  background:linear-gradient(180deg, var(--forest), var(--forest-deep)) !important;
+  border-radius:6px 6px 2px 2px !important;
+  box-shadow:inset 0 -6px 12px rgba(0,0,0,.15);
+}
+.bars button:hover .bar{
+  background:linear-gradient(180deg, var(--copper-glow), var(--copper)) !important;
+  transform:translateY(-4px) scaleY(1.03) !important;
+  box-shadow:0 8px 20px -8px rgba(198,106,46,.6);
+}
+
+.periods button{
+  padding:8px 16px !important;
+  border-radius:999px !important;
+  background:rgba(253,252,247,.7) !important;
+  backdrop-filter:blur(6px);
+  transition:.25s cubic-bezier(.22,.61,.36,1) !important;
+}
+.periods button:hover{
+  transform:translateY(-1px);
+  border-color:var(--forest) !important;
+  box-shadow:0 6px 16px -8px rgba(15,61,56,.35);
+}
+.periods button.active{
+  background:linear-gradient(135deg, var(--copper), var(--copper-glow)) !important;
+  border-color:transparent !important;
+  color:#fff !important;
+  box-shadow:0 8px 20px -8px rgba(198,106,46,.55);
+}
+
+/* ---------- MATRIX ---------- */
+
+.matrix-section{
+  background:
+    radial-gradient(900px 400px at 5% 0%, rgba(47,122,112,.12), transparent 65%),
+    radial-gradient(700px 300px at 95% 100%, rgba(198,106,46,.08), transparent 65%),
+    rgba(246,241,230,.7) !important;
+}
+
+.matrix-header h2{
+  font-size:clamp(1.8rem, 3.4vw, 2.8rem) !important;
+  letter-spacing:-.02em;
+  background:linear-gradient(135deg, var(--forest-deep), var(--forest));
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.matrix-stat strong{
+  background:linear-gradient(135deg, var(--copper), var(--ochre));
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  font-size:1.9rem !important;
+}
+
+.matrix-layout{
+  border-radius:20px !important;
+  border:1px solid rgba(214,205,184,.7) !important;
+  background:linear-gradient(180deg, #fdfcf7, #f6f1e6) !important;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.7) inset,
+    0 30px 60px -30px rgba(6,28,26,.3),
+    0 8px 24px -12px rgba(6,28,26,.15) !important;
+  overflow:hidden;
+}
+
+.matrix-node{
+  background:radial-gradient(circle at 30% 30%, #4a9088, var(--forest-deep) 80%) !important;
+  border-radius:3px !important;
+  box-shadow:
+    0 0 0 1px rgba(253,252,247,.7),
+    0 2px 6px rgba(6,28,26,.25),
+    0 0 12px rgba(47,122,112,.35) !important;
+}
+.matrix-node:hover{
+  background:radial-gradient(circle at 30% 30%, var(--copper-glow), var(--copper) 80%) !important;
+  box-shadow:
+    0 0 0 2px var(--paper),
+    0 0 0 4px rgba(198,106,46,.55),
+    0 6px 18px rgba(198,106,46,.4),
+    0 0 24px rgba(240,168,105,.6) !important;
+}
+
+.matrix-node-label{
+  position:relative;
+  z-index:8;
+  align-self:center;
+  justify-self:start;
+  margin-left:72%;
+  max-width:clamp(110px,12vw,190px);
+  overflow:hidden;
+  padding:1px 2px;
+  border-radius:2px;
+  background:rgba(253,252,247,.46);
+  color:var(--forest-deep);
+  font:600 clamp(7px,.68vw,10px)/1.05 var(--sans);
+  letter-spacing:-.015em;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  pointer-events:none;
+  text-shadow:
+    0 0 2px var(--paper),
+    0 0 5px var(--paper),
+    0 0 8px var(--paper);
+  box-shadow:none;
+}
+
+.matrix-node-label.selected{
+  z-index:26;
+  background:rgba(253,252,247,.72);
+  color:var(--copper);
+  font-weight:700;
+  text-shadow:
+    0 0 2px var(--paper),
+    0 0 6px var(--paper),
+    0 0 10px var(--paper);
+  box-shadow:none;
+}
+
+.matrix-node-label.depth-1{
+  z-index:18;
+  opacity:1;
+}
+
+.matrix-node-label.depth-2{
+  z-index:16;
+  opacity:.88;
+  font-weight:600;
+}
+
+.matrix-node-label.depth-3{
+  z-index:14;
+  opacity:.7;
+  font-weight:500;
+}
+
+.matrix-node-label.predecessor{
+  color:var(--forest-deep);
+  border-left:2px solid var(--forest-deep);
+}
+
+.matrix-node-label.successor{
+  color:#8b4f25;
+  border-left:2px solid var(--copper);
+}
+
+.matrix-node-label.mixed{
+  color:var(--violet);
+  border-left:2px solid var(--violet);
+}
+
+.matrix-chip{
+  padding:6px 12px !important;
+  transition:.25s cubic-bezier(.22,.61,.36,1) !important;
+}
+.matrix-chip.active{
+  background:linear-gradient(135deg, var(--forest-deep), var(--forest)) !important;
+  color:var(--paper) !important;
+  box-shadow:0 6px 16px -6px rgba(15,61,56,.5);
+}
+
+.matrix-toolset{
+  background:rgba(253,252,247,.85) !important;
+  backdrop-filter:blur(8px);
+  box-shadow:0 4px 12px -8px rgba(6,28,26,.2);
+}
+
+.matrix-selection.visible{
+  background:linear-gradient(135deg, rgba(244,240,230,.95), rgba(233,225,204,.75)) !important;
+  border-left-width:4px !important;
+  box-shadow:0 8px 24px -12px rgba(6,28,26,.2);
+  padding:14px 18px !important;
+}
+
+.matrix-analysis{
+  background:linear-gradient(135deg, var(--forest-deep), var(--forest)) !important;
+  color:var(--paper) !important;
+  border:0 !important;
+  box-shadow:0 8px 20px -8px rgba(15,61,56,.5);
+  transition:.25s ease;
+}
+.matrix-analysis:hover{
+  transform:translateY(-1px);
+  box-shadow:0 12px 24px -8px rgba(15,61,56,.6);
+}
+
+/* ---------- FOOTER ---------- */
+footer.foot{
+  background:linear-gradient(180deg, transparent, rgba(6,28,26,.04));
+  padding:32px max(24px,6vw) !important;
+}
+footer.foot .rule{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:1.05rem;
+  color:var(--forest-deep);
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+  line-height:1.6;
+}
+
+/* ---------- SCROLLBAR ---------- */
+::-webkit-scrollbar{ width:12px; height:12px; }
+::-webkit-scrollbar-track{ background:var(--paper-2); }
+::-webkit-scrollbar-thumb{
+  background:linear-gradient(180deg, var(--forest), var(--forest-deep));
+  border-radius:999px;
+  border:3px solid var(--paper-2);
+}
+::-webkit-scrollbar-thumb:hover{
+  background:linear-gradient(180deg, var(--copper), var(--copper-glow));
+}
+
+/* ---------- SELECTION ---------- */
+::selection{
+  background:var(--copper-glow);
+  color:var(--forest-shadow);
+}
+
+</style>
+<link rel="stylesheet" href="/atlas-enhance.css">
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">
+      <span class="rule"></span>
+      <span id="eyebrow">Atlas · työversio</span>
+    </div>
+
+    <h1>
+      Suomen yhteiskunnalliset
+      <em>murrosvaiheet</em>
+      <span>1800–2035</span>
+    </h1>
+
+    <p class="lede" id="lede">
+      Ladataan aineistoa…
+    </p>
+
+    <div class="chips">
+      <span>kriisit</span>
+      <span>uudistukset</span>
+      <span>instituutiot</span>
+      <span>teknologia</span>
+      <span>väestö</span>
+      <span>talous</span>
+      <span>vapaudet</span>
+    </div>
+
+    <div class="stats">
+      <div>
+        <div class="n" id="s1">–</div>
+        <div class="l">murrosta</div>
+      </div>
+
+      <div>
+        <div class="n" id="yearSpan">–</div>
+        <div class="l">vuotta</div>
+      </div>
+
+      <div>
+        <div class="n" id="s2">–</div>
+        <div class="l">murrostyyppiä</div>
+      </div>
+
+      <div>
+        <div class="n" id="s3">–</div>
+        <div class="l">teemaa</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="decades">
+  <div class="decades-inner">
+    <div class="decades-head">
+      <h2>Aikajana tiheyden mukaan</h2>
+      <span>vuosikymmen</span>
+    </div>
+
+    <div class="bars" id="bars"></div>
+
+    <div class="axis" id="decadeAxis"></div>
+
+    <div class="periods" id="periods"></div>
+  </div>
+</section>
+
+<section class="matrix-section">
+  <div class="matrix-inner">
+    <div class="matrix-header">
+      <div>
+        <h2>Murrosten rakennematriisi</h2>
+
+        <p>
+          Jokainen neliö on yksi murros. Kortti sijoitetaan
+          mahdollisimman lähelle oikeaa vuotta ja sopivinta
+          rakenteellista teemaa. Ruudukon koko määräytyy aineiston
+          perusteella niin, että tarpeetonta tyhjää tilaa syntyy
+          mahdollisimman vähän.
+        </p>
+      </div>
+
+      <div class="matrix-stats">
+        <div class="matrix-stat">
+          <strong id="matrixVisible">–</strong>
+          näkyvää
+        </div>
+
+        <div class="matrix-stat">
+          <strong id="matrixOccupancy">–</strong>
+          täyttöaste
+        </div>
+      </div>
+    </div>
+
+    <div class="matrix-tools">
+      <div class="matrix-toolset">
+        <span>Suunta</span>
+
+        <button
+          type="button"
+          class="matrix-chip active"
+          data-matrix-direction="both"
+        >
+          Molemmat
+        </button>
+
+        <button
+          type="button"
+          class="matrix-chip"
+          data-matrix-direction="in"
+        >
+          Edeltäjät
+        </button>
+
+        <button
+          type="button"
+          class="matrix-chip"
+          data-matrix-direction="out"
+        >
+          Seuraajat
+        </button>
+      </div>
+
+      <div class="matrix-toolset">
+        <span>Syvyys</span>
+
+        <button
+          type="button"
+          class="matrix-chip"
+          data-matrix-depth="1"
+        >
+          1
+        </button>
+
+        <button
+          type="button"
+          class="matrix-chip active"
+          data-matrix-depth="2"
+        >
+          2
+        </button>
+
+        <button
+          type="button"
+          class="matrix-chip"
+          data-matrix-depth="3"
+        >
+          3
+        </button>
+      </div>
+
+      <button
+        type="button"
+        class="matrix-reset"
+        id="matrixReset"
+        disabled
+      >
+        Palauta kokonaiskuva
+      </button>
+    </div>
+
+    <div
+      class="matrix-selection"
+      id="matrixSelection"
+      aria-live="polite"
+    >
+      <div>
+        <div
+          class="matrix-selection-title"
+          id="matrixSelectionTitle"
+        ></div>
+
+        <div
+          class="matrix-selection-meta"
+          id="matrixSelectionMeta"
+        ></div>
+      </div>
+
+      <button
+        type="button"
+        class="matrix-analysis"
+        id="matrixAnalysis"
+      >
+        Avaa analyysi →
+      </button>
+    </div>
+
+    <div class="matrix-layout">
+      <div
+        class="matrix-labels"
+        id="matrixLabels"
+      ></div>
+
+      <div class="matrix-main">
+        <div
+          class="matrix-years"
+          id="matrixYears"
+        ></div>
+
+        <div
+          class="matrix-grid"
+          id="matrixGrid"
+          role="grid"
+          aria-label="Yhteiskunnallisten murrosten rakennematriisi"
+        ></div>
+      </div>
+    </div>
+
+    <div class="matrix-legend">
+      <span>
+        <i></i>
+        murros
+      </span>
+
+      <span>
+        <i class="before"></i>
+        edeltävä vaikutus
+      </span>
+
+      <span>
+        <i class="after"></i>
+        seuraava vaikutus
+      </span>
+
+      <span>
+        <i class="selected"></i>
+        valittu murros
+      </span>
+
+      <span>
+        Klikkaa samaa neliötä uudelleen avataksesi analyysin.
+      </span>
+    </div>
+  </div>
+
+</section>
+
+<section class="controls">
+  <div class="controls-inner">
+    <div class="control-grid">
+      <div class="field">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          aria-hidden="true"
+        >
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="m20 20-3-3"></path>
+        </svg>
+
+        <input
+          id="q"
+          type="search"
+          placeholder="Hae nimellä, mekanismilla, seurauksella…"
+        >
+      </div>
+
+      <div class="field">
+        <select id="typeF" aria-label="Suodata murrostyypin tai tyyppiryhmän mukaan">
+          <option value="">Kaikki murrostyypit</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <select id="domainF">
+          <option value="">Kaikki teemat</option>
+        </select>
+      </div>
+
+      <div class="field range">
+        <span class="lbl">Merkittävyys ≥</span>
+
+        <input
+          id="imp"
+          type="range"
+          min="1"
+          max="5"
+          value="1"
+        >
+
+        <span class="val" id="impVal">1</span>
+      </div>
+    </div>
+
+    <div class="meta-row" id="metaRow"></div>
+  </div>
+</section>
+
+<main>
+  <div id="list" class="load">
+    Ladataan aineistoa…
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="rule">
+    Yksittäinen murros ei yleensä aiheuta seurausta suoraan.
+    Ketjut kuvaavat todennäköisiä mekanismeja ja rinnakkaisvaikutuksia.
+    Tulkinnat on kytkettävä lähteisiin ja relaatiovarmuuteen.
+  </div>
+</footer>
+
+<script>
+"use strict";
+
+/* ==========================================================
+   ASETUKSET
+   ========================================================== */
+
+const DATA_FILE =
+  "suomen_murrosvaiheet_syvennetty.json";
+
+const ARTICLES_FILE =
+  "artikkelit.json";
+
+const CONF = [
+  "vahva",
+  "kohtalainen",
+  "kehittyvä"
+];
+
+/*
+ * Murrostyyppien sanamuodot ovat aineistossa tarkoituksella tarkkoja,
+ * mutta suodattimessa yli sadan lähes yksittäisen tyypin lista on raskas.
+ * Siksi tyypit ryhmitellään käyttöliittymässä laajoihin pääluokkiin.
+ * Tarkka tyyppi säilyy silti valittavana oman ryhmänsä alla.
+ */
+const TYPE_CLUSTERS = [
+  {
+    id:"crisis",
+    label:"Kriisit, sodat ja konfliktit",
+    keywords:["kriisi","sota","konflikti","sortokausi"]
+  },
+  {
+    id:"social",
+    label:"Sosiaali, terveys ja perhe",
+    keywords:[
+      "sosiaali","terveys","kansanterveys","perhe","lapsi",
+      "vammais","palvelujärjestelmä","sosiaalivakuutus"
+    ]
+  },
+  {
+    id:"governance",
+    label:"Hallinto, oikeus ja demokratia",
+    keywords:[
+      "hallinto","oikeud","valtiosääntö","valtiollinen","demokra",
+      "institutionaalinen","instituutio","sääntely","poliittinen",
+      "ulkopoliittinen","turvallisuuspoliittinen"
+    ]
+  },
+  {
+    id:"economy",
+    label:"Talous, raha ja omistus",
+    keywords:[
+      "taloud","talous","raha","rahoitus","omistus","omistaja",
+      "julkisen talouden","varallisuus","integraatiopolitiikan"
+    ]
+  },
+  {
+    id:"work",
+    label:"Työ, toimeentulo ja työmarkkinat",
+    keywords:["työ","toimeentulo","työllisyys","työmarkkina"]
+  },
+  {
+    id:"education",
+    label:"Koulutus, osaaminen ja tieto",
+    keywords:["koulutus","osaamis","tieto"]
+  },
+  {
+    id:"technology",
+    label:"Teknologia, digitalisaatio ja infrastruktuuri",
+    keywords:[
+      "teknolog","digitaal","infrastruktuur","viestintä","liikenne"
+    ]
+  },
+  {
+    id:"population",
+    label:"Väestö, alueet ja asuminen",
+    keywords:[
+      "väestö","alue","muuttoliike","asunto","yhdyskunta",
+      "rakennuskanta","maaseutu","maa- ja yhteiskuntarakenne"
+    ]
+  },
+  {
+    id:"environment",
+    label:"Energia, ympäristö ja luonnonvarat",
+    keywords:["energia","ympäristö","luonnonvara","metsä","maatalous"]
+  },
+  {
+    id:"other",
+    label:"Muut ja monialaiset murrokset",
+    keywords:[]
+  }
+];
+
+function typeCluster(type){
+  const normalized =
+    String(type || "")
+      .toLocaleLowerCase("fi");
+
+  return TYPE_CLUSTERS.find(cluster =>
+    cluster.id !== "other" &&
+    cluster.keywords.some(keyword =>
+      normalized.includes(keyword)
+    )
+  )?.id || "other";
+}
+
+
+/*
+ * Myös teemat (domains) ovat aineistossa tarkkoja ja osin päällekkäisiä.
+ * Käyttöliittymässä ne ryhmitellään pääteemoihin samalla periaatteella
+ * kuin murrostyypit. Yksittäinen teema säilyy valittavana ryhmän alla.
+ */
+const DOMAIN_CLUSTERS = [
+  {
+    id:"society",
+    label:"Yhteiskunta, politiikka ja oikeus",
+    keywords:[
+      "yhteiskunta","politiikka","demokratia","hallinto","valtio",
+      "oikeus","lainsäädäntö","instituutio","kansalaisuus","järjestöt",
+      "turvallisuus","puolustus","ulkopolitiikka"
+    ]
+  },
+  {
+    id:"welfare",
+    label:"Hyvinvointi, terveys ja perhe",
+    keywords:[
+      "hyvinvointi","terveys","sosiaali","hoiva","perhe","lapset",
+      "nuoret","vanhukset","vammaisuus","neuvola","kansanterveys",
+      "toimeentulo","sosiaaliturva","eläke"
+    ]
+  },
+  {
+    id:"economy",
+    label:"Talous, työ ja elinkeinot",
+    keywords:[
+      "talous","raha","rahoitus","verotus","velka","kauppa","työ",
+      "työllisyys","työmarkkinat","yrittäjyys","teollisuus","elinkeinot",
+      "tuotanto","omistus","varallisuus","kilpailukyky"
+    ]
+  },
+  {
+    id:"education",
+    label:"Koulutus, tutkimus ja kulttuuri",
+    keywords:[
+      "koulutus","koulu","oppivelvollisuus","osaaminen","tutkimus",
+      "tiede","tieto","yliopisto","korkeakoulu","kirjasto","kulttuuri",
+      "media","lukutaito"
+    ]
+  },
+  {
+    id:"technology",
+    label:"Teknologia, digitalisaatio ja infrastruktuuri",
+    keywords:[
+      "teknologia","digitalisaatio","tekoäly","data","internet",
+      "viestintä","tietoliikenne","infrastruktuuri","liikenne","rautatie",
+      "sähkö","energia","datakeskus","alusta"
+    ]
+  },
+  {
+    id:"population",
+    label:"Väestö, alueet ja asuminen",
+    keywords:[
+      "väestö","alue","muuttoliike","kaupungistuminen","maaseutu",
+      "asuminen","kaupunki","lähiö","maahanmuutto","siirtolaisuus",
+      "syntyvyys","ikääntyminen","segregaatio","huoltosuhde"
+    ]
+  },
+  {
+    id:"environment",
+    label:"Ympäristö, luonto ja luonnonvarat",
+    keywords:[
+      "ympäristö","luonto","ilmasto","metsä","maatalous","luonnonvarat",
+      "ruoka","huoltovarmuus","omavaraisuus","vesi","päästöt",
+      "biodiversiteetti"
+    ]
+  },
+  {
+    id:"other",
+    label:"Muut ja monialaiset teemat",
+    keywords:[]
+  }
+];
+
+function domainCluster(domain){
+  const normalized =
+    String(domain || "")
+      .toLocaleLowerCase("fi");
+
+  return DOMAIN_CLUSTERS.find(cluster =>
+    cluster.id !== "other" &&
+    cluster.keywords.some(keyword =>
+      normalized.includes(keyword)
+    )
+  )?.id || "other";
+}
+
+const REL_LABELS = {
+  enabled:"mahdollisti",
+  supported:"tuki",
+  accelerated:"kiihdytti",
+  created_capacity_for:"loi kapasiteettia",
+  created_pressure_for:"loi painetta",
+  created_conditions_for:"loi edellytyksiä",
+  created_context_for:"loi toimintaympäristöä",
+  created_reform_pressure:"loi uudistuspaineen",
+  contributed_to:"vaikutti",
+  triggered:"laukaisi",
+  caused:"aiheutti",
+  produced:"tuotti",
+  mobilized:"mobilisoi",
+  required:"edellytti",
+  supplied_capacity_for:"tuotti kapasiteettia",
+  provided_capacity_for:"tarjosi kapasiteettia",
+  evolved_into:"kehittyi muotoon",
+  expanded_into:"laajeni muotoon",
+  integrated_into:"yhdistyi",
+  implemented_as:"toteutui muodossa",
+  replaced_by:"korvautui",
+  complemented_by:"täydentyi",
+  complemented:"täydensi",
+  reorganized_by:"järjestyi uudelleen",
+  reoriented_by:"suuntautui uudelleen",
+  redirected_toward:"ohjasi kohti",
+  reversed_by:"kääntyi",
+  constrained_by:"rajoittui",
+  constrained:"rajoitti",
+  delayed:"viivästytti",
+  exposed_by:"paljastui",
+  exposed_effects_of:"paljasti vaikutuksia",
+  exposed_vulnerability_of:"paljasti haavoittuvuuden",
+  long_term_precursor:"pitkän aikavälin edeltäjä",
+  structural_precursor:"rakenteellinen edeltäjä",
+  foreshadowed:"ennakoi",
+  culminated_in:"huipentui",
+  reinforced:"vahvisti",
+  deepened:"syvensi",
+  broader_context_for:"laajempi tausta",
+  institutional_context_for:"institutionaalinen tausta",
+  same_process_as:"samaa kehityskulkua",
+  coincided_with:"osui yhteen",
+  required_accommodation_in:"vaati sopeutumista",
+  motivated_experiment:"motivoi kokeilua",
+  accelerated_support_for:"nopeutti tuen syntyä",
+  first_wave_of:"ensimmäinen aalto",
+  coexisted_with:"eli rinnakkain",
+  created:"loi",
+  created_counterreaction:"loi vastareaktion",
+  created_entitlement_pressure:"loi etuuspainetta",
+  created_lessons_for:"opetti",
+  created_long_term_obligation:"loi pitkäaikaisen velvoitteen",
+  created_model_for:"loi mallin",
+  created_policy_alternative_to:"loi vaihtoehdon",
+  created_policy_basis_for:"loi perustan",
+  created_scale_for:"loi mittakaavan",
+  created_spatial_structure_for:"loi alueellisen rakenteen",
+  created_structure_for:"loi rakenteen",
+  created_vulnerability_for:"loi haavoittuvuuden",
+  expanded:"laajensi",
+  expanded_role_through:"laajensi roolia",
+  expanded_use_of:"laajensi käyttöä",
+  exposed:"paljasti",
+  exposed_to:"altisti",
+  formalized:"vakiinnutti",
+  implemented_through:"toteutui kautta",
+  informed:"vaikutti tietopohjana",
+  integrated_with:"yhdistyi",
+  intensified:"voimisti",
+  may_produce:"voi tuottaa",
+  mitigated:"lievensi",
+  reformed_through:"uudistui kautta",
+  strengthened:"vahvisti",
+  supplied:"tuotti",
+  transitioned_toward:"siirtyi kohti",
+  weakened:"heikensi"
+};
+
+const MATRIX = {
+  targetOccupancy:.79,
+  preferredAspect:2.55,
+
+  minColumns:18,
+  maxColumns:38,
+
+  maxDepth:3,
+
+  clusters:[
+    {
+      id:"valtio",
+      label:"Valtio ja oikeudet",
+      words:[
+        "valtio",
+        "hallinto",
+        "demokratia",
+        "oikeus",
+        "laki",
+        "politiikka",
+        "kunta",
+        "kunnat",
+        "autonomia",
+        "itsenäisyys",
+        "puolustus",
+        "turvallisuus",
+        "nato",
+        "eu"
+      ]
+    },
+    {
+      id:"talous",
+      label:"Talous ja työ",
+      words:[
+        "talous",
+        "työ",
+        "työmarkkinat",
+        "teollisuus",
+        "elinkeino",
+        "rahoitus",
+        "pankki",
+        "velka",
+        "korot",
+        "kauppa",
+        "sosiaaliturva",
+        "eläke",
+        "toimeentulo",
+        "verotus",
+        "yrittäjyys"
+      ]
+    },
+    {
+      id:"hyvinvointi",
+      label:"Hyvinvointi ja hoiva",
+      words:[
+        "terveys",
+        "hyvinvointi",
+        "sote",
+        "hoiva",
+        "sairaus",
+        "sosiaalipalvelut",
+        "lapset",
+        "perheet",
+        "vammaisuus",
+        "vanhukset",
+        "kansanterveys",
+        "työkyky",
+        "neuvola"
+      ]
+    },
+    {
+      id:"koulutus",
+      label:"Koulutus ja tieto",
+      words:[
+        "koulutus",
+        "koulu",
+        "oppivelvollisuus",
+        "opiskelijat",
+        "korkeakoulutus",
+        "osaaminen",
+        "tutkimus",
+        "tki",
+        "tieto",
+        "lukutaito",
+        "ammattikoulutus",
+        "yliopisto",
+        "kirjasto"
+      ]
+    },
+    {
+      id:"teknologia",
+      label:"Teknologia ja yhteydet",
+      words:[
+        "teknologia",
+        "digitalisaatio",
+        "tekoäly",
+        "data",
+        "viestintä",
+        "puhelin",
+        "posti",
+        "rautatie",
+        "liikenne",
+        "energia",
+        "sähkö",
+        "infrastruktuuri",
+        "internet",
+        "alustat"
+      ]
+    },
+    {
+      id:"vaesto",
+      label:"Väestö ja alueet",
+      words:[
+        "väestö",
+        "alueet",
+        "muuttoliike",
+        "kaupungistuminen",
+        "maaseutu",
+        "asuminen",
+        "kaupungit",
+        "lähiöt",
+        "maahanmuutto",
+        "siirtolaisuus",
+        "syntyvyys",
+        "ikääntyminen",
+        "segregaatio",
+        "huoltosuhde"
+      ]
+    },
+    {
+      id:"luonto",
+      label:"Luonto ja tuotanto",
+      words:[
+        "ympäristö",
+        "luonto",
+        "ilmasto",
+        "metsä",
+        "metsätalous",
+        "maatalous",
+        "luonnonvarat",
+        "viljely",
+        "huoltovarmuus",
+        "ruoka",
+        "pientila",
+        "omavaraisuus"
+      ]
+    }
+  ],
+
+  columns:0,
+  totalRows:0,
+  startYear:1800,
+  endYear:2035,
+
+  clusterRows:new Map(),
+  clusterOffsets:new Map()
+};
+
+const state = {
+  q:"",
+  type:"",
+  domain:"",
+  periodIdx:null,
+  minImp:1,
+  openId:null,
+  activeTab:"card",
+
+  all:[],
+  relations:[],
+
+  byId:new Map(),
+  incoming:new Map(),
+  outgoing:new Map(),
+
+  articles:[],
+  articleById:new Map(),
+  articleLinksByItem:new Map(),
+  articleRelationTypes:{},
+
+  periods:[]
+};
+
+const matrixState = {
+  selectedId:null,
+  direction:"both",
+  depth:2,
+
+  layout:new Map(),
+  occupied:new Map(),
+
+  relationMap:new Map(),
+  influence:new Map(),
+
+  lastClickId:null,
+  lastClickTime:0
+};
+
+/* ==========================================================
+   APUFUNKTIOT
+   ========================================================== */
+
+const $ = id =>
+  document.getElementById(id);
+
+const esc = value =>
+  String(value ?? "").replace(
+    /[&<>"']/g,
+    character => ({
+      "&":"&amp;",
+      "<":"&lt;",
+      ">":"&gt;",
+      '"':"&quot;",
+      "'":"&#39;"
+    })[character]
+  );
+
+const years = item =>
+  item.year_start === item.year_end
+    ? String(item.year_start)
+    : `${item.year_start}–${item.year_end}`;
+
+function dots(number){
+  return `
+    <span
+      class="dots"
+      title="Merkittävyys ${number}/5"
+    >
+      ${[1,2,3,4,5]
+        .map(index => `
+          <i class="${index <= number ? "on" : ""}"></i>
+        `)
+        .join("")}
+    </span>
+  `;
+}
+
+function pip(level){
+  const className =
+    CONF.includes(level)
+      ? level
+      : "";
+
+  return `
+    <span class="pip ${esc(className)}">
+      <i></i>
+      ${esc(level)}
+    </span>
+  `;
+}
+
+function clamp(value,min,max){
+  return Math.max(min,Math.min(max,value));
+}
+
+function cellKey(row,column){
+  return `${row}:${column}`;
+}
+
+/* ==========================================================
+   URL-SYVÄLINKITYS
+   ("/?item=<id>" - jaettava, selaimen historiaan
+   tallentuva viittaus yksittäiseen murrokseen)
+   ========================================================== */
+
+function currentUrlItemId(){
+  return new URLSearchParams(
+    window.location.search
+  ).get("item");
+}
+
+function setUrlItem(id,options = {}){
+  const url =
+    new URL(window.location.href);
+
+  if(id){
+    url.searchParams.set("item",id);
+  }else{
+    url.searchParams.delete("item");
+  }
+
+  const method =
+    options.replace
+      ? "replaceState"
+      : "pushState";
+
+  history[method](
+    {itemId:id || null},
+    "",
+    url
+  );
+}
+
+function openFromUrl(id){
+  if(!id || !state.byId.has(id)){
+    return false;
+  }
+
+  matrixState.selectedId = id;
+  renderMatrix();
+  openDialog(id,{skipUrlUpdate:true});
+
+  return true;
+}
+
+function initDeepLinking(){
+  openFromUrl(currentUrlItemId());
+
+  window.addEventListener(
+    "popstate",
+    event => {
+      const nextId =
+        (event.state && event.state.itemId) ||
+        currentUrlItemId();
+
+      if(!openFromUrl(nextId)){
+        closeDialog({skipUrlUpdate:true});
+      }
+    }
+  );
+}
+
+/* ==========================================================
+   DATA
+   ========================================================== */
+
+/* ==========================================================
+   ARTIKKELIDATA (valinnainen kerros - ei kaada sovellusta
+   jos tiedostoa ei löydy)
+   ========================================================== */
+
+fetch(ARTICLES_FILE)
+  .then(response =>
+    response.ok
+      ? response.json()
+      : Promise.reject(
+          new Error("artikkelit.json ei ladattavissa")
+        )
+  )
+  .then(data => {
+    state.articles =
+      Array.isArray(data.articles)
+        ? data.articles
+        : [];
+
+    state.articleById =
+      new Map(
+        state.articles.map(article => [
+          article.id,
+          article
+        ])
+      );
+
+    state.articleRelationTypes =
+      data.relation_types || {};
+
+    const links =
+      Array.isArray(data.links)
+        ? data.links
+        : [];
+
+    state.articleLinksByItem =
+      new Map();
+
+    for(const link of links){
+      if(!state.articleLinksByItem.has(link.item_id)){
+        state.articleLinksByItem.set(
+          link.item_id,
+          []
+        );
+      }
+
+      state.articleLinksByItem
+        .get(link.item_id)
+        .push(link);
+    }
+
+    for(const list of state.articleLinksByItem.values()){
+      list.sort((a,b) =>
+        (a.sort_order || 0) -
+        (b.sort_order || 0)
+      );
+    }
+
+    if(state.all.length){
+      renderCards(filtered());
+    }
+
+    if(state.openId){
+      openDialog(
+        state.openId,
+        {skipUrlUpdate:true}
+      );
+    }
+  })
+  .catch(() => {
+    /* Artikkelikerros on valinnainen: sovellus toimii
+       normaalisti ilmankin. */
+  });
+
+fetch(DATA_FILE)
+  .then(response => {
+    if(!response.ok){
+      throw new Error(
+        `JSON-aineistoa ei voitu ladata: ${DATA_FILE}`
+      );
+    }
+
+    return response.json();
+  })
+  .then(data => {
+    state.all =
+      Array.isArray(data.items)
+        ? data.items
+        : [];
+
+    state.relations =
+      Array.isArray(data.relations)
+        ? data.relations
+        : [];
+
+    state.byId =
+      new Map(
+        state.all.map(item => [
+          item.id,
+          item
+        ])
+      );
+
+    state.incoming =
+      new Map(
+        state.all.map(item => [
+          item.id,
+          []
+        ])
+      );
+
+    state.outgoing =
+      new Map(
+        state.all.map(item => [
+          item.id,
+          []
+        ])
+      );
+
+    for(const relation of state.relations){
+      if(state.outgoing.has(relation.from)){
+        state.outgoing
+          .get(relation.from)
+          .push(relation);
+      }
+
+      if(state.incoming.has(relation.to)){
+        state.incoming
+          .get(relation.to)
+          .push(relation);
+      }
+    }
+
+    const minYear =
+      Math.min(
+        ...state.all.map(item =>
+          Number(item.year_start)
+        )
+      );
+
+    const maxYear =
+      Math.max(
+        ...state.all.map(item =>
+          Number(item.year_end)
+        )
+      );
+
+    MATRIX.startYear =
+      Number.isFinite(minYear)
+        ? minYear
+        : 1800;
+
+    MATRIX.endYear =
+      Number.isFinite(maxYear)
+        ? maxYear
+        : 2035;
+
+    state.periods =
+      createPeriods(
+        MATRIX.startYear,
+        MATRIX.endYear
+      );
+
+    $("lede").textContent =
+      data.meta?.description ||
+      "Suomen yhteiskunnallisten murrosten rakenteellinen atlas.";
+
+    $("eyebrow").textContent =
+      `Atlas · työversio · ${state.all.length} murrosta · ${state.relations.length} relaatiota`;
+
+    $("s1").textContent =
+      state.all.length;
+
+    $("yearSpan").textContent =
+      MATRIX.endYear -
+      MATRIX.startYear;
+
+    $("s2").textContent =
+      new Set(
+        state.all.map(item => item.type)
+      ).size;
+
+    $("s3").textContent =
+      new Set(
+        state.all.flatMap(item =>
+          item.domains || []
+        )
+      ).size;
+
+    populateFilters();
+    buildMatrixLayout();
+    renderMatrixYears();
+    render();
+    initDeepLinking();
+
+    window.addEventListener(
+      "resize",
+      debounce(() => {
+        updateMatrixGeometry();
+      },120)
+    );
+  })
+  .catch(error => {
+    $("list").className = "";
+
+    $("list").innerHTML = `
+      <div class="empty">
+        <p>${esc(error.message)}</p>
+
+        <small>
+          Avaa HTML verkkopalvelimen kautta ja pidä
+          <code>${esc(DATA_FILE)}</code>
+          samassa kansiossa.
+        </small>
+      </div>
+    `;
+  });
+
+/* ==========================================================
+   AJANJAKSOT JA SUODATTIMET
+   ========================================================== */
+
+function createPeriods(startYear,endYear){
+  const span =
+    endYear -
+    startYear;
+
+  const steps = 5;
+  const rough = span / steps;
+
+  const periods = [];
+
+  let start = startYear;
+
+  for(let index = 0; index < steps; index++){
+    const end =
+      index === steps - 1
+        ? endYear
+        : Math.round(
+            startYear +
+            rough * (index + 1)
+          );
+
+    periods.push({
+      label:`${start}–${end}`,
+      range:[start,end]
+    });
+
+    start = end + 1;
+  }
+
+  return periods;
+}
+
+function populateFilters(){
+  const types =
+    [...new Set(
+      state.all
+        .map(item => item.type)
+        .filter(Boolean)
+    )]
+    .sort((a,b) =>
+      a.localeCompare(b,"fi")
+    );
+
+  const domains =
+    [...new Set(
+      state.all
+        .flatMap(item => item.domains || [])
+        .filter(Boolean)
+    )]
+    .sort((a,b) =>
+      a.localeCompare(b,"fi")
+    );
+
+  const groupedTypes =
+    TYPE_CLUSTERS.map(cluster => ({
+      ...cluster,
+      types:types.filter(type =>
+        typeCluster(type) === cluster.id
+      )
+    }));
+
+  $("typeF").insertAdjacentHTML(
+    "beforeend",
+    groupedTypes
+      .filter(cluster => cluster.types.length)
+      .map(cluster => `
+        <optgroup label="${esc(cluster.label)}">
+          <option value="cluster::${esc(cluster.id)}">
+            Kaikki: ${esc(cluster.label)} (${cluster.types.length})
+          </option>
+          ${cluster.types
+            .map(type => `
+              <option value="${esc(type)}">
+                ${esc(type)}
+              </option>
+            `)
+            .join("")}
+        </optgroup>
+      `)
+      .join("")
+  );
+
+  const groupedDomains =
+    DOMAIN_CLUSTERS.map(cluster => ({
+      ...cluster,
+      domains:domains.filter(domain =>
+        domainCluster(domain) === cluster.id
+      )
+    }));
+
+  $("domainF").insertAdjacentHTML(
+    "beforeend",
+    groupedDomains
+      .filter(cluster => cluster.domains.length)
+      .map(cluster => `
+        <optgroup label="${esc(cluster.label)}">
+          <option value="cluster::${esc(cluster.id)}">
+            Kaikki: ${esc(cluster.label)} (${cluster.domains.length})
+          </option>
+          ${cluster.domains
+            .map(domain => `
+              <option value="${esc(domain)}">
+                ${esc(domain)}
+              </option>
+            `)
+            .join("")}
+        </optgroup>
+      `)
+      .join("")
+  );
+
+  $("periods").innerHTML =
+    state.periods
+      .map((period,index) => `
+        <button
+          type="button"
+          data-period="${index}"
+        >
+          ${esc(period.label)}
+        </button>
+      `)
+      .join("");
+}
+
+function filtered(){
+  const query =
+    state.q
+      .trim()
+      .toLocaleLowerCase("fi");
+
+  const period =
+    state.periodIdx !== null
+      ? state.periods[state.periodIdx]?.range
+      : null;
+
+  return state.all
+    .filter(item => {
+      const linkedRelations = [
+        ...(state.incoming.get(item.id) || []),
+        ...(state.outgoing.get(item.id) || [])
+      ];
+
+      const relationText =
+        linkedRelations.flatMap(relation => {
+          const otherId =
+            relation.from === item.id
+              ? relation.to
+              : relation.from;
+
+          return [
+            state.byId.get(otherId)?.title,
+            relation.type,
+            relation.rel_class,
+            relation.rationale
+          ];
+        });
+
+      const haystack = [
+        item.title,
+        item.type,
+        item.phase,
+        item.problem,
+        item.mechanism,
+        item.long_effect,
+        item.current_relevance,
+        ...(item.domains || []),
+        ...(item.effects || []),
+        ...relationText
+      ]
+        .join(" ")
+        .toLocaleLowerCase("fi");
+
+      if(
+        query &&
+        !haystack.includes(query)
+      ){
+        return false;
+      }
+
+      if(state.type){
+        const isCluster =
+          state.type.startsWith("cluster::");
+
+        const matchesType =
+          isCluster
+            ? typeCluster(item.type) ===
+              state.type.slice("cluster::".length)
+            : item.type === state.type;
+
+        if(!matchesType){
+          return false;
+        }
+      }
+
+      if(state.domain){
+        const isDomainCluster =
+          state.domain.startsWith("cluster::");
+
+        const matchesDomain =
+          isDomainCluster
+            ? (item.domains || []).some(domain =>
+                domainCluster(domain) ===
+                state.domain.slice("cluster::".length)
+              )
+            : (item.domains || []).includes(state.domain);
+
+        if(!matchesDomain){
+          return false;
+        }
+      }
+
+      if(
+        period &&
+        !(
+          item.year_start <= period[1] &&
+          item.year_end >= period[0]
+        )
+      ){
+        return false;
+      }
+
+      if(
+        Number(item.importance) <
+        state.minImp
+      ){
+        return false;
+      }
+
+      return true;
+    })
+    .sort((a,b) =>
+      a.year_start - b.year_start ||
+      a.year_end - b.year_end ||
+      a.title.localeCompare(b.title,"fi")
+    );
+}
+
+/* ==========================================================
+   MATRIISIN LUOKITTELU
+   ========================================================== */
+
+function matrixItemText(item){
+  return [
+    item.title,
+    item.type,
+    item.phase,
+    item.problem,
+    item.mechanism,
+    item.long_effect,
+    item.current_relevance,
+    ...(item.domains || []),
+    ...(item.effects || [])
+  ]
+    .join(" ")
+    .toLocaleLowerCase("fi");
+}
+
+function matrixClusterScore(item,cluster){
+  const text =
+    matrixItemText(item);
+
+  const domains =
+    (item.domains || [])
+      .map(domain =>
+        domain.toLocaleLowerCase("fi")
+      );
+
+  const type =
+    String(item.type || "")
+      .toLocaleLowerCase("fi");
+
+  const phase =
+    String(item.phase || "")
+      .toLocaleLowerCase("fi");
+
+  let score = 0;
+
+  for(const word of cluster.words){
+    if(
+      domains.some(domain =>
+        domain.includes(word)
+      )
+    ){
+      score += 10;
+    }
+
+    if(type.includes(word)){
+      score += 5;
+    }
+
+    if(phase.includes(word)){
+      score += 3;
+    }
+
+    if(text.includes(word)){
+      score += 1;
+    }
+  }
+
+  return score;
+}
+
+function primaryCluster(item){
+  let best =
+    MATRIX.clusters[0];
+
+  let bestScore =
+    -Infinity;
+
+  for(const cluster of MATRIX.clusters){
+    const score =
+      matrixClusterScore(item,cluster);
+
+    if(score > bestScore){
+      best = cluster;
+      bestScore = score;
+    }
+  }
+
+  return best;
+}
+
+/* ==========================================================
+   MATRIISIN MITAT
+   ========================================================== */
+
+function calculateMatrixDimensions(items){
+  const count =
+    Math.max(1,items.length);
+
+  const clusterCounts =
+    new Map(
+      MATRIX.clusters.map(cluster => [
+        cluster.id,
+        0
+      ])
+    );
+
+  for(const item of items){
+    const cluster =
+      primaryCluster(item);
+
+    clusterCounts.set(
+      cluster.id,
+      (clusterCounts.get(cluster.id) || 0) + 1
+    );
+  }
+
+  let best = null;
+
+  for(
+    let columns = MATRIX.minColumns;
+    columns <= MATRIX.maxColumns;
+    columns++
+  ){
+    let totalRows = 0;
+
+    for(const cluster of MATRIX.clusters){
+      const clusterCount =
+        clusterCounts.get(cluster.id) || 0;
+
+      totalRows +=
+        Math.max(
+          1,
+          Math.ceil(clusterCount / columns)
+        );
+    }
+
+    const capacity =
+      columns * totalRows;
+
+    const occupancy =
+      count / capacity;
+
+    const aspect =
+      columns / totalRows;
+
+    const occupancyPenalty =
+      Math.abs(
+        occupancy -
+        MATRIX.targetOccupancy
+      ) * 9;
+
+    const aspectPenalty =
+      Math.abs(
+        aspect -
+        MATRIX.preferredAspect
+      );
+
+    const emptyPenalty =
+      (capacity - count) /
+      Math.max(1,count);
+
+    const score =
+      occupancyPenalty +
+      aspectPenalty +
+      emptyPenalty * .75;
+
+    if(
+      !best ||
+      score < best.score
+    ){
+      best = {
+        columns,
+        totalRows,
+        capacity,
+        occupancy,
+        score,
+        clusterCounts
+      };
+    }
+  }
+
+  MATRIX.columns =
+    best.columns;
+
+  MATRIX.clusterRows =
+    new Map();
+
+  MATRIX.clusterOffsets =
+    new Map();
+
+  let offset = 0;
+
+  for(const cluster of MATRIX.clusters){
+    const countForCluster =
+      best.clusterCounts.get(cluster.id) || 0;
+
+    const rows =
+      Math.max(
+        1,
+        Math.ceil(
+          countForCluster /
+          MATRIX.columns
+        )
+      );
+
+    MATRIX.clusterRows.set(
+      cluster.id,
+      rows
+    );
+
+    MATRIX.clusterOffsets.set(
+      cluster.id,
+      offset
+    );
+
+    offset += rows;
+  }
+
+  MATRIX.totalRows =
+    offset;
+
+  return {
+    capacity:
+      MATRIX.columns *
+      MATRIX.totalRows,
+
+    occupancy:
+      count /
+      (
+        MATRIX.columns *
+        MATRIX.totalRows
+      )
+  };
+}
+
+function preferredColumn(item){
+  const midpoint =
+    (
+      Number(item.year_start) +
+      Number(item.year_end)
+    ) / 2;
+
+  const ratio =
+    (
+      midpoint -
+      MATRIX.startYear
+    ) /
+    Math.max(
+      1,
+      MATRIX.endYear -
+      MATRIX.startYear
+    );
+
+  return clamp(
+    Math.round(
+      ratio *
+      (MATRIX.columns - 1)
+    ),
+    0,
+    MATRIX.columns - 1
+  );
+}
+
+/* ==========================================================
+   LÄHIMMÄN VAPAAN RUUDUN HAKU
+   ========================================================== */
+
+function placementCandidates(
+  clusterId,
+  preferred
+){
+  const startRow =
+    MATRIX.clusterOffsets.get(clusterId) || 0;
+
+  const rowCount =
+    MATRIX.clusterRows.get(clusterId) || 1;
+
+  const middle =
+    (rowCount - 1) / 2;
+
+  const candidates = [];
+
+  /*
+   * Aika on yksisuuntainen: kohde voidaan siirtää vain omaan
+   * sarakkeeseensa tai myöhemmäksi. Näin esimerkiksi 2010-luvun
+   * tapahtuma ei voi vapaan tilan vuoksi päätyä 1800-luvulle.
+   */
+  for(
+    let column = preferred;
+    column < MATRIX.columns;
+    column++
+  ){
+    const columnDistance =
+      column - preferred;
+
+    for(
+      let localRow = 0;
+      localRow < rowCount;
+      localRow++
+    ){
+      candidates.push({
+        row:startRow + localRow,
+        column,
+        cost:
+          columnDistance +
+          Math.abs(localRow - middle) * .22
+      });
+    }
+  }
+
+  return candidates.sort(
+    (a,b) => a.cost - b.cost
+  );
+}
+
+function buildMatrixLayout(){
+  matrixState.layout.clear();
+  matrixState.occupied.clear();
+
+  calculateMatrixDimensions(
+    state.all
+  );
+
+  /*
+   * Säilytetään aiemman mallin tiivis rivijako. Rivejä lisätään
+   * vain, jos loppupään sarakkeisiin kasaantuvat tapahtumat eivät
+   * muuten mahdu siirtymään yksinomaan oikealle.
+   */
+  for(const cluster of MATRIX.clusters){
+    const items = state.all.filter(item =>
+      primaryCluster(item).id === cluster.id
+    );
+
+    let requiredRows =
+      MATRIX.clusterRows.get(cluster.id) || 1;
+
+    for(
+      let column = 0;
+      column < MATRIX.columns;
+      column++
+    ){
+      const suffixCount =
+        items.filter(item =>
+          preferredColumn(item) >= column
+        ).length;
+
+      const availableColumns =
+        MATRIX.columns - column;
+
+      requiredRows = Math.max(
+        requiredRows,
+        Math.ceil(
+          suffixCount /
+          Math.max(1,availableColumns)
+        )
+      );
+    }
+
+    MATRIX.clusterRows.set(
+      cluster.id,
+      Math.max(1,requiredRows)
+    );
+  }
+
+  MATRIX.clusterOffsets = new Map();
+  let compactOffset = 0;
+
+  for(const cluster of MATRIX.clusters){
+    MATRIX.clusterOffsets.set(
+      cluster.id,
+      compactOffset
+    );
+
+    compactOffset +=
+      MATRIX.clusterRows.get(cluster.id) || 1;
+  }
+
+  MATRIX.totalRows = compactOffset;
+
+  const clusterDensity =
+    new Map(
+      MATRIX.clusters.map(cluster => [
+        cluster.id,
+        state.all.filter(item =>
+          primaryCluster(item).id ===
+          cluster.id
+        ).length
+      ])
+    );
+
+  const ordered =
+    [...state.all]
+      .sort((a,b) => {
+        const clusterA =
+          primaryCluster(a).id;
+
+        const clusterB =
+          primaryCluster(b).id;
+
+        const densityDifference =
+          (clusterDensity.get(clusterB) || 0) -
+          (clusterDensity.get(clusterA) || 0);
+
+        return (
+          densityDifference ||
+          Number(b.importance) -
+            Number(a.importance) ||
+          a.year_start -
+            b.year_start ||
+          a.title.localeCompare(
+            b.title,
+            "fi"
+          )
+        );
+      });
+
+  for(const item of ordered){
+    const cluster =
+      primaryCluster(item);
+
+    const preferred =
+      preferredColumn(item);
+
+    const candidates =
+      placementCandidates(
+        cluster.id,
+        preferred
+      );
+
+    const chosen =
+      candidates.find(candidate =>
+        !matrixState.occupied.has(
+          cellKey(
+            candidate.row,
+            candidate.column
+          )
+        )
+      );
+
+    if(!chosen){
+      continue;
+    }
+
+    const placement = {
+      row:chosen.row,
+      column:chosen.column,
+      clusterId:cluster.id,
+      preferredColumn:preferred
+    };
+
+    matrixState.layout.set(
+      item.id,
+      placement
+    );
+
+    matrixState.occupied.set(
+      cellKey(
+        chosen.row,
+        chosen.column
+      ),
+      item.id
+    );
+  }
+
+  renderMatrixLabels();
+  updateMatrixGeometry();
+}
+
+/* ==========================================================
+   MATRIISIN GEOMETRIA
+   ========================================================== */
+
+function renderMatrixLabels(){
+  const labels = $("matrixLabels");
+
+  labels.innerHTML = `
+    <div class="matrix-label-spacer"></div>
+
+    ${MATRIX.clusters
+      .map(cluster => `
+        <div
+          class="matrix-label"
+          style="
+            grid-row:
+              span ${MATRIX.clusterRows.get(cluster.id) || 1}
+          "
+        >
+          ${esc(cluster.label)}
+        </div>
+      `)
+      .join("")}
+  `;
+
+  labels.style.gridTemplateRows =
+    `28px repeat(${MATRIX.totalRows},minmax(0,1fr))`;
+}
+
+function updateMatrixGeometry(){
+  const grid = $("matrixGrid");
+
+  if(!grid){
+    return;
+  }
+
+  grid.style.setProperty(
+    "--matrix-columns",
+    MATRIX.columns
+  );
+
+  grid.style.setProperty(
+    "--matrix-rows",
+    MATRIX.totalRows
+  );
+
+  /*
+   * Ruudukon ruudut pyritään pitämään lähes neliöinä,
+   * mutta koko kuvio näkyy ilman vaakavieritystä.
+   */
+  const availableWidth =
+    grid.getBoundingClientRect().width || 900;
+
+  const cellWidth =
+    availableWidth /
+    MATRIX.columns;
+
+  const desiredHeight =
+    clamp(
+      cellWidth *
+      MATRIX.totalRows,
+      210,
+      520
+    );
+
+  grid.style.height =
+    `${desiredHeight}px`;
+
+  $("matrixLabels").style.height =
+    `${desiredHeight + 28}px`;
+}
+
+function renderMatrixYears(){
+  const yearsElement =
+    $("matrixYears");
+
+  const labels = [];
+
+  const span =
+    MATRIX.endYear -
+    MATRIX.startYear;
+
+  const approximateStep =
+    span > 190
+      ? 50
+      : span > 100
+        ? 25
+        : 20;
+
+  let first =
+    Math.ceil(
+      MATRIX.startYear /
+      approximateStep
+    ) *
+    approximateStep;
+
+  labels.push(MATRIX.startYear);
+
+  for(
+    let year = first;
+    year < MATRIX.endYear;
+    year += approximateStep
+  ){
+    if(year > MATRIX.startYear){
+      labels.push(year);
+    }
+  }
+
+  labels.push(MATRIX.endYear);
+
+  yearsElement.innerHTML =
+    [...new Set(labels)]
+      .map(year => {
+        const percent =
+          (
+            year -
+            MATRIX.startYear
+          ) /
+          Math.max(
+            1,
+            MATRIX.endYear -
+            MATRIX.startYear
+          ) *
+          100;
+
+        return `
+          <span
+            class="matrix-year"
+            style="left:${percent}%"
+          >
+            ${year}
+          </span>
+        `;
+      })
+      .join("");
+}
+
+/* ==========================================================
+   RELAATIOVERKON ETÄISYYDET
+   ========================================================== */
+
+function matrixNeighbours(id){
+  const neighbours = [];
+
+  if(
+    matrixState.direction === "both" ||
+    matrixState.direction === "in"
+  ){
+    for(
+      const relation of
+      state.incoming.get(id) || []
+    ){
+      neighbours.push({
+        id:relation.from,
+        direction:"in"
+      });
+    }
+  }
+
+  if(
+    matrixState.direction === "both" ||
+    matrixState.direction === "out"
+  ){
+    for(
+      const relation of
+      state.outgoing.get(id) || []
+    ){
+      neighbours.push({
+        id:relation.to,
+        direction:"out"
+      });
+    }
+  }
+
+  return neighbours;
+}
+
+function buildRelationMap(startId){
+  const result = new Map();
+
+  if(!startId){
+    return result;
+  }
+
+  result.set(startId,{
+    depth:0,
+    direction:"selected"
+  });
+
+  const queue = [{
+    id:startId,
+    depth:0
+  }];
+
+  while(queue.length){
+    const current =
+      queue.shift();
+
+    if(
+      current.depth >=
+      matrixState.depth
+    ){
+      continue;
+    }
+
+    for(
+      const neighbour of
+      matrixNeighbours(current.id)
+    ){
+      const depth =
+        current.depth + 1;
+
+      const existing =
+        result.get(neighbour.id);
+
+      if(
+        !existing ||
+        depth < existing.depth
+      ){
+        result.set(
+          neighbour.id,
+          {
+            depth,
+            direction:
+              neighbour.direction
+          }
+        );
+
+        queue.push({
+          id:neighbour.id,
+          depth
+        });
+      }else if(
+        existing.depth === depth &&
+        existing.direction !==
+          neighbour.direction
+      ){
+        existing.direction =
+          "mixed";
+      }
+    }
+  }
+
+  return result;
+}
+
+/* ==========================================================
+   LÄMPÖKARTTA
+   ========================================================== */
+
+function heatColor(value,direction){
+  if(value <= 0){
+    return "transparent";
+  }
+
+  const alpha =
+    Math.min(
+      .5,
+      .018 +
+      value * .43
+    );
+
+  if(direction === "out"){
+    return `rgba(181,106,52,${alpha})`;
+  }
+
+  if(direction === "mixed"){
+    return `rgba(121,96,141,${alpha})`;
+  }
+
+  return `rgba(58,107,100,${alpha})`;
+}
+
+function buildInfluence(relationMap){
+  const influence =
+    new Map();
+
+  for(
+    const [id,relation] of
+    relationMap
+  ){
+    const placement =
+      matrixState.layout.get(id);
+
+    if(!placement){
+      continue;
+    }
+
+    const base =
+      relation.depth === 0
+        ? 1
+        : relation.depth === 1
+          ? .82
+          : relation.depth === 2
+            ? .52
+            : .3;
+
+    const radius =
+      relation.depth === 0
+        ? 3.4
+        : relation.depth === 1
+          ? 2.8
+          : relation.depth === 2
+            ? 2
+            : 1.35;
+
+    const rowRadius =
+      Math.max(
+        1,
+        Math.ceil(radius)
+      );
+
+    const columnRadius =
+      Math.max(
+        1,
+        Math.ceil(radius * 1.35)
+      );
+
+    for(
+      let rowDelta = -rowRadius;
+      rowDelta <= rowRadius;
+      rowDelta++
+    ){
+      for(
+        let columnDelta = -columnRadius;
+        columnDelta <= columnRadius;
+        columnDelta++
+      ){
+        const row =
+          placement.row +
+          rowDelta;
+
+        const column =
+          placement.column +
+          columnDelta;
+
+        if(
+          row < 0 ||
+          row >= MATRIX.totalRows ||
+          column < 0 ||
+          column >= MATRIX.columns
+        ){
+          continue;
+        }
+
+        const distance =
+          Math.sqrt(
+            Math.pow(
+              rowDelta /
+              Math.max(1,rowRadius),
+              2
+            ) +
+            Math.pow(
+              columnDelta /
+              Math.max(1,columnRadius),
+              2
+            )
+          );
+
+        if(distance > 1){
+          continue;
+        }
+
+        const falloff =
+          Math.pow(
+            1 - distance,
+            1.55
+          );
+
+        const value =
+          base *
+          falloff;
+
+        const key =
+          cellKey(row,column);
+
+        const previous =
+          influence.get(key);
+
+        if(
+          !previous ||
+          value > previous.value
+        ){
+          influence.set(
+            key,
+            {
+              value,
+              direction:
+                relation.direction
+            }
+          );
+        }else if(
+          previous.direction !==
+            relation.direction &&
+          value >
+            previous.value * .62
+        ){
+          previous.direction =
+            "mixed";
+        }
+      }
+    }
+  }
+
+  return influence;
+}
+
+/* ==========================================================
+   MATRIISIN PIIRTO
+   ========================================================== */
+
+function matrixNodeClasses(
+  item,
+  visibleIds,
+  relationMap
+){
+  const classes = [
+    "matrix-node"
+  ];
+
+  if(!visibleIds.has(item.id)){
+    classes.push("filtered");
+  }
+
+  if(!matrixState.selectedId){
+    return classes;
+  }
+
+  const relation =
+    relationMap.get(item.id);
+
+  if(!relation){
+    classes.push("unrelated");
+    return classes;
+  }
+
+  if(relation.depth === 0){
+    classes.push("selected");
+    return classes;
+  }
+
+  classes.push(
+    `depth-${relation.depth}`
+  );
+
+  if(relation.direction === "in"){
+    classes.push("predecessor");
+  }else if(
+    relation.direction === "out"
+  ){
+    classes.push("successor");
+  }else{
+    classes.push("mixed");
+  }
+
+  return classes;
+}
+
+function isPrimaryMatrixRelation(relation){
+  if(!relation){
+    return false;
+  }
+
+  if(
+    relation.primary === true ||
+    relation.is_primary === true ||
+    relation.priority === "primary"
+  ){
+    return true;
+  }
+
+  return [
+    "tapahtuma",
+    "rakenne",
+    "kaari"
+  ].includes(relation.rel_class);
+}
+
+function matrixLinksHTML(visibleIds){
+  const paths = [];
+
+  for(const relation of state.relations){
+    if(!isPrimaryMatrixRelation(relation)){
+      continue;
+    }
+
+    const from =
+      matrixState.layout.get(relation.from);
+
+    const to =
+      matrixState.layout.get(relation.to);
+
+    if(!from || !to){
+      continue;
+    }
+
+    if(
+      !visibleIds.has(relation.from) ||
+      !visibleIds.has(relation.to)
+    ){
+      continue;
+    }
+
+    const x1 = from.column + .5;
+    const y1 = from.row + .5;
+    const x2 = to.column + .5;
+    const y2 = to.row + .5;
+    const bend = x1 + (x2 - x1) * .5;
+
+    const active =
+      matrixState.selectedId &&
+      (
+        relation.from === matrixState.selectedId ||
+        relation.to === matrixState.selectedId
+      );
+
+    paths.push(`
+      <path
+        class="matrix-link ${active ? "active" : ""}"
+        d="M ${x1} ${y1} H ${bend} V ${y2} H ${x2}"
+      ></path>
+    `);
+  }
+
+  if(!paths.length){
+    return "";
+  }
+
+  return `
+    <svg
+      class="matrix-links"
+      viewBox="0 0 ${MATRIX.columns} ${MATRIX.totalRows}"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+    >
+      ${paths.join("")}
+    </svg>
+  `;
+}
+
+function matrixBoundariesHTML(){
+  let usedRows = 0;
+  const boundaries = [];
+
+  for(
+    let index = 0;
+    index <
+      MATRIX.clusters.length - 1;
+    index++
+  ){
+    const cluster =
+      MATRIX.clusters[index];
+
+    usedRows +=
+      MATRIX.clusterRows.get(
+        cluster.id
+      ) || 1;
+
+    const percent =
+      usedRows /
+      MATRIX.totalRows *
+      100;
+
+    boundaries.push(`
+      <span
+        class="matrix-boundary"
+        style="top:${percent}%"
+      ></span>
+    `);
+  }
+
+  return boundaries.join("");
+}
+
+function initialMatrixLabelIds(visibleIds){
+  const candidates = state.all
+    .filter(item =>
+      visibleIds.has(item.id) &&
+      Number(item.importance) >= 5
+    )
+    .map(item => ({
+      id:item.id,
+      importance:Number(item.importance) || 0,
+      degree:
+        (state.incoming.get(item.id) || []).length +
+        (state.outgoing.get(item.id) || []).length,
+      year:Number(item.year_start) || 0
+    }))
+    .sort((a,b) =>
+      b.degree - a.degree ||
+      b.importance - a.importance ||
+      a.year - b.year
+    );
+
+  return new Set(
+    candidates
+      .slice(0,8)
+      .map(item => item.id)
+  );
+}
+
+function matrixLabelRelation(item){
+  if(!matrixState.selectedId){
+    return null;
+  }
+
+  return matrixState.relationMap.get(item.id) || null;
+}
+
+function showMatrixNodeLabel(item, visibleIds, initialLabelIds){
+  if(!visibleIds.has(item.id)){
+    return false;
+  }
+
+  if(matrixState.selectedId){
+    return matrixState.relationMap.has(item.id);
+  }
+
+  return initialLabelIds.has(item.id);
+}
+
+function matrixNodeLabelClasses(item){
+  const classes = ["matrix-node-label"];
+  const relation = matrixLabelRelation(item);
+
+  if(!relation){
+    return classes;
+  }
+
+  if(relation.depth === 0){
+    classes.push("selected");
+    return classes;
+  }
+
+  classes.push(`depth-${relation.depth}`);
+
+  if(relation.direction === "in"){
+    classes.push("predecessor");
+  }else if(relation.direction === "out"){
+    classes.push("successor");
+  }else{
+    classes.push("mixed");
+  }
+
+  return classes;
+}
+
+function renderMatrix(){
+  if(!state.all.length){
+    return;
+  }
+
+  const shown =
+    filtered();
+
+  const visibleIds =
+    new Set(
+      shown.map(item => item.id)
+    );
+
+  $("matrixVisible").textContent =
+    shown.length;
+
+  const capacity =
+    MATRIX.columns *
+    MATRIX.totalRows;
+
+  const occupancy =
+    state.all.length /
+    Math.max(1,capacity);
+
+  $("matrixOccupancy").textContent =
+    `${Math.round(occupancy * 100)} %`;
+
+  matrixState.relationMap =
+    matrixState.selectedId
+      ? buildRelationMap(
+          matrixState.selectedId
+        )
+      : new Map();
+
+  matrixState.influence =
+    matrixState.selectedId
+      ? buildInfluence(
+          matrixState.relationMap
+        )
+      : new Map();
+
+  const heatCells = [];
+
+  for(
+    let row = 0;
+    row < MATRIX.totalRows;
+    row++
+  ){
+    for(
+      let column = 0;
+      column < MATRIX.columns;
+      column++
+    ){
+      const influence =
+        matrixState.influence.get(
+          cellKey(row,column)
+        );
+
+      heatCells.push(`
+        <span
+          class="matrix-heat"
+          style="
+            grid-row:${row + 1};
+            grid-column:${column + 1};
+            background-color:${
+              influence
+                ? heatColor(
+                    influence.value,
+                    influence.direction
+                  )
+                : "transparent"
+            };
+            box-shadow:${
+              influence &&
+              influence.value > .62
+                ? `inset 0 0 7px ${
+                    heatColor(
+                      influence.value * .45,
+                      influence.direction
+                    )
+                  }`
+                : "none"
+            };
+          "
+        ></span>
+      `);
+    }
+  }
+
+  const nodes = [];
+  const labels = [];
+  const initialLabelIds =
+    initialMatrixLabelIds(visibleIds);
+
+  for(const item of state.all){
+    const placement =
+      matrixState.layout.get(item.id);
+
+    if(!placement){
+      continue;
+    }
+
+    const classes =
+      matrixNodeClasses(
+        item,
+        visibleIds,
+        matrixState.relationMap
+      );
+
+    nodes.push(`
+      <button
+        type="button"
+        class="${classes.join(" ")}"
+        data-matrix-node="${esc(item.id)}"
+        aria-label="${esc(item.title)}, ${esc(years(item))}"
+        style="
+          grid-row:${placement.row + 1};
+          grid-column:${placement.column + 1};
+        "
+      ></button>
+    `);
+
+    if(
+      showMatrixNodeLabel(
+        item,
+        visibleIds,
+        initialLabelIds
+      )
+    ){
+      labels.push(`
+        <span
+          class="${matrixNodeLabelClasses(item).join(" ")}"
+          style="
+            grid-row:${placement.row + 1};
+            grid-column:${placement.column + 1};
+          "
+          aria-hidden="true"
+        >${esc(item.title)}</span>
+      `);
+    }
+  }
+
+  $("matrixGrid").innerHTML =
+    heatCells.join("") +
+    matrixBoundariesHTML() +
+    matrixLinksHTML(visibleIds) +
+    nodes.join("") +
+    labels.join("");
+
+  updateMatrixSelection();
+  bindMatrixNodeEvents();
+}
+
+function updateMatrixSelection(){
+  const panel =
+    $("matrixSelection");
+
+  const reset =
+    $("matrixReset");
+
+  if(!matrixState.selectedId){
+    panel.classList.remove("visible");
+    reset.disabled = true;
+    return;
+  }
+
+  const item =
+    state.byId.get(
+      matrixState.selectedId
+    );
+
+  if(!item){
+    return;
+  }
+
+  const linked =
+    [...matrixState.relationMap.values()]
+      .filter(value =>
+        value.depth > 0
+      )
+      .length;
+
+  $("matrixSelectionTitle").textContent =
+    item.title;
+
+  $("matrixSelectionMeta").textContent =
+    `${years(item)} · ${linked} murrosta vaikutusalueella · syvyys ${matrixState.depth}`;
+
+  panel.classList.add("visible");
+  reset.disabled = false;
+}
+
+/* ==========================================================
+   MATRIISIN TAPAHTUMAT
+   ========================================================== */
+
+function bindMatrixNodeEvents(){
+  document
+    .querySelectorAll(
+      "[data-matrix-node]"
+    )
+    .forEach(button => {
+      button.addEventListener(
+        "click",
+        () => {
+          const id =
+            button.dataset.matrixNode;
+
+          const now =
+            performance.now();
+
+          const isSecondClick =
+            matrixState.lastClickId === id &&
+            now -
+              matrixState.lastClickTime <
+              1500 &&
+            matrixState.selectedId === id;
+
+          if(isSecondClick){
+            openDialog(id);
+            return;
+          }
+
+          matrixState.selectedId =
+            id;
+
+          matrixState.lastClickId =
+            id;
+
+          matrixState.lastClickTime =
+            now;
+
+          renderMatrix();
+        }
+      );
+    });
+}
+
+/* ==========================================================
+   HISTOGRAMMI
+   ========================================================== */
+
+function renderHistogram(shown){
+  const firstDecade =
+    Math.floor(
+      MATRIX.startYear / 10
+    ) * 10;
+
+  const lastDecade =
+    Math.floor(
+      MATRIX.endYear / 10
+    ) * 10;
+
+  const counts =
+    new Map();
+
+  for(
+    let decade = firstDecade;
+    decade <= lastDecade;
+    decade += 10
+  ){
+    counts.set(decade,0);
+  }
+
+  for(const item of shown){
+    const decade =
+      Math.floor(
+        item.year_start / 10
+      ) * 10;
+
+    counts.set(
+      decade,
+      (counts.get(decade) || 0) + 1
+    );
+  }
+
+  const maximum =
+    Math.max(
+      1,
+      ...counts.values()
+    );
+
+  $("bars").innerHTML =
+    [...counts.entries()]
+      .map(([decade,count]) => {
+        const height =
+          Math.max(
+            2,
+            count /
+              maximum *
+              100
+          );
+
+        const activePeriod =
+          state.periodIdx !== null
+            ? state.periods[state.periodIdx]
+            : null;
+
+        const active =
+          activePeriod &&
+          decade >=
+            activePeriod.range[0] &&
+          decade <=
+            activePeriod.range[1];
+
+        const color =
+          active
+            ? "var(--copper)"
+            : count === 0
+              ? "var(--line)"
+              : "var(--forest)";
+
+        const opacity =
+          count === 0
+            ? .35
+            : .85;
+
+        return `
+          <button
+            type="button"
+            title="${decade}–${decade + 9}: ${count} murrosta"
+            data-decade="${decade}"
+          >
+            <span class="count">
+              ${count}
+            </span>
+
+            <span
+              class="bar"
+              style="
+                height:${height}%;
+                background:${color};
+                opacity:${opacity}
+              "
+            ></span>
+          </button>
+        `;
+      })
+      .join("");
+
+  $("decadeAxis").innerHTML = `
+    <span>${MATRIX.startYear}</span>
+    <span>${Math.round((MATRIX.startYear + MATRIX.endYear) / 2)}</span>
+    <span>${MATRIX.endYear}</span>
+  `;
+
+  $("bars").onclick =
+    event => {
+      const button =
+        event.target.closest(
+          "button[data-decade]"
+        );
+
+      if(!button){
+        return;
+      }
+
+      const decade =
+        Number(
+          button.dataset.decade
+        );
+
+      const index =
+        state.periods.findIndex(
+          period =>
+            decade >= period.range[0] &&
+            decade <= period.range[1]
+        );
+
+      state.periodIdx =
+        state.periodIdx === index
+          ? null
+          : index;
+
+      render();
+    };
+}
+
+/* ==========================================================
+   META JA KORTIT
+   ========================================================== */
+
+function renderMeta(shown){
+  const dirty =
+    state.q ||
+    state.type ||
+    state.domain ||
+    state.periodIdx !== null ||
+    state.minImp > 1;
+
+  $("metaRow").innerHTML = `
+    <span>
+      <strong>${shown.length}</strong>
+      murrosta
+    </span>
+
+    <span>·</span>
+
+    <span>
+      ${new Set(
+        shown.map(item => item.type)
+      ).size}
+      tyyppiä
+    </span>
+
+    <span>·</span>
+
+    <span>
+      ${new Set(
+        shown.flatMap(item =>
+          item.domains || []
+        )
+      ).size}
+      teemaa
+    </span>
+
+    <span>·</span>
+
+    <span>
+      ${new Set(
+        shown.map(item => item.phase)
+      ).size}
+      vaihetta
+    </span>
+
+    <span>·</span>
+
+    <span>
+      ${state.relations.length}
+      relaatiota
+    </span>
+
+    ${
+      dirty
+        ? `
+          <button
+            type="button"
+            class="reset"
+            id="resetBtn"
+          >
+            Tyhjennä suodattimet ×
+          </button>
+        `
+        : ""
+    }
+  `;
+
+  const resetButton =
+    $("resetBtn");
+
+  if(resetButton){
+    resetButton.onclick =
+      resetFilters;
+  }
+}
+
+function compactOrgNodes(
+  relations,
+  direction
+){
+  const visible =
+    relations.slice(0,3);
+
+  const nodes =
+    visible
+      .map(relation => {
+        const otherId =
+          direction === "in"
+            ? relation.from
+            : relation.to;
+
+        const other =
+          state.byId.get(otherId);
+
+        if(!other){
+          return "";
+        }
+
+        const relationLabel =
+          REL_LABELS[relation.type] ||
+          String(relation.type || "")
+            .replaceAll("_"," ");
+
+        return `
+          <button
+            type="button"
+            class="org-node ${esc(relation.rel_class || "tulkinta")}"
+            data-open="${esc(other.id)}"
+            title="${esc(relationLabel)}"
+          >
+            <span class="org-year">
+              ${years(other)}
+            </span>
+
+            <span class="org-title">
+              ${esc(other.title)}
+            </span>
+          </button>
+        `;
+      })
+      .join("");
+
+  const remaining =
+    relations.length -
+    visible.length;
+
+  const more =
+    remaining > 0
+      ? `
+        <span class="org-more">
+          +${remaining} muuta
+        </span>
+      `
+      : "";
+
+  const columns =
+    Math.max(
+      1,
+      visible.length +
+      (
+        remaining > 0
+          ? 1
+          : 0
+      )
+    );
+
+  return {
+    html:nodes + more,
+    columns
+  };
+}
+
+function cardOrgHTML(item){
+  const incoming =
+    [...(state.incoming.get(item.id) || [])]
+      .sort((a,b) =>
+        (
+          state.byId.get(a.from)?.year_start ||
+          0
+        ) -
+        (
+          state.byId.get(b.from)?.year_start ||
+          0
+        )
+      );
+
+  const outgoing =
+    [...(state.outgoing.get(item.id) || [])]
+      .sort((a,b) =>
+        (
+          state.byId.get(a.to)?.year_start ||
+          0
+        ) -
+        (
+          state.byId.get(b.to)?.year_start ||
+          0
+        )
+      );
+
+  const before =
+    compactOrgNodes(
+      incoming,
+      "in"
+    );
+
+  const after =
+    compactOrgNodes(
+      outgoing,
+      "out"
+    );
+
+  return `
+    <div
+      class="card-org"
+      aria-label="${esc(item.title)}: edeltävät ja seuraavat murrokset"
+    >
+      <div class="org-caption">
+        <strong>
+          Rakenteellinen ketju
+        </strong>
+
+        <span>
+          ${incoming.length} ← · → ${outgoing.length}
+        </span>
+      </div>
+
+      ${
+        incoming.length
+          ? `
+            <div
+              class="org-tier"
+              style="--cols:${before.columns}"
+            >
+              ${before.html}
+            </div>
+          `
+          : `
+            <div class="org-empty">
+              Ei kirjattuja edeltäjiä
+            </div>
+          `
+      }
+
+      <div class="org-stem down"></div>
+
+      <button
+        type="button"
+        class="org-current"
+        data-open="${esc(item.id)}"
+      >
+        <span class="org-year">
+          ${years(item)}
+        </span>
+
+        <span class="org-title">
+          ${esc(item.title)}
+        </span>
+      </button>
+
+      <div class="org-stem down"></div>
+
+      ${
+        outgoing.length
+          ? `
+            <div
+              class="org-tier"
+              style="--cols:${after.columns}"
+            >
+              ${after.html}
+            </div>
+          `
+          : `
+            <div class="org-empty">
+              Ei kirjattuja seuraajia
+            </div>
+          `
+      }
+    </div>
+  `;
+}
+
+function cardHTML(item,index){
+  const delay =
+    Math.min(index,12) *
+    30;
+
+  return `
+    <article
+      class="card"
+      style="animation-delay:${delay}ms"
+    >
+      <div class="card-top">
+        <div class="card-year">
+          <span class="y1">
+            ${item.year_start}
+          </span>
+
+          ${
+            item.year_end !==
+            item.year_start
+              ? `
+                <span class="sep"></span>
+
+                <span class="y2">
+                  ${item.year_end}
+                </span>
+              `
+              : ""
+          }
+        </div>
+
+        <div class="card-head">
+          <div class="row1">
+            <h3>
+              ${esc(item.title)}
+            </h3>
+
+            ${dots(item.importance)}
+          </div>
+
+          <div class="card-type">
+            ${esc(item.type)}
+          </div>
+
+          <div class="card-phase">
+            ${esc(item.phase)}
+          </div>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <p class="card-problem">
+          ${esc(item.problem)}
+        </p>
+
+        <div class="card-domains">
+          ${(item.domains || [])
+            .slice(0,6)
+            .map(domain =>
+              `<span>${esc(domain)}</span>`
+            )
+            .join("")}
+
+          ${
+            (item.domains || []).length > 6
+              ? `
+                <span
+                  style="
+                    border:0;
+                    background:transparent
+                  "
+                >
+                  +${item.domains.length - 6}
+                </span>
+              `
+              : ""
+          }
+        </div>
+
+        ${cardOrgHTML(item)}
+
+        <div class="card-foot">
+          ${pip(item.confidence)}
+
+          <span class="rel-count">
+            ${
+              (state.incoming.get(item.id) || []).length +
+              (state.outgoing.get(item.id) || []).length
+            }
+            yhteyttä
+          </span>
+
+          ${
+            (state.articleLinksByItem.get(item.id) || []).length
+              ? `
+                <span class="article-count">
+                  📄 ${(state.articleLinksByItem.get(item.id) || []).length}
+                  artikkelia
+                </span>
+              `
+              : ""
+          }
+
+          <button
+            type="button"
+            class="open"
+            data-open="${esc(item.id)}"
+          >
+            Avaa analyysi
+            <span>→</span>
+          </button>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function renderCards(shown){
+  const list =
+    $("list");
+
+  list.classList.remove("load");
+
+  if(shown.length === 0){
+    list.className = "";
+
+    list.innerHTML = `
+      <div class="empty">
+        <p>
+          Ei osumia näillä ehdoilla.
+        </p>
+
+        <button
+          type="button"
+          id="resetEmpty"
+        >
+          Nollaa suodattimet
+        </button>
+      </div>
+    `;
+
+    $("resetEmpty").onclick =
+      resetFilters;
+
+    return;
+  }
+
+  list.className =
+    "list";
+
+  list.innerHTML =
+    shown
+      .map((item,index) =>
+        cardHTML(item,index)
+      )
+      .join("");
+
+  list
+    .querySelectorAll("[data-open]")
+    .forEach(button => {
+      button.addEventListener(
+        "click",
+        () => {
+          openDialog(
+            button.dataset.open
+          );
+        }
+      );
+    });
+}
+
+/* ==========================================================
+   KOKONAISRENDERÖINTI
+   ========================================================== */
+
+function render(){
+  const shown =
+    filtered();
+
+  renderHistogram(shown);
+
+  [...$("periods").children]
+    .forEach((button,index) => {
+      button.classList.toggle(
+        "active",
+        state.periodIdx === index
+      );
+    });
+
+  renderMeta(shown);
+  renderMatrix();
+  renderCards(shown);
+}
+
+/* ==========================================================
+   SUODATTIMIEN TAPAHTUMAT
+   ========================================================== */
+
+$("q").addEventListener(
+  "input",
+  event => {
+    state.q =
+      event.target.value;
+
+    render();
+  }
+);
+
+$("typeF").addEventListener(
+  "change",
+  event => {
+    state.type =
+      event.target.value;
+
+    render();
+  }
+);
+
+$("domainF").addEventListener(
+  "change",
+  event => {
+    state.domain =
+      event.target.value;
+
+    render();
+  }
+);
+
+$("imp").addEventListener(
+  "input",
+  event => {
+    state.minImp =
+      Number(
+        event.target.value
+      );
+
+    $("impVal").textContent =
+      event.target.value;
+
+    render();
+  }
+);
+
+$("periods").addEventListener(
+  "click",
+  event => {
+    const button =
+      event.target.closest(
+        "button[data-period]"
+      );
+
+    if(!button){
+      return;
+    }
+
+    const index =
+      Number(
+        button.dataset.period
+      );
+
+    state.periodIdx =
+      state.periodIdx === index
+        ? null
+        : index;
+
+    render();
+  }
+);
+
+function resetFilters(){
+  state.q = "";
+  state.type = "";
+  state.domain = "";
+  state.periodIdx = null;
+  state.minImp = 1;
+
+  $("q").value = "";
+  $("typeF").value = "";
+  $("domainF").value = "";
+  $("imp").value = 1;
+  $("impVal").textContent = "1";
+
+  render();
+}
+
+/* ==========================================================
+   MATRIISIN OHJAIMET
+   ========================================================== */
+
+document
+  .querySelectorAll(
+    "[data-matrix-direction]"
+  )
+  .forEach(button => {
+    button.addEventListener(
+      "click",
+      () => {
+        matrixState.direction =
+          button.dataset.matrixDirection;
+
+        document
+          .querySelectorAll(
+            "[data-matrix-direction]"
+          )
+          .forEach(candidate => {
+            candidate.classList.toggle(
+              "active",
+              candidate === button
+            );
+          });
+
+        renderMatrix();
+      }
+    );
+  });
+
+document
+  .querySelectorAll(
+    "[data-matrix-depth]"
+  )
+  .forEach(button => {
+    button.addEventListener(
+      "click",
+      () => {
+        matrixState.depth =
+          Number(
+            button.dataset.matrixDepth
+          );
+
+        document
+          .querySelectorAll(
+            "[data-matrix-depth]"
+          )
+          .forEach(candidate => {
+            candidate.classList.toggle(
+              "active",
+              candidate === button
+            );
+          });
+
+        renderMatrix();
+      }
+    );
+  });
+
+$("matrixReset").addEventListener(
+  "click",
+  () => {
+    matrixState.selectedId = null;
+    matrixState.lastClickId = null;
+    matrixState.lastClickTime = 0;
+
+    renderMatrix();
+  }
+);
+
+$("matrixAnalysis").addEventListener(
+  "click",
+  () => {
+    if(matrixState.selectedId){
+      openDialog(
+        matrixState.selectedId
+      );
+    }
+  }
+);
+
+/* ==========================================================
+   DIALOGIN RELAATIOT
+   ========================================================== */
+
+function relationItemHTML(
+  relation,
+  direction
+){
+  const otherId =
+    direction === "in"
+      ? relation.from
+      : relation.to;
+
+  const other =
+    state.byId.get(otherId);
+
+  if(!other){
+    return "";
+  }
+
+  const label =
+    REL_LABELS[relation.type] ||
+    String(relation.type || "")
+      .replaceAll("_"," ");
+
+  return `
+    <button
+      type="button"
+      class="relation-item"
+      data-jump="${esc(other.id)}"
+    >
+      <span class="r-top">
+        <span class="r-title">
+          ${esc(other.title)}
+        </span>
+
+        <span class="r-year">
+          ${years(other)}
+        </span>
+      </span>
+
+      <span class="r-meta">
+        <span
+          class="rel-badge ${esc(relation.rel_class)}"
+        >
+          ${esc(relation.rel_class)}
+        </span>
+
+        <span class="rel-badge">
+          ${esc(label)}
+        </span>
+
+        ${
+          relation.confidence
+            ? `
+              <span
+                class="pip ${esc(relation.confidence)}"
+              >
+                <i></i>
+                ${esc(relation.confidence)}
+              </span>
+            `
+            : ""
+        }
+      </span>
+
+      ${
+        relation.rationale
+          ? `
+            <span class="r-rationale">
+              ${esc(relation.rationale)}
+            </span>
+          `
+          : ""
+      }
+    </button>
+  `;
+}
+
+function relationColumnHTML(
+  title,
+  relations,
+  direction
+){
+  return `
+    <section class="relation-col">
+      <div class="relation-col-title">
+        <span>
+          ${esc(title)}
+        </span>
+
+        <span>
+          ${relations.length}
+        </span>
+      </div>
+
+      <div class="relation-list">
+        ${
+          relations.length
+            ? relations
+                .map(relation =>
+                  relationItemHTML(
+                    relation,
+                    direction
+                  )
+                )
+                .join("")
+            : `
+              <div class="relation-empty">
+                Ei kirjattuja yhteyksiä.
+              </div>
+            `
+        }
+      </div>
+    </section>
+  `;
+}
+
+/* ==========================================================
+   DIALOGI
+   ========================================================== */
+
+/* ==========================================================
+   ARTIKKELIPANEELI
+   ========================================================== */
+
+function articleItemHTML(link){
+  const article =
+    state.articleById.get(link.article_id);
+
+  if(!article){
+    return "";
+  }
+
+  const relLabel =
+    state.articleRelationTypes[link.relation_type] ||
+    link.relation_type;
+
+  return `
+    <details class="article-item">
+      <summary>
+        <span class="a-top">
+          <span class="a-title">
+            ${esc(article.title)}
+          </span>
+
+          <span
+            class="rel-badge"
+            title="${esc(relLabel)}"
+          >
+            ${esc(link.relation_type)}
+          </span>
+        </span>
+
+        <span class="a-dek">
+          ${esc(article.dek || "")}
+        </span>
+      </summary>
+
+      <div class="a-body">
+        ${(article.body || [])
+          .map(paragraph => `
+            <p>${esc(paragraph)}</p>
+          `)
+          .join("")}
+
+        ${
+          article.note
+            ? `
+              <p class="a-note">
+                ${esc(article.note)}
+              </p>
+            `
+            : ""
+        }
+      </div>
+    </details>
+  `;
+}
+
+function articlesPanelHTML(id){
+  const links =
+    state.articleLinksByItem.get(id) || [];
+
+  const sorted =
+    [...links].sort((a,b) =>
+      (b.weight || 0) - (a.weight || 0) ||
+      (a.sort_order || 0) - (b.sort_order || 0)
+    );
+
+  return `
+    <section class="articles-panel">
+      <div class="relation-head">
+        <h3>
+          Aihetta syventävät artikkelit
+        </h3>
+
+        <span>
+          ${sorted.length}
+          artikkelia
+        </span>
+      </div>
+
+      ${
+        sorted.length
+          ? sorted
+              .map(link =>
+                articleItemHTML(link)
+              )
+              .join("")
+          : `
+            <div class="relation-empty">
+              Ei vielä liitettyjä artikkeleita.
+            </div>
+          `
+      }
+    </section>
+  `;
+}
+
+function openDialog(id,options = {}){
+  const item =
+    state.byId.get(id);
+
+  if(!item){
+    return;
+  }
+
+  if(!options.skipUrlUpdate){
+    setUrlItem(id);
+  }
+
+  const incoming =
+    [...(state.incoming.get(id) || [])]
+      .sort((a,b) =>
+        (
+          state.byId.get(a.from)?.year_start ||
+          0
+        ) -
+        (
+          state.byId.get(b.from)?.year_start ||
+          0
+        )
+      );
+
+  const outgoing =
+    [...(state.outgoing.get(id) || [])]
+      .sort((a,b) =>
+        (
+          state.byId.get(a.to)?.year_start ||
+          0
+        ) -
+        (
+          state.byId.get(b.to)?.year_start ||
+          0
+        )
+      );
+
+  state.openId =
+    id;
+
+  document.body.style.overflow =
+    "hidden";
+
+  const oldOverlay =
+    $("overlay");
+
+  if(oldOverlay){
+    oldOverlay.remove();
+  }
+
+  const overlay =
+    document.createElement("div");
+
+  overlay.className =
+    "overlay";
+
+  overlay.id =
+    "overlay";
+
+  overlay.innerHTML = `
+    <div
+      class="dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="dialogTitle"
+    >
+      <div class="dialog-head">
+        <div class="cat">
+          ${esc(item.type)} · ${years(item)}
+        </div>
+
+        <div class="dialog-head-actions">
+          <button
+            type="button"
+            class="share-link"
+            aria-label="Kopioi linkki tähän murrokseen"
+            title="Kopioi jaettava linkki"
+          >
+            🔗 Kopioi linkki
+          </button>
+
+          <button
+            type="button"
+            class="close"
+            aria-label="Sulje"
+          >
+            ×
+          </button>
+        </div>
+      </div>
+
+      <div class="dialog-body">
+        <div class="phase">
+          ${esc(item.phase)}
+        </div>
+
+        <h2 id="dialogTitle">
+          ${esc(item.title)}
+        </h2>
+
+        <div class="dialog-domains">
+          ${(item.domains || [])
+            .map(domain =>
+              `<span>${esc(domain)}</span>`
+            )
+            .join("")}
+        </div>
+
+        <div class="dialog-tabs" role="tablist">
+          <button
+            type="button"
+            class="dialog-tab ${state.activeTab === "card" ? "active" : ""}"
+            data-tab="card"
+          >
+            Kortti
+          </button>
+
+          <button
+            type="button"
+            class="dialog-tab ${state.activeTab === "articles" ? "active" : ""}"
+            data-tab="articles"
+          >
+            Artikkelit
+            ${
+              (state.articleLinksByItem.get(id) || []).length
+                ? `<i>${(state.articleLinksByItem.get(id) || []).length}</i>`
+                : ""
+            }
+          </button>
+
+          <button
+            type="button"
+            class="dialog-tab ${state.activeTab === "relations" ? "active" : ""}"
+            data-tab="relations"
+          >
+            Yhteydet
+            <i>${incoming.length + outgoing.length}</i>
+          </button>
+        </div>
+
+        <div
+          class="tab-panel ${state.activeTab === "card" ? "active" : ""}"
+          data-tab-panel="card"
+        >
+        <div class="chain">
+          <div class="block">
+            <div class="lbl">
+              Havaittu ongelma
+            </div>
+
+            <p>
+              ${esc(item.problem)}
+            </p>
+          </div>
+
+          <div class="block">
+            <div class="lbl">
+              Mekanismi
+            </div>
+
+            <p>
+              ${esc(item.mechanism)}
+            </p>
+          </div>
+
+          <div class="block">
+            <div class="lbl">
+              Seuraukset
+            </div>
+
+            <ul>
+              ${(item.effects || [])
+                .map((effect,index) => `
+                  <li>
+                    <i>
+                      ${String(index + 1).padStart(2,"0")}
+                    </i>
+
+                    <span>
+                      ${esc(effect)}
+                    </span>
+                  </li>
+                `)
+                .join("")}
+            </ul>
+          </div>
+        </div>
+
+        <div class="chain-2">
+          <div class="block copper">
+            <div class="lbl">
+              Pitkä vaikutus
+            </div>
+
+            <p>
+              ${esc(item.long_effect)}
+            </p>
+          </div>
+
+          <div class="block copper">
+            <div class="lbl">
+              Nykymerkitys
+            </div>
+
+            <p>
+              ${esc(item.current_relevance)}
+            </p>
+          </div>
+        </div>
+        </div>
+
+        <div
+          class="tab-panel ${state.activeTab === "articles" ? "active" : ""}"
+          data-tab-panel="articles"
+        >
+          ${articlesPanelHTML(id)}
+        </div>
+
+        <div
+          class="tab-panel ${state.activeTab === "relations" ? "active" : ""}"
+          data-tab-panel="relations"
+        >
+        <section class="relation-panel">
+          <div class="relation-head">
+            <h3>
+              Murroksen yhteydet
+            </h3>
+
+            <span>
+              ${incoming.length + outgoing.length}
+              relaatiota
+            </span>
+          </div>
+
+          <div class="relation-grid">
+            ${relationColumnHTML(
+              "Mistä tämä rakentui",
+              incoming,
+              "in"
+            )}
+
+            ${relationColumnHTML(
+              "Mihin tämä johti",
+              outgoing,
+              "out"
+            )}
+          </div>
+        </section>
+        </div>
+
+        <div class="dialog-foot">
+          <div class="grp">
+            <span class="lbl">
+              Merkittävyys
+            </span>
+
+            ${dots(item.importance)}
+
+            <span
+              style="font-family:var(--mono)"
+            >
+              ${item.importance}/5
+            </span>
+          </div>
+
+          ${pip(item.confidence)}
+
+          <code>
+            #${esc(item.id)}
+          </code>
+        </div>
+      </div>
+    </div>
+  `;
+
+  overlay.addEventListener(
+    "click",
+    event => {
+      if(event.target === overlay){
+        closeDialog();
+      }
+    }
+  );
+
+  overlay
+    .querySelector(".close")
+    .addEventListener(
+      "click",
+      () => closeDialog()
+    );
+
+  overlay
+    .querySelector(".share-link")
+    .addEventListener(
+      "click",
+      async event => {
+        const button =
+          event.currentTarget;
+
+        try{
+          await navigator.clipboard.writeText(
+            window.location.href
+          );
+
+          const original =
+            button.textContent;
+
+          button.textContent =
+            "✓ Linkki kopioitu";
+
+          setTimeout(() => {
+            button.textContent =
+              original;
+          },1800);
+        }catch(error){
+          button.textContent =
+            window.location.href;
+        }
+      }
+    );
+
+  overlay
+    .querySelectorAll("[data-tab]")
+    .forEach(button => {
+      button.addEventListener(
+        "click",
+        () => {
+          const tab =
+            button.dataset.tab;
+
+          state.activeTab =
+            tab;
+
+          overlay
+            .querySelectorAll("[data-tab]")
+            .forEach(candidate => {
+              candidate.classList.toggle(
+                "active",
+                candidate === button
+              );
+            });
+
+          overlay
+            .querySelectorAll("[data-tab-panel]")
+            .forEach(panel => {
+              panel.classList.toggle(
+                "active",
+                panel.dataset.tabPanel === tab
+              );
+            });
+        }
+      );
+    });
+
+  overlay
+    .querySelectorAll("[data-jump]")
+    .forEach(button => {
+      button.addEventListener(
+        "click",
+        () => {
+          const nextId =
+            button.dataset.jump;
+
+          overlay.remove();
+          state.openId = null;
+
+          openDialog(nextId);
+        }
+      );
+    });
+
+  document.body.appendChild(
+    overlay
+  );
+}
+
+function closeDialog(options = {}){
+  const overlay =
+    $("overlay");
+
+  if(overlay){
+    overlay.remove();
+  }
+
+  state.openId = null;
+
+  document.body.style.overflow =
+    "";
+
+  if(!options.skipUrlUpdate){
+    setUrlItem(null);
+  }
+}
+
+document.addEventListener(
+  "keydown",
+  event => {
+    if(
+      event.key === "Escape" &&
+      state.openId
+    ){
+      closeDialog();
+    }
+  }
+);
+
+/* ==========================================================
+   APU: DEBOUNCE
+   ========================================================== */
+
+function debounce(callback,delay){
+  let timer;
+
+  return (...argumentsList) => {
+    clearTimeout(timer);
+
+    timer =
+      setTimeout(
+        () =>
+          callback(...argumentsList),
+        delay
+      );
+  };
+}
+</script>
+</body>
+</html>
