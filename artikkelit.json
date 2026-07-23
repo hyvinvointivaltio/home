@@ -1,12 +1,12 @@
 {
   "meta": {
     "title": "Murrosmatriisin artikkelit",
-    "description": "Murroskortteihin kytkeytyvä tulkinnallinen artikkelikerros. Artikkelit selittävät MIKSI murros merkitsee; kortit kertovat MITÄ tapahtui.",
-    "count": 4,
-    "link_count": 20,
     "status": "Tekoälyavusteinen luonnos -- kaikki artikkelit vaativat kuratoijan katselmoinnin ennen julkaisua. Sisältö on tiivistetty ja paraphrasoitu murrosmatriisin ja atlaksen jo olemassa olevista, tutkitusta korteista; ei sisällä niiden ulkopuolisia uusia faktaväitteitä.",
     "created": "2026-07-23",
-    "schema_note": "Kytkentä murroskortteihin tehdään erillisessä 'links'-taulukossa (article_id / item_id / relation_type / weight / sort_order), ei upottamalla linkkejä artikkelin sisään. Tämä mahdollistaa saman artikkelin liittämisen useaan korttiin ja saman kortin useaan artikkeliin ilman duplikointia."
+    "description": "Murroskortteihin kytkeytyvä tulkinnallinen artikkelikerros. Artikkelit selittävät MIKSI murros merkitsee; kortit kertovat MITÄ tapahtui.",
+    "schema_note": "Kytkentä murroskortteihin tehdään erillisessä 'links'-taulukossa (article_id / item_id / relation_type / weight / sort_order), ei upottamalla linkkejä artikkelin sisään. Tämä mahdollistaa saman artikkelin liittämisen useaan korttiin ja saman kortin useaan artikkeliin ilman duplikointia.",
+    "count": 10,
+    "link_count": 40
   },
   "relation_types": {
     "primary": "artikkelin pääaihe -- kortti on se, mistä artikkeli ensisijaisesti kertoo",
@@ -16,6 +16,25 @@
     "contrasts": "artikkeli vertaa murrosta toiseen, erilaiseen tapaukseen"
   },
   "articles": [
+    {
+      "id": "1990-luvun-laman-pitka-varjo",
+      "title": "1990-luvun lama ja sen pitkä varjo",
+      "dek": "Suomen 1990-luvun talouskriisi ei ollut vain neljän vuoden notkahdus. Se muutti pysyvästi sitä, miten valtio hoitaa rahaa – ja miten varovaiseksi se siitä opetteli.",
+      "tags": [
+        "talous",
+        "julkinen talous",
+        "instituutiot"
+      ],
+      "status": "ai_draft",
+      "note": "Kuratoitu 2026-07-23 (tekoälyavusteinen luonnos) -- vaatii kuratoijan katselmoinnin ennen julkaisua. HUOM: aineistossa on kaksi lähes identtistä korttia rahoitusmarkkinoiden vapauttamisesta (rahoitusmarkkinoiden-vapautuminen 1983-1990 ja rahoitusmarkkinoiden_vapauttaminen 1986-1988) -- kuratoijan syytä harkita yhdistämistä.",
+      "body": [
+        "1980-luvun puolivälissä Suomen rahoitusmarkkinat olivat vielä vahvasti säänneltyjä: korot, luotonanto ja valuutan liikkeet olivat viranomaisten tiukassa otteessa. Muutamassa vuodessa tämä sääntely purettiin nopeasti, mikä lisäsi äkillisesti velan saatavuutta ja pääomien liikkuvuutta.",
+        "Vapautuminen ei ollut virhe sinänsä – se loi edellytykset nykyaikaisille rahoitusmarkkinoille. Mutta se tapahtui ilman riittäviä vakauttavia rakenteita, ja seurauksena luottotalous ylikuumeni nopeasti. Kun tähän yhdistyivät idänkaupan romahdus ja korkea korkotaso, syntyi täydellinen myrsky: 1990-luvun alun lama.",
+        "Pankit ajautuivat laajoihin luottotappioihin, ja valtio joutui tukemaan pankkijärjestelmää poikkeuksellisen laajasti. Seuraukset eivät jääneet vain talouden tunnuslukuihin – massatyöttömyys ja yrityskaadot jättivät jäljen, joka näkyy edelleen työttömyyden rakenteessa ja koko sukupolven talouskokemuksessa.",
+        "Kriisin opetus näkyi myöhemmin konkreettisena instituutiona. 2000-luvun alussa valtiontalouden menot alettiin sitoa hallituskausittaisiin, sitoviin kehyksiin – suoraan vastauksena siihen, että laman aikana ja sitä ennen julkisen talouden hallittavuus oli osoittautunut riittämättömäksi. Kehysmenettelystä tuli pysyvä osa suomalaista finanssipolitiikkaa, joka edelleen ohjaa jokaista hallitusta.",
+        "Samaan aikaan Suomi haki myös ulkoista ankkuria: EU-jäsenyys 1995 kytki pienen, avoimen talouden kiinteämmin eurooppalaiseen sääntely- ja päätöksentekojärjestelmään juuri kylmän sodan jälkeisessä tilanteessa, jossa vanha idänsuhde oli menettänyt merkityksensä. Lama, kehysohjaus ja EU-jäsenyys eivät olleet kolme erillistä tapahtumaa, vaan saman vuosikymmenen kolme toisiinsa kietoutunutta vastausta samaan perustavaan kysymykseen: miten pieni talous suojautuu seuraavalta kertaa varten."
+      ]
+    },
     {
       "id": "huoltosuhde-kuka-kantaa",
       "title": "Huoltosuhde – kuka kantaa, ketä ja miten?",
@@ -34,6 +53,46 @@
         "Näiden kahden liikkeen – suurten ikäluokkien ja pysyvästi laskevan syntyvyyden – yhteisvaikutus on se, mitä 1975 alkaen kutsutaan väestön ikääntymiseksi: työikäisten suhteellinen osuus pienenee samalla kun huollettavien määrä kasvaa. 2010-luvulla syntyvyys laski vielä uudelle, historiallisen matalalle tasolle ilman sotaa tai muuta äkillistä yhteiskunnallista kriisiä – vain jatkumo, joka syveni.",
         "Kysymys 'kuka kantaa' ei siis ole retorinen. Se on kirjaimellinen: kun huoltosuhde heikkenee, harvempi työikäinen rahoittaa useamman eläkkeen, hoivan ja terveydenhuollon palvelut. Eläkejärjestelmää on jouduttu sopeuttamaan tähän toistuvasti – ensin maksuja nostamalla ja rahastointia vahvistamalla, myöhemmin sitomalla eläkeikä suoraan elinajan kehitykseen.",
         "Se, mikä tekee tästä ketjusta erityisen: jokainen vaihe oli tilastollisesti ennakoitavissa vuosikymmeniä etukäteen. Syntyneet ikäluokat tiedettiin. Silti sopeutuminen – työurien pidentäminen, tuottavuuden kasvattaminen, palvelurakenteen uudistaminen – on osoittautunut poliittisesti ja hallinnollisesti paljon hitaammaksi kuin itse väestökehitys."
+      ]
+    },
+    {
+      "id": "kolme-digitalisaation-aaltoa",
+      "title": "Kolme digitalisaation aaltoa",
+      "dek": "Internet, sähköinen hallinto ja generatiivinen tekoäly eivät ole kolme erillistä murrosta — ne ovat sama ilmiö kolmessa eri vaiheessa.",
+      "tags": [
+        "digitalisaatio",
+        "teknologia",
+        "hallinto"
+      ],
+      "status": "ai_draft",
+      "note": "Kuratoitu 2026-07-23 (tekoälyavusteinen luonnos) -- vaatii kuratoijan katselmoinnin ennen julkaisua.",
+      "body": [
+        "Ensimmäinen aalto, 1990-luvun puolivälistä 2000-luvun alkuun, oli infrastruktuurin rakentamista: tietoverkot, matkapuhelimet ja ensimmäiset digitaaliset palvelut levisivät nopeasti ja poistivat tiedonvälityksen ja kaupankäynnin fyysisiä rajoitteita. Tämä loi sekä teknisen alustan että kokonaisen ICT-vientiteollisuuden, mutta ennen kaikkea se loi valmiuden — ihmiset ja instituutiot tottuivat toimimaan verkossa.",
+        "Tämä valmius mahdollisti toisen aallon: digitaalisen julkishallinnon läpimurron 2000-luvun alusta 2020-luvulle. Paperipohjaisen hallinnon hitaus ja kustannukset saivat vastineekseen sähköisen veroasioinnin, verkkopankkitunnistautumisen ja digitaaliset hakemukset. Ilman ensimmäisen aallon tietoverkkoja ja totuttua verkkokäyttäytymistä tämä toinen aalto ei olisi voinut edetä yhtä nopeasti.",
+        "Kolmas aalto alkoi vuonna 2022 generatiivisen tekoälyn läpimurrosta. Toisin kuin edelliset aallot, jotka ennen kaikkea siirsivät olemassa olevia toimintoja verkkoon, tekoäly puuttuu suoraan itse työn sisältöön: kielimallit ja muut järjestelmät alkavat tehdä osan luonnostelusta, analyysistä ja päätöksenteon tuesta, jotka aiemmin olivat yksinomaan ihmisen tehtäviä.",
+        "Jokainen aalto on ollut edellisen edellytys, ei vain seuraaja. Tekoälyn hyödyntäminen olisi mahdotonta ilman ensimmäisen aallon dataa, verkkoja ja laskentaa, ja sen käyttöönotto julkishallinnossa nojaa toisen aallon jo rakentamiin sähköisiin palvelukanaviin ja tunnistautumisjärjestelmiin.",
+        "Kolmas aalto on myös synnyttänyt uuden, konkreettisen fyysisen vaatimuksen: datakeskusten rakentamisen kiihtymisen. Toisin kuin aiemmat, pääosin ohjelmistovetoiset aallot, tekoälyn laskentatarve vaatii massiivista fyysistä infrastruktuuria — mikä tekee tästä kolmannesta aallosta samalla energia-, ilmasto- ja aluepoliittisen kysymyksen, ei vain tietotekninen.",
+        "Kysymys, joka toistuu jokaisessa aallossa: mitä tapahtuu niille tehtäville ja työpaikoille, jotka aiempi vaihe teki tarpeettomiksi? Ensimmäinen ja toinen aalto loivat enemmän uutta työtä kuin poistivat. Onko kolmas aalto samanlainen, vai onko se laadullisesti erilainen — se on kysymys, johon tämä atlas ei vielä osaa antaa vastausta."
+      ]
+    },
+    {
+      "id": "kriittinen-infrastruktuuri-kaupan-kohteena",
+      "title": "Kriittinen infrastruktuuri kaupan kohteena",
+      "dek": "Sähköverkko, datakeskukset, tekoälyn laskentakapasiteetti – yhä useampi asia, jota pidämme itsestäänselvyytenä, on samalla sekä kansallista infrastruktuuria että kansainvälistä sijoitusomaisuutta.",
+      "tags": [
+        "energia",
+        "digitalisaatio",
+        "infrastruktuuri",
+        "huoltovarmuus"
+      ],
+      "status": "ai_draft",
+      "note": "Kuratoitu 2026-07-23 (tekoälyavusteinen luonnos) -- vaatii kuratoijan katselmoinnin ennen julkaisua.",
+      "body": [
+        "Vuonna 2013 Fortum myi sähkön jakeluverkkonsa kansainväliselle sijoittajaryhmälle, jonka pohjalta muodostui Caruna. Kauppa oli looginen jatko 1990-luvulla alkaneelle valtionyhtiöiden yhtiöittämis- ja yksityistämispolitiikalle: julkinen omistaja halusi vapauttaa pääomaa, ja vakaata tuottoa tarjoava sähköverkko oli sijoittajille houkutteleva kohde.",
+        "Kauppa muutti kuitenkin jotain periaatteellisempaa kuin vain omistuspohjan. Se pakotti kysymään, missä määrin kriittinen infrastruktuuri – sellainen, jota ilman yhteiskunta ei yksinkertaisesti toimi – voi olla markkinaehtoisen ja kansainvälisen omistuksen piirissä. Sähkön siirtohinnoista tuli sen jälkeen toistuvasti laajan yhteiskunnallisen keskustelun kohde, ja luonnollisten monopolien sääntelyn merkitys korostui.",
+        "Kymmenisen vuotta myöhemmin sama kysymys nousi uudessa muodossa, kun datakeskusten rakentaminen alkoi kiihtyä. Pilvipalvelujen ja tekoälyn kasvava laskentatarve teki Suomesta kiinnostavan kohteen vakaan toimintaympäristön, uusiutuvan sähkön, viileän ilmaston ja toimivan sähköverkon ansiosta – osin sen saman verkon, joka oli jo aiemmin siirtynyt kansainväliseen omistukseen.",
+        "Datakeskuksista on tulossa osa kansallista kriittistä infrastruktuuria samalla tavoin kuin sähkö-, liikenne- ja tietoliikenneverkoista aiemmin. Ja koska generatiivisen tekoälyn hyödyntäminen vaatii vielä suurempaa laskentakapasiteettia, energiaa ja tietoliikenneyhteyksiä, tekoälyinfrastruktuurista on muodostumassa yksi yhteiskunnan uusista tuotantorakenteista sähköverkkojen ja tietoliikenneverkkojen rinnalle.",
+        "Yhteinen lanka näissä kolmessa tapauksessa – sähköverkko, datakeskukset, tekoälyinfrastruktuuri – on sama: kun jokin muuttuu riittävän välttämättömäksi arjen toiminnalle, sen omistuksesta, sijainnista ja sääntelystä tulee väistämättä myös poliittinen kysymys, riippumatta siitä, kuka sen alun perin rakensi tai omistaa."
       ]
     },
     {
@@ -56,42 +115,99 @@
       ]
     },
     {
-      "id": "1990-luvun-laman-pitka-varjo",
-      "title": "1990-luvun lama ja sen pitkä varjo",
-      "dek": "Suomen 1990-luvun talouskriisi ei ollut vain neljän vuoden notkahdus. Se muutti pysyvästi sitä, miten valtio hoitaa rahaa – ja miten varovaiseksi se siitä opetteli.",
+      "id": "metsasta-maailmanmarkkinoille",
+      "title": "Metsästä maailmanmarkkinoille",
+      "dek": "Kolmessa vuosikymmenessä suomalainen metsä muuttui paikallisesta käyttövarasta koko kansantalouden selkärangaksi.",
       "tags": [
         "talous",
-        "julkinen talous",
-        "instituutiot"
-      ],
-      "status": "ai_draft",
-      "note": "Kuratoitu 2026-07-23 (tekoälyavusteinen luonnos) -- vaatii kuratoijan katselmoinnin ennen julkaisua. HUOM: aineistossa on kaksi lähes identtistä korttia rahoitusmarkkinoiden vapauttamisesta (rahoitusmarkkinoiden-vapautuminen 1983-1990 ja rahoitusmarkkinoiden_vapauttaminen 1986-1988) -- kuratoijan syytä harkita yhdistämistä.",
-      "body": [
-        "1980-luvun puolivälissä Suomen rahoitusmarkkinat olivat vielä vahvasti säänneltyjä: korot, luotonanto ja valuutan liikkeet olivat viranomaisten tiukassa otteessa. Muutamassa vuodessa tämä sääntely purettiin nopeasti, mikä lisäsi äkillisesti velan saatavuutta ja pääomien liikkuvuutta.",
-        "Vapautuminen ei ollut virhe sinänsä – se loi edellytykset nykyaikaisille rahoitusmarkkinoille. Mutta se tapahtui ilman riittäviä vakauttavia rakenteita, ja seurauksena luottotalous ylikuumeni nopeasti. Kun tähän yhdistyivät idänkaupan romahdus ja korkea korkotaso, syntyi täydellinen myrsky: 1990-luvun alun lama.",
-        "Pankit ajautuivat laajoihin luottotappioihin, ja valtio joutui tukemaan pankkijärjestelmää poikkeuksellisen laajasti. Seuraukset eivät jääneet vain talouden tunnuslukuihin – massatyöttömyys ja yrityskaadot jättivät jäljen, joka näkyy edelleen työttömyyden rakenteessa ja koko sukupolven talouskokemuksessa.",
-        "Kriisin opetus näkyi myöhemmin konkreettisena instituutiona. 2000-luvun alussa valtiontalouden menot alettiin sitoa hallituskausittaisiin, sitoviin kehyksiin – suoraan vastauksena siihen, että laman aikana ja sitä ennen julkisen talouden hallittavuus oli osoittautunut riittämättömäksi. Kehysmenettelystä tuli pysyvä osa suomalaista finanssipolitiikkaa, joka edelleen ohjaa jokaista hallitusta.",
-        "Samaan aikaan Suomi haki myös ulkoista ankkuria: EU-jäsenyys 1995 kytki pienen, avoimen talouden kiinteämmin eurooppalaiseen sääntely- ja päätöksentekojärjestelmään juuri kylmän sodan jälkeisessä tilanteessa, jossa vanha idänsuhde oli menettänyt merkityksensä. Lama, kehysohjaus ja EU-jäsenyys eivät olleet kolme erillistä tapahtumaa, vaan saman vuosikymmenen kolme toisiinsa kietoutunutta vastausta samaan perustavaan kysymykseen: miten pieni talous suojautuu seuraavalta kertaa varten."
-      ]
-    },
-    {
-      "id": "kriittinen-infrastruktuuri-kaupan-kohteena",
-      "title": "Kriittinen infrastruktuuri kaupan kohteena",
-      "dek": "Sähköverkko, datakeskukset, tekoälyn laskentakapasiteetti – yhä useampi asia, jota pidämme itsestäänselvyytenä, on samalla sekä kansallista infrastruktuuria että kansainvälistä sijoitusomaisuutta.",
-      "tags": [
-        "energia",
-        "digitalisaatio",
-        "infrastruktuuri",
-        "huoltovarmuus"
+        "teollisuus",
+        "metsätalous",
+        "vienti"
       ],
       "status": "ai_draft",
       "note": "Kuratoitu 2026-07-23 (tekoälyavusteinen luonnos) -- vaatii kuratoijan katselmoinnin ennen julkaisua.",
       "body": [
-        "Vuonna 2013 Fortum myi sähkön jakeluverkkonsa kansainväliselle sijoittajaryhmälle, jonka pohjalta muodostui Caruna. Kauppa oli looginen jatko 1990-luvulla alkaneelle valtionyhtiöiden yhtiöittämis- ja yksityistämispolitiikalle: julkinen omistaja halusi vapauttaa pääomaa, ja vakaata tuottoa tarjoava sähköverkko oli sijoittajille houkutteleva kohde.",
-        "Kauppa muutti kuitenkin jotain periaatteellisempaa kuin vain omistuspohjan. Se pakotti kysymään, missä määrin kriittinen infrastruktuuri – sellainen, jota ilman yhteiskunta ei yksinkertaisesti toimi – voi olla markkinaehtoisen ja kansainvälisen omistuksen piirissä. Sähkön siirtohinnoista tuli sen jälkeen toistuvasti laajan yhteiskunnallisen keskustelun kohde, ja luonnollisten monopolien sääntelyn merkitys korostui.",
-        "Kymmenisen vuotta myöhemmin sama kysymys nousi uudessa muodossa, kun datakeskusten rakentaminen alkoi kiihtyä. Pilvipalvelujen ja tekoälyn kasvava laskentatarve teki Suomesta kiinnostavan kohteen vakaan toimintaympäristön, uusiutuvan sähkön, viileän ilmaston ja toimivan sähköverkon ansiosta – osin sen saman verkon, joka oli jo aiemmin siirtynyt kansainväliseen omistukseen.",
-        "Datakeskuksista on tulossa osa kansallista kriittistä infrastruktuuria samalla tavoin kuin sähkö-, liikenne- ja tietoliikenneverkoista aiemmin. Ja koska generatiivisen tekoälyn hyödyntäminen vaatii vielä suurempaa laskentakapasiteettia, energiaa ja tietoliikenneyhteyksiä, tekoälyinfrastruktuurista on muodostumassa yksi yhteiskunnan uusista tuotantorakenteista sähköverkkojen ja tietoliikenneverkkojen rinnalle.",
-        "Yhteinen lanka näissä kolmessa tapauksessa – sähköverkko, datakeskukset, tekoälyinfrastruktuuri – on sama: kun jokin muuttuu riittävän välttämättömäksi arjen toiminnalle, sen omistuksesta, sijainnista ja sääntelystä tulee väistämättä myös poliittinen kysymys, riippumatta siitä, kuka sen alun perin rakensi tai omistaa."
+        "Vielä 1850-luvulla metsä oli suomalaiselle lähinnä paikallinen käyttövara: polttopuuta, rakennustarpeita, laidunta. Sen taloudellinen arvo välittyi heikosti kansainvälisille markkinoille, koska tuotanto oli sidottu koskien vesivoimaan ja kuljetusmatkat rannikolle olivat pitkiä ja hitaita.",
+        "Höyrykone muutti tämän parissa vuosikymmenessä perusteellisesti. Kun sahoja ei enää tarvinnut rakentaa koskien varaan, ne voitiin sijoittaa suoraan satamien yhteyteen ja mitoittaa kysynnän, ei jokiuoman, mukaan. Tuotantokapasiteetti kasvoi voimakkaasti, ja Suomesta tuli 1860-luvulta lähtien ensimmäistä kertaa kansainvälisesti kilpailukykyinen vientitalous.",
+        "Sahateollisuuden nousu ei tapahtunut tyhjiössä. Samaan aikaan puun markkina-arvo alkoi vihdoin välittyä myös metsänomistajille itselleen: rahatalouden vahvistuminen, paranevat kuljetusyhteydet ja järjestäytyvä puukauppa liittivät hajallaan olevat yksityismetsät osaksi samaa teollista arvoketjua, jota sahat ruokkivat.",
+        "Kun raakapuun ja sahatavaran vienti alkoi 1870-luvulla tuottaa yhä pienemmän lisäarvon kasvavilla markkinoilla, seuraava askel oli looginen: sellu- ja paperiteollisuus nosti jalostusastetta ja loi kokonaan uusia vientituotteita. Tämä ei ollut vain tekninen päivitys vaan koko toimialan strateginen uudelleensuuntautuminen kohti korkeampaa jalostusarvoa.",
+        "Samalla syntyi jotain pysyvämpää kuin yksittäinen vientituote: tehdasjärjestelmä. Hajautettu käsityö ei enää riittänyt vastaamaan kasvavien markkinoiden tuotantomääriin, joten työvoima, koneet ja johto koottiin suuriin, keskitettyihin tuotantolaitoksiin — malliksi, joka levisi pian metsäteollisuudesta muuallekin Suomen talouteen.",
+        "Näiden neljän murroksen — höyrysahat, metsien kaupallistuminen, puunjalostus, tehdasjärjestelmä — yhteisvaikutus loi perustan, jonka varassa Suomi eli yli vuosisadan: metsäteollisuudesta tuli maan tärkein vientiala ja lopulta koko hyvinvointiyhteiskunnan taloudellinen selkäranka."
+      ]
+    },
+    {
+      "id": "nato-jasenyys-ja-liittoutumattomuuden-loppu",
+      "title": "Nato-jäsenyys ja liittoutumattomuuden loppu",
+      "dek": "Kolmesataa vuotta vaihtelevaa geopoliittista asemaa päättyi kahdessa vuodessa — mutta ei tyhjästä.",
+      "tags": [
+        "turvallisuus",
+        "ulkopolitiikka"
+      ],
+      "status": "ai_draft",
+      "note": "Kuratoitu 2026-07-23 (tekoälyavusteinen luonnos) -- vaatii kuratoijan katselmoinnin ennen julkaisua.",
+      "body": [
+        "YYA-sopimus vuodesta 1948 määritti Suomen turvallisuuspolitiikan toimintakehyksen lähes puolen vuosisadan ajan. Se ei ollut vain kahdenvälinen sopimus vaan koko ulkopoliittisen varovaisuuden ja liikkumavaran perusta: Suomi turvasi itsenäisyytensä tasapainoilemalla idän ja lännen välissä, mikä samalla rajoitti sen mahdollisuuksia läntiseen integraatioon.",
+        "Kylmän sodan päättyminen 1991 ja YYA-sopimuksen raukeaminen 1992 avasivat tilan, jota Suomi käytti EU-jäsenyyteen 1995 — mutta sotilaallinen liittoutumattomuus säilyi silti pitkään tämän jälkeenkin lähes koskemattomana periaatteena. Talousintegraatio ei automaattisesti tarkoittanut turvallisuuspoliittista integraatiota.",
+        "Tämä pitkä, vakaa liittoutumattomuuden aika päättyi lopulta äkillisesti, ei asteittain. Venäjän hyökkäys Ukrainaan vuonna 2022 mursi eurooppalaisen turvallisuusjärjestyksen ja paljasti, kuinka riskialtista Venäjä-riippuvuus — niin energiassa kuin turvallisuudessa — oli osoittautunut. Sota katkaisi kauppasuhteet, nosti hintoja ja muutti Suomen turvallisuuspoliittisen laskelman perusteellisesti muutamassa kuukaudessa.",
+        "Seuraus oli nopea ja perustavanlaatuinen: Suomi haki ja sai Nato-jäsenyyden vuosina 2022–2023, päättäen sotilaallisen liittoutumattomuuden pitkän kaaren. Jäsenyys ei ollut vain symbolinen ele vaan käynnisti konkreettisen integraation yhteiseen puolustussuunnitteluun, harjoituksiin ja komentorakenteisiin.",
+        "Tarkasteltuna yhtenä kaarena — YYA-sopimuksesta Nato-jäsenyyteen — tarina ei ole yllättävä käänne vaan looginen, joskin viiveellä toteutunut, päätepiste: kylmän sodan aikaisen tasapainopolitiikan tarve katosi vähitellen 1990-luvulta lähtien, ja vuoden 2022 sota vain teki tästä muutoksesta äkillisesti kiireellisen sen sijaan että se olisi jäänyt asteittaiseksi."
+      ]
+    },
+    {
+      "id": "peruskoulu-suomen-kestavin-onnistumistarina",
+      "title": "Peruskoulu: Suomen kestävin onnistumistarina",
+      "dek": "Yhtenäinen peruskoulu ei syntynyt tyhjästä vuonna 1968 — se oli sadan vuoden koulutuspolitiikan päätepiste, ei sen alku.",
+      "tags": [
+        "koulutus",
+        "tasa-arvo"
+      ],
+      "status": "ai_draft",
+      "note": "Kuratoitu 2026-07-23 (tekoälyavusteinen luonnos) -- vaatii kuratoijan katselmoinnin ennen julkaisua.",
+      "body": [
+        "Kansakouluasetus 1866 loi ensimmäisen järjestelmällisen, maallisen koulutusinstituution vastaukseksi perusopetuksen hajanaisuuteen ja kansalaisten heikkoihin koulutusmahdollisuuksiin. Se ei vielä ollut universaali — mutta se loi verkon, opettajankoulutuksen ja lukutaidon perustan, jonka varaan myöhempi laajentaminen saattoi rakentua.",
+        "Seuraava suuri askel oli oppivelvollisuus vuonna 1921: kaikille lapsille säädettiin velvollisuus hankkia perustiedot, riippumatta perheen varallisuudesta tai asuinpaikasta. Tämä oli ratkaiseva periaatteellinen muutos — koulutuksesta tuli oikeus ja velvollisuus, ei enää mahdollisuus, johon vain osalla oli tosiasiallisesti pääsy.",
+        "Silti järjestelmä pysyi rinnakkaiskoulujen varassa: osa lapsista jatkoi oppikouluun, osa jäi kansakouluun, ja tämä jako heijasti vahvasti perheen sosiaalista asemaa ja asuinpaikkaa. Vuoden 1968 peruskoulu-uudistus puuttui juuri tähän — koko ikäluokka siirrettiin samaan yhdeksänvuotiseen peruskouluun ilman varhaista, sosiaalisesti eriytettyä valintaa.",
+        "Uudistuksen vaikutukset olivat laajat ja pitkäkestoiset: koulutustaso nousi, alueellinen tasa-arvo kasvoi ja jatko-opintojen ovet avautuivat yhä useammalle riippumatta lähtökohdista. Toisin kuin monet muut suuret rakenneuudistukset, peruskoulu-uudistus on osoittautunut poikkeuksellisen kestäväksi: sen perusarkkitehtuuri on säilynyt vuosikymmenten ajan ilman merkittäviä murtumia.",
+        "Kolmen kortin — kansakouluasetuksen, oppivelvollisuuden ja peruskoulun — muodostama sadan vuoden kaari on hyvä muistutus siitä, että suuret onnistumiset harvoin syntyvät yhdellä päätöksellä. Ne ovat useiden peräkkäisten, toisiaan täydentävien uudistusten summa, joista jokainen ratkaisi seuraavan ongelman edellisen luoman perustan varassa."
+      ]
+    },
+    {
+      "id": "teollistumisen-ja-kaupungistumisen-kaksoisvallankumous",
+      "title": "Teollistumisen ja kaupungistumisen kaksoisvallankumous",
+      "dek": "Vuosina 1950–1980 Suomi muutti muotoaan nopeammin kuin koskaan aiemmin: maalta kaupunkiin, pellolta tehtaaseen, elannosta palkkaan.",
+      "tags": [
+        "talous",
+        "työ",
+        "väestö",
+        "kaupungit"
+      ],
+      "status": "ai_draft",
+      "note": "Kuratoitu 2026-07-23 (tekoälyavusteinen luonnos) -- vaatii kuratoijan katselmoinnin ennen julkaisua.",
+      "body": [
+        "Palkkatyöyhteiskunnan juuret ulottuvat jo 1860-luvulle: kun palvelussuhteen sopimusluonne vahvistui ja työvoiman liikkuminen vapautui, toimeentulo alkoi vähitellen irtautua maasta ja säädystä. Tämä pitkä, hidas siirtymä loi sen institutionaalisen pohjan, jonka päälle 1900-luvun jälkipuoliskon nopeampi murros rakentui.",
+        "Varsinainen käännekohta tuli kuitenkin vasta 1950-luvulta lähtien, kun maatalous ei enää yksinkertaisesti kyennyt työllistämään kasvavaa väestöä. Teollisuus tarjosi vaihtoehdon: uusia työpaikkoja, kasvavia vientituloja ja — mikä osoittautui pitkällä aikavälillä yhtä tärkeäksi — kasvavan verotulopohjan, joka rahoitti myöhemmin rakennettavaa hyvinvointivaltiota.",
+        "Teollisuuden työpaikat eivät kuitenkaan syntyneet siellä missä ihmiset jo asuivat. Työ siirtyi maataloudesta teollisuuteen ja palveluihin samalla kun väestö siirtyi perässä kasvukeskuksiin — ja näin kaksi murrosta kietoutuivat yhteen: teollistuminen loi vetovoiman, kaupungistuminen oli sen väistämätön seuraus.",
+        "Muutoksen nopeus oli poikkeuksellinen. Muutamassa vuosikymmenessä Suomi muuttui maasta, jossa suurin osa väestöstä asui maaseudulla, maaksi jossa suurin osa asuu kaupungeissa ja niiden lähiöissä. Tämä ei ollut vain tilastollinen siirtymä vaan koko yhteiskunnan alue- ja yhdyskuntarakenteen uudelleenkirjoitus.",
+        "Kaksoisvallankumouksen perintö näkyy edelleen kahdella tavalla. Ensinnäkin siinä, että Suomesta tuli moderni, palkkatyöhön ja verotuloihin nojaava teollisuus- ja myöhemmin palveluyhteiskunta. Toisekseen siinä alueellisessa erossa kasvukeskusten ja muuttotappioalueiden välillä, joka on suoraa jatkumoa sille, mihin ihmiset silloin muuttivat — ja mihin he eivät."
+      ]
+    },
+    {
+      "id": "terveydenhuollon-pitka-rakennuskaari",
+      "title": "Terveydenhuollon pitkä rakennuskaari",
+      "dek": "Suomalainen terveydenhuolto on rakennettu uudelleen kolmesti viidessäkymmenessä vuodessa — ja kolmas kerta on yhä kesken.",
+      "tags": [
+        "terveys",
+        "hyvinvointivaltio",
+        "hallinto"
+      ],
+      "status": "ai_draft",
+      "note": "Kuratoitu 2026-07-23 (tekoälyavusteinen luonnos) -- vaatii kuratoijan katselmoinnin ennen julkaisua.",
+      "body": [
+        "Vuoteen 1972 asti suomalainen terveydenhuolto painottui vahvasti sairaalahoitoon, ja palvelujen saatavuus vaihteli suuresti alueittain. Kansanterveyslaki muutti tämän perusteellisesti: kunnat velvoitettiin järjestämään kaikille asukkaille perusterveydenhuolto terveyskeskusten kautta, ja painopiste siirtyi ennaltaehkäisyyn sairaalakeskeisyyden rinnalle.",
+        "Terveyskeskusverkosto rakennettiin poikkeuksellisen nopeasti koko maan kattavaksi, ja siitä muodostui vuosikymmeniksi suomalaisen terveydenhuollon perusta. Mutta juuri tämä rakenne — pieni kunta yhtenä järjestäjänä — osoittautui pitkällä aikavälillä ongelmalliseksi: pienten kuntien voimavarat ja väestöpohja eivät riittäneet vastaamaan väestön ikääntymisen ja kustannuspaineen kasvuun tasavertaisesti.",
+        "Tästä alkoi pitkä, lähes kaksikymmentä vuotta kestänyt uudistuskierre. Useita malleja kokeiltiin ja hylättiin, useita hallituksia yritti ja epäonnistui ennen kuin järjestämisvastuu saatiin koottua kuntia suuremmille alueille. Tämä ei ollut poikkeuksellista hitautta — se heijasti sitä, kuinka vaikeaa on sopia uudelleen kymmenien miljardien eurojen palvelurakenteesta, kun jokainen malli vaikuttaa eri tavalla eri alueiden asukkaisiin.",
+        "Vuonna 2023 pitkä kierre saavutti välitepisteensä: sosiaali-, terveys- ja pelastustoimen järjestämisvastuu siirtyi kunnilta uusille hyvinvointialueille — Suomen suurin yksittäinen hallinnollinen rakennemuutos vuosikymmeniin. Rahoitus keskitettiin valtiolle, ja alueiden piti sovittaa yhteen aiemmin erillään toimineiden kuntien palveluverkot.",
+        "Kaari kansanterveyslaista hyvinvointialueisiin on siis yksi yhtäjaksoinen tarina, ei kolme erillistä: joka vaihe ratkaisi edellisen rakenteen ongelman luomalla samalla uuden, seuraavan sukupolven ratkaistavaksi jääneen haasteen. Hyvinvointialueiden oma kestävyys — rahoitus, integraatio, henkilöstön riittävyys — on jo osoittautunut tämän kaaren tuorein, yhä avoin luku."
       ]
     }
   ],
@@ -104,53 +220,81 @@
       "sort_order": 1
     },
     {
-      "article_id": "huoltosuhde-kuka-kantaa",
-      "item_id": "vaeston-ikaantyminen",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 2
-    },
-    {
-      "article_id": "huoltosuhde-kuka-kantaa",
-      "item_id": "suuret-ikaluokat-1945",
-      "relation_type": "context",
-      "weight": 4,
-      "sort_order": 3
-    },
-    {
-      "article_id": "huoltosuhde-kuka-kantaa",
-      "item_id": "syntyvyyden-rakennemuutos-1969",
-      "relation_type": "context",
-      "weight": 4,
-      "sort_order": 4
-    },
-    {
-      "article_id": "huoltosuhde-kuka-kantaa",
-      "item_id": "historiallisen-matala-syntyvyys-2010",
-      "relation_type": "context",
-      "weight": 3,
-      "sort_order": 5
-    },
-    {
-      "article_id": "huoltosuhde-kuka-kantaa",
-      "item_id": "elakejarjestelman-kestavyys-1990",
-      "relation_type": "supports",
-      "weight": 3,
-      "sort_order": 6
-    },
-    {
-      "article_id": "huoltosuhde-kuka-kantaa",
-      "item_id": "elakeuudistukset-2005",
-      "relation_type": "supports",
-      "weight": 3,
-      "sort_order": 7
-    },
-    {
       "article_id": "kun-korjaava-kierre-katkeaa",
       "item_id": "elakejarjestelman-kestavyys-1990",
       "relation_type": "primary",
       "weight": 5,
       "sort_order": 1
+    },
+    {
+      "article_id": "1990-luvun-laman-pitka-varjo",
+      "item_id": "1990-luvun-lama",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "kriittinen-infrastruktuuri-kaupan-kohteena",
+      "item_id": "sahkon-jakeluverkkojen-yksityistaminen-2013",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "metsasta-maailmanmarkkinoille",
+      "item_id": "hoyrysahat-1860",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "teollistumisen-ja-kaupungistumisen-kaksoisvallankumous",
+      "item_id": "teollistuminen",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "peruskoulu-suomen-kestavin-onnistumistarina",
+      "item_id": "peruskoulu-1968",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "terveydenhuollon-pitka-rakennuskaari",
+      "item_id": "kansanterveyslaki-1972",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "kolme-digitalisaation-aaltoa",
+      "item_id": "internet-murros",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "nato-jasenyys-ja-liittoutumattomuuden-loppu",
+      "item_id": "nato-jasenyys",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "kolme-digitalisaation-aaltoa",
+      "item_id": "digital-julkishallinto",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 2
+    },
+    {
+      "article_id": "metsasta-maailmanmarkkinoille",
+      "item_id": "puunjalostus-1870",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 2
     },
     {
       "article_id": "kun-korjaava-kierre-katkeaa",
@@ -160,25 +304,46 @@
       "sort_order": 2
     },
     {
-      "article_id": "kun-korjaava-kierre-katkeaa",
-      "item_id": "vaeston-ikaantyminen",
+      "article_id": "peruskoulu-suomen-kestavin-onnistumistarina",
+      "item_id": "oppivelvollisuus-1921",
       "relation_type": "context",
-      "weight": 3,
-      "sort_order": 3
+      "weight": 4,
+      "sort_order": 2
     },
     {
-      "article_id": "kun-korjaava-kierre-katkeaa",
-      "item_id": "1990-luvun-lama",
-      "relation_type": "contrasts",
-      "weight": 3,
-      "sort_order": 4
-    },
-    {
-      "article_id": "1990-luvun-laman-pitka-varjo",
-      "item_id": "1990-luvun-lama",
+      "article_id": "terveydenhuollon-pitka-rakennuskaari",
+      "item_id": "sote-pitka-uudistus",
       "relation_type": "primary",
       "weight": 5,
-      "sort_order": 1
+      "sort_order": 2
+    },
+    {
+      "article_id": "teollistumisen-ja-kaupungistumisen-kaksoisvallankumous",
+      "item_id": "kaupungistuminen",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 2
+    },
+    {
+      "article_id": "huoltosuhde-kuka-kantaa",
+      "item_id": "vaeston-ikaantyminen",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 2
+    },
+    {
+      "article_id": "nato-jasenyys-ja-liittoutumattomuuden-loppu",
+      "item_id": "yya-sopimus-1948",
+      "relation_type": "contrasts",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "kriittinen-infrastruktuuri-kaupan-kohteena",
+      "item_id": "datakeskusten-rakentamisen-kiihtyminen-2023",
+      "relation_type": "case_example",
+      "weight": 4,
+      "sort_order": 2
     },
     {
       "article_id": "1990-luvun-laman-pitka-varjo",
@@ -188,11 +353,102 @@
       "sort_order": 2
     },
     {
+      "article_id": "kun-korjaava-kierre-katkeaa",
+      "item_id": "vaeston-ikaantyminen",
+      "relation_type": "context",
+      "weight": 3,
+      "sort_order": 3
+    },
+    {
+      "article_id": "terveydenhuollon-pitka-rakennuskaari",
+      "item_id": "hyvinvointialueet-2023",
+      "relation_type": "case_example",
+      "weight": 4,
+      "sort_order": 3
+    },
+    {
       "article_id": "1990-luvun-laman-pitka-varjo",
       "item_id": "rahoitusmarkkinoiden-vapautuminen",
       "relation_type": "context",
       "weight": 4,
       "sort_order": 3
+    },
+    {
+      "article_id": "kriittinen-infrastruktuuri-kaupan-kohteena",
+      "item_id": "tekoalyinfrastruktuurin-rakentuminen-2024",
+      "relation_type": "case_example",
+      "weight": 3,
+      "sort_order": 3
+    },
+    {
+      "article_id": "metsasta-maailmanmarkkinoille",
+      "item_id": "metsien-kaupallistuminen-1860",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 3
+    },
+    {
+      "article_id": "kolme-digitalisaation-aaltoa",
+      "item_id": "tekoaly-murros",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 3
+    },
+    {
+      "article_id": "teollistumisen-ja-kaupungistumisen-kaksoisvallankumous",
+      "item_id": "palkkatyoyhteiskunta-1865",
+      "relation_type": "context",
+      "weight": 3,
+      "sort_order": 3
+    },
+    {
+      "article_id": "peruskoulu-suomen-kestavin-onnistumistarina",
+      "item_id": "kansakouluasetus-1866",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 3
+    },
+    {
+      "article_id": "nato-jasenyys-ja-liittoutumattomuuden-loppu",
+      "item_id": "ukrainan-sota-energiakriisi",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 3
+    },
+    {
+      "article_id": "huoltosuhde-kuka-kantaa",
+      "item_id": "suuret-ikaluokat-1945",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 3
+    },
+    {
+      "article_id": "metsasta-maailmanmarkkinoille",
+      "item_id": "tehdasjarjestelma-1870",
+      "relation_type": "supports",
+      "weight": 3,
+      "sort_order": 4
+    },
+    {
+      "article_id": "kolme-digitalisaation-aaltoa",
+      "item_id": "datakeskusten-rakentamisen-kiihtyminen-2023",
+      "relation_type": "case_example",
+      "weight": 3,
+      "sort_order": 4
+    },
+    {
+      "article_id": "kun-korjaava-kierre-katkeaa",
+      "item_id": "1990-luvun-lama",
+      "relation_type": "contrasts",
+      "weight": 3,
+      "sort_order": 4
+    },
+    {
+      "article_id": "huoltosuhde-kuka-kantaa",
+      "item_id": "syntyvyyden-rakennemuutos-1969",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 4
     },
     {
       "article_id": "1990-luvun-laman-pitka-varjo",
@@ -209,6 +465,20 @@
       "sort_order": 5
     },
     {
+      "article_id": "huoltosuhde-kuka-kantaa",
+      "item_id": "historiallisen-matala-syntyvyys-2010",
+      "relation_type": "context",
+      "weight": 3,
+      "sort_order": 5
+    },
+    {
+      "article_id": "huoltosuhde-kuka-kantaa",
+      "item_id": "elakejarjestelman-kestavyys-1990",
+      "relation_type": "supports",
+      "weight": 3,
+      "sort_order": 6
+    },
+    {
       "article_id": "1990-luvun-laman-pitka-varjo",
       "item_id": "eu-jasenyys-1995",
       "relation_type": "supports",
@@ -216,25 +486,11 @@
       "sort_order": 6
     },
     {
-      "article_id": "kriittinen-infrastruktuuri-kaupan-kohteena",
-      "item_id": "sahkon-jakeluverkkojen-yksityistaminen-2013",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "kriittinen-infrastruktuuri-kaupan-kohteena",
-      "item_id": "datakeskusten-rakentamisen-kiihtyminen-2023",
-      "relation_type": "case_example",
-      "weight": 4,
-      "sort_order": 2
-    },
-    {
-      "article_id": "kriittinen-infrastruktuuri-kaupan-kohteena",
-      "item_id": "tekoalyinfrastruktuurin-rakentuminen-2024",
-      "relation_type": "case_example",
+      "article_id": "huoltosuhde-kuka-kantaa",
+      "item_id": "elakeuudistukset-2005",
+      "relation_type": "supports",
       "weight": 3,
-      "sort_order": 3
+      "sort_order": 7
     }
   ]
 }
