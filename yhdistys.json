@@ -1,0 +1,148 @@
+{
+  "id": "main",
+  "name": "Hyvinvointivaltion vaalijat ry",
+  "short_name": "HYVA",
+  "kicker": "Atlaksen esilletuoja ja ylläpitäjä",
+  "mission": "Yhdistys kokoaa ja jakaa tietoa pohjoismaisesta hyvinvointivaltiosta sekä edistää sen puolustamista ja kehittämistä julkisessa keskustelussa. Työn ytimessä on jaettu ymmärrys siitä, miten yhteinen turvaverkko syntyi, miten se muuttuu ja miksi sitä kannattaa vaalia.",
+  "role_in_atlas": "Atlas tekee yhdistyksen tavoitteen näkyväksi: se avaa Suomen yhteiskunnalliset murrokset, niiden taustat ja vaikutusketjut yhdeksi tutkittavaksi kokonaisuudeksi. Hyvinvointivaltio.fi toimii Atlaksen julkisena kotina ja HYVA sen riippumattomana esilletuojana.",
+  "activities_title": "Mitä yhdistys tekee?",
+  "activities": [
+    "Kokoaa ja välittää tietoa pohjoismaisesta hyvinvointivaltiosta.",
+    "Järjestää seminaareja, työpajoja ja keskustelutilaisuuksia yksin ja kumppaneiden kanssa.",
+    "Julkaisee artikkeleita, haastatteluja ja tutkimusaineistoja.",
+    "Rakentaa yhteistyötä suomalaisten oikeuksien ja hyvinvoinnin puolustamiseksi.",
+    "Kannustaa jäseniä osallistumaan yhteiskunnalliseen keskusteluun."
+  ],
+  "chair": "Juha Nurmela",
+  "updated": "2026",
+  "links": [
+    {
+      "label": "Tutustu yhdistykseen",
+      "url": "https://hyvinvointivaltio.fi/?page_id=77",
+      "external": true
+    }
+  ],
+  "membership": {
+    "lead": "Jäsenyys on suora tapa tukea Atlaksen ja hyvinvointivaltiokeskustelun jatkuvuutta. Liittyminen tapahtuu maksamalla liittymis- ja jäsenmaksu sekä ilmoittamalla yhteystiedot yhdistykselle.",
+    "steps": [
+      {
+        "title": "Ilmoita yhteystietosi",
+        "text": "Lähetä sähköpostiisi ainakin nimi, sähköpostiosoite, puhelinnumero ja postiosoite osoitteeseen juha.nurmela1@gmail.com."
+      },
+      {
+        "title": "Maksa liittymis- ja jäsenmaksu",
+        "text": "Liittymismaksu 5 € ja henkilöjäsenen vuosimaksu 25 €. Yhdistysten jäsen- ja tukimaksut vähintään 50 €."
+      },
+      {
+        "title": "Osallistu keskusteluun",
+        "text": "Saat kutsut HYVAn seminaareihin, työpajoihin ja tilaisuuksiin sekä pääset mukaan yhdistyksen postituslistalle."
+      }
+    ],
+    "payment_lines": [
+      "Saaja: Hyvinvointivaltion vaalijat ry",
+      "Tili: Danske Bank FI61 8000 1571 1620 16",
+      "Viitenumero: 20077",
+      "Liittymismaksu 5 € · Henkilöjäsen 25 € / vuosi · Yhdistykset ja tukijat ≥ 50 €"
+    ],
+    "join_url": "https://hyvinvointivaltio.fi/?page_id=77",
+    "join_label": "Liittymis- ja maksuohjeet"
+  },
+  "board": {
+    "lead": "Yhdistyksen hallitus vastaa toiminnan suunnasta, tapahtumista ja Atlaksen julkaisemisesta. Ota yhteyttä suoraan hallitukseen ehdotuksin, kysymyksin tai yhteistyötoivein.",
+    "members": [
+      {
+        "name": "Juha Nurmela",
+        "role": "Puheenjohtaja",
+        "email": "juha.nurmela1@gmail.com",
+        "phone": "040 831 9466",
+        "profile_url": "https://hyvinvointivaltio.fi/?page_id=2",
+        "note": "Puheenjohtaja vastaa Atlaksen kokonaisuudesta ja yhdistyksen viestinnästä. Tekstiviestit ja jäsenilmoitukset numeroon 040-8319466."
+      },
+      {
+        "name": "Hallituksen varapuheenjohtaja",
+        "role": "Varapuheenjohtaja",
+        "email": "juha.nurmela1@gmail.com",
+        "note": "Kokoonpano päivittyy · yhteydenotot toistaiseksi puheenjohtajan kautta."
+      },
+      {
+        "name": "Sihteeri",
+        "role": "Sihteeri",
+        "email": "juha.nurmela1@gmail.com",
+        "note": "Kokouskutsut ja pöytäkirjat. Yhteystiedot päivittyvät."
+      },
+      {
+        "name": "Rahastonhoitaja",
+        "role": "Rahastonhoitaja",
+        "email": "juha.nurmela1@gmail.com",
+        "note": "Jäsenmaksut ja talous. Yhteystiedot päivittyvät."
+      },
+      {
+        "name": "Hallituksen jäsen",
+        "role": "Hallituksen jäsen",
+        "note": "Kokoonpano päivittyy vuosikokouksen jälkeen."
+      },
+      {
+        "name": "Hallituksen jäsen",
+        "role": "Hallituksen jäsen",
+        "note": "Kokoonpano päivittyy vuosikokouksen jälkeen."
+      }
+    ]
+  },
+  "documents": [
+    {
+      "title": "Säännöt ja perustamisasiakirjat",
+      "items": [
+        {
+          "title": "Yhdistyksen säännöt",
+          "description": "Voimassa olevat säännöt, rekisteröity yhdistysrekisteriin.",
+          "type": "PDF",
+          "url": "https://hyvinvointivaltio.fi/?page_id=77"
+        },
+        {
+          "title": "Tietosuojaseloste",
+          "date": "10.4.2024",
+          "description": "Postituslistojen ja jäsentietojen käsittely.",
+          "type": "linkki",
+          "url": "https://hyvinvointivaltio.fi/?page_id=77"
+        }
+      ]
+    },
+    {
+      "title": "Vuosikokous ja toimintakertomukset",
+      "items": [
+        {
+          "title": "Toimintasuunnitelma 2026",
+          "description": "Atlaksen julkaisu ja seminaarikausi.",
+          "type": "tulossa"
+        },
+        {
+          "title": "Toimintakertomus 2025",
+          "description": "Vuoden 2025 toiminta, tapahtumat ja talous.",
+          "type": "tulossa"
+        }
+      ]
+    },
+    {
+      "title": "Julkaisut ja aineistot",
+      "items": [
+        {
+          "title": "Hyvinvointivaltio.fi – artikkelit",
+          "description": "Yhdistyksen julkaisema artikkelikokoelma.",
+          "type": "linkki",
+          "url": "https://hyvinvointivaltio.fi/"
+        },
+        {
+          "title": "Suomen murrosvaiheet – Atlas",
+          "description": "Interaktiivinen atlas yhteiskunnallisista murroksista.",
+          "type": "atlas",
+          "url": "/atlas.html"
+        }
+      ]
+    },
+    {
+      "title": "Kokouspöytäkirjat",
+      "empty_text": "Pöytäkirjat julkaistaan hallituksen hyväksynnän jälkeen.",
+      "items": []
+    }
+  ]
+}
