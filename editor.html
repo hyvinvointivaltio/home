@@ -387,6 +387,7 @@ td.mono{font:12px var(--mono);color:var(--muted)}
   <div class="exports">
     <button class="btn" id="exportMurros">⬇ Vie murrosvaiheet.json</button>
     <button class="btn" id="exportArtikkelit">⬇ Vie artikkelit.json</button>
+    <button class="btn" id="exportYhdistys">⬇ Vie yhdistys.json</button>
     <button class="btn" id="logoutBtn" style="display:none">Kirjaudu ulos</button>
   </div>
 </header>
@@ -402,6 +403,7 @@ td.mono{font:12px var(--mono);color:var(--muted)}
   <button data-tab="items" class="active">Kortit <span class="count" id="countItems">–</span></button>
   <button data-tab="relations">Relaatiot <span class="count" id="countRelations">–</span></button>
   <button data-tab="articles">Artikkelit <span class="count" id="countArticles">–</span></button>
+  <button data-tab="association">Yhdistys <span class="count" id="countAssociation">–</span></button>
 </nav>
 
 <main>
@@ -453,6 +455,81 @@ td.mono{font:12px var(--mono);color:var(--muted)}
       <tbody id="articlesBody"></tbody>
     </table>
     <div class="empty" id="articlesEmpty" style="display:none">Ei tuloksia.</div>
+  </section>
+
+  <!-- ============ YHDISTYS ============ -->
+  <section class="panel" id="panel-association">
+
+    <div class="section-title">Ydintiedot</div>
+    <div class="field"><label>Nimi</label><input type="text" id="assoc_name"></div>
+    <div class="row2">
+      <div class="field"><label>Lyhenne</label><input type="text" id="assoc_short_name"></div>
+      <div class="field"><label>Kicker</label><input type="text" id="assoc_kicker"></div>
+    </div>
+    <div class="field"><label>Missio</label><textarea id="assoc_mission"></textarea></div>
+    <div class="field"><label>Rooli atlaksessa</label><textarea id="assoc_role_in_atlas"></textarea></div>
+    <div class="field"><label>Toiminta-otsikko</label><input type="text" id="assoc_activities_title"></div>
+    <div class="field">
+      <label>Toiminnot</label>
+      <textarea id="assoc_activities" placeholder="yksi rivi per toiminto"></textarea>
+      <span class="hint">Yksi rivi per toiminto.</span>
+    </div>
+    <div class="row2">
+      <div class="field"><label>Puheenjohtaja</label><input type="text" id="assoc_chair"></div>
+      <div class="field"><label>Päivitetty (vuosi)</label><input type="text" id="assoc_updated"></div>
+    </div>
+    <div class="field">
+      <label>Linkit</label>
+      <textarea id="assoc_links" placeholder="Teksti | URL -- yksi rivi per linkki"></textarea>
+      <span class="hint">Muoto: Teksti | https://osoite -- yksi rivi per linkki.</span>
+    </div>
+
+    <div class="section-title">Jäsenyys</div>
+    <div class="field"><label>Johdantoteksti</label><textarea id="assoc_membership_lead"></textarea></div>
+    <div class="field">
+      <label>Vaiheet</label>
+      <textarea id="assoc_membership_steps" placeholder="Otsikko | Kuvaus -- yksi rivi per vaihe"></textarea>
+      <span class="hint">Muoto: Otsikko | Kuvausteksti -- yksi rivi per vaihe.</span>
+    </div>
+    <div class="field">
+      <label>Maksutiedot</label>
+      <textarea id="assoc_payment_lines" placeholder="yksi rivi per maksutietorivi"></textarea>
+    </div>
+    <div class="row2">
+      <div class="field"><label>Liittymisohjeen URL</label><input type="text" id="assoc_join_url"></div>
+      <div class="field"><label>Liittymisohjeen teksti</label><input type="text" id="assoc_join_label"></div>
+    </div>
+
+    <div class="section-title">Hallitus -- johdantoteksti</div>
+    <div class="field"><label>Hallituksen johdanto</label><textarea id="assoc_board_lead"></textarea></div>
+
+    <div class="sheet-foot" style="border:none;padding:0;margin:10px 0 0">
+      <span></span>
+      <button class="btn primary" id="saveAssociationCore">Tallenna ydintiedot</button>
+    </div>
+
+    <div class="section-title">Hallituksen jäsenet</div>
+    <div class="toolbar">
+      <span></span>
+      <button class="btn primary" id="newBoardMember">+ Uusi hallituksen jäsen</button>
+    </div>
+    <table class="data">
+      <thead><tr><th>Nimi</th><th>Rooli</th><th>Yhteystiedot</th><th></th></tr></thead>
+      <tbody id="boardBody"></tbody>
+    </table>
+    <div class="empty" id="boardEmpty" style="display:none">Ei hallituksen jäseniä.</div>
+
+    <div class="section-title">Asiakirjat ja tiedotus</div>
+    <div class="toolbar">
+      <span></span>
+      <button class="btn primary" id="newDocument">+ Uusi asiakirja</button>
+    </div>
+    <table class="data">
+      <thead><tr><th>Ryhmä</th><th>Otsikko</th><th>Tyyppi</th><th></th></tr></thead>
+      <tbody id="documentsBody"></tbody>
+    </table>
+    <div class="empty" id="documentsEmpty" style="display:none">Ei asiakirjoja.</div>
+
   </section>
 
 </main>
@@ -635,6 +712,68 @@ td.mono{font:12px var(--mono);color:var(--muted)}
   </div>
 </div>
 
+<!-- ============ MUOKKAUSPANEELI: HALLITUKSEN JÄSEN ============ -->
+<div class="overlay" id="overlayBoardMember">
+  <div class="sheet">
+    <div class="sheet-head">
+      <h2 id="boardFormTitle">Uusi hallituksen jäsen</h2>
+      <button class="close-x" data-close="overlayBoardMember">×</button>
+    </div>
+    <div class="sheet-body">
+      <div class="field"><label>Nimi</label><input type="text" id="bm_name"></div>
+      <div class="field"><label>Rooli</label><input type="text" id="bm_role" placeholder="esim. Puheenjohtaja"></div>
+      <div class="row2">
+        <div class="field"><label>Sähköposti</label><input type="text" id="bm_email"></div>
+        <div class="field"><label>Puhelin</label><input type="text" id="bm_phone"></div>
+      </div>
+      <div class="field"><label>Esittely-URL</label><input type="text" id="bm_profile_url"></div>
+      <div class="field"><label>Kuvan URL (valinnainen)</label><input type="text" id="bm_image"></div>
+      <div class="field"><label>Huomautus</label><textarea id="bm_note"></textarea></div>
+      <div class="field"><label>Järjestysnumero</label><input type="number" id="bm_sort_order" min="1" value="1"></div>
+    </div>
+    <div class="sheet-foot">
+      <button class="btn danger" id="deleteBoardMember" style="display:none">Poista</button>
+      <button class="btn primary" id="saveBoardMember">Tallenna</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MUOKKAUSPANEELI: ASIAKIRJA ============ -->
+<div class="overlay" id="overlayDocument">
+  <div class="sheet">
+    <div class="sheet-head">
+      <h2 id="documentFormTitle">Uusi asiakirja</h2>
+      <button class="close-x" data-close="overlayDocument">×</button>
+    </div>
+    <div class="sheet-body">
+      <div class="field">
+        <label>Ryhmä</label>
+        <input list="documentGroupOptions" id="doc_group_title" placeholder="esim. Kokouspöytäkirjat">
+        <datalist id="documentGroupOptions"></datalist>
+      </div>
+      <div class="field"><label>Ryhmän järjestysnumero</label><input type="number" id="doc_group_sort_order" min="1" value="1"></div>
+      <div class="field">
+        <label>Ryhmän tyhjän tilan teksti (valinnainen)</label>
+        <input type="text" id="doc_group_empty_text" placeholder="Näytetään jos ryhmässä ei ole asiakirjoja">
+      </div>
+      <div class="section-title" style="margin-top:22px">Asiakirjan tiedot</div>
+      <p class="hint">Jätä otsikko tyhjäksi, jos haluat luoda vain tyhjän ryhmän (esim. odottava pöytäkirjaryhmä).</p>
+      <div class="field"><label>Otsikko</label><input type="text" id="doc_title"></div>
+      <div class="field"><label>Kuvaus</label><textarea id="doc_description"></textarea></div>
+      <div class="row2">
+        <div class="field"><label>Päivämäärä</label><input type="text" id="doc_date" placeholder="esim. 10.4.2024"></div>
+        <div class="field"><label>Tyyppi</label><input type="text" id="doc_type" placeholder="PDF / linkki / atlas / tulossa"></div>
+      </div>
+      <div class="field"><label>URL</label><input type="text" id="doc_url"></div>
+      <div class="field"><label>Järjestysnumero (ryhmän sisällä)</label><input type="number" id="doc_sort_order" min="1" value="1"></div>
+    </div>
+    <div class="sheet-foot">
+      <button class="btn danger" id="deleteDocument" style="display:none">Poista</button>
+      <button class="btn primary" id="saveDocument">Tallenna</button>
+    </div>
+  </div>
+</div>
+
 <div class="status" id="statusBox"></div>
 
 <script type="module">
@@ -643,7 +782,7 @@ td.mono{font:12px var(--mono);color:var(--muted)}
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 /* ==========================================================
-   ASETUKSET — Supabase-yhteys
+   ASETUKSET -- Supabase-yhteys
    ========================================================== */
 const SUPABASE_URL = "https://zzbubbrsgiqsvsovkkmf.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp6YnViYnJzZ2lxc3Zzb3Zra21mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ4MTg3OTQsImV4cCI6MjEwMDM5NDc5NH0.alzzcbSj2yY-pcGwMqCInV3PUaUCn6HHv0143V7P-u4";
@@ -664,7 +803,12 @@ const state = {
   relationTypes: {},   // {type: label}
   editingItemId: null,
   editingRelationId: null,
-  editingArticleId: null
+  editingArticleId: null,
+  association: null,
+  boardMembers: [],
+  documents: [],
+  editingBoardMemberId: null,
+  editingDocumentId: null
 };
 
 const $ = id => document.getElementById(id);
@@ -722,12 +866,24 @@ async function loadAll(){
     const typesRes = await sb.from("article_relation_types").select("*");
     if(typesRes.error) throw typesRes.error;
 
+    const assocRes = await sb.from("association").select("*").eq("id", "main").maybeSingle();
+    if(assocRes.error) throw assocRes.error;
+
+    const boardRes = await sb.from("association_board_members").select("*").order("sort_order", { ascending: true });
+    if(boardRes.error) throw boardRes.error;
+
+    const docsRes = await sb.from("association_documents").select("*").order("group_sort_order", { ascending: true }).order("sort_order", { ascending: true });
+    if(docsRes.error) throw docsRes.error;
+
     state.items = itemsRes.data;
     state.relations = relRes.data;
     state.articles = artRes.data;
     state.articleLinks = linksRes.data;
     state.relationTypes = {};
     for(const row of typesRes.data){ state.relationTypes[row.type] = row.label; }
+    state.association = assocRes.data;
+    state.boardMembers = boardRes.data;
+    state.documents = docsRes.data;
 
     $("connStatus").textContent =
       `yhdistetty · ${state.items.length} korttia · ${state.relations.length} relaatiota · ${state.articles.length} artikkelia`;
@@ -738,9 +894,12 @@ async function loadAll(){
     renderItems();
     renderRelations();
     renderArticles();
+    renderAssociationCore();
+    renderBoardMembers();
+    renderDocuments();
   }catch(err){
-    $("connStatus").textContent = "virhe ladattaessa dataa — katso selaimen konsoli (F12 / Kehittäjätyökalut)";
-    const detail = (err && err.message) ? err.message : "Verkkovirhe tai CORS-esto — tarkista että yhteys internetiin toimii ja että osoite https://zzbubbrsgiqsvsovkkmf.supabase.co ei ole estetty.";
+    $("connStatus").textContent = "virhe ladattaessa dataa -- katso selaimen konsoli (F12 / Kehittäjätyökalut)";
+    const detail = (err && err.message) ? err.message : "Verkkovirhe tai CORS-esto -- tarkista että yhteys internetiin toimii ja että osoite https://zzbubbrsgiqsvsovkkmf.supabase.co ei ole estetty.";
     toast("Latausvirhe: " + detail, true);
     console.error("Supabase-latausvirhe:", err);
   }
@@ -766,7 +925,7 @@ function populateRelTypeOptions(){
 function populateLinkTypeSelect(){
   const sel = $("link_type");
   sel.innerHTML = Object.entries(state.relationTypes)
-    .map(([type, label]) => `<option value="${esc(type)}">${esc(type)} — ${esc(label)}</option>`)
+    .map(([type, label]) => `<option value="${esc(type)}">${esc(type)} -- ${esc(label)}</option>`)
     .join("");
 }
 
@@ -1170,6 +1329,249 @@ $("deleteArticle").addEventListener("click", async () => {
 });
 
 /* ==========================================================
+   YHDISTYS: ydintiedot
+   ========================================================== */
+function linesToArr(str){ return str.split("\n").map(s => s.trim()).filter(Boolean); }
+
+function renderAssociationCore(){
+  const a = state.association;
+  $("countAssociation").textContent = a ? (state.boardMembers.length + state.documents.length) : 0;
+  if(!a) return;
+
+  $("assoc_name").value = a.name || "";
+  $("assoc_short_name").value = a.short_name || "";
+  $("assoc_kicker").value = a.kicker || "";
+  $("assoc_mission").value = a.mission || "";
+  $("assoc_role_in_atlas").value = a.role_in_atlas || "";
+  $("assoc_activities_title").value = a.activities_title || "";
+  $("assoc_activities").value = (a.activities || []).join("\n");
+  $("assoc_chair").value = a.chair || "";
+  $("assoc_updated").value = a.updated || "";
+  $("assoc_links").value = (a.links || []).map(l => `${l.label} | ${l.url}`).join("\n");
+
+  const m = a.membership || {};
+  $("assoc_membership_lead").value = m.lead || "";
+  $("assoc_membership_steps").value = (m.steps || []).map(s => `${s.title} | ${s.text}`).join("\n");
+  $("assoc_payment_lines").value = (m.payment_lines || []).join("\n");
+  $("assoc_join_url").value = m.join_url || "";
+  $("assoc_join_label").value = m.join_label || "";
+
+  $("assoc_board_lead").value = a.board_lead || "";
+}
+
+$("saveAssociationCore").addEventListener("click", async () => {
+  const links = linesToArr($("assoc_links").value).map(line => {
+    const [label, url] = line.split("|").map(s => s.trim());
+    return { label, url, external: true };
+  });
+  const steps = linesToArr($("assoc_membership_steps").value).map(line => {
+    const [title, text] = line.split("|").map(s => s.trim());
+    return { title, text };
+  });
+
+  const payload = {
+    name: $("assoc_name").value.trim(),
+    short_name: $("assoc_short_name").value.trim(),
+    kicker: $("assoc_kicker").value.trim(),
+    mission: $("assoc_mission").value.trim(),
+    role_in_atlas: $("assoc_role_in_atlas").value.trim(),
+    activities_title: $("assoc_activities_title").value.trim(),
+    activities: linesToArr($("assoc_activities").value),
+    chair: $("assoc_chair").value.trim(),
+    updated: $("assoc_updated").value.trim(),
+    links,
+    membership: {
+      lead: $("assoc_membership_lead").value.trim(),
+      steps,
+      payment_lines: linesToArr($("assoc_payment_lines").value),
+      join_url: $("assoc_join_url").value.trim(),
+      join_label: $("assoc_join_label").value.trim()
+    },
+    board_lead: $("assoc_board_lead").value.trim()
+  };
+
+  try{
+    const { error } = await sb.from("association").update(payload).eq("id", "main");
+    if(error) throw error;
+    toast("Yhdistyksen ydintiedot tallennettu.");
+    await loadAll();
+  }catch(err){
+    toast("Tallennus epäonnistui: " + err.message, true);
+  }
+});
+
+/* ==========================================================
+   YHDISTYS: hallituksen jäsenet
+   ========================================================== */
+function renderBoardMembers(){
+  $("boardEmpty").style.display = state.boardMembers.length ? "none" : "block";
+  $("boardBody").innerHTML = state.boardMembers.map(m => `
+    <tr>
+      <td><strong>${esc(m.name)}</strong></td>
+      <td>${esc(m.role)}</td>
+      <td class="mono" style="font-size:12px">${esc(m.email || "")}${m.phone ? " · " + esc(m.phone) : ""}</td>
+      <td class="actions"><button class="btn small" data-edit-board="${m.id}">Muokkaa</button></td>
+    </tr>
+  `).join("");
+  document.querySelectorAll("[data-edit-board]").forEach(btn => {
+    btn.addEventListener("click", () => openBoardMemberForm(Number(btn.dataset.editBoard)));
+  });
+}
+
+function openBoardMemberForm(id){
+  state.editingBoardMemberId = id || null;
+  const m = id ? state.boardMembers.find(x => x.id === id) : null;
+
+  $("boardFormTitle").textContent = m ? "Muokkaa hallituksen jäsentä" : "Uusi hallituksen jäsen";
+  $("bm_name").value = m ? m.name : "";
+  $("bm_role").value = m ? m.role : "";
+  $("bm_email").value = m ? (m.email || "") : "";
+  $("bm_phone").value = m ? (m.phone || "") : "";
+  $("bm_profile_url").value = m ? (m.profile_url || "") : "";
+  $("bm_image").value = m ? (m.image || "") : "";
+  $("bm_note").value = m ? (m.note || "") : "";
+  $("bm_sort_order").value = m ? m.sort_order : (state.boardMembers.length + 1);
+
+  $("deleteBoardMember").style.display = m ? "inline-flex" : "none";
+  openSheet("overlayBoardMember");
+}
+
+$("newBoardMember").addEventListener("click", () => openBoardMemberForm(null));
+
+$("saveBoardMember").addEventListener("click", async () => {
+  const name = $("bm_name").value.trim();
+  const role = $("bm_role").value.trim();
+  if(!name || !role){ toast("Nimi ja rooli ovat pakollisia", true); return; }
+
+  const payload = {
+    name, role,
+    email: $("bm_email").value.trim() || null,
+    phone: $("bm_phone").value.trim() || null,
+    profile_url: $("bm_profile_url").value.trim() || null,
+    image: $("bm_image").value.trim() || null,
+    note: $("bm_note").value.trim() || null,
+    sort_order: Number($("bm_sort_order").value) || 1
+  };
+
+  try{
+    if(state.editingBoardMemberId){
+      const { error } = await sb.from("association_board_members").update(payload).eq("id", state.editingBoardMemberId);
+      if(error) throw error;
+    }else{
+      const { error } = await sb.from("association_board_members").insert(payload);
+      if(error) throw error;
+    }
+    toast("Hallituksen jäsen tallennettu.");
+    closeSheet("overlayBoardMember");
+    await loadAll();
+  }catch(err){
+    toast("Tallennus epäonnistui: " + err.message, true);
+  }
+});
+
+$("deleteBoardMember").addEventListener("click", async () => {
+  if(!state.editingBoardMemberId) return;
+  if(!confirm("Poistetaanko tämä hallituksen jäsen?")) return;
+  try{
+    const { error } = await sb.from("association_board_members").delete().eq("id", state.editingBoardMemberId);
+    if(error) throw error;
+    toast("Hallituksen jäsen poistettu.");
+    closeSheet("overlayBoardMember");
+    await loadAll();
+  }catch(err){
+    toast("Poisto epäonnistui: " + err.message, true);
+  }
+});
+
+/* ==========================================================
+   YHDISTYS: asiakirjat ja tiedotus
+   ========================================================== */
+function renderDocuments(){
+  $("documentsEmpty").style.display = state.documents.length ? "none" : "block";
+  $("documentsBody").innerHTML = state.documents.map(d => `
+    <tr>
+      <td>${esc(d.group_title)}</td>
+      <td>${esc(d.title || "(tyhjä ryhmä)")}</td>
+      <td><span class="pill">${esc(d.type || "–")}</span></td>
+      <td class="actions"><button class="btn small" data-edit-doc="${d.id}">Muokkaa</button></td>
+    </tr>
+  `).join("");
+  document.querySelectorAll("[data-edit-doc]").forEach(btn => {
+    btn.addEventListener("click", () => openDocumentForm(Number(btn.dataset.editDoc)));
+  });
+
+  const groups = [...new Set(state.documents.map(d => d.group_title))];
+  $("documentGroupOptions").innerHTML = groups.map(g => `<option value="${esc(g)}">`).join("");
+}
+
+function openDocumentForm(id){
+  state.editingDocumentId = id || null;
+  const d = id ? state.documents.find(x => x.id === id) : null;
+
+  $("documentFormTitle").textContent = d ? "Muokkaa asiakirjaa" : "Uusi asiakirja";
+  $("doc_group_title").value = d ? d.group_title : "";
+  $("doc_group_sort_order").value = d ? d.group_sort_order : (state.documents.length ? Math.max(...state.documents.map(x => x.group_sort_order)) : 1);
+  $("doc_group_empty_text").value = d ? (d.group_empty_text || "") : "";
+  $("doc_title").value = d ? (d.title || "") : "";
+  $("doc_description").value = d ? (d.description || "") : "";
+  $("doc_date").value = d ? (d.date || "") : "";
+  $("doc_type").value = d ? (d.type || "") : "";
+  $("doc_url").value = d ? (d.url || "") : "";
+  $("doc_sort_order").value = d ? d.sort_order : 1;
+
+  $("deleteDocument").style.display = d ? "inline-flex" : "none";
+  openSheet("overlayDocument");
+}
+
+$("newDocument").addEventListener("click", () => openDocumentForm(null));
+
+$("saveDocument").addEventListener("click", async () => {
+  const group_title = $("doc_group_title").value.trim();
+  if(!group_title){ toast("Ryhmän nimi on pakollinen", true); return; }
+
+  const payload = {
+    group_title,
+    group_sort_order: Number($("doc_group_sort_order").value) || 1,
+    group_empty_text: $("doc_group_empty_text").value.trim() || null,
+    title: $("doc_title").value.trim() || null,
+    description: $("doc_description").value.trim() || null,
+    date: $("doc_date").value.trim() || null,
+    type: $("doc_type").value.trim() || null,
+    url: $("doc_url").value.trim() || null,
+    sort_order: Number($("doc_sort_order").value) || 1
+  };
+
+  try{
+    if(state.editingDocumentId){
+      const { error } = await sb.from("association_documents").update(payload).eq("id", state.editingDocumentId);
+      if(error) throw error;
+    }else{
+      const { error } = await sb.from("association_documents").insert(payload);
+      if(error) throw error;
+    }
+    toast("Asiakirja tallennettu.");
+    closeSheet("overlayDocument");
+    await loadAll();
+  }catch(err){
+    toast("Tallennus epäonnistui: " + err.message, true);
+  }
+});
+
+$("deleteDocument").addEventListener("click", async () => {
+  if(!state.editingDocumentId) return;
+  if(!confirm("Poistetaanko tämä asiakirja?")) return;
+  try{
+    const { error } = await sb.from("association_documents").delete().eq("id", state.editingDocumentId);
+    if(error) throw error;
+    toast("Asiakirja poistettu.");
+    closeSheet("overlayDocument");
+    await loadAll();
+  }catch(err){
+    toast("Poisto epäonnistui: " + err.message, true);
+  }
+});
+
+/* ==========================================================
    EXPORT: suomen_murrosvaiheet_syvennetty.json
    ========================================================== */
 function downloadJSON(obj, filename){
@@ -1263,6 +1665,89 @@ $("exportArtikkelit").addEventListener("click", async () => {
     toast("Export epäonnistui: " + err.message, true);
   }finally{
     $("exportArtikkelit").disabled = false;
+  }
+});
+
+/* ==========================================================
+   EXPORT: yhdistys.json
+   ========================================================== */
+$("exportYhdistys").addEventListener("click", async () => {
+  $("exportYhdistys").disabled = true;
+  try{
+    const assocRes = await sb.from("association").select("*").eq("id", "main").single();
+    if(assocRes.error) throw assocRes.error;
+
+    const boardRes = await sb.from("association_board_members").select("*").order("sort_order", { ascending: true });
+    if(boardRes.error) throw boardRes.error;
+
+    const docsRes = await sb.from("association_documents").select("*").order("group_sort_order", { ascending: true }).order("sort_order", { ascending: true });
+    if(docsRes.error) throw docsRes.error;
+
+    const a = assocRes.data;
+
+    // Ryhmitellään asiakirjat group_title/group_sort_order:n mukaan alkuperäistä yhdistys.json-muotoa vastaavaksi
+    const groupMap = new Map();
+    for(const d of docsRes.data){
+      const key = d.group_title;
+      if(!groupMap.has(key)){
+        groupMap.set(key, {
+          title: d.group_title,
+          _sort: d.group_sort_order,
+          empty_text: d.group_empty_text || undefined,
+          items: []
+        });
+      }
+      const grp = groupMap.get(key);
+      if(d.group_empty_text) grp.empty_text = d.group_empty_text;
+      if(d.title){
+        const item = { title: d.title };
+        if(d.description) item.description = d.description;
+        if(d.date) item.date = d.date;
+        if(d.type) item.type = d.type;
+        if(d.url) item.url = d.url;
+        grp.items.push(item);
+      }
+    }
+    const documents = [...groupMap.values()]
+      .sort((x, y) => x._sort - y._sort)
+      .map(({ _sort, ...rest }) => rest);
+
+    const board = {
+      lead: a.board_lead,
+      members: boardRes.data.map(m => {
+        const person = { name: m.name, role: m.role };
+        if(m.email) person.email = m.email;
+        if(m.phone) person.phone = m.phone;
+        if(m.profile_url) person.profile_url = m.profile_url;
+        if(m.image) person.image = m.image;
+        if(m.note) person.note = m.note;
+        return person;
+      })
+    };
+
+    const doc = {
+      id: a.id,
+      name: a.name,
+      short_name: a.short_name,
+      kicker: a.kicker,
+      mission: a.mission,
+      role_in_atlas: a.role_in_atlas,
+      activities_title: a.activities_title,
+      activities: a.activities,
+      chair: a.chair,
+      updated: a.updated,
+      links: a.links,
+      membership: a.membership,
+      board,
+      documents
+    };
+
+    downloadJSON(doc, "yhdistys.json");
+    toast("yhdistys.json ladattu.");
+  }catch(err){
+    toast("Export epäonnistui: " + err.message, true);
+  }finally{
+    $("exportYhdistys").disabled = false;
   }
 });
 
