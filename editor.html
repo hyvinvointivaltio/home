@@ -480,16 +480,16 @@ td.mono{font:12px var(--mono);color:var(--muted)}
     </div>
     <div class="field">
       <label>Linkit</label>
-      <textarea id="assoc_links" placeholder="Teksti | URL -- yksi rivi per linkki"></textarea>
-      <span class="hint">Muoto: Teksti | https://osoite -- yksi rivi per linkki.</span>
+      <textarea id="assoc_links" placeholder="Teksti | URL — yksi rivi per linkki"></textarea>
+      <span class="hint">Muoto: Teksti | https://osoite — yksi rivi per linkki.</span>
     </div>
 
     <div class="section-title">Jäsenyys</div>
     <div class="field"><label>Johdantoteksti</label><textarea id="assoc_membership_lead"></textarea></div>
     <div class="field">
       <label>Vaiheet</label>
-      <textarea id="assoc_membership_steps" placeholder="Otsikko | Kuvaus -- yksi rivi per vaihe"></textarea>
-      <span class="hint">Muoto: Otsikko | Kuvausteksti -- yksi rivi per vaihe.</span>
+      <textarea id="assoc_membership_steps" placeholder="Otsikko | Kuvaus — yksi rivi per vaihe"></textarea>
+      <span class="hint">Muoto: Otsikko | Kuvausteksti — yksi rivi per vaihe.</span>
     </div>
     <div class="field">
       <label>Maksutiedot</label>
@@ -500,7 +500,7 @@ td.mono{font:12px var(--mono);color:var(--muted)}
       <div class="field"><label>Liittymisohjeen teksti</label><input type="text" id="assoc_join_label"></div>
     </div>
 
-    <div class="section-title">Hallitus -- johdantoteksti</div>
+    <div class="section-title">Hallitus — johdantoteksti</div>
     <div class="field"><label>Hallituksen johdanto</label><textarea id="assoc_board_lead"></textarea></div>
 
     <div class="sheet-foot" style="border:none;padding:0;margin:10px 0 0">
@@ -590,6 +590,13 @@ td.mono{font:12px var(--mono);color:var(--muted)}
       <div class="field">
         <label>Lähteet (valinnainen)</label>
         <input type="text" id="f_sources" placeholder="pilkuilla eroteltuna">
+      </div>
+      <div class="field">
+        <label style="display:flex;align-items:center;gap:8px;text-transform:none;font-size:13px;font-weight:600;letter-spacing:0;color:var(--ink)">
+          <input type="checkbox" id="f_unpublished" style="width:auto">
+          Ei julkaista (piilota tämä kortti ja siihen liittyvät relaatiot/kytkennät exportista)
+        </label>
+        <span class="hint">Kortti pysyy tietokannassa muokattavana luonnoksena, mutta ei tule mukaan JSON-tiedostoihin ennen kuin poistat rastin.</span>
       </div>
     </div>
     <div class="sheet-foot">
@@ -782,7 +789,7 @@ td.mono{font:12px var(--mono);color:var(--muted)}
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 /* ==========================================================
-   ASETUKSET -- Supabase-yhteys
+   ASETUKSET — Supabase-yhteys
    ========================================================== */
 const SUPABASE_URL = "https://zzbubbrsgiqsvsovkkmf.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp6YnViYnJzZ2lxc3Zzb3Zra21mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ4MTg3OTQsImV4cCI6MjEwMDM5NDc5NH0.alzzcbSj2yY-pcGwMqCInV3PUaUCn6HHv0143V7P-u4";
@@ -898,8 +905,8 @@ async function loadAll(){
     renderBoardMembers();
     renderDocuments();
   }catch(err){
-    $("connStatus").textContent = "virhe ladattaessa dataa -- katso selaimen konsoli (F12 / Kehittäjätyökalut)";
-    const detail = (err && err.message) ? err.message : "Verkkovirhe tai CORS-esto -- tarkista että yhteys internetiin toimii ja että osoite https://zzbubbrsgiqsvsovkkmf.supabase.co ei ole estetty.";
+    $("connStatus").textContent = "virhe ladattaessa dataa — katso selaimen konsoli (F12 / Kehittäjätyökalut)";
+    const detail = (err && err.message) ? err.message : "Verkkovirhe tai CORS-esto — tarkista että yhteys internetiin toimii ja että osoite https://zzbubbrsgiqsvsovkkmf.supabase.co ei ole estetty.";
     toast("Latausvirhe: " + detail, true);
     console.error("Supabase-latausvirhe:", err);
   }
@@ -925,7 +932,7 @@ function populateRelTypeOptions(){
 function populateLinkTypeSelect(){
   const sel = $("link_type");
   sel.innerHTML = Object.entries(state.relationTypes)
-    .map(([type, label]) => `<option value="${esc(type)}">${esc(type)} -- ${esc(label)}</option>`)
+    .map(([type, label]) => `<option value="${esc(type)}">${esc(type)} — ${esc(label)}</option>`)
     .join("");
 }
 
@@ -945,9 +952,9 @@ function renderItems(){
   $("itemsEmpty").style.display = rows.length ? "none" : "block";
 
   $("itemsBody").innerHTML = rows.map(it => `
-    <tr>
+    <tr${it.unpublished ? ' style="opacity:.55"' : ""}>
       <td class="mono">${it.year_start}${it.year_end !== it.year_start ? "–" + it.year_end : ""}</td>
-      <td><strong>${esc(it.title)}</strong><br><span class="mono" style="color:var(--muted)">${esc(it.id)}</span></td>
+      <td><strong>${esc(it.title)}</strong>${it.unpublished ? ' <span class="pill" style="background:var(--red);color:var(--paper)">Ei julkaista</span>' : ""}<br><span class="mono" style="color:var(--muted)">${esc(it.id)}</span></td>
       <td>${esc(it.type)}</td>
       <td>${it.importance}/5</td>
       <td><span class="pill">${esc(it.confidence)}</span></td>
@@ -988,6 +995,7 @@ function openItemForm(id){
   $("f_importance").value = it ? it.importance : "5";
   $("f_confidence").value = it ? it.confidence : "kohtalainen";
   $("f_sources").value = it ? (it.sources || []).join(", ") : "";
+  $("f_unpublished").checked = it ? !!it.unpublished : false;
 
   $("deleteItem").style.display = it ? "inline-flex" : "none";
   openSheet("overlayItem");
@@ -1015,6 +1023,7 @@ $("saveItem").addEventListener("click", async () => {
     current_relevance: $("f_current_relevance").value.trim(),
     importance: Number($("f_importance").value),
     confidence: $("f_confidence").value,
+    unpublished: $("f_unpublished").checked,
     sources: splitList($("f_sources").value)
   };
 
@@ -1598,7 +1607,24 @@ $("exportMurros").addEventListener("click", async () => {
     const metaRes = await sb.from("dataset_meta").select("data").eq("id", "murrosvaiheet").single();
     if(metaRes.error) throw metaRes.error;
 
-    const items = itemsRes.data.map(it => {
+    const attRes = await sb.from("attachments").select("item_id,storage_path,caption,sort_order").not("item_id", "is", null).order("sort_order", { ascending: true });
+    if(attRes.error) throw attRes.error;
+
+    const imagesByItem = {};
+    for(const a of attRes.data){
+      if(!imagesByItem[a.item_id]) imagesByItem[a.item_id] = [];
+      imagesByItem[a.item_id].push({
+        url: `https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/${a.storage_path}`,
+        caption: a.caption
+      });
+    }
+
+    // "Ei julkaista" -kortit jätetään pois exportista, samoin niitä koskevat relaatiot.
+    const publishedRows = itemsRes.data.filter(it => !it.unpublished);
+    const publishedIds = new Set(publishedRows.map(it => it.id));
+    const skippedCount = itemsRes.data.length - publishedRows.length;
+
+    const items = publishedRows.map(it => {
       const out = {
         id: it.id, title: it.title,
         year_start: it.year_start, year_end: it.year_end,
@@ -1608,18 +1634,21 @@ $("exportMurros").addEventListener("click", async () => {
         importance: it.importance, confidence: it.confidence
       };
       if(it.sources && it.sources.length){ out.sources = it.sources; }
+      if(imagesByItem[it.id]){ out.images = imagesByItem[it.id]; }
       return out;
     });
 
-    const relations = relRes.data.map(r => ({
-      from: r.from_id, to: r.to_id, type: r.type,
-      rel_class: r.rel_class, confidence: r.confidence, rationale: r.rationale
-    }));
+    const relations = relRes.data
+      .filter(r => publishedIds.has(r.from_id) && publishedIds.has(r.to_id))
+      .map(r => ({
+        from: r.from_id, to: r.to_id, type: r.type,
+        rel_class: r.rel_class, confidence: r.confidence, rationale: r.rationale
+      }));
 
     const meta = { ...metaRes.data.data, count: items.length, relation_count: relations.length };
 
     downloadJSON({ meta, items, relations }, "suomen_murrosvaiheet_syvennetty.json");
-    toast("suomen_murrosvaiheet_syvennetty.json ladattu.");
+    toast(`suomen_murrosvaiheet_syvennetty.json ladattu.${skippedCount ? ` (${skippedCount} julkaisematonta korttia jätetty pois)` : ""}`);
   }catch(err){
     toast("Export epäonnistui: " + err.message, true);
   }finally{
@@ -1645,10 +1674,33 @@ $("exportArtikkelit").addEventListener("click", async () => {
     const metaRes = await sb.from("article_dataset_meta").select("data").eq("id", "artikkelit").single();
     if(metaRes.error) throw metaRes.error;
 
-    const articles = artRes.data.map(a => ({
-      id: a.id, title: a.title, dek: a.dek, tags: a.tags,
-      status: a.status, note: a.note, body: a.body
-    }));
+    const unpublishedItemsRes = await sb.from("items").select("id").eq("unpublished", true);
+    if(unpublishedItemsRes.error) throw unpublishedItemsRes.error;
+
+    const attRes = await sb.from("attachments").select("article_id,storage_path,caption,sort_order").not("article_id", "is", null).order("sort_order", { ascending: true });
+    if(attRes.error) throw attRes.error;
+
+    const imagesByArticle = {};
+    for(const a of attRes.data){
+      if(!imagesByArticle[a.article_id]) imagesByArticle[a.article_id] = [];
+      imagesByArticle[a.article_id].push({
+        url: `https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/${a.storage_path}`,
+        caption: a.caption
+      });
+    }
+
+    const unpublishedIds = new Set(unpublishedItemsRes.data.map(i => i.id));
+    const links = linksRes.data.filter(l => !unpublishedIds.has(l.item_id));
+    const skippedLinks = linksRes.data.length - links.length;
+
+    const articles = artRes.data.map(a => {
+      const out = {
+        id: a.id, title: a.title, dek: a.dek, tags: a.tags,
+        status: a.status, note: a.note, body: a.body
+      };
+      if(imagesByArticle[a.id]){ out.images = imagesByArticle[a.id]; }
+      return out;
+    });
 
     const relation_types = {};
     for(const row of typesRes.data){ relation_types[row.type] = row.label; }
@@ -1656,11 +1708,11 @@ $("exportArtikkelit").addEventListener("click", async () => {
     const meta = {
       ...metaRes.data.data,
       count: articles.length,
-      link_count: linksRes.data.length
+      link_count: links.length
     };
 
-    downloadJSON({ meta, relation_types, articles, links: linksRes.data }, "artikkelit.json");
-    toast("artikkelit.json ladattu.");
+    downloadJSON({ meta, relation_types, articles, links }, "artikkelit.json");
+    toast(`artikkelit.json ladattu.${skippedLinks ? ` (${skippedLinks} kytkentää julkaisemattomiin kortteihin jätetty pois)` : ""}`);
   }catch(err){
     toast("Export epäonnistui: " + err.message, true);
   }finally{
