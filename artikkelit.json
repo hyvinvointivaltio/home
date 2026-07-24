@@ -1,84 +1,14 @@
 {
   "meta": {
-    "count": 47,
+    "count": 57,
     "title": "Murrosmatriisin artikkelit",
     "status": "Tekoälyavusteinen luonnos -- kaikki artikkelit vaativat kuratoijan katselmoinnin ennen julkaisua. Sisältö on tiivistetty ja paraphrasoitu murrosmatriisin ja atlaksen jo olemassa olevista, tutkitusta korteista; ei sisällä niiden ulkopuolisia uusia faktaväitteitä.",
     "created": "2026-07-23",
-    "link_count": 156,
+    "link_count": 185,
     "description": "Murroskortteihin kytkeytyvä tulkinnallinen artikkelikerros. Artikkelit selittävät MIKSI murros merkitsee; kortit kertovat MITÄ tapahtui.",
     "schema_note": "Kytkentä murroskortteihin tehdään erillisessä 'links'-taulukossa (article_id / item_id / relation_type / weight / sort_order), ei upottamalla linkkejä artikkelin sisään. Tämä mahdollistaa saman artikkelin liittämisen useaan korttiin ja saman kortin useaan artikkeliin ilman duplikointia."
   },
   "links": [
-    {
-      "weight": 5,
-      "item_id": "tyoelake-1961",
-      "article_id": "tyoelake-sukupolvien-valinen-sopimus",
-      "sort_order": 1,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 5,
-      "item_id": "pysyvasti-korkea-tyottomyys-1990",
-      "article_id": "pysyvasti-korkea-tyottomyys-suomessa",
-      "sort_order": 1,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 5,
-      "item_id": "vaeston-ikaantyminen-1975",
-      "article_id": "huoltosuhde-kuka-kantaa",
-      "sort_order": 1,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 5,
-      "item_id": "sisallissota-1918",
-      "article_id": "1918-kahtia-jakautunut-kansakunta",
-      "sort_order": 1,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 5,
-      "item_id": "nokia-rakennemuutos",
-      "article_id": "nokia-ilmio-menestyksesta-sokeudeksi",
-      "sort_order": 1,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 5,
-      "item_id": "oppimistulosten-heikkeneminen-2006",
-      "article_id": "osaamiskriisi-suomen-oppimistulosten-lasku",
-      "sort_order": 1,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 5,
-      "item_id": "elakejarjestelman-kestavyys-1990",
-      "article_id": "kun-korjaava-kierre-katkeaa",
-      "sort_order": 1,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 5,
-      "item_id": "nalkavuodet-1866",
-      "article_id": "nalasta-huoltovarmuuteen",
-      "sort_order": 1,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 5,
-      "item_id": "internet-murros",
-      "article_id": "kolme-digitalisaation-aaltoa",
-      "sort_order": 1,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 5,
-      "item_id": "covid-19",
-      "article_id": "koronapandemia-suomen-stressitesti",
-      "sort_order": 1,
-      "relation_type": "primary"
-    },
     {
       "weight": 5,
       "item_id": "rautatieverkko-1862",
@@ -88,15 +18,15 @@
     },
     {
       "weight": 5,
-      "item_id": "jarjestaytynyt-kansalaisyhteiskunta-1860",
-      "article_id": "jarjestaytynyt-kansalaisyhteiskunta-demokratian-kasvualusta",
+      "item_id": "tietoyhteiskunta-1980",
+      "article_id": "tietoyhteiskunta-tieto-tuotannontekijaksi",
       "sort_order": 1,
       "relation_type": "primary"
     },
     {
       "weight": 5,
-      "item_id": "eu-jasenyys-1995",
-      "article_id": "eu-jasenyys-strateginen-valinta",
+      "item_id": "kriisien-yhteiset-piirteet",
+      "article_id": "kriisien-yhteiset-piirteet-toistuva-kaava",
       "sort_order": 1,
       "relation_type": "primary"
     },
@@ -109,8 +39,8 @@
     },
     {
       "weight": 5,
-      "item_id": "peruskoulu-1968",
-      "article_id": "peruskoulu-suomen-kestavin-onnistumistarina",
+      "item_id": "maahanmuutto-murros",
+      "article_id": "maahanmuutto-suomen-rakennemuutos",
       "sort_order": 1,
       "relation_type": "primary"
     },
@@ -130,8 +60,8 @@
     },
     {
       "weight": 5,
-      "item_id": "koulutusleikkaukset",
-      "article_id": "koulutusinvestoinnit-leikkaukset-ja-sopeutumiskyky",
+      "item_id": "covid-19",
+      "article_id": "koronapandemia-suomen-stressitesti",
       "sort_order": 1,
       "relation_type": "primary"
     },
@@ -144,8 +74,8 @@
     },
     {
       "weight": 5,
-      "item_id": "kansanterveyslaki-1972",
-      "article_id": "terveydenhuollon-pitka-rakennuskaari",
+      "item_id": "oppimistulosten-heikkeneminen-2006",
+      "article_id": "osaamiskriisi-suomen-oppimistulosten-lasku",
       "sort_order": 1,
       "relation_type": "primary"
     },
@@ -158,50 +88,8 @@
     },
     {
       "weight": 5,
-      "item_id": "olkiluoto-3-2002",
-      "article_id": "olkiluoto-3-paatoksesta-toteutukseen",
-      "sort_order": 1,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 5,
-      "item_id": "valtion-teollisuusyhtiot-ja-aluepolitiikka-1945",
-      "article_id": "valtionyhtiot-ja-alueiden-eriytyminen",
-      "sort_order": 1,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 5,
-      "item_id": "hyvinvointivaltion-rakentuminen-1880",
-      "article_id": "hyvinvointivaltion-rakentuminen-kerroksittain",
-      "sort_order": 1,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 5,
-      "item_id": "jalleenrakennus",
-      "article_id": "jalleenrakennus-onnistuneen-sopeutumisen-malli",
-      "sort_order": 1,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 5,
-      "item_id": "nato-jasenyys",
-      "article_id": "nato-jasenyys-ja-liittoutumattomuuden-loppu",
-      "sort_order": 1,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 5,
-      "item_id": "hyvinvointialueet-2023",
-      "article_id": "hyvinvointialueet-suuri-rakenneuudistus",
-      "sort_order": 1,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 5,
-      "item_id": "neuvolalaki-1944",
-      "article_id": "neuvola-hidas-kriisi-joka-ei-koskaan-syttynyt",
+      "item_id": "aanioikeus-1906",
+      "article_id": "aani-tasa-arvo-ja-oikeudet",
       "sort_order": 1,
       "relation_type": "primary"
     },
@@ -214,6 +102,48 @@
     },
     {
       "weight": 5,
+      "item_id": "viive-yhteiskunnallisissa-paatoksissa",
+      "article_id": "viive-paatoksissa-hidastaa-oppimista",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "jalleenrakennus",
+      "article_id": "jalleenrakennus-onnistuneen-sopeutumisen-malli",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "kunnallinen-itsehallinto-1865",
+      "article_id": "kunnallinen-itsehallinto-paikallisen-demokratian-perusta",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "hyvinvointivaltion-rakentuminen-1880",
+      "article_id": "hyvinvointivaltion-rakentuminen-kerroksittain",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "neuvolalaki-1944",
+      "article_id": "neuvola-hidas-kriisi-joka-ei-koskaan-syttynyt",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "sukupolvien-valinen-oikeudenmukaisuus-1925",
+      "article_id": "sukupolvien-valinen-oikeudenmukaisuus-kuusi-tarinaa",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
       "item_id": "historiallisen-matala-syntyvyys-2010",
       "article_id": "syntyvyyden-romahdus-hitaat-reaktiot",
       "sort_order": 1,
@@ -221,8 +151,8 @@
     },
     {
       "weight": 5,
-      "item_id": "aanioikeus-1906",
-      "article_id": "aani-tasa-arvo-ja-oikeudet",
+      "item_id": "koulutusleikkaukset",
+      "article_id": "koulutusinvestoinnit-leikkaukset-ja-sopeutumiskyky",
       "sort_order": 1,
       "relation_type": "primary"
     },
@@ -242,15 +172,15 @@
     },
     {
       "weight": 5,
-      "item_id": "nuorten-mielenterveyskriisi-1990",
-      "article_id": "nuorten-mielenterveyskriisi-kumuloituva-kuormitus",
+      "item_id": "1990-luvun-lama",
+      "article_id": "1990-luvun-laman-pitka-varjo",
       "sort_order": 1,
       "relation_type": "primary"
     },
     {
       "weight": 5,
-      "item_id": "1990-luvun-lama",
-      "article_id": "1990-luvun-laman-pitka-varjo",
+      "item_id": "tuottavuuden-pysahtyminen-2008",
+      "article_id": "tuottavuuden-pysahtyminen-suomen-pullonkaula",
       "sort_order": 1,
       "relation_type": "primary"
     },
@@ -270,15 +200,15 @@
     },
     {
       "weight": 5,
-      "item_id": "sukupolvien-valinen-oikeudenmukaisuus-1925",
-      "article_id": "sukupolvien-valinen-oikeudenmukaisuus-kuusi-tarinaa",
+      "item_id": "suomen-sopeutumiskyvyn-malli",
+      "article_id": "suomen-sopeutumiskyvyn-malli-sidonnan-merkitys",
       "sort_order": 1,
       "relation_type": "primary"
     },
     {
       "weight": 5,
-      "item_id": "globalisaatio-1945",
-      "article_id": "globalisaatio-mahdollisuudet-ja-riippuvuudet",
+      "item_id": "nato-jasenyys",
+      "article_id": "nato-jasenyys-ja-liittoutumattomuuden-loppu",
       "sort_order": 1,
       "relation_type": "primary"
     },
@@ -291,22 +221,22 @@
     },
     {
       "weight": 5,
-      "item_id": "maahanmuutto-murros",
-      "article_id": "maahanmuutto-suomen-rakennemuutos",
+      "item_id": "hyvinvointialueet-2023",
+      "article_id": "hyvinvointialueet-suuri-rakenneuudistus",
       "sort_order": 1,
       "relation_type": "primary"
     },
     {
       "weight": 5,
-      "item_id": "elakejarjestelman-rakentuminen-1937",
-      "article_id": "elakejarjestelma-sukupolvien-valinen-lupaus",
+      "item_id": "sopeutumiskyvyn-anatomia",
+      "article_id": "sopeutumiskyvyn-anatomia-11-osainen-sykli",
       "sort_order": 1,
       "relation_type": "primary"
     },
     {
       "weight": 5,
-      "item_id": "tietoyhteiskunta-1980",
-      "article_id": "tietoyhteiskunta-tieto-tuotannontekijaksi",
+      "item_id": "palautesilmukat-atlas",
+      "article_id": "palautesilmukat-yhteiskunnan-oppimismoottori",
       "sort_order": 1,
       "relation_type": "primary"
     },
@@ -319,8 +249,8 @@
     },
     {
       "weight": 5,
-      "item_id": "tyomarkkinoiden-sopimusyhteiskunta-1907",
-      "article_id": "tyomarkkinoiden-sopimusyhteiskunta-suomalainen-malli",
+      "item_id": "polkuriippuvuus-atlas",
+      "article_id": "polkuriippuvuus-miksi-valinnat-lukkiutuvat",
       "sort_order": 1,
       "relation_type": "primary"
     },
@@ -340,78 +270,148 @@
     },
     {
       "weight": 5,
-      "item_id": "puhelinverkko-1882",
-      "article_id": "rautatiesta-alypuhelimeen",
-      "sort_order": 2,
+      "item_id": "tyoelake-1961",
+      "article_id": "tyoelake-sukupolvien-valinen-sopimus",
+      "sort_order": 1,
       "relation_type": "primary"
     },
     {
-      "weight": 4,
-      "item_id": "internet-murros",
+      "weight": 5,
+      "item_id": "nokia-rakennemuutos",
       "article_id": "nokia-ilmio-menestyksesta-sokeudeksi",
-      "sort_order": 2,
-      "relation_type": "context"
+      "sort_order": 1,
+      "relation_type": "primary"
     },
     {
       "weight": 5,
-      "item_id": "kaupungistuminen",
-      "article_id": "teollistumisen-ja-kaupungistumisen-kaksoisvallankumous",
-      "sort_order": 2,
+      "item_id": "tyomarkkinoiden-sopimusyhteiskunta-1907",
+      "article_id": "tyomarkkinoiden-sopimusyhteiskunta-suomalainen-malli",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "vaeston-ikaantyminen-1975",
+      "article_id": "huoltosuhde-kuka-kantaa",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "nuorten-mielenterveyskriisi-1990",
+      "article_id": "nuorten-mielenterveyskriisi-kumuloituva-kuormitus",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "sisallissota-1918",
+      "article_id": "1918-kahtia-jakautunut-kansakunta",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "internet-murros",
+      "article_id": "kolme-digitalisaation-aaltoa",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "globalisaatio-1945",
+      "article_id": "globalisaatio-mahdollisuudet-ja-riippuvuudet",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "jarjestaytynyt-kansalaisyhteiskunta-1860",
+      "article_id": "jarjestaytynyt-kansalaisyhteiskunta-demokratian-kasvualusta",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "peruskoulu-1968",
+      "article_id": "peruskoulu-suomen-kestavin-onnistumistarina",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "valtion-teollisuusyhtiot-ja-aluepolitiikka-1945",
+      "article_id": "valtionyhtiot-ja-alueiden-eriytyminen",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "alueellinen-eriytyminen-1990",
+      "article_id": "alueellinen-eriytyminen-kasvukeskukset-periferia",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "nalkavuodet-1866",
+      "article_id": "nalasta-huoltovarmuuteen",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "pysyvasti-korkea-tyottomyys-1990",
+      "article_id": "pysyvasti-korkea-tyottomyys-suomessa",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "elakejarjestelman-rakentuminen-1937",
+      "article_id": "elakejarjestelma-sukupolvien-valinen-lupaus",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "elakejarjestelman-kestavyys-1990",
+      "article_id": "kun-korjaava-kierre-katkeaa",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "eu-jasenyys-1995",
+      "article_id": "eu-jasenyys-strateginen-valinta",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "onnistumisten-yhteiset-piirteet",
+      "article_id": "onnistumisten-yhteiset-piirteet-kuusi-periaatetta",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "kansanterveyslaki-1972",
+      "article_id": "terveydenhuollon-pitka-rakennuskaari",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "olkiluoto-3-2002",
+      "article_id": "olkiluoto-3-paatoksesta-toteutukseen",
+      "sort_order": 1,
       "relation_type": "primary"
     },
     {
       "weight": 3,
       "item_id": "koulutusleikkaukset",
       "article_id": "nuorten-mielenterveyskriisi-kumuloituva-kuormitus",
-      "sort_order": 2,
-      "relation_type": "context"
-    },
-    {
-      "weight": 4,
-      "item_id": "1990-luvun-lama",
-      "article_id": "kehysmenettely-vakautta-vai-jaykkyytta",
-      "sort_order": 2,
-      "relation_type": "context"
-    },
-    {
-      "weight": 4,
-      "item_id": "eu-jasenyys-1995",
-      "article_id": "globalisaatio-mahdollisuudet-ja-riippuvuudet",
-      "sort_order": 2,
-      "relation_type": "context"
-    },
-    {
-      "weight": 4,
-      "item_id": "valtionyhtioiden_yhtioittaminen",
-      "article_id": "valtionyhtiot-ja-alueiden-eriytyminen",
-      "sort_order": 2,
-      "relation_type": "context"
-    },
-    {
-      "weight": 4,
-      "item_id": "oppivelvollisuus-1921",
-      "article_id": "peruskoulu-suomen-kestavin-onnistumistarina",
-      "sort_order": 2,
-      "relation_type": "context"
-    },
-    {
-      "weight": 4,
-      "item_id": "1990-luvun-lama",
-      "article_id": "pysyvasti-korkea-tyottomyys-suomessa",
-      "sort_order": 2,
-      "relation_type": "context"
-    },
-    {
-      "weight": 3,
-      "item_id": "1990-luvun-lama",
-      "article_id": "eu-jasenyys-strateginen-valinta",
-      "sort_order": 2,
-      "relation_type": "context"
-    },
-    {
-      "weight": 3,
-      "item_id": "ilmasto-vihrea-siirtyma",
-      "article_id": "olkiluoto-3-paatoksesta-toteutukseen",
       "sort_order": 2,
       "relation_type": "context"
     },
@@ -480,6 +480,41 @@
     },
     {
       "weight": 4,
+      "item_id": "kunnallishallinto-1865",
+      "article_id": "kunnallinen-itsehallinto-paikallisen-demokratian-perusta",
+      "sort_order": 2,
+      "relation_type": "supports"
+    },
+    {
+      "weight": 4,
+      "item_id": "internet-murros",
+      "article_id": "tietoyhteiskunta-tieto-tuotannontekijaksi",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
+      "weight": 3,
+      "item_id": "kansakouluasetus-1866",
+      "article_id": "polkuriippuvuus-miksi-valinnat-lukkiutuvat",
+      "sort_order": 2,
+      "relation_type": "case_example"
+    },
+    {
+      "weight": 3,
+      "item_id": "neuvolalaki-1944",
+      "article_id": "hyvinvointivaltion-rakentuminen-kerroksittain",
+      "sort_order": 2,
+      "relation_type": "supports"
+    },
+    {
+      "weight": 4,
+      "item_id": "kaupunkiseutujen-segregaatio-1990",
+      "article_id": "alueellinen-eriytyminen-kasvukeskukset-periferia",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
+      "weight": 4,
       "item_id": "tulopolitiikka-1968",
       "article_id": "tyomarkkinoiden-sopimusyhteiskunta-suomalainen-malli",
       "sort_order": 2,
@@ -493,11 +528,46 @@
       "relation_type": "contrasts"
     },
     {
+      "weight": 4,
+      "item_id": "tyoelake-1961",
+      "article_id": "elakejarjestelma-sukupolvien-valinen-lupaus",
+      "sort_order": 2,
+      "relation_type": "supports"
+    },
+    {
+      "weight": 3,
+      "item_id": "tuottavuusohjelma",
+      "article_id": "tuottavuuden-pysahtyminen-suomen-pullonkaula",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
+      "weight": 3,
+      "item_id": "digital-julkishallinto",
+      "article_id": "koronapandemia-suomen-stressitesti",
+      "sort_order": 2,
+      "relation_type": "supports"
+    },
+    {
+      "weight": 4,
+      "item_id": "1990-luvun-lama",
+      "article_id": "kehysmenettely-vakautta-vai-jaykkyytta",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
       "weight": 5,
       "item_id": "tasa-arvolaki-1987",
       "article_id": "aani-tasa-arvo-ja-oikeudet",
       "sort_order": 2,
       "relation_type": "primary"
+    },
+    {
+      "weight": 3,
+      "item_id": "vaeston-ikaantyminen",
+      "article_id": "sukupolvien-valinen-oikeudenmukaisuus-kuusi-tarinaa",
+      "sort_order": 2,
+      "relation_type": "context"
     },
     {
       "weight": 4,
@@ -529,17 +599,17 @@
     },
     {
       "weight": 3,
-      "item_id": "digital-julkishallinto",
-      "article_id": "koronapandemia-suomen-stressitesti",
+      "item_id": "peruskoulu-1968",
+      "article_id": "onnistumisten-yhteiset-piirteet-kuusi-periaatetta",
       "sort_order": 2,
-      "relation_type": "supports"
+      "relation_type": "case_example"
     },
     {
       "weight": 3,
-      "item_id": "neuvolalaki-1944",
-      "article_id": "hyvinvointivaltion-rakentuminen-kerroksittain",
+      "item_id": "aanioikeus-1906",
+      "article_id": "viive-paatoksissa-hidastaa-oppimista",
       "sort_order": 2,
-      "relation_type": "supports"
+      "relation_type": "case_example"
     },
     {
       "weight": 4,
@@ -549,16 +619,16 @@
       "relation_type": "context"
     },
     {
-      "weight": 4,
-      "item_id": "ukrainan-sota-energiakriisi",
-      "article_id": "vihrea-siirtyma-suomen-uusi-teollinen-murros",
+      "weight": 5,
+      "item_id": "puhelinverkko-1882",
+      "article_id": "rautatiesta-alypuhelimeen",
       "sort_order": 2,
-      "relation_type": "context"
+      "relation_type": "primary"
     },
     {
       "weight": 4,
-      "item_id": "tyoelake-1961",
-      "article_id": "elakejarjestelma-sukupolvien-valinen-lupaus",
+      "item_id": "suomen-sopeutumiskyvyn-malli",
+      "article_id": "sopeutumiskyvyn-anatomia-11-osainen-sykli",
       "sort_order": 2,
       "relation_type": "supports"
     },
@@ -605,11 +675,11 @@
       "relation_type": "supports"
     },
     {
-      "weight": 3,
-      "item_id": "vaeston-ikaantyminen",
-      "article_id": "sukupolvien-valinen-oikeudenmukaisuus-kuusi-tarinaa",
+      "weight": 4,
+      "item_id": "sopeutumiskyvyn-anatomia",
+      "article_id": "suomen-sopeutumiskyvyn-malli-sidonnan-merkitys",
       "sort_order": 2,
-      "relation_type": "context"
+      "relation_type": "supports"
     },
     {
       "weight": 4,
@@ -647,11 +717,11 @@
       "relation_type": "context"
     },
     {
-      "weight": 4,
-      "item_id": "internet-murros",
-      "article_id": "tietoyhteiskunta-tieto-tuotannontekijaksi",
+      "weight": 3,
+      "item_id": "neuvolalaki-1944",
+      "article_id": "palautesilmukat-yhteiskunnan-oppimismoottori",
       "sort_order": 2,
-      "relation_type": "context"
+      "relation_type": "case_example"
     },
     {
       "weight": 4,
@@ -668,11 +738,81 @@
       "relation_type": "supports"
     },
     {
+      "weight": 4,
+      "item_id": "ukrainan-sota-energiakriisi",
+      "article_id": "vihrea-siirtyma-suomen-uusi-teollinen-murros",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
+      "weight": 4,
+      "item_id": "internet-murros",
+      "article_id": "nokia-ilmio-menestyksesta-sokeudeksi",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
+      "weight": 5,
+      "item_id": "kaupungistuminen",
+      "article_id": "teollistumisen-ja-kaupungistumisen-kaksoisvallankumous",
+      "sort_order": 2,
+      "relation_type": "primary"
+    },
+    {
       "weight": 3,
       "item_id": "ilmasto-vihrea-siirtyma",
-      "article_id": "sukupolvien-valinen-oikeudenmukaisuus-kuusi-tarinaa",
-      "sort_order": 3,
+      "article_id": "olkiluoto-3-paatoksesta-toteutukseen",
+      "sort_order": 2,
       "relation_type": "context"
+    },
+    {
+      "weight": 3,
+      "item_id": "1990-luvun-lama",
+      "article_id": "kriisien-yhteiset-piirteet-toistuva-kaava",
+      "sort_order": 2,
+      "relation_type": "case_example"
+    },
+    {
+      "weight": 4,
+      "item_id": "eu-jasenyys-1995",
+      "article_id": "globalisaatio-mahdollisuudet-ja-riippuvuudet",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
+      "weight": 4,
+      "item_id": "valtionyhtioiden_yhtioittaminen",
+      "article_id": "valtionyhtiot-ja-alueiden-eriytyminen",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
+      "weight": 4,
+      "item_id": "oppivelvollisuus-1921",
+      "article_id": "peruskoulu-suomen-kestavin-onnistumistarina",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
+      "weight": 4,
+      "item_id": "1990-luvun-lama",
+      "article_id": "pysyvasti-korkea-tyottomyys-suomessa",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
+      "weight": 3,
+      "item_id": "1990-luvun-lama",
+      "article_id": "eu-jasenyys-strateginen-valinta",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
+      "weight": 3,
+      "item_id": "palautesilmukat-atlas",
+      "article_id": "suomen-sopeutumiskyvyn-malli-sidonnan-merkitys",
+      "sort_order": 3,
+      "relation_type": "supports"
     },
     {
       "weight": 4,
@@ -962,11 +1102,67 @@
       "relation_type": "case_example"
     },
     {
-      "weight": 4,
-      "item_id": "pientilavaltainen-suomi-1918",
-      "article_id": "metsatalouden-kestavyys-ja-maaseudun-rakennemuutos",
-      "sort_order": 4,
+      "weight": 3,
+      "item_id": "ilmasto-vihrea-siirtyma",
+      "article_id": "sukupolvien-valinen-oikeudenmukaisuus-kuusi-tarinaa",
+      "sort_order": 3,
       "relation_type": "context"
+    },
+    {
+      "weight": 3,
+      "item_id": "osaajapula-tki-palautus-2019",
+      "article_id": "tuottavuuden-pysahtyminen-suomen-pullonkaula",
+      "sort_order": 3,
+      "relation_type": "supports"
+    },
+    {
+      "weight": 4,
+      "item_id": "valtion-teollisuusyhtiot-ja-aluepolitiikka-1945",
+      "article_id": "alueellinen-eriytyminen-kasvukeskukset-periferia",
+      "sort_order": 3,
+      "relation_type": "supports"
+    },
+    {
+      "weight": 3,
+      "item_id": "hyvinvointialueet-2023",
+      "article_id": "kunnallinen-itsehallinto-paikallisen-demokratian-perusta",
+      "sort_order": 3,
+      "relation_type": "context"
+    },
+    {
+      "weight": 3,
+      "item_id": "hyvinvointialueet-2023",
+      "article_id": "palautesilmukat-yhteiskunnan-oppimismoottori",
+      "sort_order": 3,
+      "relation_type": "case_example"
+    },
+    {
+      "weight": 3,
+      "item_id": "alueellinen-eriytyminen-1990",
+      "article_id": "viive-paatoksissa-hidastaa-oppimista",
+      "sort_order": 3,
+      "relation_type": "case_example"
+    },
+    {
+      "weight": 3,
+      "item_id": "1990-luvun-lama",
+      "article_id": "polkuriippuvuus-miksi-valinnat-lukkiutuvat",
+      "sort_order": 3,
+      "relation_type": "case_example"
+    },
+    {
+      "weight": 3,
+      "item_id": "aanioikeus-1906",
+      "article_id": "onnistumisten-yhteiset-piirteet-kuusi-periaatetta",
+      "sort_order": 3,
+      "relation_type": "case_example"
+    },
+    {
+      "weight": 3,
+      "item_id": "olkiluoto-3-2002",
+      "article_id": "kriisien-yhteiset-piirteet-toistuva-kaava",
+      "sort_order": 3,
+      "relation_type": "case_example"
     },
     {
       "weight": 3,
@@ -984,10 +1180,17 @@
     },
     {
       "weight": 3,
-      "item_id": "1990-luvun-lama",
-      "article_id": "kun-korjaava-kierre-katkeaa",
+      "item_id": "tyomarkkinamallin-hajautuminen-2016",
+      "article_id": "tyomarkkinoiden-sopimusyhteiskunta-suomalainen-malli",
       "sort_order": 4,
-      "relation_type": "contrasts"
+      "relation_type": "context"
+    },
+    {
+      "weight": 3,
+      "item_id": "kansanelakelaki-1937",
+      "article_id": "hyvinvointivaltion-rakentuminen-kerroksittain",
+      "sort_order": 4,
+      "relation_type": "supports"
     },
     {
       "weight": 3,
@@ -997,6 +1200,27 @@
       "relation_type": "case_example"
     },
     {
+      "weight": 4,
+      "item_id": "osaajapula-tki-palautus-2019",
+      "article_id": "koulutusinvestoinnit-leikkaukset-ja-sopeutumiskyky",
+      "sort_order": 4,
+      "relation_type": "case_example"
+    },
+    {
+      "weight": 3,
+      "item_id": "1990-luvun-lama",
+      "article_id": "kun-korjaava-kierre-katkeaa",
+      "sort_order": 4,
+      "relation_type": "contrasts"
+    },
+    {
+      "weight": 4,
+      "item_id": "pientilavaltainen-suomi-1918",
+      "article_id": "metsatalouden-kestavyys-ja-maaseudun-rakennemuutos",
+      "sort_order": 4,
+      "relation_type": "context"
+    },
+    {
       "weight": 3,
       "item_id": "pientilavaltainen-suomi-1918",
       "article_id": "1918-kahtia-jakautunut-kansakunta",
@@ -1004,11 +1228,11 @@
       "relation_type": "supports"
     },
     {
-      "weight": 3,
-      "item_id": "kansanelakelaki-1937",
-      "article_id": "hyvinvointivaltion-rakentuminen-kerroksittain",
+      "weight": 4,
+      "item_id": "syntyvyyden-rakennemuutos-1969",
+      "article_id": "huoltosuhde-kuka-kantaa",
       "sort_order": 4,
-      "relation_type": "supports"
+      "relation_type": "context"
     },
     {
       "weight": 4,
@@ -1023,20 +1247,6 @@
       "article_id": "kolme-digitalisaation-aaltoa",
       "sort_order": 4,
       "relation_type": "case_example"
-    },
-    {
-      "weight": 4,
-      "item_id": "syntyvyyden-rakennemuutos-1969",
-      "article_id": "huoltosuhde-kuka-kantaa",
-      "sort_order": 4,
-      "relation_type": "context"
-    },
-    {
-      "weight": 3,
-      "item_id": "tyomarkkinamallin-hajautuminen-2016",
-      "article_id": "tyomarkkinoiden-sopimusyhteiskunta-suomalainen-malli",
-      "sort_order": 4,
-      "relation_type": "context"
     },
     {
       "weight": 3,
@@ -1061,9 +1271,9 @@
     },
     {
       "weight": 4,
-      "item_id": "osaajapula-tki-palautus-2019",
-      "article_id": "koulutusinvestoinnit-leikkaukset-ja-sopeutumiskyky",
-      "sort_order": 4,
+      "item_id": "kehysmenettely",
+      "article_id": "1990-luvun-laman-pitka-varjo",
+      "sort_order": 5,
       "relation_type": "case_example"
     },
     {
@@ -1074,23 +1284,16 @@
       "relation_type": "context"
     },
     {
-      "weight": 4,
-      "item_id": "kehysmenettely",
-      "article_id": "1990-luvun-laman-pitka-varjo",
-      "sort_order": 5,
-      "relation_type": "case_example"
-    },
-    {
       "weight": 3,
-      "item_id": "eu-jasenyys-1995",
-      "article_id": "1990-luvun-laman-pitka-varjo",
+      "item_id": "elakejarjestelman-kestavyys-1990",
+      "article_id": "huoltosuhde-kuka-kantaa",
       "sort_order": 6,
       "relation_type": "supports"
     },
     {
       "weight": 3,
-      "item_id": "elakejarjestelman-kestavyys-1990",
-      "article_id": "huoltosuhde-kuka-kantaa",
+      "item_id": "eu-jasenyys-1995",
+      "article_id": "1990-luvun-laman-pitka-varjo",
       "sort_order": 6,
       "relation_type": "supports"
     },
@@ -1172,6 +1375,32 @@
         {
           "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/S06_aanioikeus.webp",
           "caption": "Yleinen ja yhtäläinen äänioikeus 1906 (Atlas S06)"
+        }
+      ],
+      "status": "ai_draft"
+    },
+    {
+      "id": "alueellinen-eriytyminen-kasvukeskukset-periferia",
+      "dek": "Kymmenen prosenttia suurimmista kaupungeista tuottaa nyt 2,4 kertaa enemmän arvoa asukasta kohden kuin muu maa. Ero ei ole hidastumassa.",
+      "body": [
+        "1990-luvulta lähtien Suomen aluekehitys on kulkenut kahtiajakoa: väestö, työpaikat, osaaminen ja investoinnit ovat keskittyneet harvoille kasvukeskuksille — Helsinki-Tampere, Turku, Oulu, Jyväskylä, Kuopio — samalla kun laajat alueet, erityisesti Itä- ja Pohjois-Suomi sekä entiset teollisuuspaikkakunnat, ovat menettäneet elinvoimaansa jatkuvasti.",
+        "Luvut ovat kiistattomia: 10 prosentin suurimpien kaupunkien väestöosuus kasvoi 34 prosentista 48 prosenttiin vuosina 1990–2023, työpaikkojen osuus 40:stä 54 prosenttiin, ja korkeasti koulutettujen osuus 36:sta 53 prosenttiin. Samaan aikaan tuottavuusero suurten kaupunkien ja muiden kuntien välillä on kasvanut 2,4-kertaiseksi.",
+        "Palveluiden saatavuus heikkenee samaa tahtia: osuus kunnista, joissa palvelu etäisyys on kasvanut vuosina 1990–2023, on lähikaupalle 68 prosenttia, pankkipalveluille 75 prosenttia, perusterveydenhuollolle 61 prosenttia ja toisen asteen koulutukselle 48 prosenttia — erityisesti harvaan asutuilla alueilla etäisyydet palveluihin ovat kasvaneet merkittävästi.",
+        "Hyvinvointi seuraa suoraan alueita: työttömyysaste on kaksinkertainen, pitkäaikaissairauspäiväraha 1,8-kertainen ja toimeentulotuen saajien määrä 2,1-kertainen periferiassa verrattuna kasvukeskuksiin, ja koettu elämänlaatu on 1,2 pistettä heikompi asteikolla 0–10.",
+        "Työmatkojen keskittyminen kertoo saman tarinan numeroina: Helsinki sai 118 000 hengen nettovoiton pendelöinnistä, Tampere 34 000, kun taas Lappeenranta menetti 15 000, Kajaani 13 000 ja Vaasa 12 000 — sama pieni joukko kaupunkeja vetää puoleensa sekä asukkaat että päivittäisen liikkumisen.",
+        "Ydinviesti on, ettei alueellinen eriytyminen ole väistämätön luonnonlaki vaan seurausta valinnoista — investoinneista, saavutettavuudesta, digitaalisista yhteyksistä ja palveluverkon suunnittelusta — ja se voidaan periaatteessa kääntää suunnalla, joka vahvistaa koko maata, ei vain harvoja kasvualueita."
+      ],
+      "note": "",
+      "tags": [
+        "aluekehitys",
+        "väestö",
+        "eriarvoisuus"
+      ],
+      "title": "Alueellinen eriytyminen: kasvukeskukset vetävät, periferia jää",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/K18_eriytyminen.webp",
+          "caption": "Alueellinen eriytyminen (Atlas K18)"
         }
       ],
       "status": "ai_draft"
@@ -1567,6 +1796,32 @@
       "status": "ai_draft"
     },
     {
+      "id": "kriisien-yhteiset-piirteet-toistuva-kaava",
+      "dek": "1990-luvun lama, Olkiluoto 3, hyvinvointialueet — täysin erilaisia kriisejä, mutta sama viiden vaiheen kaava toistuu joka kerta.",
+      "body": [
+        "Suomen historian kriisit ovat erilaisia sisällöltään, mutta niiden taustalla toistuu sama kaava: päätökset, rakenteet ja kannustimet, jotka heikentävät järjestelmän kykyä sopeutua muutokseen. Kun viiveet kasvavat ja palaute heikkenee, pienistä ongelmista tulee suuria — ja lopulta järjestelmä ylikuormittuu.",
+        "Toistuva kriisikaava etenee viidessä vaiheessa: sokkoaika, jolloin heikot signaalit häljätään tai aliarvioidaan; viive, jolloin päätöksenteko hidastuu ja vaikutukset näkyvät vasta myöhemmin; jäykistynyt järjestelmä, jossa rakenteet, säännöt ja intressit vastustavat muutosta; heikko palaute, jolloin oikea tieto ei kulje ja korjausliikkeet puuttuvat; ja lopulta kriisi, jossa järjestelmä ylikuormittuu ja seuraus on nopea, kallis ja kivulias.",
+        "Kuusi esimerkkiä havainnollistavat kaavan toistumista: 1990-luvun lama (1987–1993, rahoitusmarkkinakuplan ja velkaantumisen seuraukset realisoituivat viiveellä), hyvinvointialueet (2023–, rakenteellinen uudistus tehtiin liian nopeasti ilman riittävää sidontaa ja oppimista), Itä-Suomen taantuminen (1990–, rakenteenmuutoksen seuraukset pitkällä viiveellä, hidas sopeutuminen), Olkiluoto 3 (2005–, päätös liian optimistinen, kustannukset ja kapasiteetin heikkoudet kohtasivat), koronapandemia (2020–2022, yllättävä shokki paljasti varautumisen ja kapasiteetin heikot kohdat), ja kehysmenettelyn kriisi (2023–, lyhyen aikavälin säästölogiikka heikentää pitkän aikavälin kestävyyttä ja investointeja).",
+        "Yhteiset juurisyyt toistuvat kriisistä toiseen: pitkät viiveet päätösten ja niiden seurausten välillä, heikot kannustimet jotka palkitsevat lyhyen aikavälin tuloksia kestävän kehityksen kustannuksella, palaute joka on heikkoa tai vääristynyttä, jäykät rakenteet ja intressit jotka koetaan uhkana vakiintuneille toimintatavoille, pirstaleinen vastuu jossa kukaan ei ole kokonaisuudessaan vastuussa, ja alivaroittuminen sekä optimismi joka arvioi riskit systemaattisesti liian alhaisiksi.",
+        "Viiveen vaikutus korjauksen kustannuksiin on eksponentiaalinen: mitä pidempi viive ongelman ja siihen puuttumisen välillä, sitä kalliimpi korjaus lopulta on — kriisin kasvanut vaikutus näkyy suoraan vasteen suuruudessa verrattuna siihen, jos ongelmaan olisi puututtu ajoissa ilman viivettä.",
+        "Historia ei toista itseään tarkasti, mutta se riimii. Kriisien kaava on tunnistettavissa etukäteen indikaattoreilla kuten viive-indeksi, palauteindeksi, joustavuusindeksi ja polkuriippuvuusindeksi — mikä tarkoittaa, että seuraava kriisi voidaan periaatteessa myös estää, jos heikot signaalit otetaan vakavasti ja tutkitaan ajoissa."
+      ],
+      "note": "",
+      "tags": [
+        "instituutiot",
+        "kriisi",
+        "riskienhallinta"
+      ],
+      "title": "Kriisien yhteiset piirteet: toistuva kaava",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/M02_kriisien_piirteet.webp",
+          "caption": "Kriisien yhteiset piirteet (Atlas M02)"
+        }
+      ],
+      "status": "ai_draft"
+    },
+    {
       "id": "kriittinen-infrastruktuuri-kaupan-kohteena",
       "dek": "Sähköverkko, datakeskukset, tekoälyn laskentakapasiteetti – yhä useampi asia, jota pidämme itsestäänselvyytenä, on samalla sekä kansallista infrastruktuuria että kansainvälistä sijoitusomaisuutta.",
       "body": [
@@ -1605,6 +1860,32 @@
       ],
       "title": "Kun korjaava kierre katkeaa",
       "images": null,
+      "status": "ai_draft"
+    },
+    {
+      "id": "kunnallinen-itsehallinto-paikallisen-demokratian-perusta",
+      "dek": "Kunnat olivat 800, nyt niitä on 309. Silti sama periaate on kantanut 160 vuotta: päätökset lähelle ihmistä.",
+      "body": [
+        "Kunnallisasetus vuonna 1865 loi kunnille oikeuden päättää paikallisista asioista, kerätä veroja ja järjestää palveluja asukkailleen. Tämä ei ollut vain hallinnollinen uudistus vaan periaatteellinen valinta: ratkaisuvalta siirtyi lähemmäs ihmistä, mikä loi pohjan koululle, terveydenhuollolle, vesihuollolle, kulttuurille ja lukemattomille paikallisille investoinneille.",
+        "Kehitys eteni vaiheittain: kunnallislaki 1907 laajensi demokratiaa naisten äänioikeuden ja modernisoituvan hallinnon myötä, hyvinvointivaltion rakentaminen 1945–1960-luvuilla toi kunnille vastuun koulusta, terveydenhuollosta ja sosiaalipalveluista sodanjälkeisen jälleenrakennuksen keskellä, ja laajentuva palveluvaltio 1970–1990-luvuilla toi päiväkodit, kirjastot sekä liikunta- ja kulttuuripalvelut — kunnista tuli Suomen suurimpia työnantajia.",
+        "2000-luvulta alkaen rakenne on uudistunut merkittävästi: kuntaliitokset ja yhtiöittäminen ovat vähentäneet kuntien määrän 800:sta 309:ään, digitalisaatio ja yhteistyö hyvinvointialueiden sekä valtion kanssa ovat muuttaneet toimintatapoja, ja paikallinen elinvoima on noussut kuntien tehtäväkentän keskiöön sote-palvelujen siirryttyä hyvinvointialueille.",
+        "Kunnallisveron osuus verotuloista on vakiintunut noin 32 prosenttiin, ja kunnat työllistävät edelleen noin viidesosan kaikista suomalaisista — kuntien menot ovat yhteensä noin 59 miljardia euroa, josta sosiaali- ja terveyspalvelut muodostivat aiemmin suurimman osan ennen sote-uudistusta.",
+        "Vaikutus Suomeen on ollut kauaskantoinen: kunnallinen itsehallinto mahdollisti tasapainoisen aluekehityksen ja palveluiden leviämisen koko maahan, vahvisti demokratiaa ja kansalaisten osallistumista, lisäsi luottamusta instituutioihin ja tuki taloudellista kasvua paikallisten investointien ja yritysympäristöjen kautta.",
+        "Suomen vahvuus on ollut kyky ratkaista suuret asiat lähellä ihmistä — tämä periaate on säilynyt muuttumattomana 160 vuotta, vaikka sen sisältö ja kuntien tehtäväkenttä ovat muuttuneet perusteellisesti, viimeksi hyvinvointialueiden myötä 2023."
+      ],
+      "note": "",
+      "tags": [
+        "hallinto",
+        "demokratia",
+        "kunta"
+      ],
+      "title": "Kunnallinen itsehallinto: paikallisen demokratian perusta",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/S10_itsehallinto.webp",
+          "caption": "Kunnallinen itsehallinto (Atlas S10)"
+        }
+      ],
       "status": "ai_draft"
     },
     {
@@ -1824,6 +2105,32 @@
       "status": "ai_draft"
     },
     {
+      "id": "onnistumisten-yhteiset-piirteet-kuusi-periaatetta",
+      "dek": "Kansakoulu-uudistus, äänioikeus, neuvola, peruskoulu — 11 erilaista onnistumista, mutta sama kuusi rakenteellista piirrettä toistuu joka kerta.",
+      "body": [
+        "Kun tarkastellaan 11 vahvistettua onnistumista 1860–2020-luvulta, tietyt rakenteelliset piirteet toistuvat systemaattisesti — ne eivät ole sattumaa vaan onnistumisen edellytyksiä. Analyysi kattaa yli 5,3 miljoonan ihmisen elämää parantaneet uudistukset, joista 8 kestää edelleen vahvana tänäkin päivänä.",
+        "Kuusi toistuvaa periaatetta ovat: selkeä ongelma ja selkeä tavoite (onnistumiset syntyvät, kun ongelma tunnistetaan laajasti ja tavoite on konkreettinen), päätös lähellä ihmistä (päätösvalta ja vastuu ovat lähellä arkea, paikallinen tieto ohjaa ratkaisuja), nopea kokeilu, iterointi ja oppiminen (ratkaisuja kokeillaan, niistä opitaan ja niitä parannetaan jatkuvasti).",
+        "Kolme muuta periaatetta täydentävät kokonaisuutta: laaja ja kestävä yhteiskunnallinen tuki (poliittinen, ammatillinen ja kansalaisyhteiskunnan tuki kantaa yli suhdanteiden), vahva osaaminen ja instituutiot (investoinnit osaamiseen ja instituutioihin luovat pohjan pitkäaikaiselle vaikutukselle), ja oikeudenmukaisuus ja osallisuus (hyödyt jakautuvat kohtuullisesti ja ihmisten ääni kuuluu, mikä rakentaa luottamusta).",
+        "Onnistumiset jakautuvat tasaisesti vuosikymmenille 1860-luvulta 2020-luvulle: koulutusjärjestelmän rakentuminen ja äänioikeus (1860–1910), neuvolajärjestelmä (1910–1940), peruskoulu-uudistus ja vesihuolto (1940–1960), maalaislääkintä ja hyvinvointivaltio kokonaisuutena (1960–1980), työmarkkinoiden vakauttaminen ja eläkejärjestelmä (1980–2000), kunnallinen itsehallinto ja tietoyhteiskunta (2000–2020-luku).",
+        "Onnistumisen tyypillinen vaihekulku toistuu jokaisessa tapauksessa: ongelman tunnistus, ratkaisun ideointi ja kokeilu, käyttöönotto ja laajentaminen, vakiinnuttaminen instituutioihin, jatkuva parantaminen ja oppiminen, ja lopulta kestävä vaikutus sukupolvien yli — vaiheet eivät aina etene suoraviivaisesti, mutta ne ovat tunnistettavissa kaikissa onnistumisissa, edes osittain.",
+        "Mitattavat vaikutukset ovat korkeita kaikilla ulottuvuuksilla: hyvinvointi keskiarvolla 4,5/5, taloudellinen kestävyys 4,2/5, sukupolvikestävyys 4,1/5, luottamus ja legitimiteetti 4,3/5, kansallinen yhtenäisyys 4,2/5 — menestys toistuu silloin, kun rakenteet oppivat nopeammin kuin maailma muuttuu."
+      ],
+      "note": "",
+      "tags": [
+        "instituutiot",
+        "onnistuminen",
+        "oppiminen"
+      ],
+      "title": "Onnistumisten yhteiset piirteet: kuusi toistuvaa periaatetta",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/M01_onnistumisten_piirteet.webp",
+          "caption": "Onnistumisten yhteiset piirteet (Atlas M01)"
+        }
+      ],
+      "status": "ai_draft"
+    },
+    {
       "id": "osaamiskriisi-suomen-oppimistulosten-lasku",
       "dek": "Suomi oli 2000-luvun alussa koulutuksen mallimaa. Viidessätoista vuodessa PISA-tulokset romahtivat – ja ilmiö uhkaa jo hyvinvointia, taloutta ja kilpailukykyä.",
       "body": [
@@ -1845,6 +2152,32 @@
         {
           "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/K12_osaamiskriisi.webp",
           "caption": "Osaamiskriisi (Atlas K12)"
+        }
+      ],
+      "status": "ai_draft"
+    },
+    {
+      "id": "palautesilmukat-yhteiskunnan-oppimismoottori",
+      "dek": "Neuvolajärjestelmä oppi nopeasti. Hyvinvointialueet eivät vielä ole. Ero on palautesilmukan laadussa.",
+      "body": [
+        "Palautesilmukka on järjestelmän kyky havaita omien päätöstensä seuraukset, oppia niistä ja tehdä korjauksia ajoissa. Neljä edellytystä ratkaisevat sen laadun: nopeus (seuraukset näkyvät riittävän ajoissa), tarkkuus (palaute kertoo oikean syyn, ei vain oireita), kohdentuminen (palaute tavoittaa oikeat päättäjät ja toimijat) ja korjattavuus (järjestelmä voi tehdä muutoksia suhteellisen helposti).",
+        "Palautesilmukoita on kahta perustyyppiä: vahvistava silmukka toistaa ja voimistaa hyvää kehitystä — tulokset kasvattavat resursseja ja luottamusta, mikä vahvistaa toimijoita entisestään. Tasapainottava silmukka sen sijaan korjaa poikkeaman ja palauttaa järjestelmän kohti tavoitetta, kun poikkeama havaitaan ja korjaava toimenpide tehdään.",
+        "Kun jokin näistä neljästä edellytyksestä pettää, syntyy heikko silmukka: seuraukset viivästyvät tai peittyvät, tieto vääristyy matkalla, väärät tai liian myöhäiset toimenpiteet tehdään, ja luottamus sekä kyky oppia heikkenevät — virheet toistuvat, ongelmat kasautuvat ja kriisien riski kasvaa.",
+        "Kolme esimerkkiä havainnollistavat eron käytännössä: neuvolajärjestelmä on vahva silmukka, jossa paikallinen tieto ja jatkuva palaute mahdollistavat nopeat korjaukset. Peruskoulu-uudistus on tasapainottava silmukka, jossa oppimistulokset (PISA) ohjaavat jatkuvaa kehittämistä. Hyvinvointialueet taas edustavat toistaiseksi heikkoa silmukkaa: viivästynyt palaute, epäselvä vastuu ja mittaripuutteet heikentävät oppimista.",
+        "Palautesilmukan laatua voidaan mitata palauteindeksillä väliltä 0–1: vahva silmukka (0,75–1,00) merkitsee matalaa kriisiriskiä, kun taas erittäin heikko silmukka (0,00–0,24) merkitsee erittäin korkeaa riskiä — tämä diagnostinen työkalu tekee näkyväksi sen, mikä muuten jäisi vain intuitioksi.",
+        "Yhteiskunta, joka näkee itsensä ajoissa, voi myös muuttaa suuntaa. Palautesilmukka-analyysi selittää, miksi jotkut suomalaiset instituutiot ovat kestäneet ja parantuneet vuosikymmenten ajan, kun taas toiset ovat toistuvasti ajautuneet samoihin ongelmiin — ja se tarjoaa konkreettisen työkalun sen arvioimiseen, mihin suuntaan mikä tahansa nykyinen uudistus on menossa."
+      ],
+      "note": "",
+      "tags": [
+        "instituutiot",
+        "oppiminen",
+        "sopeutumiskyky"
+      ],
+      "title": "Palautesilmukat: yhteiskunnan oppimismoottori",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/A01_palautesilmukat.webp",
+          "caption": "Palautesilmukat (Atlas A01)"
         }
       ],
       "status": "ai_draft"
@@ -1894,6 +2227,32 @@
       "status": "ai_draft"
     },
     {
+      "id": "polkuriippuvuus-miksi-valinnat-lukkiutuvat",
+      "dek": "QWERTY-näppäimistö ei ole tehokkain mahdollinen — mutta vaihtaminen maksaisi nyt enemmän kuin sen hyödyt. Sama logiikka pätee yhteiskunnan rakenteisiin.",
+      "body": [
+        "Polkuriippuvuus tarkoittaa, että pienetkin alkuvaiheen ratkaisut voivat lukita yhteiskunnan tietylle kehityspolulle pitkäksi aikaa. Mekanismi etenee viidessä vaiheessa: alkuvaiheessa on useita vaihtoehtoja, yksi valitaan usein sattuman tai pienten etujen perusteella, resurssit ja instituutiot alkavat rakentua valinnan ympärille, vaihtokustannukset kasvavat kun toimijat ja säännöt vahvistuvat, ja lopulta polku lukittuu ja jatkuu seuraavalle sukupolvelle.",
+        "Polkuriippuvuutta vahvistavat viisi tekijää samanaikaisesti: olemassa olevat verkostot ja intressit hyötyvät jatkumosta, opittu tieto ja rutiinit tekevät muutoksesta vaikeaa, lainsäädäntö ja sääntely lukitsevat rakenteita, fyysiset ja aineettomat investoinnit eivät ole helposti siirrettävissä, ja yhteinen maailmankuva tekee vaihtoehdot vierailta tuntuviksi.",
+        "Kuusi suomalaista esimerkkiä osoittavat, kuinka eri pituisia ja eri vahvuisia polkuja voi syntyä: kansakoulu-uudistus (yli 160 vuotta, erittäin suuri vaikutus), neuvolajärjestelmä (yli 90 vuotta), peruskoulu-uudistus (yli 50 vuotta) — kaikki korkean vahvuuden onnistumispolkuja. Mutta myös 1990-luvun lama (30+ vuotta, kielteinen vaikutus jatkuu) ja alueellinen eriytyminen (40+ vuotta) osoittavat, että polkuriippuvuus voi lukita myös haitallisia rakenteita.",
+        "Poikkeaminen polusta käy sitä vaikeammaksi mitä pidempään polku on jatkunut: vaihtokustannukset (aika, investoinnit, tottumukset) kasvavat jyrkästi alkuvaiheen jälkeen ja tasaantuvat vasta mahdollisella käännekohdalla — kriisillä, uudella teknologialla tai sukupolvenvaihdoksella, joka tekee vanhan polun jatkamisesta yhtäkkiä kalliimman kuin vaihtamisen.",
+        "Polkuriippuvuuden tunnistamisen merkkejä ovat ajattelu \"näin on aina tehty\", vaihtoehtojen pitäminen epärealistisina tai kalliina, päätösten perustelujen viittaaminen menneisyyteen tulevaisuuden sijaan, ja havainto ettei pieni uudistus riitä muuttamaan kokonaisuutta vaikka kustannukset kasvavat jatkuvasti.",
+        "Polkuriippuvuus ei kerro menneisyydestä — se selittää, miksi tulevaisuus ei muutu yön yli. Vaihtoehtojen elävänä pitäminen, moduaaliset ratkaisut, ajoissa hankittu tieto, läpinäkyvyys ja kriisien hyödyntäminen käännekohtina ovat konkreettisia keinoja vähentää haitallista polkuriippuvuutta — sillä joustava järjestelmä on kestävä järjestelmä."
+      ],
+      "note": "",
+      "tags": [
+        "instituutiot",
+        "talous",
+        "muutosvastarinta"
+      ],
+      "title": "Polkuriippuvuus: miksi aiemmat valinnat lukkiutuvat",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/A03_polkuriippuvuus.webp",
+          "caption": "Polkuriippuvuus (Atlas A03)"
+        }
+      ],
+      "status": "ai_draft"
+    },
+    {
       "id": "pysyvasti-korkea-tyottomyys-suomessa",
       "dek": "Kriisin luonne ei ole yksittäinen lama, vaan sopeutumiskyvyn pitkäaikainen heikkeneminen. Järjestelmä ei koskaan palautunut.",
       "body": [
@@ -1936,6 +2295,32 @@
       ],
       "title": "Rautatiestä älypuhelimeen",
       "images": null,
+      "status": "ai_draft"
+    },
+    {
+      "id": "sopeutumiskyvyn-anatomia-11-osainen-sykli",
+      "dek": "Sopeutumiskyky ei ole yksi päätös. Se on sykli, joka toistuu — ja jonka jokainen osa voi vahvistaa tai heikentää seuraavaa kierrosta.",
+      "body": [
+        "Sopeutumiskyky on yhteiskunnan kyky tunnistaa muutostarpeet ajoissa, tehdä järkeviä päätöksiä, toimeenpanna ne, oppia kokemuksista ja vahvistua seuraavaa muutosta varten. Neljä periaatetta ohjaavat koko sykliä: ennakointi (katse eteenpäin, valppaus ympäristölle), osallisuus (tieto, kokemus ja luottamus mukaan), kokeilu (pienet askeleet, nopea oppiminen) ja vahvistaminen (hyvinvointi, resilienssi ja instituutiot).",
+        "Sykli etenee 11 vaiheen kautta: rakennemuutoksen käynnistyminen (ympäristö, teknologia, talous tai väestö muuttuu), signaalien havaitseminen, tilannekuvan muodostaminen, päätöksenteko, resurssien kohdentaminen, toimeenpano, vaikutusten näkyminen, palaute järjestelmään, korjaus ja säätäminen, oppiminen ja instituutioiden uudistuminen, ja lopulta luottamus ja uusi tasapaino — josta seuraava sykli voi käynnistyä.",
+        "Keskiössä ovat ihmiset: hyvinvointi, oikeudenmukaisuus ja osallisuus muodostavat sopeutumisen tarkoituksen ja mittarin — kaikki 11 vaihetta kiertyvät lopulta kysymyksen ympärille, parantavatko ne vai heikentävätkö ne ihmisten mahdollisuuksia elää hyvää elämää.",
+        "Käytännön esimerkit osoittavat syklin toimivan hyvin vaihtelevalla nopeudella: neuvolajärjestelmä (signaali lasten hyvinvoinnista → kokeilu, arviointi, laajennus → pysyvä vaikutus), peruskoulu-uudistus (tavoite tasa-arvosta → pitkän aikavälin sijoitus → laaja yhteiskunnallinen hyöty), mutta myös 1990-luvun lama (kriisi pakotti sopeutumaan → nopea päätöksenteko → rakenteet muuttuivat pakon edessä, ei ennakoiden).",
+        "Yleisimmät heikkoudet toistuvat: signaalit jäävät huomaamatta tai ohitetaan, päätöksiä siirretään jolloin viive kasvaa, tavoitteet ovat epäselviä tai ristiriitaisia, resursseja hajautetaan liian ohueksi, toimeenpano pirstaloituu eri toimijoiden kesken, palaute ei kulje tai sitä ei hyödynnetä, ja oppiminen jää sattumanvaraisten tapahtumien varaan sen sijaan että se olisi systemaattista.",
+        "Sopeutumiskyvyn anatomia toimii koko atlaksen synteesinä: jokainen tässä atlaksessa kuvattu murros voidaan sijoittaa tähän 11-osaiseen sykliin ja arvioida, missä kohtaa sopeutuminen onnistui tai epäonnistui — sopeutumiskyky ei ole sattumaa, se on järjestelmä, jota johdetaan, mitataan ja kehitetään päivä kerrallaan."
+      ],
+      "note": "",
+      "tags": [
+        "instituutiot",
+        "oppiminen",
+        "luottamus"
+      ],
+      "title": "Sopeutumiskyvyn anatomia: 11-osainen sykli",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/A04_anatomia.webp",
+          "caption": "Sopeutumiskyvyn anatomia (Atlas A04)"
+        }
+      ],
       "status": "ai_draft"
     },
     {
@@ -1994,6 +2379,32 @@
       ],
       "title": "Suomen markka: synty ja luopuminen",
       "images": null,
+      "status": "ai_draft"
+    },
+    {
+      "id": "suomen-sopeutumiskyvyn-malli-sidonnan-merkitys",
+      "dek": "Yksi sana yhdistää kaikkia atlaksen onnistumisia ja kriisejä: sidonta. Se ratkaisee, palautuuko tieto päätöksentekijälle nopeasti — vai ei ollenkaan.",
+      "body": [
+        "Sopeutumiskyky on kykyä nähdä ajoissa, päättää oikein, toimeenpanna tehokkaasti ja oppia kokemuksesta. Mallin keskiössä on sidonta: hyvä sidonta tarkoittaa, että signaali muuttuu päätökseksi, päätös vaikutukseksi ja vaikutus palautteeksi, joka palaa päätöksentekijälle nopeasti, tarkasti ja kohdennetusti — kolme ehtoa, joiden yhteisvaikutus ratkaisee koko järjestelmän oppimiskyvyn.",
+        "Malli kuvaa jatkuvan 11-vaiheisen syklin: rakennemuutos käynnistyy kun teknologia, talous, väestö, ympäristö tai geopolitiikka muuttuu; signaalit havaitaan tiedosta, tutkimuksesta, kansalaisista ja käytännön kokemuksesta; tilannekuva muodostetaan tulkitsemalla mitä muutos tarkoittaa nyt ja tulevaisuudessa; päätöksenteko valitsee tavoitteet, keinot ja prioriteetit; resurssit kohdennetaan toteutukseen; toimeenpano muuttaa päätökset teoiksi; vaikutukset näkyvät ja mitataan; palaute palaa järjestelmään; korjaus ja säätäminen tehdään tarvittaessa; oppiminen muuttaa kokemuksen tiedoksi ja hyviksi käytännöiksi; ja lopulta luottamus ja uusi tasapaino saavutetaan, kunnes seuraava muutos alkaa.",
+        "Suomen vahvuudet sopeutumiskyvyssä ovat konkreettisia: korkea koulutustaso ja osaaminen mahdollistavat uusien ratkaisujen synnyn, luottamus ja sosiaalinen pääoma vähentävät kitkaa ja mahdollistavat yhteistyön, toimivat instituutiot ja vakaa oikeusvaltio takaavat että päätökset kestävät ja toimeenpano toimii, ja kriisinkestävyyden kokemus — historia opettaa, osaamme muuttua — vahvistaa valmiutta kohdata uusia haasteita.",
+        "Esimerkkejä syklin toiminnasta löytyy koko atlaksen ajalta: kansakoulu-uudistus 1860-luvulla (signaali koulutuksen tarpeesta johti pitkäaikaiseen vaikutukseen kansakunnan kehitykseen), neuvolajärjestelmä 1930-luvulla (heikko signaali johti kokeiluun, laajennukseen ja hyviin tuloksiin), peruskoulu-uudistus 1970-luvulla (tutkimus johti päätökseen, joka loi yhdenvertaisuutta ja osaamisen kasvua), ja 1990-luvun lama (signaalit myöhästyivät, mikä johti kriisiin, mutta myös oppimiseen ja uudistuksiin sen jälkeen).",
+        "Kun sykli katkeaa, seuraukset ovat ennustettavia: signaaleja ei nähdä ajoissa, päätökset viivästyvät ja kustannukset kasvavat, toimeenpano takkuaa jolloin luottamus heikkenee, palaute ei palaudu jolloin virheet toistuvat, ja polkuriippuvuus sekä jäykkyys kasvavat kun vaihtoehtoisia ratkaisuja ei enää nähdä uskottavina.",
+        "Hyvä yhteiskunta ei vältä muutosta — se tunnistaa sen, vastaa siihen ja oppii siitä. Tavoitteena on lyhentää viiveitä, parantaa sidontaa, vahvistaa oppimista ja rakentaa tulevaisuutta, johon voidaan luottaa — ja tämä malli on ohjenuora, jota vasten jokaista tässä atlaksessa kuvattua murrosta kannattaa peilata."
+      ],
+      "note": "",
+      "tags": [
+        "instituutiot",
+        "oppiminen",
+        "sidonta"
+      ],
+      "title": "Suomen sopeutumiskyvyn malli: sidonnan merkitys",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/M03_sopeutumiskyvyn_malli.webp",
+          "caption": "Suomen sopeutumiskyvyn malli (Atlas M03)"
+        }
+      ],
       "status": "ai_draft"
     },
     {
@@ -2125,6 +2536,32 @@
       "status": "ai_draft"
     },
     {
+      "id": "tuottavuuden-pysahtyminen-suomen-pullonkaula",
+      "dek": "Vuoteen 2008 asti Suomi kasvatti tuottavuuttaan 2,1 prosenttia vuodessa. Sen jälkeen kasvu on ollut käytännössä nolla.",
+      "body": [
+        "Työn tuottavuus kasvoi Suomessa nopeasti 1990-luvulla ja 2000-luvun alussa — keskimäärin 2,1 prosenttia vuodessa. Finanssikriisin 2008 jälkeen tämä kasvu on käytännössä pysähtynyt, keskimäärin vain 0,2 prosenttia vuodessa, mikä on jättänyt Suomen tuottavuustason 15–20 prosenttia jälkeen OECD-maiden keskitasosta.",
+        "Syitä on useita samanaikaisesti: investointien laatu ja määrä ovat heikenneet, tutkimus- ja kehittämistoiminnan tuottavuus on jäänyt vaatimattomaksi kansainvälisessä vertailussa, uusia nopeasti kasvavia yrityksiä syntyy liian vähän, työvoiman osaaminen ei aina kohtaa yritysten tarpeita, ja sääntely on ollut hidasta uudistumaan.",
+        "Sektorikohtaiset erot ovat suuria: ICT-ala on kasvattanut tuottavuuttaan 2,0 prosenttia vuodessa vuosina 2008–2023, teollisuus 0,4 prosenttia, mutta rakentaminen ja julkinen sektori ovat jopa supistuneet tuottavuudeltaan (-0,2 % ja -0,4 % vuodessa) — mikä tarkoittaa, ettei kasvun hidastuminen ole tasaisesti jakautunut vaan keskittynyt tiettyihin toimialoihin.",
+        "Seuraukset ulottuvat suoraan hyvinvointivaltion rahoituspohjaan: hidas tuottavuuskasvu johtaa heikompaan talouskasvuun ja niukempaan julkiseen talouspohjaan juuri samaan aikaan kun ikääntyminen kasvattaa palvelutarvetta, turvallisuusmenot kasvavat ja vihreä siirtymä vaatii investointeja.",
+        "Skenaariovertailu vuoteen 2040 on karu: perusskenaariolla BKT asukasta kohden laskisi 6 prosenttia ja julkinen velka nousisi 90 prosenttia, kun taas tuottavuusloikan skenaariossa BKT nousisi 11 prosenttia ja velka laskisi 65 prosenttia — ero on valtava, ja se riippuu täysin siitä, saadaanko tuottavuuden kasvu uudelleen käyntiin.",
+        "Ilman tuottavuuden uudelleen vahvistamista Suomi joutuu valitsemaan yhä useammin joko saamaan vähemmän tai velkaantumaan enemmän — tuottavuusloikka ei ole vain talouspoliittinen tavoite vaan edellytys sille, että hyvinvointivaltio pystyy rahoittamaan itsensä myös tuleville sukupolville."
+      ],
+      "note": "",
+      "tags": [
+        "talous",
+        "tuottavuus",
+        "tulevaisuus"
+      ],
+      "title": "Tuottavuuden pysähtyminen: Suomen kasvun pullonkaula",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/K17_tuottavuus.webp",
+          "caption": "Tuottavuuden pysähtyminen (Atlas K17)"
+        }
+      ],
+      "status": "ai_draft"
+    },
+    {
       "id": "tyoelake-sukupolvien-valinen-sopimus",
       "dek": "Kansaneläkkeestä ansiosidonnaiseen turvaan — ja siitä sopimukseen, jonka jokainen sukupolvi joutuu neuvottelemaan uudelleen.",
       "body": [
@@ -2237,6 +2674,32 @@
         {
           "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/R05_vihrea_siirtyma.webp",
           "caption": "Vihreä siirtymä (Atlas R05)"
+        }
+      ],
+      "status": "ai_draft"
+    },
+    {
+      "id": "viive-paatoksissa-hidastaa-oppimista",
+      "dek": "Äänioikeuden laajentaminen vei kaksi vuotta. Alueellinen eriytyminen on jatkunut yli kolmekymmentä.",
+      "body": [
+        "Viive tarkoittaa aikaa siitä, kun yhteiskunnallinen ongelma havaitaan, siihen päätetään puuttua ja kun toimenpiteiden vaikutukset lopulta näkyvät. Kolme vaihetta — havaitaan, päätetään, vaikutukset näkyvät — muodostavat yhdessä sen kokonaisajan, joka ratkaisee kuinka nopeasti yhteiskunta pystyy korjaamaan suuntaansa.",
+        "Atlaksen esimerkit paljastavat valtavan vaihteluvälin: äänioikeuden laajentaminen 1906 vei vain 1–2 vuotta havainnosta vaikutukseen — erittäin lyhyt viive. Neuvolajärjestelmä 1930-luvulla vei 5–8 vuotta, peruskoulu-uudistus 1970-luvulla 5–10 vuotta, 1990-luvun lama 10–15 vuotta, hyvinvointialueet arviolta yli 15 vuotta, ja alueellinen eriytyminen on jatkunut jo yli 30 vuotta ilman ratkaisevaa korjausta.",
+        "Systemaattinen tarkastelu paljastaa: onnistumisilla (S-teemat) keskimääräinen viive on 3–6 vuotta, rakennemuutoksilla (R-teemat) 6–12 vuotta, kriiseillä (K-teemat) 14–25 vuotta ja sukupolvivaikutuksilla (G-teemat) yli 30 vuotta — mitä laajempi ja rakenteellisempi kysymys, sitä pidempi viive tyypillisesti on.",
+        "Viiveet syntyvät useasta syystä samanaikaisesti: väärät signaalit tai tiedon puute, monimutkaisten prosessien hidas päätöksenteko, poliittinen aikajänne joka suosii lyhyen aikavälin tavoitteita, nykytilasta hyötyvien ryhmien vastustus, sekä vakiintuneet käytännöt ja instituutiot, jotka kestävät muutospaineita.",
+        "Seuraukset ovat konkreettisia: menetetty hyvinvointi kun ongelmista kärsitään turhaan pidempään, taloudellinen hinta kun kustannukset kertaantuvat viivästyessä, väärät tai ylimitoitetut ratkaisut kun reagointi tulee liian myöhään, luottamuksen heikkeneminen kun kansalaiset kokevat ettei päätöksenteko toimi, ja sukupolvivaikutukset kun pitkät viiveet siirtävät taakan tuleville sukupolville.",
+        "Nopeus ei tarkoita hätiköintiä — se tarkoittaa kykyä oppia, päättää ja toimia ajoissa. Parempi signaalijärjestelmä, selkeä vastuu, päätöskokeilut, läpinäkyvyys ja kansalaisten osallistuminen ovat konkreettisia keinoja, joilla viiveitä voidaan lyhentää — ja lyhyt, kohdennettu ja mitattava viive on toimivan demokratian ydin."
+      ],
+      "note": "",
+      "tags": [
+        "instituutiot",
+        "riskienhallinta",
+        "demokratia"
+      ],
+      "title": "Viive päätöksissä: hidastaa oppimista, syö luottamusta",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/A02_viiveet.webp",
+          "caption": "Viive yhteiskunnallisissa päätöksissä (Atlas A02)"
         }
       ],
       "status": "ai_draft"
