@@ -388,6 +388,7 @@ td.mono{font:12px var(--mono);color:var(--muted)}
     <button class="btn" id="exportMurros">⬇ Vie murrosvaiheet.json</button>
     <button class="btn" id="exportArtikkelit">⬇ Vie artikkelit.json</button>
     <button class="btn" id="exportYhdistys">⬇ Vie yhdistys.json</button>
+    <button class="btn primary" id="triggerGithubExport">↻ Päivitä JSON GitHubissa</button>
     <button class="btn" id="logoutBtn" style="display:none">Kirjaudu ulos</button>
   </div>
 </header>
@@ -480,16 +481,16 @@ td.mono{font:12px var(--mono);color:var(--muted)}
     </div>
     <div class="field">
       <label>Linkit</label>
-      <textarea id="assoc_links" placeholder="Teksti | URL — yksi rivi per linkki"></textarea>
-      <span class="hint">Muoto: Teksti | https://osoite — yksi rivi per linkki.</span>
+      <textarea id="assoc_links" placeholder="Teksti | URL -- yksi rivi per linkki"></textarea>
+      <span class="hint">Muoto: Teksti | https://osoite -- yksi rivi per linkki.</span>
     </div>
 
     <div class="section-title">Jäsenyys</div>
     <div class="field"><label>Johdantoteksti</label><textarea id="assoc_membership_lead"></textarea></div>
     <div class="field">
       <label>Vaiheet</label>
-      <textarea id="assoc_membership_steps" placeholder="Otsikko | Kuvaus — yksi rivi per vaihe"></textarea>
-      <span class="hint">Muoto: Otsikko | Kuvausteksti — yksi rivi per vaihe.</span>
+      <textarea id="assoc_membership_steps" placeholder="Otsikko | Kuvaus -- yksi rivi per vaihe"></textarea>
+      <span class="hint">Muoto: Otsikko | Kuvausteksti -- yksi rivi per vaihe.</span>
     </div>
     <div class="field">
       <label>Maksutiedot</label>
@@ -500,7 +501,7 @@ td.mono{font:12px var(--mono);color:var(--muted)}
       <div class="field"><label>Liittymisohjeen teksti</label><input type="text" id="assoc_join_label"></div>
     </div>
 
-    <div class="section-title">Hallitus — johdantoteksti</div>
+    <div class="section-title">Hallitus -- johdantoteksti</div>
     <div class="field"><label>Hallituksen johdanto</label><textarea id="assoc_board_lead"></textarea></div>
 
     <div class="sheet-foot" style="border:none;padding:0;margin:10px 0 0">
@@ -789,7 +790,7 @@ td.mono{font:12px var(--mono);color:var(--muted)}
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 /* ==========================================================
-   ASETUKSET — Supabase-yhteys
+   ASETUKSET -- Supabase-yhteys
    ========================================================== */
 const SUPABASE_URL = "https://zzbubbrsgiqsvsovkkmf.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp6YnViYnJzZ2lxc3Zzb3Zra21mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ4MTg3OTQsImV4cCI6MjEwMDM5NDc5NH0.alzzcbSj2yY-pcGwMqCInV3PUaUCn6HHv0143V7P-u4";
@@ -905,8 +906,8 @@ async function loadAll(){
     renderBoardMembers();
     renderDocuments();
   }catch(err){
-    $("connStatus").textContent = "virhe ladattaessa dataa — katso selaimen konsoli (F12 / Kehittäjätyökalut)";
-    const detail = (err && err.message) ? err.message : "Verkkovirhe tai CORS-esto — tarkista että yhteys internetiin toimii ja että osoite https://zzbubbrsgiqsvsovkkmf.supabase.co ei ole estetty.";
+    $("connStatus").textContent = "virhe ladattaessa dataa -- katso selaimen konsoli (F12 / Kehittäjätyökalut)";
+    const detail = (err && err.message) ? err.message : "Verkkovirhe tai CORS-esto -- tarkista että yhteys internetiin toimii ja että osoite https://zzbubbrsgiqsvsovkkmf.supabase.co ei ole estetty.";
     toast("Latausvirhe: " + detail, true);
     console.error("Supabase-latausvirhe:", err);
   }
@@ -932,7 +933,7 @@ function populateRelTypeOptions(){
 function populateLinkTypeSelect(){
   const sel = $("link_type");
   sel.innerHTML = Object.entries(state.relationTypes)
-    .map(([type, label]) => `<option value="${esc(type)}">${esc(type)} — ${esc(label)}</option>`)
+    .map(([type, label]) => `<option value="${esc(type)}">${esc(type)} -- ${esc(label)}</option>`)
     .join("");
 }
 
@@ -1800,6 +1801,44 @@ $("exportYhdistys").addEventListener("click", async () => {
     toast("Export epäonnistui: " + err.message, true);
   }finally{
     $("exportYhdistys").disabled = false;
+  }
+});
+
+/* ==========================================================
+   GITHUB ACTIONS: JSON-TIEDOSTOJEN PÄIVITYS
+
+   Painike kutsuu kirjautuneen käyttäjän Supabase-istunnolla
+   Edge Functionia "trigger-github-export". GitHubin tokenia
+   ei saa koskaan tallentaa tähän selaimessa ajettavaan tiedostoon.
+   ========================================================== */
+$("triggerGithubExport").addEventListener("click", async () => {
+  const button = $("triggerGithubExport");
+  if(!state.session){
+    toast("Kirjaudu ensin sisään.", true);
+    return;
+  }
+
+  button.disabled = true;
+  const originalText = button.textContent;
+  button.textContent = "Käynnistetään…";
+
+  try{
+    const { data, error } = await sb.functions.invoke("trigger-github-export", {
+      body: { workflow: "export-json.yml", ref: "main" }
+    });
+
+    if(error) throw error;
+    if(!data?.ok) throw new Error(data?.error || "GitHub Actions -käynnistys epäonnistui");
+
+    toast("JSON-päivitys käynnistetty GitHubissa.");
+    button.textContent = "✓ Päivitys käynnistetty";
+    setTimeout(() => { button.textContent = originalText; }, 2500);
+  }catch(err){
+    console.error("GitHub Actions -käynnistysvirhe:", err);
+    toast("Käynnistys epäonnistui: " + (err?.message || "tuntematon virhe"), true);
+    button.textContent = originalText;
+  }finally{
+    button.disabled = false;
   }
 });
 
