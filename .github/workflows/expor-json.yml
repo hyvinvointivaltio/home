@@ -1,0 +1,20 @@
+- name: Commit changed exports
+  run: |
+    if git diff --quiet -- \
+      suomen_murrosvaiheet_syvennetty.json \
+      artikkelit.json \
+      yhdistys.json; then
+      echo "JSON-tiedostoissa ei ole muutoksia."
+      exit 0
+    fi
+
+    git config user.name "murrosmatriisi-export-bot"
+    git config user.email "actions@users.noreply.github.com"
+
+    git add \
+      suomen_murrosvaiheet_syvennetty.json \
+      artikkelit.json \
+      yhdistys.json
+
+    git commit -m "Päivitä Murrosmatriisin JSON-exportit"
+    git push
