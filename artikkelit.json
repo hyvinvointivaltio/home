@@ -1,46 +1,25 @@
 {
   "meta": {
-    "count": 26,
+    "count": 47,
     "title": "Murrosmatriisin artikkelit",
     "status": "Tekoälyavusteinen luonnos -- kaikki artikkelit vaativat kuratoijan katselmoinnin ennen julkaisua. Sisältö on tiivistetty ja paraphrasoitu murrosmatriisin ja atlaksen jo olemassa olevista, tutkitusta korteista; ei sisällä niiden ulkopuolisia uusia faktaväitteitä.",
     "created": "2026-07-23",
-    "link_count": 90,
+    "link_count": 156,
     "description": "Murroskortteihin kytkeytyvä tulkinnallinen artikkelikerros. Artikkelit selittävät MIKSI murros merkitsee; kortit kertovat MITÄ tapahtui.",
     "schema_note": "Kytkentä murroskortteihin tehdään erillisessä 'links'-taulukossa (article_id / item_id / relation_type / weight / sort_order), ei upottamalla linkkejä artikkelin sisään. Tämä mahdollistaa saman artikkelin liittämisen useaan korttiin ja saman kortin useaan artikkeliin ilman duplikointia."
   },
   "links": [
     {
       "weight": 5,
-      "item_id": "kotitalouksien-velka-korkoshokki-2022",
-      "article_id": "ylivelkaantuminen-hidas-kertyma",
+      "item_id": "tyoelake-1961",
+      "article_id": "tyoelake-sukupolvien-valinen-sopimus",
       "sort_order": 1,
       "relation_type": "primary"
     },
     {
       "weight": 5,
-      "item_id": "peruskoulu-1968",
-      "article_id": "peruskoulu-suomen-kestavin-onnistumistarina",
-      "sort_order": 1,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 5,
-      "item_id": "vammaispalvelulaki-1987",
-      "article_id": "vammaisten-oikeuksien-pitka-matka",
-      "sort_order": 1,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 5,
-      "item_id": "elakejarjestelman-kestavyys-1990",
-      "article_id": "kun-korjaava-kierre-katkeaa",
-      "sort_order": 1,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 5,
-      "item_id": "kansanterveyslaki-1972",
-      "article_id": "terveydenhuollon-pitka-rakennuskaari",
+      "item_id": "pysyvasti-korkea-tyottomyys-1990",
+      "article_id": "pysyvasti-korkea-tyottomyys-suomessa",
       "sort_order": 1,
       "relation_type": "primary"
     },
@@ -53,8 +32,36 @@
     },
     {
       "weight": 5,
-      "item_id": "kestava-metsatalous-1928",
-      "article_id": "metsatalouden-kestavyys-ja-maaseudun-rakennemuutos",
+      "item_id": "sisallissota-1918",
+      "article_id": "1918-kahtia-jakautunut-kansakunta",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "nokia-rakennemuutos",
+      "article_id": "nokia-ilmio-menestyksesta-sokeudeksi",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "oppimistulosten-heikkeneminen-2006",
+      "article_id": "osaamiskriisi-suomen-oppimistulosten-lasku",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "elakejarjestelman-kestavyys-1990",
+      "article_id": "kun-korjaava-kierre-katkeaa",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "nalkavuodet-1866",
+      "article_id": "nalasta-huoltovarmuuteen",
       "sort_order": 1,
       "relation_type": "primary"
     },
@@ -67,8 +74,8 @@
     },
     {
       "weight": 5,
-      "item_id": "paivahoitolaki-1973",
-      "article_id": "perheen-ja-tyon-yhteensovittaminen",
+      "item_id": "covid-19",
+      "article_id": "koronapandemia-suomen-stressitesti",
       "sort_order": 1,
       "relation_type": "primary"
     },
@@ -76,6 +83,97 @@
       "weight": 5,
       "item_id": "rautatieverkko-1862",
       "article_id": "rautatiesta-alypuhelimeen",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "jarjestaytynyt-kansalaisyhteiskunta-1860",
+      "article_id": "jarjestaytynyt-kansalaisyhteiskunta-demokratian-kasvualusta",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "eu-jasenyys-1995",
+      "article_id": "eu-jasenyys-strateginen-valinta",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "paivahoitolaki-1973",
+      "article_id": "perheen-ja-tyon-yhteensovittaminen",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "peruskoulu-1968",
+      "article_id": "peruskoulu-suomen-kestavin-onnistumistarina",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "sahkon-jakeluverkkojen-yksityistaminen-2013",
+      "article_id": "kriittinen-infrastruktuuri-kaupan-kohteena",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "finanssikriisi-2008",
+      "article_id": "finanssikriisista-nollakorkoihin",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "koulutusleikkaukset",
+      "article_id": "koulutusinvestoinnit-leikkaukset-ja-sopeutumiskyky",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "vammaispalvelulaki-1987",
+      "article_id": "vammaisten-oikeuksien-pitka-matka",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "kansanterveyslaki-1972",
+      "article_id": "terveydenhuollon-pitka-rakennuskaari",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "kestava-metsatalous-1928",
+      "article_id": "metsatalouden-kestavyys-ja-maaseudun-rakennemuutos",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "olkiluoto-3-2002",
+      "article_id": "olkiluoto-3-paatoksesta-toteutukseen",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "valtion-teollisuusyhtiot-ja-aluepolitiikka-1945",
+      "article_id": "valtionyhtiot-ja-alueiden-eriytyminen",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "hyvinvointivaltion-rakentuminen-1880",
+      "article_id": "hyvinvointivaltion-rakentuminen-kerroksittain",
       "sort_order": 1,
       "relation_type": "primary"
     },
@@ -95,57 +193,8 @@
     },
     {
       "weight": 5,
-      "item_id": "asuntopolitiikan-kriisi-1986",
-      "article_id": "asuntopolitiikan-kriisi-suomessa",
-      "sort_order": 1,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 5,
-      "item_id": "hoyrysahat-1860",
-      "article_id": "metsasta-maailmanmarkkinoille",
-      "sort_order": 1,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 5,
-      "item_id": "aanioikeus-1906",
-      "article_id": "aani-tasa-arvo-ja-oikeudet",
-      "sort_order": 1,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 5,
-      "item_id": "sahkon-jakeluverkkojen-yksityistaminen-2013",
-      "article_id": "kriittinen-infrastruktuuri-kaupan-kohteena",
-      "sort_order": 1,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 5,
-      "item_id": "1990-luvun-lama",
-      "article_id": "1990-luvun-laman-pitka-varjo",
-      "sort_order": 1,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 5,
-      "item_id": "markka-1860",
-      "article_id": "suomen-markka-synty-ja-luopuminen",
-      "sort_order": 1,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 5,
-      "item_id": "finanssikriisi-2008",
-      "article_id": "finanssikriisista-nollakorkoihin",
-      "sort_order": 1,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 5,
-      "item_id": "historiallisen-matala-syntyvyys-2010",
-      "article_id": "syntyvyyden-romahdus-hitaat-reaktiot",
+      "item_id": "hyvinvointialueet-2023",
+      "article_id": "hyvinvointialueet-suuri-rakenneuudistus",
       "sort_order": 1,
       "relation_type": "primary"
     },
@@ -158,8 +207,120 @@
     },
     {
       "weight": 5,
-      "item_id": "tyoelake-1961",
-      "article_id": "tyoelake-sukupolvien-valinen-sopimus",
+      "item_id": "kehysmenettely",
+      "article_id": "kehysmenettely-vakautta-vai-jaykkyytta",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "historiallisen-matala-syntyvyys-2010",
+      "article_id": "syntyvyyden-romahdus-hitaat-reaktiot",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "aanioikeus-1906",
+      "article_id": "aani-tasa-arvo-ja-oikeudet",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "hoyrysahat-1860",
+      "article_id": "metsasta-maailmanmarkkinoille",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "ruotsiin_muutto",
+      "article_id": "suuri-muutto-ruotsiin",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "nuorten-mielenterveyskriisi-1990",
+      "article_id": "nuorten-mielenterveyskriisi-kumuloituva-kuormitus",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "1990-luvun-lama",
+      "article_id": "1990-luvun-laman-pitka-varjo",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "kotitalouksien-velka-korkoshokki-2022",
+      "article_id": "ylivelkaantuminen-hidas-kertyma",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "markka-1860",
+      "article_id": "suomen-markka-synty-ja-luopuminen",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "sukupolvien-valinen-oikeudenmukaisuus-1925",
+      "article_id": "sukupolvien-valinen-oikeudenmukaisuus-kuusi-tarinaa",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "globalisaatio-1945",
+      "article_id": "globalisaatio-mahdollisuudet-ja-riippuvuudet",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "asuntopolitiikan-kriisi-1986",
+      "article_id": "asuntopolitiikan-kriisi-suomessa",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "maahanmuutto-murros",
+      "article_id": "maahanmuutto-suomen-rakennemuutos",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "elakejarjestelman-rakentuminen-1937",
+      "article_id": "elakejarjestelma-sukupolvien-valinen-lupaus",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "tietoyhteiskunta-1980",
+      "article_id": "tietoyhteiskunta-tieto-tuotannontekijaksi",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "karjalan_evakot",
+      "article_id": "karjalan-evakot-suomen-suurin-vaestonsiirto",
+      "sort_order": 1,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 5,
+      "item_id": "tyomarkkinoiden-sopimusyhteiskunta-1907",
+      "article_id": "tyomarkkinoiden-sopimusyhteiskunta-suomalainen-malli",
       "sort_order": 1,
       "relation_type": "primary"
     },
@@ -172,24 +333,192 @@
     },
     {
       "weight": 5,
-      "item_id": "nalkavuodet-1866",
-      "article_id": "nalasta-huoltovarmuuteen",
+      "item_id": "ilmasto-vihrea-siirtyma",
+      "article_id": "vihrea-siirtyma-suomen-uusi-teollinen-murros",
       "sort_order": 1,
       "relation_type": "primary"
     },
     {
       "weight": 5,
-      "item_id": "sisallissota-1918",
-      "article_id": "1918-kahtia-jakautunut-kansakunta",
-      "sort_order": 1,
+      "item_id": "puhelinverkko-1882",
+      "article_id": "rautatiesta-alypuhelimeen",
+      "sort_order": 2,
       "relation_type": "primary"
     },
     {
+      "weight": 4,
+      "item_id": "internet-murros",
+      "article_id": "nokia-ilmio-menestyksesta-sokeudeksi",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
       "weight": 5,
-      "item_id": "ruotsiin_muutto",
-      "article_id": "suuri-muutto-ruotsiin",
-      "sort_order": 1,
+      "item_id": "kaupungistuminen",
+      "article_id": "teollistumisen-ja-kaupungistumisen-kaksoisvallankumous",
+      "sort_order": 2,
       "relation_type": "primary"
+    },
+    {
+      "weight": 3,
+      "item_id": "koulutusleikkaukset",
+      "article_id": "nuorten-mielenterveyskriisi-kumuloituva-kuormitus",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
+      "weight": 4,
+      "item_id": "1990-luvun-lama",
+      "article_id": "kehysmenettely-vakautta-vai-jaykkyytta",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
+      "weight": 4,
+      "item_id": "eu-jasenyys-1995",
+      "article_id": "globalisaatio-mahdollisuudet-ja-riippuvuudet",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
+      "weight": 4,
+      "item_id": "valtionyhtioiden_yhtioittaminen",
+      "article_id": "valtionyhtiot-ja-alueiden-eriytyminen",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
+      "weight": 4,
+      "item_id": "oppivelvollisuus-1921",
+      "article_id": "peruskoulu-suomen-kestavin-onnistumistarina",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
+      "weight": 4,
+      "item_id": "1990-luvun-lama",
+      "article_id": "pysyvasti-korkea-tyottomyys-suomessa",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
+      "weight": 3,
+      "item_id": "1990-luvun-lama",
+      "article_id": "eu-jasenyys-strateginen-valinta",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
+      "weight": 3,
+      "item_id": "ilmasto-vihrea-siirtyma",
+      "article_id": "olkiluoto-3-paatoksesta-toteutukseen",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
+      "weight": 4,
+      "item_id": "sote-pitka-uudistus",
+      "article_id": "hyvinvointialueet-suuri-rakenneuudistus",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
+      "weight": 5,
+      "item_id": "sote-pitka-uudistus",
+      "article_id": "terveydenhuollon-pitka-rakennuskaari",
+      "sort_order": 2,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 3,
+      "item_id": "eu-jasenyys-1995",
+      "article_id": "maahanmuutto-suomen-rakennemuutos",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
+      "weight": 4,
+      "item_id": "elakeuudistukset-2005",
+      "article_id": "kun-korjaava-kierre-katkeaa",
+      "sort_order": 2,
+      "relation_type": "case_example"
+    },
+    {
+      "weight": 4,
+      "item_id": "koulutusleikkaukset",
+      "article_id": "osaamiskriisi-suomen-oppimistulosten-lasku",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
+      "weight": 5,
+      "item_id": "aanioikeus-1906",
+      "article_id": "jarjestaytynyt-kansalaisyhteiskunta-demokratian-kasvualusta",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
+      "weight": 5,
+      "item_id": "digital-julkishallinto",
+      "article_id": "kolme-digitalisaation-aaltoa",
+      "sort_order": 2,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 3,
+      "item_id": "peruskoulu-1968",
+      "article_id": "koulutusinvestoinnit-leikkaukset-ja-sopeutumiskyky",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
+      "weight": 5,
+      "item_id": "vaeston-ikaantyminen",
+      "article_id": "huoltosuhde-kuka-kantaa",
+      "sort_order": 2,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 4,
+      "item_id": "tulopolitiikka-1968",
+      "article_id": "tyomarkkinoiden-sopimusyhteiskunta-suomalainen-malli",
+      "sort_order": 2,
+      "relation_type": "supports"
+    },
+    {
+      "weight": 4,
+      "item_id": "yya-sopimus-1948",
+      "article_id": "nato-jasenyys-ja-liittoutumattomuuden-loppu",
+      "sort_order": 2,
+      "relation_type": "contrasts"
+    },
+    {
+      "weight": 5,
+      "item_id": "tasa-arvolaki-1987",
+      "article_id": "aani-tasa-arvo-ja-oikeudet",
+      "sort_order": 2,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 4,
+      "item_id": "markan_kellutus",
+      "article_id": "suomen-markka-synty-ja-luopuminen",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
+      "weight": 5,
+      "item_id": "pankkikriisi",
+      "article_id": "1990-luvun-laman-pitka-varjo",
+      "sort_order": 2,
+      "relation_type": "primary"
+    },
+    {
+      "weight": 4,
+      "item_id": "kansanelakeuudistus-1956",
+      "article_id": "tyoelake-sukupolvien-valinen-sopimus",
+      "sort_order": 2,
+      "relation_type": "context"
     },
     {
       "weight": 4,
@@ -200,8 +529,15 @@
     },
     {
       "weight": 3,
-      "item_id": "maanhankintalaki-1945",
-      "article_id": "jalleenrakennus-onnistuneen-sopeutumisen-malli",
+      "item_id": "digital-julkishallinto",
+      "article_id": "koronapandemia-suomen-stressitesti",
+      "sort_order": 2,
+      "relation_type": "supports"
+    },
+    {
+      "weight": 3,
+      "item_id": "neuvolalaki-1944",
+      "article_id": "hyvinvointivaltion-rakentuminen-kerroksittain",
       "sort_order": 2,
       "relation_type": "supports"
     },
@@ -213,18 +549,18 @@
       "relation_type": "context"
     },
     {
-      "weight": 5,
-      "item_id": "puhelinverkko-1882",
-      "article_id": "rautatiesta-alypuhelimeen",
+      "weight": 4,
+      "item_id": "ukrainan-sota-energiakriisi",
+      "article_id": "vihrea-siirtyma-suomen-uusi-teollinen-murros",
       "sort_order": 2,
-      "relation_type": "primary"
+      "relation_type": "context"
     },
     {
       "weight": 4,
-      "item_id": "syntyvyyden-rakennemuutos-1969",
-      "article_id": "syntyvyyden-romahdus-hitaat-reaktiot",
+      "item_id": "tyoelake-1961",
+      "article_id": "elakejarjestelma-sukupolvien-valinen-lupaus",
       "sort_order": 2,
-      "relation_type": "context"
+      "relation_type": "supports"
     },
     {
       "weight": 5,
@@ -262,6 +598,41 @@
       "relation_type": "case_example"
     },
     {
+      "weight": 3,
+      "item_id": "maanhankintalaki-1945",
+      "article_id": "jalleenrakennus-onnistuneen-sopeutumisen-malli",
+      "sort_order": 2,
+      "relation_type": "supports"
+    },
+    {
+      "weight": 3,
+      "item_id": "vaeston-ikaantyminen",
+      "article_id": "sukupolvien-valinen-oikeudenmukaisuus-kuusi-tarinaa",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
+      "weight": 4,
+      "item_id": "aitiysavustus-1937",
+      "article_id": "neuvola-hidas-kriisi-joka-ei-koskaan-syttynyt",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
+      "weight": 4,
+      "item_id": "syntyvyyden-rakennemuutos-1969",
+      "article_id": "syntyvyyden-romahdus-hitaat-reaktiot",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
+      "weight": 4,
+      "item_id": "pohjoismaiset-tyomarkkinat-1954",
+      "article_id": "suuri-muutto-ruotsiin",
+      "sort_order": 2,
+      "relation_type": "context"
+    },
+    {
       "weight": 5,
       "item_id": "puunjalostus-1870",
       "article_id": "metsasta-maailmanmarkkinoille",
@@ -276,93 +647,9 @@
       "relation_type": "context"
     },
     {
-      "weight": 5,
-      "item_id": "kaupungistuminen",
-      "article_id": "teollistumisen-ja-kaupungistumisen-kaksoisvallankumous",
-      "sort_order": 2,
-      "relation_type": "primary"
-    },
-    {
       "weight": 4,
-      "item_id": "oppivelvollisuus-1921",
-      "article_id": "peruskoulu-suomen-kestavin-onnistumistarina",
-      "sort_order": 2,
-      "relation_type": "context"
-    },
-    {
-      "weight": 5,
-      "item_id": "sote-pitka-uudistus",
-      "article_id": "terveydenhuollon-pitka-rakennuskaari",
-      "sort_order": 2,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 4,
-      "item_id": "elakeuudistukset-2005",
-      "article_id": "kun-korjaava-kierre-katkeaa",
-      "sort_order": 2,
-      "relation_type": "case_example"
-    },
-    {
-      "weight": 5,
-      "item_id": "digital-julkishallinto",
-      "article_id": "kolme-digitalisaation-aaltoa",
-      "sort_order": 2,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 5,
-      "item_id": "vaeston-ikaantyminen",
-      "article_id": "huoltosuhde-kuka-kantaa",
-      "sort_order": 2,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 4,
-      "item_id": "aitiysavustus-1937",
-      "article_id": "neuvola-hidas-kriisi-joka-ei-koskaan-syttynyt",
-      "sort_order": 2,
-      "relation_type": "context"
-    },
-    {
-      "weight": 4,
-      "item_id": "yya-sopimus-1948",
-      "article_id": "nato-jasenyys-ja-liittoutumattomuuden-loppu",
-      "sort_order": 2,
-      "relation_type": "contrasts"
-    },
-    {
-      "weight": 4,
-      "item_id": "pohjoismaiset-tyomarkkinat-1954",
-      "article_id": "suuri-muutto-ruotsiin",
-      "sort_order": 2,
-      "relation_type": "context"
-    },
-    {
-      "weight": 5,
-      "item_id": "tasa-arvolaki-1987",
-      "article_id": "aani-tasa-arvo-ja-oikeudet",
-      "sort_order": 2,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 4,
-      "item_id": "markan_kellutus",
-      "article_id": "suomen-markka-synty-ja-luopuminen",
-      "sort_order": 2,
-      "relation_type": "context"
-    },
-    {
-      "weight": 5,
-      "item_id": "pankkikriisi",
-      "article_id": "1990-luvun-laman-pitka-varjo",
-      "sort_order": 2,
-      "relation_type": "primary"
-    },
-    {
-      "weight": 4,
-      "item_id": "kansanelakeuudistus-1956",
-      "article_id": "tyoelake-sukupolvien-valinen-sopimus",
+      "item_id": "internet-murros",
+      "article_id": "tietoyhteiskunta-tieto-tuotannontekijaksi",
       "sort_order": 2,
       "relation_type": "context"
     },
@@ -374,11 +661,18 @@
       "relation_type": "context"
     },
     {
-      "weight": 3,
-      "item_id": "vaeston-ikaantyminen",
-      "article_id": "syntyvyyden-romahdus-hitaat-reaktiot",
-      "sort_order": 3,
+      "weight": 4,
+      "item_id": "maanhankintalaki-1945",
+      "article_id": "karjalan-evakot-suomen-suurin-vaestonsiirto",
+      "sort_order": 2,
       "relation_type": "supports"
+    },
+    {
+      "weight": 3,
+      "item_id": "ilmasto-vihrea-siirtyma",
+      "article_id": "sukupolvien-valinen-oikeudenmukaisuus-kuusi-tarinaa",
+      "sort_order": 3,
+      "relation_type": "context"
     },
     {
       "weight": 4,
@@ -515,6 +809,13 @@
     },
     {
       "weight": 3,
+      "item_id": "vaeston-ikaantyminen",
+      "article_id": "syntyvyyden-romahdus-hitaat-reaktiot",
+      "sort_order": 3,
+      "relation_type": "supports"
+    },
+    {
+      "weight": 3,
       "item_id": "paluumuutto-ruotsista-1970",
       "article_id": "suuri-muutto-ruotsiin",
       "sort_order": 3,
@@ -536,17 +837,136 @@
     },
     {
       "weight": 3,
-      "item_id": "datakeskusten-rakentamisen-kiihtyminen-2023",
-      "article_id": "kolme-digitalisaation-aaltoa",
-      "sort_order": 4,
-      "relation_type": "case_example"
+      "item_id": "ruotsiin_muutto",
+      "article_id": "karjalan-evakot-suomen-suurin-vaestonsiirto",
+      "sort_order": 3,
+      "relation_type": "contrasts"
     },
     {
       "weight": 3,
-      "item_id": "tehdasjarjestelma-1870",
-      "article_id": "metsasta-maailmanmarkkinoille",
-      "sort_order": 4,
+      "item_id": "sonera-umts",
+      "article_id": "nokia-ilmio-menestyksesta-sokeudeksi",
+      "sort_order": 3,
       "relation_type": "supports"
+    },
+    {
+      "weight": 3,
+      "item_id": "oppimistulosten-heikkeneminen-2006",
+      "article_id": "nuorten-mielenterveyskriisi-kumuloituva-kuormitus",
+      "sort_order": 3,
+      "relation_type": "supports"
+    },
+    {
+      "weight": 3,
+      "item_id": "nokia-rakennemuutos",
+      "article_id": "globalisaatio-mahdollisuudet-ja-riippuvuudet",
+      "sort_order": 3,
+      "relation_type": "supports"
+    },
+    {
+      "weight": 3,
+      "item_id": "kaupunkiseutujen-segregaatio-1990",
+      "article_id": "valtionyhtiot-ja-alueiden-eriytyminen",
+      "sort_order": 3,
+      "relation_type": "supports"
+    },
+    {
+      "weight": 3,
+      "item_id": "osaajapula-tki-palautus-2019",
+      "article_id": "pysyvasti-korkea-tyottomyys-suomessa",
+      "sort_order": 3,
+      "relation_type": "contrasts"
+    },
+    {
+      "weight": 3,
+      "item_id": "nato-jasenyys",
+      "article_id": "eu-jasenyys-strateginen-valinta",
+      "sort_order": 3,
+      "relation_type": "supports"
+    },
+    {
+      "weight": 3,
+      "item_id": "paras-hanke-2007",
+      "article_id": "hyvinvointialueet-suuri-rakenneuudistus",
+      "sort_order": 3,
+      "relation_type": "supports"
+    },
+    {
+      "weight": 3,
+      "item_id": "vaeston-ikaantyminen",
+      "article_id": "maahanmuutto-suomen-rakennemuutos",
+      "sort_order": 3,
+      "relation_type": "supports"
+    },
+    {
+      "weight": 4,
+      "item_id": "osaajapula-tki-palautus-2019",
+      "article_id": "osaamiskriisi-suomen-oppimistulosten-lasku",
+      "sort_order": 3,
+      "relation_type": "supports"
+    },
+    {
+      "weight": 3,
+      "item_id": "sortokaudet",
+      "article_id": "jarjestaytynyt-kansalaisyhteiskunta-demokratian-kasvualusta",
+      "sort_order": 3,
+      "relation_type": "supports"
+    },
+    {
+      "weight": 4,
+      "item_id": "oppimistulosten-heikkeneminen-2006",
+      "article_id": "koulutusinvestoinnit-leikkaukset-ja-sopeutumiskyky",
+      "sort_order": 3,
+      "relation_type": "supports"
+    },
+    {
+      "weight": 4,
+      "item_id": "nokia-rakennemuutos",
+      "article_id": "tietoyhteiskunta-tieto-tuotannontekijaksi",
+      "sort_order": 3,
+      "relation_type": "supports"
+    },
+    {
+      "weight": 3,
+      "item_id": "kansanterveyslaki-1972",
+      "article_id": "hyvinvointivaltion-rakentuminen-kerroksittain",
+      "sort_order": 3,
+      "relation_type": "supports"
+    },
+    {
+      "weight": 3,
+      "item_id": "tyoehtosopimuslaki-1946",
+      "article_id": "tyomarkkinoiden-sopimusyhteiskunta-suomalainen-malli",
+      "sort_order": 3,
+      "relation_type": "supports"
+    },
+    {
+      "weight": 4,
+      "item_id": "elakejarjestelman-kestavyys-1990",
+      "article_id": "elakejarjestelma-sukupolvien-valinen-lupaus",
+      "sort_order": 3,
+      "relation_type": "context"
+    },
+    {
+      "weight": 3,
+      "item_id": "vaeston-ikaantyminen",
+      "article_id": "koronapandemia-suomen-stressitesti",
+      "sort_order": 3,
+      "relation_type": "context"
+    },
+    {
+      "weight": 3,
+      "item_id": "finanssikriisi-2008",
+      "article_id": "kehysmenettely-vakautta-vai-jaykkyytta",
+      "sort_order": 3,
+      "relation_type": "case_example"
+    },
+    {
+      "weight": 4,
+      "item_id": "pientilavaltainen-suomi-1918",
+      "article_id": "metsatalouden-kestavyys-ja-maaseudun-rakennemuutos",
+      "sort_order": 4,
+      "relation_type": "context"
     },
     {
       "weight": 3,
@@ -563,16 +983,30 @@
       "relation_type": "supports"
     },
     {
-      "weight": 4,
-      "item_id": "pientilavaltainen-suomi-1918",
-      "article_id": "metsatalouden-kestavyys-ja-maaseudun-rakennemuutos",
+      "weight": 3,
+      "item_id": "1990-luvun-lama",
+      "article_id": "kun-korjaava-kierre-katkeaa",
       "sort_order": 4,
-      "relation_type": "context"
+      "relation_type": "contrasts"
+    },
+    {
+      "weight": 3,
+      "item_id": "tekoaly-murros",
+      "article_id": "tietoyhteiskunta-tieto-tuotannontekijaksi",
+      "sort_order": 4,
+      "relation_type": "case_example"
     },
     {
       "weight": 3,
       "item_id": "pientilavaltainen-suomi-1918",
       "article_id": "1918-kahtia-jakautunut-kansakunta",
+      "sort_order": 4,
+      "relation_type": "supports"
+    },
+    {
+      "weight": 3,
+      "item_id": "kansanelakelaki-1937",
+      "article_id": "hyvinvointivaltion-rakentuminen-kerroksittain",
       "sort_order": 4,
       "relation_type": "supports"
     },
@@ -585,17 +1019,10 @@
     },
     {
       "weight": 3,
-      "item_id": "rahoitusmarkkinoiden_vapauttaminen",
-      "article_id": "1990-luvun-laman-pitka-varjo",
+      "item_id": "datakeskusten-rakentamisen-kiihtyminen-2023",
+      "article_id": "kolme-digitalisaation-aaltoa",
       "sort_order": 4,
-      "relation_type": "context"
-    },
-    {
-      "weight": 3,
-      "item_id": "1990-luvun-lama",
-      "article_id": "kun-korjaava-kierre-katkeaa",
-      "sort_order": 4,
-      "relation_type": "contrasts"
+      "relation_type": "case_example"
     },
     {
       "weight": 4,
@@ -605,10 +1032,38 @@
       "relation_type": "context"
     },
     {
-      "weight": 4,
-      "item_id": "kehysmenettely",
+      "weight": 3,
+      "item_id": "tyomarkkinamallin-hajautuminen-2016",
+      "article_id": "tyomarkkinoiden-sopimusyhteiskunta-suomalainen-malli",
+      "sort_order": 4,
+      "relation_type": "context"
+    },
+    {
+      "weight": 3,
+      "item_id": "tehdasjarjestelma-1870",
+      "article_id": "metsasta-maailmanmarkkinoille",
+      "sort_order": 4,
+      "relation_type": "supports"
+    },
+    {
+      "weight": 3,
+      "item_id": "elakeuudistukset-2005",
+      "article_id": "elakejarjestelma-sukupolvien-valinen-lupaus",
+      "sort_order": 4,
+      "relation_type": "supports"
+    },
+    {
+      "weight": 3,
+      "item_id": "rahoitusmarkkinoiden_vapauttaminen",
       "article_id": "1990-luvun-laman-pitka-varjo",
-      "sort_order": 5,
+      "sort_order": 4,
+      "relation_type": "context"
+    },
+    {
+      "weight": 4,
+      "item_id": "osaajapula-tki-palautus-2019",
+      "article_id": "koulutusinvestoinnit-leikkaukset-ja-sopeutumiskyky",
+      "sort_order": 4,
       "relation_type": "case_example"
     },
     {
@@ -617,6 +1072,13 @@
       "article_id": "huoltosuhde-kuka-kantaa",
       "sort_order": 5,
       "relation_type": "context"
+    },
+    {
+      "weight": 4,
+      "item_id": "kehysmenettely",
+      "article_id": "1990-luvun-laman-pitka-varjo",
+      "sort_order": 5,
+      "relation_type": "case_example"
     },
     {
       "weight": 3,
@@ -706,7 +1168,12 @@
         "oikeudet"
       ],
       "title": "Ääni, tasa-arvo ja oikeudet",
-      "images": null,
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/S06_aanioikeus.webp",
+          "caption": "Yleinen ja yhtäläinen äänioikeus 1906 (Atlas S06)"
+        }
+      ],
       "status": "ai_draft"
     },
     {
@@ -736,6 +1203,58 @@
       "status": "ai_draft"
     },
     {
+      "id": "elakejarjestelma-sukupolvien-valinen-lupaus",
+      "dek": "Eläkerahastot kasvoivat 7 miljardista 286 miljardiin euroon 24 vuodessa. Silti huoltosuhde heikkenee jatkuvasti — kestävyys on jatkuva, ei kertaalleen ratkaistu kysymys.",
+      "body": [
+        "Kansaneläkelaki 1937 loi ensimmäisen kerran kaikille tarkoitetun, verorahoitteisen peruseläkkeen niille, joilla ei ollut tai oli vain vähän työeläkettä. Työeläkelait (TEL) 1961–1962 täydensivät tätä ansiosidonnaisella, rahastoivalla työeläkkeellä, joka sitoi eläketurvan suoraan palkkatuloihin.",
+        "Järjestelmä laajeni ja vakiintui 1970–1980-luvuilla kattamaan pääosan väestöstä, ja 1990-luvun lama nosti esiin ensimmäisen kerran kysymyksen taloudellisesta kestävyydestä laajassa mittakaavassa — rahastointia ja kestävyyttä alettiin vahvistaa tietoisesti tästä eteenpäin.",
+        "Eläkeuudistus 2005 teki eläkeiästä joustavamman ja paransi työuria kannustavia tekijöitä, ja eläkeuudistus 2017 otti käyttöön elinaikakertoimen, joka sitoo eläketurvan tason suoraan elinajan kehitykseen. 2020-luvulla järjestelmä sopeutuu jatkuvasti muuttuviin väestö- ja talousolosuhteisiin.",
+        "Kolmen pilarin malli — kansaneläke (perusturva), työeläke (ansiosidonnainen toimeentuloturva) ja vapaaehtoinen eläkesäästäminen (yksilön oma täydennys) — tuo turvaa eri elämäntilanteisiin ja jakaa vastuuta valtion, työmarkkinaosapuolten ja yksilön kesken.",
+        "Tunnusluvut osoittavat sekä onnistumista että jatkuvaa painetta: eläkemaksun taso on noussut 7,1 prosentista 24,1 prosenttiin palkkasummasta, eläkerahastot ovat kasvaneet 7 miljardista 286 miljardiin euroon, mutta huoltosuhde (työikäisiä yhtä yli 65-vuotiasta kohden) on heikentynyt 4,7:stä 1,6:een ennustettuna vuoteen 2050 mennessä.",
+        "Eläkejärjestelmä on lupaus, jonka jokainen sukupolvi antaa toisilleen: työssäkäyvät rahoittavat nykyisten eläkeläisten eläkkeet luottaen siihen, että seuraava sukupolvi tekee saman heidän puolestaan — ja tämän lupauksen kestävyys riippuu jatkuvasti siitä, miten hyvin väestön ikääntymiseen, työurien pituuteen ja sijoitustuottoihin liittyviä riskejä hallitaan."
+      ],
+      "note": "",
+      "tags": [
+        "eläkkeet",
+        "sosiaalivakuutus",
+        "väestö"
+      ],
+      "title": "Eläkejärjestelmä: sukupolvien välinen lupaus",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/S09_elakejarjestelma.webp",
+          "caption": "Eläkejärjestelmän rakentuminen (Atlas S09)"
+        }
+      ],
+      "status": "ai_draft"
+    },
+    {
+      "id": "eu-jasenyys-strateginen-valinta",
+      "dek": "Kolmenkymmenen vuoden jälkeen Suomi on ollut EU:n nettosaaja koko ajan — mutta jäsenyyden todellinen arvo ei mahdu pelkkiin euroihin.",
+      "body": [
+        "Suomi liittyi Euroopan unioniin 1.1.1995 tilanteessa, jossa kylmän sodan päättyminen ja 1990-luvun lama olivat jo aiemmin muuttaneet maan ulko- ja talouspoliittista laskelmaa. Jäsenyys ei ollut vain talouspäätös, vaan strateginen valinta pienen, avoimen talouden asemasta uudessa Euroopassa.",
+        "Taloudelliset vaikutukset ovat olleet mitattavia: vienti EU-maihin kaksinkertaistui 20 miljardista 82 miljardiin euroon, suorat ulkomaiset investoinnit kasvoivat 45 miljardiin euroon, BKT asukasta kohden nousi lähemmäs EU:n kärkeä, ja työllisyysaste parani pitkällä aikavälillä 75,3 prosenttiin. Suomi on ollut koko jäsenyyskaudella EU:n nettosaaja, yhteensä noin 27 miljardia euroa.",
+        "Jäsenyyden vaiheet Suomessa kertovat sopeutumisesta: 1995-1999 keskityttiin sääntöjen omaksumiseen, 2000-2007 talouden kasvuun ja EU:n laajenemiseen, 2008-2014 finanssikriisiin ja eurokriisiin vastaamiseen, 2015-2019 vihreään siirtymään ja digitalisaatioon, ja 2020-2025 kriisinkestävyyteen, energiaomavaraisuuteen ja kilpailukykyyn Ukrainan sodan varjossa.",
+        "Jäsenyys ei ole ollut ristiriidatonta: päätöksenteko voi tuntua kaukaiselta ja monimutkaiselta, sääntely koetaan toisinaan raskaaksi, jäsenyys edellyttää maksuosuuksia ja yhteisvastuuta kriiseissä, ja 27 jäsenmaan erilaiset edut vaativat aikaa vieviä kompromisseja.",
+        "Suomen vaikuttaminen EU:ssa on rakentunut rakentavan, ratkaisuhakuisen ja asiantuntevan maineen varaan, painopisteinään kestävä kehitys, turvallisuus, digitalisaatio ja oikeusvaltio — samat teemat, jotka toistuvat myös muissa tämän atlaksen 1990-luvun jälkeisissä murroksissa (euro, vihreä siirtymä, Nato-jäsenyys).",
+        "EU-jäsenyys on osoittautunut yhdeksi Suomen merkittävimmistä strategisista valinnoista: se on tuonut taloudellista vaurautta ja vakautta, mutta edellyttää samalla jatkuvaa sopeutumista ja aktiivista osallistumista, aivan kuten moni muu tämän atlaksen pitkä rakennemuutos."
+      ],
+      "note": "",
+      "tags": [
+        "EU",
+        "talous",
+        "turvallisuus"
+      ],
+      "title": "EU-jäsenyys: Suomen strateginen valinta",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/R09_EU-jasenyys.webp",
+          "caption": "EU-jäsenyys: Suomen strateginen valinta (Atlas R09)"
+        }
+      ],
+      "status": "ai_draft"
+    },
+    {
       "id": "finanssikriisista-nollakorkoihin",
       "dek": "Kriisi, joka piti korjata, johti ratkaisuun, joka loi seuraavan haavoittuvuuden vuosikymmeneksi eteenpäin.",
       "body": [
@@ -752,6 +1271,33 @@
       ],
       "title": "Finanssikriisistä nollakorkoihin",
       "images": null,
+      "status": "ai_draft"
+    },
+    {
+      "id": "globalisaatio-mahdollisuudet-ja-riippuvuudet",
+      "dek": "Kahdeksankymmentä vuotta sitten Suomen talous oli suljettu ja kotimarkkinoiden varassa. Nyt yksi ainoa geopoliittinen shokki voi heilauttaa koko kansantaloutta.",
+      "body": [
+        "Sodan jälkeen Suomen talous oli vielä pitkälti suljettu: kotimarkkinat hallitsivat, vienti perustui metsäteollisuuteen ja perustuotteisiin, pääomaliikkeet olivat tiukasti säädeltyjä ja kansallisvaltio ohjasi taloutta. Tämä suljettu malli suojasi kotimarkkinoita, mutta rajoitti myös kasvua ja kilpailua.",
+        "Avautuminen tapahtui vaiheittain: EFTA-sopimus 1973 ja EY-sopimus 1980 avasivat kauppaa vähitellen, 1980-luvun pääomamarkkinoiden vapauttaminen (sama prosessi, joka johti 1990-luvun lamaan) lisäsi kansainvälistä pääomaliikkuvuutta, ja Neuvostoliiton kaupan päättyminen 1991 pakotti etsimään uusia markkinoita lännestä.",
+        "EU-jäsenyys 1995 ja euro 1999/2002 syvensivät integraatiota merkittävästi: pääsy sisämarkkinoille, Nokia- ja ICT-vetoinen vientimenestys, kansainvälistyvät tuotantoketjut ja pidentyvät arvoketjut tekivät Suomesta aidosti globaalin talouden osan — vienti kasvoi lähes kymmenkertaiseksi 1970-luvusta, ja viennin osuus BKT:sta nousi 53 prosenttiin.",
+        "Vuodesta 2008 alkanut uusi vaihe on tuonut enemmän epävarmuutta kuin aiemmat vaiheet: finanssikriisi, Kiinan nousu ja kilpailun kiristyminen, koronapandemian paljastamat haavoittuvuudet toimitusketjuissa ja Venäjän hyökkäys Ukrainaan 2022 ovat kaikki osoittaneet, kuinka syvälle globaali kytkeytyneisyys ulottuu myös riskeihin, ei vain mahdollisuuksiin.",
+        "Tämä on sama kaava, joka toistuu useissa muissa tämän atlaksen teemoissa (Nokia-ilmiö, finanssikriisi, energiakriisi): avoimuus tuo kasvua ja tehokkuutta rauhallisina aikoina, mutta samat kytkennät välittävät myös kriisit nopeasti ja täydellä voimalla — mikä on nostanut huoltovarmuuden ja omavaraisuuden takaisin talouspoliittisen keskustelun ytimeen 2020-luvulla.",
+        "Globalisaatio ei ole hyvä eikä paha sinänsä — se on pysyvä rakennemuutos, jonka hyödyt ja riskit riippuvat siitä, kuinka hyvin yhteiskunta kykenee oppimaan, uudistumaan ja hallitsemaan syntyviä riippuvuuksia kussakin vaiheessa."
+      ],
+      "note": "",
+      "tags": [
+        "talous",
+        "kauppa",
+        "globalisaatio",
+        "turvallisuus"
+      ],
+      "title": "Globalisaatio: mahdollisuudet ja riippuvuudet",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/R03_globalisaatio.webp",
+          "caption": "Globalisaatio 1945-2025 (Atlas R03)"
+        }
+      ],
       "status": "ai_draft"
     },
     {
@@ -772,7 +1318,69 @@
         "julkinen talous"
       ],
       "title": "Huoltosuhde – kuka kantaa, ketä ja miten?",
-      "images": null,
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/R04_ikaantyminen.webp",
+          "caption": "Väestön ikääntyminen 1945-2050 (Atlas R04)"
+        }
+      ],
+      "status": "ai_draft"
+    },
+    {
+      "id": "hyvinvointialueet-suuri-rakenneuudistus",
+      "dek": "Kaksi peräkkäistä yritystä ratkaista sama rakenteellinen ongelma — ja vasta jälkimmäinen toteutui.",
+      "body": [
+        "Väestön ikääntyminen, palvelutarpeen kasvu ja kuntien vaihteleva kyky järjestää sosiaali- ja terveyspalveluja tunnistettiin ongelmaksi jo 2000-luvun alussa. Ensimmäinen yritys ratkaista se, PARAS-hanke 2005–2015, tavoitteli palvelurakenteen vahvistamista alueellisesti, mutta kuntien vastustus, poliittiset epäyhtenäisyydet ja sote-uudistuksen puuttuminen lainsäädännöstä johtivat siihen, ettei hanke koskaan toteutunut suunnitellusti.",
+        "Toinen yritys onnistui: sote- ja maakuntauudistus eteni pitkän, 2015–2022 kestäneen valmistelun kautta, ja 21 hyvinvointialuetta aloitti toimintansa 1.1.2023 — Suomen suurin hallintouudistus sitten 1970-luvun. Sosiaali- ja terveydenhuollon sekä pelastustoimen järjestämisvastuu siirtyi kunnilta uusille alueille, joiden rahoitus tulee suoraan valtiolta.",
+        "Ensimmäiset vuodet ovat paljastaneet nopeasti kasvavia paineita: hyvinvointialueiden tilikauden tulos on painunut selvästi negatiiviseksi (-2,2 miljardia euroa arviolta 2024), henkilöstön riittämättömyyden kokemus on kasvanut 46 prosentista 71 prosenttiin, ja jonot erikoissairaanhoitoon ovat pidentyneet 14 prosentista 33 prosenttiin.",
+        "Alueelliset erot ovat suuria: hyvinvointialueiden talouden tasapaino vaihtelee huomattavasti asukasta kohden, ja tietojärjestelmien yhdistäminen sekä toiminnan yhtenäistäminen etenevät hitaasti — samaan aikaan kun palvelujen saatavuus ja jatkuvuus pitäisi turvata yhdenvertaisesti koko maassa.",
+        "Keskeinen avoin kysymys on, vahvistaako rakenneuudistus todella järjestelmän kykyä sopeutua väestön ikääntymiseen, henkilöstöpulaan ja talouspaineisiin pitkällä aikavälillä — vai tarvitaanko vielä kolmatta yritystä, kuten ensimmäinen PARAS-hanke aikanaan osoitti olevan mahdollista.",
+        "Vertailu kansainvälisiin tapauksiin (Tanskan aluevahvistus 2007, Ruotsin makrotason mutta pysyvän kuntavastuun malli, Norjan aiempi ja myöhemmin muutettu sairaanhoitopiirien uudistus) muistuttaa, ettei yhtä oikeaa mallia ole olemassa — jokainen maa on joutunut sovittamaan ratkaisunsa omiin rakenteisiinsa, ja vasta tulevat vuodet näyttävät, kuinka hyvin Suomen ratkaisu toimii."
+      ],
+      "note": "",
+      "tags": [
+        "sote",
+        "hallinto",
+        "aluetalous"
+      ],
+      "title": "Hyvinvointialueet: suuri rakenneuudistus jatkuu",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/K07_hyvinvointialueet.webp",
+          "caption": "Hyvinvointialueet 2023- (Atlas K07)"
+        }
+      ],
+      "status": "ai_draft"
+    },
+    {
+      "id": "hyvinvointivaltion-rakentuminen-kerroksittain",
+      "dek": "Yksikään hallitus ei rakentanut hyvinvointivaltiota yksin. Se on 140 vuoden yhteinen rakennusprojekti, jossa jokainen sukupolvi lisäsi oman kerroksensa.",
+      "body": [
+        "Vielä 1880-luvulla apua sai vain kaikkein heikoimmassa asemassa oleva, ja köyhäinhoito oli paikallisten seurakuntien ja kuntien varassa. Ensimmäiset sosiaalilait 1917–1922 loivat perustan modernille sosiaalipolitiikalle, mutta järjestelmä oli yhä hajanainen ja tarveharkintainen.",
+        "Vuonna 1937 kansaneläkelaki toi turvattua vanhuutta kaikille — ensimmäistä kertaa periaate, ettei vanhuuden toimeentulo riippunut yksin perheestä tai armeliaisuudesta. Neuvola 1944 ja sairaalalaki 1956 laajensivat turvaa lapsiin ja sairaanhoitoon riippumatta asuinpaikasta tai varallisuudesta.",
+        "Sairausvakuutus 1963 ja kansanterveyslaki 1972 kokosivat terveydenhuollon kuntien vastuulle ja korvasivat ansionmenetystä sairauden aikana — periaatteena oli yhä vahvemmin universaalisuus: kaikki osallistuvat, kaikki voivat saada apua. 1990-luvun perusturvan uudistukset laajensivat etuuksia edelleen, ja 2000-luvulta digitalisaatio ja Kela ovat tehneet palvelujen saamisesta sujuvampaa.",
+        "Tulokset näkyvät kiistattomina lukuina: elinajanodote nousi 68 vuodesta 83 vuoteen, lapsikuolleisuus laski lähes olemattomiin, koulutustaso kohosi murto-osasta lähes puoleen ikäluokasta, köyhyysaste laski merkittävästi, ja luottamus toisiin ihmisiin vahvistui noin 50 prosentista yli 70 prosenttiin.",
+        "Rakentaminen onnistui, koska usea tekijä vaikutti yhtä aikaa: talouskasvu loi resursseja, progressiivinen verotus mahdollisti uudistukset, laaja poliittinen yhteisymmärrys ylitti hallituskausia, järjestäytynyt kansalaisyhteiskunta ajoi uudistuksia, ja kuntajärjestelmä vei palvelut lähelle ihmisiä.",
+        "Nykyiset haasteet — ikääntyvä väestö, kasvavat sosiaali- ja terveysmenot, työvoimapula, rahoituspaine — ovat itse asiassa sama sopeutumiskyvyn testi, joka on toistunut aiemminkin: kysymys on, kykeneekö sama rakennuspalikoista koottu järjestelmä uudistumaan yhtä hyvin kuin se on rakennettu, myös tuleville sukupolville."
+      ],
+      "note": "",
+      "tags": [
+        "hyvinvointivaltio",
+        "terveys",
+        "koulutus",
+        "sosiaaliturva"
+      ],
+      "title": "Hyvinvointivaltion rakentuminen kerroksittain",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/S07_hyvinvointivaltio_v1.webp",
+          "caption": "Hyvinvointivaltion rakentuminen: turvaa elämän eri vaiheisiin (Atlas S07)"
+        },
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/S07_hyvinvointivaltio_v2.webp",
+          "caption": "Hyvinvointivaltion rakentuminen: kuinka Suomi rakensi turvaverkon (Atlas S07, versio 2)"
+        }
+      ],
       "status": "ai_draft"
     },
     {
@@ -802,6 +1410,85 @@
       "status": "ai_draft"
     },
     {
+      "id": "jarjestaytynyt-kansalaisyhteiskunta-demokratian-kasvualusta",
+      "dek": "Ennen kuin äänioikeus laajeni kaikille, satojatuhansia suomalaisia oli jo oppinut kokouksissa, osuuskaupoissa ja järjestöissä sen, mitä demokratia vaatii käytännössä.",
+      "body": [
+        "Ennen vuoden 1906 äänioikeusuudistusta Suomessa oli poikkeuksellisen elinvoimainen kansalaisyhteiskunta. Teollistuminen ja kaupungistuminen loivat 1860–1880-luvuilla tarpeen järjestäytymiselle, ja työväenjärjestöt, naisjärjestöt, nuorisoseurat, raittiusliike ja osuustoiminta muodostivat laajan verkoston, joka kokosi kansalaisia yhteisten tavoitteiden ympärille.",
+        "Näiden järjestöjen yhteenlaskettu jäsenmäärä oli arviolta yli 700 000 vuonna 1905 — poikkeuksellisen suuri osuus tuolloisesta noin 2,7 miljoonan väestöstä. Kansainvälisessä vertailussa Suomen järjestäytymisaste (15–20 % väestöstä) oli selvästi korkeampi kuin esimerkiksi Saksassa, Venäjällä tai Ranskassa, mikä selittää osaltaan Suomen poikkeuksellisen nopeaa demokratian läpimurtoa.",
+        "Järjestöt eivät olleet vain harrastustoimintaa: ne toimivat äänen välittäjinä kansalaisten tarpeille, osallistumisen kouluttajina (kokoukset, vaalit, keskustelut), luottamuksen rakentajina yli luokka- ja säätyrajojen, tiedon levittäjinä ja yhtenäisen poliittisen paineen luojina vanhentunutta säätyjärjestelmää vastaan.",
+        "Kun yhteiskunnallinen jännite purkautui 1905 suurlakkona, valmiiksi järjestäytynyt kansalaisyhteiskunta pystyi kanavoimaan vaatimukset nopeasti ja tehokkaasti: eduskunta hyväksyi jo seuraavana vuonna 1906 yleisen ja yhtäläisen äänioikeuden, ja ensimmäiset vaalit uudella vaalilailla käytiin jo 1907.",
+        "Keskeinen havainto on, että vahva kansalaisyhteiskunta loi palautekanavan yhteiskunnan ja päätöksenteon välille jo vuosikymmeniä ennen demokratian virallista läpimurtoa — se oli ratkaiseva edellytys sille, että uudistus toteutui nopeasti ja rauhanomaisesti, kun tilaisuus lopulta tuli.",
+        "Sama havainto on relevantti myöhemminkin: yhteisöllisyyden ja järjestäytymisen taso (talkoohenki, yhdistystoiminta, luottamus instituutioihin) vaikuttaa siihen, kuinka nopeasti ja rauhanomaisesti yhteiskunta kykenee vastaamaan uusiin muutospaineisiin — ilmiö, joka toistuu tässä atlaksessa myöhemminkin yhteisöllisyyden rakennemuutoksen ja luottamuksen heikkenemisen yhteydessä."
+      ],
+      "note": "",
+      "tags": [
+        "demokratia",
+        "järjestöt",
+        "kansalaisyhteiskunta"
+      ],
+      "title": "Järjestäytynyt kansalaisyhteiskunta: demokratian kasvualusta",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/S11_kansalaisyhteiskunta.webp",
+          "caption": "Järjestäytynyt kansalaisyhteiskunta (Atlas S06a)"
+        }
+      ],
+      "status": "ai_draft"
+    },
+    {
+      "id": "karjalan-evakot-suomen-suurin-vaestonsiirto",
+      "dek": "Kun 11 prosenttia väestöstä menetti kotinsa, yhteiskunta sopeutui, uudisti ja rakensi tulevaisuuden.",
+      "body": [
+        "Talvi- ja jatkosodan seurauksena Karjala luovutettiin Neuvostoliitolle, ja noin 407 000 karjalaista — noin 11 prosenttia koko väestöstä — joutui jättämään kotinsa. Tämä oli mittasuhteiltaan Suomen historian suurin väestönsiirto, ja se tapahtui kahdessa aallossa: ensin talvisodan evakuointina 1939–1940, sitten pysyvänä siirtona jatkosodan päätyttyä 1944.",
+        "Ratkaisevaa oli, ettei siirtoa jätetty sattuman varaan. Maanhankintalaki säädettiin jo vuonna 1945, ja asutustoimintaa suunniteltiin ja koordinoitiin valtiojohtoisesti: yli 19 000 uutta maatilaa perustettiin, yli 60 000 asuinrakennusta rakennettiin ja tuhansia kouluja ja muita palvelurakennuksia pystytettiin eri puolille Suomea.",
+        "Sopeutuminen onnistui useasta syystä yhtä aikaa: koko kansa ja poliittiset päättäjät jakoivat yhteisen tahdon ratkaista tilanne, päätöksenteko oli poikkeuksellisen nopeaa, vastuu jaettiin valtion, kuntien, järjestöjen ja kansalaisten kesken, ja ongelmiin puututtiin joustavasti matkan varrella säädöksiä ja toimintatapoja kehittäen.",
+        "Tuloksena maanviljelyksen tuotanto kasvoi 1940–1950-luvuilla, uudet asukkaat elävöittivät maaseutua ja kuntia, ja karjalainen kulttuuri, kieli ja perinteet säilyivät ja rikastuttivat suomalaista kulttuuria — samalla kun kansallinen yhtenäisyys vahvistui vaikean yhteisen kokemuksen kautta.",
+        "Vertailu toiseen suureen väestönsiirtoon, 1960-luvun muuttoliikkeeseen Ruotsiin, on opettavainen: kun Karjalan siirto oli valtiojohtoista ja suunniteltua yhteisen tavoitteen ympärillä, 1960-luvun muutto oli rakennemuutoksen ajamaa ja yksilöiden varassa — ja jälkimmäisessä sopeutuminen koti-Suomessa osoittautui monin paikoin vaikeammaksi ja epätasaisemmaksi.",
+        "Karjalan evakkojen asuttaminen on jäänyt esimerkiksi siitä, että kun signaali tunnistetaan ajoissa, päätökset tehdään nopeasti ja toimeenpano viedään lähelle ihmisten arkea, yhteiskunta kykenee sopeutumaan jopa erittäin suuriin muutoksiin ilman vakavaa kriisiä."
+      ],
+      "note": "",
+      "tags": [
+        "väestö",
+        "asuminen",
+        "maaseutu",
+        "huoltovarmuus"
+      ],
+      "title": "Karjalan evakot – Suomen historian suurin väestönsiirto",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/S04_karjalan_evakot.webp",
+          "caption": "Karjalan evakot – Suomen historian suurin väestönsiirto (Atlas S04)"
+        }
+      ],
+      "status": "ai_draft"
+    },
+    {
+      "id": "kehysmenettely-vakautta-vai-jaykkyytta",
+      "dek": "Kolmenkymmenen vuoden ajan sama työkalu on sekä pelastanut julkisen talouden luottamuksen että rajoittanut sen liikkumavaraa — kysymys on, kestääkö se seuraavat kriisit.",
+      "body": [
+        "1990-luvun laman ja velkakriisin (1990–1993) jälkeen julkinen velka ja korkomenot kasvoivat nopeasti ja luottamus julkisen talouden hallintaan horjui. Vastaukseksi otettiin käyttöön uusi ohjausmalli: valtiontalouden menot päätettiin sitoa neljän vuoden kehyksiin, joiden sisällä budjetit laadittaisiin.",
+        "Kehysmenettely vakiintui täysimääräisesti 1998, kun eduskunta alkoi hyväksyä menokehykset osaksi budjettirakennetta systemaattisesti. 2000–2010-luvuilla malli vakiintui: kehykset toivat kuria, avoimuutta ja ennustettavuutta, ja 2020-luvulla uudet paineet — ilmastonmuutos, turvallisuus, väestömuutos — ovat haastaneet kehyksiä uudella tavalla.",
+        "Malli toimii viisivaiheisena syklinä: signaalit ja tarve (velka ja korkomenot kasvavat), periaatepäätös (asetetaan menojen raamit keskipitkällä aikavälillä), kehys (valtiontalouden menot asetetaan neljän vuoden kehyksiin), budjetti (vuosittainen budjetti tehdään kehyksen rajoissa), ja seuranta ja palaute (poikkeamiin reagoidaan toimenpiteillä).",
+        "Hyödyt ovat olleet mitattavia: julkinen velka suhteessa BKT:hen oli 18 prosenttia 1995, nousi kriisien myötä mutta pysyi hallitussa kehyksessä 73 prosenttiin 2023 mennessä, alijäämä on pysynyt kohtuullisena useimpina vuosina, ja korkomenot suhteessa BKT:hen laskivat 6,6 prosentista (1993) 1,2 prosenttiin (2023).",
+        "Kriitikot nostavat esiin viisi jännitettä: joustamattomuus nopeasti muuttuvissa tilanteissa (kriisit, sodat, ilmastonmuutos), riski siitä että menokehykset ohjaavat leikkaamaan juuri tulevaisuuden hyötyjä tuottavista kohteista, piilokustannukset kehyksen ulkopuolella (rahastot, yhtiöittäminen), lyhyen aikavälin vaalisyklien paine pitkäjänteisyyttä vastaan, ja tavoitteiden jännite kestävyyden, hyvinvoinnin, kasvun, oikeudenmukaisuuden ja turvallisuuden välillä.",
+        "Kehyksen kestävyyttä on testattu useissa kriiseissä — finanssikriisi 2008–2009, eurokriisi 2011–2012, koronapandemia 2020–2021, energiakriisi 2022 — ja se on toistuvasti osoittanut joustavuutta kriisien aikana, mutta seuraavat haasteet (vihreä siirtymä, turvallisuus, väestön ikääntyminen) vaativat mallilta entistä tarkempaa tasapainoa kurin ja sopeutumiskyvyn välillä."
+      ],
+      "note": "",
+      "tags": [
+        "julkinen talous",
+        "budjetointi",
+        "instituutiot"
+      ],
+      "title": "Kehysmenettely: vakautta vai jäykkyyttä?",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/K16_kehysmenettely.webp",
+          "caption": "Kehysmenettely ja julkisen talouden ohjaus (Atlas K16)"
+        }
+      ],
+      "status": "ai_draft"
+    },
+    {
       "id": "kolme-digitalisaation-aaltoa",
       "dek": "Internet, sähköinen hallinto ja generatiivinen tekoäly eivät ole kolme erillistä murrosta — ne ovat sama ilmiö kolmessa eri vaiheessa.",
       "body": [
@@ -819,7 +1506,64 @@
         "hallinto"
       ],
       "title": "Kolme digitalisaation aaltoa",
-      "images": null,
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/R08_tekoaly.webp",
+          "caption": "Tekoäly muuttaa Suomen toimintaympäristöä 1950-2035 (Atlas R08)"
+        }
+      ],
+      "status": "ai_draft"
+    },
+    {
+      "id": "koronapandemia-suomen-stressitesti",
+      "dek": "Neljässä vuodessa nähtiin koko yhteiskunnan sopeutumiskyky tiivistettynä: nopeat päätökset, digitaalinen infrastruktuuri, luottamus viranomaisiin — ja piilossa olleet haavoittuvuudet.",
+      "body": [
+        "Covid-19-pandemia (2020–2023) oli Suomen itsenäisyyden ajan suurin terveyskriisi. Se testasi ihmisten terveyttä, taloutta ja arkea — mutta myös koko yhteiskunnan kykyä havaita, päättää, toteuttaa ja oppia nopeasti muuttuvassa poikkeustilanteessa.",
+        "Sopeutumisen silmukka toimi pääosin hyvin: virus levisi ja WHO julisti pandemian, hallitus ja viranomaiset arvioivat tilannetta ja tekivät nopeita päätöksiä (valmiuslaki maaliskuussa 2020, Uudenmaan sulku, kokoontumisrajoitukset), viranomaiset, kunnat ja yritykset toteuttivat toimenpiteitä (testaus, jäljitys, eristys, etätyö, rokotusohjelma), ja palaute ohjasi jatkuvasti uusia päätöksiä.",
+        "Kokonaisuudessaan Suomessa todettiin noin 1,8 miljoonaa tartuntaa ja 2 682 kuolemaa, sairaalahoitoja kertyi noin 22 000, ja rokotekattavuus (vähintään 2 annosta) nousi 86 prosenttiin 12 vuotta täyttäneistä vuoteen 2022 mennessä — kansainvälisessä vertailussa Suomi selvisi verrattain hyvin: 48 kuolemaa 100 000 asukasta kohti, kun Ruotsissa luku oli 166 ja Saksassa 179.",
+        "Vaikutukset ihmisten arkeen olivat silti merkittäviä: mielenterveysongelmat lisääntyivät erityisesti nuorilla ja yksinäisillä, oppimistulokset heikkenivät etenkin peruskoulun loppupäässä ja erot oppilaiden välillä kasvoivat, etätyö yleistyi pysyvästi (noin 30–40 % tekee etätyötä 2023), ja julkinen velkasuhde nousi 59 prosentista 73 prosenttiin BKT:sta.",
+        "Keskeiset opit korostavat sekä vahvuuksia että heikkouksia: nopea päätöksenteko oli mahdollista tietoon perustuen, luottamus viranomaisiin oli korkea ja tuki toimenpiteiden hyväksyttävyyttä, digitaalinen infrastruktuuri ja etätyö mahdollistivat yhteiskunnan jatkuvuuden — mutta terveydenhuollon joustavuus ja henkilöstön riittävyys sekä oppimistulosten ja mielenterveyden vahingot osoittautuivat kriittisiksi haavoittuvuuksiksi.",
+        "Pandemia ei ollut vain terveyskriisi vaan koko järjestelmän stressitesti — se paljasti sekä vahvuudet että heikkoudet nopeammin kuin mikään aiempi kriisi, ja valmiuden, data-analytiikan, kansainvälisen verkostoitumisen sekä osaamisen ja innovaatioiden vahvistaminen ovat suoria vastauksia siihen, mitä testi paljasti."
+      ],
+      "note": "",
+      "tags": [
+        "terveys",
+        "poikkeusolot",
+        "huoltovarmuus"
+      ],
+      "title": "Koronapandemia: Suomen yhteiskunnallinen stressitesti",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/K15_koronapandemia.webp",
+          "caption": "Koronapandemia ja yhteiskunnan sopeutumiskyky (Atlas K15)"
+        }
+      ],
+      "status": "ai_draft"
+    },
+    {
+      "id": "koulutusinvestoinnit-leikkaukset-ja-sopeutumiskyky",
+      "dek": "Suomen menestys 1960–2000-luvuilla rakentui vahvaan koulutukseen ja osaamiseen. 2010-luvulta alkaen investoinnit ovat supistuneet — ja seuraukset näkyvät nyt.",
+      "body": [
+        "Vuosina 1960–1990 koulutus oli kansallinen menestysstrategia: peruskoulu kaikille (1968–1977), korkeakoulutuksen laajentuminen, ammatillisen koulutuksen vahvistaminen ja tutkimuspanostukset loivat sivistyksen, tasa-arvon ja teollistuvan talouden osaajapohjan, jonka varaan 2000-luvun korkea koulutustaso rakentui.",
+        "1990–2008 talouden murros ja globaali kilpailu loivat uusia paineita: globalisaatio ja teknologiamurros edellyttivät jatkuvaa oppimista ja korkeaa osaamista, ja Suomi vastasi tähän edelleen panostamalla koulutukseen 2000-luvun alussa — koulutusmenot pysyivät korkeammalla tasolla kuin OECD-maissa keskimäärin.",
+        "Finanssikriisi 2008 käänsi suunnan: 2009–2015 painopiste siirtyi lyhyen aikavälin säästöihin, ja koulutusleikkaukset alkoivat laajasti. Vuodesta 2016 leikkaukset vakiintuivat pysyväksi käytännöksi — rajalliset resurssit ja inflaatio, opettajamitoituksen heikkeneminen ja tutkimus- ja T&K-rahoituksen jääminen jälkeen tarpeista johtivat siihen, ettei osaamispääoman kasvu enää pitänyt tahtia.",
+        "Vuodesta 2020 vaikutukset ovat näkyneet konkreettisesti: koulutusmenot suhteessa BKT:hen ovat laskeneet Suomessa (3,6 %) lähemmäs mutta yhä hieman yli OECD-keskiarvon (3,1 %), korkeakoulutettujen 25–34-vuotiaiden osuus on laskenut vuoden 2020 huipusta (43,9 %:sta 38,9 %:iin 2024), ja eniten on leikattu tutkimuksesta ja kehityksestä (-21 %), ammatillisesta koulutuksesta (-15 %) ja korkeakoulutuksesta (-11 %).",
+        "Osaamisen mittarit heikkenevät samanaikaisesti: PISA-pistemäärät ovat laskeneet 543:sta 494:ään, yritysten kokema osaajapula on kasvanut 41 prosentista 65 prosenttiin, ja aikuiskoulutukseen osallistuminen on laskenut 17 prosentista 14 prosenttiin — kaikki merkkejä siitä, että koulutusinvestointien lasku näkyy nyt osaamispohjan, tuottavuuden ja sopeutumiskyvyn heikkenemisenä koko yhteiskunnassa.",
+        "Ilmiö kytkeytyy suoraan pysyvään työttömyyteen, Nokia- ja tietoyhteiskuntamurrokseen, globalisaatioon, nuorten mielenterveyskriisiin, syntyvyyden laskuun ja tekoälyn tuomaan työn murrokseen — kaikki tämän atlaksen teemoja, jotka yhdessä osoittavat, ettei lyhyen aikavälin säästö tulevaisuuden investoinneissa jää ilman pitkän aikavälin hintaa."
+      ],
+      "note": "",
+      "tags": [
+        "koulutus",
+        "julkinen talous",
+        "tuottavuus"
+      ],
+      "title": "Koulutusinvestoinnit, leikkaukset ja sopeutumiskyky",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/K13_koulutusleikkaukset.webp",
+          "caption": "Koulutusinvestoinnit, leikkaukset ja sopeutumiskyky 1990-2025 (Atlas K13)"
+        }
+      ],
       "status": "ai_draft"
     },
     {
@@ -861,6 +1605,32 @@
       ],
       "title": "Kun korjaava kierre katkeaa",
       "images": null,
+      "status": "ai_draft"
+    },
+    {
+      "id": "maahanmuutto-suomen-rakennemuutos",
+      "dek": "Suomi muuttui muuttotappiomaasta maahanmuuttomaaksi vuosikymmenten kuluessa — ei yhdessä yössä vaan viiden peräkkäisen vaiheen kautta.",
+      "body": [
+        "Vielä 1970–1980-luvuilla Suomesta muutti enemmän ihmisiä pois kuin sisään — maa oli muuttotappiomaa. Käänne alkoi 1990-luvulla, kun nettomaahanmuutto alkoi kasvaa, ja kiihtyi merkittävästi EU-jäsenyyden (1995) ja globalisaation myötä 2000-luvulla, kun maahanmuuton lähteet ja syyt monipuolistuivat.",
+        "2010-luvulla maahanmuutto muuttui yhä monimuotoisemmaksi, ja 2020-luvulla työperäisestä maahanmuutosta on tullut keskeinen osa kehitystä: vuonna 2024 ulkomaalaistaustaisia oli 476 000 (8,5 % väestöstä), vieraskielisiä 599 000 (10,7 %), ja nettomaahanmuutto oli +26 600 henkeä — 56 prosenttia näistä työperäisiä.",
+        "Väestörakenne on muuttunut mitattavasti: ulkomaalaistaustaisten osuus on kasvanut 0,6 prosentista 8,5 prosenttiin väestöstä vuosina 1990–2024, ja yleisimmät kieliryhmät (venäjä, viro, arabia, englanti) heijastavat sekä työperäistä muuttoa että humanitaarisia syitä. Alueellinen keskittyminen on selvää: Uudellamaalla ulkomaalaistaustaisten osuus on 18,7 prosenttia, Keski-Pohjanmaalla vain 1,3 prosenttia.",
+        "Kotoutumisen tila näyttää sekä edistystä että eroja: ulkomaalaistaustaisten työllisyysaste on noussut, mutta on yhä matalampi (64 %) kuin koko väestöllä (76 %), suomen tai ruotsin kielitaito on hyvä vain 38 prosentilla, ja korkea-asteen koulutus sekä omistusasuminen ovat harvinaisempia kuin koko väestöllä.",
+        "Vaikutukset eri alueille vaihtelevat: maahanmuutto tuo työvoimaa ja kulutusta erityisesti kasvaville alueille ja auttaa vastaamaan ikääntyvän väestön työvoimatarpeeseen, mutta kotoutumisen ja kielen oppimisen hitaus, työllisyyserot ja asuinalueiden eriytymisen riski ovat samalla ajankohtaisia haasteita.",
+        "Keskeinen havainto on, ettei maahanmuutto ole lyhyen aikavälin ilmiö vaan pysyvä osa Suomen väestön ja yhteiskunnan rakennetta — ja sen onnistuminen riippuu jatkuvista panostuksista kotoutumiseen, koulutukseen, työllistymiseen ja osallisuuteen, samalla logiikalla kuin muutkin tämän atlaksen pitkät sopeutumisprosessit."
+      ],
+      "note": "",
+      "tags": [
+        "väestö",
+        "työ",
+        "kulttuuri"
+      ],
+      "title": "Maahanmuutto: Suomen väestön ja yhteiskunnan rakennemuutos",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/R07_maahanmuutto.webp",
+          "caption": "Maahanmuutto (Atlas R07)"
+        }
+      ],
       "status": "ai_draft"
     },
     {
@@ -941,7 +1711,12 @@
         "ulkopolitiikka"
       ],
       "title": "Nato-jäsenyys ja liittoutumattomuuden loppu",
-      "images": null,
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/S05_nato.webp",
+          "caption": "Nato-jäsenyys: sopeutuminen muuttuneeseen turvallisuusympäristöön (Atlas S05)"
+        }
+      ],
       "status": "ai_draft"
     },
     {
@@ -966,6 +1741,110 @@
         {
           "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/S02_neuvola.webp",
           "caption": "Neuvola: onnistunut sopeutuminen (Atlas S02)"
+        }
+      ],
+      "status": "ai_draft"
+    },
+    {
+      "id": "nokia-ilmio-menestyksesta-sokeudeksi",
+      "dek": "Suomi rakensi maailman johtavan matkapuhelinklusterin — ja menetti sitten vetoasemansa juuri siksi, että ensimmäinen menestys oli niin täydellinen.",
+      "body": [
+        "1980-luvulla matkapuhelimet, digitalisaatio ja globalisaatio loivat rakennemuutoksen mahdollisuuden, johon Suomi vastasi poikkeuksellisen hyvin: pitkäjänteinen T&K-panostus, peruskoulu-uudistuksen ja teknisten yliopistojen vahvistama osaamispohja sekä Nokian ympärille rakentunut laaja alihankkija- ja osaajaverkosto loivat perustan, jonka varaan Nokiasta kasvoi maailman johtava matkapuhelinvalmistaja 1990-luvun puolivälistä 2000-luvun alkuun.",
+        "Huippuvuosina 1995–2005 Nokia toi yksin yli 4 prosenttia Suomen BKT:stä ja yli 60 prosenttia vientituloista, työllisti kymmeniätuhansia ihmisiä erityisesti Uudellamaalla, Varsinais-Suomessa ja Pirkanmaalla, ja synnytti vahvan osaamiskeskittymän, joka teki koko toimialasta poikkeuksellisen menestystarinan.",
+        "Juuri tämä menestys kylvi ongelman siemenen. Kun markkina alkoi murtua 2000-luvun puolivälissä — arvo siirtyi laitteista ohjelmistoihin ja palveluihin, kosketusnäytöt ja sovellukset (Applen iPhone 2007, Googlen Android 2008) loivat uuden kilpailukentän — Nokian oma menestys teki siitä ylimielisen ja markkinajohto sokeutti sen pisteitä, joissa alustat ja ekosysteemit ratkaisivat kilpailun laitteiston sijaan.",
+        "Nokian matkapuhelinliiketoiminnan markkinaosuus romahti lähes 50 prosentista käytännössä nollaan vuosina 2007–2013 — Suomelle tämä tarkoitti 60 000–70 000 työpaikan katoamista suoraan tai välillisesti, viennin heikkenemistä ja alueellista iskua erityisesti Helsingin, Tampereen ja Oulun seuduilla, kun alihankkijat ja osaajat siirtyivät toisiin tehtäviin tai katosivat.",
+        "Vertailu kahden murroksen välillä paljastaa eron: ensimmäisessä, matkapuhelinten murroksessa (1980–2000) Suomi oli mukana alusta asti, standardit kypsyivät hallitusti ja sopeutuminen onnistui; toisessa, älypuhelinten murroksessa (2005–2015) alustat ja ekosysteemit ratkaisivat kilpailun, Suomi reagoi myöhässä ja etumatka kääntyi takamatkaksi.",
+        "Vuosien 2013–2025 uusi vaihe osoittaa, että osaamispääoma ei kadonnut kokonaan: uudenlainen innovaatio (peliala, deep tech, cleantech), verkkoinfran huippuosaaminen (5G) ja koulutusjärjestelmän pysyvät vahvuudet loivat pohjan uudelle, hajautuneemmalle mutta yhä osaamisintensiiviselle teknologiaekosysteemille — muistutuksena siitä, että menestyksen tuottama sokeus, ei osaamisen puute, oli alkuperäisen romahduksen ydinsyy."
+      ],
+      "note": "",
+      "tags": [
+        "teknologia",
+        "teollisuus",
+        "valtio",
+        "sopeutuminen"
+      ],
+      "title": "Nokia-ilmiö: menestyksestä sokeudeksi",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/K10_nokia.webp",
+          "caption": "Tietoyhteiskunnan murros ja Nokia-ilmiö (Atlas K10)"
+        }
+      ],
+      "status": "ai_draft"
+    },
+    {
+      "id": "nuorten-mielenterveyskriisi-kumuloituva-kuormitus",
+      "dek": "Ahdistuneisuus ja masennusoireilu ovat kasvaneet kaikilla kouluasteilla vuosikymmenten ajan — eikä kyse ole yksittäisestä syystä vaan usean muutoksen yhteisvaikutuksesta.",
+      "body": [
+        "Nuorten kokema ahdistus, masennus ja uupumus ovat kasvaneet tasaisesti 1990-luvun lopulta lähtien. Kouluterveyskyselyn mukaan kohtalainen tai vaikea ahdistuneisuus on kasvanut 134 prosenttia ja masennusoireilu 106 prosenttia — molemmat kaikilla kouluasteilla, mikä viittaa laaja-alaiseen, ei yksittäiseen paikalliseen ilmiöön.",
+        "Muutosta selittää usean tekijän yhteisvaikutus: sosiaalisen median ja ruutuajan räjähdysmäinen kasvu, suoritus- ja kilpailukulttuurin voimistuminen koulussa, harrastuksissa ja jatkuvan menestymisvaatimuksen ilmapiirissä, epävakaat tulevaisuudennäkymät (ilmastonmuutos, taloudellinen epävarmuus, työelämän pirstaleisuus) sekä perheiden kuormitus ja yksinäisyyden yleistyminen.",
+        "Konkreettisia seurauksia on nähtävissä tilastoissa: mielenterveysperusteiset työkyvyttömyyseläkkeet 16–24-vuotiailla ovat kasvaneet 519 prosenttia vuosina 1995–2024, ja korkeakouluopintojen keskeyttämiset ovat lisääntyneet 90 prosenttia — molemmat merkkejä siitä, että pahoinvointi ei jää vain kokemukseksi vaan konkretisoituu elämänkulun katkoksina.",
+        "Palautesidonnan ketju on pettänyt useassa kohdassa: signaalit on tunnistettu, mutta pahoinvointi on aliarvioitu tilapäisenä ilmiönä; palvelujärjestelmä (kouluterveydenhuolto, psykiatria) ei ole kasvanut tarpeen mukana; jonot ja hoitoon pääsyn viiveet ovat pitkiä; ja vastuu on pirstaloitunut kunnan, hyvinvointialueen, Kelan, koulujen ja järjestöjen kesken ilman selkeää saumatonta polkua.",
+        "Ratkaisusuunnat — varhainen tuki ja mielenterveystaidot kouluissa, matalan kynnyksen palvelut ja lyhyet jonot, yhteisöllisyyttä ja osallisuutta vahvistavat harrastukset, digihyvinvoinnin taidot, perheiden ja vanhempien tuen vahvistaminen sekä tutkimuspohjainen seuranta — vaativat ennaltaehkäisyyn panostamista, joka maksaa itsensä takaisin moninkertaisesti verrattuna korjaaviin toimiin myöhemmin.",
+        "Ilmiö kytkeytyy moneen muuhun tämän atlaksen teemaan — peruskouluun, asuntopolitiikkaan, kaupungistumiseen, koulutusleikkauksiin, pysyvään työttömyyteen ja hyvinvointialueiden kestävyyteen — mikä tekee siitä esimerkin siitä, kuinka nuorten hyvinvointi on koko yhteiskunnan sopeutumiskyvyn peili."
+      ],
+      "note": "",
+      "tags": [
+        "terveys",
+        "nuoret",
+        "koulutus"
+      ],
+      "title": "Nuorten mielenterveyskriisi: kumuloituva kuormitus",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/K11_mielenterveys.webp",
+          "caption": "Nuorten mielenterveyskriisi ja syrjäytymisriski 1990-2025 (Atlas K11)"
+        }
+      ],
+      "status": "ai_draft"
+    },
+    {
+      "id": "olkiluoto-3-paatoksesta-toteutukseen",
+      "dek": "Kolme kertaa yliarvioitu kustannus, neljätoista vuotta myöhässä — mutta strateginen perusajatus säilyi silti perusteltuna koko matkan.",
+      "body": [
+        "Vuonna 2002 eduskunta hyväksyi rakentamispäätöksen: kasvava sähkönkulutus, ilmastotavoitteet ja huoltovarmuuden vahvistaminen puolsivat uutta, kotimaista vähähiilistä perusvoimaa. Käyttöönotto luvattiin vuodeksi 2009 ja kustannusarvio oli noin 3,2 miljardia euroa.",
+        "Todellisuus osoittautui toisenlaiseksi: reaktorin suunnittelua tarkennettiin useaan kertaan, turvallisuusvaatimukset ja viranomaisten tarkastukset kiristyivät rakentamisen aikana, teknisiä ongelmia ilmeni valmistus- ja asennusvaiheissa, ja kansainväliset toimitusketjut sekä projektinhallinta osoittautuivat vaikeiksi hallita. Käyttöönotto siirtyi lopulta vuoteen 2023 — 14 vuotta alkuperäistä aikataulua myöhemmin.",
+        "Kustannukset nousivat samassa suhteessa: alkuperäisestä 3,2 miljardista yli 11 miljardiin euroon, kasvua yli 240 prosenttia. Analyysi erottaa kaksi eri kysymystä: päätöksen laatu (oliko strateginen perusajatus, huoltovarmuus ja vähähiilisyys, oikea) arvioidaan yhä perustelluksi, mutta toteutuksen laatu — aikataulun ja kustannusten hallinta, suunnittelu- ja projektinhallinta, laadunvarmistus — arvioidaan heikoksi.",
+        "Hankkeesta saatiin lopulta merkittävää arvoa: noin 1600 megawattia vähähiilistä perusvoimaa Suomen sähköjärjestelmään, joka tuottaa päästöttömästi sähköä vuosikymmeniä eteenpäin ja vähentää riippuvuutta tuontienergiasta — mutta korkea hinta heijastuu edelleen sähkön hintaan ja yhteiskunnan investointikykyyn muualle.",
+        "Olkiluoto 3 on jäänyt esimerkiksi siitä, että suurten teknis-taloudellisten hankkeiden onnistuminen riippuu yhtä paljon realistisesta riskienhallinnasta, tiukasta projektinhallinnasta ja avoimesta viestinnästä kuin strategisen tavoitteen oikeellisuudesta — opetus, joka on ajankohtainen myös muille suurille investoinneille, kuten vihreän siirtymän hankkeille."
+      ],
+      "note": "",
+      "tags": [
+        "energia",
+        "huoltovarmuus",
+        "suurhankkeet"
+      ],
+      "title": "Olkiluoto 3: päätöksestä toteutukseen",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/K14_olkiluoto.webp",
+          "caption": "Olkiluoto 3: päätöksestä toteutukseen (Atlas K14)"
+        }
+      ],
+      "status": "ai_draft"
+    },
+    {
+      "id": "osaamiskriisi-suomen-oppimistulosten-lasku",
+      "dek": "Suomi oli 2000-luvun alussa koulutuksen mallimaa. Viidessätoista vuodessa PISA-tulokset romahtivat – ja ilmiö uhkaa jo hyvinvointia, taloutta ja kilpailukykyä.",
+      "body": [
+        "PISA-tulokset vuosina 2000–2006 olivat maailman parhaita, ja laadukas peruskoulu ja opettajien korkea koulutustaso loivat perustan, jota kutsuttiin kansainvälisesti suomalaiseksi koulutusihmeeksi. 2000-luvun jälkeen suunta kääntyi jyrkästi: PISA-pisteet laskivat 49 pistettä lukemisessa, 54 pistettä matematiikassa ja 48 pistettä luonnontieteissä vuosina 2006–2022.",
+        "Samaan aikaan eriarvoisuus oppimistuloksissa on kasvanut: heikoimman ja parhaimman neljänneksen välinen ero on kasvanut merkittävästi (+32 pistettä lukemisessa, +29 pistettä matematiikassa vuosina 2003–2022), mikä viittaa siihen, ettei kyse ole vain keskitason laskusta vaan koko jakauman polarisoitumisesta.",
+        "Merkkejä laajemmasta osaamisen heikkenemisestä näkyy myös työelämässä: yritysten kokema osaajapula on kasvanut jyrkästi 2010-luvulta lähtien, ja noin kaksi kolmasosaa yrityksistä kokee vaikeuksia löytää osaavaa työvoimaa (2024). Syitä on useita samanaikaisesti: koulutukseen käytetty julkinen rahoitus on laskenut lähes 20 prosenttia (2010–2022, inflaatiokorjattuna), opettajapula ja määräaikaisuudet ovat kasvaneet, oppimisympäristön muutos (digitaalinen murros, ruutuaika) on heikentänyt keskittymiskykyä, ja luottamus kouluun ja koulutukseen on laskenut.",
+        "Toimia on jo tehty — oppimisen tuen uudistukset, opettajien kelpoisuusvaatimusten vahvistaminen, oppivelvollisuuden nosto 18 vuoteen (2021), lukiodiplomiuudistukset ja kansalliset lukutaito-ohjelmat — mutta vaikutukset näkyvät hitaasti, ja tarvitaan määrätietoista, pitkäjänteistä panostusta perustaitoihin, opettajien resursseihin ja häiriötekijöiden rajaamiseen.",
+        "Seuraukset ulottuvat pitkälle, jos suunta jatkuu: kilpailukyky ja innovaatiot jäävät jälkeen, talouskasvu hidastuu väestön ikääntyessä osaamisen ollessa ainoa kestävän kasvun lähde, eriarvoisuus syvenee, työelämän kohtaanto-ongelmat kasvavat, ja demokratian ja yhteenkuuluvuuden perusta — lukutaito ja kriittinen ajattelu — rapautuu.",
+        "Osaamiskriisi kytkeytyy suoraan moneen muuhun tämän atlaksen teemaan — koulutusleikkauksiin, nuorten mielenterveyskriisiin, syntyvyyden laskuun ja tekoälyn tuomaan työn murrokseen — ja muistuttaa, ettei menestys ole itsestäänselvyys: se vaatii jatkuvia, tietoisia valintoja ja riittäviä panostuksia, ei vain kertaalleen rakennettua järjestelmää."
+      ],
+      "note": "",
+      "tags": [
+        "koulutus",
+        "osaaminen",
+        "tuottavuus"
+      ],
+      "title": "Osaamiskriisi: Suomen oppimistulosten lasku",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/K12_osaamiskriisi.webp",
+          "caption": "Osaamiskriisi (Atlas K12)"
         }
       ],
       "status": "ai_draft"
@@ -1015,6 +1894,32 @@
       "status": "ai_draft"
     },
     {
+      "id": "pysyvasti-korkea-tyottomyys-suomessa",
+      "dek": "Kriisin luonne ei ole yksittäinen lama, vaan sopeutumiskyvyn pitkäaikainen heikkeneminen. Järjestelmä ei koskaan palautunut.",
+      "body": [
+        "Ennen 1990-luvun lamaa Suomen talous oli ylikuumentunut ja työllisyys korkea. Laman aikana 1990–1993 työttömyysaste nousi jyrkästi lähes 20 prosenttiin pankkikriisin ja teollisuuden romahduksen seurauksena — mutta toisin kuin monissa aiemmissa suhdannekriiseissä, työttömyys ei palannut ennalleen talouden toivuttua.",
+        "Toipumisvaiheessa 1994–2000 talous kasvoi nopeasti ja työttömyys laski, mutta jäi silti rakenteellisesti korkeammalle tasolle kuin ennen lamaa. ICT-vetoinen kasvu 2001–2008 jatkoi tätä kaavaa: vienti ja tuottavuus paranivat, mutta työttömyyden lasku oli hidasta ja rakenteellinen osa työttömyydestä ei hävinnyt.",
+        "Kuusi toisiaan vahvistavaa mekanismia selittää, miksi työttömyys jäi pysyväksi: rakenteellinen muutos tuhosi matalan tuottavuuden työpaikkoja pysyvästi, koulutusrakenne ei vastannut uutta osaamistarvetta, kasvu keskittyi pääkaupunkiseudulle ja suuriin kaupunkeihin jättäen monet alueet rakennemuutoksen ulkopuolelle, työmarkkinoiden jäykkyydet (korkea irtisanomiskynnys, dualistiset työmarkkinat) hidastivat sopeutumista, kannustinongelmat heikensivät paluuta työhön, ja työllisyyspolitiikan keinot osoittautuivat riittämättömiksi ja hajanaisiksi.",
+        "Nämä tekijät muodostavat itseään ruokkivan kehän: rakennemuutokset tuhoavat työpaikkoja, osaaminen ei vastaa uusia tarpeita, pitkäaikaistyöttömyys heikentää työllistymismahdollisuuksia entisestään, ja alueelliset erot sekä heikot kannustimet vaikeuttavat sopeutumista — mikä puolestaan altistaa uusille rakennemuutosten aiheuttamille työpaikkakadoille.",
+        "Finanssikriisi 2009 toi uuden iskun, ja 2010-luvun rakenteellinen vaihe (globalisaatio, automaatio) piti pitkäaikaistyöttömyyden kasvussa. 2020-luvulla on syntynyt uusi ristiriita: työvoimapula ja korkea työttömyys esiintyvät samanaikaisesti, mikä osoittaa, että kyse on ennen kaikkea kohtaanto-ongelmasta osaamisen ja saatavilla olevien työpaikkojen välillä, ei työpaikkojen kokonaispuutteesta.",
+        "Keskeinen johtopäätös on, ettei pysyvästi korkea työttömyys ole luonnonlaki vaan seurausta valinnoista, rakenteista ja sopeutumiskyvyn heikkenemisestä — ja se voidaan periaatteessa kääntää toisin päin, jos rakenteelliset ongelmat (osaaminen, alueelliset erot, kannustimet, politiikan pirstaleisuus) puretaan yhtä johdonmukaisesti kuin ne ovat kasautuneet."
+      ],
+      "note": "",
+      "tags": [
+        "työ",
+        "talous",
+        "rakennemuutos"
+      ],
+      "title": "Pysyvästi korkea työttömyys Suomessa",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/K04_tyottomyys.webp",
+          "caption": "Pysyvästi korkea työttömyys Suomessa (Atlas K04)"
+        }
+      ],
+      "status": "ai_draft"
+    },
+    {
       "id": "rautatiesta-alypuhelimeen",
       "dek": "Neljä verkkoa, sama toistuva kaava: rakenna infrastruktuuri, ja yhteiskunta rakentuu sen ympärille uudelleen.",
       "body": [
@@ -1031,6 +1936,44 @@
       ],
       "title": "Rautatiestä älypuhelimeen",
       "images": null,
+      "status": "ai_draft"
+    },
+    {
+      "id": "sukupolvien-valinen-oikeudenmukaisuus-kuusi-tarinaa",
+      "dek": "Vilho selviytyi sodasta. Helmi rakensi hyvinvointivaltion. Vilja perii ilmastokriisin ja velat. Sama kysymys toistuu joka sukupolvessa: paranimmeko vai heikensimmekö seuraavan mahdollisuuksia?",
+      "body": [
+        "Suomi on rakentunut kuuden sukupolven ketjuna, joista jokainen on kantanut vastuuta omalla tavallaan: huolehtinut läheisistä, tehnyt työtä, maksanut yhteisiä palveluja, puolustanut turvallisuutta, rakentanut infrastruktuuria ja sitonut menneisyyden tulevaisuuteen. Vilho (s. 1925) selviytyi sodasta ja köyhyydestä ja jätti itsenäisen, yhtenäisen Suomen. Helmi (s. 1945) rakensi hyvinvointivaltion perustan — neuvolat, koulutuksen tasa-arvon, työeläkejärjestelmän.",
+        "Taisto (s. 1965) rakensi vaurautta koulutuksella ja työllä ja jätti osaamisen ja koulutustason huipun. Marja (s. 1985) sopeutui globaaliin maailmaan ja jätti EU-jäsenyyden tuomat mahdollisuudet sekä digitaalisen yhteiskunnan alun. Jukka (s. 2005) elää digitalisaation ja epävarman työelämän keskellä ja jättää teknologian ja innovaatiot mutta myös kysymyksen siitä, miten rahoitamme tulevan turvan. Vilja (s. 2025) perii ilmastonmuutoksen kiihtymisen, geopoliittisen epävarmuuden ja kestävän talouden rakentamisen keskeneräisenä tehtävänä.",
+        "Kolme atlaksen infografiikkaa tarkastelevat samaa kuutta sukupolvea eri kulmista: \"Sukupolvi joka kantaa\" korostaa, että kantaminen tarkoittaa huolehtimista, työn tekemistä, maksamista, puolustamista, rakentamista ja sitomista sukupolvien välillä. \"Sukupolvien välinen sopimus\" kuvaa saman ketjun yhtenä jatkuvana lupauksena — oikeudenmukaisuus, vastuu, luottamus, kestävyys ja osallisuus. \"Tulevien sukupolvien oikeudet\" kääntää katseen tulevaisuuteen: oikeus elää terveessä ympäristössä, elinvoimaisessa luonnossa, mahdollisuuksiin, turvallisuuteen, kulttuuriin ja reiluihin lähtökohtiin.",
+        "Sukupolvi-indeksi paljastaa sekä edistystä että huolestuttavia käänteitä: koulutustaso, terveys ja elinajanodote sekä toimeentulo ja työ ovat parantuneet johdonmukaisesti sukupolvesta toiseen — mutta ympäristön tila, julkinen velka suhteessa talouteen ja luottamus instituutioihin ja demokratiaan ovat kääntyneet heikkenemisen suuntaan viimeisimmissä sukupolvissa.",
+        "Kestävyyskompassin kolme ulottuvuutta — ympäristö (luonto ja ilmasto kunnossa), ihmiset (hyvinvointi, osaaminen, oikeudenmukaisuus) ja talous (kestävä ja vapauttava) — muodostavat kehyksen, jolla tulevien sukupolvien mahdollisuuksia voidaan arvioida: paranemmeko heidän lähtökohtiaan enemmän kuin heikennämme, siirrämmekö kohtuuttomia kustannuksia tulevaisuuteen, ja kuuluuko niiden ääni, jotka eivät vielä voi äänestää, riittävästi tämän päivän päätöksissä?",
+        "Sukupolvet eivät ole toistensa kilpailijoita vaan toistensa jatkumo — emme peri maata esi-isiltämme, vaan lainaamme sen lapsiltamme. Se, miten tämä atlas kuvaa Suomen menneitä murroksia, on samalla kertomus siitä, minkälaisen lähtökohdan kukin sukupolvi on jättänyt seuraavalle — ja se on kysymys, joka koskee jokaista tässä atlaksessa kuvattua murrosta, ei vain erillistä sukupolvipohdintaa."
+      ],
+      "note": "",
+      "tags": [
+        "sukupolvet",
+        "oikeudenmukaisuus",
+        "kestävyys"
+      ],
+      "title": "Sukupolvien välinen oikeudenmukaisuus: kuusi tarinaa, yksi ketju",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/G01_oikeudenmukaisuus.webp",
+          "caption": "Sukupolvien välinen oikeudenmukaisuus (Atlas G01)"
+        },
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/G02_sukupolvi_kantaa.webp",
+          "caption": "Sukupolvi joka kantaa (Atlas G02)"
+        },
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/G03_sukupolvisopimus.webp",
+          "caption": "Sukupolvien välinen sopimus (Atlas G03)"
+        },
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/G04_tulevien_oikeudet.webp",
+          "caption": "Tulevien sukupolvien oikeudet (Atlas G04)"
+        }
+      ],
       "status": "ai_draft"
     },
     {
@@ -1127,6 +2070,10 @@
         {
           "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/R01_teollistuminen.webp",
           "caption": "Teollistuminen 1860-1975 (Atlas R01)"
+        },
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/R02_kaupungistuminen.webp",
+          "caption": "Kaupungistuminen 1950-2025 (Atlas R02)"
         }
       ],
       "status": "ai_draft"
@@ -1152,6 +2099,32 @@
       "status": "ai_draft"
     },
     {
+      "id": "tietoyhteiskunta-tieto-tuotannontekijaksi",
+      "dek": "Neljä vuosikymmentä sitten tietokone oli harvinaisuus. Nyt tieto ja digitaalinen infrastruktuuri ovat yhtä keskeisiä tuotannontekijöitä kuin pääoma ja työvoima aiemmin.",
+      "body": [
+        "Tietoyhteiskunnan rakentuminen alkoi 1980-luvulla henkilökohtaisten tietokoneiden ja ensimmäisten tietoverkkojen myötä. 1990-luvulla internetin läpimurto ja Nokian nousu maailman johtavaksi matkapuhelinvalmistajaksi tekivät Suomesta kansainvälisen digitalisaation edelläkävijän — internetin käyttö kasvoi 7 prosentista lähes 60 prosenttiin väestöstä kymmenessä vuodessa.",
+        "2000-luvulla laajakaista, sähköinen asiointi ja verkkopankit veivät digitalisaation osaksi arkea, ja 2010-luvulla älypuhelimet, sosiaalinen media ja pilvipalvelut tekivät digitaalisista palveluista kaikkialla läsnä olevia. Vuoteen 2024 mennessä internetin käyttö oli 96 prosenttia väestöstä, älypuhelinten käyttö 94 prosenttia ja verkkopankin käyttö 96 prosenttia.",
+        "Kansainvälisessä vertailussa Suomi sijoittuu johtavien maiden joukkoon lähes kaikilla mittareilla: toiseksi Euroopan digitaalitalouden ja -yhteiskunnan indeksissä (DESI), ensimmäiseksi verkkopankin käytössä ja laajakaistapeitossa, ja kolmanneksi ICT-alan viennin osuudessa tavaraviennistä — Nokian perintö näkyy edelleen vahvana osaamispohjana ja ekosysteeminä.",
+        "Taloudellinen merkitys on huomattava: digitaaliteknologiat selittävät arviolta kolmasosan Suomen kokonaistuottavuuden kasvusta 1995–2019, ICT-ala työllistää suoraan noin 143 000 ihmistä ja vaikuttaa laajasti muihin toimialoihin, ja datatalouden arvo Suomessa arvioidaan yli 30 miljardiksi euroksi vuosittain.",
+        "Rakennemuutos on nyt neljännessä vaiheessaan: data, alustat ja tekoäly ovat nousemassa liiketoiminnan ytimeen, mikä tuo mukanaan sekä mahdollisuuksia (uudet liiketoimintamallit, tuottavuuden kasvu) että haasteita (digital divide, kyberturvallisuus, tietosuoja, jatkuvan sopeutumisen tarve).",
+        "Tietoyhteiskunnan kaari — tietokoneistumisesta internetiin, mobiiliin ja lopulta tekoälyyn — on hyvä esimerkki siitä, kuinka Suomen menestys on rakentunut pitkäjänteisen koulutuksen ja osaamisen, luotettavan digitaalisen infrastruktuurin ja jatkuvan uudistumiskyvyn varaan — sama kaava, joka toistuu Nokia-ilmiössä, globalisaatiossa ja tekoälyn nykyisessä murroksessa."
+      ],
+      "note": "",
+      "tags": [
+        "digitalisaatio",
+        "talous",
+        "teknologia"
+      ],
+      "title": "Tietoyhteiskunta: tieto tuotannontekijäksi",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/R06_tietoyhteiskunta.webp",
+          "caption": "Tietoyhteiskunta (Atlas R06)"
+        }
+      ],
+      "status": "ai_draft"
+    },
+    {
       "id": "tyoelake-sukupolvien-valinen-sopimus",
       "dek": "Kansaneläkkeestä ansiosidonnaiseen turvaan — ja siitä sopimukseen, jonka jokainen sukupolvi joutuu neuvottelemaan uudelleen.",
       "body": [
@@ -1171,6 +2144,58 @@
       "status": "ai_draft"
     },
     {
+      "id": "tyomarkkinoiden-sopimusyhteiskunta-suomalainen-malli",
+      "dek": "Työrauhapäivät romahtivat 176:sta yhteen tuhatta työntekijää kohden seitsemässä vuosikymmenessä. Se ei ole sattumaa vaan sata vuotta rakennetun luottamuksen tulos.",
+      "body": [
+        "Ensimmäiset työehtosopimukset syntyivät teollisuudessa 1907–1918, kun työväenliike alkoi järjestäytyä ja työntekijät ja työnantajat sopivat ensi kertaa työehdoista neuvottelemalla vastakkainasettelun sijaan. Tammikuun kihlaus 1940 vahvisti työntekijöiden ja työnantajien oikeutta sopia työehdoista ja neuvottelujen jatkumisesta myös poikkeusoloissa.",
+        "Työehtosopimuslaki 1946 antoi kollektiivisille sopimuksille vahvan oikeudellisen aseman, ja tulopolitiikan vakiintuminen 1968–1969 loi yhteisen linjan palkoista ja hinnoista, mikä hillitsi inflaatiota ja tuki työllisyyttä laajemmalla yhteiskuntasopimuksella. 1990-luvun lamassa sopimuksilla turvattiin joustavuutta ja rakennettiin luottamusta uudelleen vaikeimpina aikoina.",
+        "Globalisaatio ja EU-jäsenyys 2007–2010 pakottivat sopeuttamaan työuraa kansainväliseen kilpailukykyyn, ja 2020-luvulla muuttuva ja hajautuva työ — alustatyö, etätyö, ekologinen siirtymä — haastaa perinteistä sopimusjärjestelmää uudella tavalla.",
+        "Numerot kertovat mallin toimivuudesta: työrauhapäivät tuhatta työntekijää kohden laskivat 176:sta (1950-luku) yhteen (2020-luku), työllisyysaste nousi 66 prosentista 76 prosenttiin (1990–2023), ja Suomi kuuluu OECD-maiden kärkeen työrauhan, yhteistoiminnan ja luottamuksen mittareissa.",
+        "Suomalaisen mallin erityispiirre on keskitetyn sopimisen ja paikallisen joustavuuden yhdistäminen: työmarkkinakeskusjärjestöt neuvottelevat yhteisesti valtakunnallisista linjoista, mutta yksityiskohdat sovitaan usein paikallisesti — tämä yhdistelmä on tuottanut sekä vakautta että sopeutumiskykyä.",
+        "Suomalainen työmarkkinamalli ei ole itsestäänselvyys vaan vuosikymmenten yhteistyön tulos — ja sen tulevaisuus riippuu siitä, kykeneekö sama sopimiskulttuuri vastaamaan järjestäytymisasteen laskuun, uusiin työn muotoihin ja osaavan työvoiman saatavuuteen yhtä hyvin kuin se on aiemmin vastannut lamaan ja globalisaatioon."
+      ],
+      "note": "",
+      "tags": [
+        "työ",
+        "järjestöt",
+        "sopiminen"
+      ],
+      "title": "Työmarkkinoiden sopimusyhteiskunta: suomalainen malli",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/S08_sopimusyhteiskunta.webp",
+          "caption": "Työmarkkinoiden sopimusyhteiskunta (Atlas S08)"
+        }
+      ],
+      "status": "ai_draft"
+    },
+    {
+      "id": "valtionyhtiot-ja-alueiden-eriytyminen",
+      "dek": "Kun valtio luopui teollisuusyhtiöidensä ohjauksesta, se luopui samalla yhdestä vahvimmista aluepoliittisista työkaluistaan.",
+      "body": [
+        "Vuoteen 1985 asti valtion teollisuusyhtiöt (Outokumpu, Rautaruukki, Kemira, Valmet, Nokia) olivat keskeinen aluepoliittinen väline: ne sijoittivat tuotantoa myös pienemmille paikkakunnille, tarjosivat vakaita teollisia työpaikkoja monilla alueilla, ja niiden päätöksenteko oli sidottu työllisyyteen, huoltovarmuuteen ja alueiden tasapainoiseen kehitykseen valtion omistajaohjauksen kautta.",
+        "Yhtiöittäminen ja pörssilistaukset 1980-luvulta alkaen muuttivat tämän perusteellisesti: valtion omistusosuudet laskivat merkittävästi (esimerkiksi Outokummussa sadasta noin 14 prosenttiin, Rautaruukissa käytännössä nollaan), ja päätöksenteon perusteeksi tuli kannattavuus ja omistaja-arvon maksimointi aiemman aluepoliittisen tavoitteen sijaan.",
+        "Tämä valtasi tilaa uusille strategisille valinnoille: tuotantoa siirrettiin ulkomaille (Outokummun toimintoja Saksaan, Yhdysvaltoihin ja Kiinaan; Rautaruukin tehtaita suljettiin Suomesta ja keskitettiin; Valmetin kokoonpanoa siirrettiin ulkomaille), ja yritysten strategiat suuntautuivat yhä enemmän globaaliin kilpailuun paikallisen elinvoiman sijaan.",
+        "Vaikutukset alueiden työllisyyteen olivat mitattavia: korkean työttömyyden seutukunnissa työttömyysaste on pysynyt koko maan keskiarvoa korkeampana koko tarkastelujakson ajan, ja väestönmuutos 1985–2024 on ollut voimakkaasti kaksijakoinen — kasvua eniten Itä-Uudellamaalla, Tampereella ja Kuopiossa, kun taas Kainuu, Pohjois-Karjala ja Kokkola ovat menettäneet väestöä eniten.",
+        "Sidonnan muutos näkyy selvästi ennen ja jälkeen 1980-luvun: aiemmin päätöksenteon painopisteinä olivat työllisyys, aluekehitys ja valtakunnallinen tasapaino paikallinen elinkeinorakenne huomioiden; myöhemmin painopisteiksi tulivat osakkeenomistajan arvo, markkinat ja kilpailukyky sekä lyhyen aikavälin tulos.",
+        "Kansainvälistyminen on tuonut tehokkuutta ja kilpailukykyä, mutta myös siirtänyt tuotantoa ja työpaikkoja pois harvemmille alueille — jälkitutkimuksessa arvioidaan edelleen, olisiko vaihtoehtoisilla strategioilla voitu yhdistää kannattavuus ja aluepoliittiset tavoitteet paremmin kuin toteutuneessa kehityskulussa kävi."
+      ],
+      "note": "",
+      "tags": [
+        "talous",
+        "aluekehitys",
+        "omistajaohjaus"
+      ],
+      "title": "Valtionyhtiöt ja alueiden eriytyminen",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/K09_aluepolitiikka.webp",
+          "caption": "Valtion teollisuusyhtiöt ja aluepolitiikka rakennemuutoksessa (Atlas K09)"
+        }
+      ],
+      "status": "ai_draft"
+    },
+    {
       "id": "vammaisten-oikeuksien-pitka-matka",
       "dek": "Laitoksesta omaan kotiin ei ollut yksi päätös vaan neljän vuosikymmenen sarja pieniä, kumuloituvia oikeuksia.",
       "body": [
@@ -1187,6 +2212,33 @@
       ],
       "title": "Vammaisten oikeuksien pitkä matka",
       "images": null,
+      "status": "ai_draft"
+    },
+    {
+      "id": "vihrea-siirtyma-suomen-uusi-teollinen-murros",
+      "dek": "Sama maa, joka rakensi hyvinvointinsa metsäteollisuuden ja metallien varaan, rakentaa nyt seuraavaa vientimenestystään puhtaan energian ja akkumateriaalien varaan.",
+      "body": [
+        "Vihreä siirtymä tarkoittaa siirtymistä vähähiiliseen, resurssiviisaaseen ja uudistuvaan talouteen — ja se etenee Suomessa samanaikaisesti viidellä rintamalla: puhtaassa energiassa, sähköistymisessä ja vetytaloudessa, kiertotaloudessa ja kestävässä biotaloudessa, mineraaleissa ja akkuteollisuudessa sekä liikennejärjestelmän murroksessa.",
+        "Ajurit ovat sekä globaaleja että kotimaisia: ilmastonmuutoksen torjunta ja EU:n Fit for 55 -ohjelma asettavat sitovat tavoitteet, energiaturvallisuus vähentää riippuvuutta fossiilisista polttoaineista, ja uudet teknologiat tekevät vähähiilisistä ratkaisuista yhä kilpailukykyisempiä markkinoilla, joilla sijoittajat ja kuluttajat vaativat kestävämpiä tuotteita.",
+        "Suomi on rakentanut uutta jo monella rintamalla: tuulivoimakapasiteetti kasvoi 197 megawatista yli 5600 megawattiin vuosina 2010–2023, uusiutuvan energian osuus loppukulutuksesta nousi 28 prosentista 50 prosenttiin, ja CO2-päästöt puolittuivat 71:stä 27 miljoonaan tonniin vuosina 1990–2023 — samalla kun vihreät investoinnit kasvoivat 3 miljardista yli 12 miljardiin euroon muutamassa vuodessa.",
+        "Merkittävät investoinnit — terästehdas Kemissä, vety- ja e-metanolilaitokset Oulussa, vetylaitokset Vaasa-Kokkolan seudulla, akkumateriaalitehdas Porissa, vety- ja ammoniakkihankkeet Hamina-Kotkassa — osoittavat, että siirtymä ei ole vain politiikkaa vaan konkreettista teollista rakentamista eri puolilla Suomea.",
+        "Mahdollisuudet (yli 50 miljardin euron investoinnit seuraavan vuosikymmenen aikana, kymmeniätuhansia uusia työpaikkoja, vientituotteiden kilpailukyky) ja haasteet (osaamisen saatavuus, sähköverkon ja infrastruktuurin riittävyys, oikeudenmukainen siirtymä, luontovaikutukset ja lupaprosessit) kulkevat rinnakkain — sama kaava kuin metsäteollisuuden aikaisemmassa rakennemuutoksessa: uudistuminen vaatii sekä rohkeita investointeja että huolellista sopeuttamista.",
+        "Tavoite on hiilineutraali Suomi viimeistään 2035, ja polku sinne kulkee 2020-luvun kiihtyvän investointivaiheen kautta 2030-luvun lähes päästöttömään energiantuotantoon ja liikenteeseen — samalla logiikalla, jolla Suomi on aiemminkin uudistanut vientitaloutensa perustan kerran sukupolvessa."
+      ],
+      "note": "",
+      "tags": [
+        "energia",
+        "teollisuus",
+        "ilmasto",
+        "investoinnit"
+      ],
+      "title": "Vihreä siirtymä: Suomen uusi teollinen murros",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/R05_vihrea_siirtyma.webp",
+          "caption": "Vihreä siirtymä (Atlas R05)"
+        }
+      ],
       "status": "ai_draft"
     },
     {

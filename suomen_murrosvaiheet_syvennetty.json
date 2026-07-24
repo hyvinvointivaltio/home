@@ -1,6 +1,6 @@
 {
   "meta": {
-    "count": 196,
+    "count": 207,
     "model": "murros → havaittu ongelma → mekanismi → seuraukset → pitkä vaikutus → nykymerkitys",
     "title": "Suomen yhteiskunnalliset murrosvaiheet 1860–2035",
     "status": "analyyttinen työversio; vuosiluvut ja kausaaliväitteet tulee lähteistää ennen julkaisua",
@@ -19,32 +19,6 @@
     "nineteenth_century_cards_added": 6
   },
   "items": [
-    {
-      "id": "postitieverkko-1800",
-      "type": "viestintä- ja liikenneinfrastruktuurin murros",
-      "phase": "hallinnon ja markkinoiden yhdistäminen tie- ja postiverkoksi",
-      "title": "Valtakunnallisen postitieverkon rakentuminen",
-      "domains": [
-        "viestintä",
-        "liikenne",
-        "hallinto",
-        "alueet"
-      ],
-      "effects": [
-        "viranomaistiedon nopeampi välittyminen",
-        "alueiden välisen kaupankäynnin helpottuminen",
-        "valtakunnallisen hallinnon toimintakyvyn vahvistuminen",
-        "myöhempien liikenne- ja viestintäverkkojen reittipohja"
-      ],
-      "problem": "Pitkät etäisyydet ja hitaat yhteydet vaikeuttivat hallintoa, kaupankäyntiä ja tiedonkulkua maan eri osien välillä.",
-      "year_end": 1881,
-      "mechanism": "Postireittejä, postiasemia ja maanteitä laajennettiin vähitellen koko maan kattavaksi julkiseksi verkoksi.",
-      "confidence": "vahva",
-      "importance": 4,
-      "year_start": 1800,
-      "long_effect": "Suomesta muodostui hallinnollisesti ja taloudellisesti aiempaa yhtenäisempi alue.",
-      "current_relevance": "Julkisten perusverkkojen, saavutettavuuden ja alueellisen yhdenvertaisuuden historiallinen perusta."
-    },
     {
       "id": "ruukkiteollisuus-1800",
       "type": "varhainen teollinen rakennemuutos",
@@ -70,6 +44,32 @@
       "year_start": 1800,
       "long_effect": "Ruukit muodostivat sillan käsityö- ja kotiteollisuudesta koneelliseen tehdastuotantoon.",
       "current_relevance": "Suomalaisen metalli-, konepaja- ja teollisuusosaamisen pitkä historiallinen jatkumo."
+    },
+    {
+      "id": "postitieverkko-1800",
+      "type": "viestintä- ja liikenneinfrastruktuurin murros",
+      "phase": "hallinnon ja markkinoiden yhdistäminen tie- ja postiverkoksi",
+      "title": "Valtakunnallisen postitieverkon rakentuminen",
+      "domains": [
+        "viestintä",
+        "liikenne",
+        "hallinto",
+        "alueet"
+      ],
+      "effects": [
+        "viranomaistiedon nopeampi välittyminen",
+        "alueiden välisen kaupankäynnin helpottuminen",
+        "valtakunnallisen hallinnon toimintakyvyn vahvistuminen",
+        "myöhempien liikenne- ja viestintäverkkojen reittipohja"
+      ],
+      "problem": "Pitkät etäisyydet ja hitaat yhteydet vaikeuttivat hallintoa, kaupankäyntiä ja tiedonkulkua maan eri osien välillä.",
+      "year_end": 1881,
+      "mechanism": "Postireittejä, postiasemia ja maanteitä laajennettiin vähitellen koko maan kattavaksi julkiseksi verkoksi.",
+      "confidence": "vahva",
+      "importance": 4,
+      "year_start": 1800,
+      "long_effect": "Suomesta muodostui hallinnollisesti ja taloudellisesti aiempaa yhtenäisempi alue.",
+      "current_relevance": "Julkisten perusverkkojen, saavutettavuuden ja alueellisen yhdenvertaisuuden historiallinen perusta."
     },
     {
       "id": "suomen-sota-autonomia-1808",
@@ -280,6 +280,68 @@
       "current_relevance": "Vesiliikenne, logistiikka, huoltovarmuus ja Itä-Suomen saavutettavuus."
     },
     {
+      "id": "jarjestaytynyt-kansalaisyhteiskunta-1860",
+      "type": "kansalaisyhteiskunnan rakentumisen aikakausi",
+      "phase": "osallistumisen taitojen ja luottamuksen rakentuminen ennen demokratian läpimurtoa",
+      "title": "Järjestäytynyt kansalaisyhteiskunta",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/S11_kansalaisyhteiskunta.webp",
+          "caption": "Järjestäytynyt kansalaisyhteiskunta (Atlas S06a)"
+        }
+      ],
+      "domains": [
+        "demokratia",
+        "kansalaisyhteiskunta",
+        "järjestöt"
+      ],
+      "effects": [
+        "järjestöjen jäsenmäärä kasvoi poikkeuksellisen suureksi suhteessa väestöön (15-20 %, kansainvälisesti korkein taso)",
+        "kansalaisten osallistumis- ja neuvottelutaidot vahvistuivat",
+        "luottamus yli luokka- ja säätyrajojen kasvoi",
+        "yhteinen poliittinen paine vanhentunutta säätyjärjestelmää kohtaan vahvistui",
+        "perusta demokratian nopealle ja rauhanomaiselle läpimurrolle 1906 loppui"
+      ],
+      "problem": "Teollistuminen ja kaupungistuminen loivat tarpeen järjestäytymiselle, ja työväenjärjestöt, naisjärjestöt, nuorisoseurat, raittiusliike ja osuustoiminta loivat laajan kansalaisyhteiskunnan, joka välitti kansalaisten tarpeita päätöksentekoon ja opetti osallistumisen taitoja ennen kuin yleinen äänioikeus toteutui.",
+      "sources": [
+        "Kansallisarkisto",
+        "Tilastokeskus (1906)",
+        "K. M. Nygård",
+        "R. Putnam: Bowling Alone",
+        "Heikki Ylikangas"
+      ],
+      "year_end": 1907,
+      "mechanism": "Järjestöt (arviolta yli 700 000 jäsentä 1905, kun väkiluku oli n. 2,7 miljoonaa) kokosivat kansalaisia yhteisten tavoitteiden ympärille, kouluttivat kokous- ja päätöksentekokäytäntöihin, levittivät tietoa ja loivat yhtenäistä painetta vanhentunutta säätyjärjestelmää vastaan.",
+      "confidence": "vahva",
+      "importance": 4,
+      "year_start": 1860,
+      "long_effect": "Vahva kansalaisyhteiskunta loi palautekanavan yhteiskunnan ja päätöksenteon välille ja oli ratkaiseva edellytys sille, että vuoden 1906 äänioikeusuudistus toteutui nopeasti ja rauhanomaisesti verrattuna moniin muihin maihin.",
+      "current_relevance": "Kansalaisyhteiskunnan ja järjestäytyneen osallistumisen merkitys demokratian ja luottamuksen perustana on edelleen ajankohtainen vertailukohta myöhemmälle yhteisöllisyyden ja luottamuksen kehitykselle."
+    },
+    {
+      "id": "markka-1860",
+      "type": "taloudellinen uudistus",
+      "phase": "autonomian instituutiot",
+      "title": "Suomen markka käyttöön",
+      "domains": [
+        "talous",
+        "valtio"
+      ],
+      "effects": [
+        "rahapoliittisen autonomian vahvistuminen",
+        "kotimaisen taloushallinnon kehitys",
+        "kansallisen valtion rakentumisen edellytykset"
+      ],
+      "problem": "Suomen talouden rahallinen riippuvuus Venäjän ruplasta.",
+      "year_end": 1860,
+      "mechanism": "Oma rahayksikkö vahvisti taloudellista päätösvaltaa ja kansallista instituutiorakennetta.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 1860,
+      "long_effect": "Oman raha- ja keskuspankkijärjestelmän perusta ennen itsenäistymistä.",
+      "current_relevance": "Suomen rahatalouden institutionaalinen historia ja tie eurojärjestelmään."
+    },
+    {
       "id": "hoyrysahat-1860",
       "type": "teollinen murros",
       "phase": "mekanisoituvan metsäteollisuuden synty",
@@ -304,29 +366,6 @@
       "year_start": 1860,
       "long_effect": "Suomen ensimmäinen kansainvälisesti kilpailukykyinen vientiteollisuus rakentui höyrysahojen varaan ja loi perustan myöhemmälle metsäteollisuudelle.",
       "current_relevance": "Metsäteollisuuden historiallinen kilpailukyky ja biotalouden kehityksen lähtökohdat."
-    },
-    {
-      "id": "markka-1860",
-      "type": "taloudellinen uudistus",
-      "phase": "autonomian instituutiot",
-      "title": "Suomen markka käyttöön",
-      "domains": [
-        "talous",
-        "valtio"
-      ],
-      "effects": [
-        "rahapoliittisen autonomian vahvistuminen",
-        "kotimaisen taloushallinnon kehitys",
-        "kansallisen valtion rakentumisen edellytykset"
-      ],
-      "problem": "Suomen talouden rahallinen riippuvuus Venäjän ruplasta.",
-      "year_end": 1860,
-      "mechanism": "Oma rahayksikkö vahvisti taloudellista päätösvaltaa ja kansallista instituutiorakennetta.",
-      "confidence": "vahva",
-      "importance": 5,
-      "year_start": 1860,
-      "long_effect": "Oman raha- ja keskuspankkijärjestelmän perusta ennen itsenäistymistä.",
-      "current_relevance": "Suomen rahatalouden institutionaalinen historia ja tie eurojärjestelmään."
     },
     {
       "id": "metsien-kaupallistuminen-1860",
@@ -432,30 +471,6 @@
       "current_relevance": "Yritysrakenne, omistajuus ja pääomamarkkinat."
     },
     {
-      "id": "palkollisasetus-1865",
-      "type": "oikeudellinen uudistus",
-      "phase": "vapaan palkkatyön synty",
-      "title": "Palkollisasetuksen uudistus",
-      "domains": [
-        "työ",
-        "vapaus",
-        "maatalous"
-      ],
-      "effects": [
-        "työvoiman liikkuvuuden kasvu",
-        "palkkatyön yleistymisen edellytykset",
-        "säätysidonnaisuuden heikkeneminen"
-      ],
-      "problem": "Palveluspakkoon ja henkilökohtaiseen riippuvuuteen perustunut työjärjestys.",
-      "year_end": 1865,
-      "mechanism": "Työsuhteiden sopimusluonne vahvistui ja riippuvuus työnantajasta väheni.",
-      "confidence": "kohtalainen",
-      "importance": 4,
-      "year_start": 1865,
-      "long_effect": "Siirtymä kohti vapaita työmarkkinoita.",
-      "current_relevance": "Nykyaikaisen työsopimus- ja työmarkkinajärjestelmän tausta."
-    },
-    {
       "id": "kunnallishallinto-1865",
       "type": "institutionaalinen uudistus",
       "phase": "paikallisen itsehallinnon synty",
@@ -506,28 +521,28 @@
       "current_relevance": "Palkkatyön, alustatyön ja ansiosidonnaisen turvan suhde."
     },
     {
-      "id": "kansakouluasetus-1866",
-      "type": "institutionaalinen uudistus",
-      "phase": "kansan sivistäminen",
-      "title": "Kansakouluasetus",
+      "id": "palkollisasetus-1865",
+      "type": "oikeudellinen uudistus",
+      "phase": "vapaan palkkatyön synty",
+      "title": "Palkollisasetuksen uudistus",
       "domains": [
-        "koulutus",
-        "tasa-arvo",
-        "kunta"
+        "työ",
+        "vapaus",
+        "maatalous"
       ],
       "effects": [
-        "kansakouluverkon laajeneminen",
-        "lukutaidon kasvu",
-        "opettajankoulutuksen kehitys"
+        "työvoiman liikkuvuuden kasvu",
+        "palkkatyön yleistymisen edellytykset",
+        "säätysidonnaisuuden heikkeneminen"
       ],
-      "problem": "Perusopetuksen hajanaisuus ja kansalaisten heikot koulutusmahdollisuudet.",
-      "year_end": 1866,
-      "mechanism": "Kansakoulusta muodostettiin järjestelmällinen maallinen koulutusinstituutio.",
-      "confidence": "vahva",
-      "importance": 5,
-      "year_start": 1866,
-      "long_effect": "Yleisen koulutuksen ja myöhemmän oppivelvollisuuden perusta.",
-      "current_relevance": "Koulutuksellisen tasa-arvon historiallinen lähtökohta."
+      "problem": "Palveluspakkoon ja henkilökohtaiseen riippuvuuteen perustunut työjärjestys.",
+      "year_end": 1865,
+      "mechanism": "Työsuhteiden sopimusluonne vahvistui ja riippuvuus työnantajasta väheni.",
+      "confidence": "kohtalainen",
+      "importance": 4,
+      "year_start": 1865,
+      "long_effect": "Siirtymä kohti vapaita työmarkkinoita.",
+      "current_relevance": "Nykyaikaisen työsopimus- ja työmarkkinajärjestelmän tausta."
     },
     {
       "id": "nalkavuodet-1866",
@@ -556,31 +571,28 @@
       "current_relevance": "Huoltovarmuuden ja ruokaturvan historiallinen vertailukohta."
     },
     {
-      "id": "puunjalostus-1870",
-      "type": "teollinen murros",
-      "phase": "jalostusarvon kasvu",
-      "title": "Puunjalostusteollisuuden synty",
+      "id": "kansakouluasetus-1866",
+      "type": "institutionaalinen uudistus",
+      "phase": "kansan sivistäminen",
+      "title": "Kansakouluasetus",
       "domains": [
-        "teollisuus",
-        "metsätalous",
-        "vienti",
-        "teknologia"
+        "koulutus",
+        "tasa-arvo",
+        "kunta"
       ],
       "effects": [
-        "sellu- ja paperiteollisuuden kasvu",
-        "viennin jalostusasteen nousu",
-        "teollisten investointien lisääntyminen",
-        "tehdasyhdyskuntien synty",
-        "teknologisen osaamisen vahvistuminen"
+        "kansakouluverkon laajeneminen",
+        "lukutaidon kasvu",
+        "opettajankoulutuksen kehitys"
       ],
-      "problem": "Raakapuun ja sahatavaran vienti tuotti rajallisesti lisäarvoa nopeasti kasvavilla kansainvälisillä markkinoilla.",
-      "year_end": 1895,
-      "mechanism": "Sellu- ja paperiteollisuuden käyttöönotto nosti metsien jalostusastetta ja loi uusia vientituotteita.",
+      "problem": "Perusopetuksen hajanaisuus ja kansalaisten heikot koulutusmahdollisuudet.",
+      "year_end": 1866,
+      "mechanism": "Kansakoulusta muodostettiin järjestelmällinen maallinen koulutusinstituutio.",
       "confidence": "vahva",
       "importance": 5,
-      "year_start": 1870,
-      "long_effect": "Puunjalostusteollisuudesta kasvoi yli vuosisadan ajaksi Suomen tärkein vientiala ja hyvinvointiyhteiskunnan taloudellinen perusta.",
-      "current_relevance": "Metsäteollisuus, biotalous, uusiutuvat materiaalit ja vientiteollisuuden kilpailukyky."
+      "year_start": 1866,
+      "long_effect": "Yleisen koulutuksen ja myöhemmän oppivelvollisuuden perusta.",
+      "current_relevance": "Koulutuksellisen tasa-arvon historiallinen lähtökohta."
     },
     {
       "id": "tehdasjarjestelma-1870",
@@ -610,53 +622,31 @@
       "current_relevance": "Tuotannon organisointi, työelämän muutos ja teollinen perintö."
     },
     {
-      "id": "terveydenhoitoasetus-1879",
-      "type": "institutionaalinen uudistus",
-      "phase": "julkisen terveydenhuollon alku",
-      "title": "Terveydenhoitoasetus",
+      "id": "puunjalostus-1870",
+      "type": "teollinen murros",
+      "phase": "jalostusarvon kasvu",
+      "title": "Puunjalostusteollisuuden synty",
       "domains": [
-        "terveys",
-        "kunta",
-        "ympäristö"
+        "teollisuus",
+        "metsätalous",
+        "vienti",
+        "teknologia"
       ],
       "effects": [
-        "terveysvalvonnan synty",
-        "hygienian paraneminen",
-        "tartuntatautien ehkäisy"
+        "sellu- ja paperiteollisuuden kasvu",
+        "viennin jalostusasteen nousu",
+        "teollisten investointien lisääntyminen",
+        "tehdasyhdyskuntien synty",
+        "teknologisen osaamisen vahvistuminen"
       ],
-      "problem": "Tartuntataudit, heikko hygienia ja kaupungistumisen terveysriskit.",
-      "year_end": 1879,
-      "mechanism": "Paikallista terveysvalvontaa ja ympäristöterveyden tehtäviä järjestettiin.",
-      "confidence": "vahva",
-      "importance": 4,
-      "year_start": 1879,
-      "long_effect": "Kunnallisen kansanterveystyön varhainen perusta.",
-      "current_relevance": "Ympäristöterveys, terveydensuojelu ja epidemioiden torjunta."
-    },
-    {
-      "id": "elinkeinovapaus-1879",
-      "type": "oikeudellinen uudistus",
-      "phase": "markkinatalouden vapautuminen",
-      "title": "Elinkeinovapaus",
-      "domains": [
-        "talous",
-        "vapaus",
-        "yrittäjyys"
-      ],
-      "effects": [
-        "yrittäjyyden laajeneminen",
-        "teollistumisen nopeutuminen",
-        "ammattirakenteen monipuolistuminen",
-        "kaupungistuminen"
-      ],
-      "problem": "Säätyihin, lupiin ja ammattikuntiin sidottu elinkeinotoiminta.",
-      "year_end": 1879,
-      "mechanism": "Elinkeinon harjoittamista vapautettiin ja markkinoille pääsy helpottui.",
+      "problem": "Raakapuun ja sahatavaran vienti tuotti rajallisesti lisäarvoa nopeasti kasvavilla kansainvälisillä markkinoilla.",
+      "year_end": 1895,
+      "mechanism": "Sellu- ja paperiteollisuuden käyttöönotto nosti metsien jalostusastetta ja loi uusia vientituotteita.",
       "confidence": "vahva",
       "importance": 5,
-      "year_start": 1879,
-      "long_effect": "Modernin markkinatalouden ja yritystoiminnan oikeudellinen perusta.",
-      "current_relevance": "Yritysvapauden ja kilpailun keskeinen historiallinen lähtökohta."
+      "year_start": 1870,
+      "long_effect": "Puunjalostusteollisuudesta kasvoi yli vuosisadan ajaksi Suomen tärkein vientiala ja hyvinvointiyhteiskunnan taloudellinen perusta.",
+      "current_relevance": "Metsäteollisuus, biotalous, uusiutuvat materiaalit ja vientiteollisuuden kilpailukyky."
     },
     {
       "id": "vaivaishoitoasetus-1879",
@@ -706,6 +696,55 @@
       "year_start": 1879,
       "long_effect": "Palkkatyöyhteiskunnan ja kaupungistumisen edellytys.",
       "current_relevance": "Työmarkkinoiden alueellinen liikkuvuus ja alueellinen keskittyminen."
+    },
+    {
+      "id": "elinkeinovapaus-1879",
+      "type": "oikeudellinen uudistus",
+      "phase": "markkinatalouden vapautuminen",
+      "title": "Elinkeinovapaus",
+      "domains": [
+        "talous",
+        "vapaus",
+        "yrittäjyys"
+      ],
+      "effects": [
+        "yrittäjyyden laajeneminen",
+        "teollistumisen nopeutuminen",
+        "ammattirakenteen monipuolistuminen",
+        "kaupungistuminen"
+      ],
+      "problem": "Säätyihin, lupiin ja ammattikuntiin sidottu elinkeinotoiminta.",
+      "year_end": 1879,
+      "mechanism": "Elinkeinon harjoittamista vapautettiin ja markkinoille pääsy helpottui.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 1879,
+      "long_effect": "Modernin markkinatalouden ja yritystoiminnan oikeudellinen perusta.",
+      "current_relevance": "Yritysvapauden ja kilpailun keskeinen historiallinen lähtökohta."
+    },
+    {
+      "id": "terveydenhoitoasetus-1879",
+      "type": "institutionaalinen uudistus",
+      "phase": "julkisen terveydenhuollon alku",
+      "title": "Terveydenhoitoasetus",
+      "domains": [
+        "terveys",
+        "kunta",
+        "ympäristö"
+      ],
+      "effects": [
+        "terveysvalvonnan synty",
+        "hygienian paraneminen",
+        "tartuntatautien ehkäisy"
+      ],
+      "problem": "Tartuntataudit, heikko hygienia ja kaupungistumisen terveysriskit.",
+      "year_end": 1879,
+      "mechanism": "Paikallista terveysvalvontaa ja ympäristöterveyden tehtäviä järjestettiin.",
+      "confidence": "vahva",
+      "importance": 4,
+      "year_start": 1879,
+      "long_effect": "Kunnallisen kansanterveystyön varhainen perusta.",
+      "current_relevance": "Ympäristöterveys, terveydensuojelu ja epidemioiden torjunta."
     },
     {
       "id": "vaestollinen-siirtyma-1880",
@@ -758,6 +797,52 @@
       "year_start": 1880,
       "long_effect": "Modernin energia-, viestintä- ja tietoyhteiskunnan tekninen perusrakenne.",
       "current_relevance": "Sähköriippuvuus, energiamurros ja kriittinen infrastruktuuri."
+    },
+    {
+      "id": "hyvinvointivaltion-rakentuminen-1880",
+      "type": "pitkä institutionaalinen kokoava murros",
+      "phase": "yksittäisistä hätäavusta kattavaksi, universaaliksi turvaverkoksi",
+      "title": "Hyvinvointivaltion rakentuminen",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/S07_hyvinvointivaltio_v1.webp",
+          "caption": "Hyvinvointivaltion rakentuminen: turvaa elämän eri vaiheisiin (Atlas S07)"
+        },
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/S07_hyvinvointivaltio_v2.webp",
+          "caption": "Hyvinvointivaltion rakentuminen: kuinka Suomi rakensi turvaverkon (Atlas S07, versio 2)"
+        }
+      ],
+      "domains": [
+        "hyvinvointivaltio",
+        "terveys",
+        "koulutus",
+        "sosiaaliturva"
+      ],
+      "effects": [
+        "elinajanodote nousi 68 vuodesta (1950) 83 vuoteen (2023)",
+        "lapsikuolleisuus laski 35:stä 1,3:een tuhatta syntynyttä kohden",
+        "koulutustaso (korkeakoulutus 25-34-v.) nousi 6 %:sta 46 %:iin",
+        "suhteellinen köyhyysaste laski yli 20 %:sta 12 %:iin",
+        "luottamus toisiin ihmisiin nousi noin 50 %:sta yli 70 %:iin"
+      ],
+      "problem": "Suomen hyvinvointivaltio ei syntynyt yhdellä päätöksellä vaan vuosikymmenten kuluessa: köyhäinhoidosta, kansaneläkkeestä, neuvolasta, sairaalalaista, sairausvakuutuksesta ja kansanterveyslaista koottiin vähitellen järjestelmä, joka on parantanut terveyttä, koulutusta, toimeentuloa ja tasa-arvoa.",
+      "sources": [
+        "THL",
+        "Tilastokeskus",
+        "Kela",
+        "Valtioneuvoston selvitys- ja tutkimustoiminta",
+        "STM",
+        "OECD",
+        "World Bank"
+      ],
+      "year_end": 2020,
+      "mechanism": "Jokainen vuosikymmen lisäsi yhden rakennuspalikan: 1880–1910 köyhäinhoito, 1917–1922 ensimmäiset sosiaalilait, 1937 kansaneläke, 1944 neuvola, 1956 sairaalalaki, 1963 sairausvakuutus, 1972 kansanterveyslaki, 1990-luku perusturvan uudistukset, 2000-luvulta digitalisaatio ja Kela — kukin kerros tuki ja laajensi edellistä universaalisuuden, tasa-arvon ja solidaarisen rahoituksen periaattein.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 1880,
+      "long_effect": "Hyvinvointivaltiosta tuli Suomen kilpailuedun ja yhteiskunnallisen vakauden perusta yli 70 vuoden ajaksi — se on lisännyt mahdollisuuksia ja vähentänyt eriarvoisuutta samalla kun se on vahvistanut luottamusta.",
+      "current_relevance": "Ikääntyvä väestö, kasvavat sosiaali- ja terveysmenot, työvoimapula ja julkisen talouden kestävyysvaje testaavat parhaillaan, kykeneekö järjestelmä sopeutumaan yhtä hyvin myös tuleville sukupolville."
     },
     {
       "id": "puhelinverkko-1882",
@@ -934,6 +1019,12 @@
       "type": "demokraattinen uudistus",
       "phase": "massademokratian synty",
       "title": "Yleinen ja yhtäläinen äänioikeus",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/S06_aanioikeus.webp",
+          "caption": "Yleinen ja yhtäläinen äänioikeus 1906 (Atlas S06)"
+        }
+      ],
       "domains": [
         "demokratia",
         "sukupuolten tasa-arvo",
@@ -952,6 +1043,48 @@
       "year_start": 1906,
       "long_effect": "Edustuksellisen demokratian institutionaalinen perusta.",
       "current_relevance": "Suomen parlamentaarisen järjestelmän ydin."
+    },
+    {
+      "id": "tyomarkkinoiden-sopimusyhteiskunta-1907",
+      "type": "pitkä institutionaalinen vakautumisprosessi",
+      "phase": "avoimista työmarkkinaristiriidoista neuvoteltuun, luottamukseen perustuvaan sopimisjärjestelmään",
+      "title": "Työmarkkinoiden sopimusyhteiskunta",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/S08_sopimusyhteiskunta.webp",
+          "caption": "Työmarkkinoiden sopimusyhteiskunta (Atlas S08)"
+        }
+      ],
+      "domains": [
+        "työ",
+        "järjestöt",
+        "talous",
+        "sopiminen"
+      ],
+      "effects": [
+        "työrauhapäivät/1000 työntekijää laskivat 176:sta (1950-luku) 1:een (2020-luku)",
+        "palkkaosuus kansantulosta on vaihdellut 48-56 % välillä",
+        "työllisyysaste nousi 66 %:sta (1990) 76 %:iin (2023)",
+        "Suomi kuuluu OECD-maiden kärkeen työrauhan, yhteistoiminnan ja luottamuksen mittareissa"
+      ],
+      "problem": "Ammattiyhdistysliike ja työnantajajärjestöt rakensivat Suomeen ainutlaatuisen työmarkkinajärjestelmän, jossa sopiminen muuttaa ristiriidat neuvotteluiksi ja rakentaa luottamusta myös vaikeina aikoina.",
+      "sources": [
+        "Tilastokeskus",
+        "Akava Works",
+        "SAK",
+        "STTK",
+        "ETUI",
+        "OECD",
+        "Labour Institute for Economic Research",
+        "Työmarkkinat 100 vuotta -julkaisu (2021)"
+      ],
+      "year_end": 2025,
+      "mechanism": "Ensimmäiset sopimukset 1907–1918, Tammikuun kihlaus 1940, työehtosopimuslaki 1946, tulopolitiikan vakiintuminen 1968–1969, sopimuksilla turvattu joustavuus 1990-luvun lamassa, sopeutuminen EU-jäsenyyteen ja globaaliin kilpailuun 2007–2010, sekä muuttuva työ ja hajautuminen 2020-luvulla ovat vaiheittain rakentaneet keskitetyn ja paikallisen sopimisen yhdistävän suomalaisen mallin.",
+      "confidence": "vahva",
+      "importance": 4,
+      "year_start": 1907,
+      "long_effect": "Suomalaisesta sopimusyhteiskunnasta muodostui keskeinen menestystekijä, joka on vähentänyt kustannuksia, parantanut työehtoja, tukenut investointeja ja rakentanut luottamusta vuosikymmenten yhteistyön tuloksena.",
+      "current_relevance": "Globalisaatio, järjestäytymisasteen lasku, uudet työn muodot, vihreä siirtymä ja osaavan työvoiman saatavuus haastavat parhaillaan sitä, miten keskitetty ja paikallinen sopiminen sovitetaan yhteen tulevaisuudessa."
     },
     {
       "id": "ensimmainen-maailmansota",
@@ -1110,31 +1243,6 @@
       "current_relevance": "Pientilaperintö näkyy tilarakenteessa, metsäomistuksessa ja maaseudun asutuksessa."
     },
     {
-      "id": "hallitusmuoto-1919",
-      "type": "valtiosääntöuudistus",
-      "phase": "tasavallan valtiosäännön vakiinnuttaminen",
-      "title": "Tasavallan hallitusmuodon hyväksyminen",
-      "domains": [
-        "valtio",
-        "demokratia",
-        "oikeus"
-      ],
-      "effects": [
-        "tasavaltainen hallitusmuoto",
-        "vallanjaon vakiintuminen",
-        "parlamentarismin vahvistuminen",
-        "oikeusvaltion kehittyminen"
-      ],
-      "problem": "Sisällissodan jälkeen Suomen valtiojärjestys ja vallanjako tarvitsivat pysyvän perustan.",
-      "year_end": 1919,
-      "mechanism": "Hallitusmuoto määritteli Suomen tasavallaksi, vahvisti eduskunnan aseman ja loi presidentin viran osaksi valtiojärjestystä.",
-      "confidence": "vahva",
-      "importance": 5,
-      "year_start": 1919,
-      "long_effect": "Hallitusmuoto loi perustan suomalaiselle demokratialle ja myöhemmälle perustuslailliselle kehitykselle.",
-      "current_relevance": "Suomen valtiosääntö, vallanjako ja parlamentaarinen järjestelmä."
-    },
-    {
       "id": "kieltolaki-1919",
       "type": "poliittinen kokeilu",
       "phase": "moraalipolitiikan kokeilu",
@@ -1159,6 +1267,31 @@
       "year_start": 1919,
       "long_effect": "Siirtymä täydellisestä kiellosta valtion säätelemään alkoholijärjestelmään.",
       "current_relevance": "Alkoholimonopolin, verotuksen ja saatavuussääntelyn tausta."
+    },
+    {
+      "id": "hallitusmuoto-1919",
+      "type": "valtiosääntöuudistus",
+      "phase": "tasavallan valtiosäännön vakiinnuttaminen",
+      "title": "Tasavallan hallitusmuodon hyväksyminen",
+      "domains": [
+        "valtio",
+        "demokratia",
+        "oikeus"
+      ],
+      "effects": [
+        "tasavaltainen hallitusmuoto",
+        "vallanjaon vakiintuminen",
+        "parlamentarismin vahvistuminen",
+        "oikeusvaltion kehittyminen"
+      ],
+      "problem": "Sisällissodan jälkeen Suomen valtiojärjestys ja vallanjako tarvitsivat pysyvän perustan.",
+      "year_end": 1919,
+      "mechanism": "Hallitusmuoto määritteli Suomen tasavallaksi, vahvisti eduskunnan aseman ja loi presidentin viran osaksi valtiojärjestystä.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 1919,
+      "long_effect": "Hallitusmuoto loi perustan suomalaiselle demokratialle ja myöhemmälle perustuslailliselle kehitykselle.",
+      "current_relevance": "Suomen valtiosääntö, vallanjako ja parlamentaarinen järjestelmä."
     },
     {
       "id": "ahvenanmaan-itsehallinto-1920",
@@ -1237,6 +1370,30 @@
       "current_relevance": "Keskustelu lasten oikeuksista, palveluista ja oppimisesta perustuu tähän muutokseen."
     },
     {
+      "id": "tyosopimuslaki-1922",
+      "type": "työelämäuudistus",
+      "phase": "palkkatyön oikeudellistuminen",
+      "title": "Työsopimuslaki",
+      "domains": [
+        "työ",
+        "oikeudet",
+        "sopimukset"
+      ],
+      "effects": [
+        "työsuhdeturvan vahvistuminen",
+        "sopimussuhteen yhdenmukaistuminen",
+        "työoikeuden kehittyminen"
+      ],
+      "problem": "Palkkatyön yleistyminen ja työsuhteiden oikeudellinen epäselvyys.",
+      "year_end": 1922,
+      "mechanism": "Työnantajan ja työntekijän oikeuksia sekä velvollisuuksia määriteltiin lailla.",
+      "confidence": "vahva",
+      "importance": 4,
+      "year_start": 1922,
+      "long_effect": "Modernin työsuhdeoikeuden perusta.",
+      "current_relevance": "Työsopimuslaki on edelleen työelämän keskeinen yleislaki."
+    },
+    {
       "id": "koyhainhoitolaki-1922",
       "type": "sosiaalinen uudistus",
       "phase": "sosiaalihuollon institutionalisoituminen",
@@ -1261,28 +1418,62 @@
       "current_relevance": "Hyvinvointipalvelujen oikeusperustaisen kehityksen esivaihe."
     },
     {
-      "id": "tyosopimuslaki-1922",
-      "type": "työelämäuudistus",
-      "phase": "palkkatyön oikeudellistuminen",
-      "title": "Työsopimuslaki",
+      "id": "sukupolvien-valinen-oikeudenmukaisuus-1925",
+      "type": "analyyttinen kehys, joka kytkee koko atlaksen yhteen",
+      "phase": "perimisen, rakentamisen ja jättämisen ketju kuudessa sukupolvessa",
+      "title": "Sukupolvien välinen oikeudenmukaisuus",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/G01_oikeudenmukaisuus.webp",
+          "caption": "Sukupolvien välinen oikeudenmukaisuus (Atlas G01)"
+        },
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/G02_sukupolvi_kantaa.webp",
+          "caption": "Sukupolvi joka kantaa (Atlas G02)"
+        },
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/G03_sukupolvisopimus.webp",
+          "caption": "Sukupolvien välinen sopimus (Atlas G03)"
+        },
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/G04_tulevien_oikeudet.webp",
+          "caption": "Tulevien sukupolvien oikeudet (Atlas G04)"
+        }
+      ],
       "domains": [
-        "työ",
-        "oikeudet",
-        "sopimukset"
+        "sukupolvet",
+        "oikeudenmukaisuus",
+        "kestävyys",
+        "demokratia"
       ],
       "effects": [
-        "työsuhdeturvan vahvistuminen",
-        "sopimussuhteen yhdenmukaistuminen",
-        "työoikeuden kehittyminen"
+        "koulutustaso nousi jatkuvasti sukupolvelta toiselle (11,8->13,4 vuotta, 1990-2023)",
+        "terveys ja elinajanodote paranivat merkittävästi (72->81 vuotta)",
+        "julkinen velka suhteessa BKT:hen kasvoi jyrkästi (17 %->75 %, 1990-2023)",
+        "luottamus instituutioihin laski (78->56, luottamusindeksi)",
+        "hiilidioksidipäästöt henkeä kohden laskivat (15,2->7,1 t CO2/hlö)",
+        "luonnon monimuotoisuusindeksi heikkeni noin 20 %"
       ],
-      "problem": "Palkkatyön yleistyminen ja työsuhteiden oikeudellinen epäselvyys.",
-      "year_end": 1922,
-      "mechanism": "Työnantajan ja työntekijän oikeuksia sekä velvollisuuksia määriteltiin lailla.",
+      "problem": "Jokainen sukupolvi perii edellisten työn ja valinnat, rakentaa niiden varaan omalla ajallaan ja jättää perinnön seuraaville — mutta kysymys siitä, onnistuuko tämä ketju oikeudenmukaisesti, koskee sekä mennyttä että tulevaa: onko kukin sukupolvi parantanut vai heikentänyt seuraavan mahdollisuuksia, ja millä oikeuksilla tulevat sukupolvet voivat vaatia kohtuullista lähtökohtaa?",
+      "sources": [
+        "Tilastokeskus",
+        "THL",
+        "Valtioneuvoston selvitys- ja tutkimustoiminta",
+        "Sitra Megatrendit",
+        "IPCC",
+        "IPBES",
+        "OECD Well-being Framework",
+        "YK:n ihmisoikeuksien julistus",
+        "YK:n tulevien sukupolvien julistus (2023)",
+        "UN SDG"
+      ],
+      "year_end": 2035,
+      "mechanism": "Kuusi sukupolvea — Vilho (s. 1925), Helmi (s. 1945), Taisto (s. 1965), Marja (s. 1985), Jukka (s. 2005), Vilja (s. 2025) — muodostavat yhden ketjun, jossa jokainen on kantanut vastuuta omalla tavallaan: Vilho selviytyi sodasta ja köyhyydestä, Helmi rakensi hyvinvointivaltion perustan, Taisto rakensi vaurautta koulutuksella ja työllä, Marja sopeutui globalisaatioon, Jukka elää digitalisaation ja ilmastohuolen keskellä, ja Vilja perii ratkaisemattomia kysymyksiä ilmastosta, veloista ja demokratian kestävyydestä.",
       "confidence": "vahva",
-      "importance": 4,
-      "year_start": 1922,
-      "long_effect": "Modernin työsuhdeoikeuden perusta.",
-      "current_relevance": "Työsopimuslaki on edelleen työelämän keskeinen yleislaki."
+      "importance": 5,
+      "year_start": 1925,
+      "long_effect": "Sukupolvien välinen oikeudenmukaisuus toimii koko atlaksen yhdistävänä kehyksenä: se muistuttaa, että jokainen tässä atlaksessa kuvattu murros — hyvinvointivaltio, eläkejärjestelmä, koulutus, ilmastopolitiikka, velka — on samalla osa pidempää sukupolvien välistä sopimusta, jossa hyödyt ja kustannukset jakautuvat eri tavoin ajassa.",
+      "current_relevance": "Ilmastonmuutos, julkinen velka, eläkejärjestelmän kestävyys ja demokratian toimivuus ovat kaikki kysymyksiä siitä, kantavatko nykyiset sukupolvet riittävästi vastuuta niistä, jotka eivät vielä voi äänestää tai edes ole syntyneet."
     },
     {
       "id": "yleisradio-1926",
@@ -1359,30 +1550,6 @@
       "current_relevance": "Perhe- ja omaisuusoikeuden tasa-arvokehitys."
     },
     {
-      "id": "lasten-tyon-suojelu-1930",
-      "type": "työelämäuudistus",
-      "phase": "lapsuuden suojaaminen",
-      "title": "Lasten ja nuorten työn suojelu",
-      "domains": [
-        "lapset",
-        "työ",
-        "koulutus"
-      ],
-      "effects": [
-        "lapsityön väheneminen",
-        "koulunkäynnin edellytysten paraneminen",
-        "työsuojelun laajeneminen"
-      ],
-      "problem": "Lasten raskas ja vaarallinen työ.",
-      "year_end": 1930,
-      "mechanism": "Alaikäisten työntekoa rajoitettiin ja suojeltiin.",
-      "confidence": "vahva",
-      "importance": 4,
-      "year_start": 1930,
-      "long_effect": "Lapsuuden erottuminen työmarkkinoista ja suojelun vahvistuminen.",
-      "current_relevance": "Nuorten työntekijöiden erityissääntely."
-    },
-    {
       "id": "tyoturvallisuus-1930",
       "type": "työelämäuudistus",
       "phase": "ennaltaehkäisevä työsuojelu",
@@ -1405,6 +1572,30 @@
       "year_start": 1930,
       "long_effect": "Työturvallisuuden institutionaalinen perusta.",
       "current_relevance": "Työhyvinvointi, riskienhallinta ja työsuojeluvalvonta."
+    },
+    {
+      "id": "lasten-tyon-suojelu-1930",
+      "type": "työelämäuudistus",
+      "phase": "lapsuuden suojaaminen",
+      "title": "Lasten ja nuorten työn suojelu",
+      "domains": [
+        "lapset",
+        "työ",
+        "koulutus"
+      ],
+      "effects": [
+        "lapsityön väheneminen",
+        "koulunkäynnin edellytysten paraneminen",
+        "työsuojelun laajeneminen"
+      ],
+      "problem": "Lasten raskas ja vaarallinen työ.",
+      "year_end": 1930,
+      "mechanism": "Alaikäisten työntekoa rajoitettiin ja suojeltiin.",
+      "confidence": "vahva",
+      "importance": 4,
+      "year_start": 1930,
+      "long_effect": "Lapsuuden erottuminen työmarkkinoista ja suojelun vahvistuminen.",
+      "current_relevance": "Nuorten työntekijöiden erityissääntely."
     },
     {
       "id": "alkoholimonopoli-1932",
@@ -1454,6 +1645,44 @@
       "year_start": 1932,
       "long_effect": "Alkoholista tuli samanaikaisesti kansanterveys-, verotus- ja elinkeinopolitiikan kysymys.",
       "current_relevance": "Saatavuuden vapauttaminen ja haittojen ehkäisy ovat yhä jännitteisessä suhteessa."
+    },
+    {
+      "id": "elakejarjestelman-rakentuminen-1937",
+      "type": "pitkä institutionaalinen kokoava murros",
+      "phase": "hajanaisesta vanhuudenturvasta kolmiportaiseksi, sukupolvien väliseksi sopimukseksi",
+      "title": "Eläkejärjestelmän rakentuminen",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/S09_elakejarjestelma.webp",
+          "caption": "Eläkejärjestelmän rakentuminen (Atlas S09)"
+        }
+      ],
+      "domains": [
+        "eläkkeet",
+        "sosiaalivakuutus",
+        "väestö",
+        "julkinen talous"
+      ],
+      "effects": [
+        "eläkemaksun taso nousi 7,1 %:sta (1970) 24,1 %:iin (2023) palkkasummasta",
+        "eläkerahastot kasvoivat 7 mrd. eurosta (2000) 286 mrd. euroon (2024)",
+        "huoltosuhde (työikäisiä/yli 65-vuotiasta) heikkeni 4,7:stä (1970) 1,6:een (2050 ennuste)",
+        "keskimääräinen eläköitymisikä nousi 61,7 vuodesta (2000) 64,4 vuoteen (2023)"
+      ],
+      "problem": "Eläkejärjestelmä syntyi vähitellen vastauksena yhteiskunnan muutoksiin: väestö ikääntyi, vanhuuden köyhyys oli yleistä ja työurat pitenivät. Suomi rakensi mallin, jossa työssäkäyvät sukupolvet rahoittavat nykyisten eläkeläisten eläkkeet ja samalla keräävät osan varoista tulevien sukupolvien turvaksi.",
+      "sources": [
+        "Eläketurvakeskus (ETK)",
+        "Tilastokeskus",
+        "Valtiovarainministeriö",
+        "OECD Pensions at a Glance 2023"
+      ],
+      "year_end": 2024,
+      "mechanism": "Kansaneläke 1937 loi kaikille tarkoitetun perusturvan, työeläkelait (TEL) 1961–1962 toivat ansiosidonnaisen eläketurvan, järjestelmä laajeni ja vakiintui 1970–1980-luvuilla kattamaan pääosan väestöstä, 1990-luvun lama nosti kestävyyskysymykset esiin, ja eläkeuudistukset 2005 ja 2017 joustavoittivat eläkeikää ja ottivat käyttöön elinaikakertoimen — 2020-luvulla järjestelmä sopeutuu jatkuvasti muuttuviin olosuhteisiin.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 1937,
+      "long_effect": "Eläkejärjestelmästä muodostui yksi maailman toimivimmista ja kestävimmistä, mutta väestön nopea ikääntyminen, työvoimapula ja sijoitustuottojen riskit pitävät kestävyyskysymyksen jatkuvasti ajankohtaisena.",
+      "current_relevance": "Eläkejärjestelmä on lupaus, jonka sukupolvet antavat toisilleen yli vuosikymmenten — sen kestävyys riippuu siitä, miten hyvin tämän päivän valintojen vaikutukset huomioidaan."
     },
     {
       "id": "kansanelakelaki-1937",
@@ -1557,6 +1786,31 @@
       "current_relevance": "Maksuton kouluruoka on suomalaisen koulumallin keskeinen piirre."
     },
     {
+      "id": "sotakorvaukset_teollistuminen",
+      "type": "taloudellinen rakennemuutos",
+      "phase": "vientiteollisuuden rakentuminen",
+      "title": "Sotakorvaukset ja teollistumisen kiihtyminen",
+      "domains": [
+        "teollisuus",
+        "vienti",
+        "talous"
+      ],
+      "effects": [
+        "vientiteollisuuden vahvistuminen",
+        "teollisen osaamisen kasvu",
+        "uudet tuotantolaitokset",
+        "teknologinen kehitys"
+      ],
+      "problem": "Neuvostoliitolle maksettavat sotakorvaukset edellyttivät mittavaa tuotantokapasiteettia.",
+      "year_end": 1952,
+      "mechanism": "Metalli- ja konepajateollisuutta laajennettiin nopeasti.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 1944,
+      "long_effect": "Sotakorvaukset nopeuttivat Suomen muuttumista teollisuusvaltioksi.",
+      "current_relevance": "Suomen teollisen rakennemuutoksen ja vientiteollisuuden historiallinen alkupiste."
+    },
+    {
       "id": "jalleenrakennus",
       "type": "rakennemuutos",
       "phase": "maan jälleenrakentaminen",
@@ -1623,6 +1877,12 @@
       "type": "väestö- ja yhteiskuntauudistus",
       "phase": "väestön uudelleensijoittaminen",
       "title": "Karjalan evakkojen asuttaminen",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/S04_karjalan_evakot.webp",
+          "caption": "Karjalan evakot – Suomen historian suurin väestönsiirto (Atlas S04)"
+        }
+      ],
       "domains": [
         "väestö",
         "maatalous",
@@ -1645,29 +1905,56 @@
       "current_relevance": "Historiallinen vertailukohta nopealle väestön uudelleensijoittamiselle ja kriisiaikaiselle asuttamispolitiikalle."
     },
     {
-      "id": "sotakorvaukset_teollistuminen",
-      "type": "taloudellinen rakennemuutos",
-      "phase": "vientiteollisuuden rakentuminen",
-      "title": "Sotakorvaukset ja teollistumisen kiihtyminen",
+      "id": "maatalouden-koneellistuminen-1945",
+      "type": "teknologinen rakennemuutos",
+      "phase": "maataloustyön tuottavuushyppy",
+      "title": "Maatalouden koneellistuminen",
       "domains": [
-        "teollisuus",
-        "vienti",
-        "talous"
+        "maatalous",
+        "työ",
+        "väestö",
+        "alueet"
       ],
       "effects": [
-        "vientiteollisuuden vahvistuminen",
-        "teollisen osaamisen kasvu",
-        "uudet tuotantolaitokset",
-        "teknologinen kehitys"
+        "maataloustyövoiman väheneminen",
+        "tilakoon kasvu",
+        "maaltamuuton kiihtyminen",
+        "teollisuuden ja palvelujen työvoiman tarjonnan kasvu"
       ],
-      "problem": "Neuvostoliitolle maksettavat sotakorvaukset edellyttivät mittavaa tuotantokapasiteettia.",
-      "year_end": 1952,
-      "mechanism": "Metalli- ja konepajateollisuutta laajennettiin nopeasti.",
+      "problem": "Työvaltainen maatalous sitoi suuren osan väestöstä matalan tuottavuuden tuotantoon.",
+      "year_end": 1975,
+      "mechanism": "Traktorit, puimurit, lypsykoneet ja muut tuotantoteknologiat vähensivät työvoiman tarvetta ja kasvattivat tilakohtaista tuotantoa.",
       "confidence": "vahva",
       "importance": 5,
-      "year_start": 1944,
-      "long_effect": "Sotakorvaukset nopeuttivat Suomen muuttumista teollisuusvaltioksi.",
-      "current_relevance": "Suomen teollisen rakennemuutoksen ja vientiteollisuuden historiallinen alkupiste."
+      "year_start": 1945,
+      "long_effect": "Nopea siirtymä maatalousyhteiskunnasta teolliseen ja kaupungistuneeseen yhteiskuntaan.",
+      "current_relevance": "Maatalouden tuottavuus, tilarakenteen keskittyminen ja maaseudun väestökehitys."
+    },
+    {
+      "id": "maanhankintalaki-1945",
+      "type": "jälleenrakennusuudistus",
+      "phase": "sodanjälkeinen asuttaminen",
+      "title": "Maanhankintalaki",
+      "domains": [
+        "asuminen",
+        "maaseutu",
+        "siirtoväki",
+        "veteraanit"
+      ],
+      "effects": [
+        "siirtoväen nopea sijoittuminen",
+        "pientilojen lisääntyminen",
+        "rintamamiestaloalueet",
+        "alueellisen omistusasumisen kasvu"
+      ],
+      "problem": "Siirtoväen, rintamamiesten ja sodasta kärsineiden asuttaminen.",
+      "year_end": 1945,
+      "mechanism": "Maata luovutettiin ja tiloja muodostettiin asutusta varten.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 1945,
+      "long_effect": "Sodanjälkeisen maaseutu- ja asutusrakenteen muotoutuminen.",
+      "current_relevance": "Maanomistus, yhdyskuntarakenne ja aluehistoria."
     },
     {
       "id": "suuret-ikaluokat-1945",
@@ -1697,56 +1984,85 @@
       "current_relevance": "Ikäluokan eläköityminen vaikuttaa edelleen huoltosuhteeseen ja julkiseen talouteen."
     },
     {
-      "id": "maanhankintalaki-1945",
-      "type": "jälleenrakennusuudistus",
-      "phase": "sodanjälkeinen asuttaminen",
-      "title": "Maanhankintalaki",
+      "id": "globalisaatio-1945",
+      "type": "pitkä rakenteellinen murros",
+      "phase": "suljetusta kotimarkkinataloudesta globaalisti kytkeytyneeksi, riippuvuuksien läpäisemäksi taloudeksi",
+      "title": "Globalisaatio",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/R03_globalisaatio.webp",
+          "caption": "Globalisaatio 1945-2025 (Atlas R03)"
+        }
+      ],
       "domains": [
-        "asuminen",
-        "maaseutu",
-        "siirtoväki",
-        "veteraanit"
+        "talous",
+        "kauppa",
+        "työ",
+        "turvallisuus"
       ],
       "effects": [
-        "siirtoväen nopea sijoittuminen",
-        "pientilojen lisääntyminen",
-        "rintamamiestaloalueet",
-        "alueellisen omistusasumisen kasvu"
+        "tavaraviennin arvo kasvoi (n. 5 mrd€ -> 92 mrd€)",
+        "viennin osuus BKT:sta kasvoi 53 %:iin",
+        "ulkomaiset suorat sijoitukset kasvoivat merkittävästi (61-81 mrd€)",
+        "työn rakenne siirtyi teollisuudesta palveluihin (73 % palveluissa)",
+        "riippuvuus globaaleista kriiseistä kasvoi",
+        "huoltovarmuuden ja omavaraisuuden merkitys korostui uudelleen 2020-luvulla"
       ],
-      "problem": "Siirtoväen, rintamamiesten ja sodasta kärsineiden asuttaminen.",
-      "year_end": 1945,
-      "mechanism": "Maata luovutettiin ja tiloja muodostettiin asutusta varten.",
+      "problem": "Kaupan vapautuminen, pääomaliikkeiden vapautuminen ja tuotannon kansainvälistyminen avasivat Suomen talouden vaiheittain maailmanmarkkinoille, mikä kasvatti sekä mahdollisuuksia että riippuvuuksia.",
+      "sources": [
+        "Tulli",
+        "Tilastokeskus",
+        "Suomen Pankki"
+      ],
+      "year_end": 2025,
+      "mechanism": "Kotimarkkinoiden suojauksesta edettiin asteittain EFTA- ja EY-sopimusten, EU-jäsenyyden, euron ja globaalien arvoketjujen kautta yhä syvemmäksi integraatioksi, jota jaksottivat toistuvat globaalit kriisit (finanssikriisi 2008, pandemia 2020, Ukrainan sota 2022).",
       "confidence": "vahva",
       "importance": 5,
       "year_start": 1945,
-      "long_effect": "Sodanjälkeisen maaseutu- ja asutusrakenteen muotoutuminen.",
-      "current_relevance": "Maanomistus, yhdyskuntarakenne ja aluehistoria."
+      "long_effect": "Globalisaatiosta tuli pysyvä, ei tilapäinen, rakennemuutos, joka on toistuvasti muokannut uudelleen Suomen talouden, työmarkkinoiden ja hyvinvointivaltion edellytyksiä jokaisen uuden kriisin myötä.",
+      "current_relevance": "Geopoliittiset riskit, toimitusketjujen häiriöt ja huoltovarmuuskysymykset ovat nostaneet uudelleen esiin kysymyksen siitä, missä määrin avoimuuteen kannattaa nojata ja missä varautua omavaraisuuteen."
     },
     {
-      "id": "maatalouden-koneellistuminen-1945",
-      "type": "teknologinen rakennemuutos",
-      "phase": "maataloustyön tuottavuushyppy",
-      "title": "Maatalouden koneellistuminen",
+      "id": "valtion-teollisuusyhtiot-ja-aluepolitiikka-1945",
+      "type": "omistusrakenteen murros",
+      "phase": "valtio-ohjatun aluepolitiikan ja markkinaehtoisen omistajaohjauksen välinen jännite",
+      "title": "Valtion teollisuusyhtiöt ja aluepolitiikka rakennemuutoksessa",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/K09_aluepolitiikka.webp",
+          "caption": "Valtion teollisuusyhtiöt ja aluepolitiikka rakennemuutoksessa (Atlas K09)"
+        }
+      ],
       "domains": [
-        "maatalous",
+        "talous",
+        "aluekehitys",
         "työ",
-        "väestö",
-        "alueet"
+        "omistajaohjaus"
       ],
       "effects": [
-        "maataloustyövoiman väheneminen",
-        "tilakoon kasvu",
-        "maaltamuuton kiihtyminen",
-        "teollisuuden ja palvelujen työvoiman tarjonnan kasvu"
+        "valtion omistusosuudet suurissa teollisuusyhtiöissä laskivat merkittävästi (esim. Outokumpu 100%->14%, Rautaruukki 100%->0%)",
+        "tuotantoa siirrettiin ulkomaille (Outokumpu, Rautaruukki, Kemira)",
+        "korkean työttömyyden seutukuntien työttömyysaste pysyi koko maata korkeampana",
+        "alueellinen eriytyminen kasvoi 1990-luvulta alkaen",
+        "väestö keskittyi kasvaviin seutuihin muuttotappioalueiden kustannuksella"
       ],
-      "problem": "Työvaltainen maatalous sitoi suuren osan väestöstä matalan tuottavuuden tuotantoon.",
-      "year_end": 1975,
-      "mechanism": "Traktorit, puimurit, lypsykoneet ja muut tuotantoteknologiat vähensivät työvoiman tarvetta ja kasvattivat tilakohtaista tuotantoa.",
+      "problem": "Valtion teollisuusyhtiöiden yhtiöittäminen ja pörssilistaaminen 1980-luvulta alkaen siirsi yritysten päätöksenteon painopisteen aluepoliittisista tavoitteista kohti kannattavuutta ja omistaja-arvon maksimointia, mikä heijastui alueiden työllisyyteen ja kehitykseen.",
+      "sources": [
+        "Tilastokeskus",
+        "Valtion omistajapoliittiset selvitykset",
+        "Yhtiöiden vuosikertomukset ja pörssitiedotteet",
+        "ETLA",
+        "VATT",
+        "PTT",
+        "Suomen Pankki"
+      ],
+      "year_end": 2025,
+      "mechanism": "Kun valtion omistusosuudet suurissa teollisuusyhtiöissä (Outokumpu, Rautaruukki, Kemira, Valmet, Nokia) laskivat vaiheittain 1990-luvulta alkaen, yritysten strategiat suuntautuivat yhä enemmän globaaliin kilpailuun ja tuotannon siirtoihin, mikä irrotti päätöksenteon paikallisista aluepoliittisista tavoitteista.",
       "confidence": "vahva",
-      "importance": 5,
+      "importance": 4,
       "year_start": 1945,
-      "long_effect": "Nopea siirtymä maatalousyhteiskunnasta teolliseen ja kaupungistuneeseen yhteiskuntaan.",
-      "current_relevance": "Maatalouden tuottavuus, tilarakenteen keskittyminen ja maaseudun väestökehitys."
+      "long_effect": "Omistusrakenteen muutos siirsi pysyvästi päätöksenteon painopistettä aluepoliittisista tavoitteista kohti globaalia kilpailukykyä ja kannattavuutta, mikä on syventänyt alueellista eriytymistä vuosikymmenten ajan.",
+      "current_relevance": "Alueellinen eriytyminen ja harvojen kasvukeskusten dominanssi ovat edelleen ajankohtaisia aluepolitiikan kysymyksiä, joihin valtion omistajaohjauksella on yhä rajallisemmat keinot vaikuttaa."
     },
     {
       "id": "invalidihuoltolaki-1946",
@@ -1930,6 +2246,12 @@
       "type": "väestörakenteen muutos",
       "phase": "muutto kaupunkeihin",
       "title": "Kaupungistuminen",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/R02_kaupungistuminen.webp",
+          "caption": "Kaupungistuminen 1950-2025 (Atlas R02)"
+        }
+      ],
       "domains": [
         "väestö",
         "asuminen",
@@ -1949,30 +2271,6 @@
       "year_start": 1955,
       "long_effect": "Kaupungistuminen muokkasi Suomen alue- ja yhdyskuntarakenteen.",
       "current_relevance": "Kasvukeskusten ja muuttotappioalueiden välinen kehitysero."
-    },
-    {
-      "id": "kansanelakeuudistus-1956",
-      "type": "sosiaalinen uudistus",
-      "phase": "perusturvan laajeneminen",
-      "title": "Kansaneläkejärjestelmän uudistus",
-      "domains": [
-        "eläke",
-        "vanhuus",
-        "tulonjako"
-      ],
-      "effects": [
-        "vanhuusköyhyyden väheneminen",
-        "Kelan roolin vahvistuminen",
-        "eläketurvan kattavuuden kasvu"
-      ],
-      "problem": "Vanhuuden toimeentuloturvan riittämättömyys.",
-      "year_end": 1957,
-      "mechanism": "Eläketurvaa uudistettiin kohti laajempaa ja tulonsiirtoihin perustuvaa järjestelmää.",
-      "confidence": "vahva",
-      "importance": 5,
-      "year_start": 1956,
-      "long_effect": "Kansaneläkkeen vakiintuminen perusturvaksi.",
-      "current_relevance": "Kansaneläke ja takuueläke täydentävät työeläkettä."
     },
     {
       "id": "sairaalalaki-1956",
@@ -1997,6 +2295,30 @@
       "year_start": 1956,
       "long_effect": "Alueellisen erikoissairaanhoidon perusta.",
       "current_relevance": "Hyvinvointialueiden sairaalaverkon historiallinen tausta."
+    },
+    {
+      "id": "kansanelakeuudistus-1956",
+      "type": "sosiaalinen uudistus",
+      "phase": "perusturvan laajeneminen",
+      "title": "Kansaneläkejärjestelmän uudistus",
+      "domains": [
+        "eläke",
+        "vanhuus",
+        "tulonjako"
+      ],
+      "effects": [
+        "vanhuusköyhyyden väheneminen",
+        "Kelan roolin vahvistuminen",
+        "eläketurvan kattavuuden kasvu"
+      ],
+      "problem": "Vanhuuden toimeentuloturvan riittämättömyys.",
+      "year_end": 1957,
+      "mechanism": "Eläketurvaa uudistettiin kohti laajempaa ja tulonsiirtoihin perustuvaa järjestelmää.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 1956,
+      "long_effect": "Kansaneläkkeen vakiintuminen perusturvaksi.",
+      "current_relevance": "Kansaneläke ja takuueläke täydentävät työeläkettä."
     },
     {
       "id": "ammattioppilaitoslaki-1958",
@@ -2047,6 +2369,31 @@
       "year_start": 1959,
       "long_effect": "Maataloudesta tuli korkean tuottavuuden mutta vähäisen työvoiman elinkeino.",
       "current_relevance": "Tilojen kannattavuus, huoltovarmuus ja maaseudun väestökato jatkavat rakennemuutosta."
+    },
+    {
+      "id": "korkeakoulutuksen-massoittuminen-1960",
+      "type": "koulutus- ja työmarkkinamurros",
+      "phase": "eliittikoulutuksesta laajan väestön koulutukseksi",
+      "title": "Korkeakoulutuksen massoittuminen",
+      "domains": [
+        "korkeakoulutus",
+        "alueet",
+        "työ",
+        "sosiaalinen liikkuvuus"
+      ],
+      "effects": [
+        "korkeakoulutettujen määrän kasvu",
+        "alueellinen yliopistoverkko",
+        "sosiaalisen liikkuvuuden vahvistuminen"
+      ],
+      "problem": "Teollinen ja palveluvaltainen yhteiskunta tarvitsi nopeasti enemmän korkeasti koulutettua työvoimaa.",
+      "year_end": 2005,
+      "mechanism": "Yliopistoverkkoa laajennettiin, uusia opiskelupaikkoja perustettiin ja opintotuki madalsi osallistumisen kynnystä.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 1960,
+      "long_effect": "Korkeakoulutuksesta tuli keskeinen osa kansallista kasvu- ja aluepolitiikkaa.",
+      "current_relevance": "Koulutustason nousun hidastuminen ja tutkintojen työmarkkina-arvo ovat nykyisiä jatkokysymyksiä."
     },
     {
       "id": "ruotsiin_muutto",
@@ -2102,31 +2449,6 @@
       "year_start": 1960,
       "long_effect": "Kaksiosainen perus- ja ansioturvan malli.",
       "current_relevance": "Työttömyysturvan kattavuus, kannustimet ja uudistustarpeet."
-    },
-    {
-      "id": "korkeakoulutuksen-massoittuminen-1960",
-      "type": "koulutus- ja työmarkkinamurros",
-      "phase": "eliittikoulutuksesta laajan väestön koulutukseksi",
-      "title": "Korkeakoulutuksen massoittuminen",
-      "domains": [
-        "korkeakoulutus",
-        "alueet",
-        "työ",
-        "sosiaalinen liikkuvuus"
-      ],
-      "effects": [
-        "korkeakoulutettujen määrän kasvu",
-        "alueellinen yliopistoverkko",
-        "sosiaalisen liikkuvuuden vahvistuminen"
-      ],
-      "problem": "Teollinen ja palveluvaltainen yhteiskunta tarvitsi nopeasti enemmän korkeasti koulutettua työvoimaa.",
-      "year_end": 2005,
-      "mechanism": "Yliopistoverkkoa laajennettiin, uusia opiskelupaikkoja perustettiin ja opintotuki madalsi osallistumisen kynnystä.",
-      "confidence": "vahva",
-      "importance": 5,
-      "year_start": 1960,
-      "long_effect": "Korkeakoulutuksesta tuli keskeinen osa kansallista kasvu- ja aluepolitiikkaa.",
-      "current_relevance": "Koulutustason nousun hidastuminen ja tutkintojen työmarkkina-arvo ovat nykyisiä jatkokysymyksiä."
     },
     {
       "id": "tyoelake-1961",
@@ -2226,6 +2548,30 @@
       "current_relevance": "Perhevapaiden jakautuminen ja sukupuolten tasa-arvo."
     },
     {
+      "id": "suuret_ikaluokat_tyohon",
+      "type": "väestörakenteen muutos",
+      "phase": "työvoiman voimakas kasvu",
+      "title": "Suurten ikäluokkien siirtyminen työelämään",
+      "domains": [
+        "työmarkkinat",
+        "talous",
+        "hyvinvointivaltio"
+      ],
+      "effects": [
+        "talouskasvu",
+        "hyvinvointivaltion laajeneminen",
+        "eläkejärjestelmän rahoituspohjan vahvistuminen"
+      ],
+      "problem": "Poikkeuksellisen suuret ikäluokat saavuttivat työiän.",
+      "year_end": 1985,
+      "mechanism": "Työvoiman kasvu lisäsi tuotantoa, verotuloja ja kulutusta.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 1965,
+      "long_effect": "Sama sukupolvi määrittää nykyisin ikääntymisen ja huoltosuhteen kehitystä.",
+      "current_relevance": "Saman sukupolven eläköitymisen vaikutus huoltosuhteeseen ja eläkejärjestelmän kestävyyteen."
+    },
+    {
       "id": "lahiot",
       "type": "yhdyskuntarakenteen muutos",
       "phase": "nopea asuntotuotanto",
@@ -2250,28 +2596,54 @@
       "current_relevance": "Lähiöiden korjausrakentaminen, segregaatio ja täydennysrakentaminen."
     },
     {
-      "id": "suuret_ikaluokat_tyohon",
-      "type": "väestörakenteen muutos",
-      "phase": "työvoiman voimakas kasvu",
-      "title": "Suurten ikäluokkien siirtyminen työelämään",
+      "id": "syntyvyyden-rakennemuutos-1969",
+      "type": "väestöllinen rakennemuutos",
+      "phase": "moderni perhemalli",
+      "title": "Syntyvyyden rakennemuutos",
       "domains": [
-        "työmarkkinat",
-        "talous",
-        "hyvinvointivaltio"
+        "väestö",
+        "perhe",
+        "naiset",
+        "työ"
       ],
       "effects": [
-        "talouskasvu",
-        "hyvinvointivaltion laajeneminen",
-        "eläkejärjestelmän rahoituspohjan vahvistuminen"
+        "kokonaishedelmällisyys laski",
+        "perheet pienenivät",
+        "ensisynnyttäjien ikä nousi",
+        "pitkän aikavälin huoltosuhde heikkeni"
       ],
-      "problem": "Poikkeuksellisen suuret ikäluokat saavuttivat työiän.",
-      "year_end": 1985,
-      "mechanism": "Työvoiman kasvu lisäsi tuotantoa, verotuloja ja kulutusta.",
+      "problem": "Yhteiskunnan rakennemuutos muutti perheen, työn ja koulutuksen suhdetta.",
+      "year_end": 1975,
+      "mechanism": "Naisten koulutuksen lisääntyminen, työssäkäynti, ehkäisyn yleistyminen ja kaupungistuminen pienensivät perhekokoja.",
       "confidence": "vahva",
       "importance": 5,
-      "year_start": 1965,
-      "long_effect": "Sama sukupolvi määrittää nykyisin ikääntymisen ja huoltosuhteen kehitystä.",
-      "current_relevance": "Saman sukupolven eläköitymisen vaikutus huoltosuhteeseen ja eläkejärjestelmän kestävyyteen."
+      "year_start": 1968,
+      "long_effect": "Syntyvyyden lasku muuttui pysyväksi rakenteelliseksi ilmiöksi.",
+      "current_relevance": "Nykyinen väestön ikääntyminen juontuu osittain tästä murroksesta."
+    },
+    {
+      "id": "tulopolitiikka-1968",
+      "type": "institutionaalinen uudistus",
+      "phase": "sopimusyhteiskunnan huippuvaihe",
+      "title": "Tulopolitiikan ja kolmikannan vakiintuminen",
+      "domains": [
+        "työ",
+        "talous",
+        "järjestöt"
+      ],
+      "effects": [
+        "työmarkkinarauha",
+        "koordinoitu palkkakehitys",
+        "sosiaaliturvan sopimusperusteinen laajeneminen"
+      ],
+      "problem": "Palkka-, hinta- ja työmarkkinakonfliktien hallinta.",
+      "year_end": 1990,
+      "mechanism": "Valtio ja työmarkkinajärjestöt sopivat keskitetysti palkoista, veroista ja sosiaalipoliittisista uudistuksista.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 1968,
+      "long_effect": "Suomalainen kolmikantainen päätöksentekomalli.",
+      "current_relevance": "Työmarkkinajärjestöjen asema ja keskitetyn sopimisen väheneminen."
     },
     {
       "id": "peruskoulu-1968",
@@ -2302,56 +2674,6 @@
       "year_start": 1968,
       "long_effect": "Suomalaisen koulutusvaltion keskeinen instituutio.",
       "current_relevance": "Oppimistulokset, koulutuksellinen tasa-arvo ja kouluverkon muutos."
-    },
-    {
-      "id": "tulopolitiikka-1968",
-      "type": "institutionaalinen uudistus",
-      "phase": "sopimusyhteiskunnan huippuvaihe",
-      "title": "Tulopolitiikan ja kolmikannan vakiintuminen",
-      "domains": [
-        "työ",
-        "talous",
-        "järjestöt"
-      ],
-      "effects": [
-        "työmarkkinarauha",
-        "koordinoitu palkkakehitys",
-        "sosiaaliturvan sopimusperusteinen laajeneminen"
-      ],
-      "problem": "Palkka-, hinta- ja työmarkkinakonfliktien hallinta.",
-      "year_end": 1990,
-      "mechanism": "Valtio ja työmarkkinajärjestöt sopivat keskitetysti palkoista, veroista ja sosiaalipoliittisista uudistuksista.",
-      "confidence": "vahva",
-      "importance": 5,
-      "year_start": 1968,
-      "long_effect": "Suomalainen kolmikantainen päätöksentekomalli.",
-      "current_relevance": "Työmarkkinajärjestöjen asema ja keskitetyn sopimisen väheneminen."
-    },
-    {
-      "id": "syntyvyyden-rakennemuutos-1969",
-      "type": "väestöllinen rakennemuutos",
-      "phase": "moderni perhemalli",
-      "title": "Syntyvyyden rakennemuutos",
-      "domains": [
-        "väestö",
-        "perhe",
-        "naiset",
-        "työ"
-      ],
-      "effects": [
-        "kokonaishedelmällisyys laski",
-        "perheet pienenivät",
-        "ensisynnyttäjien ikä nousi",
-        "pitkän aikavälin huoltosuhde heikkeni"
-      ],
-      "problem": "Yhteiskunnan rakennemuutos muutti perheen, työn ja koulutuksen suhdetta.",
-      "year_end": 1975,
-      "mechanism": "Naisten koulutuksen lisääntyminen, työssäkäynti, ehkäisyn yleistyminen ja kaupungistuminen pienensivät perhekokoja.",
-      "confidence": "vahva",
-      "importance": 5,
-      "year_start": 1968,
-      "long_effect": "Syntyvyyden lasku muuttui pysyväksi rakenteelliseksi ilmiöksi.",
-      "current_relevance": "Nykyinen väestön ikääntyminen juontuu osittain tästä murroksesta."
     },
     {
       "id": "opintolaina-1969",
@@ -2557,6 +2879,12 @@
       "type": "väestöllinen rakennemuutos",
       "phase": "Ikärakenteen muutos",
       "title": "Väestön ikääntyminen",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/R04_ikaantyminen.webp",
+          "caption": "Väestön ikääntyminen 1945-2050 (Atlas R04)"
+        }
+      ],
       "domains": [
         "väestö",
         "hyvinvointivaltio",
@@ -2613,6 +2941,50 @@
       "current_relevance": "Työterveyshuollon kattavuus ja suhde julkiseen perusterveydenhuoltoon."
     },
     {
+      "id": "tietoyhteiskunta-1980",
+      "type": "neljän vuosikymmenen rakennemuutos",
+      "phase": "tiedon ja digitaalisen teknologian nousu keskeiseksi tuotannontekijäksi",
+      "title": "Tietoyhteiskunta",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/R06_tietoyhteiskunta.webp",
+          "caption": "Tietoyhteiskunta (Atlas R06)"
+        }
+      ],
+      "domains": [
+        "digitalisaatio",
+        "talous",
+        "työ",
+        "viestintä"
+      ],
+      "effects": [
+        "internetin käyttö kasvoi 7 %:sta 96 %:iin väestöstä (1995-2024)",
+        "laajakaistaliittymät kasvoivat 1,3:sta 49,2:een 100 asukasta kohti",
+        "älypuhelinten käyttö nousi 18 %:sta 94 %:iin",
+        "sähköinen asiointi ja verkkopankin käyttö yleistyivät lähes koko väestölle",
+        "Suomi nousi kansainvälisiin kärkisijoihin digitaalisissa vertailuissa (DESI, verkkopankki, laajakaistapeitto)"
+      ],
+      "problem": "Tietokoneistuminen, internetin läpimurto, mobiiliteknologia ja lopulta tekoäly ovat muuttaneet vaiheittain työn, talouden, viestinnän ja arjen perustavanlaatuisesti, kun tieto ja digitaalinen infrastruktuuri ovat nousseet yhtä keskeisiksi tuotannontekijöiksi kuin pääoma ja työvoima aiemmin.",
+      "sources": [
+        "Tilastokeskus",
+        "Traficom",
+        "Väestöliiton Digibarometri",
+        "Suomen Pankki",
+        "DESI (Euroopan komissio)",
+        "OECD",
+        "ETLA",
+        "ICT Suomi",
+        "McKinsey"
+      ],
+      "year_end": 2035,
+      "mechanism": "Henkilökohtaiset tietokoneet ja ensimmäiset tietoverkot (1980-1990) loivat perustan, internetin läpimurto ja Nokia (1990-2000) tekivät Suomesta kansainvälisen edelläkävijän, laajakaista ja älypuhelimet (2000-2010) veivät digitaalisuuden arkeen, ja 2010-luvulta alkaen data, alustat ja lopulta tekoäly ovat siirtäneet digitalisaation liiketoiminnan ytimeen.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 1980,
+      "long_effect": "Tietoyhteiskunnasta on tullut Suomen talouden ja yhteiskunnan pysyvä perusrakenne, jossa jokainen uusi teknologinen aalto (internet, mobiili, data, tekoäly) on rakentunut edellisen luoman infrastruktuurin ja osaamisen varaan.",
+      "current_relevance": "Digitaalisen kilpailukyvyn, kyberturvallisuuden, digital dividen ja jatkuvan sopeutumiskyvyn ylläpitäminen ovat ajankohtaisia haasteita, kun tekoäly muodostaa jo neljännen suuren murrosvaiheen tietoyhteiskunnan kehityksessä."
+    },
+    {
       "id": "terveyspalvelujen-kaksijakoisuus-1980",
       "type": "palvelujärjestelmän eriytyminen",
       "phase": "työssäkäyvien ja muun väestön palvelukanavien eriytyminen",
@@ -2662,28 +3034,28 @@
       "current_relevance": "Hyvinvointialueiden sosiaalipalvelujen oikeudellinen tausta."
     },
     {
-      "id": "rahoitusmarkkinoiden-vapautuminen",
-      "type": "taloudellinen murros",
-      "phase": "säännöstelystä markkinaehtoisuuteen",
-      "title": "Rahoitusmarkkinoiden vapautuminen",
+      "id": "lastensuojelulaki-1983",
+      "type": "sosiaalinen uudistus",
+      "phase": "lapsen edun vahvistuminen",
+      "title": "Lastensuojelulaki",
       "domains": [
-        "rahoitus",
-        "velka",
-        "talous"
+        "lapset",
+        "oikeudet",
+        "sosiaalihuolto"
       ],
       "effects": [
-        "luotonannon kasvu",
-        "omaisuusmarkkinoiden nousu",
-        "kotitalouksien ja yritysten velkaantuminen"
+        "ennaltaehkäisevien palvelujen kasvu",
+        "lapsen kuulemisen vahvistuminen",
+        "sijaishuollon sääntely"
       ],
-      "problem": "Luottojen ja pääoman liikkeiden voimakas sääntely.",
-      "year_end": 1990,
-      "mechanism": "Korko-, luotto- ja valuuttasääntelyä purettiin nopeasti.",
+      "problem": "Lastensuojelun kontrollipainotteisuus ja lasten oikeuksien heikko asema.",
+      "year_end": 1984,
+      "mechanism": "Lapsen etu, avohuolto ja perheen tukeminen nostettiin keskeisiksi periaatteiksi.",
       "confidence": "vahva",
       "importance": 5,
       "year_start": 1983,
-      "long_effect": "Markkinaehtoisen rahoitusjärjestelmän synty ja 1990-luvun kriisin haavoittuvuudet.",
-      "current_relevance": "Velkavetoisen kasvun ja rahoitusvakauden jännite."
+      "long_effect": "Oikeusperustaisen lastensuojelun kehitys.",
+      "current_relevance": "Palvelujen kuormitus, huostaanotot ja ennaltaehkäisevä tuki."
     },
     {
       "id": "ymparistohallinto-1983",
@@ -2711,28 +3083,28 @@
       "current_relevance": "Ilmastopolitiikka, vihreä siirtymä, kiertotalous ja luonnon monimuotoisuuden turvaaminen."
     },
     {
-      "id": "lastensuojelulaki-1983",
-      "type": "sosiaalinen uudistus",
-      "phase": "lapsen edun vahvistuminen",
-      "title": "Lastensuojelulaki",
+      "id": "rahoitusmarkkinoiden-vapautuminen",
+      "type": "taloudellinen murros",
+      "phase": "säännöstelystä markkinaehtoisuuteen",
+      "title": "Rahoitusmarkkinoiden vapautuminen",
       "domains": [
-        "lapset",
-        "oikeudet",
-        "sosiaalihuolto"
+        "rahoitus",
+        "velka",
+        "talous"
       ],
       "effects": [
-        "ennaltaehkäisevien palvelujen kasvu",
-        "lapsen kuulemisen vahvistuminen",
-        "sijaishuollon sääntely"
+        "luotonannon kasvu",
+        "omaisuusmarkkinoiden nousu",
+        "kotitalouksien ja yritysten velkaantuminen"
       ],
-      "problem": "Lastensuojelun kontrollipainotteisuus ja lasten oikeuksien heikko asema.",
-      "year_end": 1984,
-      "mechanism": "Lapsen etu, avohuolto ja perheen tukeminen nostettiin keskeisiksi periaatteiksi.",
+      "problem": "Luottojen ja pääoman liikkeiden voimakas sääntely.",
+      "year_end": 1990,
+      "mechanism": "Korko-, luotto- ja valuuttasääntelyä purettiin nopeasti.",
       "confidence": "vahva",
       "importance": 5,
       "year_start": 1983,
-      "long_effect": "Oikeusperustaisen lastensuojelun kehitys.",
-      "current_relevance": "Palvelujen kuormitus, huostaanotot ja ennaltaehkäisevä tuki."
+      "long_effect": "Markkinaehtoisen rahoitusjärjestelmän synty ja 1990-luvun kriisin haavoittuvuudet.",
+      "current_relevance": "Velkavetoisen kasvun ja rahoitusvakauden jännite."
     },
     {
       "id": "toimeentulotuki-1984",
@@ -2759,30 +3131,6 @@
       "current_relevance": "Perustoimeentulotuen ja täydentävän tuen työnjako."
     },
     {
-      "id": "lasten-kotihoidontuki-1985",
-      "type": "sosiaalinen uudistus",
-      "phase": "hoivavalintojen tukeminen",
-      "title": "Lasten kotihoidon tuki",
-      "domains": [
-        "perhe",
-        "hoiva",
-        "työ"
-      ],
-      "effects": [
-        "hoivavaihtoehtojen lisääntyminen",
-        "pienten lasten kotihoidon kasvu",
-        "sukupuolittuneiden hoivajaksojen vahvistuminen"
-      ],
-      "problem": "Pienten lasten hoidon järjestäminen päivähoidon ulkopuolella.",
-      "year_end": 1985,
-      "mechanism": "Perheille maksettiin tukea lapsen hoitamisesta kotona.",
-      "confidence": "vahva",
-      "importance": 4,
-      "year_start": 1985,
-      "long_effect": "Suomalaisen perhepolitiikan valinnanvapausmalli.",
-      "current_relevance": "Työllisyys-, tasa-arvo- ja varhaiskasvatuskeskustelu."
-    },
-    {
       "id": "aitien-tyomarkkinaeriytyminen-1985",
       "type": "sukupuoli- ja työmarkkinarakenteen muutos",
       "phase": "hoivavalintojen eriyttävät työuravaikutukset",
@@ -2806,6 +3154,30 @@
       "year_start": 1985,
       "long_effect": "Perhepoliittisista valinnoista tuli keskeinen sukupuolten taloudellista tasa-arvoa muovaava rakenne.",
       "current_relevance": "Perhevapaauudistus ja varhaiskasvatuksen osallistumisaste vaikuttavat kehityksen suuntaan."
+    },
+    {
+      "id": "lasten-kotihoidontuki-1985",
+      "type": "sosiaalinen uudistus",
+      "phase": "hoivavalintojen tukeminen",
+      "title": "Lasten kotihoidon tuki",
+      "domains": [
+        "perhe",
+        "hoiva",
+        "työ"
+      ],
+      "effects": [
+        "hoivavaihtoehtojen lisääntyminen",
+        "pienten lasten kotihoidon kasvu",
+        "sukupuolittuneiden hoivajaksojen vahvistuminen"
+      ],
+      "problem": "Pienten lasten hoidon järjestäminen päivähoidon ulkopuolella.",
+      "year_end": 1985,
+      "mechanism": "Perheille maksettiin tukea lapsen hoitamisesta kotona.",
+      "confidence": "vahva",
+      "importance": 4,
+      "year_start": 1985,
+      "long_effect": "Suomalaisen perhepolitiikan valinnanvapausmalli.",
+      "current_relevance": "Työllisyys-, tasa-arvo- ja varhaiskasvatuskeskustelu."
     },
     {
       "id": "rahoitusmarkkinoiden_vapauttaminen",
@@ -2874,6 +3246,44 @@
       "year_start": 1986,
       "long_effect": "Kohtuuhintaisen asumisen kriisistä tuli pysyvä, itseään ruokkiva rakenne, jossa jokainen vuosikymmen paransi jotain osa-aluetta (verotus, sääntely, korkotaso) muttei koskaan koko ketjua kerralla.",
       "current_relevance": "Kaavoitus, vuokra-asumisen tarjonta, alueellinen eriarvoisuus ja nuorten asumismahdollisuudet ovat edelleen ratkaisematta pitkän aikavälin rakenteellisia kysymyksiä."
+    },
+    {
+      "id": "pysyvasti-korkea-tyottomyys-1990",
+      "type": "rakenteellinen kehä",
+      "phase": "sopeutumiskyvyn pitkäaikainen heikkeneminen laman jälkeen",
+      "title": "Pysyvästi korkea työttömyys Suomessa",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/K04_tyottomyys.webp",
+          "caption": "Pysyvästi korkea työttömyys Suomessa (Atlas K04)"
+        }
+      ],
+      "domains": [
+        "työ",
+        "talous",
+        "hyvinvointi"
+      ],
+      "effects": [
+        "työttömyysaste nousi huippuunsa 19,1 % (1993)",
+        "työttömyysaste pysyi 2020-luvulla 7-9 % tasolla, ei palannut 1980-luvun tasolle",
+        "pitkäaikaistyöttömien osuus työttömistä on 40-50 %",
+        "alue-erot pääkaupunkiseudun ja Itä-/Pohjois-Suomen välillä pysyivät suurina",
+        "työvoimapula ja korkea työttömyys esiintyvät yhtä aikaa 2020-luvulla"
+      ],
+      "problem": "1990-luvun laman aiheuttama työttömyyden jyrkkä nousu ei palautunut ennalleen talouden toipumisesta huolimatta, koska rakennemuutokset, osaamisen epävastaavuus, alueelliset erot ja työmarkkinoiden jäykkyydet muodostivat itseään ruokkivan kehän.",
+      "sources": [
+        "Tilastokeskus",
+        "ETLA",
+        "VM",
+        "tutkimusraportit"
+      ],
+      "year_end": 2025,
+      "mechanism": "Kadonneet työpaikat eivät korvautuneet samanlaisilla uusilla, osaaminen ei vastannut uutta kysyntää, alueelliset erot syvenivät ja pitkäaikaistyöttömyys söi omaa työllistymiskykyään, mikä yhdessä kannustin- ja politiikkarajoitteiden kanssa piti työttömyyden pysyvästi korkeana.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 1986,
+      "long_effect": "Pysyvästi korkea työttömyys osoitti, että 1990-luvun laman aiheuttama shokki ei ollut vain tilapäinen suhdannehäiriö vaan johti pysyvään sopeutumiskyvyn heikkenemiseen, jota talouden toipuminen ei yksin korjannut.",
+      "current_relevance": "Työvoimapulan ja korkean rakenteellisen työttömyyden samanaikaisuus 2020-luvulla osoittaa, ettei ongelma ole ratkennut, vaan kohtaanto-ongelma ja pitkäaikaistyöttömyys ovat edelleen keskeisiä haasteita."
     },
     {
       "id": "tasa-arvolaki-1987",
@@ -2974,113 +3384,6 @@
       "current_relevance": "Julkisten palvelujen markkinaehtoisuuden ja kilpailuneutraliteetin keskustelu."
     },
     {
-      "id": "1990-luvun-lama",
-      "type": "talouskriisi",
-      "phase": "rahoitus- ja rakennemurros",
-      "title": "1990-luvun lama",
-      "images": [
-        {
-          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/K03_lama.webp",
-          "caption": "1990-luvun lama: 5 vuoden viive (Atlas K03)"
-        }
-      ],
-      "domains": [
-        "talous",
-        "työ",
-        "pankit",
-        "julkinen talous"
-      ],
-      "effects": [
-        "pankkituki ja pankkikonsolidaatio",
-        "pitkäaikaistyöttömyys",
-        "julkisten menojen leikkaukset",
-        "ICT-vetoisen kasvun korostuminen"
-      ],
-      "problem": "Ylikuumentunut luottotalous, Neuvostokaupan romahdus, korkea korkotaso ja pankkikriisi.",
-      "year_end": 1994,
-      "mechanism": "Rahoitusjärjestelmän kriisi johti massatyöttömyyteen, yrityskaatoihin ja julkisen talouden sopeutukseen.",
-      "confidence": "vahva",
-      "importance": 5,
-      "year_start": 1990,
-      "long_effect": "Uusi finanssipoliittinen varovaisuus ja pysyvämpi työttömyysongelma.",
-      "current_relevance": "Julkisen talouden sopeutus, velka ja laman sukupolvikokemus."
-    },
-    {
-      "id": "vammaisten-itsenainen-asuminen-1990",
-      "type": "vammaispolitiikan ja palvelurakenteen murros",
-      "phase": "hoivan laitoksista osallisuuteen yhteiskunnassa",
-      "title": "Laitoshoidosta itsenäiseen asumiseen",
-      "domains": [
-        "vammaisuus",
-        "asuminen",
-        "oikeudet",
-        "palvelut"
-      ],
-      "effects": [
-        "laitospaikkojen väheneminen",
-        "henkilökohtaisen avun kasvu",
-        "itsemääräämisoikeuden vahvistuminen"
-      ],
-      "problem": "Laitoshoito rajoitti vammaisten henkilöiden itsemääräämistä ja osallistumista.",
-      "year_end": 2030,
-      "mechanism": "Asumispalvelut, henkilökohtainen apu ja yhteisölliset ratkaisut korvasivat pitkäaikaista laitoshoitoa.",
-      "confidence": "vahva",
-      "importance": 5,
-      "year_start": 1990,
-      "long_effect": "Vammaispalvelujen tavoitteeksi tuli arjen mahdollistaminen eikä pelkkä hoiva.",
-      "current_relevance": "Palvelujen yksilöllisyys, kilpailutukset ja henkilöstön saatavuus ratkaisevat oikeuksien toteutumista."
-    },
-    {
-      "id": "elakejarjestelman-kestavyys-1990",
-      "type": "julkisen ja sosiaalivakuutustalouden murros",
-      "phase": "etuusjärjestelmän sopeutuminen ikääntymiseen",
-      "title": "Eläkemaksujen nousu ja eläkejärjestelmän kestävyys",
-      "domains": [
-        "eläkkeet",
-        "väestö",
-        "työ",
-        "talous"
-      ],
-      "effects": [
-        "työeläkemaksujen nousu",
-        "sukupolvien välisen rahoitusvastuun kasvu",
-        "kestävyyskeskustelu"
-      ],
-      "problem": "Eläkeläisten määrän kasvu ja työikäisten suhteellinen väheneminen kasvattivat järjestelmän rahoituspainetta.",
-      "year_end": 2035,
-      "mechanism": "Maksuja nostettiin, rahastointia vahvistettiin ja etuuksien ehtoja sopeutettiin.",
-      "confidence": "vahva",
-      "importance": 5,
-      "year_start": 1990,
-      "long_effect": "Työeläkejärjestelmästä tuli yksi julkisen talouden ja työvoimakustannusten keskeisistä rakenteista.",
-      "current_relevance": "Ikääntyminen, sijoitustuotot ja työurien pituus ratkaisevat järjestelmän tasapainoa."
-    },
-    {
-      "id": "kannustinloukut-sosiaaliturvan-pirstaleisuus-1990",
-      "type": "sosiaaliturvajärjestelmän rakenteellinen ongelma",
-      "phase": "etuuksien ja tulojen vaikea yhteensovittaminen",
-      "title": "Kannustinloukut ja sosiaaliturvan pirstaleisuus",
-      "domains": [
-        "sosiaaliturva",
-        "työ",
-        "verotus",
-        "toimeentulo"
-      ],
-      "effects": [
-        "efektiiviset marginaaliverot",
-        "etuuksien takaisinperintä",
-        "asioinnin monimutkaisuus"
-      ],
-      "problem": "Eri tarkoituksiin rakennetut etuudet, verotus ja asumiskustannukset muodostivat monimutkaisia yhteisvaikutuksia.",
-      "year_end": 2035,
-      "mechanism": "Tarveharkinta, tulorajat ja etuuksien vaiheittainen leikkaantuminen saattoivat tehdä työn vastaanottamisesta vaikeasti ennakoitavaa.",
-      "confidence": "vahva",
-      "importance": 5,
-      "year_start": 1990,
-      "long_effect": "Sosiaaliturvan ongelmaksi muodostui etuuksien määrän lisäksi niiden keskinäinen yhteensopimattomuus.",
-      "current_relevance": "Yleistuki ja sosiaaliturvauudistus pyrkivät yksinkertaistamaan samaa rakennetta."
-    },
-    {
       "id": "kaupunkiseutujen-segregaatio-1990",
       "type": "alueellinen ja sosiaalinen murros",
       "phase": "asuinalueiden sosiaalinen eriytyminen",
@@ -3131,10 +3434,91 @@
       "current_relevance": "Energiatehokkuusvaatimukset ja väestön alueellinen väheneminen vaikeuttavat korjaamista."
     },
     {
+      "id": "kannustinloukut-sosiaaliturvan-pirstaleisuus-1990",
+      "type": "sosiaaliturvajärjestelmän rakenteellinen ongelma",
+      "phase": "etuuksien ja tulojen vaikea yhteensovittaminen",
+      "title": "Kannustinloukut ja sosiaaliturvan pirstaleisuus",
+      "domains": [
+        "sosiaaliturva",
+        "työ",
+        "verotus",
+        "toimeentulo"
+      ],
+      "effects": [
+        "efektiiviset marginaaliverot",
+        "etuuksien takaisinperintä",
+        "asioinnin monimutkaisuus"
+      ],
+      "problem": "Eri tarkoituksiin rakennetut etuudet, verotus ja asumiskustannukset muodostivat monimutkaisia yhteisvaikutuksia.",
+      "year_end": 2035,
+      "mechanism": "Tarveharkinta, tulorajat ja etuuksien vaiheittainen leikkaantuminen saattoivat tehdä työn vastaanottamisesta vaikeasti ennakoitavaa.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 1990,
+      "long_effect": "Sosiaaliturvan ongelmaksi muodostui etuuksien määrän lisäksi niiden keskinäinen yhteensopimattomuus.",
+      "current_relevance": "Yleistuki ja sosiaaliturvauudistus pyrkivät yksinkertaistamaan samaa rakennetta."
+    },
+    {
+      "id": "elakejarjestelman-kestavyys-1990",
+      "type": "julkisen ja sosiaalivakuutustalouden murros",
+      "phase": "etuusjärjestelmän sopeutuminen ikääntymiseen",
+      "title": "Eläkemaksujen nousu ja eläkejärjestelmän kestävyys",
+      "domains": [
+        "eläkkeet",
+        "väestö",
+        "työ",
+        "talous"
+      ],
+      "effects": [
+        "työeläkemaksujen nousu",
+        "sukupolvien välisen rahoitusvastuun kasvu",
+        "kestävyyskeskustelu"
+      ],
+      "problem": "Eläkeläisten määrän kasvu ja työikäisten suhteellinen väheneminen kasvattivat järjestelmän rahoituspainetta.",
+      "year_end": 2035,
+      "mechanism": "Maksuja nostettiin, rahastointia vahvistettiin ja etuuksien ehtoja sopeutettiin.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 1990,
+      "long_effect": "Työeläkejärjestelmästä tuli yksi julkisen talouden ja työvoimakustannusten keskeisistä rakenteista.",
+      "current_relevance": "Ikääntyminen, sijoitustuotot ja työurien pituus ratkaisevat järjestelmän tasapainoa."
+    },
+    {
+      "id": "vammaisten-itsenainen-asuminen-1990",
+      "type": "vammaispolitiikan ja palvelurakenteen murros",
+      "phase": "hoivan laitoksista osallisuuteen yhteiskunnassa",
+      "title": "Laitoshoidosta itsenäiseen asumiseen",
+      "domains": [
+        "vammaisuus",
+        "asuminen",
+        "oikeudet",
+        "palvelut"
+      ],
+      "effects": [
+        "laitospaikkojen väheneminen",
+        "henkilökohtaisen avun kasvu",
+        "itsemääräämisoikeuden vahvistuminen"
+      ],
+      "problem": "Laitoshoito rajoitti vammaisten henkilöiden itsemääräämistä ja osallistumista.",
+      "year_end": 2030,
+      "mechanism": "Asumispalvelut, henkilökohtainen apu ja yhteisölliset ratkaisut korvasivat pitkäaikaista laitoshoitoa.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 1990,
+      "long_effect": "Vammaispalvelujen tavoitteeksi tuli arjen mahdollistaminen eikä pelkkä hoiva.",
+      "current_relevance": "Palvelujen yksilöllisyys, kilpailutukset ja henkilöstön saatavuus ratkaisevat oikeuksien toteutumista."
+    },
+    {
       "id": "maahanmuutto-murros",
       "type": "väestöllinen murros",
       "phase": "monimuotoisen yhteiskunnan synty",
       "title": "Maahanmuuton kasvu ja monimuotoistuminen",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/R07_maahanmuutto.webp",
+          "caption": "Maahanmuutto (Atlas R07)"
+        }
+      ],
       "domains": [
         "väestö",
         "työ",
@@ -3155,6 +3539,84 @@
       "year_start": 1990,
       "long_effect": "Suomen muuttuminen maastamuuttomaasta maahanmuuttomaaksi.",
       "current_relevance": "Työperäinen maahanmuutto, kotoutuminen, syrjintä ja väestönkasvu."
+    },
+    {
+      "id": "1990-luvun-lama",
+      "type": "talouskriisi",
+      "phase": "rahoitus- ja rakennemurros",
+      "title": "1990-luvun lama",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/K03_lama.webp",
+          "caption": "1990-luvun lama: 5 vuoden viive (Atlas K03)"
+        }
+      ],
+      "domains": [
+        "talous",
+        "työ",
+        "pankit",
+        "julkinen talous"
+      ],
+      "effects": [
+        "pankkituki ja pankkikonsolidaatio",
+        "pitkäaikaistyöttömyys",
+        "julkisten menojen leikkaukset",
+        "ICT-vetoisen kasvun korostuminen"
+      ],
+      "problem": "Ylikuumentunut luottotalous, Neuvostokaupan romahdus, korkea korkotaso ja pankkikriisi.",
+      "year_end": 1994,
+      "mechanism": "Rahoitusjärjestelmän kriisi johti massatyöttömyyteen, yrityskaatoihin ja julkisen talouden sopeutukseen.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 1990,
+      "long_effect": "Uusi finanssipoliittinen varovaisuus ja pysyvämpi työttömyysongelma.",
+      "current_relevance": "Julkisen talouden sopeutus, velka ja laman sukupolvikokemus."
+    },
+    {
+      "id": "nuorten-mielenterveyskriisi-1990",
+      "type": "hidas kumuloituva kriisi",
+      "phase": "pahoinvoinnin varhaisten signaalien ja hitaan sopeutumisen välinen kuilu",
+      "title": "Nuorten mielenterveyskriisi ja syrjäytymisriski",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/K11_mielenterveys.webp",
+          "caption": "Nuorten mielenterveyskriisi ja syrjäytymisriski 1990-2025 (Atlas K11)"
+        }
+      ],
+      "domains": [
+        "terveys",
+        "nuoret",
+        "koulutus",
+        "hyvinvointi"
+      ],
+      "effects": [
+        "kohtalainen tai vaikea ahdistuneisuus kasvoi (+134 %, kouluterveyskysely)",
+        "masennusoireilu kasvoi (+106 %)",
+        "mielenterveysperusteiset työkyvyttömyyseläkkeet 16-24-vuotiailla kasvoivat (+519 %, 1995-2024)",
+        "korkeakouluopintojen keskeyttämiset kasvoivat (+90 %)",
+        "nuorten syrjäytymisriski ja kiinnittyminen koulutukseen tai työhön heikkeni",
+        "syntyvyyden lasku jatkui",
+        "työvoimapula ja julkisen talouden kestävyys heikkenivät"
+      ],
+      "problem": "Nuorten kokema ahdistus, masennus ja uupumus kasvoivat vuosikymmenten ajan sosiaalisen median, kilpailullistumisen ja epävakaiden tulevaisuudennäkymien myötä, mutta palvelujärjestelmä, koulutuspolitiikka ja tukirakenteet reagoivat hitaasti muuttuvaan kuormitukseen.",
+      "sources": [
+        "THL",
+        "Kela",
+        "Tilastokeskus",
+        "OKM",
+        "Opiskelijabarometri",
+        "PISA",
+        "FinSote",
+        "WHO",
+        "OECD"
+      ],
+      "year_end": 2025,
+      "mechanism": "Useiden yhteiskunnallisten muutosten (digitalisaatio, suoritus- ja kilpailukulttuurin voimistuminen, perheiden kuormitus, epävarmat tulevaisuudennäkymät) yhteisvaikutus kasvatti nuorten pahoinvointia, kun taas palvelujärjestelmä pirstaloitui eikä ennaltaehkäisyyn panostettu riittävästi.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 1990,
+      "long_effect": "Nuorten mielenterveyskriisistä on tullut yksi Suomen keskeisistä pitkän aikavälin rakenteellisista haasteista, joka kytkeytyy koulutuspolitiikkaan, työmarkkinoihin ja hyvinvointialueiden palvelukykyyn.",
+      "current_relevance": "Varhaisen tuen, matalan kynnyksen palvelujen ja digihyvinvoinnin vahvistaminen ovat ajankohtaisia ratkaisusuuntia, mutta palautesidonta on toistaiseksi pettänyt useassa kohdassa."
     },
     {
       "id": "pankkikriisi",
@@ -3211,6 +3673,12 @@
       "type": "teknologis-taloudellinen murros",
       "phase": "fossiilitalouden uudelleenjärjestely",
       "title": "Ilmastopolitiikka ja vihreä siirtymä",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/R05_vihrea_siirtyma.webp",
+          "caption": "Vihreä siirtymä (Atlas R05)"
+        }
+      ],
       "domains": [
         "energia",
         "teollisuus",
@@ -3258,32 +3726,6 @@
       "current_relevance": "Korkotaso, valmistumisnopeus ja opiskelijoiden hyvinvointi vaikuttavat järjestelmän toimivuuteen."
     },
     {
-      "id": "internet-murros",
-      "type": "teknologinen murros",
-      "phase": "verkottuneen yhteiskunnan synty",
-      "title": "Internetin ja mobiiliteknologian läpimurto",
-      "domains": [
-        "teknologia",
-        "viestintä",
-        "talous",
-        "arki"
-      ],
-      "effects": [
-        "uudet viestintätavat",
-        "ICT-vientiteollisuus",
-        "sähköiset palvelut",
-        "tiedon saatavuuden kasvu"
-      ],
-      "problem": "Tiedonvälityksen, viestinnän ja kaupankäynnin fyysiset rajoitteet.",
-      "year_end": 2007,
-      "mechanism": "Tietoverkot, matkapuhelimet ja digitaaliset palvelut levisivät nopeasti.",
-      "confidence": "vahva",
-      "importance": 5,
-      "year_start": 1993,
-      "long_effect": "Digitaalisen yhteiskunnan infrastruktuuri.",
-      "current_relevance": "Alustatalous, kyberturvallisuus, digitaalinen osallisuus ja tekoäly."
-    },
-    {
       "id": "valtionyhtioiden_yhtioittaminen",
       "type": "taloudellinen rakennemuutos",
       "phase": "markkinaehtoinen omistaminen",
@@ -3310,29 +3752,30 @@
       "current_relevance": "Valtion omistajapolitiikka ja strategisten yhtiöiden ohjaus."
     },
     {
-      "id": "perusoikeusuudistus-1995",
-      "type": "valtiosääntöuudistus",
-      "phase": "perusoikeuksien vahvistuminen",
-      "title": "Perusoikeusuudistus",
+      "id": "internet-murros",
+      "type": "teknologinen murros",
+      "phase": "verkottuneen yhteiskunnan synty",
+      "title": "Internetin ja mobiiliteknologian läpimurto",
       "domains": [
-        "oikeus",
-        "demokratia",
-        "ihmisoikeudet"
+        "teknologia",
+        "viestintä",
+        "talous",
+        "arki"
       ],
       "effects": [
-        "perusoikeussuojan vahvistuminen",
-        "viranomaisten velvollisuuksien täsmentyminen",
-        "tuomioistuinten perusoikeustulkinnan vahvistuminen",
-        "ihmisoikeuksien aseman vahvistuminen"
+        "uudet viestintätavat",
+        "ICT-vientiteollisuus",
+        "sähköiset palvelut",
+        "tiedon saatavuuden kasvu"
       ],
-      "problem": "Perusoikeussäännökset eivät enää vastanneet kansainvälistä ihmisoikeuskehitystä ja modernin oikeusvaltion vaatimuksia.",
-      "year_end": 2000,
-      "mechanism": "Perusoikeudet uudistettiin kattamaan laajemmin yksilön vapaudet, yhdenvertaisuus sekä taloudelliset, sosiaaliset ja sivistykselliset oikeudet.",
+      "problem": "Tiedonvälityksen, viestinnän ja kaupankäynnin fyysiset rajoitteet.",
+      "year_end": 2007,
+      "mechanism": "Tietoverkot, matkapuhelimet ja digitaaliset palvelut levisivät nopeasti.",
       "confidence": "vahva",
       "importance": 5,
-      "year_start": 1995,
-      "long_effect": "Perusoikeusuudistus muodosti perustan vuoden 2000 perustuslaille ja nykyaikaiselle suomalaiselle oikeusvaltiolle.",
-      "current_relevance": "Perustuslain tulkinta, ihmisoikeudet ja julkisen vallan velvollisuudet."
+      "year_start": 1993,
+      "long_effect": "Digitaalisen yhteiskunnan infrastruktuuri.",
+      "current_relevance": "Alustatalous, kyberturvallisuus, digitaalinen osallisuus ja tekoäly."
     },
     {
       "id": "vaeston-ikaantyminen",
@@ -3361,10 +3804,41 @@
       "current_relevance": "Huoltosuhde, työurien pidentäminen, maahanmuutto ja tuottavuus."
     },
     {
+      "id": "perusoikeusuudistus-1995",
+      "type": "valtiosääntöuudistus",
+      "phase": "perusoikeuksien vahvistuminen",
+      "title": "Perusoikeusuudistus",
+      "domains": [
+        "oikeus",
+        "demokratia",
+        "ihmisoikeudet"
+      ],
+      "effects": [
+        "perusoikeussuojan vahvistuminen",
+        "viranomaisten velvollisuuksien täsmentyminen",
+        "tuomioistuinten perusoikeustulkinnan vahvistuminen",
+        "ihmisoikeuksien aseman vahvistuminen"
+      ],
+      "problem": "Perusoikeussäännökset eivät enää vastanneet kansainvälistä ihmisoikeuskehitystä ja modernin oikeusvaltion vaatimuksia.",
+      "year_end": 2000,
+      "mechanism": "Perusoikeudet uudistettiin kattamaan laajemmin yksilön vapaudet, yhdenvertaisuus sekä taloudelliset, sosiaaliset ja sivistykselliset oikeudet.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 1995,
+      "long_effect": "Perusoikeusuudistus muodosti perustan vuoden 2000 perustuslaille ja nykyaikaiselle suomalaiselle oikeusvaltiolle.",
+      "current_relevance": "Perustuslain tulkinta, ihmisoikeudet ja julkisen vallan velvollisuudet."
+    },
+    {
       "id": "eu-jasenyys-1995",
       "type": "kansainvälinen murros",
       "phase": "eurooppalainen integraatio",
       "title": "EU-jäsenyys",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/R09_EU-jasenyys.webp",
+          "caption": "EU-jäsenyys: Suomen strateginen valinta (Atlas R09)"
+        }
+      ],
       "domains": [
         "talous",
         "lainsäädäntö",
@@ -3385,31 +3859,6 @@
       "year_start": 1995,
       "long_effect": "Suomen päätöksenteon kytkeytyminen eurooppalaiseen monitasohallintaan.",
       "current_relevance": "EU-lainsäädäntö, yhteinen talouspolitiikka ja turvallisuusyhteistyö."
-    },
-    {
-      "id": "rahapolitiikka-ekplle-1999",
-      "type": "talouspoliittinen vallansiirto",
-      "phase": "kansallisesta yhteiseen rahapolitiikkaan",
-      "title": "Rahapoliittisen päätösvallan siirtyminen EKP:lle",
-      "domains": [
-        "euro",
-        "rahapolitiikka",
-        "EU",
-        "talous"
-      ],
-      "effects": [
-        "yhteinen korkotaso",
-        "valuuttakurssiriskin poistuminen euroalueella",
-        "kansallisen sopeutuskeinon menetys"
-      ],
-      "problem": "Yhteinen valuutta ei voinut toimia erillisillä kansallisilla korko- ja valuuttapäätöksillä.",
-      "year_end": 2002,
-      "mechanism": "Rahapolitiikka keskitettiin Euroopan keskuspankille ja kansallinen valuuttakurssi poistui sopeutuskeinona.",
-      "confidence": "vahva",
-      "importance": 5,
-      "year_start": 1999,
-      "long_effect": "Suomen talouspolitiikan painopiste siirtyi rahapolitiikasta finanssi-, työmarkkina- ja rakennepolitiikkaan.",
-      "current_relevance": "Yhteisen korkotason sopivuus Suomen suhdanteisiin vaikuttaa yhä kotitalouksiin ja julkiseen talouteen."
     },
     {
       "id": "euro-1999",
@@ -3436,29 +3885,29 @@
       "current_relevance": "EKP:n rahapolitiikka, finanssipolitiikan vastuu ja euroalueen kriisinhallinta."
     },
     {
-      "id": "sonera-umts",
-      "type": "taloudellinen murros",
-      "phase": "teknologiakuplan puhkeaminen",
-      "title": "Teknologiakupla ja Soneran UMTS-investoinnit",
+      "id": "rahapolitiikka-ekplle-1999",
+      "type": "talouspoliittinen vallansiirto",
+      "phase": "kansallisesta yhteiseen rahapolitiikkaan",
+      "title": "Rahapoliittisen päätösvallan siirtyminen EKP:lle",
       "domains": [
-        "teknologia",
-        "valtio-omistus",
-        "rahoitus"
+        "euro",
+        "rahapolitiikka",
+        "EU",
+        "talous"
       ],
       "effects": [
-        "merkittävät arvonalennukset",
-        "valtion omistajaohjauksen arviointi",
-        "telealan rakennemuutos",
-        "Soneran yhdistyminen Teliaan"
+        "yhteinen korkotaso",
+        "valuuttakurssiriskin poistuminen euroalueella",
+        "kansallisen sopeutuskeinon menetys"
       ],
-      "problem": "Telealan poikkeuksellisen optimistiset kasvuodotukset.",
+      "problem": "Yhteinen valuutta ei voinut toimia erillisillä kansallisilla korko- ja valuuttapäätöksillä.",
       "year_end": 2002,
-      "mechanism": "Valtionyhtiö Sonera teki erittäin suuria UMTS-lisenssi-investointeja Eurooppaan juuri ennen teknologiakuplan puhkeamista.",
+      "mechanism": "Rahapolitiikka keskitettiin Euroopan keskuspankille ja kansallinen valuuttakurssi poistui sopeutuskeinona.",
       "confidence": "vahva",
-      "importance": 4,
-      "year_start": 2000,
-      "long_effect": "Tapaus muutti suhtautumista valtion omistajaohjaukseen ja suurten investointiriskien hallintaan.",
-      "current_relevance": "Valtionyhtiöiden riskienhallinta ja omistajapolitiikka."
+      "importance": 5,
+      "year_start": 1999,
+      "long_effect": "Suomen talouspolitiikan painopiste siirtyi rahapolitiikasta finanssi-, työmarkkina- ja rakennepolitiikkaan.",
+      "current_relevance": "Yhteisen korkotason sopivuus Suomen suhdanteisiin vaikuttaa yhä kotitalouksiin ja julkiseen talouteen."
     },
     {
       "id": "digital-julkishallinto",
@@ -3487,6 +3936,55 @@
       "current_relevance": "Digitaalinen yhdenvertaisuus, tietosuoja, automaattinen päätöksenteko ja kyberturvallisuus."
     },
     {
+      "id": "perustuslaki-2000",
+      "type": "valtiosääntöuudistus",
+      "phase": "parlamentaarisuuden vahvistuminen",
+      "title": "Uusi perustuslaki",
+      "domains": [
+        "demokratia",
+        "valtio",
+        "oikeusvaltio"
+      ],
+      "effects": [
+        "eduskunnan ja valtioneuvoston aseman vahvistuminen",
+        "presidentin valtaoikeuksien rajautuminen",
+        "perusoikeuksien koonti"
+      ],
+      "problem": "Valtiosääntöjen hajanaisuus ja presidenttikeskeisen järjestelmän muuttuminen.",
+      "year_end": 2000,
+      "mechanism": "Keskeiset valtiosääntöasiakirjat koottiin yhteen ja parlamentaarista vastuuta vahvistettiin.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 2000,
+      "long_effect": "Nykyisen parlamentaarisen järjestelmän oikeudellinen runko.",
+      "current_relevance": "Valtiosääntöinen vallanjako ja EU-asioiden päätöksenteko."
+    },
+    {
+      "id": "sonera-umts",
+      "type": "taloudellinen murros",
+      "phase": "teknologiakuplan puhkeaminen",
+      "title": "Teknologiakupla ja Soneran UMTS-investoinnit",
+      "domains": [
+        "teknologia",
+        "valtio-omistus",
+        "rahoitus"
+      ],
+      "effects": [
+        "merkittävät arvonalennukset",
+        "valtion omistajaohjauksen arviointi",
+        "telealan rakennemuutos",
+        "Soneran yhdistyminen Teliaan"
+      ],
+      "problem": "Telealan poikkeuksellisen optimistiset kasvuodotukset.",
+      "year_end": 2002,
+      "mechanism": "Valtionyhtiö Sonera teki erittäin suuria UMTS-lisenssi-investointeja Eurooppaan juuri ennen teknologiakuplan puhkeamista.",
+      "confidence": "vahva",
+      "importance": 4,
+      "year_start": 2000,
+      "long_effect": "Tapaus muutti suhtautumista valtion omistajaohjaukseen ja suurten investointiriskien hallintaan.",
+      "current_relevance": "Valtionyhtiöiden riskienhallinta ja omistajapolitiikka."
+    },
+    {
       "id": "tyokykyjohtaminen-2000",
       "type": "työelämän ja johtamisen murros",
       "phase": "sairauksien hoidosta työkykyriskien ennakointiin",
@@ -3510,30 +4008,6 @@
       "year_start": 2000,
       "long_effect": "Työkyvystä tuli yksilön terveyden lisäksi organisaation johdettava tuotannollinen voimavara.",
       "current_relevance": "Mielenterveysperusteinen työkyvyttömyys ja väestön ikääntyminen korostavat mallin merkitystä."
-    },
-    {
-      "id": "perustuslaki-2000",
-      "type": "valtiosääntöuudistus",
-      "phase": "parlamentaarisuuden vahvistuminen",
-      "title": "Uusi perustuslaki",
-      "domains": [
-        "demokratia",
-        "valtio",
-        "oikeusvaltio"
-      ],
-      "effects": [
-        "eduskunnan ja valtioneuvoston aseman vahvistuminen",
-        "presidentin valtaoikeuksien rajautuminen",
-        "perusoikeuksien koonti"
-      ],
-      "problem": "Valtiosääntöjen hajanaisuus ja presidenttikeskeisen järjestelmän muuttuminen.",
-      "year_end": 2000,
-      "mechanism": "Keskeiset valtiosääntöasiakirjat koottiin yhteen ja parlamentaarista vastuuta vahvistettiin.",
-      "confidence": "vahva",
-      "importance": 5,
-      "year_start": 2000,
-      "long_effect": "Nykyisen parlamentaarisen järjestelmän oikeudellinen runko.",
-      "current_relevance": "Valtiosääntöinen vallanjako ja EU-asioiden päätöksenteko."
     },
     {
       "id": "euro_2002",
@@ -3561,51 +4035,45 @@
       "current_relevance": "EKP:n rahapolitiikka, korkokehitys, euroalueen vakausmekanismit ja yhteinen talouspolitiikka."
     },
     {
-      "id": "kehysmenettely",
-      "type": "julkisen talouden ohjaus",
-      "phase": "menokurin institutionalisointi",
-      "title": "Valtiontalouden kehysmenettelyn vakiintuminen",
+      "id": "olkiluoto-3-2002",
+      "type": "suuri infrastruktuurihanke",
+      "phase": "päätöksestä toteutukseen venynyt teknis-taloudellinen suurhanke",
+      "title": "Olkiluoto 3 -ydinvoimahanke",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/K14_olkiluoto.webp",
+          "caption": "Olkiluoto 3: päätöksestä toteutukseen (Atlas K14)"
+        }
+      ],
       "domains": [
-        "julkinen talous",
-        "budjetointi",
-        "hallinto"
+        "energia",
+        "teollisuus",
+        "huoltovarmuus",
+        "julkinen talous"
       ],
       "effects": [
-        "ennakoitavampi finanssipolitiikka",
-        "menokurin vahvistuminen",
-        "hallitusohjelmien sitovuus kasvoi"
+        "aikataulu venyi 14 vuodella (2009->2023)",
+        "kustannusarvio nousi noin 3,2 miljardista yli 11 miljardiin euroon (+240 %)",
+        "Suomen sähköjärjestelmään saatiin noin 1600 MW vähähiilistä perusvoimaa",
+        "riippuvuus tuontienergiasta väheni",
+        "korkea hinta kuluttajille ja yhteiskunnalle heijastui investointikykyyn"
       ],
-      "problem": "1990-luvun laman jälkeen julkisen talouden hallittavuus haluttiin varmistaa.",
-      "year_end": 2007,
-      "mechanism": "Valtion menot sidottiin hallituskausittaisiin kehyksiin.",
+      "problem": "Kasvava sähkönkulutus, ilmastotavoitteet ja huoltovarmuuden vahvistaminen johtivat päätökseen rakentaa uusi ydinvoimalaitosyksikkö, mutta suunnittelu- ja rakennusmuutokset, laadunvarmistuksen tiukkeneminen ja toimitusketjun ongelmat venyttivät hankkeen aikataulua ja kasvattivat kustannuksia moninkertaisesti.",
+      "sources": [
+        "Eduskunta",
+        "TVO",
+        "Tilintarkastuskertomukset",
+        "Energiavirasto",
+        "STUK",
+        "mediaLähteet"
+      ],
+      "year_end": 2023,
+      "mechanism": "Eduskunta hyväksyi rakentamispäätöksen 2002, ja käyttöönotto luvattiin vuodeksi 2009, mutta reaktorin suunnittelua tarkennettiin useaan kertaan, turvallisuusvaatimukset ja viranomaisten tarkastukset kiristyivät, ja teknisiä sekä toimitusketjun ongelmia ilmeni vuosien varrella, mikä siirsi käyttöönoton lopulta vuoteen 2023.",
       "confidence": "vahva",
-      "importance": 5,
-      "year_start": 2003,
-      "long_effect": "Kehysmenettelystä tuli suomalaisen finanssipolitiikan keskeinen instituutio.",
-      "current_relevance": "Julkisen talouden sopeutus ja velkaantumisen hallinta."
-    },
-    {
-      "id": "tuottavuusohjelma",
-      "type": "hallinnollinen uudistus",
-      "phase": "hallinnon tehostaminen",
-      "title": "Valtion tuottavuusohjelma",
-      "domains": [
-        "julkinen hallinto",
-        "talous"
-      ],
-      "effects": [
-        "virastojen rakennemuutokset",
-        "sähköisten palvelujen lisääntyminen",
-        "henkilöstön väheneminen"
-      ],
-      "problem": "Valtionhallinnon menojen kasvun hillitseminen.",
-      "year_end": 2011,
-      "mechanism": "Prosessien uudistaminen, henkilöstön vähentäminen luonnollisen poistuman kautta ja digitalisaation hyödyntäminen.",
-      "confidence": "kohtalainen",
       "importance": 4,
-      "year_start": 2003,
-      "long_effect": "Tuottavuusajattelusta tuli pysyvä osa valtionhallinnon ohjausta ja henkilöstösuunnittelua.",
-      "current_relevance": "Valtionhallinnon tuottavuuskehitys ja henkilöstön riittävyys."
+      "year_start": 2002,
+      "long_effect": "Olkiluoto 3 osoitti, että suurten teknis-taloudellisten hankkeiden päätöksenteon strateginen perusajatus (huoltovarmuus, vähähiilisyys) voi olla perusteltu, vaikka toteutuksen riskienhallinta, suunnittelu ja aikataulutus epäonnistuvat merkittävästi.",
+      "current_relevance": "Hanke tuottaa sähköä vuosikymmeniä eteenpäin, mutta jättää myös taloudellisen rasitteen ja kysymyksiä investointikyvystä muihin kohteisiin — tärkeä vertailukohta muille suurille infrastruktuuri-investoinneille (esim. vihreä siirtymä)."
     },
     {
       "id": "valtion-henkiloston-vahentaminen-2003",
@@ -3631,6 +4099,59 @@
       "year_start": 2003,
       "long_effect": "Tuottavuus määriteltiin pitkälti henkilöstöpanoksen vähentämisen kautta.",
       "current_relevance": "Hallinnon toimintakyvyn, varautumisen ja palvelutason riittävyys ovat tämän linjan jälkikysymyksiä."
+    },
+    {
+      "id": "tuottavuusohjelma",
+      "type": "hallinnollinen uudistus",
+      "phase": "hallinnon tehostaminen",
+      "title": "Valtion tuottavuusohjelma",
+      "domains": [
+        "julkinen hallinto",
+        "talous"
+      ],
+      "effects": [
+        "virastojen rakennemuutokset",
+        "sähköisten palvelujen lisääntyminen",
+        "henkilöstön väheneminen"
+      ],
+      "problem": "Valtionhallinnon menojen kasvun hillitseminen.",
+      "year_end": 2011,
+      "mechanism": "Prosessien uudistaminen, henkilöstön vähentäminen luonnollisen poistuman kautta ja digitalisaation hyödyntäminen.",
+      "confidence": "kohtalainen",
+      "importance": 4,
+      "year_start": 2003,
+      "long_effect": "Tuottavuusajattelusta tuli pysyvä osa valtionhallinnon ohjausta ja henkilöstösuunnittelua.",
+      "current_relevance": "Valtionhallinnon tuottavuuskehitys ja henkilöstön riittävyys."
+    },
+    {
+      "id": "kehysmenettely",
+      "type": "julkisen talouden ohjaus",
+      "phase": "menokurin institutionalisointi",
+      "title": "Valtiontalouden kehysmenettelyn vakiintuminen",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/K16_kehysmenettely.webp",
+          "caption": "Kehysmenettely ja julkisen talouden ohjaus (Atlas K16)"
+        }
+      ],
+      "domains": [
+        "julkinen talous",
+        "budjetointi",
+        "hallinto"
+      ],
+      "effects": [
+        "ennakoitavampi finanssipolitiikka",
+        "menokurin vahvistuminen",
+        "hallitusohjelmien sitovuus kasvoi"
+      ],
+      "problem": "1990-luvun laman jälkeen julkisen talouden hallittavuus haluttiin varmistaa.",
+      "year_end": 2007,
+      "mechanism": "Valtion menot sidottiin hallituskausittaisiin kehyksiin.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 2003,
+      "long_effect": "Kehysmenettelystä tuli suomalaisen finanssipolitiikan keskeinen instituutio.",
+      "current_relevance": "Julkisen talouden sopeutus ja velkaantumisen hallinta."
     },
     {
       "id": "omistajaohjaus",
@@ -3681,31 +4202,6 @@
       "current_relevance": "Suomi.fi-tunnistus, pankkitunnukset ja digitaalisen henkilöllisyyden kehitys."
     },
     {
-      "id": "elakeuudistukset-2005",
-      "type": "sosiaalivakuutuksen uudistus",
-      "phase": "eläkeiän ja eliniän yhteensovittaminen",
-      "title": "Eläkeuudistukset ja työurien pidentäminen",
-      "domains": [
-        "eläkkeet",
-        "työurat",
-        "väestö",
-        "sosiaaliturva"
-      ],
-      "effects": [
-        "todellisen eläkeiän nousu",
-        "työurien pidentymisen paine",
-        "etuuksien automaattinen sopeutuminen"
-      ],
-      "problem": "Elinajan piteneminen uhkasi kasvattaa eläkeaikaa nopeammin kuin työurat ja rahoitus.",
-      "year_end": 2017,
-      "mechanism": "Joustava eläkeikä, elinaikakerroin ja myöhemmin asteittain nouseva alin eläkeikä kytkivät etuudet väestökehitykseen.",
-      "confidence": "vahva",
-      "importance": 5,
-      "year_start": 2005,
-      "long_effect": "Eläketurvan taso ja eläkeikä sidottiin aiempaa suoremmin elinajan kehitykseen.",
-      "current_relevance": "Työkyky, ikääntyneiden työllisyys ja eläkeiän jatkonousu ovat edelleen keskeisiä."
-    },
-    {
       "id": "sote-pitka-uudistus",
       "type": "institutionaalinen murros",
       "phase": "palvelurakenteen mittakaavan muutos",
@@ -3731,10 +4227,41 @@
       "current_relevance": "Rahoitus, integraatio, henkilöstöpula ja palveluverkko."
     },
     {
+      "id": "elakeuudistukset-2005",
+      "type": "sosiaalivakuutuksen uudistus",
+      "phase": "eläkeiän ja eliniän yhteensovittaminen",
+      "title": "Eläkeuudistukset ja työurien pidentäminen",
+      "domains": [
+        "eläkkeet",
+        "työurat",
+        "väestö",
+        "sosiaaliturva"
+      ],
+      "effects": [
+        "todellisen eläkeiän nousu",
+        "työurien pidentymisen paine",
+        "etuuksien automaattinen sopeutuminen"
+      ],
+      "problem": "Elinajan piteneminen uhkasi kasvattaa eläkeaikaa nopeammin kuin työurat ja rahoitus.",
+      "year_end": 2017,
+      "mechanism": "Joustava eläkeikä, elinaikakerroin ja myöhemmin asteittain nouseva alin eläkeikä kytkivät etuudet väestökehitykseen.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 2005,
+      "long_effect": "Eläketurvan taso ja eläkeikä sidottiin aiempaa suoremmin elinajan kehitykseen.",
+      "current_relevance": "Työkyky, ikääntyneiden työllisyys ja eläkeiän jatkonousu ovat edelleen keskeisiä."
+    },
+    {
       "id": "oppimistulosten-heikkeneminen-2006",
       "type": "koulutusjärjestelmän haaste",
       "phase": "aiemman koulutusedun asteittainen heikkeneminen",
       "title": "Oppimistulosten heikkeneminen",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/K12_osaamiskriisi.webp",
+          "caption": "Osaamiskriisi (Atlas K12)"
+        }
+      ],
       "domains": [
         "koulutus",
         "osaaminen",
@@ -3754,30 +4281,6 @@
       "year_start": 2006,
       "long_effect": "Suomen aiempi koulutusetu ei osoittautunut pysyväksi instituution ominaisuudeksi.",
       "current_relevance": "Oppimisen perustan vahvistaminen ratkaisee osaamistason, tuottavuuden ja osallisuuden kehitystä."
-    },
-    {
-      "id": "paras-hanke-2007",
-      "type": "hallinnollinen uudistus",
-      "phase": "kuntarakenteen vahvistaminen ennen sote-uudistusta",
-      "title": "PARAS-hanke ja kuntaliitosaalto",
-      "domains": [
-        "kunta",
-        "hallinto",
-        "palvelut"
-      ],
-      "effects": [
-        "kuntien määrän merkittävä väheneminen",
-        "yhteistoiminta-alueiden synty sosiaali- ja terveyspalveluihin",
-        "hallinnollisen valmiuden kasvu suurempien uudistusten pohjaksi"
-      ],
-      "problem": "Pienten kuntien heikkenevä kyky järjestää palveluja väestön ikääntyessä ja verotulopohjan supistuessa.",
-      "year_end": 2013,
-      "mechanism": "Valtio kannusti ja osin velvoitti kuntia liitoksiin sekä yhteistoiminta-alueiden muodostamiseen palvelujen turvaamiseksi.",
-      "confidence": "vahva",
-      "importance": 4,
-      "year_start": 2007,
-      "long_effect": "PARAS-hanke toimi välivaiheena kohti myöhempää sote- ja hyvinvointialueuudistusta, kun kuntapohjainen ratkaisu osoittautui riittämättömäksi.",
-      "current_relevance": "Hyvinvointialueiden edeltäjävaihe ja kuntien tehtäväkentän supistumisen jatkumo."
     },
     {
       "id": "alypuhelinmurros",
@@ -3805,56 +4308,28 @@
       "current_relevance": "Alustatalous, jatkuva tavoitettavuus ja mobiilipalvelujen keskeisyys arjessa."
     },
     {
-      "id": "nokia-rakennemuutos",
-      "type": "taloudellinen rakennemuutos",
-      "phase": "yhden veturialan jälkeinen sopeutuminen",
-      "title": "Nokia-vetoisen kasvumallin hiipuminen",
+      "id": "paras-hanke-2007",
+      "type": "hallinnollinen uudistus",
+      "phase": "kuntarakenteen vahvistaminen ennen sote-uudistusta",
+      "title": "PARAS-hanke ja kuntaliitosaalto",
       "domains": [
-        "teknologia",
-        "vienti",
-        "työ",
-        "alueet"
+        "kunta",
+        "hallinto",
+        "palvelut"
       ],
       "effects": [
-        "ICT-osaajien siirtyminen uusiin yrityksiin",
-        "viennin rakennemuutos",
-        "alueelliset työmarkkinashokit",
-        "startup-ekosysteemin kasvu"
+        "kuntien määrän merkittävä väheneminen",
+        "yhteistoiminta-alueiden synty sosiaali- ja terveyspalveluihin",
+        "hallinnollisen valmiuden kasvu suurempien uudistusten pohjaksi"
       ],
-      "problem": "Suuren vientiyrityksen ja elektroniikkaklusterin nopea supistuminen.",
-      "year_end": 2014,
-      "mechanism": "Tuotannon, tutkimuksen ja työpaikkojen rakennemuutos hajautti osaamista uusiin yrityksiin mutta heikensi vientipohjaa.",
+      "problem": "Pienten kuntien heikkenevä kyky järjestää palveluja väestön ikääntyessä ja verotulopohjan supistuessa.",
+      "year_end": 2013,
+      "mechanism": "Valtio kannusti ja osin velvoitti kuntia liitoksiin sekä yhteistoiminta-alueiden muodostamiseen palvelujen turvaamiseksi.",
       "confidence": "vahva",
       "importance": 4,
-      "year_start": 2008,
-      "long_effect": "Hajautuneempi mutta pienempi teknologiaekosysteemi.",
-      "current_relevance": "Tuottavuuskasvun ja vientiveturien etsintä."
-    },
-    {
-      "id": "finanssikriisi-2008",
-      "type": "talouskriisi",
-      "phase": "globaalin rahoitusriippuvuuden kriisi",
-      "title": "Globaali finanssikriisi",
-      "domains": [
-        "rahoitus",
-        "EU",
-        "julkinen talous",
-        "työ"
-      ],
-      "effects": [
-        "pankkisääntelyn kiristyminen",
-        "EU:n vakausmekanismit",
-        "pitkittynyt hidas kasvu",
-        "julkisen velan kasvu"
-      ],
-      "problem": "Pankkien riskit, rahoitusmarkkinoiden keskinäisriippuvuus ja maailmankaupan romahdus.",
-      "year_end": 2012,
-      "mechanism": "Kansainvälinen luottolama levisi vientiin, julkiseen talouteen ja euroalueen velkakriisiin.",
-      "confidence": "vahva",
-      "importance": 5,
-      "year_start": 2008,
-      "long_effect": "Eurooppalaisen pankki- ja kriisinhallinnan vahvistuminen.",
-      "current_relevance": "Pankkiunioni, finanssivalvonta ja julkisen talouden liikkumavara."
+      "year_start": 2007,
+      "long_effect": "PARAS-hanke toimi välivaiheena kohti myöhempää sote- ja hyvinvointialueuudistusta, kun kuntapohjainen ratkaisu osoittautui riittämättömäksi.",
+      "current_relevance": "Hyvinvointialueiden edeltäjävaihe ja kuntien tehtäväkentän supistumisen jatkumo."
     },
     {
       "id": "solidium",
@@ -3906,6 +4381,114 @@
       "current_relevance": "Hyvinvointialueiden henkilöstö, ehkäisevät palvelut ja palveluketjut ratkaisevat kriisin kehitystä."
     },
     {
+      "id": "nokia-rakennemuutos",
+      "type": "taloudellinen rakennemuutos",
+      "phase": "yhden veturialan jälkeinen sopeutuminen",
+      "title": "Nokia-vetoisen kasvumallin hiipuminen",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/K10_nokia.webp",
+          "caption": "Tietoyhteiskunnan murros ja Nokia-ilmiö (Atlas K10)"
+        }
+      ],
+      "domains": [
+        "teknologia",
+        "vienti",
+        "työ",
+        "alueet"
+      ],
+      "effects": [
+        "ICT-osaajien siirtyminen uusiin yrityksiin",
+        "viennin rakennemuutos",
+        "alueelliset työmarkkinashokit",
+        "startup-ekosysteemin kasvu"
+      ],
+      "problem": "Suuren vientiyrityksen ja elektroniikkaklusterin nopea supistuminen.",
+      "year_end": 2014,
+      "mechanism": "Tuotannon, tutkimuksen ja työpaikkojen rakennemuutos hajautti osaamista uusiin yrityksiin mutta heikensi vientipohjaa.",
+      "confidence": "vahva",
+      "importance": 4,
+      "year_start": 2008,
+      "long_effect": "Hajautuneempi mutta pienempi teknologiaekosysteemi.",
+      "current_relevance": "Tuottavuuskasvun ja vientiveturien etsintä."
+    },
+    {
+      "id": "finanssikriisi-2008",
+      "type": "talouskriisi",
+      "phase": "globaalin rahoitusriippuvuuden kriisi",
+      "title": "Globaali finanssikriisi",
+      "domains": [
+        "rahoitus",
+        "EU",
+        "julkinen talous",
+        "työ"
+      ],
+      "effects": [
+        "pankkisääntelyn kiristyminen",
+        "EU:n vakausmekanismit",
+        "pitkittynyt hidas kasvu",
+        "julkisen velan kasvu"
+      ],
+      "problem": "Pankkien riskit, rahoitusmarkkinoiden keskinäisriippuvuus ja maailmankaupan romahdus.",
+      "year_end": 2012,
+      "mechanism": "Kansainvälinen luottolama levisi vientiin, julkiseen talouteen ja euroalueen velkakriisiin.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 2008,
+      "long_effect": "Eurooppalaisen pankki- ja kriisinhallinnan vahvistuminen.",
+      "current_relevance": "Pankkiunioni, finanssivalvonta ja julkisen talouden liikkumavara."
+    },
+    {
+      "id": "eurokriisi-vakausmekanismit-2010",
+      "type": "talous- ja integraatiopolitiikan kriisi",
+      "phase": "yhteisen valuutan kriisinhallinnan rakentaminen",
+      "title": "Eurokriisi ja yhteiset vakausmekanismit",
+      "domains": [
+        "euro",
+        "julkinen talous",
+        "EU",
+        "rahoitus"
+      ],
+      "effects": [
+        "talouskurin kiristyminen",
+        "jäsenmaiden yhteisvastuun kasvu",
+        "pankkivalvonnan eurooppalaistuminen"
+      ],
+      "problem": "Valtioiden velka- ja pankkikriisit paljastivat, ettei yhteisellä valuutalla ollut riittäviä yhteisiä kriisimekanismeja.",
+      "year_end": 2015,
+      "mechanism": "Rahoitustukiohjelmat, vakausmekanismi, finanssipoliittinen ohjaus ja pankkiunioni vahvistettiin.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 2010,
+      "long_effect": "Rahaliitto muuttui valuuttajärjestelmästä myös yhteiseksi kriisinhallinta- ja valvontarakenteeksi.",
+      "current_relevance": "Julkisen velan, pankkien ja jäsenmaiden vastuiden jakaminen on edelleen euroalueen ydinkysymys."
+    },
+    {
+      "id": "alustatalous",
+      "type": "taloudellinen rakennemuutos",
+      "phase": "työn ja palvelujen alustoituminen",
+      "title": "Alustatalouden nousu",
+      "domains": [
+        "työ",
+        "talous",
+        "digitalisaatio"
+      ],
+      "effects": [
+        "keikkatyön kasvu",
+        "Wolt- ja Uber-tyyppiset palvelut",
+        "työlainsäädännön uudet tulkintatarpeet",
+        "alustatalouden sääntely"
+      ],
+      "problem": "Digitalisaatio mahdollisti palvelujen välittämisen suoraan alustojen kautta.",
+      "year_end": 2020,
+      "mechanism": "Digitaaliset alustat muuttivat työn organisointia, kilpailua ja palvelujen tuotantoa.",
+      "confidence": "vahva",
+      "importance": 4,
+      "year_start": 2010,
+      "long_effect": "Työsuhteiden ja yrittäjyyden rajat hämärtyivät.",
+      "current_relevance": "Työmarkkinoiden murros, tekoäly ja digitaalinen palvelutalous."
+    },
+    {
       "id": "historiallisen-matala-syntyvyys-2010",
       "type": "väestöllinen murros",
       "phase": "pitkittynyt matalan syntyvyyden kausi",
@@ -3937,56 +4520,6 @@
       "year_start": 2010,
       "long_effect": "Matalasta syntyvyydestä tuli yksi Suomen keskeisistä pitkän aikavälin rakennemuutoksista.",
       "current_relevance": "Syntyvyys vaikuttaa lähes kaikkiin hyvinvointivaltion rahoitukseen ja palvelurakenteeseen liittyviin kysymyksiin."
-    },
-    {
-      "id": "alustatalous",
-      "type": "taloudellinen rakennemuutos",
-      "phase": "työn ja palvelujen alustoituminen",
-      "title": "Alustatalouden nousu",
-      "domains": [
-        "työ",
-        "talous",
-        "digitalisaatio"
-      ],
-      "effects": [
-        "keikkatyön kasvu",
-        "Wolt- ja Uber-tyyppiset palvelut",
-        "työlainsäädännön uudet tulkintatarpeet",
-        "alustatalouden sääntely"
-      ],
-      "problem": "Digitalisaatio mahdollisti palvelujen välittämisen suoraan alustojen kautta.",
-      "year_end": 2020,
-      "mechanism": "Digitaaliset alustat muuttivat työn organisointia, kilpailua ja palvelujen tuotantoa.",
-      "confidence": "vahva",
-      "importance": 4,
-      "year_start": 2010,
-      "long_effect": "Työsuhteiden ja yrittäjyyden rajat hämärtyivät.",
-      "current_relevance": "Työmarkkinoiden murros, tekoäly ja digitaalinen palvelutalous."
-    },
-    {
-      "id": "eurokriisi-vakausmekanismit-2010",
-      "type": "talous- ja integraatiopolitiikan kriisi",
-      "phase": "yhteisen valuutan kriisinhallinnan rakentaminen",
-      "title": "Eurokriisi ja yhteiset vakausmekanismit",
-      "domains": [
-        "euro",
-        "julkinen talous",
-        "EU",
-        "rahoitus"
-      ],
-      "effects": [
-        "talouskurin kiristyminen",
-        "jäsenmaiden yhteisvastuun kasvu",
-        "pankkivalvonnan eurooppalaistuminen"
-      ],
-      "problem": "Valtioiden velka- ja pankkikriisit paljastivat, ettei yhteisellä valuutalla ollut riittäviä yhteisiä kriisimekanismeja.",
-      "year_end": 2015,
-      "mechanism": "Rahoitustukiohjelmat, vakausmekanismi, finanssipoliittinen ohjaus ja pankkiunioni vahvistettiin.",
-      "confidence": "vahva",
-      "importance": 5,
-      "year_start": 2010,
-      "long_effect": "Rahaliitto muuttui valuuttajärjestelmästä myös yhteiseksi kriisinhallinta- ja valvontarakenteeksi.",
-      "current_relevance": "Julkisen velan, pankkien ja jäsenmaiden vastuiden jakaminen on edelleen euroalueen ydinkysymys."
     },
     {
       "id": "nollakorkojen-talous-2012",
@@ -4067,30 +4600,6 @@
       "current_relevance": "Talouspaineissa ehkäisevän työn suojaaminen ratkaisee, väheneekö korjaavien palvelujen tarve."
     },
     {
-      "id": "koulutusleikkaukset",
-      "type": "julkisen talouden sopeutus",
-      "phase": "julkisen talouden tasapainotus",
-      "title": "Koulutusleikkaukset",
-      "domains": [
-        "koulutus",
-        "talous"
-      ],
-      "effects": [
-        "korkeakoulujen säästöohjelmat",
-        "henkilöstövähennykset",
-        "tutkimusrahoituksen niukkeneminen",
-        "keskustelu osaamispohjan tulevaisuudesta"
-      ],
-      "problem": "Julkisen talouden kestävyysvaje.",
-      "year_end": 2019,
-      "mechanism": "Valtiontalouden sopeutus kohdistui myös koulutus- ja tutkimusrahoitukseen.",
-      "confidence": "vahva",
-      "importance": 4,
-      "year_start": 2015,
-      "long_effect": "Koulutusrahoituksen tasosta tuli pitkäkestoinen yhteiskuntapoliittinen kysymys.",
-      "current_relevance": "Osaajapula, tuottavuus ja TKI-panostukset."
-    },
-    {
       "id": "pakolaiskriisi-2015",
       "type": "väestö- ja turvallisuuskriisi",
       "phase": "muuttoliikkeen kiihtyminen",
@@ -4114,6 +4623,61 @@
       "year_start": 2015,
       "long_effect": "Maahanmuutto nousi yhdeksi suomalaisen politiikan keskeisistä jakolinjoista.",
       "current_relevance": "Työperäinen maahanmuutto, kotoutuminen ja turvallisuuskeskustelu."
+    },
+    {
+      "id": "koulutusleikkaukset",
+      "type": "julkisen talouden sopeutus",
+      "phase": "julkisen talouden tasapainotus",
+      "title": "Koulutusleikkaukset",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/K13_koulutusleikkaukset.webp",
+          "caption": "Koulutusinvestoinnit, leikkaukset ja sopeutumiskyky 1990-2025 (Atlas K13)"
+        }
+      ],
+      "domains": [
+        "koulutus",
+        "talous"
+      ],
+      "effects": [
+        "korkeakoulujen säästöohjelmat",
+        "henkilöstövähennykset",
+        "tutkimusrahoituksen niukkeneminen",
+        "keskustelu osaamispohjan tulevaisuudesta"
+      ],
+      "problem": "Julkisen talouden kestävyysvaje.",
+      "year_end": 2019,
+      "mechanism": "Valtiontalouden sopeutus kohdistui myös koulutus- ja tutkimusrahoitukseen.",
+      "confidence": "vahva",
+      "importance": 4,
+      "year_start": 2015,
+      "long_effect": "Koulutusrahoituksen tasosta tuli pitkäkestoinen yhteiskuntapoliittinen kysymys.",
+      "current_relevance": "Osaajapula, tuottavuus ja TKI-panostukset."
+    },
+    {
+      "id": "metsien-ilmasto-luontoristiriita-2015",
+      "type": "ympäristö- ja talouspolitiikan murros",
+      "phase": "metsäpolitiikan tavoitteiden eriytyminen",
+      "title": "Metsien ilmasto-, luonto- ja talousarvojen yhteentörmäys",
+      "domains": [
+        "metsätalous",
+        "ilmasto",
+        "luonto",
+        "vienti"
+      ],
+      "effects": [
+        "kiistat hakkuutasoista",
+        "hiilinielujen politisoituminen",
+        "suojelun ja talouskäytön yhteensovittamisen paine"
+      ],
+      "problem": "Metsien hakkuut, hiilinielut, biodiversiteetti ja teollisuuden raaka-ainetarve eivät enää mahdu samaan tavoitteeseen ilman ristiriitoja.",
+      "year_end": 2035,
+      "mechanism": "EU-sääntely, ilmastotavoitteet, luontokadon torjunta ja teollisuuspolitiikka kohdistavat metsiin samanaikaisia vaatimuksia.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 2015,
+      "long_effect": "Metsistä tuli kansallisen vientitalouden lisäksi ilmasto- ja luontopolitiikan keskeinen rajapinta.",
+      "current_relevance": "Ratkaisee osaltaan Suomen ilmastotavoitteiden, metsäteollisuuden ja maaseudun tulonmuodostuksen yhteensovittamista."
     },
     {
       "id": "ecb-quantitative-easing",
@@ -4144,56 +4708,6 @@
       "current_relevance": "Korkojen nousu 2022 jälkeen paljasti, kuinka voimakkaasti talous oli sopeutunut lähes nollakorkoihin."
     },
     {
-      "id": "metsien-ilmasto-luontoristiriita-2015",
-      "type": "ympäristö- ja talouspolitiikan murros",
-      "phase": "metsäpolitiikan tavoitteiden eriytyminen",
-      "title": "Metsien ilmasto-, luonto- ja talousarvojen yhteentörmäys",
-      "domains": [
-        "metsätalous",
-        "ilmasto",
-        "luonto",
-        "vienti"
-      ],
-      "effects": [
-        "kiistat hakkuutasoista",
-        "hiilinielujen politisoituminen",
-        "suojelun ja talouskäytön yhteensovittamisen paine"
-      ],
-      "problem": "Metsien hakkuut, hiilinielut, biodiversiteetti ja teollisuuden raaka-ainetarve eivät enää mahdu samaan tavoitteeseen ilman ristiriitoja.",
-      "year_end": 2035,
-      "mechanism": "EU-sääntely, ilmastotavoitteet, luontokadon torjunta ja teollisuuspolitiikka kohdistavat metsiin samanaikaisia vaatimuksia.",
-      "confidence": "vahva",
-      "importance": 5,
-      "year_start": 2015,
-      "long_effect": "Metsistä tuli kansallisen vientitalouden lisäksi ilmasto- ja luontopolitiikan keskeinen rajapinta.",
-      "current_relevance": "Ratkaisee osaltaan Suomen ilmastotavoitteiden, metsäteollisuuden ja maaseudun tulonmuodostuksen yhteensovittamista."
-    },
-    {
-      "id": "kiky-2016",
-      "type": "työmarkkinauudistus",
-      "phase": "kilpailukyvyn vahvistaminen",
-      "title": "Kilpailukykysopimus (Kiky)",
-      "domains": [
-        "työ",
-        "talous",
-        "teollisuus"
-      ],
-      "effects": [
-        "työajan pidentyminen",
-        "julkisen sektorin lomarahojen leikkaukset",
-        "työnantajamaksujen muutokset",
-        "vientiteollisuuden kustannuskilpailukyvyn vahvistuminen"
-      ],
-      "problem": "Suomen kustannuskilpailukyvyn heikkeneminen 2010-luvun alussa.",
-      "year_end": 2019,
-      "mechanism": "Työmarkkinajärjestöt sopivat työajan pidentämisestä ja työvoimakustannusten alentamisesta.",
-      "confidence": "vahva",
-      "importance": 4,
-      "year_start": 2016,
-      "long_effect": "Kiky jäi esimerkiksi keskitetystä työmarkkinaratkaisusta, jolla pyrittiin vaikuttamaan kansantalouden kilpailukykyyn.",
-      "current_relevance": "Työmarkkinamallien ja kilpailukyvyn arviointi."
-    },
-    {
       "id": "tyomarkkinamallin-hajautuminen-2016",
       "type": "työmarkkinainstituutioiden murros",
       "phase": "keskitetyistä ratkaisuista ala- ja yrityskohtaiseen neuvotteluun",
@@ -4219,53 +4733,29 @@
       "current_relevance": "Palkkamallin hyväksyttävyys ja työrauhan sääntely ratkaisevat järjestelmän vakautta."
     },
     {
-      "id": "toimeentulotuki-kelaan-2017",
-      "type": "sosiaaliturvan hallinnollinen uudistus",
-      "phase": "viimesijaisen perustuen valtakunnallistaminen",
-      "title": "Perustoimeentulotuen siirto Kelalle",
+      "id": "kiky-2016",
+      "type": "työmarkkinauudistus",
+      "phase": "kilpailukyvyn vahvistaminen",
+      "title": "Kilpailukykysopimus (Kiky)",
       "domains": [
-        "sosiaaliturva",
-        "Kela",
-        "kunnat",
-        "toimeentulo"
+        "työ",
+        "talous",
+        "teollisuus"
       ],
       "effects": [
-        "yhdenmukaisemmat ratkaisut",
-        "digitaalisen asioinnin kasvu",
-        "sosiaalityön ja etuuskäsittelyn rajapintaongelmat"
+        "työajan pidentyminen",
+        "julkisen sektorin lomarahojen leikkaukset",
+        "työnantajamaksujen muutokset",
+        "vientiteollisuuden kustannuskilpailukyvyn vahvistuminen"
       ],
-      "problem": "Kuntakohtaiset käytännöt ja asioinnin hajanaisuus tuottivat eroja tuen saatavuuteen.",
-      "year_end": 2017,
-      "mechanism": "Perustoimeentulotuen myöntäminen keskitettiin Kelalle, kun täydentävä ja ehkäisevä tuki jäi kunnille.",
-      "confidence": "vahva",
-      "importance": 5,
-      "year_start": 2017,
-      "long_effect": "Rahallinen perustuki ja yksilöllinen sosiaalityö erotettiin eri organisaatioihin.",
-      "current_relevance": "Hyvinvointialueiden, Kelan ja työllisyyspalvelujen yhteistyö ratkaisee asiakkaiden palveluketjun."
-    },
-    {
-      "id": "tasa-arvoinen-avioliittolaki-2017",
-      "type": "oikeudellinen uudistus",
-      "phase": "perheoikeuden yhdenvertaistumisen jatkovaihe",
-      "title": "Tasa-arvoinen avioliittolaki",
-      "domains": [
-        "perhe",
-        "oikeudet",
-        "yhdenvertaisuus"
-      ],
-      "effects": [
-        "samaa sukupuolta olevien parien avioliitto-oikeus",
-        "adoptio-oikeuksien yhdenmukaistuminen",
-        "rekisteröidyn parisuhteen instituution väistyminen uusilta pareilta"
-      ],
-      "problem": "Samaa sukupuolta olevien parien oikeudellinen eriarvoisuus rekisteröidyn parisuhteen ja avioliiton välillä.",
-      "year_end": 2017,
-      "mechanism": "Avioliittolakia muutettiin sukupuolineutraaliksi kansalaisaloitteen pohjalta.",
+      "problem": "Suomen kustannuskilpailukyvyn heikkeneminen 2010-luvun alussa.",
+      "year_end": 2019,
+      "mechanism": "Työmarkkinajärjestöt sopivat työajan pidentämisestä ja työvoimakustannusten alentamisesta.",
       "confidence": "vahva",
       "importance": 4,
-      "year_start": 2017,
-      "long_effect": "Perheoikeuden yhdenvertaisuuskehityksen looginen jatko avioliittolaki 1929 ja isyyslaki 1975 -uudistuksille.",
-      "current_relevance": "Perheoikeuden yhdenvertaisuus ja translain uudistuksen konteksti."
+      "year_start": 2016,
+      "long_effect": "Kiky jäi esimerkiksi keskitetystä työmarkkinaratkaisusta, jolla pyrittiin vaikuttamaan kansantalouden kilpailukykyyn.",
+      "current_relevance": "Työmarkkinamallien ja kilpailukyvyn arviointi."
     },
     {
       "id": "perustulokokeilu-2017",
@@ -4344,29 +4834,53 @@
       "current_relevance": "Hedelmöityshoidot, monipaikkainen vanhemmuus ja perhemuotojen muutos jatkavat oikeudellista kehitystä."
     },
     {
-      "id": "eu-digitaalinen-saantelymalli-2018",
-      "type": "digitaalisen talouden sääntelymurros",
-      "phase": "yksittäisestä tietosuojasta digitaalisten markkinoiden kokonaisohjaukseen",
-      "title": "EU:n digitaalinen sääntelymalli",
+      "id": "toimeentulotuki-kelaan-2017",
+      "type": "sosiaaliturvan hallinnollinen uudistus",
+      "phase": "viimesijaisen perustuen valtakunnallistaminen",
+      "title": "Perustoimeentulotuen siirto Kelalle",
       "domains": [
-        "EU",
-        "data",
-        "alustat",
-        "teknologia"
+        "sosiaaliturva",
+        "Kela",
+        "kunnat",
+        "toimeentulo"
       ],
       "effects": [
-        "alustojen vastuiden kasvu",
-        "datan käyttöoikeuksien vahvistuminen",
-        "yritysten sääntelyvelvoitteiden lisääntyminen"
+        "yhdenmukaisemmat ratkaisut",
+        "digitaalisen asioinnin kasvu",
+        "sosiaalityön ja etuuskäsittelyn rajapintaongelmat"
       ],
-      "problem": "Globaalit alustat, datan keskittyminen ja algoritminen valta ylittivät kansallisen sääntelyn kyvyn.",
-      "year_end": 2030,
-      "mechanism": "Tietosuoja-, digipalvelu-, digimarkkina-, data- ja kyberturvasääntely koottiin laajaksi eurooppalaiseksi kehykseksi.",
+      "problem": "Kuntakohtaiset käytännöt ja asioinnin hajanaisuus tuottivat eroja tuen saatavuuteen.",
+      "year_end": 2017,
+      "mechanism": "Perustoimeentulotuen myöntäminen keskitettiin Kelalle, kun täydentävä ja ehkäisevä tuki jäi kunnille.",
       "confidence": "vahva",
       "importance": 5,
-      "year_start": 2018,
-      "long_effect": "EU asemoi sääntelykyvyn digitaalisen talouden strategiseksi voimavaraksi.",
-      "current_relevance": "Sääntelyn toimeenpano ja kilpailukykyvaikutukset ratkaisevat mallin globaalin merkityksen."
+      "year_start": 2017,
+      "long_effect": "Rahallinen perustuki ja yksilöllinen sosiaalityö erotettiin eri organisaatioihin.",
+      "current_relevance": "Hyvinvointialueiden, Kelan ja työllisyyspalvelujen yhteistyö ratkaisee asiakkaiden palveluketjun."
+    },
+    {
+      "id": "tasa-arvoinen-avioliittolaki-2017",
+      "type": "oikeudellinen uudistus",
+      "phase": "perheoikeuden yhdenvertaistumisen jatkovaihe",
+      "title": "Tasa-arvoinen avioliittolaki",
+      "domains": [
+        "perhe",
+        "oikeudet",
+        "yhdenvertaisuus"
+      ],
+      "effects": [
+        "samaa sukupuolta olevien parien avioliitto-oikeus",
+        "adoptio-oikeuksien yhdenmukaistuminen",
+        "rekisteröidyn parisuhteen instituution väistyminen uusilta pareilta"
+      ],
+      "problem": "Samaa sukupuolta olevien parien oikeudellinen eriarvoisuus rekisteröidyn parisuhteen ja avioliiton välillä.",
+      "year_end": 2017,
+      "mechanism": "Avioliittolakia muutettiin sukupuolineutraaliksi kansalaisaloitteen pohjalta.",
+      "confidence": "vahva",
+      "importance": 4,
+      "year_start": 2017,
+      "long_effect": "Perheoikeuden yhdenvertaisuuskehityksen looginen jatko avioliittolaki 1929 ja isyyslaki 1975 -uudistuksille.",
+      "current_relevance": "Perheoikeuden yhdenvertaisuus ja translain uudistuksen konteksti."
     },
     {
       "id": "tietosuoja-asetus-2018",
@@ -4395,6 +4909,31 @@
       "current_relevance": "Tekoälyasetus, datan hallinta ja digitaalisten palvelujen sääntely."
     },
     {
+      "id": "eu-digitaalinen-saantelymalli-2018",
+      "type": "digitaalisen talouden sääntelymurros",
+      "phase": "yksittäisestä tietosuojasta digitaalisten markkinoiden kokonaisohjaukseen",
+      "title": "EU:n digitaalinen sääntelymalli",
+      "domains": [
+        "EU",
+        "data",
+        "alustat",
+        "teknologia"
+      ],
+      "effects": [
+        "alustojen vastuiden kasvu",
+        "datan käyttöoikeuksien vahvistuminen",
+        "yritysten sääntelyvelvoitteiden lisääntyminen"
+      ],
+      "problem": "Globaalit alustat, datan keskittyminen ja algoritminen valta ylittivät kansallisen sääntelyn kyvyn.",
+      "year_end": 2030,
+      "mechanism": "Tietosuoja-, digipalvelu-, digimarkkina-, data- ja kyberturvasääntely koottiin laajaksi eurooppalaiseksi kehykseksi.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 2018,
+      "long_effect": "EU asemoi sääntelykyvyn digitaalisen talouden strategiseksi voimavaraksi.",
+      "current_relevance": "Sääntelyn toimeenpano ja kilpailukykyvaikutukset ratkaisevat mallin globaalin merkityksen."
+    },
+    {
       "id": "ammatillisen-koulutuksen-reformi-2018",
       "type": "koulutus- ja ohjausjärjestelmän murros",
       "phase": "oppilaitoskeskeisyydestä osaamisen näyttämiseen",
@@ -4418,31 +4957,6 @@
       "year_start": 2018,
       "long_effect": "Ammatillisen koulutuksen onnistuminen sidottiin aiempaa vahvemmin työelämäyhteyksiin ja opiskelijan itseohjautuvuuteen.",
       "current_relevance": "Reformin vaikutukset näkyvät osaamistason, keskeyttämisen ja työelämävalmiuksien keskustelussa."
-    },
-    {
-      "id": "sosiaaliturvauudistus-2019",
-      "type": "sosiaaliturvan rakenteellinen uudistus",
-      "phase": "etuuskohtaisesta järjestelmästä yhteensopivampaan turvaan",
-      "title": "Sosiaaliturvauudistus",
-      "domains": [
-        "sosiaaliturva",
-        "työ",
-        "toimeentulo",
-        "hallinto"
-      ],
-      "effects": [
-        "reaaliaikaisemman tulotiedon käyttö",
-        "etuuksien yhdistämisen valmistelu",
-        "perusturvan ja palvelujen suhteen uudelleenarviointi"
-      ],
-      "problem": "Sosiaaliturvan pirstaleisuus, kannustinloukut ja elämäntilanteiden muutos vaikeuttivat järjestelmän ymmärrettävyyttä.",
-      "year_end": 2035,
-      "mechanism": "Etuuksia, palveluja ja tulorekisteritietoa pyritään yhdistämään yksinkertaisemmaksi ja ennakoitavammaksi kokonaisuudeksi.",
-      "confidence": "vahva",
-      "importance": 5,
-      "year_start": 2019,
-      "long_effect": "Sosiaaliturvan uudistamisesta tuli yhden lain sijasta pitkä järjestelmämuutos.",
-      "current_relevance": "Uudistuksen ratkaiseva kysymys on, yksinkertaistuuko asiakkaan arki vai vain hallinnollinen rakenne."
     },
     {
       "id": "osaajapula-tki-palautus-2019",
@@ -4470,10 +4984,41 @@
       "current_relevance": "Rahoituksen pysyvyys ja osaajien saatavuus ratkaisevat talouden uudistumista."
     },
     {
+      "id": "sosiaaliturvauudistus-2019",
+      "type": "sosiaaliturvan rakenteellinen uudistus",
+      "phase": "etuuskohtaisesta järjestelmästä yhteensopivampaan turvaan",
+      "title": "Sosiaaliturvauudistus",
+      "domains": [
+        "sosiaaliturva",
+        "työ",
+        "toimeentulo",
+        "hallinto"
+      ],
+      "effects": [
+        "reaaliaikaisemman tulotiedon käyttö",
+        "etuuksien yhdistämisen valmistelu",
+        "perusturvan ja palvelujen suhteen uudelleenarviointi"
+      ],
+      "problem": "Sosiaaliturvan pirstaleisuus, kannustinloukut ja elämäntilanteiden muutos vaikeuttivat järjestelmän ymmärrettävyyttä.",
+      "year_end": 2035,
+      "mechanism": "Etuuksia, palveluja ja tulorekisteritietoa pyritään yhdistämään yksinkertaisemmaksi ja ennakoitavammaksi kokonaisuudeksi.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 2019,
+      "long_effect": "Sosiaaliturvan uudistamisesta tuli yhden lain sijasta pitkä järjestelmämuutos.",
+      "current_relevance": "Uudistuksen ratkaiseva kysymys on, yksinkertaistuuko asiakkaan arki vai vain hallinnollinen rakenne."
+    },
+    {
       "id": "covid-19",
       "type": "terveys- ja toimintatapamurros",
       "phase": "kontaktiriippuvan yhteiskunnan pysäytys",
       "title": "Covid-19-pandemia",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/K15_koronapandemia.webp",
+          "caption": "Koronapandemia ja yhteiskunnan sopeutumiskyky (Atlas K15)"
+        }
+      ],
       "domains": [
         "terveys",
         "työ",
@@ -4496,10 +5041,42 @@
       "current_relevance": "Varautuminen, hoitovelka, työelämän tilankäyttö ja digitaalinen saavutettavuus."
     },
     {
+      "id": "ukrainan-sota-energiakriisi",
+      "type": "geopoliittinen kriisi",
+      "phase": "turvallisuusympäristön murtuminen",
+      "title": "Venäjän hyökkäyssota ja energiakriisi",
+      "domains": [
+        "turvallisuus",
+        "energia",
+        "talous",
+        "ulkopolitiikka"
+      ],
+      "effects": [
+        "Venäjän-kaupan romahdus",
+        "energialähteiden nopea hajauttaminen",
+        "puolustusmenojen kasvu",
+        "Nato-jäsenyyden toteutuminen"
+      ],
+      "problem": "Euroopan turvallisuusjärjestyksen horjuminen ja Venäjä-riippuvuuksien paljastuminen.",
+      "year_end": 2026,
+      "mechanism": "Sota katkaisi talous- ja energiasuhteita, nosti hintoja ja muutti turvallisuuspoliittisia valintoja.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 2022,
+      "long_effect": "Suomen ulko-, turvallisuus- ja energiapolitiikan pitkä suunnanmuutos.",
+      "current_relevance": "Liittolaisuus, itärajan asema, huoltovarmuus ja puolustusteollisuus."
+    },
+    {
       "id": "nato-jasenyys",
       "type": "turvallisuuspoliittinen murros",
       "phase": "sotilaallisen liittoutumattomuuden päättyminen",
       "title": "Nato-jäsenyys",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/S05_nato.webp",
+          "caption": "Nato-jäsenyys: sopeutuminen muuttuneeseen turvallisuusympäristöön (Atlas S05)"
+        }
+      ],
       "domains": [
         "turvallisuus",
         "ulkopolitiikka",
@@ -4518,32 +5095,6 @@
       "year_start": 2022,
       "long_effect": "Suomen turvallisuusratkaisun perustavanlaatuinen uudelleenmäärittely.",
       "current_relevance": "Pelote, puolustusmenot, pohjoismainen yhteistyö ja liittolaisvastuut."
-    },
-    {
-      "id": "tekoaly-murros",
-      "type": "teknologinen murros",
-      "phase": "tietotyön automatisoituminen",
-      "title": "Generatiivisen tekoälyn läpimurto",
-      "domains": [
-        "työ",
-        "koulutus",
-        "hallinto",
-        "tieto"
-      ],
-      "effects": [
-        "työtehtävien uudelleenjako",
-        "osaamisvaatimusten muutos",
-        "julkisten palvelujen automaatio",
-        "luotettavuus- ja vastuuongelmat"
-      ],
-      "problem": "Tietotyön tuottavuuspaine, työvoimapula ja tiedon käsittelyn kasvu.",
-      "year_end": 2035,
-      "mechanism": "Kielimallit ja muut tekoälyjärjestelmät siirtävät osan luonnostelusta, analyysistä ja päätöksenteon tuesta koneille.",
-      "confidence": "kehittyvä",
-      "importance": 5,
-      "year_start": 2022,
-      "long_effect": "Työn, koulutuksen ja hallinnon toimintalogiikan mahdollinen muutos.",
-      "current_relevance": "Sääntely, tietosuoja, osaaminen, tuottavuus ja ihmisen rooli päätöksissä."
     },
     {
       "id": "kotitalouksien-velka-korkoshokki-2022",
@@ -4578,86 +5129,48 @@
       "current_relevance": "Korkosuojaus, laina-ajat ja asumisen hintataso määrittävät tulevaa haavoittuvuutta."
     },
     {
-      "id": "ukrainan-sota-energiakriisi",
-      "type": "geopoliittinen kriisi",
-      "phase": "turvallisuusympäristön murtuminen",
-      "title": "Venäjän hyökkäyssota ja energiakriisi",
+      "id": "tekoaly-murros",
+      "type": "teknologinen murros",
+      "phase": "tietotyön automatisoituminen",
+      "title": "Generatiivisen tekoälyn läpimurto",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/R08_tekoaly.webp",
+          "caption": "Tekoäly muuttaa Suomen toimintaympäristöä 1950-2035 (Atlas R08)"
+        }
+      ],
       "domains": [
-        "turvallisuus",
-        "energia",
-        "talous",
-        "ulkopolitiikka"
+        "työ",
+        "koulutus",
+        "hallinto",
+        "tieto"
       ],
       "effects": [
-        "Venäjän-kaupan romahdus",
-        "energialähteiden nopea hajauttaminen",
-        "puolustusmenojen kasvu",
-        "Nato-jäsenyyden toteutuminen"
+        "työtehtävien uudelleenjako",
+        "osaamisvaatimusten muutos",
+        "julkisten palvelujen automaatio",
+        "luotettavuus- ja vastuuongelmat"
       ],
-      "problem": "Euroopan turvallisuusjärjestyksen horjuminen ja Venäjä-riippuvuuksien paljastuminen.",
-      "year_end": 2026,
-      "mechanism": "Sota katkaisi talous- ja energiasuhteita, nosti hintoja ja muutti turvallisuuspoliittisia valintoja.",
-      "confidence": "vahva",
+      "problem": "Tietotyön tuottavuuspaine, työvoimapula ja tiedon käsittelyn kasvu.",
+      "year_end": 2035,
+      "mechanism": "Kielimallit ja muut tekoälyjärjestelmät siirtävät osan luonnostelusta, analyysistä ja päätöksenteon tuesta koneille.",
+      "confidence": "kehittyvä",
       "importance": 5,
       "year_start": 2022,
-      "long_effect": "Suomen ulko-, turvallisuus- ja energiapolitiikan pitkä suunnanmuutos.",
-      "current_relevance": "Liittolaisuus, itärajan asema, huoltovarmuus ja puolustusteollisuus."
-    },
-    {
-      "id": "tekoalyn-hallinta-2023",
-      "type": "organisaatio- ja sääntelymurros",
-      "phase": "kokeiluista hallittuun käyttöön",
-      "title": "Tekoälyn hallinta ja vastuurakenteet",
-      "domains": [
-        "tekoäly",
-        "hallinto",
-        "vastuu",
-        "data"
-      ],
-      "effects": [
-        "tekoälypolitiikkojen yleistyminen",
-        "mallien arviointi",
-        "vastuuhenkilöiden ja valvonnan synty"
-      ],
-      "problem": "Tekoälyn nopea käyttöönotto synnytti epäselvyyttä vastuista, datasta, laadusta ja päätösten valvonnasta.",
-      "year_end": 2035,
-      "mechanism": "Organisaatiot rakentavat käyttösääntöjä, riskiluokituksia, auditointeja ja ihmisen valvontaa.",
-      "confidence": "vahva",
-      "importance": 5,
-      "year_start": 2023,
-      "long_effect": "Tekoälystä tuli tietoteknisen työkalun lisäksi johdettava institutionaalinen riski.",
-      "current_relevance": "Luottamus tekoälyyn riippuu läpinäkyvyydestä, jäljitettävyydestä ja vastuun todellisesta toteutumisesta."
-    },
-    {
-      "id": "tekoaly-tyon-tehtavarakenteessa-2023",
-      "type": "työ- ja teknologiamurros",
-      "phase": "ammattien sijasta tehtävien automatisoituminen ja täydentyminen",
-      "title": "Työn tehtävärakenteen muutos tekoälyn seurauksena",
-      "domains": [
-        "tekoäly",
-        "työ",
-        "osaaminen",
-        "tuottavuus"
-      ],
-      "effects": [
-        "rutiininomaisen tietotyön automatisoituminen",
-        "uudet tarkastus- ja ohjaustehtävät",
-        "osaamisvaatimusten nopea muutos"
-      ],
-      "problem": "Generatiivinen tekoäly kykenee tuottamaan tekstiä, analyysiä ja ohjelmakoodia tehtävissä, joita pidettiin aiemmin vaikeasti automatisoitavina.",
-      "year_end": 2035,
-      "mechanism": "Tekoäly siirtää työnjakoa ihmisen ja järjestelmän välillä tehtävä kerrallaan.",
-      "confidence": "vahva",
-      "importance": 5,
-      "year_start": 2023,
-      "long_effect": "Teknologinen murros kohdistuu kokonaisia ammatteja hienojakoisemmin työn sisäiseen rakenteeseen.",
-      "current_relevance": "Tuottavuushyödyt, työn laatu ja tulonjako riippuvat siitä, miten tehtävät ja vastuut järjestetään uudelleen."
+      "long_effect": "Työn, koulutuksen ja hallinnon toimintalogiikan mahdollinen muutos.",
+      "current_relevance": "Sääntely, tietosuoja, osaaminen, tuottavuus ja ihmisen rooli päätöksissä."
     },
     {
       "id": "hyvinvointialueet-2023",
       "type": "hallinnollinen uudistus",
       "phase": "kunnista alueelliseen järjestämiseen",
       "title": "Hyvinvointialueiden käynnistyminen",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/K07_hyvinvointialueet.webp",
+          "caption": "Hyvinvointialueet 2023- (Atlas K07)"
+        }
+      ],
       "domains": [
         "terveys",
         "sosiaalihuolto",
@@ -4836,6 +5349,56 @@
       "current_relevance": "Keskittämisen onnistuminen riippuu saavutettavuudesta, digikyvykkyydestä ja kiireettömän hoidon toimivuudesta."
     },
     {
+      "id": "tekoalyn-hallinta-2023",
+      "type": "organisaatio- ja sääntelymurros",
+      "phase": "kokeiluista hallittuun käyttöön",
+      "title": "Tekoälyn hallinta ja vastuurakenteet",
+      "domains": [
+        "tekoäly",
+        "hallinto",
+        "vastuu",
+        "data"
+      ],
+      "effects": [
+        "tekoälypolitiikkojen yleistyminen",
+        "mallien arviointi",
+        "vastuuhenkilöiden ja valvonnan synty"
+      ],
+      "problem": "Tekoälyn nopea käyttöönotto synnytti epäselvyyttä vastuista, datasta, laadusta ja päätösten valvonnasta.",
+      "year_end": 2035,
+      "mechanism": "Organisaatiot rakentavat käyttösääntöjä, riskiluokituksia, auditointeja ja ihmisen valvontaa.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 2023,
+      "long_effect": "Tekoälystä tuli tietoteknisen työkalun lisäksi johdettava institutionaalinen riski.",
+      "current_relevance": "Luottamus tekoälyyn riippuu läpinäkyvyydestä, jäljitettävyydestä ja vastuun todellisesta toteutumisesta."
+    },
+    {
+      "id": "tekoaly-tyon-tehtavarakenteessa-2023",
+      "type": "työ- ja teknologiamurros",
+      "phase": "ammattien sijasta tehtävien automatisoituminen ja täydentyminen",
+      "title": "Työn tehtävärakenteen muutos tekoälyn seurauksena",
+      "domains": [
+        "tekoäly",
+        "työ",
+        "osaaminen",
+        "tuottavuus"
+      ],
+      "effects": [
+        "rutiininomaisen tietotyön automatisoituminen",
+        "uudet tarkastus- ja ohjaustehtävät",
+        "osaamisvaatimusten nopea muutos"
+      ],
+      "problem": "Generatiivinen tekoäly kykenee tuottamaan tekstiä, analyysiä ja ohjelmakoodia tehtävissä, joita pidettiin aiemmin vaikeasti automatisoitavina.",
+      "year_end": 2035,
+      "mechanism": "Tekoäly siirtää työnjakoa ihmisen ja järjestelmän välillä tehtävä kerrallaan.",
+      "confidence": "vahva",
+      "importance": 5,
+      "year_start": 2023,
+      "long_effect": "Teknologinen murros kohdistuu kokonaisia ammatteja hienojakoisemmin työn sisäiseen rakenteeseen.",
+      "current_relevance": "Tuottavuushyödyt, työn laatu ja tulonjako riippuvat siitä, miten tehtävät ja vastuut järjestetään uudelleen."
+    },
+    {
       "id": "pohjoismainen-puolustusyhteistyo-2024",
       "type": "alueellisen turvallisuusrakenteen murros",
       "phase": "erillisistä ratkaisuista yhteiseen operatiiviseen alueeseen",
@@ -4939,31 +5502,6 @@
       "current_relevance": "Valtion ohjauksen ja paikallisen autonomian tasapaino ratkaisee yhdenvertaisuuden."
     },
     {
-      "id": "uusi-vammaispalvelulaki-2025",
-      "type": "oikeus- ja palvelujärjestelmän uudistus",
-      "phase": "diagnoosiperusteisuudesta yksilölliseen avun tarpeeseen",
-      "title": "Uusi vammaispalvelulaki",
-      "domains": [
-        "vammaisuus",
-        "oikeudet",
-        "hyvinvointialueet",
-        "palvelut"
-      ],
-      "effects": [
-        "palvelukriteerien uudelleenarviointi",
-        "hyvinvointialueiden toimeenpanopaine",
-        "oikeuskäytännön muotoutuminen"
-      ],
-      "problem": "Aiempi erityislainsäädäntö oli hajautunut ja palvelujen soveltamisessa oli suuria eroja.",
-      "year_end": 2025,
-      "mechanism": "Palveluja koottiin yhteen lakiin ja niiden perusteeksi vahvistettiin pitkäaikainen yksilöllinen tuen tarve.",
-      "confidence": "kohtalainen",
-      "importance": 4,
-      "year_start": 2025,
-      "long_effect": "Vammaispalvelujen oikeusperusta pyrittiin yhdenmukaistamaan uuden hallintorakenteen kanssa.",
-      "current_relevance": "Lain tosiasiallinen vaikutus riippuu resursseista, soveltamiskäytännöistä ja muutoksenhausta."
-    },
-    {
       "id": "te24_uudistus",
       "type": "hallinnollinen uudistus",
       "phase": "julkisten palvelujen järjestämisvastuun uudistaminen",
@@ -5012,6 +5550,31 @@
       "year_start": 2025,
       "long_effect": "Työllisyyspolitiikasta tuli keskeinen osa kunnan omaa taloutta ja elinvoimastrategiaa.",
       "current_relevance": "Tulokset riippuvat kuntien osaamisesta, työnantajayhteistyöstä ja suhdanteista."
+    },
+    {
+      "id": "uusi-vammaispalvelulaki-2025",
+      "type": "oikeus- ja palvelujärjestelmän uudistus",
+      "phase": "diagnoosiperusteisuudesta yksilölliseen avun tarpeeseen",
+      "title": "Uusi vammaispalvelulaki",
+      "domains": [
+        "vammaisuus",
+        "oikeudet",
+        "hyvinvointialueet",
+        "palvelut"
+      ],
+      "effects": [
+        "palvelukriteerien uudelleenarviointi",
+        "hyvinvointialueiden toimeenpanopaine",
+        "oikeuskäytännön muotoutuminen"
+      ],
+      "problem": "Aiempi erityislainsäädäntö oli hajautunut ja palvelujen soveltamisessa oli suuria eroja.",
+      "year_end": 2025,
+      "mechanism": "Palveluja koottiin yhteen lakiin ja niiden perusteeksi vahvistettiin pitkäaikainen yksilöllinen tuen tarve.",
+      "confidence": "kohtalainen",
+      "importance": 4,
+      "year_start": 2025,
+      "long_effect": "Vammaispalvelujen oikeusperusta pyrittiin yhdenmukaistamaan uuden hallintorakenteen kanssa.",
+      "current_relevance": "Lain tosiasiallinen vaikutus riippuu resursseista, soveltamiskäytännöistä ja muutoksenhausta."
     }
   ],
   "relations": [
