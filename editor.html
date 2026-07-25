@@ -310,6 +310,16 @@ td.mono{font:12px var(--mono);color:var(--muted)}
 .linked-item .li-title{font-weight:600}
 .linked-item .li-meta{color:var(--muted);font:11px var(--mono)}
 
+.attach-thumb{
+  width:44px;height:44px;object-fit:cover;
+  border-radius:6px;border:1px solid var(--line);
+  flex-shrink:0;background:var(--paper-2);
+}
+.linked-item.attach-row{align-items:center}
+.linked-item .li-main{display:flex;align-items:center;gap:10px;min-width:0}
+.linked-item .li-text{min-width:0}
+.linked-item .li-title{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
 .add-link-form{
   display:grid;
   grid-template-columns:2fr 1.2fr .7fr .7fr auto;
@@ -599,6 +609,23 @@ td.mono{font:12px var(--mono);color:var(--muted)}
         </label>
         <span class="hint">Kortti pysyy tietokannassa muokattavana luonnoksena, mutta ei tule mukaan JSON-tiedostoihin ennen kuin poistat rastin.</span>
       </div>
+
+      <div class="section-title">Liitteet (kuvat)</div>
+      <div class="linked-list" id="itemAttachmentsList"></div>
+      <div class="add-link-form" id="addItemAttachForm" style="display:none; grid-template-columns:1.3fr 1.7fr .6fr auto;">
+        <div class="field">
+          <label>Tiedostonimi Storagessa</label>
+          <input type="text" id="att_i_path" placeholder="esim. R35_esimerkki.webp">
+        </div>
+        <div class="field">
+          <label>Kuvateksti</label>
+          <input type="text" id="att_i_caption" placeholder="valinnainen">
+        </div>
+        <div class="field"><label>Järj.</label><input type="number" id="att_i_sort" min="1" value="1"></div>
+        <button class="btn small primary" id="addItemAttachBtn">Lisää</button>
+      </div>
+      <p class="hint" id="itemAttachHint" style="display:none">Tallenna kortti ensin, jotta voit lisätä liitteitä.</p>
+      <p class="hint">Huom: tiedosto pitää olla ladattuna Supabase Storagen atlas-images-bucketiin ennen kuin se voidaan kytkeä tähän — tämä lomake vain linkittää jo ladatun tiedoston, ei lataa sitä.</p>
     </div>
     <div class="sheet-foot">
       <button class="btn danger" id="deleteItem" style="display:none">Poista kortti</button>
@@ -712,6 +739,23 @@ td.mono{font:12px var(--mono);color:var(--muted)}
       </div>
       <p class="hint" id="linksHint" style="display:none">Tallenna artikkeli ensin, jotta voit lisätä kytkentöjä.</p>
 
+      <div class="section-title">Liitteet (kuvat)</div>
+      <div class="linked-list" id="articleAttachmentsList"></div>
+      <div class="add-link-form" id="addArticleAttachForm" style="display:none; grid-template-columns:1.3fr 1.7fr .6fr auto;">
+        <div class="field">
+          <label>Tiedostonimi Storagessa</label>
+          <input type="text" id="att_a_path" placeholder="esim. R35_esimerkki.webp">
+        </div>
+        <div class="field">
+          <label>Kuvateksti</label>
+          <input type="text" id="att_a_caption" placeholder="valinnainen">
+        </div>
+        <div class="field"><label>Järj.</label><input type="number" id="att_a_sort" min="1" value="1"></div>
+        <button class="btn small primary" id="addArticleAttachBtn">Lisää</button>
+      </div>
+      <p class="hint" id="articleAttachHint" style="display:none">Tallenna artikkeli ensin, jotta voit lisätä liitteitä.</p>
+      <p class="hint">Huom: tiedosto pitää olla ladattuna Supabase Storagen atlas-images-bucketiin ennen kuin se voidaan kytkeä tähän.</p>
+
     </div>
     <div class="sheet-foot">
       <button class="btn danger" id="deleteArticle" style="display:none">Poista artikkeli</button>
@@ -808,6 +852,7 @@ const state = {
   relations: [],
   articles: [],
   articleLinks: [],
+  attachments: [],
   relationTypes: {},   // {type: label}
   editingItemId: null,
   editingRelationId: null,
@@ -818,6 +863,13 @@ const state = {
   editingBoardMemberId: null,
   editingDocumentId: null
 };
+
+const ATLAS_IMAGES_BASE_URL =
+  "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/";
+
+function attachUrl(storagePath){
+  return ATLAS_IMAGES_BASE_URL + encodeURIComponent(storagePath || "");
+}
 
 const $ = id => document.getElementById(id);
 const esc = v => String(v ?? "");
@@ -883,6 +935,9 @@ async function loadAll(){
     const docsRes = await sb.from("association_documents").select("*").order("group_sort_order", { ascending: true }).order("sort_order", { ascending: true });
     if(docsRes.error) throw docsRes.error;
 
+    const attachRes = await sb.from("attachments").select("*").order("sort_order", { ascending: true });
+    if(attachRes.error) throw attachRes.error;
+
     state.items = itemsRes.data;
     state.relations = relRes.data;
     state.articles = artRes.data;
@@ -892,6 +947,7 @@ async function loadAll(){
     state.association = assocRes.data;
     state.boardMembers = boardRes.data;
     state.documents = docsRes.data;
+    state.attachments = attachRes.data;
 
     $("connStatus").textContent =
       `yhdistetty · ${state.items.length} korttia · ${state.relations.length} relaatiota · ${state.articles.length} artikkelia`;
@@ -999,6 +1055,10 @@ function openItemForm(id){
   $("f_unpublished").checked = it ? !!it.unpublished : false;
 
   $("deleteItem").style.display = it ? "inline-flex" : "none";
+  $("addItemAttachForm").style.display = it ? "grid" : "none";
+  $("itemAttachHint").style.display = it ? "none" : "block";
+
+  renderItemAttachments();
   openSheet("overlayItem");
 }
 
@@ -1055,6 +1115,73 @@ $("deleteItem").addEventListener("click", async () => {
     await loadAll();
   }catch(err){
     toast("Poisto epäonnistui: " + err.message, true);
+  }
+});
+
+/* ==========================================================
+   LIITTEET (KUVAT): KORTTI
+   ========================================================== */
+function renderItemAttachments(){
+  const list = $("itemAttachmentsList");
+  if(!state.editingItemId){
+    list.innerHTML = "";
+    return;
+  }
+  const rows = state.attachments
+    .filter(a => a.item_id === state.editingItemId)
+    .sort((x,y) => (x.sort_order||0) - (y.sort_order||0));
+
+  list.innerHTML = rows.length ? rows.map(a => `
+    <div class="linked-item attach-row">
+      <div class="li-main">
+        <img class="attach-thumb" src="${esc(attachUrl(a.storage_path))}" alt="" loading="lazy"
+             onerror="this.style.opacity=0.15">
+        <div class="li-text">
+          <div class="li-title">${esc(a.storage_path)}</div>
+          <div class="li-meta">${esc(a.caption || "(ei kuvatekstiä)")} · järj. ${a.sort_order ?? "-"}</div>
+        </div>
+      </div>
+      <button class="btn small danger" data-remove-item-attach="${a.id}">Poista</button>
+    </div>
+  `).join("") : `<div class="hint">Ei vielä liitteitä.</div>`;
+
+  document.querySelectorAll("[data-remove-item-attach]").forEach(btn => {
+    btn.addEventListener("click", async () => {
+      const attachId = Number(btn.dataset.removeItemAttach);
+      if(!confirm("Poistetaanko liite kortilta? Tiedosto jää Storageen, vain kytkentä poistuu.")) return;
+      try{
+        const { error } = await sb.from("attachments").delete().eq("id", attachId);
+        if(error) throw error;
+        state.attachments = state.attachments.filter(a => a.id !== attachId);
+        renderItemAttachments();
+        toast("Liite poistettu kortilta.");
+      }catch(err){
+        toast("Poisto epäonnistui: " + err.message, true);
+      }
+    });
+  });
+}
+
+$("addItemAttachBtn").addEventListener("click", async () => {
+  if(!state.editingItemId){ toast("Tallenna kortti ensin.", true); return; }
+  const storage_path = $("att_i_path").value.trim();
+  const caption = $("att_i_caption").value.trim();
+  const sort_order = Number($("att_i_sort").value) || 1;
+
+  if(!storage_path){ toast("Anna tiedostonimi", true); return; }
+
+  try{
+    const { data, error } = await sb.from("attachments").insert({
+      item_id: state.editingItemId, storage_path, caption: caption || null, sort_order
+    }).select();
+    if(error) throw error;
+    state.attachments.push(data[0]);
+    renderItemAttachments();
+    $("att_i_path").value = "";
+    $("att_i_caption").value = "";
+    toast("Liite lisätty.");
+  }catch(err){
+    toast("Lisäys epäonnistui: " + err.message, true);
   }
 });
 
@@ -1218,8 +1345,11 @@ function openArticleForm(id){
   $("deleteArticle").style.display = a ? "inline-flex" : "none";
   $("addLinkForm").style.display = a ? "grid" : "none";
   $("linksHint").style.display = a ? "none" : "block";
+  $("addArticleAttachForm").style.display = a ? "grid" : "none";
+  $("articleAttachHint").style.display = a ? "none" : "block";
 
   renderArticleLinks();
+  renderArticleAttachments();
   openSheet("overlayArticle");
 }
 
@@ -1280,6 +1410,73 @@ $("addLinkBtn").addEventListener("click", async () => {
     renderArticleLinks();
     $("link_item").value = "";
     toast("Kytkentä lisätty.");
+  }catch(err){
+    toast("Lisäys epäonnistui: " + err.message, true);
+  }
+});
+
+/* ==========================================================
+   LIITTEET (KUVAT): ARTIKKELI
+   ========================================================== */
+function renderArticleAttachments(){
+  const list = $("articleAttachmentsList");
+  if(!state.editingArticleId){
+    list.innerHTML = "";
+    return;
+  }
+  const rows = state.attachments
+    .filter(a => a.article_id === state.editingArticleId)
+    .sort((x,y) => (x.sort_order||0) - (y.sort_order||0));
+
+  list.innerHTML = rows.length ? rows.map(a => `
+    <div class="linked-item attach-row">
+      <div class="li-main">
+        <img class="attach-thumb" src="${esc(attachUrl(a.storage_path))}" alt="" loading="lazy"
+             onerror="this.style.opacity=0.15">
+        <div class="li-text">
+          <div class="li-title">${esc(a.storage_path)}</div>
+          <div class="li-meta">${esc(a.caption || "(ei kuvatekstiä)")} · järj. ${a.sort_order ?? "-"}</div>
+        </div>
+      </div>
+      <button class="btn small danger" data-remove-article-attach="${a.id}">Poista</button>
+    </div>
+  `).join("") : `<div class="hint">Ei vielä liitteitä.</div>`;
+
+  document.querySelectorAll("[data-remove-article-attach]").forEach(btn => {
+    btn.addEventListener("click", async () => {
+      const attachId = Number(btn.dataset.removeArticleAttach);
+      if(!confirm("Poistetaanko liite artikkelilta? Tiedosto jää Storageen, vain kytkentä poistuu.")) return;
+      try{
+        const { error } = await sb.from("attachments").delete().eq("id", attachId);
+        if(error) throw error;
+        state.attachments = state.attachments.filter(a => a.id !== attachId);
+        renderArticleAttachments();
+        toast("Liite poistettu artikkelilta.");
+      }catch(err){
+        toast("Poisto epäonnistui: " + err.message, true);
+      }
+    });
+  });
+}
+
+$("addArticleAttachBtn").addEventListener("click", async () => {
+  if(!state.editingArticleId){ toast("Tallenna artikkeli ensin.", true); return; }
+  const storage_path = $("att_a_path").value.trim();
+  const caption = $("att_a_caption").value.trim();
+  const sort_order = Number($("att_a_sort").value) || 1;
+
+  if(!storage_path){ toast("Anna tiedostonimi", true); return; }
+
+  try{
+    const { data, error } = await sb.from("attachments").insert({
+      article_id: state.editingArticleId, storage_path, caption: caption || null, sort_order
+    }).select();
+    if(error) throw error;
+    state.attachments.push(data[0]);
+    renderArticleAttachments();
+    $("att_a_path").value = "";
+    $("att_a_caption").value = "";
+    toast("Liite lisätty.");
   }catch(err){
     toast("Lisäys epäonnistui: " + err.message, true);
   }
