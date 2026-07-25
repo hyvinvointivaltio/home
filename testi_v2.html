@@ -2640,20 +2640,20 @@ header.hero::after{
 }
 
 .matrix-node{
-  background:radial-gradient(circle at 30% 30%, #4a9088, var(--forest-deep) 80%) !important;
+  background:radial-gradient(circle at 30% 30%, #4a9088, var(--forest-deep) 80%);
   border-radius:3px !important;
   box-shadow:
     0 0 0 1px rgba(253,252,247,.7),
     0 2px 6px rgba(6,28,26,.25),
-    0 0 12px rgba(47,122,112,.35) !important;
+    0 0 12px rgba(47,122,112,.35);
 }
 .matrix-node:hover{
-  background:radial-gradient(circle at 30% 30%, var(--copper-glow), var(--copper) 80%) !important;
+  background:radial-gradient(circle at 30% 30%, var(--copper-glow), var(--copper) 80%);
   box-shadow:
     0 0 0 2px var(--paper),
     0 0 0 4px rgba(198,106,46,.55),
     0 6px 18px rgba(198,106,46,.4),
-    0 0 24px rgba(240,168,105,.6) !important;
+    0 0 24px rgba(240,168,105,.6);
 }
 
 .matrix-node-label{
@@ -5922,29 +5922,21 @@ function bindMatrixNodeEvents(){
       const id =
         button.dataset.matrixNode;
 
-      const now =
-        performance.now();
-
-      const isSecondClick =
-        matrixState.lastClickId === id &&
-        now -
-          matrixState.lastClickTime <
-          1500 &&
-        matrixState.selectedId === id;
-
-      if(isSecondClick){
+      /*
+       * Jos tämä solmu on jo aktiivinen/valittu (väri on jo
+       * vaihtunut), toinen klikkaus avaa kortin — riippumatta
+       * siitä kuinka kauan ensimmäisestä klikkauksesta on
+       * kulunut. Aikaikkunaa ei enää tarvita, koska visuaalinen
+       * "valittu"-tila kertoo käyttäjälle yksiselitteisesti
+       * missä tilassa solmu on.
+       */
+      if(matrixState.selectedId === id){
         openDialog(id);
         return;
       }
 
       matrixState.selectedId =
         id;
-
-      matrixState.lastClickId =
-        id;
-
-      matrixState.lastClickTime =
-        now;
 
       renderMatrix();
     }
