@@ -573,10 +573,6 @@
         {
           "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/S11_kansalaisyhteiskunta.webp",
           "caption": "Järjestäytynyt kansalaisyhteiskunta (Atlas S06a)"
-        },
-        {
-          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/S06a_jarjestaytynyt.webp",
-          "caption": "Järjestäytynyt kansalaisyhteiskunta -infografiikka"
         }
       ]
     },
@@ -937,10 +933,6 @@
         {
           "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/M02_kriisien_piirteet.webp",
           "caption": "Kriisien yhteiset piirteet (Atlas M02)"
-        },
-        {
-          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/M18_kriisit.webp",
-          "caption": "Kriisien yhteiset piirteet -infografiikka"
         }
       ]
     },
@@ -1012,10 +1004,6 @@
         {
           "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/R24_kunnallishallinto.webp",
           "caption": "Kunnallishallinnon synty -infografiikka"
-        },
-        {
-          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/S10_itsehallinto.webp",
-          "caption": "Kunnallinen itsehallinto -infografiikka"
         }
       ]
     },
@@ -1438,10 +1426,6 @@
         {
           "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/M01_onnistumisten_piirteet.webp",
           "caption": "Onnistumisten yhteiset piirteet (Atlas M01)"
-        },
-        {
-          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/M17_onnistumiset.webp",
-          "caption": "Onnistumisten yhteiset piirteet -infografiikka"
         }
       ]
     },
@@ -1500,11 +1484,7 @@
         },
         {
           "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/M05_systeemimalli.webp",
-          "caption": "Systeemimalli: korjaava vs. katkennut kierre"
-        },
-        {
-          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/M01_palautesilmukat.webp",
-          "caption": "Palautesilmukat -infografiikka"
+          "caption": "M01 — Systeemimalli: korjaava vs. katkennut kierre"
         }
       ]
     },
@@ -1656,11 +1636,7 @@
         },
         {
           "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/A06_polkuriippuvuuden.webp",
-          "caption": "Polkuriippuvuuden malli -infografiikka"
-        },
-        {
-          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/M02_polkuriippuvuus.webp",
-          "caption": "Polkuriippuvuuden mekanismi -infografiikka"
+          "caption": "A06 — Polkuriippuvuuden malli: viisivaiheinen mekanismi ja esimerkkejä eri aloilta"
         }
       ]
     },
@@ -1889,10 +1865,6 @@
         {
           "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/A04_anatomia.webp",
           "caption": "Sopeutumiskyvyn anatomia (Atlas A04)"
-        },
-        {
-          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/A04_anatomia.webp",
-          "caption": "Sopeutumiskyvyn anatomia -infografiikka"
         }
       ]
     },
@@ -1939,12 +1911,6 @@
         "Taisto (s. 1965) kantoi hyvinvointivaltion vakauttamisen: työeläkejärjestelmä, tieverkko ja asuntorakentaminen kuuluivat hänen aikaansa, ja hän jätti jälkeensä turvaverkon ja perusinfran kunnossa.",
         "Marja (s. 1985) kantoi globalisaation ja digitalisaation sopeutumisen, EU-jäsenyyden ja ympäristötietoisuuden kasvun — hän jätti osaamisen ja koulutustason huipun sekä digitaalisen yhteiskunnan alun.",
         "Jukka (s. 2005) kantaa epävarmaa työelämää, ilmaston ja luontokadon haasteita sekä kestävän talouden rakentamista — hänen sukupolvensa jättää teknologian ja innovaatiot sekä vihreän siirtymän käynnistyksen, mutta myös avoimen kysymyksen: miten rahoitamme turvan?"
-      ],
-      "images": [
-        {
-          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/G09_sukupolvet.webp",
-          "caption": "Sukupolvi joka kantaa -infografiikka"
-        }
       ]
     },
     {
@@ -1971,10 +1937,6 @@
         {
           "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/G01_oikeudenmukaisuus.webp",
           "caption": "Sukupolvien välinen oikeudenmukaisuus (Atlas G01)"
-        },
-        {
-          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/G08_oikeudenmukaisuus.webp",
-          "caption": "Sukupolvien välinen oikeudenmukaisuus -infografiikka"
         },
         {
           "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/G02_sukupolvi_kantaa.webp",
@@ -2058,10 +2020,6 @@
         {
           "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/M03_sopeutumiskyvyn_malli.webp",
           "caption": "Suomen sopeutumiskyvyn malli (Atlas M03)"
-        },
-        {
-          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/M19_sopeutumiskyky.webp",
-          "caption": "Suomen sopeutumiskyvyn malli -infografiikka"
         }
       ]
     },
@@ -2107,12 +2065,6 @@
         "Tuottavuusero on kasvanut 2,4-kertaiseksi: suuret kaupungit tuottavat 2,4 kertaa enemmän arvoa asukasta kohden kuin muut kunnat. Ero näkyy myös palveluissa — lähikaupan, pankkipalveluiden, terveyspalveluiden ja toisen asteen koulutuksen etäisyydet ovat kasvaneet erityisesti harvaan asutuilla alueilla — ja hyvinvoinnissa: työttömyysaste on kaksinkertainen ja koettu elämänlaatu selvästi heikompi taantuvilla alueilla.",
         "Kehitys ruokkii itseään: investoinnit ja työpaikat seuraavat jo olemassa olevaa osaamista ja markkinoita, liikenneyhteydet suosivat keskusalueita, ja ikääntyminen sekä muuttotappio heikentävät palvelupohjaa periferiassa entisestään — politiikka ja resurssit eivät ole riittävästi tasapainottaneet aluekehitystä.",
         "Alueellinen eriytyminen ei ole väistämätön luonnonlaki, vaan seurausta valinnoista — ja se voidaan kääntää suunnalla, joka vahvistaa koko maata: panostamalla saavutettavuuteen ja digitaalisiin yhteyksiin, vahvistamalla paikallista elinkeinorakennetta, suunnittelemalla palveluverkko alueelliset erot huomioiden ja investoimalla osaamiseen kaikkialla Suomessa."
-      ],
-      "images": [
-        {
-          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/K18_eriytyminen.webp",
-          "caption": "Alueellinen eriytyminen -infografiikka"
-        }
       ]
     },
     {
@@ -2293,7 +2245,7 @@
         },
         {
           "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/S15_tietoyhteiskunta.webp",
-          "caption": "Tietoyhteiskunnan rakentaminen -infografiikka"
+          "caption": "S15 — Tietoyhteiskunnan rakentaminen: strategiset painopisteet kohti 2030"
         }
       ]
     },
@@ -2314,12 +2266,6 @@
         "Oikeudenmukaisuutta voidaan arvioida kysymällä: parantaako päätös tulevien sukupolvien mahdollisuuksia elää hyvää elämää, siirtääkö se kohtuuttomia kustannuksia tulevaisuuteen, ja onko päätös kestävä ekologisesti ja taloudellisesti pitkällä aikavälillä? Esimerkiksi fossiilisten polttoaineiden tuki tuo nopean hyödyn mutta on pitkällä aikavälillä epäoikeudenmukainen, kun taas luonnon suojelu maksaa nyt mutta on oikeudenmukainen tulevaisuuden kannalta.",
         "Oikeuksien turvaaminen vaatii monen tahon vastuunkantoa: päätöksentekijät vastaavat pitkäaikaisista vaikutuksista laeissa ja budjeteissa, yritykset ja sijoittajat kestävillä liiketoimintamalleilla, kansalaiset osallistumisella ja valvonnalla, tieteentekijät ennakoinnilla, ja kansainväliset sopimukset globaalilla vastuulla — koska tulevat sukupolvet eivät voi vielä itse puolustaa etujaan.",
         "Aika on yhteinen resurssi, joka on käytettävä viisaasti: se, mitä teemme tänään — katsomme pitkälle, investoimme kestävästi, kuuntelemme nuoria, mittaamme oikeudenmukaisuutta ja pidämme mahdollisuudet avoimina — ratkaisee, millaisen maailman tulevat sukupolvet perivät."
-      ],
-      "images": [
-        {
-          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/G07_oikeudet.webp",
-          "caption": "Tulevien sukupolvien oikeudet -infografiikka"
-        }
       ]
     },
     {
@@ -2346,10 +2292,6 @@
         {
           "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/K17_tuottavuus.webp",
           "caption": "Tuottavuuden pysähtyminen (Atlas K17)"
-        },
-        {
-          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/K17_tuottavuus.webp",
-          "caption": "Tuottavuuden pysähtyminen -infografiikka"
         }
       ]
     },
@@ -2445,10 +2387,6 @@
         {
           "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/S08_sopimusyhteiskunta.webp",
           "caption": "Työmarkkinoiden sopimusyhteiskunta (Atlas S08)"
-        },
-        {
-          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/S08_tyomarkkinat.webp",
-          "caption": "Työmarkkinoiden sopimusyhteiskunta -infografiikka"
         }
       ]
     },
@@ -2597,10 +2535,6 @@
         {
           "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/A02_viiveet.webp",
           "caption": "Viive yhteiskunnallisissa päätöksissä (Atlas A02)"
-        },
-        {
-          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/A02_viiveet.webp",
-          "caption": "Viive yhteiskunnallisissa päätöksissä -infografiikka"
         }
       ]
     },
