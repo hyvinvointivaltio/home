@@ -650,6 +650,19 @@ header.hero::after{
   font:500 clamp(6px,.66vw,9px) var(--mono);
 }
 
+.matrix-year-edge{
+  transform:none;
+  color:var(--copper);
+  font-weight:700;
+}
+.matrix-year-edge:first-child{
+  left:2px !important;
+}
+.matrix-year-edge:last-child{
+  left:auto !important;
+  right:2px;
+}
+
 .matrix-grid{
   --matrix-columns:28;
   --matrix-rows:10;
@@ -919,7 +932,7 @@ header.hero::after{
 
 .control-grid{
   display:grid;
-  grid-template-columns:2fr 1fr 1fr auto;
+  grid-template-columns:2fr auto;
   gap:12px;
 }
 
@@ -975,6 +988,80 @@ header.hero::after{
   color:var(--forest-deep);
   font:500 14px var(--mono);
   text-align:right;
+}
+
+/* ---- LINSSIT: layer / aihepiiri / tarkennin ---- */
+.lens-rows{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top:14px;
+}
+
+.lens-row{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.lens-label{
+  flex-shrink:0;
+  color:var(--muted);
+  font:600 10.5px var(--mono);
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  min-width:74px;
+}
+
+.lens-group{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+
+.lens-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:7px 13px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:var(--paper);
+  color:var(--muted);
+  font:600 12px var(--mono);
+  letter-spacing:.01em;
+  transition:.15s ease;
+}
+.lens-btn:hover{
+  border-color:var(--copper);
+  color:var(--ink);
+}
+.lens-btn.active{
+  border-color:var(--forest-deep);
+  background:var(--forest-deep);
+  color:var(--paper);
+}
+.lens-btn .n{
+  opacity:.7;
+  font-size:10.5px;
+}
+.lens-btn.active .n{ opacity:.85 }
+
+.lens-row.refine{
+  padding-top:8px;
+  border-top:1px dashed var(--line);
+  display:none;
+}
+.lens-row.refine.show{ display:flex }
+
+.lens-btn.valence-onnistuminen.active{
+  border-color:var(--forest);
+  background:var(--forest);
+}
+.lens-btn.valence-kriisi.active{
+  border-color:var(--red);
+  background:var(--red);
 }
 
 .meta-row{
@@ -2553,20 +2640,20 @@ header.hero::after{
 }
 
 .matrix-node{
-  background:radial-gradient(circle at 30% 30%, #4a9088, var(--forest-deep) 80%) !important;
+  background:radial-gradient(circle at 30% 30%, #4a9088, var(--forest-deep) 80%);
   border-radius:3px !important;
   box-shadow:
     0 0 0 1px rgba(253,252,247,.7),
     0 2px 6px rgba(6,28,26,.25),
-    0 0 12px rgba(47,122,112,.35) !important;
+    0 0 12px rgba(47,122,112,.35);
 }
 .matrix-node:hover{
-  background:radial-gradient(circle at 30% 30%, var(--copper-glow), var(--copper) 80%) !important;
+  background:radial-gradient(circle at 30% 30%, var(--copper-glow), var(--copper) 80%);
   box-shadow:
     0 0 0 2px var(--paper),
     0 0 0 4px rgba(198,106,46,.55),
     0 6px 18px rgba(198,106,46,.4),
-    0 0 24px rgba(240,168,105,.6) !important;
+    0 0 24px rgba(240,168,105,.6);
 }
 
 .matrix-node-label{
@@ -2574,12 +2661,12 @@ header.hero::after{
   z-index:8;
   align-self:center;
   justify-self:start;
-  margin-left:72%;
-  max-width:clamp(110px,12vw,190px);
+  margin-left:58%;
+  max-width:clamp(90px,9vw,150px);
   overflow:hidden;
   padding:1px 2px;
   border-radius:2px;
-  background:rgba(253,252,247,.46);
+  background:rgba(253,252,247,.72);
   color:var(--forest-deep);
   font:600 clamp(7px,.68vw,10px)/1.05 var(--sans);
   letter-spacing:-.015em;
@@ -2822,7 +2909,7 @@ footer.foot .rule{
     <h1>
       Suomen yhteiskunnalliset
       <em>murrosvaiheet</em>
-      <span>1800–2035</span>
+      <span>1800–2050</span>
     </h1>
 
     <p class="lede" id="lede">
@@ -3120,18 +3207,6 @@ footer.foot .rule{
         >
       </div>
 
-      <div class="field">
-        <select id="typeF" aria-label="Suodata murrostyypin tai tyyppiryhmän mukaan">
-          <option value="">Kaikki murrostyypit</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <select id="domainF">
-          <option value="">Kaikki teemat</option>
-        </select>
-      </div>
-
       <div class="field range">
         <span class="lbl">Merkittävyys ≥</span>
 
@@ -3144,6 +3219,26 @@ footer.foot .rule{
         >
 
         <span class="val" id="impVal">1</span>
+      </div>
+    </div>
+
+    <div class="lens-rows">
+      <div class="lens-row">
+        <span class="lens-label">Näkökulma</span>
+        <div class="lens-group" id="layerF"></div>
+      </div>
+
+      <div class="lens-row">
+        <span class="lens-label">Aihepiiri</span>
+        <div class="lens-group" id="domainClusterF"></div>
+      </div>
+
+      <div class="lens-row refine" id="refineRow">
+        <span class="lens-label">Lopputulos</span>
+        <div class="lens-group" id="valenceF"></div>
+
+        <span class="lens-label" style="margin-left:8px">Laajuus</span>
+        <div class="lens-group" id="spanF"></div>
       </div>
     </div>
 
@@ -3364,6 +3459,93 @@ function domainCluster(domain){
   )?.id || "other";
 }
 
+/* ==========================================================
+   LINSSIT: layer / valence / laajuus
+   (testiversio -- pääteltynä olemassa olevasta datasta,
+   ei vielä oma tietokantakenttä)
+   ========================================================== */
+
+const LAYERS = [
+  { id:"muutos",  label:"Muutokset" },
+  { id:"malli",   label:"Mallit" },
+  { id:"henkilo", label:"Henkilöt" }
+];
+
+const VALENCES = [
+  { id:"onnistuminen", label:"Onnistumiset" },
+  { id:"kriisi",        label:"Kriisit" }
+];
+
+const SPANS = [
+  { id:"tapahtuma",   label:"Tapahtuma",       max:10 },
+  { id:"kaari",       label:"Uudistuskaari",   max:30 },
+  { id:"pitkakaari",  label:"Pitkä kaari",     max:Infinity }
+];
+
+function computeLayer(item){
+  if(String(item.id || "").startsWith("sukupolviprofiili-")){
+    return "henkilo";
+  }
+
+  const type =
+    String(item.type || "")
+      .toLocaleLowerCase("fi");
+
+  if(
+    type.includes("analyyttinen") ||
+    type === "yleiskatsaus" ||
+    type.includes("kokoava")
+  ){
+    return "malli";
+  }
+
+  return "muutos";
+}
+
+function computeValence(item){
+  if(item._layer !== "muutos"){
+    return "";
+  }
+
+  const type =
+    String(item.type || "")
+      .toLocaleLowerCase("fi");
+
+  if(type.includes("kriisi")){
+    return "kriisi";
+  }
+
+  if(type === "onnistumistarina"){
+    return "onnistuminen";
+  }
+
+  return "neutraali";
+}
+
+function computeSpan(item){
+  const years =
+    (Number(item.year_end) || 0) -
+    (Number(item.year_start) || 0);
+
+  return (
+    SPANS.find(span => years <= span.max) ||
+    SPANS[SPANS.length - 1]
+  ).id;
+}
+
+function annotateDerivedFields(items){
+  for(const item of items){
+    item._layer =
+      computeLayer(item);
+
+    item._valence =
+      computeValence(item);
+
+    item._span =
+      computeSpan(item);
+  }
+}
+
 const REL_LABELS = {
   enabled:"mahdollisti",
   supported:"tuki",
@@ -3454,6 +3636,18 @@ const MATRIX = {
   maxDepth:3,
 
   clusters:[
+    {
+      id:"malli",
+      label:"Analyyttiset mallit",
+      fixedLayer:"malli",
+      words:[]
+    },
+    {
+      id:"henkilo",
+      label:"Sukupolviprofiilit",
+      fixedLayer:"henkilo",
+      words:[]
+    },
     {
       id:"valtio",
       label:"Valtio ja oikeudet",
@@ -3606,6 +3800,10 @@ const state = {
   q:"",
   type:"",
   domain:"",
+  layer:"",
+  valence:"",
+  domainCluster:"",
+  span:"",
   periodIdx:null,
   minImp:1,
   openId:null,
@@ -3940,6 +4138,8 @@ fetch(DATA_FILE)
         ? data.items
         : [];
 
+    annotateDerivedFields(state.all);
+
     state.relations =
       Array.isArray(data.relations)
         ? data.relations
@@ -4042,6 +4242,7 @@ fetch(DATA_FILE)
     populateFilters();
     buildMatrixLayout();
     renderMatrixYears();
+    bindMatrixNodeEvents();
     render();
     initDeepLinking();
 
@@ -4104,84 +4305,106 @@ function createPeriods(startYear,endYear){
   return periods;
 }
 
+function lensButtonHTML(group,id,label,count,activeValue){
+  return `
+    <button
+      type="button"
+      class="lens-btn ${esc(group)}-${esc(id)} ${activeValue === id ? "active" : ""}"
+      data-lens="${esc(group)}"
+      data-value="${esc(id)}"
+    >
+      ${esc(label)}
+      <span class="n">${count}</span>
+    </button>
+  `;
+}
+
+function renderLensButtons(){
+  // Näkökulma (layer) -- aina "Kaikki" + 3 kiinteää pääryhmää
+  const layerButtons = [
+    lensButtonHTML(
+      "layer","","Kaikki",
+      state.all.length,
+      state.layer
+    ),
+    ...LAYERS.map(layer =>
+      lensButtonHTML(
+        "layer",layer.id,layer.label,
+        facetCount("layer",layer.id),
+        state.layer
+      )
+    )
+  ].join("");
+
+  $("layerF").innerHTML = layerButtons;
+
+  // Aihepiiri (domain-klusterit) -- aina "Kaikki" + löydetyt klusterit
+  const activeDomainClusters =
+    DOMAIN_CLUSTERS.filter(cluster =>
+      facetCount("domainCluster",cluster.id) > 0 ||
+      state.domainCluster === cluster.id
+    );
+
+  const domainButtons = [
+    lensButtonHTML(
+      "domainCluster","","Kaikki",
+      state.all.length,
+      state.domainCluster
+    ),
+    ...activeDomainClusters.map(cluster =>
+      lensButtonHTML(
+        "domainCluster",cluster.id,cluster.label,
+        facetCount("domainCluster",cluster.id),
+        state.domainCluster
+      )
+    )
+  ].join("");
+
+  $("domainClusterF").innerHTML = domainButtons;
+
+  // Tarkentimet (vain "Muutokset"-näkökulmassa): lopputulos + laajuus
+  const valenceButtons = [
+    lensButtonHTML(
+      "valence","","Kaikki",
+      facetCount("layer","muutos"),
+      state.valence
+    ),
+    ...VALENCES.map(valence =>
+      lensButtonHTML(
+        "valence",valence.id,valence.label,
+        facetCount("valence",valence.id),
+        state.valence
+      )
+    )
+  ].join("");
+
+  $("valenceF").innerHTML = valenceButtons;
+
+  const spanButtons = [
+    lensButtonHTML(
+      "span","","Kaikki",
+      facetCount("layer","muutos"),
+      state.span
+    ),
+    ...SPANS.map(span =>
+      lensButtonHTML(
+        "span",span.id,span.label,
+        facetCount("span",span.id),
+        state.span
+      )
+    )
+  ].join("");
+
+  $("spanF").innerHTML = spanButtons;
+
+  $("refineRow").classList.toggle(
+    "show",
+    state.layer === "muutos"
+  );
+}
+
 function populateFilters(){
-  const types =
-    [...new Set(
-      state.all
-        .map(item => item.type)
-        .filter(Boolean)
-    )]
-    .sort((a,b) =>
-      a.localeCompare(b,"fi")
-    );
-
-  const domains =
-    [...new Set(
-      state.all
-        .flatMap(item => item.domains || [])
-        .filter(Boolean)
-    )]
-    .sort((a,b) =>
-      a.localeCompare(b,"fi")
-    );
-
-  const groupedTypes =
-    TYPE_CLUSTERS.map(cluster => ({
-      ...cluster,
-      types:types.filter(type =>
-        typeCluster(type) === cluster.id
-      )
-    }));
-
-  $("typeF").insertAdjacentHTML(
-    "beforeend",
-    groupedTypes
-      .filter(cluster => cluster.types.length)
-      .map(cluster => `
-        <optgroup label="${esc(cluster.label)}">
-          <option value="cluster::${esc(cluster.id)}">
-            Kaikki: ${esc(cluster.label)} (${cluster.types.length})
-          </option>
-          ${cluster.types
-            .map(type => `
-              <option value="${esc(type)}">
-                ${esc(type)}
-              </option>
-            `)
-            .join("")}
-        </optgroup>
-      `)
-      .join("")
-  );
-
-  const groupedDomains =
-    DOMAIN_CLUSTERS.map(cluster => ({
-      ...cluster,
-      domains:domains.filter(domain =>
-        domainCluster(domain) === cluster.id
-      )
-    }));
-
-  $("domainF").insertAdjacentHTML(
-    "beforeend",
-    groupedDomains
-      .filter(cluster => cluster.domains.length)
-      .map(cluster => `
-        <optgroup label="${esc(cluster.label)}">
-          <option value="cluster::${esc(cluster.id)}">
-            Kaikki: ${esc(cluster.label)} (${cluster.domains.length})
-          </option>
-          ${cluster.domains
-            .map(domain => `
-              <option value="${esc(domain)}">
-                ${esc(domain)}
-              </option>
-            `)
-            .join("")}
-        </optgroup>
-      `)
-      .join("")
-  );
+  renderLensButtons();
 
   $("periods").innerHTML =
     state.periods
@@ -4196,117 +4419,159 @@ function populateFilters(){
       .join("");
 }
 
-function filtered(){
+function itemSearchHaystack(item){
+  const linkedRelations = [
+    ...(state.incoming.get(item.id) || []),
+    ...(state.outgoing.get(item.id) || [])
+  ];
+
+  const relationText =
+    linkedRelations.flatMap(relation => {
+      const otherId =
+        relation.from === item.id
+          ? relation.to
+          : relation.from;
+
+      return [
+        state.byId.get(otherId)?.title,
+        relation.type,
+        relation.rel_class,
+        relation.rationale
+      ];
+    });
+
+  return [
+    item.title,
+    item.type,
+    item.phase,
+    item.problem,
+    item.mechanism,
+    item.long_effect,
+    item.current_relevance,
+    ...(item.domains || []),
+    ...(item.effects || []),
+    ...relationText
+  ]
+    .join(" ")
+    .toLocaleLowerCase("fi");
+}
+
+/*
+ * matchesFilters: yksi yhteinen predikaatti sekä varsinaiselle
+ * listalle (filtered()) että facettien lukumäärien laskennalle.
+ * skip-parametrilla voi jättää yhden ulottuvuuden huomiotta,
+ * jotta ko. ulottuvuuden omat napit näyttävät kuinka moni kortti
+ * täsmäisi JOS se valittaisiin, muiden nykyisten suodattimien
+ * pysyessä voimassa (tavanomainen facettihaun logiikka).
+ */
+function matchesFilters(item,skip){
+  skip = skip || "";
+
   const query =
     state.q
       .trim()
       .toLocaleLowerCase("fi");
+
+  if(
+    query &&
+    !itemSearchHaystack(item).includes(query)
+  ){
+    return false;
+  }
+
+  if(skip !== "layer" && state.layer){
+    if(item._layer !== state.layer){
+      return false;
+    }
+  }
+
+  if(skip !== "domainCluster" && state.domainCluster){
+    const matchesDomain =
+      (item.domains || []).some(domain =>
+        domainCluster(domain) === state.domainCluster
+      );
+
+    if(!matchesDomain){
+      return false;
+    }
+  }
+
+  // Lopputulos/laajuus-tarkentimet koskevat vain "muutos"-näkökulmaa
+  if(state.layer === "muutos"){
+    if(skip !== "valence" && state.valence){
+      if(item._valence !== state.valence){
+        return false;
+      }
+    }
+
+    if(skip !== "span" && state.span){
+      if(item._span !== state.span){
+        return false;
+      }
+    }
+  }
 
   const period =
     state.periodIdx !== null
       ? state.periods[state.periodIdx]?.range
       : null;
 
+  if(
+    period &&
+    !(
+      item.year_start <= period[1] &&
+      item.year_end >= period[0]
+    )
+  ){
+    return false;
+  }
+
+  if(
+    Number(item.importance) <
+    state.minImp
+  ){
+    return false;
+  }
+
+  return true;
+}
+
+function filtered(){
   return state.all
-    .filter(item => {
-      const linkedRelations = [
-        ...(state.incoming.get(item.id) || []),
-        ...(state.outgoing.get(item.id) || [])
-      ];
-
-      const relationText =
-        linkedRelations.flatMap(relation => {
-          const otherId =
-            relation.from === item.id
-              ? relation.to
-              : relation.from;
-
-          return [
-            state.byId.get(otherId)?.title,
-            relation.type,
-            relation.rel_class,
-            relation.rationale
-          ];
-        });
-
-      const haystack = [
-        item.title,
-        item.type,
-        item.phase,
-        item.problem,
-        item.mechanism,
-        item.long_effect,
-        item.current_relevance,
-        ...(item.domains || []),
-        ...(item.effects || []),
-        ...relationText
-      ]
-        .join(" ")
-        .toLocaleLowerCase("fi");
-
-      if(
-        query &&
-        !haystack.includes(query)
-      ){
-        return false;
-      }
-
-      if(state.type){
-        const isCluster =
-          state.type.startsWith("cluster::");
-
-        const matchesType =
-          isCluster
-            ? typeCluster(item.type) ===
-              state.type.slice("cluster::".length)
-            : item.type === state.type;
-
-        if(!matchesType){
-          return false;
-        }
-      }
-
-      if(state.domain){
-        const isDomainCluster =
-          state.domain.startsWith("cluster::");
-
-        const matchesDomain =
-          isDomainCluster
-            ? (item.domains || []).some(domain =>
-                domainCluster(domain) ===
-                state.domain.slice("cluster::".length)
-              )
-            : (item.domains || []).includes(state.domain);
-
-        if(!matchesDomain){
-          return false;
-        }
-      }
-
-      if(
-        period &&
-        !(
-          item.year_start <= period[1] &&
-          item.year_end >= period[0]
-        )
-      ){
-        return false;
-      }
-
-      if(
-        Number(item.importance) <
-        state.minImp
-      ){
-        return false;
-      }
-
-      return true;
-    })
+    .filter(item => matchesFilters(item))
     .sort((a,b) =>
       a.year_start - b.year_start ||
       a.year_end - b.year_end ||
       a.title.localeCompare(b.title,"fi")
     );
+}
+
+function facetCount(dimension,value){
+  return state.all.filter(item => {
+    if(!matchesFilters(item,dimension)){
+      return false;
+    }
+
+    if(dimension === "layer"){
+      return item._layer === value;
+    }
+
+    if(dimension === "domainCluster"){
+      return (item.domains || []).some(domain =>
+        domainCluster(domain) === value
+      );
+    }
+
+    if(dimension === "valence"){
+      return item._layer === "muutos" && item._valence === value;
+    }
+
+    if(dimension === "span"){
+      return item._layer === "muutos" && item._span === value;
+    }
+
+    return true;
+  }).length;
 }
 
 /* ==========================================================
@@ -4375,13 +4640,31 @@ function matrixClusterScore(item,cluster){
 }
 
 function primaryCluster(item){
-  let best =
-    MATRIX.clusters[0];
+  /*
+   * "Malli"- ja "henkilo"-kortit eivät sovi aihepiirin
+   * avainsanahakuun (ne ovat poikkileikkaavia tai yksilöityjä,
+   * eivät yhteen teemaan sidottuja) -- ne saavat aina oman,
+   * ennalta määrätyn rivilohkonsa layer-kentän perusteella.
+   */
+  const fixedCluster =
+    MATRIX.clusters.find(cluster =>
+      cluster.fixedLayer &&
+      cluster.fixedLayer === item._layer
+    );
 
-  let bestScore =
-    -Infinity;
+  if(fixedCluster){
+    return fixedCluster;
+  }
 
-  for(const cluster of MATRIX.clusters){
+  const topicClusters =
+    MATRIX.clusters.filter(cluster =>
+      !cluster.fixedLayer
+    );
+
+  let best = topicClusters[0];
+  let bestScore = -Infinity;
+
+  for(const cluster of topicClusters){
     const score =
       matrixClusterScore(item,cluster);
 
@@ -4539,12 +4822,33 @@ function calculateMatrixDimensions(items){
   };
 }
 
+/*
+ * Pitkien, vuosikymmeniä tai -satoja kattavien korttien (esim.
+ * 1800-2050) suora keskipiste vetäisi ne visuaalisesti kauas
+ * niiden todellisesta alkutapahtumasta, jolloin varhaiset
+ * vuosikymmenet näyttäisivät matriisissa tyhjemmiltä kuin ne
+ * oikeasti ovat. Rajataan sijoittelussa käytetty "vaikuttava
+ * loppuvuosi" samaan 30 vuoden kattoon kuin _span-luokittelun
+ * "kaari"-raja -- kortin näytetty vuosiväli ei muutu, vain sen
+ * paikka matriisissa painottuu lähemmäs alkua.
+ */
+function placementMidpoint(item){
+  const start = Number(item.year_start);
+  const end = Number(item.year_end);
+
+  const PLACEMENT_SPAN_CAP = 30;
+
+  const effectiveEnd =
+    (end - start) > PLACEMENT_SPAN_CAP
+      ? start + PLACEMENT_SPAN_CAP
+      : end;
+
+  return (start + effectiveEnd) / 2;
+}
+
 function preferredColumn(item){
   const midpoint =
-    (
-      Number(item.year_start) +
-      Number(item.year_end)
-    ) / 2;
+    placementMidpoint(item);
 
   const ratio =
     (
@@ -4848,41 +5152,26 @@ function renderMatrixYears(){
   const yearsElement =
     $("matrixYears");
 
-  const labels = [];
+  const step = 25;
 
-  const span =
-    MATRIX.endYear -
-    MATRIX.startYear;
-
-  const approximateStep =
-    span > 190
-      ? 50
-      : span > 100
-        ? 25
-        : 20;
-
-  let first =
+  const first =
     Math.ceil(
       MATRIX.startYear /
-      approximateStep
+      step
     ) *
-    approximateStep;
+    step;
 
-  labels.push(MATRIX.startYear);
+  const labels = [];
 
   for(
     let year = first;
-    year < MATRIX.endYear;
-    year += approximateStep
+    year <= MATRIX.endYear;
+    year += step
   ){
-    if(year > MATRIX.startYear){
-      labels.push(year);
-    }
+    labels.push(year);
   }
 
-  labels.push(MATRIX.endYear);
-
-  yearsElement.innerHTML =
+  const tickHTML =
     [...new Set(labels)]
       .map(year => {
         const percent =
@@ -4907,6 +5196,12 @@ function renderMatrixYears(){
         `;
       })
       .join("");
+
+  yearsElement.innerHTML = `
+    <span class="matrix-year matrix-year-edge" style="left:0%">←</span>
+    ${tickHTML}
+    <span class="matrix-year matrix-year-edge" style="left:100%">→</span>
+  `;
 }
 
 /* ==========================================================
@@ -5381,6 +5676,8 @@ function matrixLabelRelation(item){
   return matrixState.relationMap.get(item.id) || null;
 }
 
+const MATRIX_LABEL_ALL_THRESHOLD = 30;
+
 function showMatrixNodeLabel(item, visibleIds, initialLabelIds){
   if(!visibleIds.has(item.id)){
     return false;
@@ -5388,6 +5685,16 @@ function showMatrixNodeLabel(item, visibleIds, initialLabelIds){
 
   if(matrixState.selectedId){
     return matrixState.relationMap.has(item.id);
+  }
+
+  /*
+   * Kun suodatus (linssit, haku, ajanjakso...) on jo karsinut
+   * näkyvien korttien määrän pieneksi, lukijaa palvelee parhaiten
+   * että JOKAINEN näkyvä nimike näkyy suoraan neliön vieressä --
+   * ei vain kiinteä 8 kpl "tärkeintä" korttia.
+   */
+  if(visibleIds.size <= MATRIX_LABEL_ALL_THRESHOLD){
+    return true;
   }
 
   return initialLabelIds.has(item.id);
@@ -5569,7 +5876,6 @@ function renderMatrix(){
     labels.join("");
 
   updateMatrixSelection();
-  bindMatrixNodeEvents();
 }
 
 function updateMatrixSelection(){
@@ -5613,48 +5919,49 @@ function updateMatrixSelection(){
 
 /* ==========================================================
    MATRIISIN TAPAHTUMAT
+
+   Delegoitu kuuntelija #matrixGrid-säiliössä (sidotaan vain
+   KERRAN, ei jokaisen renderMatrix()-kutsun jälkeen). Tämä
+   poistaa kokonaan mahdollisuuden, että jokin vasta luotu
+   solmu jäisi hetkeksi ilman kuuntelijaa DOM:n
+   uudelleenrakennuksen aikana.
    ========================================================== */
 
 function bindMatrixNodeEvents(){
-  document
-    .querySelectorAll(
-      "[data-matrix-node]"
-    )
-    .forEach(button => {
-      button.addEventListener(
-        "click",
-        () => {
-          const id =
-            button.dataset.matrixNode;
+  $("matrixGrid").addEventListener(
+    "click",
+    event => {
+      const button =
+        event.target.closest(
+          "[data-matrix-node]"
+        );
 
-          const now =
-            performance.now();
+      if(!button){
+        return;
+      }
 
-          const isSecondClick =
-            matrixState.lastClickId === id &&
-            now -
-              matrixState.lastClickTime <
-              1500 &&
-            matrixState.selectedId === id;
+      const id =
+        button.dataset.matrixNode;
 
-          if(isSecondClick){
-            openDialog(id);
-            return;
-          }
+      /*
+       * Jos tämä solmu on jo aktiivinen/valittu (väri on jo
+       * vaihtunut), toinen klikkaus avaa kortin -- riippumatta
+       * siitä kuinka kauan ensimmäisestä klikkauksesta on
+       * kulunut. Aikaikkunaa ei enää tarvita, koska visuaalinen
+       * "valittu"-tila kertoo käyttäjälle yksiselitteisesti
+       * missä tilassa solmu on.
+       */
+      if(matrixState.selectedId === id){
+        openDialog(id);
+        return;
+      }
 
-          matrixState.selectedId =
-            id;
+      matrixState.selectedId =
+        id;
 
-          matrixState.lastClickId =
-            id;
-
-          matrixState.lastClickTime =
-            now;
-
-          renderMatrix();
-        }
-      );
-    });
+      renderMatrix();
+    }
+  );
 }
 
 /* ==========================================================
@@ -5804,8 +6111,10 @@ function renderHistogram(shown){
 function renderMeta(shown){
   const dirty =
     state.q ||
-    state.type ||
-    state.domain ||
+    state.layer ||
+    state.domainCluster ||
+    state.valence ||
+    state.span ||
     state.periodIdx !== null ||
     state.minImp > 1;
 
@@ -6248,6 +6557,7 @@ function render(){
       );
     });
 
+  renderLensButtons();
   renderMeta(shown);
   renderMatrix();
   renderCards(shown);
@@ -6267,25 +6577,51 @@ $("q").addEventListener(
   }
 );
 
-$("typeF").addEventListener(
-  "change",
-  event => {
-    state.type =
-      event.target.value;
+/*
+ * Yhteinen klikkauskäsittelijä kaikille neljälle linssiryhmälle
+ * (layer / domainCluster / valence / span). Sama nappi uudelleen
+ * klikattuna palauttaa "Kaikki"-tilan (tyhjä arvo).
+ */
+function bindLensGroup(elementId,stateKey){
+  $(elementId).addEventListener(
+    "click",
+    event => {
+      const button =
+        event.target.closest(
+          "button[data-lens]"
+        );
 
-    render();
-  }
-);
+      if(!button){
+        return;
+      }
 
-$("domainF").addEventListener(
-  "change",
-  event => {
-    state.domain =
-      event.target.value;
+      const value =
+        button.dataset.value;
 
-    render();
-  }
-);
+      state[stateKey] =
+        state[stateKey] === value && value !== ""
+          ? ""
+          : value;
+
+      // Näkökulman vaihtaminen pois "muutos"-tilasta
+      // tyhjentää siihen sidotut tarkentimet.
+      if(
+        stateKey === "layer" &&
+        state.layer !== "muutos"
+      ){
+        state.valence = "";
+        state.span = "";
+      }
+
+      render();
+    }
+  );
+}
+
+bindLensGroup("layerF","layer");
+bindLensGroup("domainClusterF","domainCluster");
+bindLensGroup("valenceF","valence");
+bindLensGroup("spanF","span");
 
 $("imp").addEventListener(
   "input",
@@ -6332,12 +6668,14 @@ function resetFilters(){
   state.q = "";
   state.type = "";
   state.domain = "";
+  state.layer = "";
+  state.valence = "";
+  state.domainCluster = "";
+  state.span = "";
   state.periodIdx = null;
   state.minImp = 1;
 
   $("q").value = "";
-  $("typeF").value = "";
-  $("domainF").value = "";
   $("imp").value = 1;
   $("impVal").textContent = "1";
 
