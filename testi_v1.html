@@ -650,6 +650,19 @@ header.hero::after{
   font:500 clamp(6px,.66vw,9px) var(--mono);
 }
 
+.matrix-year-edge{
+  transform:none;
+  color:var(--copper);
+  font-weight:700;
+}
+.matrix-year-edge:first-child{
+  left:2px !important;
+}
+.matrix-year-edge:last-child{
+  left:auto !important;
+  right:2px;
+}
+
 .matrix-grid{
   --matrix-columns:28;
   --matrix-rows:10;
@@ -3624,6 +3637,18 @@ const MATRIX = {
 
   clusters:[
     {
+      id:"malli",
+      label:"Analyyttiset mallit",
+      fixedLayer:"malli",
+      words:[]
+    },
+    {
+      id:"henkilo",
+      label:"Sukupolviprofiilit",
+      fixedLayer:"henkilo",
+      words:[]
+    },
+    {
       id:"valtio",
       label:"Valtio ja oikeudet",
       words:[
@@ -4614,13 +4639,31 @@ function matrixClusterScore(item,cluster){
 }
 
 function primaryCluster(item){
-  let best =
-    MATRIX.clusters[0];
+  /*
+   * "Malli"- ja "henkilo"-kortit eivät sovi aihepiirin
+   * avainsanahakuun (ne ovat poikkileikkaavia tai yksilöityjä,
+   * eivät yhteen teemaan sidottuja) — ne saavat aina oman,
+   * ennalta määrätyn rivilohkonsa layer-kentän perusteella.
+   */
+  const fixedCluster =
+    MATRIX.clusters.find(cluster =>
+      cluster.fixedLayer &&
+      cluster.fixedLayer === item._layer
+    );
 
-  let bestScore =
-    -Infinity;
+  if(fixedCluster){
+    return fixedCluster;
+  }
 
-  for(const cluster of MATRIX.clusters){
+  const topicClusters =
+    MATRIX.clusters.filter(cluster =>
+      !cluster.fixedLayer
+    );
+
+  let best = topicClusters[0];
+  let bestScore = -Infinity;
+
+  for(const cluster of topicClusters){
     const score =
       matrixClusterScore(item,cluster);
 
@@ -5087,41 +5130,26 @@ function renderMatrixYears(){
   const yearsElement =
     $("matrixYears");
 
-  const labels = [];
+  const step = 25;
 
-  const span =
-    MATRIX.endYear -
-    MATRIX.startYear;
-
-  const approximateStep =
-    span > 190
-      ? 50
-      : span > 100
-        ? 25
-        : 20;
-
-  let first =
+  const first =
     Math.ceil(
       MATRIX.startYear /
-      approximateStep
+      step
     ) *
-    approximateStep;
+    step;
 
-  labels.push(MATRIX.startYear);
+  const labels = [];
 
   for(
     let year = first;
-    year < MATRIX.endYear;
-    year += approximateStep
+    year <= MATRIX.endYear;
+    year += step
   ){
-    if(year > MATRIX.startYear){
-      labels.push(year);
-    }
+    labels.push(year);
   }
 
-  labels.push(MATRIX.endYear);
-
-  yearsElement.innerHTML =
+  const tickHTML =
     [...new Set(labels)]
       .map(year => {
         const percent =
@@ -5146,6 +5174,12 @@ function renderMatrixYears(){
         `;
       })
       .join("");
+
+  yearsElement.innerHTML = `
+    <span class="matrix-year matrix-year-edge" style="left:0%">←</span>
+    ${tickHTML}
+    <span class="matrix-year matrix-year-edge" style="left:100%">→</span>
+  `;
 }
 
 /* ==========================================================
@@ -5620,6 +5654,8 @@ function matrixLabelRelation(item){
   return matrixState.relationMap.get(item.id) || null;
 }
 
+const MATRIX_LABEL_ALL_THRESHOLD = 30;
+
 function showMatrixNodeLabel(item, visibleIds, initialLabelIds){
   if(!visibleIds.has(item.id)){
     return false;
@@ -5627,6 +5663,16 @@ function showMatrixNodeLabel(item, visibleIds, initialLabelIds){
 
   if(matrixState.selectedId){
     return matrixState.relationMap.has(item.id);
+  }
+
+  /*
+   * Kun suodatus (linssit, haku, ajanjakso...) on jo karsinut
+   * näkyvien korttien määrän pieneksi, lukijaa palvelee parhaiten
+   * että JOKAINEN näkyvä nimike näkyy suoraan neliön vieressä —
+   * ei vain kiinteä 8 kpl "tärkeintä" korttia.
+   */
+  if(visibleIds.size <= MATRIX_LABEL_ALL_THRESHOLD){
+    return true;
   }
 
   return initialLabelIds.has(item.id);
