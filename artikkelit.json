@@ -5,8 +5,8 @@
     "created": "2026-07-23",
     "description": "Murroskortteihin kytkeytyvä tulkinnallinen artikkelikerros. Artikkelit selittävät MIKSI murros merkitsee; kortit kertovat MITÄ tapahtui.",
     "schema_note": "Kytkentä murroskortteihin tehdään erillisessä 'links'-taulukossa (article_id / item_id / relation_type / weight / sort_order), ei upottamalla linkkejä artikkelin sisään. Tämä mahdollistaa saman artikkelin liittämisen useaan korttiin ja saman kortin useaan artikkeliin ilman duplikointia.",
-    "count": 101,
-    "link_count": 247
+    "count": 102,
+    "link_count": 248
   },
   "relation_types": {
     "case_example": "murros toimii artikkelin väitteen konkreettisena esimerkkinä",
@@ -2539,6 +2539,34 @@
       ]
     },
     {
+      "id": "yhdessa-enemman-osuustoiminta",
+      "title": "Yhdessä enemmän — maaseudun voima kasvaa",
+      "dek": "Vuodesta 1899 lähtien osuustoiminta on osoittanut, miten pienistä paikallisista aloitteista voi kasvaa kansallinen voima.",
+      "tags": [
+        "osuustoiminta",
+        "maaseutu",
+        "talous",
+        "yhteisö"
+      ],
+      "status": "published",
+      "note": "Pohjautuu kahteen infografiikkaan osuustoimintaliikkeestä (Pellervo-Seura 1899, osuusmeijerit, osuuskaupat, yhteys myöhempiin suuryrityksiin).",
+      "body": [
+        "Vuosisadan vaihteen Suomessa maanviljelijän asema oli usein heikko. Pienet tilat ja hajanaiset markkinat tarkoittivat, että yksittäinen tuottaja oli riippuvainen välittäjistä ja kauppiaista, joiden hinnoittelu ja laatuvaatimukset saattoivat vaihdella mielivaltaisesti. Erityisesti maidon, voin ja lihan kaltaisten tuotteiden jalostus ja myynti vaativat pääomaa ja osaamista, jota yksittäisellä pienviljelijällä ei ollut.",
+        "Ratkaisuksi tähän ongelmaan syntyi ajatus osuustoiminnasta: pienten toimijoiden yhdistämisestä yhteiseksi voimaksi. Pellervo-Seura perustettiin vuonna 1899 nimenomaan tätä tarkoitusta varten — edistämään osuustoimintaperiaatteita, kuten vapaaehtoisuutta, avointa jäsenyyttä, demokraattista päätöksentekoa ja jäsenten taloudellista osallistumista. Seura tarjosi koulutusta, neuvontaa ja malleja uusien osuuskuntien perustamiselle.",
+        "Käytännössä osuustoiminta ilmeni ensin osuusmeijereinä, joissa maatilojen maito koottiin yhteen, jalostettiin voiksi ja juustoksi ja myytiin parempaan hintaan kuin yksittäinen tila olisi pystynyt saamaan. Pian perustettiin myös osuuskauppoja, jotka toivat maaseudulle edullisia ja laadukkaita tuotteita ja mahdollisuuden ostaa yhdessä paremmalla hinnalla vähittäiskaupasta.",
+        "Osuustoiminnan käytännön muodot laajenivat nopeasti 1900-luvun ensimmäisinä vuosikymmeninä. Syntyi osuuspankkeja, vakuutusosuuskuntia, hankintaosuuskuntia ja tuotanto-osuuskuntia. Toimialat monipuolistuivat kattamaan lähes kaiken maaseudun taloudellisen toiminnan viljan myynnistä puutarha- ja karjatalouteen, rakennustoimintaan ja energiapalveluihin.",
+        "Osuustoiminnan pitkän aikavälin vaikutus näkyy siinä, että moni tänä päivänä tunnettu suuryritys juontaa juurensa juuri tästä liikkeestä: Valio (perustettu 1905) kasvoi osuusmeijereiden pohjalta maailmanluokan maidonjalostajaksi, SOK (1904) osuuskauppojen kattojärjestöstä kasvoi Suomen suurimmaksi vähittäiskaupan toimijaksi, OP (1902) osuuskuntapankkitoiminnasta vauhditti maaseudun säästämistä ja investointeja, ja Metsä Group kasvoi 1940-luvulla perustetuista metsäosuuskunnista kansainvälisesti merkittäväksi metsäyhtiöksi.",
+        "Osuustoiminnan perintö ei ole vain taloudellinen. Se rakensi luottamusta ja yhteisöllistä pääomaa tavalla, joka vahvisti koko maaseudun elinvoimaa ja demokraattista päätöksentekokulttuuria. Yhteistä päätöksentekoa, avoimuutta ja demokraattista hallintoa harjoiteltiin osuuskuntien kokouksissa vuosikymmeniä ennen kuin vastaavat periaatteet vakiintuivat laajemmin suomalaiseen yhteiskuntaan.",
+        "Osuustoiminta on edelleen yksi Suomen talouden kulmakivistä, erityisesti maaseudulla. Se työllistää kymmeniä tuhansia suomalaisia, ja suuret osuuskuntayritykset toimivat kansainvälisesti menestyen. Pienestä aloitteesta vuonna 1899 kasvoi kansallinen voima — todiste siitä, että yhdessä tekeminen voi olla sekä taloudellisesti tehokasta että yhteiskunnallisesti arvokasta."
+      ],
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/osuustoimintaliike_1899_b.webp",
+          "caption": "Yhdessä enemmän — maaseudun voima kasvaa"
+        }
+      ]
+    },
+    {
       "id": "ylivelkaantuminen-hidas-kertyma",
       "title": "Ylivelkaantuminen: hidas kertymä, nopea seuraus",
       "dek": "Kotitalouksien velka kasvoi 28 prosentista tuloihin nähden 189 prosenttiin neljässäkymmenessä vuodessa — kolmena erillisenä aaltona, joita yhdisti sama toistuva kaava.",
@@ -2567,216 +2595,6 @@
   ],
   "links": [
     {
-      "article_id": "perheen-ja-tyon-yhteensovittaminen",
-      "item_id": "paivahoitolaki-1973",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "kun-korjaava-kierre-katkeaa",
-      "item_id": "elakejarjestelman-kestavyys-1990",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "1990-luvun-laman-pitka-varjo",
-      "item_id": "1990-luvun-lama",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "kriittinen-infrastruktuuri-kaupan-kohteena",
-      "item_id": "sahkon-jakeluverkkojen-yksityistaminen-2013",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "metsasta-maailmanmarkkinoille",
-      "item_id": "hoyrysahat-1860",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "teollistumisen-ja-kaupungistumisen-kaksoisvallankumous",
-      "item_id": "teollistuminen",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "peruskoulu-suomen-kestavin-onnistumistarina",
-      "item_id": "peruskoulu-1968",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "terveydenhuollon-pitka-rakennuskaari",
-      "item_id": "kansanterveyslaki-1972",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "kolme-digitalisaation-aaltoa",
-      "item_id": "internet-murros",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "nato-jasenyys-ja-liittoutumattomuuden-loppu",
-      "item_id": "nato-jasenyys",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "aani-tasa-arvo-ja-oikeudet",
-      "item_id": "aanioikeus-1906",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "suomen-markka-synty-ja-luopuminen",
-      "item_id": "markka-1860",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "tyoelake-sukupolvien-valinen-sopimus",
-      "item_id": "tyoelake-1961",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "1918-kahtia-jakautunut-kansakunta",
-      "item_id": "sisallissota-1918",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "nalasta-huoltovarmuuteen",
-      "item_id": "nalkavuodet-1866",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "rautatiesta-alypuhelimeen",
-      "item_id": "rautatieverkko-1862",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "huoltosuhde-kuka-kantaa",
-      "item_id": "vaeston-ikaantyminen-1975",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "finanssikriisista-nollakorkoihin",
-      "item_id": "finanssikriisi-2008",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "vammaisten-oikeuksien-pitka-matka",
-      "item_id": "vammaispalvelulaki-1987",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "metsatalouden-kestavyys-ja-maaseudun-rakennemuutos",
-      "item_id": "kestava-metsatalous-1928",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "jalleenrakennus-onnistuneen-sopeutumisen-malli",
-      "item_id": "jalleenrakennus",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "neuvola-hidas-kriisi-joka-ei-koskaan-syttynyt",
-      "item_id": "neuvolalaki-1944",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "syntyvyyden-romahdus-hitaat-reaktiot",
-      "item_id": "historiallisen-matala-syntyvyys-2010",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "suuri-muutto-ruotsiin",
-      "item_id": "ruotsiin_muutto",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "ylivelkaantuminen-hidas-kertyma",
-      "item_id": "kotitalouksien-velka-korkoshokki-2022",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "asuntopolitiikan-kriisi-suomessa",
-      "item_id": "asuntopolitiikan-kriisi-1986",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "karjalan-evakot-suomen-suurin-vaestonsiirto",
-      "item_id": "karjalan_evakot",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "vihrea-siirtyma-suomen-uusi-teollinen-murros",
-      "item_id": "ilmasto-vihrea-siirtyma",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "nokia-ilmio-menestyksesta-sokeudeksi",
-      "item_id": "nokia-rakennemuutos",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "nuorten-mielenterveyskriisi-kumuloituva-kuormitus",
-      "item_id": "nuorten-mielenterveyskriisi-1990",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
       "article_id": "globalisaatio-mahdollisuudet-ja-riippuvuudet",
       "item_id": "globalisaatio-1945",
       "relation_type": "primary",
@@ -2784,204 +2602,8 @@
       "sort_order": 1
     },
     {
-      "article_id": "valtionyhtiot-ja-alueiden-eriytyminen",
-      "item_id": "valtion-teollisuusyhtiot-ja-aluepolitiikka-1945",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "pysyvasti-korkea-tyottomyys-suomessa",
-      "item_id": "pysyvasti-korkea-tyottomyys-1990",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "eu-jasenyys-strateginen-valinta",
-      "item_id": "eu-jasenyys-1995",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "olkiluoto-3-paatoksesta-toteutukseen",
-      "item_id": "olkiluoto-3-2002",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "hyvinvointialueet-suuri-rakenneuudistus",
-      "item_id": "hyvinvointialueet-2023",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "maahanmuutto-suomen-rakennemuutos",
-      "item_id": "maahanmuutto-murros",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "osaamiskriisi-suomen-oppimistulosten-lasku",
-      "item_id": "oppimistulosten-heikkeneminen-2006",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "jarjestaytynyt-kansalaisyhteiskunta-demokratian-kasvualusta",
-      "item_id": "jarjestaytynyt-kansalaisyhteiskunta-1860",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "koulutusinvestoinnit-leikkaukset-ja-sopeutumiskyky",
-      "item_id": "koulutusleikkaukset",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "tietoyhteiskunta-tieto-tuotannontekijaksi",
-      "item_id": "tietoyhteiskunta-1980",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "hyvinvointivaltion-rakentuminen-kerroksittain",
-      "item_id": "hyvinvointivaltion-rakentuminen-1880",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "tyomarkkinoiden-sopimusyhteiskunta-suomalainen-malli",
-      "item_id": "tyomarkkinoiden-sopimusyhteiskunta-1907",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "elakejarjestelma-sukupolvien-valinen-lupaus",
-      "item_id": "elakejarjestelman-rakentuminen-1937",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "koronapandemia-suomen-stressitesti",
-      "item_id": "covid-19",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "kehysmenettely-vakautta-vai-jaykkyytta",
-      "item_id": "kehysmenettely",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "sukupolvien-valinen-oikeudenmukaisuus-kuusi-tarinaa",
-      "item_id": "sukupolvien-valinen-oikeudenmukaisuus-1925",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "tuottavuuden-pysahtyminen-suomen-pullonkaula",
-      "item_id": "tuottavuuden-pysahtyminen-2008",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "alueellinen-eriytyminen-kasvukeskukset-periferia",
-      "item_id": "alueellinen-eriytyminen-1990",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "kunnallinen-itsehallinto-paikallisen-demokratian-perusta",
-      "item_id": "kunnallinen-itsehallinto-1865",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "palautesilmukat-yhteiskunnan-oppimismoottori",
-      "item_id": "palautesilmukat-atlas",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "viive-paatoksissa-hidastaa-oppimista",
-      "item_id": "viive-yhteiskunnallisissa-paatoksissa",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "polkuriippuvuus-miksi-valinnat-lukkiutuvat",
-      "item_id": "polkuriippuvuus-atlas",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "sopeutumiskyvyn-anatomia-11-osainen-sykli",
-      "item_id": "sopeutumiskyvyn-anatomia",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "onnistumisten-yhteiset-piirteet-kuusi-periaatetta",
-      "item_id": "onnistumisten-yhteiset-piirteet",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "kriisien-yhteiset-piirteet-toistuva-kaava",
-      "item_id": "kriisien-yhteiset-piirteet",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "suomen-sopeutumiskyvyn-malli-sidonnan-merkitys",
-      "item_id": "suomen-sopeutumiskyvyn-malli",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "elinkeinovapauden-alkuaskel",
-      "item_id": "elinkeinovapaus-1868",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "lukutaidosta-osaamisyhteiskuntaan",
-      "item_id": "kansakoululaitos-1866-2020",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "autonomian-ajan-instituutiot",
-      "item_id": "autonomian-aika-1809-1917",
+      "article_id": "huoltosuhde-kuka-kantaa",
+      "item_id": "vaeston-ikaantyminen-1975",
       "relation_type": "primary",
       "weight": 5,
       "sort_order": 1
@@ -2994,169 +2616,8 @@
       "sort_order": 1
     },
     {
-      "article_id": "jakolinjat-ennen-1918",
-      "item_id": "sisallissodan-taustatekijat-1890-1918",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "sota-joka-rakensi-hyvinvointivaltion-perustan",
-      "item_id": "talvi-ja-jatkosota",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "pitka-1900-luvun-kaari",
-      "item_id": "pitka-1900-luku",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "rakenteellinen-ansa-kun-ratkaisu-muuttuu-ongelmaksi",
-      "item_id": "rakenteellisen-ansan-malli",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "eritahtisuus-miksi-kaikki-ei-muutu-samaan-tahtiin",
-      "item_id": "eritahtisten-murrosten-malli",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "tarpeellisuuden-kokemus-vapauden-varjopuoli",
-      "item_id": "tarpeellisuuden-malli",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "resilienssi-miksi-toiset-jarjestelmat-kestavat",
-      "item_id": "resilienssin-malli",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "konfliktin-dynamiikka-suunnan-voi-kaantaa",
-      "item_id": "konfliktin-dynamiikka-malli",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "kompleksisuus-milloin-enemman-ei-ole-parempi",
-      "item_id": "kompleksisuuden-malli",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "sopeutumisen-kuusi-vaihetta",
-      "item_id": "sopeutumisen-malli",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "arvonmuodostus-mista-arvo-syntyy-ja-jaa",
-      "item_id": "arvonmuodostuksen-malli",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "mallien-verkko-kokonaiskuva",
-      "item_id": "mallien-verkko-m20",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "vanhan-maailman-murtuminen",
-      "item_id": "ensimmainen-maailmansota",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "katalyytti-pieni-kipina-suuri-vaikutus",
-      "item_id": "katalyyttimalli",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "kytkeytyminen-nakymattomat-yhteydet",
-      "item_id": "kytkeytymisen-dynamiikka",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "liikkumavara-hyvinvoinnin-juuri",
-      "item_id": "liikkumavaran-malli",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "riippuvuus-mihin-olemme-sidottuja",
-      "item_id": "riippuvuuksien-malli",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "korjauskyky-ratkaiseeko-tasapaino-vai-kriisi",
-      "item_id": "korjauskyvyn-malli",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "vaikutusketju-yhdesta-tapahtumasta-koko-yhteiskuntaan",
-      "item_id": "vaikutusketjujen-malli",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "sata-vuotta-vaikutusketjuja",
-      "item_id": "vaikutusketjujen-evoluutio-1925-2025",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "huoltosuhde-kuka-kantaa-keta-ja-miten",
-      "item_id": "huoltosuhde-1950-2050",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "perusterveydenhuolto-lahella-ihmista",
-      "item_id": "perusterveydenhuolto-1972",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "metsateollisuus-massoista-jalostettuun",
-      "item_id": "metsateollisuuden-rakennemuutos-1960",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 1
-    },
-    {
-      "article_id": "talkoohenki-yhteinen-tyo-yhteinen-hyoty",
-      "item_id": "talkoohenki-ja-yhteistoiminta",
+      "article_id": "valtionyhtiot-ja-alueiden-eriytyminen",
+      "item_id": "valtion-teollisuusyhtiot-ja-aluepolitiikka-1945",
       "relation_type": "primary",
       "weight": 5,
       "sort_order": 1
@@ -3169,71 +2630,113 @@
       "sort_order": 1
     },
     {
-      "article_id": "kirjasto-tietoa-tasa-arvoa-yhteisollisyytta",
-      "item_id": "kirjastolaitos-1866",
+      "article_id": "autonomian-ajan-instituutiot",
+      "item_id": "autonomian-aika-1809-1917",
       "relation_type": "primary",
       "weight": 5,
       "sort_order": 1
     },
     {
-      "article_id": "digitaalinen-hallinto-parempaa-palvelua",
-      "item_id": "digitaalinen-julkishallinto-1990",
+      "article_id": "pysyvasti-korkea-tyottomyys-suomessa",
+      "item_id": "pysyvasti-korkea-tyottomyys-1990",
       "relation_type": "primary",
       "weight": 5,
       "sort_order": 1
     },
     {
-      "article_id": "suomi-jakautuu-kahtia",
-      "item_id": "vaeston-keskittyminen-2024",
+      "article_id": "kolme-digitalisaation-aaltoa",
+      "item_id": "internet-murros",
       "relation_type": "primary",
       "weight": 5,
       "sort_order": 1
     },
     {
-      "article_id": "selviytymisen-logiikan-muutos",
-      "item_id": "omavaraisuudesta-jarjestelmariippuvuuteen-1925",
+      "article_id": "lukutaidosta-osaamisyhteiskuntaan",
+      "item_id": "kansakoululaitos-1866-2020",
       "relation_type": "primary",
       "weight": 5,
       "sort_order": 1
     },
     {
-      "article_id": "korkeakoulutus-enemman-osaamista",
-      "item_id": "korkeakoulutuksen-massoittuminen-1960",
+      "article_id": "eu-jasenyys-strateginen-valinta",
+      "item_id": "eu-jasenyys-1995",
       "relation_type": "primary",
       "weight": 5,
       "sort_order": 1
     },
     {
-      "article_id": "suomi-jakautuu-kahtia-alueellisesti",
-      "item_id": "alueellinen-eriytyminen-1990",
+      "article_id": "yhdessa-enemman-osuustoiminta",
+      "item_id": "osuustoimintaliike-1899",
       "relation_type": "primary",
       "weight": 5,
       "sort_order": 1
     },
     {
-      "article_id": "asuntomarkkinat-kaksi-suomea",
-      "item_id": "asuntomarkkinoiden-alueellinen-jakautuminen",
+      "article_id": "elinkeinovapauden-alkuaskel",
+      "item_id": "elinkeinovapaus-1868",
       "relation_type": "primary",
       "weight": 5,
       "sort_order": 1
     },
     {
-      "article_id": "tyollisyys-ei-viela-tarpeeksi",
-      "item_id": "tyollisyyden-muutos-suomessa",
+      "article_id": "olkiluoto-3-paatoksesta-toteutukseen",
+      "item_id": "olkiluoto-3-2002",
       "relation_type": "primary",
       "weight": 5,
       "sort_order": 1
     },
     {
-      "article_id": "tyo-ei-kadonnut-se-muuttui",
-      "item_id": "tyomarkkinoiden-rakennemuutos-1950",
+      "article_id": "talkoohenki-yhteinen-tyo-yhteinen-hyoty",
+      "item_id": "talkoohenki-ja-yhteistoiminta",
       "relation_type": "primary",
       "weight": 5,
       "sort_order": 1
     },
     {
-      "article_id": "luottamus-rakentui-hitaasti-katosi-nopeasti",
-      "item_id": "luottamuksen-heikkeneminen-1970",
+      "article_id": "hyvinvointialueet-suuri-rakenneuudistus",
+      "item_id": "hyvinvointialueet-2023",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "metsateollisuus-massoista-jalostettuun",
+      "item_id": "metsateollisuuden-rakennemuutos-1960",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "suomen-sopeutumiskyvyn-malli-sidonnan-merkitys",
+      "item_id": "suomen-sopeutumiskyvyn-malli",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "maahanmuutto-suomen-rakennemuutos",
+      "item_id": "maahanmuutto-murros",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "nato-jasenyys-ja-liittoutumattomuuden-loppu",
+      "item_id": "nato-jasenyys",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "kriisien-yhteiset-piirteet-toistuva-kaava",
+      "item_id": "kriisien-yhteiset-piirteet",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "osaamiskriisi-suomen-oppimistulosten-lasku",
+      "item_id": "oppimistulosten-heikkeneminen-2006",
       "relation_type": "primary",
       "weight": 5,
       "sort_order": 1
@@ -3246,22 +2749,183 @@
       "sort_order": 1
     },
     {
-      "article_id": "kestavyysvaje-ei-ole-kohtalo",
-      "item_id": "julkisen-talouden-kestavyysvaje-2020",
+      "article_id": "onnistumisten-yhteiset-piirteet-kuusi-periaatetta",
+      "item_id": "onnistumisten-yhteiset-piirteet",
       "relation_type": "primary",
       "weight": 5,
       "sort_order": 1
     },
     {
-      "article_id": "sukupolvi-joka-kantaa-kuusi-tarinaa",
-      "item_id": "sukupolvi-joka-kantaa",
+      "article_id": "jarjestaytynyt-kansalaisyhteiskunta-demokratian-kasvualusta",
+      "item_id": "jarjestaytynyt-kansalaisyhteiskunta-1860",
       "relation_type": "primary",
       "weight": 5,
       "sort_order": 1
     },
     {
-      "article_id": "sukupolvisopimus-yhteinen-lupaus",
-      "item_id": "sukupolvien-valinen-sopimus",
+      "article_id": "perusterveydenhuolto-lahella-ihmista",
+      "item_id": "perusterveydenhuolto-1972",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "sopeutumiskyvyn-anatomia-11-osainen-sykli",
+      "item_id": "sopeutumiskyvyn-anatomia",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "koulutusinvestoinnit-leikkaukset-ja-sopeutumiskyky",
+      "item_id": "koulutusleikkaukset",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "aani-tasa-arvo-ja-oikeudet",
+      "item_id": "aanioikeus-1906",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "polkuriippuvuus-miksi-valinnat-lukkiutuvat",
+      "item_id": "polkuriippuvuus-atlas",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "viive-paatoksissa-hidastaa-oppimista",
+      "item_id": "viive-yhteiskunnallisissa-paatoksissa",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "tietoyhteiskunta-tieto-tuotannontekijaksi",
+      "item_id": "tietoyhteiskunta-1980",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "luottamus-rakentui-hitaasti-katosi-nopeasti",
+      "item_id": "luottamuksen-heikkeneminen-1970",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "palautesilmukat-yhteiskunnan-oppimismoottori",
+      "item_id": "palautesilmukat-atlas",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "kunnallinen-itsehallinto-paikallisen-demokratian-perusta",
+      "item_id": "kunnallinen-itsehallinto-1865",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "hyvinvointivaltion-rakentuminen-kerroksittain",
+      "item_id": "hyvinvointivaltion-rakentuminen-1880",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "huoltosuhde-kuka-kantaa-keta-ja-miten",
+      "item_id": "huoltosuhde-1950-2050",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "alueellinen-eriytyminen-kasvukeskukset-periferia",
+      "item_id": "alueellinen-eriytyminen-1990",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "tuottavuuden-pysahtyminen-suomen-pullonkaula",
+      "item_id": "tuottavuuden-pysahtyminen-2008",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "tyomarkkinoiden-sopimusyhteiskunta-suomalainen-malli",
+      "item_id": "tyomarkkinoiden-sopimusyhteiskunta-1907",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "suomen-markka-synty-ja-luopuminen",
+      "item_id": "markka-1860",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "sukupolvien-valinen-oikeudenmukaisuus-kuusi-tarinaa",
+      "item_id": "sukupolvien-valinen-oikeudenmukaisuus-1925",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "kehysmenettely-vakautta-vai-jaykkyytta",
+      "item_id": "kehysmenettely",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "elakejarjestelma-sukupolvien-valinen-lupaus",
+      "item_id": "elakejarjestelman-rakentuminen-1937",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "1990-luvun-laman-pitka-varjo",
+      "item_id": "1990-luvun-lama",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "koronapandemia-suomen-stressitesti",
+      "item_id": "covid-19",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "sata-vuotta-vaikutusketjuja",
+      "item_id": "vaikutusketjujen-evoluutio-1925-2025",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "vaikutusketju-yhdesta-tapahtumasta-koko-yhteiskuntaan",
+      "item_id": "vaikutusketjujen-malli",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "tyoelake-sukupolvien-valinen-sopimus",
+      "item_id": "tyoelake-1961",
       "relation_type": "primary",
       "weight": 5,
       "sort_order": 1
@@ -3274,22 +2938,610 @@
       "sort_order": 1
     },
     {
-      "article_id": "jarjestaytynyt-kansalaisyhteiskunta-demokratian-kasvualusta",
-      "item_id": "aanioikeus-1906",
-      "relation_type": "context",
+      "article_id": "korjauskyky-ratkaiseeko-tasapaino-vai-kriisi",
+      "item_id": "korjauskyvyn-malli",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "1918-kahtia-jakautunut-kansakunta",
+      "item_id": "sisallissota-1918",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "tyo-ei-kadonnut-se-muuttui",
+      "item_id": "tyomarkkinoiden-rakennemuutos-1950",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "riippuvuus-mihin-olemme-sidottuja",
+      "item_id": "riippuvuuksien-malli",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "liikkumavara-hyvinvoinnin-juuri",
+      "item_id": "liikkumavaran-malli",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "nalasta-huoltovarmuuteen",
+      "item_id": "nalkavuodet-1866",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "tyollisyys-ei-viela-tarpeeksi",
+      "item_id": "tyollisyyden-muutos-suomessa",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "kytkeytyminen-nakymattomat-yhteydet",
+      "item_id": "kytkeytymisen-dynamiikka",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "rautatiesta-alypuhelimeen",
+      "item_id": "rautatieverkko-1862",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "asuntomarkkinat-kaksi-suomea",
+      "item_id": "asuntomarkkinoiden-alueellinen-jakautuminen",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "katalyytti-pieni-kipina-suuri-vaikutus",
+      "item_id": "katalyyttimalli",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "perheen-ja-tyon-yhteensovittaminen",
+      "item_id": "paivahoitolaki-1973",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "suomi-jakautuu-kahtia-alueellisesti",
+      "item_id": "alueellinen-eriytyminen-1990",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "vanhan-maailman-murtuminen",
+      "item_id": "ensimmainen-maailmansota",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "finanssikriisista-nollakorkoihin",
+      "item_id": "finanssikriisi-2008",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "kriittinen-infrastruktuuri-kaupan-kohteena",
+      "item_id": "sahkon-jakeluverkkojen-yksityistaminen-2013",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "vammaisten-oikeuksien-pitka-matka",
+      "item_id": "vammaispalvelulaki-1987",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "sukupolvisopimus-yhteinen-lupaus",
+      "item_id": "sukupolvien-valinen-sopimus",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "korkeakoulutus-enemman-osaamista",
+      "item_id": "korkeakoulutuksen-massoittuminen-1960",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "metsatalouden-kestavyys-ja-maaseudun-rakennemuutos",
+      "item_id": "kestava-metsatalous-1928",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "metsasta-maailmanmarkkinoille",
+      "item_id": "hoyrysahat-1860",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "mallien-verkko-kokonaiskuva",
+      "item_id": "mallien-verkko-m20",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "arvonmuodostus-mista-arvo-syntyy-ja-jaa",
+      "item_id": "arvonmuodostuksen-malli",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "jalleenrakennus-onnistuneen-sopeutumisen-malli",
+      "item_id": "jalleenrakennus",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "sukupolvi-joka-kantaa-kuusi-tarinaa",
+      "item_id": "sukupolvi-joka-kantaa",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "sopeutumisen-kuusi-vaihetta",
+      "item_id": "sopeutumisen-malli",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "neuvola-hidas-kriisi-joka-ei-koskaan-syttynyt",
+      "item_id": "neuvolalaki-1944",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "selviytymisen-logiikan-muutos",
+      "item_id": "omavaraisuudesta-jarjestelmariippuvuuteen-1925",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "syntyvyyden-romahdus-hitaat-reaktiot",
+      "item_id": "historiallisen-matala-syntyvyys-2010",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "suomi-jakautuu-kahtia",
+      "item_id": "vaeston-keskittyminen-2024",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "kompleksisuus-milloin-enemman-ei-ole-parempi",
+      "item_id": "kompleksisuuden-malli",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "suuri-muutto-ruotsiin",
+      "item_id": "ruotsiin_muutto",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "teollistumisen-ja-kaupungistumisen-kaksoisvallankumous",
+      "item_id": "teollistuminen",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "konfliktin-dynamiikka-suunnan-voi-kaantaa",
+      "item_id": "konfliktin-dynamiikka-malli",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "ylivelkaantuminen-hidas-kertyma",
+      "item_id": "kotitalouksien-velka-korkoshokki-2022",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "kestavyysvaje-ei-ole-kohtalo",
+      "item_id": "julkisen-talouden-kestavyysvaje-2020",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "resilienssi-miksi-toiset-jarjestelmat-kestavat",
+      "item_id": "resilienssin-malli",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "tarpeellisuuden-kokemus-vapauden-varjopuoli",
+      "item_id": "tarpeellisuuden-malli",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "asuntopolitiikan-kriisi-suomessa",
+      "item_id": "asuntopolitiikan-kriisi-1986",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "digitaalinen-hallinto-parempaa-palvelua",
+      "item_id": "digitaalinen-julkishallinto-1990",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "eritahtisuus-miksi-kaikki-ei-muutu-samaan-tahtiin",
+      "item_id": "eritahtisten-murrosten-malli",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "rakenteellinen-ansa-kun-ratkaisu-muuttuu-ongelmaksi",
+      "item_id": "rakenteellisen-ansan-malli",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "karjalan-evakot-suomen-suurin-vaestonsiirto",
+      "item_id": "karjalan_evakot",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "peruskoulu-suomen-kestavin-onnistumistarina",
+      "item_id": "peruskoulu-1968",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "pitka-1900-luvun-kaari",
+      "item_id": "pitka-1900-luku",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "vihrea-siirtyma-suomen-uusi-teollinen-murros",
+      "item_id": "ilmasto-vihrea-siirtyma",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "kun-korjaava-kierre-katkeaa",
+      "item_id": "elakejarjestelman-kestavyys-1990",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "nokia-ilmio-menestyksesta-sokeudeksi",
+      "item_id": "nokia-rakennemuutos",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "kirjasto-tietoa-tasa-arvoa-yhteisollisyytta",
+      "item_id": "kirjastolaitos-1866",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "sota-joka-rakensi-hyvinvointivaltion-perustan",
+      "item_id": "talvi-ja-jatkosota",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "nuorten-mielenterveyskriisi-kumuloituva-kuormitus",
+      "item_id": "nuorten-mielenterveyskriisi-1990",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "terveydenhuollon-pitka-rakennuskaari",
+      "item_id": "kansanterveyslaki-1972",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "jakolinjat-ennen-1918",
+      "item_id": "sisallissodan-taustatekijat-1890-1918",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 1
+    },
+    {
+      "article_id": "terveydenhuollon-pitka-rakennuskaari",
+      "item_id": "sote-pitka-uudistus",
+      "relation_type": "primary",
       "weight": 5,
       "sort_order": 2
     },
     {
-      "article_id": "kehysmenettely-vakautta-vai-jaykkyytta",
-      "item_id": "1990-luvun-lama",
-      "relation_type": "context",
+      "article_id": "huoltosuhde-kuka-kantaa",
+      "item_id": "vaeston-ikaantyminen",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 2
+    },
+    {
+      "article_id": "kun-korjaava-kierre-katkeaa",
+      "item_id": "elakeuudistukset-2005",
+      "relation_type": "case_example",
       "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "1990-luvun-laman-pitka-varjo",
+      "item_id": "pankkikriisi",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 2
+    },
+    {
+      "article_id": "kriittinen-infrastruktuuri-kaupan-kohteena",
+      "item_id": "datakeskusten-rakentamisen-kiihtyminen-2023",
+      "relation_type": "case_example",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "metsasta-maailmanmarkkinoille",
+      "item_id": "puunjalostus-1870",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 2
+    },
+    {
+      "article_id": "teollistumisen-ja-kaupungistumisen-kaksoisvallankumous",
+      "item_id": "kaupungistuminen",
+      "relation_type": "primary",
+      "weight": 5,
       "sort_order": 2
     },
     {
       "article_id": "peruskoulu-suomen-kestavin-onnistumistarina",
       "item_id": "oppivelvollisuus-1921",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "kolme-digitalisaation-aaltoa",
+      "item_id": "digital-julkishallinto",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 2
+    },
+    {
+      "article_id": "nato-jasenyys-ja-liittoutumattomuuden-loppu",
+      "item_id": "yya-sopimus-1948",
+      "relation_type": "contrasts",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "aani-tasa-arvo-ja-oikeudet",
+      "item_id": "tasa-arvolaki-1987",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 2
+    },
+    {
+      "article_id": "suomen-markka-synty-ja-luopuminen",
+      "item_id": "markan_kellutus",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "tyoelake-sukupolvien-valinen-sopimus",
+      "item_id": "kansanelakeuudistus-1956",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "1918-kahtia-jakautunut-kansakunta",
+      "item_id": "itsenaisyys-1917",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "nalasta-huoltovarmuuteen",
+      "item_id": "talvi-ja-jatkosota",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "rautatiesta-alypuhelimeen",
+      "item_id": "puhelinverkko-1882",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 2
+    },
+    {
+      "article_id": "perheen-ja-tyon-yhteensovittaminen",
+      "item_id": "varhaiskasvatuksen-laajeneminen-1973",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 2
+    },
+    {
+      "article_id": "finanssikriisista-nollakorkoihin",
+      "item_id": "ecb-quantitative-easing",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 2
+    },
+    {
+      "article_id": "vammaisten-oikeuksien-pitka-matka",
+      "item_id": "vammaisten-itsenainen-asuminen-1990",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 2
+    },
+    {
+      "article_id": "autonomian-ajan-instituutiot",
+      "item_id": "suomen-sota-autonomia-1808",
+      "relation_type": "context",
+      "weight": 3,
+      "sort_order": 2
+    },
+    {
+      "article_id": "metsatalouden-kestavyys-ja-maaseudun-rakennemuutos",
+      "item_id": "maatalouden-rakennemuutos-1959",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 2
+    },
+    {
+      "article_id": "jalleenrakennus-onnistuneen-sopeutumisen-malli",
+      "item_id": "maanhankintalaki-1945",
+      "relation_type": "supports",
+      "weight": 3,
+      "sort_order": 2
+    },
+    {
+      "article_id": "neuvola-hidas-kriisi-joka-ei-koskaan-syttynyt",
+      "item_id": "aitiysavustus-1937",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "syntyvyyden-romahdus-hitaat-reaktiot",
+      "item_id": "syntyvyyden-rakennemuutos-1969",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "suuri-muutto-ruotsiin",
+      "item_id": "pohjoismaiset-tyomarkkinat-1954",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "ylivelkaantuminen-hidas-kertyma",
+      "item_id": "rahoitusmarkkinoiden-vapautuminen",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "asuntopolitiikan-kriisi-suomessa",
+      "item_id": "rahoitusmarkkinoiden_vapauttaminen",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "karjalan-evakot-suomen-suurin-vaestonsiirto",
+      "item_id": "maanhankintalaki-1945",
+      "relation_type": "supports",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "vihrea-siirtyma-suomen-uusi-teollinen-murros",
+      "item_id": "ukrainan-sota-energiakriisi",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "nokia-ilmio-menestyksesta-sokeudeksi",
+      "item_id": "internet-murros",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "nuorten-mielenterveyskriisi-kumuloituva-kuormitus",
+      "item_id": "koulutusleikkaukset",
+      "relation_type": "context",
+      "weight": 3,
+      "sort_order": 2
+    },
+    {
+      "article_id": "globalisaatio-mahdollisuudet-ja-riippuvuudet",
+      "item_id": "eu-jasenyys-1995",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "valtionyhtiot-ja-alueiden-eriytyminen",
+      "item_id": "valtionyhtioiden_yhtioittaminen",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "pysyvasti-korkea-tyottomyys-suomessa",
+      "item_id": "1990-luvun-lama",
       "relation_type": "context",
       "weight": 4,
       "sort_order": 2
@@ -3302,16 +3554,37 @@
       "sort_order": 2
     },
     {
-      "article_id": "valtionyhtiot-ja-alueiden-eriytyminen",
-      "item_id": "valtionyhtioiden_yhtioittaminen",
+      "article_id": "olkiluoto-3-paatoksesta-toteutukseen",
+      "item_id": "ilmasto-vihrea-siirtyma",
+      "relation_type": "context",
+      "weight": 3,
+      "sort_order": 2
+    },
+    {
+      "article_id": "hyvinvointialueet-suuri-rakenneuudistus",
+      "item_id": "sote-pitka-uudistus",
       "relation_type": "context",
       "weight": 4,
       "sort_order": 2
     },
     {
-      "article_id": "terveydenhuollon-pitka-rakennuskaari",
-      "item_id": "sote-pitka-uudistus",
-      "relation_type": "primary",
+      "article_id": "maahanmuutto-suomen-rakennemuutos",
+      "item_id": "eu-jasenyys-1995",
+      "relation_type": "context",
+      "weight": 3,
+      "sort_order": 2
+    },
+    {
+      "article_id": "osaamiskriisi-suomen-oppimistulosten-lasku",
+      "item_id": "koulutusleikkaukset",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "jarjestaytynyt-kansalaisyhteiskunta-demokratian-kasvualusta",
+      "item_id": "aanioikeus-1906",
+      "relation_type": "context",
       "weight": 5,
       "sort_order": 2
     },
@@ -3323,17 +3596,171 @@
       "sort_order": 2
     },
     {
-      "article_id": "sata-vuotta-vaikutusketjuja",
-      "item_id": "vaikutusketjujen-malli",
+      "article_id": "tietoyhteiskunta-tieto-tuotannontekijaksi",
+      "item_id": "internet-murros",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "hyvinvointivaltion-rakentuminen-kerroksittain",
+      "item_id": "neuvolalaki-1944",
+      "relation_type": "supports",
+      "weight": 3,
+      "sort_order": 2
+    },
+    {
+      "article_id": "tyomarkkinoiden-sopimusyhteiskunta-suomalainen-malli",
+      "item_id": "tulopolitiikka-1968",
+      "relation_type": "supports",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "elakejarjestelma-sukupolvien-valinen-lupaus",
+      "item_id": "tyoelake-1961",
+      "relation_type": "supports",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "koronapandemia-suomen-stressitesti",
+      "item_id": "digital-julkishallinto",
+      "relation_type": "supports",
+      "weight": 3,
+      "sort_order": 2
+    },
+    {
+      "article_id": "kehysmenettely-vakautta-vai-jaykkyytta",
+      "item_id": "1990-luvun-lama",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "sukupolvien-valinen-oikeudenmukaisuus-kuusi-tarinaa",
+      "item_id": "vaeston-ikaantyminen",
       "relation_type": "context",
       "weight": 3,
       "sort_order": 2
     },
     {
-      "article_id": "kolme-digitalisaation-aaltoa",
-      "item_id": "digital-julkishallinto",
-      "relation_type": "primary",
-      "weight": 5,
+      "article_id": "tuottavuuden-pysahtyminen-suomen-pullonkaula",
+      "item_id": "tuottavuusohjelma",
+      "relation_type": "context",
+      "weight": 3,
+      "sort_order": 2
+    },
+    {
+      "article_id": "alueellinen-eriytyminen-kasvukeskukset-periferia",
+      "item_id": "kaupunkiseutujen-segregaatio-1990",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "kunnallinen-itsehallinto-paikallisen-demokratian-perusta",
+      "item_id": "kunnallishallinto-1865",
+      "relation_type": "supports",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "palautesilmukat-yhteiskunnan-oppimismoottori",
+      "item_id": "neuvolalaki-1944",
+      "relation_type": "case_example",
+      "weight": 3,
+      "sort_order": 2
+    },
+    {
+      "article_id": "viive-paatoksissa-hidastaa-oppimista",
+      "item_id": "aanioikeus-1906",
+      "relation_type": "case_example",
+      "weight": 3,
+      "sort_order": 2
+    },
+    {
+      "article_id": "polkuriippuvuus-miksi-valinnat-lukkiutuvat",
+      "item_id": "kansakouluasetus-1866",
+      "relation_type": "case_example",
+      "weight": 3,
+      "sort_order": 2
+    },
+    {
+      "article_id": "sopeutumiskyvyn-anatomia-11-osainen-sykli",
+      "item_id": "suomen-sopeutumiskyvyn-malli",
+      "relation_type": "supports",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "onnistumisten-yhteiset-piirteet-kuusi-periaatetta",
+      "item_id": "peruskoulu-1968",
+      "relation_type": "case_example",
+      "weight": 3,
+      "sort_order": 2
+    },
+    {
+      "article_id": "kriisien-yhteiset-piirteet-toistuva-kaava",
+      "item_id": "1990-luvun-lama",
+      "relation_type": "case_example",
+      "weight": 3,
+      "sort_order": 2
+    },
+    {
+      "article_id": "suomen-sopeutumiskyvyn-malli-sidonnan-merkitys",
+      "item_id": "sopeutumiskyvyn-anatomia",
+      "relation_type": "supports",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "elinkeinovapauden-alkuaskel",
+      "item_id": "elinkeinovapaus-1879",
+      "relation_type": "context",
+      "weight": 3,
+      "sort_order": 2
+    },
+    {
+      "article_id": "lukutaidosta-osaamisyhteiskuntaan",
+      "item_id": "kansakouluasetus-1866",
+      "relation_type": "supports",
+      "weight": 3,
+      "sort_order": 2
+    },
+    {
+      "article_id": "meret-erottivat-tahys-yhdisti",
+      "item_id": "nalkavuodet-1866",
+      "relation_type": "context",
+      "weight": 2,
+      "sort_order": 2
+    },
+    {
+      "article_id": "jakolinjat-ennen-1918",
+      "item_id": "sisallissota-1918",
+      "relation_type": "case_example",
+      "weight": 4,
+      "sort_order": 2
+    },
+    {
+      "article_id": "pitka-1900-luvun-kaari",
+      "item_id": "autonomian-aika-1809-1917",
+      "relation_type": "context",
+      "weight": 2,
+      "sort_order": 2
+    },
+    {
+      "article_id": "eritahtisuus-miksi-kaikki-ei-muutu-samaan-tahtiin",
+      "item_id": "viive-yhteiskunnallisissa-paatoksissa",
+      "relation_type": "context",
+      "weight": 2,
+      "sort_order": 2
+    },
+    {
+      "article_id": "konfliktin-dynamiikka-suunnan-voi-kaantaa",
+      "item_id": "sisallissodan-taustatekijat-1890-1918",
+      "relation_type": "case_example",
+      "weight": 3,
       "sort_order": 2
     },
     {
@@ -3351,163 +3778,9 @@
       "sort_order": 2
     },
     {
-      "article_id": "sukupolvien-valinen-oikeudenmukaisuus-kuusi-tarinaa",
-      "item_id": "vaeston-ikaantyminen",
+      "article_id": "sata-vuotta-vaikutusketjuja",
+      "item_id": "vaikutusketjujen-malli",
       "relation_type": "context",
-      "weight": 3,
-      "sort_order": 2
-    },
-    {
-      "article_id": "nato-jasenyys-ja-liittoutumattomuuden-loppu",
-      "item_id": "yya-sopimus-1948",
-      "relation_type": "contrasts",
-      "weight": 4,
-      "sort_order": 2
-    },
-    {
-      "article_id": "nokia-ilmio-menestyksesta-sokeudeksi",
-      "item_id": "internet-murros",
-      "relation_type": "context",
-      "weight": 4,
-      "sort_order": 2
-    },
-    {
-      "article_id": "eritahtisuus-miksi-kaikki-ei-muutu-samaan-tahtiin",
-      "item_id": "viive-yhteiskunnallisissa-paatoksissa",
-      "relation_type": "context",
-      "weight": 2,
-      "sort_order": 2
-    },
-    {
-      "article_id": "aani-tasa-arvo-ja-oikeudet",
-      "item_id": "tasa-arvolaki-1987",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 2
-    },
-    {
-      "article_id": "tietoyhteiskunta-tieto-tuotannontekijaksi",
-      "item_id": "internet-murros",
-      "relation_type": "context",
-      "weight": 4,
-      "sort_order": 2
-    },
-    {
-      "article_id": "meret-erottivat-tahys-yhdisti",
-      "item_id": "nalkavuodet-1866",
-      "relation_type": "context",
-      "weight": 2,
-      "sort_order": 2
-    },
-    {
-      "article_id": "suomen-markka-synty-ja-luopuminen",
-      "item_id": "markan_kellutus",
-      "relation_type": "context",
-      "weight": 4,
-      "sort_order": 2
-    },
-    {
-      "article_id": "olkiluoto-3-paatoksesta-toteutukseen",
-      "item_id": "ilmasto-vihrea-siirtyma",
-      "relation_type": "context",
-      "weight": 3,
-      "sort_order": 2
-    },
-    {
-      "article_id": "metsatalouden-kestavyys-ja-maaseudun-rakennemuutos",
-      "item_id": "maatalouden-rakennemuutos-1959",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 2
-    },
-    {
-      "article_id": "tuottavuuden-pysahtyminen-suomen-pullonkaula",
-      "item_id": "tuottavuusohjelma",
-      "relation_type": "context",
-      "weight": 3,
-      "sort_order": 2
-    },
-    {
-      "article_id": "tyoelake-sukupolvien-valinen-sopimus",
-      "item_id": "kansanelakeuudistus-1956",
-      "relation_type": "context",
-      "weight": 4,
-      "sort_order": 2
-    },
-    {
-      "article_id": "vihrea-siirtyma-suomen-uusi-teollinen-murros",
-      "item_id": "ukrainan-sota-energiakriisi",
-      "relation_type": "context",
-      "weight": 4,
-      "sort_order": 2
-    },
-    {
-      "article_id": "elinkeinovapauden-alkuaskel",
-      "item_id": "elinkeinovapaus-1879",
-      "relation_type": "context",
-      "weight": 3,
-      "sort_order": 2
-    },
-    {
-      "article_id": "1918-kahtia-jakautunut-kansakunta",
-      "item_id": "itsenaisyys-1917",
-      "relation_type": "context",
-      "weight": 4,
-      "sort_order": 2
-    },
-    {
-      "article_id": "hyvinvointivaltion-rakentuminen-kerroksittain",
-      "item_id": "neuvolalaki-1944",
-      "relation_type": "supports",
-      "weight": 3,
-      "sort_order": 2
-    },
-    {
-      "article_id": "autonomian-ajan-instituutiot",
-      "item_id": "suomen-sota-autonomia-1808",
-      "relation_type": "context",
-      "weight": 3,
-      "sort_order": 2
-    },
-    {
-      "article_id": "konfliktin-dynamiikka-suunnan-voi-kaantaa",
-      "item_id": "sisallissodan-taustatekijat-1890-1918",
-      "relation_type": "case_example",
-      "weight": 3,
-      "sort_order": 2
-    },
-    {
-      "article_id": "nalasta-huoltovarmuuteen",
-      "item_id": "talvi-ja-jatkosota",
-      "relation_type": "context",
-      "weight": 4,
-      "sort_order": 2
-    },
-    {
-      "article_id": "kriisien-yhteiset-piirteet-toistuva-kaava",
-      "item_id": "1990-luvun-lama",
-      "relation_type": "case_example",
-      "weight": 3,
-      "sort_order": 2
-    },
-    {
-      "article_id": "alueellinen-eriytyminen-kasvukeskukset-periferia",
-      "item_id": "kaupunkiseutujen-segregaatio-1990",
-      "relation_type": "context",
-      "weight": 4,
-      "sort_order": 2
-    },
-    {
-      "article_id": "rautatiesta-alypuhelimeen",
-      "item_id": "puhelinverkko-1882",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 2
-    },
-    {
-      "article_id": "polkuriippuvuus-miksi-valinnat-lukkiutuvat",
-      "item_id": "kansakouluasetus-1866",
-      "relation_type": "case_example",
       "weight": 3,
       "sort_order": 2
     },
@@ -3519,141 +3792,8 @@
       "sort_order": 2
     },
     {
-      "article_id": "perheen-ja-tyon-yhteensovittaminen",
-      "item_id": "varhaiskasvatuksen-laajeneminen-1973",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 2
-    },
-    {
-      "article_id": "tyomarkkinoiden-sopimusyhteiskunta-suomalainen-malli",
-      "item_id": "tulopolitiikka-1968",
-      "relation_type": "supports",
-      "weight": 4,
-      "sort_order": 2
-    },
-    {
-      "article_id": "jakolinjat-ennen-1918",
-      "item_id": "sisallissota-1918",
-      "relation_type": "case_example",
-      "weight": 4,
-      "sort_order": 2
-    },
-    {
-      "article_id": "finanssikriisista-nollakorkoihin",
-      "item_id": "ecb-quantitative-easing",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 2
-    },
-    {
-      "article_id": "kunnallinen-itsehallinto-paikallisen-demokratian-perusta",
-      "item_id": "kunnallishallinto-1865",
-      "relation_type": "supports",
-      "weight": 4,
-      "sort_order": 2
-    },
-    {
-      "article_id": "vammaisten-oikeuksien-pitka-matka",
-      "item_id": "vammaisten-itsenainen-asuminen-1990",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 2
-    },
-    {
-      "article_id": "hyvinvointialueet-suuri-rakenneuudistus",
-      "item_id": "sote-pitka-uudistus",
-      "relation_type": "context",
-      "weight": 4,
-      "sort_order": 2
-    },
-    {
-      "article_id": "karjalan-evakot-suomen-suurin-vaestonsiirto",
-      "item_id": "maanhankintalaki-1945",
-      "relation_type": "supports",
-      "weight": 4,
-      "sort_order": 2
-    },
-    {
-      "article_id": "lukutaidosta-osaamisyhteiskuntaan",
-      "item_id": "kansakouluasetus-1866",
-      "relation_type": "supports",
-      "weight": 3,
-      "sort_order": 2
-    },
-    {
-      "article_id": "elakejarjestelma-sukupolvien-valinen-lupaus",
-      "item_id": "tyoelake-1961",
-      "relation_type": "supports",
-      "weight": 4,
-      "sort_order": 2
-    },
-    {
-      "article_id": "globalisaatio-mahdollisuudet-ja-riippuvuudet",
-      "item_id": "eu-jasenyys-1995",
-      "relation_type": "context",
-      "weight": 4,
-      "sort_order": 2
-    },
-    {
-      "article_id": "huoltosuhde-kuka-kantaa",
-      "item_id": "vaeston-ikaantyminen",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 2
-    },
-    {
-      "article_id": "onnistumisten-yhteiset-piirteet-kuusi-periaatetta",
-      "item_id": "peruskoulu-1968",
-      "relation_type": "case_example",
-      "weight": 3,
-      "sort_order": 2
-    },
-    {
-      "article_id": "pitka-1900-luvun-kaari",
-      "item_id": "autonomian-aika-1809-1917",
-      "relation_type": "context",
-      "weight": 2,
-      "sort_order": 2
-    },
-    {
-      "article_id": "asuntopolitiikan-kriisi-suomessa",
-      "item_id": "rahoitusmarkkinoiden_vapauttaminen",
-      "relation_type": "context",
-      "weight": 4,
-      "sort_order": 2
-    },
-    {
-      "article_id": "ylivelkaantuminen-hidas-kertyma",
-      "item_id": "rahoitusmarkkinoiden-vapautuminen",
-      "relation_type": "context",
-      "weight": 4,
-      "sort_order": 2
-    },
-    {
-      "article_id": "viive-paatoksissa-hidastaa-oppimista",
-      "item_id": "aanioikeus-1906",
-      "relation_type": "case_example",
-      "weight": 3,
-      "sort_order": 2
-    },
-    {
-      "article_id": "suuri-muutto-ruotsiin",
-      "item_id": "pohjoismaiset-tyomarkkinat-1954",
-      "relation_type": "context",
-      "weight": 4,
-      "sort_order": 2
-    },
-    {
-      "article_id": "kun-korjaava-kierre-katkeaa",
-      "item_id": "elakeuudistukset-2005",
-      "relation_type": "case_example",
-      "weight": 4,
-      "sort_order": 2
-    },
-    {
-      "article_id": "maahanmuutto-suomen-rakennemuutos",
-      "item_id": "eu-jasenyys-1995",
+      "article_id": "pientila-enemman-kuin-maatila",
+      "item_id": "pientilavaltainen-suomi-1918",
       "relation_type": "context",
       "weight": 3,
       "sort_order": 2
@@ -3666,125 +3806,6 @@
       "sort_order": 2
     },
     {
-      "article_id": "pysyvasti-korkea-tyottomyys-suomessa",
-      "item_id": "1990-luvun-lama",
-      "relation_type": "context",
-      "weight": 4,
-      "sort_order": 2
-    },
-    {
-      "article_id": "1990-luvun-laman-pitka-varjo",
-      "item_id": "pankkikriisi",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 2
-    },
-    {
-      "article_id": "sopeutumiskyvyn-anatomia-11-osainen-sykli",
-      "item_id": "suomen-sopeutumiskyvyn-malli",
-      "relation_type": "supports",
-      "weight": 4,
-      "sort_order": 2
-    },
-    {
-      "article_id": "syntyvyyden-romahdus-hitaat-reaktiot",
-      "item_id": "syntyvyyden-rakennemuutos-1969",
-      "relation_type": "context",
-      "weight": 4,
-      "sort_order": 2
-    },
-    {
-      "article_id": "neuvola-hidas-kriisi-joka-ei-koskaan-syttynyt",
-      "item_id": "aitiysavustus-1937",
-      "relation_type": "context",
-      "weight": 4,
-      "sort_order": 2
-    },
-    {
-      "article_id": "palautesilmukat-yhteiskunnan-oppimismoottori",
-      "item_id": "neuvolalaki-1944",
-      "relation_type": "case_example",
-      "weight": 3,
-      "sort_order": 2
-    },
-    {
-      "article_id": "koronapandemia-suomen-stressitesti",
-      "item_id": "digital-julkishallinto",
-      "relation_type": "supports",
-      "weight": 3,
-      "sort_order": 2
-    },
-    {
-      "article_id": "kriittinen-infrastruktuuri-kaupan-kohteena",
-      "item_id": "datakeskusten-rakentamisen-kiihtyminen-2023",
-      "relation_type": "case_example",
-      "weight": 4,
-      "sort_order": 2
-    },
-    {
-      "article_id": "osaamiskriisi-suomen-oppimistulosten-lasku",
-      "item_id": "koulutusleikkaukset",
-      "relation_type": "context",
-      "weight": 4,
-      "sort_order": 2
-    },
-    {
-      "article_id": "nuorten-mielenterveyskriisi-kumuloituva-kuormitus",
-      "item_id": "koulutusleikkaukset",
-      "relation_type": "context",
-      "weight": 3,
-      "sort_order": 2
-    },
-    {
-      "article_id": "metsasta-maailmanmarkkinoille",
-      "item_id": "puunjalostus-1870",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 2
-    },
-    {
-      "article_id": "suomen-sopeutumiskyvyn-malli-sidonnan-merkitys",
-      "item_id": "sopeutumiskyvyn-anatomia",
-      "relation_type": "supports",
-      "weight": 4,
-      "sort_order": 2
-    },
-    {
-      "article_id": "jalleenrakennus-onnistuneen-sopeutumisen-malli",
-      "item_id": "maanhankintalaki-1945",
-      "relation_type": "supports",
-      "weight": 3,
-      "sort_order": 2
-    },
-    {
-      "article_id": "pientila-enemman-kuin-maatila",
-      "item_id": "pientilavaltainen-suomi-1918",
-      "relation_type": "context",
-      "weight": 3,
-      "sort_order": 2
-    },
-    {
-      "article_id": "teollistumisen-ja-kaupungistumisen-kaksoisvallankumous",
-      "item_id": "kaupungistuminen",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 2
-    },
-    {
-      "article_id": "kriisien-yhteiset-piirteet-toistuva-kaava",
-      "item_id": "olkiluoto-3-2002",
-      "relation_type": "case_example",
-      "weight": 3,
-      "sort_order": 3
-    },
-    {
-      "article_id": "globalisaatio-mahdollisuudet-ja-riippuvuudet",
-      "item_id": "nokia-rakennemuutos",
-      "relation_type": "supports",
-      "weight": 3,
-      "sort_order": 3
-    },
-    {
       "article_id": "valtionyhtiot-ja-alueiden-eriytyminen",
       "item_id": "kaupunkiseutujen-segregaatio-1990",
       "relation_type": "supports",
@@ -3792,9 +3813,37 @@
       "sort_order": 3
     },
     {
-      "article_id": "pysyvasti-korkea-tyottomyys-suomessa",
+      "article_id": "polkuriippuvuus-miksi-valinnat-lukkiutuvat",
+      "item_id": "1990-luvun-lama",
+      "relation_type": "case_example",
+      "weight": 3,
+      "sort_order": 3
+    },
+    {
+      "article_id": "jarjestaytynyt-kansalaisyhteiskunta-demokratian-kasvualusta",
+      "item_id": "sortokaudet",
+      "relation_type": "supports",
+      "weight": 3,
+      "sort_order": 3
+    },
+    {
+      "article_id": "peruskoulu-suomen-kestavin-onnistumistarina",
+      "item_id": "kansakouluasetus-1866",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 3
+    },
+    {
+      "article_id": "osaamiskriisi-suomen-oppimistulosten-lasku",
       "item_id": "osaajapula-tki-palautus-2019",
-      "relation_type": "contrasts",
+      "relation_type": "supports",
+      "weight": 4,
+      "sort_order": 3
+    },
+    {
+      "article_id": "teollistumisen-ja-kaupungistumisen-kaksoisvallankumous",
+      "item_id": "palkkatyoyhteiskunta-1865",
+      "relation_type": "context",
       "weight": 3,
       "sort_order": 3
     },
@@ -3806,27 +3855,6 @@
       "sort_order": 3
     },
     {
-      "article_id": "eu-jasenyys-strateginen-valinta",
-      "item_id": "nato-jasenyys",
-      "relation_type": "supports",
-      "weight": 3,
-      "sort_order": 3
-    },
-    {
-      "article_id": "hyvinvointialueet-suuri-rakenneuudistus",
-      "item_id": "paras-hanke-2007",
-      "relation_type": "supports",
-      "weight": 3,
-      "sort_order": 3
-    },
-    {
-      "article_id": "nuorten-mielenterveyskriisi-kumuloituva-kuormitus",
-      "item_id": "oppimistulosten-heikkeneminen-2006",
-      "relation_type": "supports",
-      "weight": 3,
-      "sort_order": 3
-    },
-    {
       "article_id": "maahanmuutto-suomen-rakennemuutos",
       "item_id": "vaeston-ikaantyminen",
       "relation_type": "supports",
@@ -3834,57 +3862,22 @@
       "sort_order": 3
     },
     {
-      "article_id": "sopeutumisen-kuusi-vaihetta",
-      "item_id": "sopeutumiskyvyn-anatomia",
+      "article_id": "nalasta-huoltovarmuuteen",
+      "item_id": "jalleenrakennus",
       "relation_type": "context",
-      "weight": 2,
-      "sort_order": 3
-    },
-    {
-      "article_id": "osaamiskriisi-suomen-oppimistulosten-lasku",
-      "item_id": "osaajapula-tki-palautus-2019",
-      "relation_type": "supports",
       "weight": 4,
       "sort_order": 3
     },
     {
-      "article_id": "jarjestaytynyt-kansalaisyhteiskunta-demokratian-kasvualusta",
-      "item_id": "sortokaudet",
-      "relation_type": "supports",
-      "weight": 3,
-      "sort_order": 3
-    },
-    {
-      "article_id": "suomen-sopeutumiskyvyn-malli-sidonnan-merkitys",
-      "item_id": "palautesilmukat-atlas",
-      "relation_type": "supports",
-      "weight": 3,
-      "sort_order": 3
-    },
-    {
-      "article_id": "koulutusinvestoinnit-leikkaukset-ja-sopeutumiskyky",
-      "item_id": "oppimistulosten-heikkeneminen-2006",
-      "relation_type": "supports",
+      "article_id": "1918-kahtia-jakautunut-kansakunta",
+      "item_id": "hallitusmuoto-1919",
+      "relation_type": "case_example",
       "weight": 4,
       "sort_order": 3
     },
     {
-      "article_id": "tietoyhteiskunta-tieto-tuotannontekijaksi",
-      "item_id": "nokia-rakennemuutos",
-      "relation_type": "supports",
-      "weight": 4,
-      "sort_order": 3
-    },
-    {
-      "article_id": "hyvinvointivaltion-rakentuminen-kerroksittain",
-      "item_id": "kansanterveyslaki-1972",
-      "relation_type": "supports",
-      "weight": 3,
-      "sort_order": 3
-    },
-    {
-      "article_id": "tyomarkkinoiden-sopimusyhteiskunta-suomalainen-malli",
-      "item_id": "tyoehtosopimuslaki-1946",
+      "article_id": "tyoelake-sukupolvien-valinen-sopimus",
+      "item_id": "tulopolitiikka-1968",
       "relation_type": "supports",
       "weight": 3,
       "sort_order": 3
@@ -3897,38 +3890,10 @@
       "sort_order": 3
     },
     {
-      "article_id": "huoltosuhde-kuka-kantaa",
-      "item_id": "suuret-ikaluokat-1945",
-      "relation_type": "context",
-      "weight": 4,
-      "sort_order": 3
-    },
-    {
-      "article_id": "kun-korjaava-kierre-katkeaa",
-      "item_id": "vaeston-ikaantyminen",
-      "relation_type": "context",
-      "weight": 3,
-      "sort_order": 3
-    },
-    {
-      "article_id": "lukutaidosta-osaamisyhteiskuntaan",
-      "item_id": "kansakoulu-maaseutu-1898",
-      "relation_type": "supports",
-      "weight": 3,
-      "sort_order": 3
-    },
-    {
-      "article_id": "1990-luvun-laman-pitka-varjo",
-      "item_id": "rahoitusmarkkinoiden-vapautuminen",
-      "relation_type": "context",
-      "weight": 4,
-      "sort_order": 3
-    },
-    {
-      "article_id": "kriittinen-infrastruktuuri-kaupan-kohteena",
-      "item_id": "tekoalyinfrastruktuurin-rakentuminen-2024",
-      "relation_type": "case_example",
-      "weight": 3,
+      "article_id": "suomen-markka-synty-ja-luopuminen",
+      "item_id": "euro-1999",
+      "relation_type": "primary",
+      "weight": 5,
       "sort_order": 3
     },
     {
@@ -3939,29 +3904,85 @@
       "sort_order": 3
     },
     {
-      "article_id": "metsasta-maailmanmarkkinoille",
-      "item_id": "metsien-kaupallistuminen-1860",
-      "relation_type": "context",
-      "weight": 4,
+      "article_id": "kehysmenettely-vakautta-vai-jaykkyytta",
+      "item_id": "finanssikriisi-2008",
+      "relation_type": "case_example",
+      "weight": 3,
       "sort_order": 3
     },
     {
-      "article_id": "teollistumisen-ja-kaupungistumisen-kaksoisvallankumous",
-      "item_id": "palkkatyoyhteiskunta-1865",
+      "article_id": "tyomarkkinoiden-sopimusyhteiskunta-suomalainen-malli",
+      "item_id": "tyoehtosopimuslaki-1946",
+      "relation_type": "supports",
+      "weight": 3,
+      "sort_order": 3
+    },
+    {
+      "article_id": "aani-tasa-arvo-ja-oikeudet",
+      "item_id": "vammaispalvelulaki-1987",
       "relation_type": "context",
       "weight": 3,
       "sort_order": 3
     },
     {
-      "article_id": "peruskoulu-suomen-kestavin-onnistumistarina",
-      "item_id": "kansakouluasetus-1866",
+      "article_id": "sukupolvien-valinen-oikeudenmukaisuus-kuusi-tarinaa",
+      "item_id": "ilmasto-vihrea-siirtyma",
+      "relation_type": "context",
+      "weight": 3,
+      "sort_order": 3
+    },
+    {
+      "article_id": "tuottavuuden-pysahtyminen-suomen-pullonkaula",
+      "item_id": "osaajapula-tki-palautus-2019",
+      "relation_type": "supports",
+      "weight": 3,
+      "sort_order": 3
+    },
+    {
+      "article_id": "hyvinvointivaltion-rakentuminen-kerroksittain",
+      "item_id": "kansanterveyslaki-1972",
+      "relation_type": "supports",
+      "weight": 3,
+      "sort_order": 3
+    },
+    {
+      "article_id": "nato-jasenyys-ja-liittoutumattomuuden-loppu",
+      "item_id": "ukrainan-sota-energiakriisi",
       "relation_type": "context",
       "weight": 4,
       "sort_order": 3
     },
     {
-      "article_id": "kehysmenettely-vakautta-vai-jaykkyytta",
-      "item_id": "finanssikriisi-2008",
+      "article_id": "alueellinen-eriytyminen-kasvukeskukset-periferia",
+      "item_id": "valtion-teollisuusyhtiot-ja-aluepolitiikka-1945",
+      "relation_type": "supports",
+      "weight": 4,
+      "sort_order": 3
+    },
+    {
+      "article_id": "kunnallinen-itsehallinto-paikallisen-demokratian-perusta",
+      "item_id": "hyvinvointialueet-2023",
+      "relation_type": "context",
+      "weight": 3,
+      "sort_order": 3
+    },
+    {
+      "article_id": "tietoyhteiskunta-tieto-tuotannontekijaksi",
+      "item_id": "nokia-rakennemuutos",
+      "relation_type": "supports",
+      "weight": 4,
+      "sort_order": 3
+    },
+    {
+      "article_id": "kolme-digitalisaation-aaltoa",
+      "item_id": "tekoaly-murros",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 3
+    },
+    {
+      "article_id": "palautesilmukat-yhteiskunnan-oppimismoottori",
+      "item_id": "hyvinvointialueet-2023",
       "relation_type": "case_example",
       "weight": 3,
       "sort_order": 3
@@ -3974,139 +3995,6 @@
       "sort_order": 3
     },
     {
-      "article_id": "kolme-digitalisaation-aaltoa",
-      "item_id": "tekoaly-murros",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 3
-    },
-    {
-      "article_id": "nato-jasenyys-ja-liittoutumattomuuden-loppu",
-      "item_id": "ukrainan-sota-energiakriisi",
-      "relation_type": "context",
-      "weight": 4,
-      "sort_order": 3
-    },
-    {
-      "article_id": "sukupolvien-valinen-oikeudenmukaisuus-kuusi-tarinaa",
-      "item_id": "ilmasto-vihrea-siirtyma",
-      "relation_type": "context",
-      "weight": 3,
-      "sort_order": 3
-    },
-    {
-      "article_id": "aani-tasa-arvo-ja-oikeudet",
-      "item_id": "vammaispalvelulaki-1987",
-      "relation_type": "context",
-      "weight": 3,
-      "sort_order": 3
-    },
-    {
-      "article_id": "suomen-markka-synty-ja-luopuminen",
-      "item_id": "euro-1999",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 3
-    },
-    {
-      "article_id": "tyoelake-sukupolvien-valinen-sopimus",
-      "item_id": "tulopolitiikka-1968",
-      "relation_type": "supports",
-      "weight": 3,
-      "sort_order": 3
-    },
-    {
-      "article_id": "tuottavuuden-pysahtyminen-suomen-pullonkaula",
-      "item_id": "osaajapula-tki-palautus-2019",
-      "relation_type": "supports",
-      "weight": 3,
-      "sort_order": 3
-    },
-    {
-      "article_id": "1918-kahtia-jakautunut-kansakunta",
-      "item_id": "hallitusmuoto-1919",
-      "relation_type": "case_example",
-      "weight": 4,
-      "sort_order": 3
-    },
-    {
-      "article_id": "nalasta-huoltovarmuuteen",
-      "item_id": "jalleenrakennus",
-      "relation_type": "context",
-      "weight": 4,
-      "sort_order": 3
-    },
-    {
-      "article_id": "rautatiesta-alypuhelimeen",
-      "item_id": "alypuhelinmurros",
-      "relation_type": "primary",
-      "weight": 5,
-      "sort_order": 3
-    },
-    {
-      "article_id": "alueellinen-eriytyminen-kasvukeskukset-periferia",
-      "item_id": "valtion-teollisuusyhtiot-ja-aluepolitiikka-1945",
-      "relation_type": "supports",
-      "weight": 4,
-      "sort_order": 3
-    },
-    {
-      "article_id": "perheen-ja-tyon-yhteensovittaminen",
-      "item_id": "lapsilisa-1948",
-      "relation_type": "context",
-      "weight": 3,
-      "sort_order": 3
-    },
-    {
-      "article_id": "kunnallinen-itsehallinto-paikallisen-demokratian-perusta",
-      "item_id": "hyvinvointialueet-2023",
-      "relation_type": "context",
-      "weight": 3,
-      "sort_order": 3
-    },
-    {
-      "article_id": "metsatalouden-kestavyys-ja-maaseudun-rakennemuutos",
-      "item_id": "maatalouden-koneellistuminen-1945",
-      "relation_type": "context",
-      "weight": 4,
-      "sort_order": 3
-    },
-    {
-      "article_id": "jalleenrakennus-onnistuneen-sopeutumisen-malli",
-      "item_id": "karjalan_evakot",
-      "relation_type": "context",
-      "weight": 4,
-      "sort_order": 3
-    },
-    {
-      "article_id": "palautesilmukat-yhteiskunnan-oppimismoottori",
-      "item_id": "hyvinvointialueet-2023",
-      "relation_type": "case_example",
-      "weight": 3,
-      "sort_order": 3
-    },
-    {
-      "article_id": "syntyvyyden-romahdus-hitaat-reaktiot",
-      "item_id": "vaeston-ikaantyminen",
-      "relation_type": "supports",
-      "weight": 3,
-      "sort_order": 3
-    },
-    {
-      "article_id": "suuri-muutto-ruotsiin",
-      "item_id": "paluumuutto-ruotsista-1970",
-      "relation_type": "supports",
-      "weight": 3,
-      "sort_order": 3
-    },
-    {
-      "article_id": "ylivelkaantuminen-hidas-kertyma",
-      "item_id": "nollakorkojen-talous-2012",
-      "relation_type": "case_example",
-      "weight": 4,
-      "sort_order": 3
-    },
-    {
       "article_id": "viive-paatoksissa-hidastaa-oppimista",
       "item_id": "alueellinen-eriytyminen-1990",
       "relation_type": "case_example",
@@ -4114,8 +4002,85 @@
       "sort_order": 3
     },
     {
-      "article_id": "asuntopolitiikan-kriisi-suomessa",
-      "item_id": "kaupunkiseutujen-segregaatio-1990",
+      "article_id": "koulutusinvestoinnit-leikkaukset-ja-sopeutumiskyky",
+      "item_id": "oppimistulosten-heikkeneminen-2006",
+      "relation_type": "supports",
+      "weight": 4,
+      "sort_order": 3
+    },
+    {
+      "article_id": "kriisien-yhteiset-piirteet-toistuva-kaava",
+      "item_id": "olkiluoto-3-2002",
+      "relation_type": "case_example",
+      "weight": 3,
+      "sort_order": 3
+    },
+    {
+      "article_id": "hyvinvointialueet-suuri-rakenneuudistus",
+      "item_id": "paras-hanke-2007",
+      "relation_type": "supports",
+      "weight": 3,
+      "sort_order": 3
+    },
+    {
+      "article_id": "metsasta-maailmanmarkkinoille",
+      "item_id": "metsien-kaupallistuminen-1860",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 3
+    },
+    {
+      "article_id": "suomen-sopeutumiskyvyn-malli-sidonnan-merkitys",
+      "item_id": "palautesilmukat-atlas",
+      "relation_type": "supports",
+      "weight": 3,
+      "sort_order": 3
+    },
+    {
+      "article_id": "eu-jasenyys-strateginen-valinta",
+      "item_id": "nato-jasenyys",
+      "relation_type": "supports",
+      "weight": 3,
+      "sort_order": 3
+    },
+    {
+      "article_id": "kriittinen-infrastruktuuri-kaupan-kohteena",
+      "item_id": "tekoalyinfrastruktuurin-rakentuminen-2024",
+      "relation_type": "case_example",
+      "weight": 3,
+      "sort_order": 3
+    },
+    {
+      "article_id": "pysyvasti-korkea-tyottomyys-suomessa",
+      "item_id": "osaajapula-tki-palautus-2019",
+      "relation_type": "contrasts",
+      "weight": 3,
+      "sort_order": 3
+    },
+    {
+      "article_id": "lukutaidosta-osaamisyhteiskuntaan",
+      "item_id": "kansakoulu-maaseutu-1898",
+      "relation_type": "supports",
+      "weight": 3,
+      "sort_order": 3
+    },
+    {
+      "article_id": "globalisaatio-mahdollisuudet-ja-riippuvuudet",
+      "item_id": "nokia-rakennemuutos",
+      "relation_type": "supports",
+      "weight": 3,
+      "sort_order": 3
+    },
+    {
+      "article_id": "nuorten-mielenterveyskriisi-kumuloituva-kuormitus",
+      "item_id": "oppimistulosten-heikkeneminen-2006",
+      "relation_type": "supports",
+      "weight": 3,
+      "sort_order": 3
+    },
+    {
+      "article_id": "nokia-ilmio-menestyksesta-sokeudeksi",
+      "item_id": "sonera-umts",
       "relation_type": "supports",
       "weight": 3,
       "sort_order": 3
@@ -4128,17 +4093,10 @@
       "sort_order": 3
     },
     {
-      "article_id": "polkuriippuvuus-miksi-valinnat-lukkiutuvat",
-      "item_id": "1990-luvun-lama",
-      "relation_type": "case_example",
-      "weight": 3,
-      "sort_order": 3
-    },
-    {
-      "article_id": "nokia-ilmio-menestyksesta-sokeudeksi",
-      "item_id": "sonera-umts",
-      "relation_type": "supports",
-      "weight": 3,
+      "article_id": "1990-luvun-laman-pitka-varjo",
+      "item_id": "rahoitusmarkkinoiden-vapautuminen",
+      "relation_type": "context",
+      "weight": 4,
       "sort_order": 3
     },
     {
@@ -4149,32 +4107,81 @@
       "sort_order": 3
     },
     {
-      "article_id": "tyomarkkinoiden-sopimusyhteiskunta-suomalainen-malli",
-      "item_id": "tyomarkkinamallin-hajautuminen-2016",
-      "relation_type": "context",
-      "weight": 3,
-      "sort_order": 4
-    },
-    {
-      "article_id": "elakejarjestelma-sukupolvien-valinen-lupaus",
-      "item_id": "elakeuudistukset-2005",
+      "article_id": "asuntopolitiikan-kriisi-suomessa",
+      "item_id": "kaupunkiseutujen-segregaatio-1990",
       "relation_type": "supports",
       "weight": 3,
-      "sort_order": 4
+      "sort_order": 3
     },
     {
-      "article_id": "koulutusinvestoinnit-leikkaukset-ja-sopeutumiskyky",
-      "item_id": "osaajapula-tki-palautus-2019",
+      "article_id": "ylivelkaantuminen-hidas-kertyma",
+      "item_id": "nollakorkojen-talous-2012",
       "relation_type": "case_example",
       "weight": 4,
-      "sort_order": 4
+      "sort_order": 3
     },
     {
-      "article_id": "metsasta-maailmanmarkkinoille",
-      "item_id": "tehdasjarjestelma-1870",
+      "article_id": "suuri-muutto-ruotsiin",
+      "item_id": "paluumuutto-ruotsista-1970",
       "relation_type": "supports",
       "weight": 3,
-      "sort_order": 4
+      "sort_order": 3
+    },
+    {
+      "article_id": "kun-korjaava-kierre-katkeaa",
+      "item_id": "vaeston-ikaantyminen",
+      "relation_type": "context",
+      "weight": 3,
+      "sort_order": 3
+    },
+    {
+      "article_id": "syntyvyyden-romahdus-hitaat-reaktiot",
+      "item_id": "vaeston-ikaantyminen",
+      "relation_type": "supports",
+      "weight": 3,
+      "sort_order": 3
+    },
+    {
+      "article_id": "jalleenrakennus-onnistuneen-sopeutumisen-malli",
+      "item_id": "karjalan_evakot",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 3
+    },
+    {
+      "article_id": "sopeutumisen-kuusi-vaihetta",
+      "item_id": "sopeutumiskyvyn-anatomia",
+      "relation_type": "context",
+      "weight": 2,
+      "sort_order": 3
+    },
+    {
+      "article_id": "metsatalouden-kestavyys-ja-maaseudun-rakennemuutos",
+      "item_id": "maatalouden-koneellistuminen-1945",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 3
+    },
+    {
+      "article_id": "perheen-ja-tyon-yhteensovittaminen",
+      "item_id": "lapsilisa-1948",
+      "relation_type": "context",
+      "weight": 3,
+      "sort_order": 3
+    },
+    {
+      "article_id": "huoltosuhde-kuka-kantaa",
+      "item_id": "suuret-ikaluokat-1945",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 3
+    },
+    {
+      "article_id": "rautatiesta-alypuhelimeen",
+      "item_id": "alypuhelinmurros",
+      "relation_type": "primary",
+      "weight": 5,
+      "sort_order": 3
     },
     {
       "article_id": "asuntopolitiikan-kriisi-suomessa",
@@ -4184,15 +4191,8 @@
       "sort_order": 4
     },
     {
-      "article_id": "huoltosuhde-kuka-kantaa",
-      "item_id": "syntyvyyden-rakennemuutos-1969",
-      "relation_type": "context",
-      "weight": 4,
-      "sort_order": 4
-    },
-    {
-      "article_id": "1990-luvun-laman-pitka-varjo",
-      "item_id": "rahoitusmarkkinoiden_vapauttaminen",
+      "article_id": "tyomarkkinoiden-sopimusyhteiskunta-suomalainen-malli",
+      "item_id": "tyomarkkinamallin-hajautuminen-2016",
       "relation_type": "context",
       "weight": 3,
       "sort_order": 4
@@ -4201,13 +4201,6 @@
       "article_id": "kun-korjaava-kierre-katkeaa",
       "item_id": "1990-luvun-lama",
       "relation_type": "contrasts",
-      "weight": 3,
-      "sort_order": 4
-    },
-    {
-      "article_id": "hyvinvointivaltion-rakentuminen-kerroksittain",
-      "item_id": "kansanelakelaki-1937",
-      "relation_type": "supports",
       "weight": 3,
       "sort_order": 4
     },
@@ -4226,17 +4219,17 @@
       "sort_order": 4
     },
     {
-      "article_id": "1918-kahtia-jakautunut-kansakunta",
-      "item_id": "pientilavaltainen-suomi-1918",
-      "relation_type": "supports",
+      "article_id": "kolme-digitalisaation-aaltoa",
+      "item_id": "datakeskusten-rakentamisen-kiihtyminen-2023",
+      "relation_type": "case_example",
       "weight": 3,
       "sort_order": 4
     },
     {
-      "article_id": "suomen-markka-synty-ja-luopuminen",
-      "item_id": "euro_2002",
-      "relation_type": "case_example",
-      "weight": 4,
+      "article_id": "hyvinvointivaltion-rakentuminen-kerroksittain",
+      "item_id": "kansanelakelaki-1937",
+      "relation_type": "supports",
+      "weight": 3,
       "sort_order": 4
     },
     {
@@ -4247,6 +4240,55 @@
       "sort_order": 4
     },
     {
+      "article_id": "metsasta-maailmanmarkkinoille",
+      "item_id": "tehdasjarjestelma-1870",
+      "relation_type": "supports",
+      "weight": 3,
+      "sort_order": 4
+    },
+    {
+      "article_id": "1918-kahtia-jakautunut-kansakunta",
+      "item_id": "pientilavaltainen-suomi-1918",
+      "relation_type": "supports",
+      "weight": 3,
+      "sort_order": 4
+    },
+    {
+      "article_id": "koulutusinvestoinnit-leikkaukset-ja-sopeutumiskyky",
+      "item_id": "osaajapula-tki-palautus-2019",
+      "relation_type": "case_example",
+      "weight": 4,
+      "sort_order": 4
+    },
+    {
+      "article_id": "suomen-markka-synty-ja-luopuminen",
+      "item_id": "euro_2002",
+      "relation_type": "case_example",
+      "weight": 4,
+      "sort_order": 4
+    },
+    {
+      "article_id": "huoltosuhde-kuka-kantaa",
+      "item_id": "syntyvyyden-rakennemuutos-1969",
+      "relation_type": "context",
+      "weight": 4,
+      "sort_order": 4
+    },
+    {
+      "article_id": "elakejarjestelma-sukupolvien-valinen-lupaus",
+      "item_id": "elakeuudistukset-2005",
+      "relation_type": "supports",
+      "weight": 3,
+      "sort_order": 4
+    },
+    {
+      "article_id": "1990-luvun-laman-pitka-varjo",
+      "item_id": "rahoitusmarkkinoiden_vapauttaminen",
+      "relation_type": "context",
+      "weight": 3,
+      "sort_order": 4
+    },
+    {
       "article_id": "metsatalouden-kestavyys-ja-maaseudun-rakennemuutos",
       "item_id": "pientilavaltainen-suomi-1918",
       "relation_type": "context",
@@ -4254,24 +4296,17 @@
       "sort_order": 4
     },
     {
-      "article_id": "kolme-digitalisaation-aaltoa",
-      "item_id": "datakeskusten-rakentamisen-kiihtyminen-2023",
-      "relation_type": "case_example",
+      "article_id": "huoltosuhde-kuka-kantaa",
+      "item_id": "historiallisen-matala-syntyvyys-2010",
+      "relation_type": "context",
       "weight": 3,
-      "sort_order": 4
+      "sort_order": 5
     },
     {
       "article_id": "1990-luvun-laman-pitka-varjo",
       "item_id": "kehysmenettely",
       "relation_type": "case_example",
       "weight": 4,
-      "sort_order": 5
-    },
-    {
-      "article_id": "huoltosuhde-kuka-kantaa",
-      "item_id": "historiallisen-matala-syntyvyys-2010",
-      "relation_type": "context",
-      "weight": 3,
       "sort_order": 5
     },
     {
