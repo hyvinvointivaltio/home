@@ -3244,7 +3244,7 @@
     },
     {
       "id": "sukupolviprofiili-vilho-1925",
-      "title": "Sukupolvi joka kantaa: Vilho (1925)",
+      "title": "Vilho (1925)",
       "year_start": 1925,
       "year_end": 1925,
       "type": "sukupolviprofiili",
@@ -3819,41 +3819,31 @@
       "confidence": "vahva"
     },
     {
-      "id": "globalisaatio-1945",
-      "title": "Globalisaatio",
+      "id": "sukupolviprofiili-helmi-1945",
+      "title": "Helmi (1945)",
       "year_start": 1945,
-      "year_end": 2025,
-      "type": "pitkä rakenteellinen murros",
+      "year_end": 1945,
+      "type": "sukupolviprofiili",
       "domains": [
-        "talous",
-        "kauppa",
-        "työ",
-        "turvallisuus"
+        "sukupolvet",
+        "yhteiskunta"
       ],
-      "phase": "suljetusta kotimarkkinataloudesta globaalisti kytkeytyneeksi, riippuvuuksien läpäisemäksi taloudeksi",
-      "problem": "Kaupan vapautuminen, pääomaliikkeiden vapautuminen ja tuotannon kansainvälistyminen avasivat Suomen talouden vaiheittain maailmanmarkkinoille, mikä kasvatti sekä mahdollisuuksia että riippuvuuksia.",
-      "mechanism": "Kotimarkkinoiden suojauksesta edettiin asteittain EFTA- ja EY-sopimusten, EU-jäsenyyden, euron ja globaalien arvoketjujen kautta yhä syvemmäksi integraatioksi, jota jaksottivat toistuvat globaalit kriisit (finanssikriisi 2008, pandemia 2020, Ukrainan sota 2022).",
+      "phase": "Suomi nousee raunioista — 25-vuotias sodan jälkeisessä Suomessa",
+      "problem": "Helmi kasvoi sodan runtelemassa maassa, jossa kaupungit olivat raunioina, elintarvikkeet säännösteltyjä ja turvallisuus hauras — maailma tarvitsi häneltä teollistumista, jälleenrakennusta ja uutta yhteistyötä.",
+      "mechanism": "Lähtökohdat: sodan jäljet (yli 400 000 kodittomaksi jäänyttä), niukkuus ja säännöstely, suuret vastuunkantoikäluokat, rajoittunut koulutus. Valmiudet: sinnikkyys, yhteisöllisyys, käden taidot, oppimisen halu ja usko tulevaan.",
       "effects": [
-        "tavaraviennin arvo kasvoi (n. 5 mrd€ -> 92 mrd€)",
-        "viennin osuus BKT:sta kasvoi 53 %:iin",
-        "ulkomaiset suorat sijoitukset kasvoivat merkittävästi (61-81 mrd€)",
-        "työn rakenne siirtyi teollisuudesta palveluihin (73 % palveluissa)",
-        "riippuvuus globaaleista kriiseistä kasvoi",
-        "huoltovarmuuden ja omavaraisuuden merkitys korostui uudelleen 2020-luvulla"
+        "Suomen väkiluku 1945: 3,7 milj., elinajanodote n. 45 vuotta",
+        "teollisuuden osuus BKT:sta n. 20 %, maatalouden n. 30 %",
+        "autoja n. 12 000 kpl koko maassa"
       ],
-      "long_effect": "Globalisaatiosta tuli pysyvä, ei tilapäinen, rakennemuutos, joka on toistuvasti muokannut uudelleen Suomen talouden, työmarkkinoiden ja hyvinvointivaltion edellytyksiä jokaisen uuden kriisin myötä.",
-      "current_relevance": "Geopoliittiset riskit, toimitusketjujen häiriöt ja huoltovarmuuskysymykset ovat nostaneet uudelleen esiin kysymyksen siitä, missä määrin avoimuuteen kannattaa nojata ja missä varautua omavaraisuuteen.",
-      "importance": 5,
-      "confidence": "vahva",
-      "sources": [
-        "Tulli",
-        "Tilastokeskus",
-        "Suomen Pankki"
-      ],
+      "long_effect": "Helmin sukupolvi kantoi sodan jäljet, jälleenrakensi kotimaan ja loi perustan hyvinvointivaltiolle. Heidän työnsä mahdollisti seuraavien sukupolvien vaurauden ja turvallisuuden.",
+      "current_relevance": "Konkretisoi jälleenrakennuksen sukupolven panoksen hyvinvointivaltion perustan luomisessa.",
+      "importance": 3,
+      "confidence": "kohtalainen",
       "images": [
         {
-          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/R03_globalisaatio.webp",
-          "caption": "Globalisaatio 1945-2025 (Atlas R03)"
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/sukupolviprofiili_1945_helmi.webp",
+          "caption": "Helmi, 25-vuotias vuonna 1945"
         }
       ]
     },
@@ -3900,31 +3890,41 @@
       ]
     },
     {
-      "id": "sukupolviprofiili-helmi-1945",
-      "title": "Sukupolvi joka kantaa: Helmi (1945)",
+      "id": "globalisaatio-1945",
+      "title": "Globalisaatio",
       "year_start": 1945,
-      "year_end": 1945,
-      "type": "sukupolviprofiili",
+      "year_end": 2025,
+      "type": "pitkä rakenteellinen murros",
       "domains": [
-        "sukupolvet",
-        "yhteiskunta"
+        "talous",
+        "kauppa",
+        "työ",
+        "turvallisuus"
       ],
-      "phase": "Suomi nousee raunioista — 25-vuotias sodan jälkeisessä Suomessa",
-      "problem": "Helmi kasvoi sodan runtelemassa maassa, jossa kaupungit olivat raunioina, elintarvikkeet säännösteltyjä ja turvallisuus hauras — maailma tarvitsi häneltä teollistumista, jälleenrakennusta ja uutta yhteistyötä.",
-      "mechanism": "Lähtökohdat: sodan jäljet (yli 400 000 kodittomaksi jäänyttä), niukkuus ja säännöstely, suuret vastuunkantoikäluokat, rajoittunut koulutus. Valmiudet: sinnikkyys, yhteisöllisyys, käden taidot, oppimisen halu ja usko tulevaan.",
+      "phase": "suljetusta kotimarkkinataloudesta globaalisti kytkeytyneeksi, riippuvuuksien läpäisemäksi taloudeksi",
+      "problem": "Kaupan vapautuminen, pääomaliikkeiden vapautuminen ja tuotannon kansainvälistyminen avasivat Suomen talouden vaiheittain maailmanmarkkinoille, mikä kasvatti sekä mahdollisuuksia että riippuvuuksia.",
+      "mechanism": "Kotimarkkinoiden suojauksesta edettiin asteittain EFTA- ja EY-sopimusten, EU-jäsenyyden, euron ja globaalien arvoketjujen kautta yhä syvemmäksi integraatioksi, jota jaksottivat toistuvat globaalit kriisit (finanssikriisi 2008, pandemia 2020, Ukrainan sota 2022).",
       "effects": [
-        "Suomen väkiluku 1945: 3,7 milj., elinajanodote n. 45 vuotta",
-        "teollisuuden osuus BKT:sta n. 20 %, maatalouden n. 30 %",
-        "autoja n. 12 000 kpl koko maassa"
+        "tavaraviennin arvo kasvoi (n. 5 mrd€ -> 92 mrd€)",
+        "viennin osuus BKT:sta kasvoi 53 %:iin",
+        "ulkomaiset suorat sijoitukset kasvoivat merkittävästi (61-81 mrd€)",
+        "työn rakenne siirtyi teollisuudesta palveluihin (73 % palveluissa)",
+        "riippuvuus globaaleista kriiseistä kasvoi",
+        "huoltovarmuuden ja omavaraisuuden merkitys korostui uudelleen 2020-luvulla"
       ],
-      "long_effect": "Helmin sukupolvi kantoi sodan jäljet, jälleenrakensi kotimaan ja loi perustan hyvinvointivaltiolle. Heidän työnsä mahdollisti seuraavien sukupolvien vaurauden ja turvallisuuden.",
-      "current_relevance": "Konkretisoi jälleenrakennuksen sukupolven panoksen hyvinvointivaltion perustan luomisessa.",
-      "importance": 3,
-      "confidence": "kohtalainen",
+      "long_effect": "Globalisaatiosta tuli pysyvä, ei tilapäinen, rakennemuutos, joka on toistuvasti muokannut uudelleen Suomen talouden, työmarkkinoiden ja hyvinvointivaltion edellytyksiä jokaisen uuden kriisin myötä.",
+      "current_relevance": "Geopoliittiset riskit, toimitusketjujen häiriöt ja huoltovarmuuskysymykset ovat nostaneet uudelleen esiin kysymyksen siitä, missä määrin avoimuuteen kannattaa nojata ja missä varautua omavaraisuuteen.",
+      "importance": 5,
+      "confidence": "vahva",
+      "sources": [
+        "Tulli",
+        "Tilastokeskus",
+        "Suomen Pankki"
+      ],
       "images": [
         {
-          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/sukupolviprofiili_1945_helmi.webp",
-          "caption": "Helmi, 25-vuotias vuonna 1945"
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/R03_globalisaatio.webp",
+          "caption": "Globalisaatio 1945-2025 (Atlas R03)"
         }
       ]
     },
@@ -4688,7 +4688,7 @@
     },
     {
       "id": "sukupolviprofiili-taisto-1965",
-      "title": "Sukupolvi joka kantaa: Taisto (1965)",
+      "title": "Taisto (1965)",
       "year_start": 1965,
       "year_end": 1965,
       "type": "sukupolviprofiili",
@@ -4979,31 +4979,6 @@
       "confidence": "vahva"
     },
     {
-      "id": "kansanterveyslaki-1972",
-      "title": "Kansanterveyslaki",
-      "year_start": 1972,
-      "year_end": 1972,
-      "type": "terveydenhuollon uudistus",
-      "domains": [
-        "terveys",
-        "kunnat",
-        "hyvinvointivaltio"
-      ],
-      "phase": "perusterveydenhuollon rakentuminen",
-      "problem": "Terveyspalvelut olivat alueellisesti eriarvoisia ja painottuivat sairaalahoitoon.",
-      "mechanism": "Kunnat velvoitettiin järjestämään kaikille asukkaille perusterveydenhuolto terveyskeskusten kautta.",
-      "effects": [
-        "terveyskeskusverkoston rakentuminen",
-        "ehkäisevän terveydenhuollon vahvistuminen",
-        "palvelujen alueellisen tasa-arvon paraneminen",
-        "kansanterveyden kohentuminen"
-      ],
-      "long_effect": "Perusterveydenhuollosta tuli suomalaisen terveydenhuoltojärjestelmän perusta.",
-      "current_relevance": "Hyvinvointialueet, perusterveydenhuolto ja palvelujen saatavuus.",
-      "importance": 5,
-      "confidence": "vahva"
-    },
-    {
       "id": "perusterveydenhuolto-1972",
       "title": "Perusterveydenhuolto",
       "year_start": 1972,
@@ -5039,6 +5014,31 @@
           "caption": "Perusterveydenhuolto -infografiikka"
         }
       ]
+    },
+    {
+      "id": "kansanterveyslaki-1972",
+      "title": "Kansanterveyslaki",
+      "year_start": 1972,
+      "year_end": 1972,
+      "type": "terveydenhuollon uudistus",
+      "domains": [
+        "terveys",
+        "kunnat",
+        "hyvinvointivaltio"
+      ],
+      "phase": "perusterveydenhuollon rakentuminen",
+      "problem": "Terveyspalvelut olivat alueellisesti eriarvoisia ja painottuivat sairaalahoitoon.",
+      "mechanism": "Kunnat velvoitettiin järjestämään kaikille asukkaille perusterveydenhuolto terveyskeskusten kautta.",
+      "effects": [
+        "terveyskeskusverkoston rakentuminen",
+        "ehkäisevän terveydenhuollon vahvistuminen",
+        "palvelujen alueellisen tasa-arvon paraneminen",
+        "kansanterveyden kohentuminen"
+      ],
+      "long_effect": "Perusterveydenhuollosta tuli suomalaisen terveydenhuoltojärjestelmän perusta.",
+      "current_relevance": "Hyvinvointialueet, perusterveydenhuolto ja palvelujen saatavuus.",
+      "importance": 5,
+      "confidence": "vahva"
     },
     {
       "id": "oljy-kriisi-1973",
@@ -5207,35 +5207,6 @@
       "confidence": "vahva"
     },
     {
-      "id": "systeemimalli-korjaava-kierre",
-      "title": "Systeemimalli: kun korjaava kierre katkeaa",
-      "year_start": 1980,
-      "year_end": 2035,
-      "type": "analyyttinen kehys",
-      "domains": [
-        "yhteiskunta",
-        "instituutiot",
-        "muutos"
-      ],
-      "phase": "kaksi systeemin logiikkaa — sama periaate, eri suunta",
-      "problem": "Yhteiskuntajärjestelmä voi joko korjata itseään (ongelma synnyttää vähitellen oman ratkaisunsa) tai kuormittua (ongelma kuluttaa niitä voimavaroja, joilla se pitäisi ratkaista). Kumpi logiikka toteutuu, riippuu järjestelmän kyvystä tuottaa uutta osaamista ja instituutioita riittävän nopeasti.",
-      "mechanism": "Korjaavassa kierteessä uusi muutos (esim. teknologinen innovaatio) synnyttää aluksi uusia ongelmia, joihin yhteiskunta oppii ja kehittää uutta osaamista ja instituutioita, mikä johtaa parempaan järjestelmään ja vahvistaa kykyä vastata seuraaviin haasteisiin. Katkenneessa kierteessä esimerkiksi väestön ikääntyminen kasvattaa palvelutarvetta ja kustannuksia, mikä syö liikkumavaraa investoinneilta ja heikentää korjauskykyä entisestään — järjestelmä kuormittuu sen sijaan että vahvistuisi.",
-      "effects": [
-        "historiallisia esimerkkejä korjaavasta kierteestä: teollistuminen, autoistuminen, sähköistyminen",
-        "nykyhetken haaste kuvaa katkennutta kierrettä: työikäisten osuus vähenee, julkisen talouden paine kasvaa, tukirakenteita joudutaan karsimaan"
-      ],
-      "long_effect": "Malli tarjoaa kehyksen arvioida, pystyykö nykyinen yhteiskuntajärjestelmä (esim. ikääntymisen ja julkisen talouden paineessa) korjaamaan itseään tuottavuuden kasvun, teknologisen harppauksen, maahanmuuton tai syntyvyyden kasvun kautta, vai onko kierre katkeamassa.",
-      "current_relevance": "Kytkeytyy suoraan keskusteluun kestävyysvajeesta ja hyvinvointivaltion sopeutumiskyvystä — kysymys on ajankohtainen niin kauan kuin väestörakenteen muutos jatkuu.",
-      "importance": 4,
-      "confidence": "kohtalainen",
-      "images": [
-        {
-          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/M05_systeemimalli.webp",
-          "caption": "M01 — Systeemimalli: korjaava vs. katkennut kierre"
-        }
-      ]
-    },
-    {
       "id": "tietoyhteiskunta-1980",
       "title": "Tietoyhteiskunta",
       "year_start": 1980,
@@ -5282,31 +5253,6 @@
       ]
     },
     {
-      "id": "terveyspalvelujen-kaksijakoisuus-1980",
-      "title": "Terveyspalvelujen kaksijakoinen järjestelmä",
-      "year_start": 1980,
-      "year_end": 2035,
-      "type": "palvelujärjestelmän eriytyminen",
-      "domains": [
-        "terveys",
-        "työ",
-        "eriarvoisuus",
-        "palvelut"
-      ],
-      "phase": "työssäkäyvien ja muun väestön palvelukanavien eriytyminen",
-      "problem": "Julkisen perusterveydenhuollon saatavuus ja työterveyshuollon kattavuus kehittyivät eri tavoin.",
-      "mechanism": "Työnantajarahoitteinen ja Kela-korvattu työterveys tarjosi työssäkäyville nopeamman rinnakkaisen palveluväylän.",
-      "effects": [
-        "nopeampi hoitoonpääsy työssäkäyville",
-        "palvelujen päällekkäisyys",
-        "resurssien eriytyminen"
-      ],
-      "long_effect": "Työmarkkina-asema alkoi vaikuttaa myös terveyspalvelujen saatavuuteen.",
-      "current_relevance": "Sote-uudistuksen onnistumista arvioidaan osin sen perusteella, kykeneekö se vähentämään järjestelmän eriarvoisuutta.",
-      "importance": 5,
-      "confidence": "vahva"
-    },
-    {
       "id": "tietoyhteiskunnan-onnistumistarina-2024",
       "title": "Tietoyhteiskunnan rakentaminen — suomalainen menestystarina",
       "year_start": 1980,
@@ -5347,6 +5293,60 @@
       ]
     },
     {
+      "id": "terveyspalvelujen-kaksijakoisuus-1980",
+      "title": "Terveyspalvelujen kaksijakoinen järjestelmä",
+      "year_start": 1980,
+      "year_end": 2035,
+      "type": "palvelujärjestelmän eriytyminen",
+      "domains": [
+        "terveys",
+        "työ",
+        "eriarvoisuus",
+        "palvelut"
+      ],
+      "phase": "työssäkäyvien ja muun väestön palvelukanavien eriytyminen",
+      "problem": "Julkisen perusterveydenhuollon saatavuus ja työterveyshuollon kattavuus kehittyivät eri tavoin.",
+      "mechanism": "Työnantajarahoitteinen ja Kela-korvattu työterveys tarjosi työssäkäyville nopeamman rinnakkaisen palveluväylän.",
+      "effects": [
+        "nopeampi hoitoonpääsy työssäkäyville",
+        "palvelujen päällekkäisyys",
+        "resurssien eriytyminen"
+      ],
+      "long_effect": "Työmarkkina-asema alkoi vaikuttaa myös terveyspalvelujen saatavuuteen.",
+      "current_relevance": "Sote-uudistuksen onnistumista arvioidaan osin sen perusteella, kykeneekö se vähentämään järjestelmän eriarvoisuutta.",
+      "importance": 5,
+      "confidence": "vahva"
+    },
+    {
+      "id": "systeemimalli-korjaava-kierre",
+      "title": "Systeemimalli: kun korjaava kierre katkeaa",
+      "year_start": 1980,
+      "year_end": 2035,
+      "type": "analyyttinen kehys",
+      "domains": [
+        "yhteiskunta",
+        "instituutiot",
+        "muutos"
+      ],
+      "phase": "kaksi systeemin logiikkaa — sama periaate, eri suunta",
+      "problem": "Yhteiskuntajärjestelmä voi joko korjata itseään (ongelma synnyttää vähitellen oman ratkaisunsa) tai kuormittua (ongelma kuluttaa niitä voimavaroja, joilla se pitäisi ratkaista). Kumpi logiikka toteutuu, riippuu järjestelmän kyvystä tuottaa uutta osaamista ja instituutioita riittävän nopeasti.",
+      "mechanism": "Korjaavassa kierteessä uusi muutos (esim. teknologinen innovaatio) synnyttää aluksi uusia ongelmia, joihin yhteiskunta oppii ja kehittää uutta osaamista ja instituutioita, mikä johtaa parempaan järjestelmään ja vahvistaa kykyä vastata seuraaviin haasteisiin. Katkenneessa kierteessä esimerkiksi väestön ikääntyminen kasvattaa palvelutarvetta ja kustannuksia, mikä syö liikkumavaraa investoinneilta ja heikentää korjauskykyä entisestään — järjestelmä kuormittuu sen sijaan että vahvistuisi.",
+      "effects": [
+        "historiallisia esimerkkejä korjaavasta kierteestä: teollistuminen, autoistuminen, sähköistyminen",
+        "nykyhetken haaste kuvaa katkennutta kierrettä: työikäisten osuus vähenee, julkisen talouden paine kasvaa, tukirakenteita joudutaan karsimaan"
+      ],
+      "long_effect": "Malli tarjoaa kehyksen arvioida, pystyykö nykyinen yhteiskuntajärjestelmä (esim. ikääntymisen ja julkisen talouden paineessa) korjaamaan itseään tuottavuuden kasvun, teknologisen harppauksen, maahanmuuton tai syntyvyyden kasvun kautta, vai onko kierre katkeamassa.",
+      "current_relevance": "Kytkeytyy suoraan keskusteluun kestävyysvajeesta ja hyvinvointivaltion sopeutumiskyvystä — kysymys on ajankohtainen niin kauan kuin väestörakenteen muutos jatkuu.",
+      "importance": 4,
+      "confidence": "kohtalainen",
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/M05_systeemimalli.webp",
+          "caption": "M01 — Systeemimalli: korjaava vs. katkennut kierre"
+        }
+      ]
+    },
+    {
       "id": "sosiaalihuoltolaki-1982",
       "title": "Sosiaalihuoltolaki",
       "year_start": 1982,
@@ -5371,26 +5371,26 @@
       "confidence": "vahva"
     },
     {
-      "id": "lastensuojelulaki-1983",
-      "title": "Lastensuojelulaki",
+      "id": "rahoitusmarkkinoiden-vapautuminen",
+      "title": "Rahoitusmarkkinoiden vapautuminen",
       "year_start": 1983,
-      "year_end": 1984,
-      "type": "sosiaalinen uudistus",
+      "year_end": 1990,
+      "type": "taloudellinen murros",
       "domains": [
-        "lapset",
-        "oikeudet",
-        "sosiaalihuolto"
+        "rahoitus",
+        "velka",
+        "talous"
       ],
-      "phase": "lapsen edun vahvistuminen",
-      "problem": "Lastensuojelun kontrollipainotteisuus ja lasten oikeuksien heikko asema.",
-      "mechanism": "Lapsen etu, avohuolto ja perheen tukeminen nostettiin keskeisiksi periaatteiksi.",
+      "phase": "säännöstelystä markkinaehtoisuuteen",
+      "problem": "Luottojen ja pääoman liikkeiden voimakas sääntely.",
+      "mechanism": "Korko-, luotto- ja valuuttasääntelyä purettiin nopeasti.",
       "effects": [
-        "ennaltaehkäisevien palvelujen kasvu",
-        "lapsen kuulemisen vahvistuminen",
-        "sijaishuollon sääntely"
+        "luotonannon kasvu",
+        "omaisuusmarkkinoiden nousu",
+        "kotitalouksien ja yritysten velkaantuminen"
       ],
-      "long_effect": "Oikeusperustaisen lastensuojelun kehitys.",
-      "current_relevance": "Palvelujen kuormitus, huostaanotot ja ennaltaehkäisevä tuki.",
+      "long_effect": "Markkinaehtoisen rahoitusjärjestelmän synty ja 1990-luvun kriisin haavoittuvuudet.",
+      "current_relevance": "Velkavetoisen kasvun ja rahoitusvakauden jännite.",
       "importance": 5,
       "confidence": "vahva"
     },
@@ -5420,26 +5420,26 @@
       "confidence": "vahva"
     },
     {
-      "id": "rahoitusmarkkinoiden-vapautuminen",
-      "title": "Rahoitusmarkkinoiden vapautuminen",
+      "id": "lastensuojelulaki-1983",
+      "title": "Lastensuojelulaki",
       "year_start": 1983,
-      "year_end": 1990,
-      "type": "taloudellinen murros",
+      "year_end": 1984,
+      "type": "sosiaalinen uudistus",
       "domains": [
-        "rahoitus",
-        "velka",
-        "talous"
+        "lapset",
+        "oikeudet",
+        "sosiaalihuolto"
       ],
-      "phase": "säännöstelystä markkinaehtoisuuteen",
-      "problem": "Luottojen ja pääoman liikkeiden voimakas sääntely.",
-      "mechanism": "Korko-, luotto- ja valuuttasääntelyä purettiin nopeasti.",
+      "phase": "lapsen edun vahvistuminen",
+      "problem": "Lastensuojelun kontrollipainotteisuus ja lasten oikeuksien heikko asema.",
+      "mechanism": "Lapsen etu, avohuolto ja perheen tukeminen nostettiin keskeisiksi periaatteiksi.",
       "effects": [
-        "luotonannon kasvu",
-        "omaisuusmarkkinoiden nousu",
-        "kotitalouksien ja yritysten velkaantuminen"
+        "ennaltaehkäisevien palvelujen kasvu",
+        "lapsen kuulemisen vahvistuminen",
+        "sijaishuollon sääntely"
       ],
-      "long_effect": "Markkinaehtoisen rahoitusjärjestelmän synty ja 1990-luvun kriisin haavoittuvuudet.",
-      "current_relevance": "Velkavetoisen kasvun ja rahoitusvakauden jännite.",
+      "long_effect": "Oikeusperustaisen lastensuojelun kehitys.",
+      "current_relevance": "Palvelujen kuormitus, huostaanotot ja ennaltaehkäisevä tuki.",
       "importance": 5,
       "confidence": "vahva"
     },
@@ -5518,7 +5518,7 @@
     },
     {
       "id": "sukupolviprofiili-marja-1985",
-      "title": "Sukupolvi joka kantaa: Marja (1985)",
+      "title": "Marja (1985)",
       "year_start": 1985,
       "year_end": 1985,
       "type": "sukupolviprofiili",
@@ -5589,31 +5589,6 @@
       ]
     },
     {
-      "id": "rahoitusmarkkinoiden_vapauttaminen",
-      "title": "Rahoitusmarkkinoiden vapauttaminen",
-      "year_start": 1986,
-      "year_end": 1988,
-      "type": "taloudellinen rakennemuutos",
-      "domains": [
-        "rahoitus",
-        "pankit",
-        "talous"
-      ],
-      "phase": "luottomarkkinoiden vapautuminen",
-      "problem": "Säännelty luottomarkkina rajoitti pääomien liikkuvuutta ja rahoituksen saatavuutta.",
-      "mechanism": "Luotonantoa ja korkosääntelyä purettiin nopeasti, mikä lisäsi velan saatavuutta ja pääomien liikkuvuutta.",
-      "effects": [
-        "luotonannon voimakas kasvu",
-        "kotitalouksien velkaantuminen",
-        "omaisuushintojen nousu",
-        "rahoitusjärjestelmän riskien kasvu"
-      ],
-      "long_effect": "Vapauttaminen loi edellytykset 1990-luvun pankkikriisille mutta myös modernien rahoitusmarkkinoiden synnylle.",
-      "current_relevance": "Velkaantuminen, rahoitusvakaus ja makrovakauspolitiikka.",
-      "importance": 5,
-      "confidence": "vahva"
-    },
-    {
       "id": "pysyvasti-korkea-tyottomyys-1990",
       "title": "Pysyvästi korkea työttömyys Suomessa",
       "year_start": 1986,
@@ -5652,51 +5627,27 @@
       ]
     },
     {
-      "id": "vammaispalvelulaki-1987",
-      "title": "Vammaispalvelulaki",
-      "year_start": 1987,
-      "year_end": 1987,
-      "type": "sosiaalinen uudistus",
+      "id": "rahoitusmarkkinoiden_vapauttaminen",
+      "title": "Rahoitusmarkkinoiden vapauttaminen",
+      "year_start": 1986,
+      "year_end": 1988,
+      "type": "taloudellinen rakennemuutos",
       "domains": [
-        "vammaisuus",
-        "oikeudet",
-        "osallisuus"
+        "rahoitus",
+        "pankit",
+        "talous"
       ],
-      "phase": "vammaispolitiikan oikeusperusta",
-      "problem": "Vammaisten henkilöiden riippuvuus laitos- ja harkinnanvaraisista palveluista.",
-      "mechanism": "Palveluilla ja tukitoimilla vahvistettiin itsenäistä elämää ja osallistumista.",
+      "phase": "luottomarkkinoiden vapautuminen",
+      "problem": "Säännelty luottomarkkina rajoitti pääomien liikkuvuutta ja rahoituksen saatavuutta.",
+      "mechanism": "Luotonantoa ja korkosääntelyä purettiin nopeasti, mikä lisäsi velan saatavuutta ja pääomien liikkuvuutta.",
       "effects": [
-        "kuljetuspalvelut",
-        "asumisen tuki",
-        "henkilökohtaisen avun kehitys"
+        "luotonannon voimakas kasvu",
+        "kotitalouksien velkaantuminen",
+        "omaisuushintojen nousu",
+        "rahoitusjärjestelmän riskien kasvu"
       ],
-      "long_effect": "Siirtymä huollosta oikeuksiin ja osallisuuteen.",
-      "current_relevance": "Vammaispalvelujen yhdenvertaisuus ja yksilöllinen tuki.",
-      "importance": 5,
-      "confidence": "vahva"
-    },
-    {
-      "id": "tasa-arvolaki-1987",
-      "title": "Tasa-arvolaki",
-      "year_start": 1987,
-      "year_end": 1987,
-      "type": "oikeudellinen uudistus",
-      "domains": [
-        "oikeudet",
-        "tasa-arvo",
-        "työelämä"
-      ],
-      "phase": "yhdenvertaisuuden vahvistuminen",
-      "problem": "Sukupuoleen perustuva syrjintä sekä naisten heikompi asema työelämässä ja päätöksenteossa edellyttivät lainsäädännöllisiä toimia.",
-      "mechanism": "Laki kielsi sukupuoleen perustuvan syrjinnän ja velvoitti viranomaisia sekä työnantajia edistämään tasa-arvoa aktiivisesti.",
-      "effects": [
-        "syrjinnän kiellon vahvistuminen",
-        "tasa-arvosuunnittelun yleistyminen",
-        "tasa-arvovaltuutetun toiminnan käynnistyminen",
-        "naisten aseman vahvistuminen työelämässä ja julkisessa päätöksenteossa"
-      ],
-      "long_effect": "Laki loi perustan sukupuolten tasa-arvon pitkäjänteiselle kehittämiselle ja myöhemmille yhdenvertaisuusuudistuksille.",
-      "current_relevance": "Palkkatasa-arvo, perhevapaiden jakautuminen, työelämän yhdenvertaisuus ja monimuotoisuus.",
+      "long_effect": "Vapauttaminen loi edellytykset 1990-luvun pankkikriisille mutta myös modernien rahoitusmarkkinoiden synnylle.",
+      "current_relevance": "Velkaantuminen, rahoitusvakaus ja makrovakauspolitiikka.",
       "importance": 5,
       "confidence": "vahva"
     },
@@ -5733,6 +5684,55 @@
           "caption": "Kriisien yhteiset piirteet (Atlas M02)"
         }
       ]
+    },
+    {
+      "id": "tasa-arvolaki-1987",
+      "title": "Tasa-arvolaki",
+      "year_start": 1987,
+      "year_end": 1987,
+      "type": "oikeudellinen uudistus",
+      "domains": [
+        "oikeudet",
+        "tasa-arvo",
+        "työelämä"
+      ],
+      "phase": "yhdenvertaisuuden vahvistuminen",
+      "problem": "Sukupuoleen perustuva syrjintä sekä naisten heikompi asema työelämässä ja päätöksenteossa edellyttivät lainsäädännöllisiä toimia.",
+      "mechanism": "Laki kielsi sukupuoleen perustuvan syrjinnän ja velvoitti viranomaisia sekä työnantajia edistämään tasa-arvoa aktiivisesti.",
+      "effects": [
+        "syrjinnän kiellon vahvistuminen",
+        "tasa-arvosuunnittelun yleistyminen",
+        "tasa-arvovaltuutetun toiminnan käynnistyminen",
+        "naisten aseman vahvistuminen työelämässä ja julkisessa päätöksenteossa"
+      ],
+      "long_effect": "Laki loi perustan sukupuolten tasa-arvon pitkäjänteiselle kehittämiselle ja myöhemmille yhdenvertaisuusuudistuksille.",
+      "current_relevance": "Palkkatasa-arvo, perhevapaiden jakautuminen, työelämän yhdenvertaisuus ja monimuotoisuus.",
+      "importance": 5,
+      "confidence": "vahva"
+    },
+    {
+      "id": "vammaispalvelulaki-1987",
+      "title": "Vammaispalvelulaki",
+      "year_start": 1987,
+      "year_end": 1987,
+      "type": "sosiaalinen uudistus",
+      "domains": [
+        "vammaisuus",
+        "oikeudet",
+        "osallisuus"
+      ],
+      "phase": "vammaispolitiikan oikeusperusta",
+      "problem": "Vammaisten henkilöiden riippuvuus laitos- ja harkinnanvaraisista palveluista.",
+      "mechanism": "Palveluilla ja tukitoimilla vahvistettiin itsenäistä elämää ja osallistumista.",
+      "effects": [
+        "kuljetuspalvelut",
+        "asumisen tuki",
+        "henkilökohtaisen avun kehitys"
+      ],
+      "long_effect": "Siirtymä huollosta oikeuksiin ja osallisuuteen.",
+      "current_relevance": "Vammaispalvelujen yhdenvertaisuus ja yksilöllinen tuki.",
+      "importance": 5,
+      "confidence": "vahva"
     },
     {
       "id": "vahvan_markan_politiikka",
@@ -6747,7 +6747,7 @@
     },
     {
       "id": "sukupolviprofiili-jukka-2005",
-      "title": "Sukupolvi joka kantaa: Jukka (2005)",
+      "title": "Jukka (2005)",
       "year_start": 2005,
       "year_end": 2005,
       "type": "sukupolviprofiili",
@@ -8071,7 +8071,7 @@
     },
     {
       "id": "sukupolviprofiili-vilja-2025",
-      "title": "Sukupolvi joka kantaa: Vilja (2025)",
+      "title": "Vilja (2025)",
       "year_start": 2025,
       "year_end": 2025,
       "type": "sukupolviprofiili",
