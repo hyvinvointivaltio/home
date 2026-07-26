@@ -542,6 +542,27 @@ header.hero::after{
   opacity:.35;
 }
 
+.matrix-toolset{
+  transition:opacity .25s ease,filter .25s ease;
+}
+
+.matrix-tools--inactive .matrix-toolset{
+  opacity:.45;
+  filter:saturate(.6);
+}
+
+.matrix-tools-hint{
+  display:none;
+  align-items:center;
+  color:var(--muted);
+  font:500 10px var(--mono);
+  letter-spacing:.02em;
+}
+
+.matrix-tools--inactive .matrix-tools-hint{
+  display:inline-flex;
+}
+
 .matrix-selection{
   display:none;
   align-items:center;
@@ -872,6 +893,27 @@ header.hero::after{
 
 .matrix-legend .selected{
   background:var(--ochre);
+}
+
+.matrix-legend .mixed{
+  background:var(--violet);
+}
+
+.matrix-legend .depth-fade{
+  background:var(--forest);
+  opacity:.5;
+}
+
+.matrix-legend i.line{
+  width:16px;
+  height:0;
+  background:none;
+  border-top:1.5px solid rgba(31,70,66,.6);
+  border-radius:0;
+}
+
+.matrix-legend i.line.dashed{
+  border-top-style:dashed;
 }
 
 .matrix-tooltip{
@@ -2893,6 +2935,187 @@ footer.foot .rule{
 @media(max-width:900px){.join-grid{grid-template-columns:1fr;}.document-groups{grid-template-columns:1fr;}}
 @media(max-width:820px){.association-grid{grid-template-columns:1fr;}}
 
+
+/* ==========================================================
+   LÄMPÖKARTTAMATRIISI
+   Matriisi renderöityy yhtenäisenä lämpökarttaruudukkona:
+   jokainen solu on ruutu, ja murroskortti on yksi ruuduista.
+   Klikkauslogiikka säilyy ennallaan.
+   ========================================================== */
+
+.matrix-grid{
+  min-height:clamp(300px,34vw,420px);
+  padding:0;
+
+  /* poistetaan vanhat viivagradientit, ruudukko piirtyy soluista */
+  background-image:none !important;
+  background-color:rgba(247,244,236,.55) !important;
+}
+
+/* Tyhjä lämpökarttaruutu: läpinäkyvä pinta + hiuslinjareunus,
+   joka muodostaa yhtenäisen ruudukon. */
+.matrix-heat{
+  outline:.5px solid rgba(247,244,236,.55);
+  outline-offset:-.5px;
+  border-radius:1px;
+}
+
+/* Solmu = yksi lämpökartan ruutu, ei enää pieni neliö solun keskellä. */
+.matrix-node{
+  align-self:stretch !important;
+  justify-self:stretch !important;
+
+  width:100% !important;
+  height:100% !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  aspect-ratio:auto !important;
+
+  margin:0;
+  border-radius:1px !important;
+
+  background:
+    linear-gradient(
+      160deg,
+      rgba(74,144,136,.95),
+      var(--forest-deep)
+    ) !important;
+
+  outline:.5px solid rgba(253,252,247,.55);
+  outline-offset:-.5px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.16) !important;
+
+  transform:none !important;
+
+  transition:
+    background-color .5s cubic-bezier(.22,.61,.36,1),
+    opacity .5s cubic-bezier(.22,.61,.36,1),
+    filter .25s ease,
+    outline-color .25s ease !important;
+}
+
+.matrix-node:hover{
+  z-index:30;
+  filter:saturate(1.25) brightness(1.12);
+  outline:2px solid var(--copper);
+  outline-offset:-1px;
+
+  background:
+    linear-gradient(
+      160deg,
+      var(--ochre),
+      var(--copper)
+    ) !important;
+
+  box-shadow:
+    0 0 0 1px rgba(253,252,247,.9),
+    0 6px 18px -6px rgba(198,106,46,.55) !important;
+}
+
+/* Tilavärit -- tasaiset pinnat, lämpökartta-asteikko */
+.matrix-node.predecessor{
+  background:
+    linear-gradient(160deg,#2f6b64,var(--forest-shadow)) !important;
+}
+
+.matrix-node.successor{
+  background:
+    linear-gradient(160deg,var(--ochre),var(--copper)) !important;
+}
+
+.matrix-node.mixed{
+  background:
+    linear-gradient(160deg,#8f77a3,var(--violet)) !important;
+}
+
+.matrix-node.selected{
+  z-index:40;
+  background:
+    linear-gradient(160deg,#f3c46f,var(--ochre)) !important;
+
+  outline:2px solid var(--forest-shadow);
+  outline-offset:-1px;
+
+  box-shadow:
+    0 0 0 1px var(--paper),
+    0 8px 22px -8px rgba(80,49,28,.55) !important;
+}
+
+/* Syvyysporrastus pelkällä läpinäkyvyydellä, ruudukko pysyy ehjänä */
+.matrix-node.depth-1{ opacity:1; }
+.matrix-node.depth-2{ opacity:.82; }
+.matrix-node.depth-3{ opacity:.58; }
+
+.matrix-node.unrelated{
+  opacity:.16;
+  outline-color:rgba(253,252,247,.3);
+}
+
+.matrix-node.filtered{
+  opacity:.05;
+}
+
+/* Yhteysviivat hillitymmiksi, jotta ruudukko pysyy luettavana */
+.matrix-link{
+  stroke:rgba(31,70,66,.13) !important;
+  stroke-width:1 !important;
+}
+
+.matrix-link.active{
+  stroke:rgba(181,106,52,.75) !important;
+  stroke-width:2 !important;
+}
+
+.matrix-boundary{
+  background:rgba(58,107,100,.22);
+}
+
+/* Nimilaput ruudukon päälle, luettavina lipukkeina */
+.matrix-node-label{
+  margin-left:calc(100% + 4px) !important;
+  padding:1px 4px !important;
+  border-radius:3px !important;
+  background:rgba(253,252,247,.88) !important;
+  box-shadow:0 1px 4px -2px rgba(6,28,26,.35) !important;
+}
+
+/* Selite kertoo nyt lämpökartan lukutavan */
+.matrix-legend i{
+  width:11px;
+  height:11px;
+  border-radius:1px;
+  outline:1px solid rgba(214,205,184,.8);
+  outline-offset:-1px;
+}
+
+.matrix-legend .mixed{
+  background:var(--violet) !important;
+}
+
+.matrix-legend .depth-fade{
+  background:var(--forest) !important;
+  opacity:.5;
+}
+
+/* Viivanäytteet (relaatioiden tyyli) eivät ole ruutuja, vaan ohuita viivoja */
+.matrix-legend i.line{
+  width:16px !important;
+  height:0 !important;
+  outline:none !important;
+  background:none !important;
+  border-radius:0 !important;
+  border-top:1.5px solid rgba(31,70,66,.6);
+}
+
+.matrix-legend i.line.dashed{
+  border-top-style:dashed;
+}
+
+@media(max-width:900px){
+  .matrix-grid{
+    min-height:280px;
+  }
+}
 </style>
 <link rel="stylesheet" href="/atlas-enhance.css">
 </head>
@@ -3040,7 +3263,7 @@ footer.foot .rule{
       </div>
     </div>
 
-    <div class="matrix-tools">
+    <div class="matrix-tools" id="matrixTools">
       <div class="matrix-toolset">
         <span>Suunta</span>
 
@@ -3096,6 +3319,10 @@ footer.foot .rule{
           3
         </button>
       </div>
+
+      <span class="matrix-tools-hint" id="matrixToolsHint">
+        Valitse kortti ruudukosta ottaaksesi suunnan ja syvyyden käyttöön
+      </span>
 
       <button
         type="button"
@@ -3176,12 +3403,38 @@ footer.foot .rule{
       </span>
 
       <span>
+        <i class="mixed"></i>
+        sekä edeltäjä että seuraaja
+      </span>
+
+      <span>
+        <i class="depth-fade"></i>
+        himmeämpi = kauempana valitusta kortista
+      </span>
+
+      <span>
+        <i class="line"></i>
+        dokumentoitu yhteys
+      </span>
+
+      <span>
+        <i class="line dashed"></i>
+        tulkinnallinen yhteys
+      </span>
+
+      <span>
         Klikkaa samaa neliötä uudelleen avataksesi analyysin.
       </span>
     </div>
   </div>
 
 </section>
+
+<div class="matrix-tooltip" id="matrixTooltip" role="status" aria-hidden="true">
+  <div class="matrix-tooltip-year" id="matrixTooltipYear"></div>
+  <div class="matrix-tooltip-title" id="matrixTooltipTitle"></div>
+  <div class="matrix-tooltip-meta" id="matrixTooltipMeta"></div>
+</div>
 
 <section class="controls">
   <div class="controls-inner">
@@ -5731,6 +5984,8 @@ function renderMatrix(){
     return;
   }
 
+  hideMatrixTooltip();
+
   const shown =
     filtered();
 
@@ -5885,11 +6140,17 @@ function updateMatrixSelection(){
   const reset =
     $("matrixReset");
 
+  const tools =
+    $("matrixTools");
+
   if(!matrixState.selectedId){
     panel.classList.remove("visible");
     reset.disabled = true;
+    if(tools) tools.classList.add("matrix-tools--inactive");
     return;
   }
+
+  if(tools) tools.classList.remove("matrix-tools--inactive");
 
   const item =
     state.byId.get(
@@ -5927,6 +6188,42 @@ function updateMatrixSelection(){
    uudelleenrakennuksen aikana.
    ========================================================== */
 
+function positionMatrixTooltipAt(x, y){
+  const tip = $("matrixTooltip");
+  const offset = 16;
+
+  let left = x + offset;
+  let top = y + offset;
+
+  const rect = tip.getBoundingClientRect();
+  const maxLeft = window.innerWidth - rect.width - 10;
+  const maxTop = window.innerHeight - rect.height - 10;
+
+  if(left > maxLeft) left = x - rect.width - offset;
+  if(top > maxTop) top = y - rect.height - offset;
+
+  tip.style.left = Math.max(10, left) + "px";
+  tip.style.top = Math.max(10, top) + "px";
+}
+
+function showMatrixTooltipForItem(id, x, y){
+  const item = state.byId.get(id);
+  if(!item) return;
+
+  $("matrixTooltipYear").textContent = years(item);
+  $("matrixTooltipTitle").textContent = item.title;
+  $("matrixTooltipMeta").textContent =
+    `${item.type || ""} · merkitys ${item.importance}/5`;
+
+  $("matrixTooltip").classList.add("visible");
+  positionMatrixTooltipAt(x, y);
+}
+
+function hideMatrixTooltip(){
+  const tip = $("matrixTooltip");
+  if(tip) tip.classList.remove("visible");
+}
+
 function bindMatrixNodeEvents(){
   $("matrixGrid").addEventListener(
     "click",
@@ -5962,6 +6259,45 @@ function bindMatrixNodeEvents(){
       renderMatrix();
     }
   );
+
+  /*
+   * Hover-esikatselu: näyttää kortin nimen, vuodet ja tyypin
+   * ennen klikkausta, jotta tiheässäkin ruudukossa tietää mitä
+   * ollaan valitsemassa. Delegoitu #matrixGrid-säiliöön samasta
+   * syystä kuin klikkaus -- solmut vaihtuvat jatkuvasti DOM:ssa.
+   */
+  $("matrixGrid").addEventListener("mouseover", event => {
+    const button = event.target.closest("[data-matrix-node]");
+    if(!button) return;
+    showMatrixTooltipForItem(button.dataset.matrixNode, event.clientX, event.clientY);
+  });
+
+  $("matrixGrid").addEventListener("mousemove", event => {
+    const button = event.target.closest("[data-matrix-node]");
+    if(!button) return;
+    positionMatrixTooltipAt(event.clientX, event.clientY);
+  });
+
+  $("matrixGrid").addEventListener("mouseout", event => {
+    const button = event.target.closest("[data-matrix-node]");
+    if(!button) return;
+    if(event.relatedTarget && button.contains(event.relatedTarget)) return;
+    hideMatrixTooltip();
+  });
+
+  /* Sama esikatselu näppäimistöllä siirryttäessä (focus/blur eivät kupli, capture:true) */
+  $("matrixGrid").addEventListener("focus", event => {
+    const button = event.target.closest("[data-matrix-node]");
+    if(!button) return;
+    const rect = button.getBoundingClientRect();
+    showMatrixTooltipForItem(button.dataset.matrixNode, rect.left, rect.bottom);
+  }, true);
+
+  $("matrixGrid").addEventListener("blur", event => {
+    const button = event.target.closest("[data-matrix-node]");
+    if(!button) return;
+    hideMatrixTooltip();
+  }, true);
 }
 
 /* ==========================================================
