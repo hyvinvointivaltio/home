@@ -2375,7 +2375,7 @@ footer.foot .rule{
   }
 
   .matrix-grid{
-    min-height:245px;
+    min-height:120px;
   }
 }
 
@@ -2963,7 +2963,15 @@ footer.foot .rule{
    ========================================================== */
 
 .matrix-grid{
-  min-height:clamp(300px,34vw,420px);
+  /*
+   * Ruutujen on oltava neliöitä. Koko ruudukon leveys/korkeus-suhde
+   * lukitaan sarake- ja rivimäärän suhteeseen (--matrix-columns /
+   * --matrix-rows, jotka JS päivittää oikeiksi renderMatrix():ssa),
+   * jolloin jokaisesta yksittäisestä solusta tulee automaattisesti
+   * neliö riippumatta siitä, montako saraketta tai riviä on.
+   */
+  aspect-ratio:var(--matrix-columns) / var(--matrix-rows);
+  min-height:180px;
   padding:0;
 
   /* poistetaan vanhat viivagradientit, ruudukko piirtyy soluista */
@@ -3132,7 +3140,9 @@ footer.foot .rule{
 
 @media(max-width:900px){
   .matrix-grid{
-    min-height:280px;
+    /* aspect-ratio (asetettu yllä) huolehtii korkeudesta myös
+       kapealla näytöllä, jotta solut pysyvät neliöinä täällä. */
+    min-height:120px;
   }
 }
 </style>
@@ -4061,7 +4071,7 @@ const MATRIX = {
   columns:0,
   totalRows:0,
   startYear:1800,
-  endYear:2035,
+  endYear:2050,
 
   clusterRows:new Map(),
   clusterOffsets:new Map()
@@ -4454,29 +4464,14 @@ fetch(DATA_FILE)
       }
     }
 
-    const minYear =
-      Math.min(
-        ...state.all.map(item =>
-          Number(item.year_start)
-        )
-      );
-
-    const maxYear =
-      Math.max(
-        ...state.all.map(item =>
-          Number(item.year_end)
-        )
-      );
-
-    MATRIX.startYear =
-      Number.isFinite(minYear)
-        ? minYear
-        : 1800;
-
-    MATRIX.endYear =
-      Number.isFinite(maxYear)
-        ? maxYear
-        : 2035;
+    /*
+     * Matriisin aikavyöhyke on kiinteä (1800-2050) riippumatta siitä,
+     * mitä vuosia data tosiasiassa sisältää -- ei lasketa enää
+     * datan omasta min/max-vuodesta, jotta aikajana ei elä kortti-
+     * joukon mukana.
+     */
+    MATRIX.startYear = 1800;
+    MATRIX.endYear = 2050;
 
     state.periods =
       createPeriods(
