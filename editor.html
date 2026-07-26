@@ -146,22 +146,20 @@ main{padding:20px 24px 80px;max-width:1200px;margin:0 auto}
   font:14px inherit;
 }
 .toolbar input[type="search"]:focus{outline:2px solid var(--forest);outline-offset:1px}
-.toolbar select.sort{
-  padding:9px 30px 9px 14px;
-  border:1px solid var(--line);
-  border-radius:999px;
-  background:var(--paper);
-  color:var(--ink);
-  font:600 12.5px var(--mono);
-  letter-spacing:.02em;
-  appearance:none;
-  -webkit-appearance:none;
-  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%236c766f'/></svg>");
-  background-repeat:no-repeat;
-  background-position:right 12px center;
+
+table.data th.sortable{
   cursor:pointer;
+  user-select:none;
+  white-space:nowrap;
 }
-.toolbar select.sort:focus{outline:2px solid var(--forest);outline-offset:1px}
+table.data th.sortable:hover{color:var(--forest-deep)}
+table.data th.sortable .sort-arrow{
+  display:inline-block;
+  min-width:9px;
+  margin-left:3px;
+  color:var(--copper);
+  font-size:.75em;
+}
 
 table.data{
   width:100%;
@@ -439,19 +437,17 @@ td.mono{font:12px var(--mono);color:var(--muted)}
   <section class="panel active" id="panel-items">
     <div class="toolbar">
       <input type="search" id="searchItems" placeholder="Hae otsikosta, id:stä tai tyypistä…" />
-      <select class="sort" id="sortItems">
-        <option value="year_asc">Vuosi, vanhin ensin</option>
-        <option value="year_desc">Vuosi, uusin ensin</option>
-        <option value="title_asc">Otsikko A→Ö</option>
-        <option value="title_desc">Otsikko Ö→A</option>
-        <option value="importance_desc">Merkitys, suurin ensin</option>
-      </select>
       <button class="btn primary" id="newItem">+ Uusi kortti</button>
     </div>
-    <table class="data">
+    <table class="data" id="itemsTable">
       <thead>
         <tr>
-          <th>Vuodet</th><th>Otsikko</th><th>Tyyppi</th><th>Merk.</th><th>Luott.</th><th></th>
+          <th class="sortable" data-sort="year_start">Vuodet<span class="sort-arrow"></span></th>
+          <th class="sortable" data-sort="title">Otsikko<span class="sort-arrow"></span></th>
+          <th class="sortable" data-sort="type">Tyyppi<span class="sort-arrow"></span></th>
+          <th class="sortable" data-sort="importance">Merk.<span class="sort-arrow"></span></th>
+          <th class="sortable" data-sort="confidence">Luott.<span class="sort-arrow"></span></th>
+          <th></th>
         </tr>
       </thead>
       <tbody id="itemsBody"></tbody>
@@ -463,19 +459,17 @@ td.mono{font:12px var(--mono);color:var(--muted)}
   <section class="panel" id="panel-relations">
     <div class="toolbar">
       <input type="search" id="searchRelations" placeholder="Hae kortin nimestä tai relaatiotyypistä…" />
-      <select class="sort" id="sortRelations">
-        <option value="default">Lataus-järjestys</option>
-        <option value="from_title_asc">Mistä-otsikko A→Ö</option>
-        <option value="from_title_desc">Mistä-otsikko Ö→A</option>
-        <option value="to_title_asc">Mihin-otsikko A→Ö</option>
-        <option value="type_asc">Tyyppi A→Ö</option>
-      </select>
       <button class="btn primary" id="newRelation">+ Uusi relaatio</button>
     </div>
-    <table class="data">
+    <table class="data" id="relationsTable">
       <thead>
         <tr>
-          <th>Mistä</th><th>Mihin</th><th>Tyyppi</th><th>Luokka</th><th>Luott.</th><th></th>
+          <th class="sortable" data-sort="from">Mistä<span class="sort-arrow"></span></th>
+          <th class="sortable" data-sort="to">Mihin<span class="sort-arrow"></span></th>
+          <th class="sortable" data-sort="type">Tyyppi<span class="sort-arrow"></span></th>
+          <th class="sortable" data-sort="rel_class">Luokka<span class="sort-arrow"></span></th>
+          <th class="sortable" data-sort="confidence">Luott.<span class="sort-arrow"></span></th>
+          <th></th>
         </tr>
       </thead>
       <tbody id="relationsBody"></tbody>
@@ -487,17 +481,16 @@ td.mono{font:12px var(--mono);color:var(--muted)}
   <section class="panel" id="panel-articles">
     <div class="toolbar">
       <input type="search" id="searchArticles" placeholder="Hae artikkelin otsikosta…" />
-      <select class="sort" id="sortArticles">
-        <option value="default">Lataus-järjestys</option>
-        <option value="title_asc">Otsikko A→Ö</option>
-        <option value="title_desc">Otsikko Ö→A</option>
-        <option value="status_asc">Tila A→Ö</option>
-      </select>
       <button class="btn primary" id="newArticle">+ Uusi artikkeli</button>
     </div>
-    <table class="data">
+    <table class="data" id="articlesTable">
       <thead>
-        <tr><th>Otsikko</th><th>Tila</th><th>Kytkentöjä</th><th></th></tr>
+        <tr>
+          <th class="sortable" data-sort="title">Otsikko<span class="sort-arrow"></span></th>
+          <th class="sortable" data-sort="status">Tila<span class="sort-arrow"></span></th>
+          <th class="sortable" data-sort="links">Kytkentöjä<span class="sort-arrow"></span></th>
+          <th></th>
+        </tr>
       </thead>
       <tbody id="articlesBody"></tbody>
     </table>
@@ -898,13 +891,61 @@ const state = {
   documents: [],
   editingBoardMemberId: null,
   editingDocumentId: null,
-  itemsSort: "year_asc",
-  relationsSort: "default",
-  articlesSort: "default"
+  sort: {
+    items: { key: "year_start", dir: "asc" },
+    relations: { key: null, dir: "asc" },
+    articles: { key: null, dir: "asc" }
+  }
 };
 
 /* Suomen aakkosjärjestykseen sopiva vertailu (ä/ö/å oikealla paikallaan) */
 const fiCollator = new Intl.Collator("fi", { sensitivity: "base" });
+
+function compareForSort(a, b, dir){
+  let result;
+  if(typeof a === "number" && typeof b === "number"){
+    result = a - b;
+  }else{
+    result = fiCollator.compare(String(a ?? ""), String(b ?? ""));
+  }
+  return dir === "asc" ? result : -result;
+}
+
+function applySort(rows, tableKey, getters){
+  const st = state.sort[tableKey];
+  if(!st.key || !getters[st.key]) return rows;
+  const getter = getters[st.key];
+  const sorted = rows.slice();
+  sorted.sort((a, b) => compareForSort(getter(a), getter(b), st.dir));
+  return sorted;
+}
+
+function updateSortArrows(tableId, tableKey){
+  const st = state.sort[tableKey];
+  document.querySelectorAll(`#${tableId} th.sortable`).forEach(th => {
+    const arrow = th.querySelector(".sort-arrow");
+    if(!arrow) return;
+    arrow.textContent = th.dataset.sort === st.key
+      ? (st.dir === "asc" ? "↑" : "↓")
+      : "";
+  });
+}
+
+function bindSortableHeaders(tableId, tableKey, renderFn){
+  document.querySelectorAll(`#${tableId} th.sortable`).forEach(th => {
+    th.addEventListener("click", () => {
+      const key = th.dataset.sort;
+      const st = state.sort[tableKey];
+      if(st.key === key){
+        st.dir = st.dir === "asc" ? "desc" : "asc";
+      }else{
+        st.key = key;
+        st.dir = "asc";
+      }
+      renderFn();
+    });
+  });
+}
 
 const ATLAS_IMAGES_BASE_URL =
   "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/";
@@ -1038,17 +1079,6 @@ function populateLinkTypeSelect(){
 /* ==========================================================
    RENDER: KORTIT
    ========================================================== */
-function sortItemRows(rows){
-  const mode = state.itemsSort;
-  const sorted = rows.slice();
-  if(mode === "title_asc") sorted.sort((a,b) => fiCollator.compare(a.title, b.title));
-  else if(mode === "title_desc") sorted.sort((a,b) => fiCollator.compare(b.title, a.title));
-  else if(mode === "year_desc") sorted.sort((a,b) => b.year_start - a.year_start);
-  else if(mode === "importance_desc") sorted.sort((a,b) => (b.importance||0) - (a.importance||0) || fiCollator.compare(a.title, b.title));
-  else sorted.sort((a,b) => a.year_start - b.year_start); // year_asc (oletus)
-  return sorted;
-}
-
 function renderItems(){
   const q = $("searchItems").value.trim().toLowerCase();
   let rows = state.items.filter(it =>
@@ -1057,7 +1087,13 @@ function renderItems(){
     it.title.toLowerCase().includes(q) ||
     (it.type || "").toLowerCase().includes(q)
   );
-  rows = sortItemRows(rows);
+  rows = applySort(rows, "items", {
+    year_start: it => it.year_start,
+    title: it => it.title,
+    type: it => it.type || "",
+    importance: it => it.importance || 0,
+    confidence: it => it.confidence || ""
+  });
 
   $("countItems").textContent = state.items.length;
   $("itemsEmpty").style.display = rows.length ? "none" : "block";
@@ -1078,13 +1114,12 @@ function renderItems(){
   document.querySelectorAll("[data-edit-item]").forEach(btn => {
     btn.addEventListener("click", () => openItemForm(btn.dataset.editItem));
   });
+
+  updateSortArrows("itemsTable", "items");
 }
 
 $("searchItems").addEventListener("input", renderItems);
-$("sortItems").addEventListener("change", () => {
-  state.itemsSort = $("sortItems").value;
-  renderItems();
-});
+bindSortableHeaders("itemsTable", "items", renderItems);
 
 /* ==========================================================
    LOMAKE: KORTTI
@@ -1253,17 +1288,6 @@ function splitLines(str){
 /* ==========================================================
    RENDER: RELAATIOT
    ========================================================== */
-function sortRelationRows(rows){
-  const mode = state.relationsSort;
-  const sorted = rows.slice();
-  if(mode === "from_title_asc") sorted.sort((a,b) => fiCollator.compare(itemLabel(a.from_id), itemLabel(b.from_id)));
-  else if(mode === "from_title_desc") sorted.sort((a,b) => fiCollator.compare(itemLabel(b.from_id), itemLabel(a.from_id)));
-  else if(mode === "to_title_asc") sorted.sort((a,b) => fiCollator.compare(itemLabel(a.to_id), itemLabel(b.to_id)));
-  else if(mode === "type_asc") sorted.sort((a,b) => fiCollator.compare(a.type, b.type));
-  else sorted.sort((a,b) => a.id - b.id); // lataus-järjestys (id)
-  return sorted;
-}
-
 function renderRelations(){
   const q = $("searchRelations").value.trim().toLowerCase();
   let rows = state.relations.filter(r =>
@@ -1274,7 +1298,13 @@ function renderRelations(){
     itemLabel(r.from_id).toLowerCase().includes(q) ||
     itemLabel(r.to_id).toLowerCase().includes(q)
   );
-  rows = sortRelationRows(rows);
+  rows = applySort(rows, "relations", {
+    from: r => itemLabel(r.from_id),
+    to: r => itemLabel(r.to_id),
+    type: r => r.type || "",
+    rel_class: r => r.rel_class || "",
+    confidence: r => r.confidence || ""
+  });
 
   $("countRelations").textContent = state.relations.length;
   $("relationsEmpty").style.display = rows.length ? "none" : "block";
@@ -1293,13 +1323,12 @@ function renderRelations(){
   document.querySelectorAll("[data-edit-rel]").forEach(btn => {
     btn.addEventListener("click", () => openRelationForm(Number(btn.dataset.editRel)));
   });
+
+  updateSortArrows("relationsTable", "relations");
 }
 
 $("searchRelations").addEventListener("input", renderRelations);
-$("sortRelations").addEventListener("change", () => {
-  state.relationsSort = $("sortRelations").value;
-  renderRelations();
-});
+bindSortableHeaders("relationsTable", "relations", renderRelations);
 
 /* ==========================================================
    LOMAKE: RELAATIO
@@ -1371,22 +1400,16 @@ $("deleteRelation").addEventListener("click", async () => {
 /* ==========================================================
    RENDER: ARTIKKELIT
    ========================================================== */
-function sortArticleRows(rows){
-  const mode = state.articlesSort;
-  const sorted = rows.slice();
-  if(mode === "title_asc") sorted.sort((a,b) => fiCollator.compare(a.title, b.title));
-  else if(mode === "title_desc") sorted.sort((a,b) => fiCollator.compare(b.title, a.title));
-  else if(mode === "status_asc") sorted.sort((a,b) => fiCollator.compare(a.status, b.status) || fiCollator.compare(a.title, b.title));
-  else sorted.sort((a,b) => fiCollator.compare(a.id, b.id)); // lataus-järjestys (id)
-  return sorted;
-}
-
 function renderArticles(){
   const q = $("searchArticles").value.trim().toLowerCase();
   let rows = state.articles.filter(a =>
     !q || a.title.toLowerCase().includes(q) || a.id.toLowerCase().includes(q)
   );
-  rows = sortArticleRows(rows);
+  rows = applySort(rows, "articles", {
+    title: a => a.title,
+    status: a => a.status || "",
+    links: a => state.articleLinks.filter(l => l.article_id === a.id).length
+  });
 
   $("countArticles").textContent = state.articles.length;
   $("articlesEmpty").style.display = rows.length ? "none" : "block";
@@ -1406,13 +1429,12 @@ function renderArticles(){
   document.querySelectorAll("[data-edit-art]").forEach(btn => {
     btn.addEventListener("click", () => openArticleForm(btn.dataset.editArt));
   });
+
+  updateSortArrows("articlesTable", "articles");
 }
 
 $("searchArticles").addEventListener("input", renderArticles);
-$("sortArticles").addEventListener("change", () => {
-  state.articlesSort = $("sortArticles").value;
-  renderArticles();
-});
+bindSortableHeaders("articlesTable", "articles", renderArticles);
 
 /* ==========================================================
    LOMAKE: ARTIKKELI
