@@ -20,40 +20,38 @@
   },
   "items": [
     {
-      "id": "tervanpoltto-1600",
-      "title": "Tervan poltto ja tervakauppa",
-      "year_start": 1600,
-      "year_end": 1900,
-      "type": "pitkä kaari",
+      "id": "kaskiviljelysta-metsatalouteen-1800",
+      "title": "Kaskiviljelystä kestävään metsätalouteen",
+      "year_start": 1800,
+      "year_end": 1920,
+      "type": "rakennemuutos",
       "domains": [
+        "maatalous",
         "metsätalous",
-        "vienti",
-        "talous",
-        "maaseutu"
+        "ympäristö",
+        "talous"
       ],
-      "phase": "Suomen musta kulta — metsästä maailman markkinoille.",
-      "problem": "Purjelaivakaudella laivojen rungot ja köydet piti kyllästää tervalla suojaksi vettä ja lahoamista vastaan. Tervan kysyntä maailman kasvavalla laivastolla loi Suomen metsille ensimmäisen suuren kansainvälisen vientimarkkinan jo ennen sahateollisuutta.",
-      "mechanism": "Terva valmistettiin polttamalla mäntyä hitaasti hapettomissa tervahaudoissa metsässä, minkä jälkeen se kuljetettiin jokia ja vesireittejä pitkin rannikon satamiin ja sieltä laivoilla Länsi-Eurooppaan. Tervanpoltto työllisti kymmeniä tuhansia ihmisiä erityisesti Hämeessä, Savossa ja Karjalassa.",
+      "phase": "1800-luvun Suomi: murros metsän käytössä",
+      "problem": "Väestön kasvu lisäsi viljelymaan tarvetta. Kaskiviljely mahdollisti elannon, mutta kulutti metsiä nopeasti — toistuva kaskikierto vaati yhä uusia metsäalueita, ja metsät vähenivät paikoin nopeasti, mikä huolestutti sekä viranomaisia että kasvavaa metsäteollisuutta.",
+      "mechanism": "Kaskiviljely oli laajimmillaan 1700-luvun lopulta 1830-luvulle, tärkein viljelymuoto Itä- ja Keski-Suomessa. Huoli metsien riittävyydestä kasvoi 1830–1860, kun sahateollisuus alkoi nähdä metsän arvokkaana raaka-aineena ja valtion suhtautuminen kaskiin muuttui kielteisemmäksi. Kaskiviljely väheni nopeasti 1860–1880, kun peltoviljely, ojitus ja karjatalous yleistyivät ja metsäteollisuus kilpaili samoista metsistä. Metsälaki 1886 vahvisti ajatusta metsien jatkuvasta kasvusta, ja kaski jäi vähitellen marginaaliin 1880-luvulta eteenpäin — metsä nähtiin yhä enemmän vientiteollisuuden pääomana.",
       "effects": [
-        "Terva muodosti 1700-luvulla jopa 70-80 % Suomen koko vientituloista.",
-        "Tervakauppa loi ensimmäisen laajan yhteyden suomalaisten metsien ja maailmanmarkkinoiden välille.",
-        "Tervanpoltto rahoitti kauppiaita, satamia ja infrastruktuuria rannikkoseuduilla.",
-        "Kilpailu ja puuntuomioalueiden laajeneminen 1800-luvulla kiristivät tuotantoa ennen sen hiipumista.",
-        "Höyrylaivojen ja teräsrunkoisten alusten yleistyminen 1800-luvun lopulla vähensi tervan kysyntää ratkaisevasti."
+        "Suomen väestö kasvoi noin 1,2 miljoonasta noin 2,6 miljoonaan 1800-luvulla, mikä lisäsi painetta metsiin",
+        "sahateollisuuden tuotanto kasvoi noin 10-kertaiseksi 1800-luvun aikana",
+        "metsälaki 1886 oli ensimmäinen askel kohti suunnitelmallista, kestävää metsätaloutta",
+        "metsänhoidon ammattimaistuminen: metsänvartijat, metsäkoulutus ja metsäsuunnittelu kehittyivät",
+        "puu, paperi ja sellu nousivat Suomen tärkeimmiksi vientituotteiksi 1900-luvulla"
       ],
-      "long_effect": "Tervanpoltto oli Suomen ensimmäinen suuri vientiteollisuus ja loi mallin, jota myöhempi sahateollisuus sekä sellu- ja paperiteollisuus seurasivat: metsävarojen jalostaminen kansainvälisille markkinoille. Se muokkasi asutusta, kauppaverkostoja ja loi perustan myöhemmälle metsäteollisuuden nousulle.",
-      "current_relevance": "Tervanpolton perintö näkyy yhä metsäisten seutujen asutushistoriassa ja kulttuuriperinnössä. Se on varhainen esimerkki siitä, kuinka Suomen talous on toistuvasti rakentunut metsävarojen jalostamisen varaan — sama perusteema jatkuu sahateollisuudessa, paperiteollisuudessa ja nykyisessä biotaloudessa.",
+      "long_effect": "Metsän polttamisesta metsän hoitoon — näin syntyi suomalaisen hyvinvoinnin selkäranka. Kaski ruokki ihmisiä, mutta metsän arvo muuttui: viljely, asuminen ja teollisuus löysivät uuden tasapainon luonnon käytössä.",
+      "current_relevance": "Kaskiviljelystä kestävään metsätalouteen siirtyminen on varhainen esimerkki luonnonvarojen kestävän käytön periaatteiden omaksumisesta, joka on yhä ajankohtainen ilmasto- ja monimuotoisuuskeskustelussa.",
       "importance": 4,
       "confidence": "kohtalainen",
       "sources": [
-        "Suomen taloushistoria (SKS)",
-        "Kansallisarkisto: tervakaupan historia",
-        "Karonen, P.: Tervan tie — Metsien musta kulta (2007)"
+        "metsähistoria, maatalouden historia"
       ],
       "images": [
         {
-          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/tervanpoltto-1600.webp",
-          "caption": "Tervan poltto ja tervakauppa 1600-1900: Suomen musta kulta ja ensimmäinen suuri vientiteollisuus."
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/kaskiviljelysta_metsatalouteen.webp",
+          "caption": "Kaskiviljelystä kestävään metsätalouteen"
         }
       ]
     },
@@ -507,42 +505,6 @@
       ]
     },
     {
-      "id": "kaskiviljelysta-metsatalouteen-1800",
-      "title": "Kaskiviljelystä kestävään metsätalouteen",
-      "year_start": 1800,
-      "year_end": 1920,
-      "type": "rakennemuutos",
-      "domains": [
-        "maatalous",
-        "metsätalous",
-        "ympäristö",
-        "talous"
-      ],
-      "phase": "1800-luvun Suomi: murros metsän käytössä",
-      "problem": "Väestön kasvu lisäsi viljelymaan tarvetta. Kaskiviljely mahdollisti elannon, mutta kulutti metsiä nopeasti — toistuva kaskikierto vaati yhä uusia metsäalueita, ja metsät vähenivät paikoin nopeasti, mikä huolestutti sekä viranomaisia että kasvavaa metsäteollisuutta.",
-      "mechanism": "Kaskiviljely oli laajimmillaan 1700-luvun lopulta 1830-luvulle, tärkein viljelymuoto Itä- ja Keski-Suomessa. Huoli metsien riittävyydestä kasvoi 1830–1860, kun sahateollisuus alkoi nähdä metsän arvokkaana raaka-aineena ja valtion suhtautuminen kaskiin muuttui kielteisemmäksi. Kaskiviljely väheni nopeasti 1860–1880, kun peltoviljely, ojitus ja karjatalous yleistyivät ja metsäteollisuus kilpaili samoista metsistä. Metsälaki 1886 vahvisti ajatusta metsien jatkuvasta kasvusta, ja kaski jäi vähitellen marginaaliin 1880-luvulta eteenpäin — metsä nähtiin yhä enemmän vientiteollisuuden pääomana.",
-      "effects": [
-        "Suomen väestö kasvoi noin 1,2 miljoonasta noin 2,6 miljoonaan 1800-luvulla, mikä lisäsi painetta metsiin",
-        "sahateollisuuden tuotanto kasvoi noin 10-kertaiseksi 1800-luvun aikana",
-        "metsälaki 1886 oli ensimmäinen askel kohti suunnitelmallista, kestävää metsätaloutta",
-        "metsänhoidon ammattimaistuminen: metsänvartijat, metsäkoulutus ja metsäsuunnittelu kehittyivät",
-        "puu, paperi ja sellu nousivat Suomen tärkeimmiksi vientituotteiksi 1900-luvulla"
-      ],
-      "long_effect": "Metsän polttamisesta metsän hoitoon — näin syntyi suomalaisen hyvinvoinnin selkäranka. Kaski ruokki ihmisiä, mutta metsän arvo muuttui: viljely, asuminen ja teollisuus löysivät uuden tasapainon luonnon käytössä.",
-      "current_relevance": "Kaskiviljelystä kestävään metsätalouteen siirtyminen on varhainen esimerkki luonnonvarojen kestävän käytön periaatteiden omaksumisesta, joka on yhä ajankohtainen ilmasto- ja monimuotoisuuskeskustelussa.",
-      "importance": 4,
-      "confidence": "kohtalainen",
-      "sources": [
-        "metsähistoria, maatalouden historia"
-      ],
-      "images": [
-        {
-          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/kaskiviljelysta_metsatalouteen.webp",
-          "caption": "Kaskiviljelystä kestävään metsätalouteen"
-        }
-      ]
-    },
-    {
       "id": "penkkiurheilun-nousu",
       "title": "Penkkiurheilun nousu",
       "year_start": 1800,
@@ -610,6 +572,45 @@
         {
           "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/R37_saunasta.webp",
           "caption": "R37 — Saunasta hyvinvointikulttuuriksi"
+        }
+      ]
+    },
+    {
+      "id": "tervanpoltto-1600",
+      "title": "Tervan poltto ja tervakauppa",
+      "year_start": 1800,
+      "year_end": 1900,
+      "type": "pitkä kaari",
+      "domains": [
+        "metsätalous",
+        "vienti",
+        "talous",
+        "maaseutu"
+      ],
+      "phase": "Suomen musta kulta — metsästä maailman markkinoille.",
+      "problem": "Purjelaivakaudella laivojen rungot ja köydet piti kyllästää tervalla suojaksi vettä ja lahoamista vastaan. Tervan kysyntä maailman kasvavalla laivastolla loi Suomen metsille ensimmäisen suuren kansainvälisen vientimarkkinan jo ennen sahateollisuutta.",
+      "mechanism": "Terva valmistettiin polttamalla mäntyä hitaasti hapettomissa tervahaudoissa metsässä, minkä jälkeen se kuljetettiin jokia ja vesireittejä pitkin rannikon satamiin ja sieltä laivoilla Länsi-Eurooppaan. Tervanpoltto työllisti kymmeniä tuhansia ihmisiä erityisesti Hämeessä, Savossa ja Karjalassa.",
+      "effects": [
+        "Terva muodosti 1700-luvulla jopa 70-80 % Suomen koko vientituloista.",
+        "Tervakauppa loi ensimmäisen laajan yhteyden suomalaisten metsien ja maailmanmarkkinoiden välille.",
+        "Tervanpoltto rahoitti kauppiaita, satamia ja infrastruktuuria rannikkoseuduilla.",
+        "Kilpailu ja puuntuomioalueiden laajeneminen 1800-luvulla kiristivät tuotantoa ennen sen hiipumista.",
+        "Höyrylaivojen ja teräsrunkoisten alusten yleistyminen 1800-luvun lopulla vähensi tervan kysyntää ratkaisevasti."
+      ],
+      "long_effect": "Tervanpoltto oli Suomen ensimmäinen suuri vientiteollisuus ja loi mallin, jota myöhempi sahateollisuus sekä sellu- ja paperiteollisuus seurasivat: metsävarojen jalostaminen kansainvälisille markkinoille. Se muokkasi asutusta, kauppaverkostoja ja loi perustan myöhemmälle metsäteollisuuden nousulle.",
+      "current_relevance": "Tervanpolton perintö näkyy yhä metsäisten seutujen asutushistoriassa ja kulttuuriperinnössä. Se on varhainen esimerkki siitä, kuinka Suomen talous on toistuvasti rakentunut metsävarojen jalostamisen varaan — sama perusteema jatkuu sahateollisuudessa, paperiteollisuudessa ja nykyisessä biotaloudessa.",
+      "importance": 4,
+      "confidence": "kohtalainen",
+      "sources": [
+        "Suomen taloushistoria (SKS)",
+        "Kansallisarkisto: tervakaupan historia",
+        "Karonen",
+        "P.: Tervan tie — Metsien musta kulta (2007)"
+      ],
+      "images": [
+        {
+          "url": "https://zzbubbrsgiqsvsovkkmf.supabase.co//storage/v1/object/public/atlas-images/tervanpoltto-1600.webp",
+          "caption": "Tervan poltto ja tervakauppa 1600-1900: Suomen musta kulta ja ensimmäinen suuri vientiteollisuus."
         }
       ]
     },
