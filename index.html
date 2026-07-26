@@ -1277,6 +1277,16 @@ main{
   text-transform:uppercase;
 }
 
+.card-subtype{
+  margin-top:2px;
+
+  color:var(--muted);
+  font-size:.72rem;
+  font-style:italic;
+  text-transform:none;
+  letter-spacing:normal;
+}
+
 .card-phase{
   margin-top:8px;
 
@@ -1666,6 +1676,15 @@ main{
   font:500 11px var(--mono);
   letter-spacing:.2em;
   text-transform:uppercase;
+}
+
+.dialog-head .subcat{
+  margin-top:3px;
+  color:var(--muted);
+  font-size:.75rem;
+  font-style:italic;
+  text-transform:none;
+  letter-spacing:normal;
 }
 
 .dialog-head-actions{
@@ -3740,15 +3759,14 @@ function computeLayer(item){
     return "henkilo";
   }
 
-  const type =
-    String(item.type || "")
-      .toLocaleLowerCase("fi");
-
-  if(
-    type.includes("analyyttinen") ||
-    type === "yleiskatsaus" ||
-    type.includes("kokoava")
-  ){
+  /*
+   * type-kenttä normalisoitiin 2026-07 154 vapaamuotoisesta arvosta
+   * 12 vakioarvoon (ks. items.subtype vanhaa, tarkempaa ilmaisua varten).
+   * Täsmävertailu korvaa aiemman hataran osamerkkijonohaun, joka nojasi
+   * siihen, että type sisälsi sanan "analyyttinen" tai "kokoava" --
+   * nyt sama tieto on aina täsmälleen "analyyttinen kehys".
+   */
+  if(item.type === "analyyttinen kehys"){
     return "malli";
   }
 
@@ -4696,6 +4714,7 @@ function itemSearchHaystack(item){
   return [
     item.title,
     item.type,
+    item.subtype,
     item.phase,
     item.problem,
     item.mechanism,
@@ -4835,6 +4854,7 @@ function matrixItemText(item){
   return [
     item.title,
     item.type,
+    item.subtype,
     item.phase,
     item.problem,
     item.mechanism,
@@ -6748,6 +6768,12 @@ function cardHTML(item,index){
             ${esc(item.type)}
           </div>
 
+          ${item.subtype && item.subtype !== item.type ? `
+          <div class="card-subtype">
+            ${esc(item.subtype)}
+          </div>
+          ` : ""}
+
           <div class="card-phase">
             ${esc(item.phase)}
           </div>
@@ -7416,6 +7442,12 @@ function openDialog(id,options = {}){
         <div class="cat">
           ${esc(item.type)} · ${years(item)}
         </div>
+
+        ${item.subtype && item.subtype !== item.type ? `
+        <div class="subcat">
+          ${esc(item.subtype)}
+        </div>
+        ` : ""}
 
         <div class="dialog-head-actions">
           <button
