@@ -594,7 +594,31 @@ td.mono{font:12px var(--mono);color:var(--muted)}
         <div class="field"><label>Alkuvuosi</label><input type="number" id="f_year_start"></div>
         <div class="field"><label>Loppuvuosi</label><input type="number" id="f_year_end"></div>
       </div>
-      <div class="field"><label>Tyyppi</label><input type="text" id="f_type"></div>
+      <div class="row2">
+        <div class="field">
+          <label>Tyyppi</label>
+          <select id="f_type">
+            <option value="tapahtuma">tapahtuma</option>
+            <option value="kriisi">kriisi</option>
+            <option value="uudistus">uudistus</option>
+            <option value="rakennemuutos">rakennemuutos</option>
+            <option value="instituutio">instituutio</option>
+            <option value="teknologinen murros">teknologinen murros</option>
+            <option value="väestömuutos">väestömuutos</option>
+            <option value="pitkä kaari">pitkä kaari</option>
+            <option value="analyyttinen kehys">analyyttinen kehys</option>
+            <option value="sukupolviprofiili">sukupolviprofiili</option>
+            <option value="tulevaisuusskenaario">tulevaisuusskenaario</option>
+            <option value="onnistuminen">onnistuminen</option>
+          </select>
+          <span class="hint">12 vakioarvoa, normalisoitu 2026-07. Käytetään suodatukseen ja matriisiin.</span>
+        </div>
+        <div class="field">
+          <label>Alaluokka (subtype)</label>
+          <input type="text" id="f_subtype" placeholder="esim. taloudellinen rakennemuutos">
+          <span class="hint">Vapaamuotoinen, tarkempi kuvaus. Ei käytetä suodatukseen.</span>
+        </div>
+      </div>
       <div class="field"><label>Vaihe (phase)</label><input type="text" id="f_phase"></div>
       <div class="field">
         <label>Domainit</label>
@@ -1085,7 +1109,8 @@ function renderItems(){
     !q ||
     it.id.toLowerCase().includes(q) ||
     it.title.toLowerCase().includes(q) ||
-    (it.type || "").toLowerCase().includes(q)
+    (it.type || "").toLowerCase().includes(q) ||
+    (it.subtype || "").toLowerCase().includes(q)
   );
   rows = applySort(rows, "items", {
     year_start: it => it.year_start,
@@ -1102,7 +1127,7 @@ function renderItems(){
     <tr${it.unpublished ? ' style="opacity:.55"' : ""}>
       <td class="mono">${it.year_start}${it.year_end !== it.year_start ? "–" + it.year_end : ""}</td>
       <td><strong>${esc(it.title)}</strong>${it.unpublished ? ' <span class="pill" style="background:var(--red);color:var(--paper)">Ei julkaista</span>' : ""}<br><span class="mono" style="color:var(--muted)">${esc(it.id)}</span></td>
-      <td>${esc(it.type)}</td>
+      <td>${esc(it.type)}${it.subtype && it.subtype !== it.type ? `<br><span class="mono" style="color:var(--muted);font-size:11px">${esc(it.subtype)}</span>` : ""}</td>
       <td>${it.importance}/5</td>
       <td><span class="pill">${esc(it.confidence)}</span></td>
       <td class="actions">
@@ -1134,7 +1159,20 @@ function openItemForm(id){
   $("f_title").value = it ? it.title : "";
   $("f_year_start").value = it ? it.year_start : "";
   $("f_year_end").value = it ? it.year_end : "";
-  $("f_type").value = it ? it.type : "";
+  const validTypes = [
+    "tapahtuma","kriisi","uudistus","rakennemuutos","instituutio",
+    "teknologinen murros","väestömuutos","pitkä kaari","analyyttinen kehys",
+    "sukupolviprofiili","tulevaisuusskenaario","onnistuminen"
+  ];
+  const currentType = it ? it.type : "rakennemuutos";
+  $("f_type").value = validTypes.includes(currentType) ? currentType : "rakennemuutos";
+  if(it && !validTypes.includes(it.type)){
+    // Vanha, ei-normalisoitu type-arvo joka ei täsmää mihinkään 12 vakioarvoon --
+    // ei pakoteta mihinkään väärin, vaan varoitetaan ja jätetään alkuperäinen
+    // sana näkyviin subtype-kentässä, jos sitä ei vielä ole tallennettu erikseen.
+    toast(`Huom: kortin type-arvo ("${it.type}") ei ole yksi 12 vakioarvosta. Valitse lähin vaihtoehto ja tarkista alaluokka.`, true);
+  }
+  $("f_subtype").value = it ? (it.subtype || it.type || "") : "";
   $("f_phase").value = it ? it.phase : "";
   $("f_domains").value = it ? (it.domains || []).join(", ") : "";
   $("f_problem").value = it ? it.problem : "";
@@ -1168,6 +1206,7 @@ $("saveItem").addEventListener("click", async () => {
     year_start: Number($("f_year_start").value),
     year_end: Number($("f_year_end").value || $("f_year_start").value),
     type: $("f_type").value.trim(),
+    subtype: $("f_subtype").value.trim() || null,
     phase: $("f_phase").value.trim(),
     domains: splitList($("f_domains").value),
     problem: $("f_problem").value.trim(),
@@ -1937,7 +1976,7 @@ $("exportMurros").addEventListener("click", async () => {
       const out = {
         id: it.id, title: it.title,
         year_start: it.year_start, year_end: it.year_end,
-        type: it.type, domains: it.domains, phase: it.phase,
+        type: it.type, subtype: it.subtype || null, domains: it.domains, phase: it.phase,
         problem: it.problem, mechanism: it.mechanism, effects: it.effects,
         long_effect: it.long_effect, current_relevance: it.current_relevance,
         importance: it.importance, confidence: it.confidence
