@@ -146,6 +146,22 @@ main{padding:20px 24px 80px;max-width:1200px;margin:0 auto}
   font:14px inherit;
 }
 .toolbar input[type="search"]:focus{outline:2px solid var(--forest);outline-offset:1px}
+.toolbar select.sort{
+  padding:9px 30px 9px 14px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:var(--paper);
+  color:var(--ink);
+  font:600 12.5px var(--mono);
+  letter-spacing:.02em;
+  appearance:none;
+  -webkit-appearance:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%236c766f'/></svg>");
+  background-repeat:no-repeat;
+  background-position:right 12px center;
+  cursor:pointer;
+}
+.toolbar select.sort:focus{outline:2px solid var(--forest);outline-offset:1px}
 
 table.data{
   width:100%;
@@ -423,6 +439,13 @@ td.mono{font:12px var(--mono);color:var(--muted)}
   <section class="panel active" id="panel-items">
     <div class="toolbar">
       <input type="search" id="searchItems" placeholder="Hae otsikosta, id:stä tai tyypistä…" />
+      <select class="sort" id="sortItems">
+        <option value="year_asc">Vuosi, vanhin ensin</option>
+        <option value="year_desc">Vuosi, uusin ensin</option>
+        <option value="title_asc">Otsikko A→Ö</option>
+        <option value="title_desc">Otsikko Ö→A</option>
+        <option value="importance_desc">Merkitys, suurin ensin</option>
+      </select>
       <button class="btn primary" id="newItem">+ Uusi kortti</button>
     </div>
     <table class="data">
@@ -440,6 +463,13 @@ td.mono{font:12px var(--mono);color:var(--muted)}
   <section class="panel" id="panel-relations">
     <div class="toolbar">
       <input type="search" id="searchRelations" placeholder="Hae kortin nimestä tai relaatiotyypistä…" />
+      <select class="sort" id="sortRelations">
+        <option value="default">Lataus-järjestys</option>
+        <option value="from_title_asc">Mistä-otsikko A→Ö</option>
+        <option value="from_title_desc">Mistä-otsikko Ö→A</option>
+        <option value="to_title_asc">Mihin-otsikko A→Ö</option>
+        <option value="type_asc">Tyyppi A→Ö</option>
+      </select>
       <button class="btn primary" id="newRelation">+ Uusi relaatio</button>
     </div>
     <table class="data">
@@ -457,6 +487,12 @@ td.mono{font:12px var(--mono);color:var(--muted)}
   <section class="panel" id="panel-articles">
     <div class="toolbar">
       <input type="search" id="searchArticles" placeholder="Hae artikkelin otsikosta…" />
+      <select class="sort" id="sortArticles">
+        <option value="default">Lataus-järjestys</option>
+        <option value="title_asc">Otsikko A→Ö</option>
+        <option value="title_desc">Otsikko Ö→A</option>
+        <option value="status_asc">Tila A→Ö</option>
+      </select>
       <button class="btn primary" id="newArticle">+ Uusi artikkeli</button>
     </div>
     <table class="data">
@@ -625,7 +661,7 @@ td.mono{font:12px var(--mono);color:var(--muted)}
         <button class="btn small primary" id="addItemAttachBtn">Lisää</button>
       </div>
       <p class="hint" id="itemAttachHint" style="display:none">Tallenna kortti ensin, jotta voit lisätä liitteitä.</p>
-      <p class="hint">Huom: tiedosto pitää olla ladattuna Supabase Storagen atlas-images-bucketiin ennen kuin se voidaan kytkeä tähän — tämä lomake vain linkittää jo ladatun tiedoston, ei lataa sitä.</p>
+      <p class="hint">Huom: tiedosto pitää olla ladattuna Supabase Storagen atlas-images-bucketiin ennen kuin se voidaan kytkeä tähän -- tämä lomake vain linkittää jo ladatun tiedoston, ei lataa sitä.</p>
     </div>
     <div class="sheet-foot">
       <button class="btn danger" id="deleteItem" style="display:none">Poista kortti</button>
@@ -861,8 +897,14 @@ const state = {
   boardMembers: [],
   documents: [],
   editingBoardMemberId: null,
-  editingDocumentId: null
+  editingDocumentId: null,
+  itemsSort: "year_asc",
+  relationsSort: "default",
+  articlesSort: "default"
 };
+
+/* Suomen aakkosjärjestykseen sopiva vertailu (ä/ö/å oikealla paikallaan) */
+const fiCollator = new Intl.Collator("fi", { sensitivity: "base" });
 
 const ATLAS_IMAGES_BASE_URL =
   "https://zzbubbrsgiqsvsovkkmf.supabase.co/storage/v1/object/public/atlas-images/";
@@ -996,14 +1038,26 @@ function populateLinkTypeSelect(){
 /* ==========================================================
    RENDER: KORTIT
    ========================================================== */
+function sortItemRows(rows){
+  const mode = state.itemsSort;
+  const sorted = rows.slice();
+  if(mode === "title_asc") sorted.sort((a,b) => fiCollator.compare(a.title, b.title));
+  else if(mode === "title_desc") sorted.sort((a,b) => fiCollator.compare(b.title, a.title));
+  else if(mode === "year_desc") sorted.sort((a,b) => b.year_start - a.year_start);
+  else if(mode === "importance_desc") sorted.sort((a,b) => (b.importance||0) - (a.importance||0) || fiCollator.compare(a.title, b.title));
+  else sorted.sort((a,b) => a.year_start - b.year_start); // year_asc (oletus)
+  return sorted;
+}
+
 function renderItems(){
   const q = $("searchItems").value.trim().toLowerCase();
-  const rows = state.items.filter(it =>
+  let rows = state.items.filter(it =>
     !q ||
     it.id.toLowerCase().includes(q) ||
     it.title.toLowerCase().includes(q) ||
     (it.type || "").toLowerCase().includes(q)
   );
+  rows = sortItemRows(rows);
 
   $("countItems").textContent = state.items.length;
   $("itemsEmpty").style.display = rows.length ? "none" : "block";
@@ -1027,6 +1081,10 @@ function renderItems(){
 }
 
 $("searchItems").addEventListener("input", renderItems);
+$("sortItems").addEventListener("change", () => {
+  state.itemsSort = $("sortItems").value;
+  renderItems();
+});
 
 /* ==========================================================
    LOMAKE: KORTTI
@@ -1195,9 +1253,20 @@ function splitLines(str){
 /* ==========================================================
    RENDER: RELAATIOT
    ========================================================== */
+function sortRelationRows(rows){
+  const mode = state.relationsSort;
+  const sorted = rows.slice();
+  if(mode === "from_title_asc") sorted.sort((a,b) => fiCollator.compare(itemLabel(a.from_id), itemLabel(b.from_id)));
+  else if(mode === "from_title_desc") sorted.sort((a,b) => fiCollator.compare(itemLabel(b.from_id), itemLabel(a.from_id)));
+  else if(mode === "to_title_asc") sorted.sort((a,b) => fiCollator.compare(itemLabel(a.to_id), itemLabel(b.to_id)));
+  else if(mode === "type_asc") sorted.sort((a,b) => fiCollator.compare(a.type, b.type));
+  else sorted.sort((a,b) => a.id - b.id); // lataus-järjestys (id)
+  return sorted;
+}
+
 function renderRelations(){
   const q = $("searchRelations").value.trim().toLowerCase();
-  const rows = state.relations.filter(r =>
+  let rows = state.relations.filter(r =>
     !q ||
     r.from_id.toLowerCase().includes(q) ||
     r.to_id.toLowerCase().includes(q) ||
@@ -1205,6 +1274,7 @@ function renderRelations(){
     itemLabel(r.from_id).toLowerCase().includes(q) ||
     itemLabel(r.to_id).toLowerCase().includes(q)
   );
+  rows = sortRelationRows(rows);
 
   $("countRelations").textContent = state.relations.length;
   $("relationsEmpty").style.display = rows.length ? "none" : "block";
@@ -1226,6 +1296,10 @@ function renderRelations(){
 }
 
 $("searchRelations").addEventListener("input", renderRelations);
+$("sortRelations").addEventListener("change", () => {
+  state.relationsSort = $("sortRelations").value;
+  renderRelations();
+});
 
 /* ==========================================================
    LOMAKE: RELAATIO
@@ -1297,11 +1371,22 @@ $("deleteRelation").addEventListener("click", async () => {
 /* ==========================================================
    RENDER: ARTIKKELIT
    ========================================================== */
+function sortArticleRows(rows){
+  const mode = state.articlesSort;
+  const sorted = rows.slice();
+  if(mode === "title_asc") sorted.sort((a,b) => fiCollator.compare(a.title, b.title));
+  else if(mode === "title_desc") sorted.sort((a,b) => fiCollator.compare(b.title, a.title));
+  else if(mode === "status_asc") sorted.sort((a,b) => fiCollator.compare(a.status, b.status) || fiCollator.compare(a.title, b.title));
+  else sorted.sort((a,b) => fiCollator.compare(a.id, b.id)); // lataus-järjestys (id)
+  return sorted;
+}
+
 function renderArticles(){
   const q = $("searchArticles").value.trim().toLowerCase();
-  const rows = state.articles.filter(a =>
+  let rows = state.articles.filter(a =>
     !q || a.title.toLowerCase().includes(q) || a.id.toLowerCase().includes(q)
   );
+  rows = sortArticleRows(rows);
 
   $("countArticles").textContent = state.articles.length;
   $("articlesEmpty").style.display = rows.length ? "none" : "block";
@@ -1324,6 +1409,10 @@ function renderArticles(){
 }
 
 $("searchArticles").addEventListener("input", renderArticles);
+$("sortArticles").addEventListener("change", () => {
+  state.articlesSort = $("sortArticles").value;
+  renderArticles();
+});
 
 /* ==========================================================
    LOMAKE: ARTIKKELI
