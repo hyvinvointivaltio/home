@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlas · nelikenttä</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Source+Serif+4:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   NELIKENTTÄ -- pallo keskellä, neljä vyöhykettä ympärillä.
+   Rivit = aihepiirit, sarakkeet = vuosikymmenet.
+   Värisävy = murroksen luonne, kirkkaus = määrä.
+   Klikkaus piirtää yhteydet ja nimeää linkitetyt solut.
+   ========================================================= */
+:root{
+  --deep:#0C1116; --deep2:#121922;
+  --paper:#F1F2EF; --card:#FBFBF9;
+  --ink:#22302B; --ink-soft:#4A5A54;
+  --line-d:rgba(255,255,255,.10); --line:#D8DBD4;
+  --dim:#7C8B95; --bright:#EAF0F4;
+  --lake:#5B9FC0; --lake-ink:#33647A;
+  --okra:#D9A441; --marja:#C4586A; --lila:#9B7FC4;
+  --disp:'Fraunces',Georgia,serif;
+  --body:'Source Serif 4',Georgia,serif;
+  --ui:'IBM Plex Sans',system-ui,sans-serif;
+  --cell:16.5px; --gap:1.5px;
+}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{background:var(--deep);color:#DCE4EA;font-family:var(--ui);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+:focus-visible{outline:2px solid var(--okra);outline-offset:2px}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+
+/* ---------- yläpalkki ---------- */
+header.top{
+  display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center;
+  padding:16px 26px 12px;border-bottom:1px solid var(--line-d)
+}
+.brand h1{font-family:var(--disp);font-weight:600;font-size:17px;color:var(--bright)}
+.brand p{font-size:11.5px;color:var(--dim);margin-top:2px}
+.search{position:relative;margin-left:auto;width:min(300px,40vw)}
+.search input{
+  width:100%;padding:8px 13px;font:inherit;font-size:13px;color:var(--bright);
+  background:rgba(255,255,255,.05);border:1px solid var(--line-d);border-radius:9px;outline:none
+}
+.search input::placeholder{color:var(--dim)}
+.search input:focus{border-color:var(--lake);background:rgba(91,159,192,.10)}
+.hits{
+  position:absolute;left:0;right:0;top:calc(100% + 5px);z-index:30;
+  background:rgba(13,19,25,.97);border:1px solid var(--line-d);border-radius:9px;
+  max-height:300px;overflow:auto;display:none;box-shadow:0 18px 50px rgba(0,0,0,.55)
+}
+.hits.on{display:block}
+.hits button{display:flex;gap:10px;width:100%;text-align:left;font-size:12.5px;color:#CFDAE2;padding:8px 12px}
+.hits button:hover,.hits button:focus-visible{background:rgba(217,164,65,.13);outline:none}
+.hits .y{color:var(--dim);font-size:11px;min-width:62px}
+
+/* ---------- näyttämö ---------- */
+#stage{
+  position:relative;width:max-content;max-width:calc(100vw - 20px);min-height:420px;
+  margin:18px auto 40px;padding:0 14px;
+  display:grid;grid-template-columns:142px 198px 142px;grid-template-rows:auto auto;
+  gap:0;align-items:center;justify-content:center
+}
+.quad{width:142px}
+.quad.left{justify-self:end;transform:translateX(15px)}
+.quad.right{justify-self:start;transform:translateX(-15px)}
+#svgLinks{position:absolute;inset:0;pointer-events:none;z-index:4}
+#labels{position:absolute;inset:0;pointer-events:none;z-index:5}
+#zoneRing{position:absolute;inset:-58px -72px;z-index:0;overflow:visible;pointer-events:none}
+#zoneRing path{fill:none;stroke:rgba(255,255,255,.07);stroke-width:1}
+#zoneRing text{font-family:var(--disp);font-size:14px;font-weight:600;letter-spacing:.045em;fill:#C7D2D9}
+#zoneRing .zoneArc{pointer-events:auto;cursor:pointer}
+#zoneRing .zoneArc:hover text,#zoneRing .zoneArc.active text{fill:var(--okra)}
+.tag{
+  position:absolute;pointer-events:auto;cursor:pointer;transform:translate(-50%,-100%);
+  max-width:190px;padding:4px 9px;border-radius:7px;
+  background:rgba(13,19,25,.96);border:1px solid rgba(217,164,65,.5);
+  font-size:10.5px;line-height:1.35;color:#EDE4CF;box-shadow:0 6px 22px rgba(0,0,0,.5);
+  animation:tagIn .25s ease
+}
+.tag.below{transform:translate(-50%,10px)}
+.tag b{display:block;font-weight:600;color:var(--bright);font-size:10.5px}
+.tag small{color:var(--dim);font-size:9.5px}
+@keyframes tagIn{from{opacity:0}to{opacity:1}}
+
+/* ---------- kvadrantti ---------- */
+.quad{position:relative;z-index:2;transition:opacity .3s;padding:4px 0}
+.quad.right{padding:4px 0}
+.quad.dimmed{opacity:.22}
+.quad h2{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0
+}
+.cells{
+  position:relative;
+  display:grid;grid-template-columns:repeat(12,var(--cell));grid-auto-rows:var(--cell);
+  gap:var(--gap);justify-content:start;
+  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+  -webkit-mask-size:100% 100%;mask-size:100% 100%
+}
+.quad.left .cells{justify-content:end}
+.quad.right .cells{justify-content:start}
+/* Koveruus muodostuu aidosti puuttuvista ruuduista JavaScriptin slotOrderFor()-geometriassa.
+   Maskia ei käytetä: jokainen näkyvä lämpöruutu säilyy kokonaisena. */
+.heat{position:absolute;pointer-events:none;left:0;top:0;z-index:0;opacity:1}
+.cell{
+  width:var(--cell);height:var(--cell);border-radius:3px;flex:none;cursor:pointer;
+  background:transparent;position:relative;z-index:2;
+  border:none;box-shadow:none;outline:none;
+  transition:outline-color .15s,transform .15s
+}
+.cell:hover{transform:scale(1.14);z-index:3;outline:1.5px solid rgba(255,255,255,.8);outline-offset:1px}
+.cell.foc{outline:1.5px solid rgba(255,255,255,.38);outline-offset:1px}
+.cell.focus-core{outline-color:rgba(255,255,255,.82);z-index:3}
+.cell.sel{outline:2px solid var(--okra);outline-offset:1.5px;z-index:3}
+/* Täsmällinen piste, josta vaikutuspolun animaatio lähtee.
+   Muut saman vuosikymmenen kehystetyt ruudut jäävät rauhallisiksi. */
+.cell.chain-source{
+  z-index:5;
+  outline:2.5px solid rgba(255,244,210,.98);
+  outline-offset:2px;
+  box-shadow:0 0 0 1px rgba(217,164,65,.55),0 0 12px rgba(217,164,65,.48);
+  animation:chainSourcePulse 2.4s ease-in-out infinite;
+}
+.cell.chain-source::after{
+  content:"";position:absolute;inset:50%;width:4px;height:4px;
+  transform:translate(-50%,-50%);border-radius:50%;
+  background:rgba(255,244,210,.96);box-shadow:0 0 7px rgba(255,220,150,.9);
+  pointer-events:none;
+}
+@keyframes chainSourcePulse{
+  0%,100%{transform:scale(1);filter:brightness(1)}
+  50%{transform:scale(1.08);filter:brightness(1.18)}
+}
+@media (prefers-reduced-motion:reduce){
+  .cell.chain-source{animation:none}
+}
+.cell.lit{outline:1.5px solid rgba(255,210,190,.9);outline-offset:1px;z-index:3}
+.rangeCap{display:none}
+
+/* ---------- pallo ---------- */
+#sphereCol{
+  position:absolute;left:50%;top:50%;z-index:3;
+  transform:translate(-50%,-106px);
+  transition:transform .22s cubic-bezier(.2,.75,.25,1);
+  user-select:none
+}
+#sphere{display:block;max-width:none;touch-action:none;cursor:grab;filter:drop-shadow(0 0 18px rgba(91,159,192,.16))}
+#sphere.drag{cursor:grabbing}
+#sphereCol.dragging{transition:none}
+#mer,#par{transition:opacity .18s ease}
+#sphere.drag #mer,#sphere.drag #par{opacity:.92}
+#sphere text{pointer-events:none;text-anchor:middle}
+#sphereYear{font-family:var(--disp);font-size:24px;font-weight:600;fill:var(--bright);letter-spacing:-.02em}
+#sphereSpan{font-family:var(--ui);font-size:10.5px;font-weight:600;fill:var(--okra);letter-spacing:.02em}
+#sphereZone{font-family:var(--ui);font-size:8.8px;fill:#A9B7C0}
+#sphereHint{font-family:var(--ui);font-size:8px;fill:#72838E;letter-spacing:.01em}
+
+/* ---------- animoitu vaikutusketju oikeassa reunassa ---------- */
+#drawer{
+  position:fixed;top:0;right:0;bottom:0;z-index:20;width:min(390px,94vw);
+  background:rgba(13,19,25,.985);border-left:1px solid var(--line-d);
+  box-shadow:-24px 0 70px rgba(0,0,0,.5);backdrop-filter:blur(14px);
+  transform:translateX(105%);transition:transform .38s cubic-bezier(.2,.8,.3,1);
+  display:flex;flex-direction:column
+}
+#drawer.on{transform:none}
+#drawer header{padding:17px 18px 13px;border-bottom:1px solid var(--line-d);display:flex;gap:12px;align-items:flex-start}
+#drawer .eyebrow{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--okra);font-weight:600}
+#drawer h2{font-family:var(--disp);font-size:19px;font-weight:600;color:#EDF2F5;margin-top:4px;line-height:1.25}
+#drawer .sub{font-size:11.5px;color:var(--dim);margin-top:5px;line-height:1.45}
+#drawer .grow{flex:1}
+#drawer .x{color:var(--dim);font-size:19px;line-height:1;padding:2px 4px}
+#drawer .x:hover{color:var(--bright)}
+#chainRail{position:relative;overflow:auto;flex:1;padding:20px 17px 28px}
+#chainRail::before{
+  content:"";position:absolute;left:36px;top:36px;bottom:48px;width:1.5px;
+  background:linear-gradient(180deg,rgba(217,164,65,.85),rgba(91,159,192,.38),rgba(255,255,255,.08))
+}
+.chain-step{position:relative;padding:0 0 24px 46px;opacity:0;transform:translateY(-12px);transition:opacity .36s ease,transform .5s cubic-bezier(.2,.8,.3,1)}
+.chain-step.show{opacity:1;transform:none}
+.chain-step:last-of-type{padding-bottom:12px}
+.chain-dot{
+  position:absolute;left:10px;top:15px;width:18px;height:18px;border-radius:50%;
+  background:#101821;border:2px solid #8A9AA4;box-shadow:0 0 0 5px rgba(124,139,149,.08);z-index:2
+}
+.chain-step.focus .chain-dot{background:var(--okra);border-color:#F1C86D;box-shadow:0 0 0 6px rgba(217,164,65,.16),0 0 18px rgba(217,164,65,.42)}
+.chain-card{
+  width:100%;text-align:left;padding:12px 13px;border:1px solid rgba(255,255,255,.10);border-radius:11px;
+  background:rgba(255,255,255,.035);color:#DCE4EA;transition:border-color .18s,background .18s,transform .18s
+}
+.chain-card:hover{border-color:rgba(217,164,65,.48);background:rgba(217,164,65,.07);transform:translateX(2px)}
+.chain-step.focus .chain-card{border-color:rgba(217,164,65,.72);background:linear-gradient(135deg,rgba(217,164,65,.13),rgba(255,255,255,.035))}
+.chain-meta{display:flex;flex-wrap:wrap;gap:5px 9px;margin-bottom:5px;color:var(--dim);font-size:10px}
+.chain-meta .year{color:var(--okra);font-weight:600}
+.chain-title{display:block;font-family:var(--body);font-size:15.5px;line-height:1.3;color:#EEF3F6}
+.chain-rel{position:relative;margin:-13px 0 9px 46px;min-height:28px;opacity:0;transition:opacity .3s ease}
+.chain-rel.show{opacity:1}
+.chain-rel::before{content:"";position:absolute;left:-20px;top:-2px;width:7px;height:7px;border-right:1.5px solid var(--okra);border-bottom:1.5px solid var(--okra);transform:rotate(45deg)}
+.chain-rel span{display:inline-block;color:#8EB5C8;font-size:9.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.chain-rel em{display:block;color:var(--dim);font-family:var(--body);font-size:12px;line-height:1.35;margin-top:3px}
+.chain-empty{padding:16px;border:1px dashed var(--line-d);border-radius:11px;color:var(--dim);font-size:12.5px;line-height:1.55}
+.chain-more{margin-top:14px;padding-top:14px;border-top:1px solid var(--line-d)}
+.chain-more b{display:block;color:var(--dim);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:7px}
+.chain-alt{display:block;width:100%;text-align:left;padding:7px 9px;border-radius:7px;color:#BFCBD3;font-family:var(--body);font-size:13px}
+.chain-alt:hover{background:rgba(255,255,255,.05);color:#fff}
+.chain-actions{padding:0 17px 17px;display:flex;gap:8px}
+.chain-actions button{flex:1;border:1px solid var(--line-d);border-radius:9px;padding:9px 10px;color:#C9D4DB;font-size:11px;background:rgba(255,255,255,.035)}
+.chain-actions button:hover{border-color:var(--okra);color:#fff}
+.chain-flight{
+  position:fixed;z-index:60;pointer-events:none;border-radius:50%;
+  background:var(--okra);box-shadow:0 0 0 5px rgba(217,164,65,.15),0 0 22px rgba(217,164,65,.58);
+  transition:left .72s cubic-bezier(.2,.75,.2,1),top .72s cubic-bezier(.2,.75,.2,1),width .72s ease,height .72s ease,opacity .18s .66s
+}
+body.chain-focus #stage .quad,body.chain-focus #sphereCol{transition:opacity .35s;opacity:.36}
+body.chain-focus #stage .cell.sel{opacity:1!important;filter:saturate(1.25);transform:scale(1.12)}
+@media (prefers-reduced-motion:reduce){.chain-step,.chain-rel{opacity:1!important;transform:none!important}.chain-flight{display:none}}
+
+/* ---------- lukunäkymä ---------- */
+#read{
+  position:fixed;inset:0;z-index:40;background:var(--paper);color:var(--ink);
+  overflow-y:auto;display:none;font-family:var(--body);font-size:17px;line-height:1.65
+}
+#read.on{display:block;animation:rise .42s cubic-bezier(.2,.8,.3,1)}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+#read .rw{max-width:800px;margin:0 auto;padding:0 24px 110px}
+#read .rtop{
+  position:sticky;top:0;background:linear-gradient(var(--paper) 78%,transparent);
+  padding:18px 0 12px;display:flex;gap:6px;align-items:center;font-family:var(--ui);font-size:12px;z-index:2
+}
+#read .back{
+  font-size:12.5px;font-weight:500;color:var(--lake-ink);background:var(--card);
+  border:1px solid var(--line);border-radius:999px;padding:6px 14px;margin-right:8px
+}
+#read .back:hover{border-color:var(--lake-ink)}
+#read .rtop a{color:var(--ink-soft);text-decoration:none;padding:5px 10px;border-radius:999px}
+#read section{padding:30px 0 6px;border-bottom:1px solid var(--line)}
+#read section:last-of-type{border-bottom:0}
+.kicker{
+  font-family:var(--ui);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-soft);display:flex;align-items:center;gap:10px;margin-bottom:14px
+}
+.kicker::after{content:"";flex:1;height:1px;background:var(--line)}
+#claimText{font-family:var(--disp);font-weight:600;font-size:clamp(25px,4.2vw,36px);line-height:1.22;letter-spacing:-.015em;max-width:19em}
+#claimMeta{font-family:var(--ui);font-size:13px;color:var(--ink-soft);margin-top:14px;display:flex;flex-wrap:wrap;gap:6px 15px}
+.badge{display:inline-block;font-family:var(--ui);font-size:11.5px;font-weight:600;padding:2.5px 9px;border-radius:999px;border:1px solid var(--line);color:var(--ink-soft);background:var(--card)}
+.badge.okra{border-color:#B98A2E;color:#B98A2E}
+.badge.marja{border-color:#9E3A47;color:#9E3A47}
+.art-title{font-family:var(--disp);font-weight:600;font-size:21px;margin-bottom:6px}
+.art-dek{font-style:italic;color:var(--ink-soft);margin-bottom:15px}
+#storyBody p{margin-bottom:13px;max-width:38em}
+#storyBody summary{cursor:pointer;font-family:var(--ui);font-size:13.5px;font-weight:500;color:var(--lake-ink);list-style:none;padding:4px 0}
+#storyBody summary::before{content:"▸ "}
+#storyBody details[open] summary::before{content:"▾ "}
+.nowrel{margin-top:18px;padding:15px 18px;background:var(--card);border-left:3px solid var(--lake-ink);border-radius:0 10px 10px 0}
+.nowrel b{font-family:var(--ui);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--lake-ink);display:block;margin-bottom:6px}
+.spine{position:relative;margin:6px 0 6px 8px;padding-left:34px}
+.spine::before{content:"";position:absolute;left:8px;top:14px;bottom:14px;width:2px;background:linear-gradient(var(--line),var(--ink-soft) 50%,var(--line))}
+.knot{position:relative;padding:2px 0 4px}
+.knot .kd{position:absolute;left:-34px;top:8px;width:18px;height:18px;border-radius:50%;background:var(--card);border:2px solid var(--ink-soft)}
+.knot.focus .kd{border-color:#B98A2E;background:#B98A2E;box-shadow:0 0 0 5px rgba(185,138,46,.16)}
+.knot h3{font-family:var(--disp);font-weight:600;font-size:18.5px;line-height:1.3}
+.knot.focus h3{font-size:21.5px}
+.knot .kmeta{font-family:var(--ui);font-size:12.5px;color:var(--ink-soft);display:flex;flex-wrap:wrap;gap:6px 12px;margin-top:3px}
+.knot .kmeta .yr{font-weight:600;color:var(--ink)}
+.joint{position:relative;margin:10px 0;padding:8px 14px 8px 16px;font-size:15px;color:var(--ink-soft);max-width:34em}
+.joint::before{content:"";position:absolute;left:-30px;top:50%;width:22px;height:1.5px;background:var(--line)}
+.joint .verb{font-family:var(--ui);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--lake-ink);margin-right:8px}
+.joint .cf{display:inline-block;width:10px;height:10px;border-radius:50%;vertical-align:-1px;margin-right:7px;border:1.5px solid var(--ink-soft)}
+.joint .cf.vahva{background:var(--ink-soft)}
+.joint .cf.kohtalainen{background:linear-gradient(90deg,var(--ink-soft) 50%,transparent 50%)}
+.joint .cf.heikko{border-color:#9E3A47}
+.joint .why{display:block;margin-top:3px;font-style:italic}
+.modenote{font-family:var(--ui);font-size:13.5px;line-height:1.55;color:var(--ink-soft);max-width:36em;margin:0 0 20px;padding:11px 15px;background:var(--card);border:1px solid var(--line);border-radius:10px}
+.cv{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:17px 20px;margin-bottom:12px}
+.cv b{font-family:var(--ui);font-size:12px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:6px;color:var(--ink-soft)}
+.cv.weak b{color:#9E3A47}
+.cv p{font-size:15.5px;max-width:38em}
+.altlist{margin:6px 0 0 18px;font-size:15px}
+#readFoot{margin-top:52px;padding-top:17px;border-top:1px solid var(--line);font-family:var(--ui);font-size:12.5px;color:var(--ink-soft)}
+.conf-legend{font-family:var(--ui);font-size:12.5px;color:var(--ink-soft);margin-top:18px;display:flex;flex-wrap:wrap;gap:6px 18px}
+.conf-legend span{display:inline-flex;align-items:center;gap:7px}
+
+/* ---------- lataus ---------- */
+#boot{position:fixed;inset:0;display:grid;place-items:center;z-index:50;background:var(--deep);text-align:center;padding:24px}
+#boot .b{max-width:430px;font-size:13.5px;color:var(--dim);line-height:1.7}
+#boot h2{font-family:var(--disp);font-size:20px;color:var(--bright);margin-bottom:10px;font-weight:600}
+#boot input{margin-top:14px;font-size:12px;color:var(--dim)}
+
+/* ---------- kapeat näytöt ---------- */
+@media (max-width:1180px){
+  #stage{grid-template-columns:1fr 1fr;grid-template-rows:auto auto auto;min-height:0}
+  #sphereCol{position:static;transform:none;grid-column:1 / span 2;grid-row:1;margin:0 auto 10px}
+  .quad{justify-self:center}
+}
+@media (max-width:720px){
+  #stage{grid-template-columns:1fr}
+  #sphereCol{grid-column:1}
+  :root{--cell:8px;--gap:1.5px}
+}
+/* ===== Keskitetty sijoittelu: toimivan version latauslogiikka säilyy ===== */
+@media (min-width:721px){
+  #stage{
+    position:relative;display:block;width:620px;height:620px;min-height:620px;
+    max-width:calc(100vw - 24px);margin:8px auto 34px;padding:0;
+  }
+  #sphereCol{
+    position:absolute;
+    left:50%;top:50%;
+    margin:0;
+    transform:translate(-50%,-50%);
+  }
+  .quad{position:absolute;width:214.5px;height:214.5px;padding:0;transform:none!important}
+  .quad .cells{width:214.5px;height:214.5px}
+  /* Tiiviimpi murrosrengas: sektorit lähes kohtaavat pääilmansuunnissa. */
+  #quad-talous{left:calc(50% - 174px);top:calc(50% - 174px)}
+  #quad-valta{left:calc(50% + 52px);top:calc(50% - 174px)}
+  #quad-ihmiset{left:calc(50% - 174px);top:calc(50% + 52px)}
+  #quad-tieto{left:calc(50% + 52px);top:calc(50% + 52px)}
+  #zoneRing{inset:0;width:100%;height:100%}
+}
+
+@media (max-width:720px){
+  #stage{display:grid;width:auto;height:auto;min-height:0;margin-top:10px}
+  #zoneRing{display:none}
+}
+
+
+/* ===== V23: yhtenäinen ruuturengas, pallon aukko syntyy puuttuvista neliöistä ===== */
+@media (min-width:721px){
+  /* Poistetaan kaikki neljä ympyrämaskia: vain varsinainen pallo peittää ruutuja. */
+  #quad-talous .cells,
+  #quad-valta .cells,
+  #quad-ihmiset .cells,
+  #quad-tieto .cells{
+    -webkit-mask-image:none!important;
+    mask-image:none!important;
+  }
+
+  /* Neljä lämpökarttaa muodostavat yhden katkeamattoman 308 × 308 px ruutukentän.
+     Kvadrantit kohtaavat täsmälleen keskiakselilla; ainoa aukko syntyy ruutujen
+     sijoittelussa navigointipalloa varten. */
+  #quad-talous{left:calc(50% - 214.5px);top:calc(50% - 214.5px)}
+  #quad-valta{left:50%;top:calc(50% - 214.5px)}
+  #quad-ihmiset{left:calc(50% - 214.5px);top:50%}
+  #quad-tieto{left:50%;top:50%}
+
+  /* Lämpöhehku saa ulottua soluruudukon reunan yli ilman leikkautumista. */
+  .quad,.quad .cells{overflow:visible}
+}
+
+/* V28: neliöiden sivumitta on kasvatettu 50 prosenttia (11 px → 16,5 px).
+   Ruutuväliä on samalla tiivistetty hieman, jotta lämpökartta säilyy yhtenäisenä. */
+
+/* V27: ruuturengasta on siirretty hieman ulospäin: sisäaukko on väljempi ja ulkoreuna lähempänä kehää.
+   12×12-kvadrantissa käytetään annulusalueen 57 ruutua.
+   Sisä- ja ulkoreuna syntyvät molemmat sijoittamatta jätetyistä kokonaisista ruuduista. */
+</style>
+</head>
+<body>
+
+<div id="boot"><div class="b">
+  <h2>Atlas · nelikenttä</h2>
+  <div id="bootMsg">Ladataan aineistoa…</div>
+  <input type="file" id="pick" accept=".json" multiple hidden>
+</div></div>
+
+<header class="top">
+  <div class="brand">
+    <h1>Suomen murrosvaiheet</h1>
+    <p>Murrosrengas: neljä toisiinsa liittyvää lämpökarttaa. Vaaleampi = vähän, syvempi punainen = paljon murroksia.</p>
+  </div>
+  <div class="search">
+    <input id="q" type="search" placeholder="Etsi murros tai vuosi… ( / )" autocomplete="off" aria-label="Etsi murros">
+    <div class="hits" id="hits" role="listbox"></div>
+  </div>
+</header>
+
+<div id="stage">
+  <svg id="svgLinks" aria-hidden="true"></svg>
+  <svg id="zoneRing" aria-label="Nelikentän lohkot"></svg>
+  <div id="labels"></div>
+  <div id="sphereCol">
+    <svg id="sphere" width="254.4" height="254.4" viewBox="0 0 212 212" role="slider"
+         aria-label="Aika- ja korttityyppinavigaatio" tabindex="0">
+      <defs>
+        <radialGradient id="gl" cx="38%" cy="32%">
+          <stop offset="0%" stop-color="#2A3A46"/><stop offset="62%" stop-color="#151E26"/>
+          <stop offset="100%" stop-color="#0B1015"/>
+        </radialGradient>
+      </defs>
+      <circle cx="106" cy="106" r="96" fill="url(#gl)"/>
+      <circle cx="106" cy="106" r="96" fill="none" stroke="rgba(91,159,192,.25)" stroke-width="1.5"/>
+      <g id="mer"></g>
+      <g id="par"></g>
+      <text id="sphereYear" x="106" y="90">--</text>
+      <text id="sphereSpan" x="106" y="109"></text>
+      <text id="sphereZone" x="106" y="125"></text>
+      <text id="sphereHint" x="106" y="145">↔ aika</text>
+      <text id="sphereHint2" x="106" y="158" style="font-family:var(--ui);font-size:8px;fill:#72838E;text-anchor:middle">↕ korttityyppi</text>
+    </svg>
+  </div>
+</div>
+
+<aside id="drawer" aria-live="polite" aria-label="Vaikutusketju">
+  <header>
+    <div class="grow">
+      <div class="eyebrow" id="dEye">Vaikutusketju</div>
+      <h2 id="dTitle"></h2>
+      <div class="sub" id="dSub"></div>
+    </div>
+    <button class="x" id="dClose" aria-label="Sulje">×</button>
+  </header>
+  <div id="chainRail"></div>
+  <div class="chain-actions">
+    <button id="chainRead" type="button">Avaa koko tulkinta</button>
+    <button id="chainReplay" type="button">Toista animaatio</button>
+  </div>
+</aside>
+
+<div id="read" role="document">
+  <div class="rw">
+    <div class="rtop">
+      <button class="back" id="readBack">← Kartalle</button>
+      <a href="#claim">Väite</a><a href="#story">Tarina</a><a href="#chain">Yhteydet</a><a href="#caveats">Varaukset</a>
+    </div>
+    <section id="claim"><div class="kicker">1 · Väite -- yhdellä lauseella</div>
+      <h2 id="claimText"></h2><div id="claimMeta"></div></section>
+    <section id="story"><div class="kicker">2 · Tarina -- miksi tällä on väliä</div>
+      <div id="storyBody"></div></section>
+    <section id="chain"><div class="kicker" id="kicker3"></div>
+      <div class="spine" id="spine"></div>
+      <div class="conf-legend" id="confLegend">
+        <span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;border:1.5px solid var(--ink-soft);background:var(--ink-soft)"></span> vahva näyttö</span>
+        <span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;border:1.5px solid var(--ink-soft);background:linear-gradient(90deg,var(--ink-soft) 50%,transparent 50%)"></span> kohtalainen</span>
+        <span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;border:1.5px solid #9E3A47"></span> tulkinnanvarainen</span>
+      </div></section>
+    <section id="caveats"><div class="kicker">4 · Varaukset -- mistä tiedämme, missä epäröimme</div>
+      <div id="caveatBody"></div></section>
+    <div id="readFoot"></div>
+  </div>
+</div>
+
+<script>
+"use strict";
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const NS="http://www.w3.org/2000/svg";
+const svgEl=(n,a={})=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);return e};
+
+/* ===== Rakenne: 4 vyöhykettä, 8 riviä ================================ */
+const ZONES=[
+  {id:"talous", t:"Talous ja työ",       pos:"nw"},
+  {id:"valta",  t:"Valta ja oikeudet",   pos:"ne"},
+  {id:"ihmiset",t:"Ihmiset ja hyvinvointi",pos:"sw"},
+  {id:"tieto",  t:"Tieto ja tekniikka",  pos:"se"}
+];
+const ROWS=[
+ {z:"talous", id:"raha",t:"Talous ja rahoitus",k:["talous","vienti","rahoitus","raha","velka","verot","julkinen talous","kauppa","markkin","kilpailu","omistus","pääoma","inflaatio","pankk"]},
+ {z:"talous", id:"tyo", t:"Työ ja elinkeinot",k:["työ","teollisuu","elinkeino","maatalous","metsätalous","yritys","tuottavuus","toimeentulo","ammatt","osaajapula"]},
+ {z:"valta",  id:"halli",t:"Valtio ja hallinto",k:["hallinto","valtio","kunta","instituutio","sääntely","politii","EU","itsenäis","julkis","eduskun","presiden"]},
+ {z:"valta",  id:"oik", t:"Oikeudet ja turvallisuus",k:["oikeudet","demokra","laki","turvallisuus","puolustus","tasa-arvo","vapau","sota","kriisinkest","huoltovarmuus"]},
+ {z:"ihmiset",id:"vae", t:"Väestö ja alueet",k:["väestö","sukupolv","perhe","laps","ikäänty","muutto","syntyvyys","alue","maaseutu","kaupungist","asutus","nuoret","huoltosuhde","siirtolai"]},
+ {z:"ihmiset",id:"hyv", t:"Hyvinvointi ja terveys",k:["terveys","hyvinvoin","sosiaali","eläke","sote","köyhyys","eriarvo","palvelut","asuminen","mielenterveys","päihde","alkoholi"]},
+ {z:"tieto",  id:"oppi",t:"Osaaminen ja kulttuuri",k:["koulutus","osaaminen","kulttuuri","viestintä","kieli","uskonto","urheilu","tiede","media","sivistys","kirja","taide","vapaa-aika","identiteetti","arki"]},
+ {z:"tieto",  id:"tek", t:"Teknologia ja ympäristö",k:["teknolog","digital","tekoäly","energia","ympäristö","ilmasto","liikenne","infra","kestäv","sähkö","ydinvoima","innovaatio","luonnonvara","tietoliikenne","internet","data"]}
+];
+/* Rooli = kortin tyypistä johdettu luonne. Värisävy kertoo sen. */
+const ROLES={
+  kriisi:     {t:"kriisi / tapahtuma", h:"196,88,106"},
+  uudistus:   {t:"uudistus / instituutio", h:"91,159,192"},
+  muutos:     {t:"rakennemuutos", h:"217,164,65"},
+  tulevaisuus:{t:"skenaario", h:"155,127,196"},
+  tulkinta:   {t:"tulkintakortti", h:"124,139,149"}
+};
+function roleOf(t){
+  if(t==="kriisi"||t==="tapahtuma")return"kriisi";
+  if(t==="uudistus"||t==="instituutio"||t==="onnistuminen")return"uudistus";
+  if(t==="tulevaisuusskenaario")return"tulevaisuus";
+  if(t==="analyyttinen kehys"||t==="sukupolviprofiili")return"tulkinta";
+  return"muutos";
+}
+const DEC0=1800, DECN=25;   /* kaikki 25 vuosikymmentä ovat aina näkyvissä */
+const CELL_PX=16.5, GAP_PX=1.5;         /* vastaa CSS-muuttujia --cell/--gap */
+const GRIDCOLS=12, GRIDROWS=12;     /* suurempi kenttä mahdollistaa aidon ulkokaaren ilman paikkojen loppumista */
+const ZONE_CARD_LIMIT=57;           /* 50–60 relevanteinta korttia / lohko */
+/* Pallo istuu nelikentän keskellä, mutta jokainen lohko on suorakaide.
+   Jotta klusteri tuntuisi kietoutuvan pyöreän pallon ympärille eikä vain
+   omaan laatikkoonsa, painopiste ei ole lohkon geometrisessa keskustassa
+   vaan kallistettu sitä kulmaa kohti, joka lohkosta katsoen on lähinnä palloa.
+   Koska ruutuja on aina täsmälleen yksi per kortti (ei kiinteää 100%:n ruudukkoa),
+   täyttö loppuu kesken ennen ruudukon reunaa juuri sillä puolella joka on
+   kauimpana pallosta -- reuna jää siis luonnostaan epätasainen/sahalaitainen. */
+const CORNER_BY_POS={nw:[1,1],ne:[0,1],sw:[1,0],se:[0,0]};
+/* Pallon puoleiselta kulmalta jätetään tietyn säteen sisältä KAIKKI ruudut
+   käyttämättä -- ei siis vain harvennettuna, vaan aidosti pois laskuista.
+   Näin täyttö alkaa aina vasta tämän kaaren ulkopuolelta: sisäreuna on siis
+   aina kovera ja seuraa pallon pyöreyttä riippumatta korttimäärästä, kun taas
+   ulkoreuna rajataan samalla tavalla toisella säteellä, jolloin kenttä muodostaa
+   kokonaisista neliöistä rakennetun rengassektorin. */
+const SPHERE_NOTCH_R=8.25;          /* sisäsäde: pallolle koverrettu aukko */
+const OUTER_RING_R=11.75;            /* ulkosäde: tämän ulkopuoliset ruudut jätetään luomatta.
+                                         12×12-kvadrantissa annulukseen jää 58 paikkaa,
+                                         joten sekä sisä- että ulkoreuna rakentuvat kokonaisista ruuduista. */
+function slotOrderFor(pos){
+  const [fx,fy]=CORNER_BY_POS[pos];
+  const cornerX=fx*(GRIDCOLS-1), cornerY=fy*(GRIDROWS-1);
+  const slots=[];
+  for(let r=0;r<GRIDROWS;r++)for(let c=0;c<GRIDCOLS;c++){
+    const dist=Math.hypot(c-cornerX,r-cornerY);
+    if(dist<SPHERE_NOTCH_R)continue;  /* sisäreuna: pallon aukko */
+    if(dist>OUTER_RING_R)continue;    /* ulkoreuna: kupera ulkokehä */
+    slots.push({c,r,dist});
+  }
+  /* Merkittävimmät ryhmät sijoittuvat ensin sisäkehälle. Kun lähes kaikki käytettävissä olevat paikat
+     täyttyvät, ulkoreuna muodostaa samalla yhtenäisen porrastetun ympyrän. */
+  slots.sort((a,b)=>a.dist-b.dist);
+  return slots;
+}
+const decIdx=y=>Math.max(0,Math.min(DECN-1,Math.floor((y-DEC0)/10)));
+const SLOT_ORDER_BY_ZONE={};
+ZONES.forEach(z=>{SLOT_ORDER_BY_ZONE[z.id]=slotOrderFor(z.pos)});
+
+/* Rivi johdetaan domains-kentästä: ensimmäinen domain painaa eniten. */
+function rowOf(it){
+  const doms=(it.domains||[]).map(s=>s.toLowerCase());
+  let best=ROWS[0],bs=-1;
+  for(const r of ROWS){
+    let s=0;
+    doms.forEach((dm,i)=>{if(r.k.some(k=>dm.includes(k)))s+=(i===0?3:i===1?2:1)});
+    if((it.type||"").includes("väestö")&&r.id==="vae")s+=3;
+    if(s>bs){bs=s;best=r}
+  }
+  return best.id;
+}
+
+/* ===== Aineisto ===================================================== */
+let ITEMS=new Map(), RELS=[], ARTS=new Map(), LINKS_BY_ITEM=new Map(), META={};
+const OUT=new Map(), IN=new Map();
+const CELLS=new Map(); let MAXN=1;
+const CELLLINKS=new Map();
+const key=(row,d)=>row+":"+d;
+
+function ingest(d,a){
+  META=d.meta||{};
+  (d.items||[]).forEach(i=>{
+    i._row=rowOf(i); i._dec=decIdx(i.year_start??1900); i._role=roleOf(i.type);
+    i._zone=ROWS.find(r=>r.id===i._row).z;
+    ITEMS.set(i.id,i);
+    const k=key(i._zone,i._dec);
+    if(!CELLS.has(k))CELLS.set(k,[]);
+    CELLS.get(k).push(i);
+  });
+  for(const [,v] of CELLS){
+    v.sort((a,b)=>(b.importance||3)-(a.importance||3)||(a.year_start||0)-(b.year_start||0));
+    MAXN=Math.max(MAXN,v.length);
+  }
+  RELS=(d.relations||[]).filter(r=>ITEMS.has(r.from)&&ITEMS.has(r.to));
+  RELS.forEach(r=>{
+    if(!OUT.has(r.from))OUT.set(r.from,[]); OUT.get(r.from).push(r);
+    if(!IN.has(r.to))IN.set(r.to,[]); IN.get(r.to).push(r);
+    const f=ITEMS.get(r.from),t=ITEMS.get(r.to);
+    const ka=key(f._zone,f._dec), kb=key(t._zone,t._dec);
+    if(ka===kb)return;
+    const lk=ka+">"+kb;
+    if(!CELLLINKS.has(lk))CELLLINKS.set(lk,{a:ka,b:kb,n:0,weak:0});
+    const o=CELLLINKS.get(lk); o.n++; if(r.confidence==="heikko")o.weak++;
+  });
+  (a.articles||[]).forEach(x=>ARTS.set(x.id,x));
+  (a.links||[]).forEach(l=>{
+    if(!LINKS_BY_ITEM.has(l.item_id))LINKS_BY_ITEM.set(l.item_id,[]);
+    LINKS_BY_ITEM.get(l.item_id).push(l);
+  });
+}
+
+/* Solun väri: hallitseva rooli + kirkkaus määrästä */
+function cellStyle(items){
+  /* Kuvan kaltainen yhden muuttujan lämpöasteikko: määrä -> vaaleanpunaisesta syvänpunaiseen. */
+  const n=items.length;
+  const t=Math.min(1, Math.log1p(n) / Math.log1p(Math.max(2,MAXN)));
+  const stops=[
+    [255,235,229],
+    [255,190,169],
+    [255,111,76],
+    [235,55,30],
+    [205,24,12]
+  ];
+  const x=t*(stops.length-1), i=Math.min(stops.length-2,Math.floor(x)), f=x-i;
+  const a=stops[i], b=stops[i+1];
+  const rgb=a.map((v,j)=>Math.round(v+(b[j]-v)*f));
+  const alpha=(0.28+0.72*Math.pow(t,.82)).toFixed(3);
+  return {role:"density",css:`rgba(${rgb.join(",")},${alpha})`,glow:"none"};
+}
+
+/* ===== Nelikentän piirto ============================================ */
+const TYPE_CLUSTERS=[
+  {id:"all",t:"kaikki tyypit",roles:null},
+  {id:"muutos",t:"rakennemuutokset",roles:["muutos"]},
+  {id:"uudistus",t:"uudistukset ja instituutiot",roles:["uudistus"]},
+  {id:"kriisi",t:"kriisit ja tapahtumat",roles:["kriisi"]},
+  {id:"tulkinta",t:"tulkinnat ja skenaariot",roles:["tulkinta","tulevaisuus"]}
+];
+let focusDec=12, typeCluster=0, spherePitch=0, activeZone=null, selectedKey=null, activeSourceEl=null;
+const DISPLAY_CELLS=new Map();
+
+function buildQuads(){
+  const stage=$("#stage");
+  ZONES.forEach(z=>{
+    const q=document.createElement("div");
+    q.className="quad "+(z.pos==="ne"||z.pos==="se"?"right":"left");
+    q.id="quad-"+z.id; q.dataset.z=z.id;
+    q.style.gridColumn=(z.pos==="nw"||z.pos==="sw")?"1":"3";
+    q.style.gridRow=(z.pos==="nw"||z.pos==="ne")?"1":"2";
+    const rows=ROWS.filter(r=>r.z===z.id);
+    const n=[...ITEMS.values()].filter(i=>rows.some(r=>r.id===i._row)).length;
+    const shown=Math.min(ZONE_CARD_LIMIT,n);
+    let html=`<h2 data-z="${z.id}">${esc(z.t)}<span class="n">${shown} keskeistä · ${n} yhteensä</span></h2>`;
+    html+=`<div class="cells"><canvas class="heat" data-zone="${z.id}"></canvas></div>`;
+    q.innerHTML=html;
+    stage.appendChild(q);
+  });
+  stage.addEventListener("click",e=>{
+    const c=e.target.closest(".cell");
+    if(c){selectCell(c.dataset.k,c);return}
+    const h=e.target.closest("h2[data-z]");
+    if(h){setZone(activeZone===h.dataset.z?null:h.dataset.z)}
+  });
+  stage.addEventListener("keydown",e=>{
+    const c=e.target.closest?.(".cell");
+    if(c&&(e.key==="Enter"||e.key===" ")){e.preventDefault();selectCell(c.dataset.k,c)}
+  });
+}
+
+function drawZoneRing(){
+  const svg=$("#zoneRing");
+  if(!svg)return;
+  const stage=$("#stage");
+  const w=stage.clientWidth||600, h=stage.clientHeight||600;
+  svg.setAttribute("viewBox",`0 0 ${w} ${h}`);
+  svg.textContent="";
+  if(w<500)return;
+  const cx=w/2, cy=h/2, r=238;
+  const arcs=[
+    {z:"talous",a0:198,a1:252,sweep:1},
+    {z:"valta",a0:288,a1:342,sweep:1},
+    {z:"ihmiset",a0:162,a1:108,sweep:0},
+    {z:"tieto",a0:72,a1:18,sweep:0}
+  ];
+  const polar=a=>{const t=a*Math.PI/180;return [cx+r*Math.cos(t),cy+r*Math.sin(t)]};
+  arcs.forEach((a,i)=>{
+    const [x1,y1]=polar(a.a0),[x2,y2]=polar(a.a1);
+    const id=`zoneArcPath${i}`;
+    const g=svgEl("g",{class:`zoneArc${activeZone===a.z?" active":""}`,"data-z":a.z});
+    const path=svgEl("path",{id,d:`M ${x1.toFixed(1)} ${y1.toFixed(1)} A ${r} ${r} 0 0 ${a.sweep} ${x2.toFixed(1)} ${y2.toFixed(1)}`});
+    const text=svgEl("text");
+    const tp=svgEl("textPath",{href:`#${id}`,startOffset:"50%","text-anchor":"middle"});
+    tp.textContent=ZONES.find(z=>z.id===a.z).t;
+    text.appendChild(tp);g.append(path,text);svg.appendChild(g);
+  });
+  svg.querySelectorAll(".zoneArc").forEach(g=>g.addEventListener("click",()=>setZone(activeZone===g.dataset.z?null:g.dataset.z)));
+}
+
+
+function sphereProjectedPath(kind,value,yawDeg,pitchDeg){
+  const pts=[];
+  const yaw=yawDeg*Math.PI/180, pitch=pitchDeg*Math.PI/180;
+  const steps=96;
+  for(let i=0;i<=steps;i++){
+    const t=i/steps*Math.PI*2;
+    let x,y,z;
+    if(kind==="meridian"){
+      x=Math.sin(value)*Math.cos(t); y=Math.sin(t); z=Math.cos(value)*Math.cos(t);
+    }else{
+      x=Math.cos(value)*Math.sin(t); y=Math.sin(value); z=Math.cos(value)*Math.cos(t);
+    }
+    const x1=x*Math.cos(yaw)+z*Math.sin(yaw);
+    const z1=-x*Math.sin(yaw)+z*Math.cos(yaw);
+    const y2=y*Math.cos(pitch)-z1*Math.sin(pitch);
+    const z2=y*Math.sin(pitch)+z1*Math.cos(pitch);
+    pts.push({x:106+x1*96,y:106-y2*96,z:z2});
+  }
+  return pts.map((p,i)=>(i?"L":"M")+p.x.toFixed(2)+" "+p.y.toFixed(2)).join(" ");
+}
+
+function drawSphere(){
+  const mer=$("#mer"), par=$("#par");
+  mer.textContent=""; par.textContent="";
+  const yaw=-focusDec*(360/DECN);
+  for(let i=0;i<8;i++){
+    const lon=i*Math.PI/4;
+    mer.appendChild(svgEl("path",{d:sphereProjectedPath("meridian",lon,yaw,spherePitch),
+      fill:"none",stroke:"rgba(150,190,215,.12)","stroke-width":1}));
+  }
+  [-60,-35,0,35,60].forEach((deg,i)=>{
+    const active=i===typeCluster;
+    par.appendChild(svgEl("path",{d:sphereProjectedPath("latitude",deg*Math.PI/180,yaw,spherePitch),
+      fill:"none",stroke:active?"rgba(217,164,65,.55)":"rgba(255,255,255,.07)",
+      "stroke-width":active?1.5:1}));
+  });
+}
+
+function itemRelevance(it){
+  const degree=(OUT.get(it.id)||[]).length+(IN.get(it.id)||[]).length;
+  const imp=Number(it.importance||3);
+  const conf=it.confidence==="vahva"?1.2:it.confidence==="kohtalainen"?.6:0;
+  const sourced=Array.isArray(it.sources)&&it.sources.length?0.45:0;
+  return imp*3+Math.log1p(degree)*2.4+conf+sourced;
+}
+
+function visibleItemsForZone(zoneId){
+  return [...ITEMS.values()]
+    .filter(it=>it._zone===zoneId && (!TYPE_CLUSTERS[typeCluster].roles || TYPE_CLUSTERS[typeCluster].roles.includes(it._role)))
+    .sort((a,b)=>itemRelevance(b)-itemRelevance(a)||(b.importance||3)-(a.importance||3)||(a.year_start||0)-(b.year_start||0))
+    .slice(0,ZONE_CARD_LIMIT);
+}
+
+function layoutZone(zoneId){
+  const cellsEl=document.querySelector(`#quad-${zoneId} .cells`);
+  [...DISPLAY_CELLS.keys()].filter(k=>k.startsWith(zoneId+":" )).forEach(k=>DISPLAY_CELLS.delete(k));
+  cellsEl.querySelectorAll(".cell").forEach(el=>el.remove());
+
+  const chosen=visibleItemsForZone(zoneId);
+  const byDec=new Map();
+  chosen.forEach(it=>{
+    if(!byDec.has(it._dec))byDec.set(it._dec,[]);
+    byDec.get(it._dec).push(it);
+  });
+  const decs=[];
+  for(const [d,items] of byDec){
+    const k=key(zoneId,d);
+    DISPLAY_CELLS.set(k,items);
+    decs.push({d,k,n:items.length,doms:[...new Set(items.map(i=>ROWS.find(r=>r.id===i._row)?.t).filter(Boolean))].join(", ")});
+  }
+  /* merkittävimmät vuosikymmenryhmät ensin -> tihein osa asettuu pallon lähelle */
+  decs.sort((a,b)=>b.n-a.n||a.d-b.d);
+  const order=SLOT_ORDER_BY_ZONE[zoneId];
+  const placed=[];
+  const frag=document.createDocumentFragment();
+  let slot0Used=false;
+  decs.forEach(row=>{
+    for(let i=0;i<row.n;i++){
+      const slot=order[placed.length];
+      if(!slot)return; /* ruudukko täynnä (ei pitäisi tapahtua, GRIDCOLS×GRIDROWS > suurinkin vyöhyke) */
+      const el=document.createElement("div");
+      el.className="cell"; el.dataset.k=row.k;
+      el.setAttribute("role","button");
+      el.setAttribute("tabindex","-1");
+      el.setAttribute("aria-label",`${ZONES.find(z=>z.id===zoneId).t}, ${DEC0+row.d*10}-luku, ${row.n} murrosta`);
+      el.title=`${DEC0+row.d*10} · ${row.n} korttia · ${row.doms}`;
+      el.style.gridColumn=slot.c+1; el.style.gridRow=slot.r+1;
+      frag.appendChild(el);
+      placed.push({c:slot.c,r:slot.r,n:row.n});
+    }
+  });
+  cellsEl.appendChild(frag);
+  paintHeat(zoneId,placed);
+}
+function layoutAllZones(){ZONES.forEach(z=>layoutZone(z.id))}
+
+/* Piirtää yhtenäisen, sumennetun lämpökentän ilman solukehyksiä.
+   Jokainen kortti maalataan omana neliönään välikankaalle,
+   ja lopputulos sumennetaan yhdellä kertaa -- vierekkäiset ruudut sulautuvat. */
+function paintHeat(zoneId,placed){
+  const cv=document.querySelector(`canvas.heat[data-zone="${zoneId}"]`);
+  if(!cv)return;
+  const PAD=12, BLUR=4.5;
+  const wCss=GRIDCOLS*CELL_PX+(GRIDCOLS-1)*GAP_PX+PAD*2;
+  const hCss=GRIDROWS*CELL_PX+(GRIDROWS-1)*GAP_PX+PAD*2;
+  const dpr=Math.min(2,window.devicePixelRatio||1);
+  cv.width=Math.round(wCss*dpr); cv.height=Math.round(hCss*dpr);
+  cv.style.width=wCss+"px"; cv.style.height=hCss+"px";
+  cv.style.left=(-PAD)+"px"; cv.style.top=(-PAD)+"px";
+  const ctx=cv.getContext("2d");
+  if(!ctx)return;
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  ctx.clearRect(0,0,wCss,hCss);
+
+  const off=document.createElement("canvas");
+  off.width=cv.width; off.height=cv.height;
+  const octx=off.getContext("2d");
+  octx.setTransform(dpr,0,0,dpr,0,0);
+  placed.forEach(p=>{
+    const st=cellStyle({length:p.n});
+    const x=PAD+p.c*(CELL_PX+GAP_PX), y=PAD+p.r*(CELL_PX+GAP_PX);
+    octx.fillStyle=st.css;
+    octx.fillRect(x,y,CELL_PX,CELL_PX);
+  });
+  ctx.filter=`blur(${BLUR}px)`;
+  ctx.drawImage(off,0,0,wCss,hCss);
+  ctx.filter="none";
+}
+
+function refresh(){
+  drawSphere();
+  drawZoneRing();
+  $("#sphereYear").textContent=(DEC0+focusDec*10)+"-luku";
+  const typeText=TYPE_CLUSTERS[typeCluster].t;
+  $("#sphereSpan").textContent=typeText;
+  $("#sphereZone").textContent=activeZone?ZONES.find(z=>z.id===activeZone).t:"koko atlas";
+  $("#sphere").setAttribute("aria-valuetext",`${DEC0+focusDec*10}-luku, ${typeText}`);
+  document.querySelectorAll(".quad").forEach(q=>{
+    q.classList.toggle("dimmed",!!activeZone&&q.dataset.z!==activeZone);
+    q.classList.toggle("zsel",q.dataset.z===activeZone);
+  });
+  const focused=new Set();
+  document.querySelectorAll(".cell").forEach(c=>{
+    const d=+c.dataset.k.split(":")[1];
+    const delta=Math.abs(d-focusDec);
+    const isFoc=delta===0;
+    c.classList.toggle("foc",isFoc);
+    c.classList.toggle("focus-core",delta===0);
+    const zoneKey=c.dataset.k;
+    if(isFoc&&!focused.has(zoneKey)){c.setAttribute("tabindex","0");focused.add(zoneKey)}
+    else c.setAttribute("tabindex","-1");
+  });
+  if(selectedKey){
+    document.querySelectorAll(`.cell[data-k="${selectedKey}"]`).forEach(el=>el.classList.add("sel"));
+    if(activeSourceEl&&activeSourceEl.isConnected)activeSourceEl.classList.add("chain-source");
+  }
+}
+function setDec(d){focusDec=Math.max(0,Math.min(DECN-1,d));refresh()}
+function setZone(z){activeZone=z;refresh()}
+function setTypeCluster(n){
+  const next=Math.max(0,Math.min(TYPE_CLUSTERS.length-1,n));
+  if(next===typeCluster){refresh();return}
+  typeCluster=next;
+  selectedKey=null;
+  activeSourceEl=null;
+  layoutAllZones();
+  refresh();
+}
+
+/* ===== Yhteydet ja nimikkeet ======================================== */
+function clearLinks(){
+  $("#svgLinks").textContent=""; $("#labels").textContent="";
+  document.querySelectorAll(".cell.sel,.cell.lit,.cell.chain-source").forEach(c=>c.classList.remove("sel","lit","chain-source"));
+  selectedKey=null;
+  activeSourceEl=null;
+}
+function selectCell(k,sourceEl=null){
+  document.querySelectorAll(".cell.chain-source").forEach(c=>c.classList.remove("chain-source"));
+  const source=(sourceEl&&sourceEl.isConnected)?sourceEl:document.querySelector(`.cell[data-k="${k}"]`);
+  activeSourceEl=source||null;
+  if(activeSourceEl)activeSourceEl.classList.add("chain-source");
+  selectedKey=k;
+  const [zoneId,d]=k.split(":");
+  focusDec=+d;
+  if(activeZone&&activeZone!==zoneId)activeZone=null;
+  refresh();
+  openChainDrawer(k,source);
+}
+
+/* ===== Animoitu ketju oikeaan reunaan =============================== */
+const CONF_DOT={vahva:"#7FB58C",kohtalainen:"#D9A441",heikko:"#C4586A"};
+let ACTIVE_CHAIN_ID=null,CHAIN_TIMER=[];
+function clearChainTimers(){CHAIN_TIMER.forEach(clearTimeout);CHAIN_TIMER=[]}
+function chainRelation(r){
+  if(!r)return"kytkeytyi";
+  return VERB[r.type]||VERB_FALLBACK;
+}
+function chainRationale(r){return r?.rationale?firstSentence(r.rationale,125):""}
+function chainForItem(id){
+  const t=ITEMS.get(id);
+  if(!t)return{nodes:[],rels:[],focusIdx:0};
+  if(t.type==="analyyttinen kehys"||t.type==="sukupolviprofiili"){
+    const fan=fanRelatives(id).slice(0,4);
+    return{nodes:[t,...fan.map(x=>x.item)],rels:fan.map(x=>x.rel),focusIdx:0};
+  }
+  const c=buildChain(id);
+  if(c.nodes.length>1)return c;
+  const fan=fanRelatives(id).slice(0,4);
+  return{nodes:[t,...fan.map(x=>x.item)],rels:fan.map(x=>x.rel),focusIdx:0};
+}
+function chainStepHtml(n,i,focusIdx){
+  return `<div class="chain-step ${i===focusIdx?"focus":""}" data-step="${i}">
+    <span class="chain-dot"></span>
+    <button class="chain-card" data-id="${esc(n.id)}" type="button">
+      <span class="chain-meta"><span class="year">${esc(yearOf(n))}</span><span>${esc(n.type||"")}</span><span>${esc(n.confidence||"")}</span></span>
+      <span class="chain-title">${esc(n.title)}</span>
+    </button>
+  </div>`;
+}
+function animateFlight(source,target,done){
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches||!source||!target){done();return}
+  const a=source.getBoundingClientRect(),b=target.getBoundingClientRect();
+  const f=document.createElement("div");f.className="chain-flight";
+  const size=Math.max(10,Math.min(20,a.width));
+  Object.assign(f.style,{left:(a.left+a.width/2-size/2)+"px",top:(a.top+a.height/2-size/2)+"px",width:size+"px",height:size+"px"});
+  document.body.appendChild(f);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    f.style.left=(b.left+b.width/2-9)+"px";f.style.top=(b.top+b.height/2-9)+"px";f.style.width="18px";f.style.height="18px";f.style.opacity="0";
+  }));
+  CHAIN_TIMER.push(setTimeout(()=>{f.remove();done()},760));
+}
+function playChainAnimation(source){
+  clearChainTimers();
+  const steps=[...document.querySelectorAll("#chainRail .chain-step")];
+  const rels=[...document.querySelectorAll("#chainRail .chain-rel")];
+  steps.forEach(x=>x.classList.remove("show"));rels.forEach(x=>x.classList.remove("show"));
+  if(!steps.length)return;
+  animateFlight(source,steps[0].querySelector(".chain-dot"),()=>{
+    steps[0].classList.add("show");
+    for(let i=1;i<steps.length;i++){
+      CHAIN_TIMER.push(setTimeout(()=>{
+        if(rels[i-1])rels[i-1].classList.add("show");
+        CHAIN_TIMER.push(setTimeout(()=>steps[i].classList.add("show"),150));
+      },i*520));
+    }
+  });
+}
+function openChainDrawer(k,source){
+  const [zoneId,d]=k.split(":");
+  const z=ZONES.find(x=>x.id===zoneId);
+  const items=DISPLAY_CELLS.get(k)||CELLS.get(k)||[];
+  const primary=items[0];
+  if(!primary)return;
+  ACTIVE_CHAIN_ID=primary.id;
+  const {nodes,rels,focusIdx}=chainForItem(primary.id);
+  $("#dEye").textContent=`${DEC0+ +d*10}-luku · ${z.t}`;
+  $("#dTitle").textContent=primary.title;
+  $("#dSub").textContent="Valittu ilmiö siirtyy kartalta ketjun alkuun. Seuraavat solmut ilmestyvät vaikutusjärjestyksessä.";
+  let html="";
+  nodes.forEach((n,i)=>{
+    html+=chainStepHtml(n,i,focusIdx);
+    if(rels[i])html+=`<div class="chain-rel" data-rel="${i}"><span>${esc(chainRelation(rels[i]))}</span>${chainRationale(rels[i])?`<em>${esc(chainRationale(rels[i]))}</em>`:""}</div>`;
+  });
+  if(nodes.length<2)html+=`<div class="chain-empty">Aineistosta ei löytynyt tälle ilmiölle varsinaista syy–seurausketjua.</div>`;
+  if(items.length>1){
+    html+=`<div class="chain-more"><b>Muut saman ruudun ilmiöt</b>`+
+      items.slice(1,7).map(i=>`<button class="chain-alt" data-alt="${esc(i.id)}" type="button">${esc(i.title)}</button>`).join("")+`</div>`;
+  }
+  $("#chainRail").innerHTML=html;
+  $("#chainRail").querySelectorAll(".chain-card").forEach(b=>b.addEventListener("click",()=>openRead(b.dataset.id)));
+  $("#chainRail").querySelectorAll(".chain-alt").forEach(b=>b.addEventListener("click",()=>{
+    ACTIVE_CHAIN_ID=b.dataset.alt;
+    const alt=ITEMS.get(ACTIVE_CHAIN_ID);if(!alt)return;
+    const c=chainForItem(ACTIVE_CHAIN_ID);
+    $("#dTitle").textContent=alt.title;
+    let h="";c.nodes.forEach((n,i)=>{h+=chainStepHtml(n,i,c.focusIdx);if(c.rels[i])h+=`<div class="chain-rel"><span>${esc(chainRelation(c.rels[i]))}</span>${chainRationale(c.rels[i])?`<em>${esc(chainRationale(c.rels[i]))}</em>`:""}</div>`});
+    $("#chainRail").innerHTML=h;
+    $("#chainRail").querySelectorAll(".chain-card").forEach(x=>x.addEventListener("click",()=>openRead(x.dataset.id)));
+    playChainAnimation(source);
+  }));
+  $("#drawer").classList.add("on");document.body.classList.add("chain-focus");
+  CHAIN_TIMER.push(setTimeout(()=>playChainAnimation(source),410));
+}
+function closeDrawer(){
+  clearChainTimers();$("#drawer").classList.remove("on");document.body.classList.remove("chain-focus");clearLinks();refresh()
+}
+$("#dClose").addEventListener("click",closeDrawer);
+$("#chainRead").addEventListener("click",()=>{if(ACTIVE_CHAIN_ID)openRead(ACTIVE_CHAIN_ID)});
+$("#chainReplay").addEventListener("click",()=>playChainAnimation(activeSourceEl&&activeSourceEl.isConnected?activeSourceEl:document.querySelector(`.cell[data-k="${selectedKey}"]`)));
+
+/* ===== Pallo-ohjaus ================================================= */
+function initSphere(){
+  const sp=$("#sphere");
+  let drag=null;
+  const col=$("#sphereCol");
+  sp.addEventListener("pointerdown",e=>{
+    drag={x:e.clientX,y:e.clientY,d:focusDec,type:typeCluster,pitch:spherePitch,axis:null};
+    sp.classList.add("drag"); col.classList.add("dragging"); sp.setPointerCapture(e.pointerId);
+  });
+  sp.addEventListener("pointermove",e=>{
+    if(!drag)return;
+    const dx=e.clientX-drag.x, dy=e.clientY-drag.y;
+    if(!drag.axis && Math.hypot(dx,dy)>7)drag.axis=Math.abs(dx)>=Math.abs(dy)?"x":"y";
+    if(drag.axis==="x"){
+      setDec(drag.d+Math.round(dx/34));
+    }else if(drag.axis==="y"){
+      /* Pohjois–eteläsuuntainen pyörintä näkyy pallon projektoidussa viivastossa. */
+      spherePitch=Math.max(-70,Math.min(70,drag.pitch-dy*.48));
+      const step=Math.round(-dy/42);
+      const next=Math.max(0,Math.min(TYPE_CLUSTERS.length-1,drag.type+step));
+      if(next!==typeCluster){typeCluster=next;selectedKey=null;layoutAllZones()}
+      refresh();
+    }
+  });
+  const end=()=>{drag=null;sp.classList.remove("drag");col.classList.remove("dragging");refresh()};
+  sp.addEventListener("pointerup",end); sp.addEventListener("pointercancel",end);
+  sp.addEventListener("wheel",e=>{e.preventDefault();setDec(focusDec+Math.sign(e.deltaY))},{passive:false});
+  document.addEventListener("keydown",e=>{
+    if($("#read").classList.contains("on")){if(e.key==="Escape")closeRead();return}
+    if(e.key==="Escape"){closeDrawer();return}
+    if(e.key==="/"&&document.activeElement!==$("#q")){e.preventDefault();$("#q").focus();return}
+    if(e.target===$("#q"))return;
+    if(e.key==="ArrowLeft"){setDec(focusDec-1);e.preventDefault()}
+    if(e.key==="ArrowRight"){setDec(focusDec+1);e.preventDefault()}
+    if(e.key==="ArrowUp"){spherePitch=Math.min(70,spherePitch+18);setTypeCluster(typeCluster-1);e.preventDefault()}
+    if(e.key==="ArrowDown"){spherePitch=Math.max(-70,spherePitch-18);setTypeCluster(typeCluster+1);e.preventDefault()}
+  });
+}
+
+
+/* ===== Haku ========================================================= */
+const yearOf=i=>i.year_end&&i.year_end!==i.year_start?`${i.year_start}–${i.year_end}`:String(i.year_start??"");
+function initFind(){
+  const q=$("#q"), hits=$("#hits");
+  q.addEventListener("input",()=>{
+    const v=q.value.trim().toLowerCase();
+    if(v.length<2){hits.classList.remove("on");return}
+    const rs=[...ITEMS.values()].filter(i=>
+      i.title.toLowerCase().includes(v)||String(i.year_start).includes(v)).slice(0,10);
+    hits.innerHTML=rs.map(i=>`<button data-id="${esc(i.id)}"><span class="y">${esc(yearOf(i))}</span><span>${esc(i.title)}</span></button>`).join("")
+      ||`<button disabled>Ei osumia.</button>`;
+    hits.classList.toggle("on",rs.length>0);
+    hits.querySelectorAll("button[data-id]").forEach(b=>b.addEventListener("click",()=>{
+      const it=ITEMS.get(b.dataset.id);
+      hits.classList.remove("on"); q.value="";
+      selectCell(key(it._zone,it._dec));
+      openRead(it.id);
+    }));
+  });
+  document.addEventListener("click",e=>{if(!e.target.closest(".search"))hits.classList.remove("on")});
+}
+
+/* ===== Tulkinta -- neljä lukusyvyyttä ================================ */
+const CLASS_W={kaari:3.0,rakenne:2.6,tapahtuma:2.2,tulkinta:1.2};
+const CONF_W={vahva:1.6,kohtalainen:1.2,heikko:.7};
+const NONCAUSAL=new Set(["exemplified_by","contrasts","integrates","complemented","broader_context_for"]);
+const FRAME_TYPES=new Set(["analyyttinen kehys","sukupolviprofiili"]);
+const CONF_FI={vahva:"vahva näyttö",kohtalainen:"kohtalainen näyttö",heikko:"tulkinnanvarainen"};
+const VERB={enabled:"mahdollisti",contributed_to:"vaikutti osaltaan",culminated_in:"huipentui",
+ created_pressure_for:"loi painetta",structural_precursor:"loi pohjan",accelerated:"kiihdytti",
+ complemented:"täydensi",long_term_precursor:"valmisti pitkällä aikavälillä",evolved_into:"kehittyi muotoon",
+ supported:"tuki",constrained_by:"rajoitti",exemplified_by:"esimerkkinä",contrasts:"vertautuu",
+ integrates:"kokosi yhteen",replaced:"korvasi",triggered:"laukaisi",institutionalized:"vakiinnutti",
+ created_conditions_for:"loi olosuhteet",produced:"tuotti",created_context_for:"loi kontekstin",
+ created_model_for:"antoi mallin",created_capacity_for:"loi valmiudet",formalized:"virallisti",
+ reformed_through:"uudistui kautta",broader_context_for:"laajempi tausta",responded_to:"vastasi ilmiöön",
+ stabilized:"vakautti",deepened:"syvensi",expanded_into:"laajeni muotoon",complemented_by:"sai rinnalleen",
+ required:"edellytti",reinforced:"vahvisti",intensified:"voimisti",created_structure_for:"loi rakenteen",
+ provided_capacity_for:"loi valmiudet",supplied_capacity_for:"loi valmiudet",replaced_by:"korvautui",
+ implemented_as:"toteutui muotona",expanded:"laajensi",created:"synnytti",constrained:"rajoitti",
+ caused:"aiheutti",weakened:"heikensi",strengthened:"vahvisti",exposed:"paljasti",delayed:"viivästytti",
+ mitigated:"lievensi",foreshadowed:"ennakoi",informed:"antoi tietopohjan"};
+const VERB_FALLBACK="kytkeytyi ilmiöön";
+
+const score=r=>{let s=(CLASS_W[r.rel_class]??1.5)*(CONF_W[r.confidence]??1);if(NONCAUSAL.has(r.type))s*=.25;return s};
+function chronoOk(r){
+  const f=ITEMS.get(r.from),t=ITEMS.get(r.to);
+  if(!f||!t||f.year_start==null||t.year_start==null)return true;
+  return f.year_start<=(t.year_end??t.year_start)+5;
+}
+function bestStep(id,back,seen){
+  const pool=(back?IN.get(id):OUT.get(id))||[];
+  return pool.filter(r=>{
+    const nid=back?r.from:r.to;
+    if(seen.has(nid)||NONCAUSAL.has(r.type))return false;
+    const n=ITEMS.get(nid);
+    if(n&&FRAME_TYPES.has(n.type))return false;
+    return chronoOk(r);
+  }).sort((a,b)=>score(b)-score(a))[0]||null;
+}
+function buildChain(id){
+  const seen=new Set([id]); const up=[]; let cur=id;
+  for(let i=0;i<2;i++){const r=bestStep(cur,true,seen);if(!r)break;up.unshift(r);seen.add(r.from);cur=r.from}
+  const down=[]; cur=id;
+  for(let i=0;i<2;i++){const r=bestStep(cur,false,seen);if(!r)break;down.push(r);seen.add(r.to);cur=r.to}
+  return {nodes:[...up.map(r=>ITEMS.get(r.from)),ITEMS.get(id),...down.map(r=>ITEMS.get(r.to))],
+          rels:[...up,...down],focusIdx:up.length};
+}
+function firstSentence(t,max=170){
+  if(!t)return"";
+  const m=String(t).match(/^[\s\S]*?[.!?](?=\s|$)/);
+  let s=m?m[0]:String(t);
+  if(s.length>max)s=s.slice(0,max).replace(/\s+\S*$/,"")+"…";
+  return s.trim();
+}
+function claimOf(t){
+  const src=t.long_effect||t.current_relevance||t.problem||t.title;
+  let s=firstSentence(src,240);
+  if(s.length<48){const rest=String(src).slice(s.length).trim();const n=firstSentence(rest,190);if(n)s+=" "+n}
+  return s||t.title;
+}
+function frameCases(id){
+  const all=[...(OUT.get(id)||[]),...(IN.get(id)||[])]
+    .filter(r=>["exemplified_by","integrates","complemented","contributed_to"].includes(r.type))
+    .map(r=>({item:ITEMS.get(r.from===id?r.to:r.from),rel:r})).filter(x=>x.item);
+  const cases=all.filter(x=>!FRAME_TYPES.has(x.item.type));
+  return {list:(cases.length?cases:all).sort((a,b)=>(a.item.year_start??0)-(b.item.year_start??0)),
+          onlyFrames:cases.length===0&&all.length>0};
+}
+function lifeEvents(t){
+  const b=t.year_start; if(b==null)return{list:[],future:false};
+  const pick=(lo,hi,sp)=>[...ITEMS.values()]
+    .filter(i=>!FRAME_TYPES.has(i.type)&&i.year_start!=null&&((i.year_end??i.year_start)-i.year_start)<=sp
+      &&i.year_start>=lo&&i.year_start<=hi)
+    .sort((x,y)=>(y.importance||3)-(x.importance||3)||x.year_start-y.year_start)
+    .slice(0,7).sort((x,y)=>x.year_start-y.year_start).map(i=>({item:i,age:i.year_start-b}));
+  let list=pick(b+10,b+75,25);
+  if(list.length<3){const f=pick(b-25,b+75,40);if(f.length>list.length)return{list:f,future:true}}
+  return {list,future:false};
+}
+const fanRelatives=id=>[...(OUT.get(id)||[]),...(IN.get(id)||[])]
+  .map(r=>({item:ITEMS.get(r.from===id?r.to:r.from),rel:r})).filter(x=>x.item)
+  .sort((a,b)=>score(b.rel)-score(a.rel)).slice(0,6);
+
+function openRead(id){
+  const t=ITEMS.get(id); if(!t)return;
+  const {nodes,rels,focusIdx}=buildChain(id);
+  const kind=t.type==="sukupolviprofiili"?"life":t.type==="analyyttinen kehys"?"frame":rels.length?"chain":"fan";
+
+  $("#claimText").textContent=claimOf(t);
+  $("#claimMeta").innerHTML=`<span class="badge okra">${esc(t.title)}</span><span>${esc(yearOf(t))}</span>`+
+    `<span>${esc(t.type||"")}</span>`+
+    (t.domains?.length?`<span>${esc(t.domains.slice(0,3).join(" · "))}</span>`:"");
+
+  const ls=(LINKS_BY_ITEM.get(id)||[]).slice().sort((a,b)=>
+    (a.relation_type==="primary"?-1:0)-(b.relation_type==="primary"?-1:0)||b.weight-a.weight);
+  const art=ls.length?ARTS.get(ls[0].article_id):null;
+  let story="";
+  if(art){
+    const body=art.body||[];
+    story+=`<div class="art-title">${esc(art.title)}</div>`;
+    if(art.dek)story+=`<div class="art-dek">${esc(art.dek)}</div>`;
+    body.slice(0,2).forEach(p=>story+=`<p>${esc(p)}</p>`);
+    if(body.length>2){
+      story+=`<details><summary>Lue koko artikkeli (${body.length} kappaletta)</summary>`;
+      body.slice(2).forEach(p=>story+=`<p>${esc(p)}</p>`);
+      story+=`</details>`;
+    }
+    if(art.status==="ai_draft")
+      story+=`<p><span class="badge marja">luonnos</span> <span style="font-family:var(--ui);font-size:13px;color:var(--ink-soft)">Tekoälyavusteinen artikkeli, odottaa kuratoijan katselmointia.</span></p>`;
+  }else{
+    if(t.problem)story+=`<p>${esc(t.problem)}</p>`;
+    if(t.mechanism)story+=`<p>${esc(t.mechanism)}</p>`;
+  }
+  if(t.current_relevance)
+    story+=`<div class="nowrel"><b>Mitä tämä merkitsee nyt</b>${esc(firstSentence(t.current_relevance,400))}</div>`;
+  $("#storyBody").innerHTML=story;
+
+  const knot=(n,f,x)=>`<div class="knot ${f?"focus":""}"><span class="kd"></span>
+    <h3>${esc(n.title)}</h3><div class="kmeta"><span class="yr">${esc(yearOf(n))}</span>
+    <span>${esc(n.type||"")}</span>${x||""}</div></div>`;
+  const joint=r=>`<div class="joint"><span class="cf ${esc(r.confidence||"kohtalainen")}"></span>
+    <span class="verb">${esc(VERB[r.type]||VERB_FALLBACK)}</span>
+    ${r.rationale?`<span class="why">"${esc(firstSentence(r.rationale,180))}"</span>`:""}</div>`;
+  let spine="";
+  $("#confLegend").style.display=(kind==="chain"||kind==="fan")?"flex":"none";
+  if(kind==="chain"){
+    const fut=t.type==="tulevaisuusskenaario";
+    $("#kicker3").textContent=fut?"3 · Ketju -- mihin tämä kytkeytyy (osin ennakoiva)"
+                                 :"3 · Ketju -- mistä tämä tuli ja mihin se johti";
+    nodes.forEach((n,i)=>{if(!n)return;
+      spine+=knot(n,i===focusIdx,i===focusIdx?'<span class="badge okra">tarkasteltava ilmiö</span>':"");
+      if(rels[i])spine+=joint(rels[i])});
+    if(fut)spine+=`<p class="modenote">Skenaariokortti: taaksepäin kulkeva osa on dokumentoitua, eteenpäin kulkeva osa aineiston esittämä oletus.</p>`;
+  }else if(kind==="frame"){
+    $("#kicker3").textContent="3 · Kehys -- mitä tämä ajattelutapa selittää";
+    const {list,onlyFrames}=frameCases(id);
+    spine+=`<p class="modenote">Tämä kortti ei ole tapahtuma vaan analyysikehys. Sillä ei ole syitä eikä seurauksia -- se selittää muita murroksia. ${onlyFrames?`Aineistossa se on kytketty toisiin kehyksiin (${list.length} kpl), ei yksittäisiin tapauksiin.`:`Aineisto kytkee siihen ${list.length} tapausta.`}</p>`;
+    list.forEach(c=>{spine+=knot(c.item,false,"");
+      if(c.rel.rationale)spine+=`<div class="joint"><span class="verb">${onlyFrames?"liittyy":"selittää"}</span><span class="why">"${esc(firstSentence(c.rel.rationale,180))}"</span></div>`});
+    if(!list.length)spine+=`<p class="modenote">Ei vielä kytkettyjä esimerkkitapauksia.</p>`;
+  }else if(kind==="life"){
+    const {list,future}=lifeEvents(t);
+    $("#kicker3").textContent=future?"3 · Elämänkaari -- mihin tämä sukupolvi syntyy"
+                                    :"3 · Elämänkaari -- mitä tämä sukupolvi eli läpi";
+    spine+=`<p class="modenote">Sukupolviprofiili ei ole syy eikä seuraus, vaan näkökulma. ${future?"Tämä sukupolvi on vasta syntymässä: alla ne murrokset ja skenaariot, joihin he syntyvät.":"Alla ne murrokset, jotka osuivat elinaikaan -- ikä kertoo, missä elämänvaiheessa ne kohdattiin."}</p>`;
+    list.forEach(e=>spine+=knot(e.item,false,
+      `<span class="badge">${e.age<0?Math.abs(e.age)+" v. ennen syntymää":e.age+"-vuotiaana"}</span>`));
+    if(!list.length)spine+=`<p class="modenote">Elinaikaan ei osunut aineiston murroksia.</p>`;
+  }else{
+    $("#kicker3").textContent="3 · Rinnastukset -- mihin tämä liittyy";
+    const fan=fanRelatives(id);
+    spine+=`<p class="modenote">Aineisto ei esitä tälle ilmiölle syitä tai seurauksia, vaan rinnastuksia: kytkennät ovat tulkinnallisia, eivät kausaalisia. Ketjua ei siksi voi muodostaa.</p>`;
+    fan.forEach(f=>{spine+=knot(f.item,false,"");spine+=joint(f.rel)});
+    if(!fan.length)spine+=`<p class="modenote">Tällä kortilla ei ole yhtään kytkentää muihin.</p>`;
+  }
+  $("#spine").innerHTML=spine;
+
+  let cav="";
+  if(kind!=="chain"){
+    const why={frame:"Tämä on analyysikehys, ei tapahtuma. Se ei väitä mitään siitä, mikä johti mihinkin -- se tarjoaa tavan lukea muita murroksia.",
+      life:"Tämä on sukupolvinäkökulma. Elämänkaari näyttää, mitä henkilö eli läpi, muttei väitä että murrokset vaikuttivat juuri häneen kuvatulla tavalla.",
+      fan:"Tälle ilmiölle ei ole aineistossa kausaalisia kytkentöjä. Näytetyt yhteydet ovat tulkinnallisia rinnastuksia."}[kind];
+    cav+=`<div class="cv weak"><b>Tulkinnan muoto</b><p>${esc(why)}</p></div>`;
+  }
+  if(kind==="chain"&&rels.length){
+    const ord={heikko:0,kohtalainen:1,vahva:2};
+    const w=rels.slice().sort((a,b)=>(ord[a.confidence]??1)-(ord[b.confidence]??1))[0];
+    cav+=`<div class="cv weak"><b>Ketjun heikoin lenkki</b><p>${esc(ITEMS.get(w.from)?.title)} → ${esc(ITEMS.get(w.to)?.title)} (${esc(CONF_FI[w.confidence]||w.confidence)}). Koko tulkinta on korkeintaan yhtä vahva kuin tämä askel.</p></div>`;
+  }
+  const inc=(IN.get(id)||[]).filter(r=>!NONCAUSAL.has(r.type));
+  if(inc.length>=2){
+    const sh=inc.slice().sort((a,b)=>score(b)-score(a)).slice(0,3);
+    cav+=`<div class="cv"><b>Rinnakkaiset syyt</b><p>Aineistossa on ${inc.length} dokumentoitua tekijää tämän taustalla -- ketju näyttää vain vahvimman polun.</p><ul class="altlist">${sh.map(r=>`<li>${esc(ITEMS.get(r.from)?.title)} <span style="font-family:var(--ui);font-size:12px;color:var(--ink-soft)">(${esc(VERB[r.type]||VERB_FALLBACK)}, ${esc(CONF_FI[r.confidence]||r.confidence)})</span></li>`).join("")}</ul></div>`;
+  }
+  cav+=`<div class="cv"><b>Kortin oma varmuustaso</b><p>${esc(CONF_FI[t.confidence]||t.confidence||"ei arvioitu")}. ${esc(META.status||"")}</p></div>`;
+  $("#caveatBody").innerHTML=cav;
+
+  const row=ROWS.find(r=>r.id===t._row), zone=ZONES.find(z=>z.id===row.z);
+  $("#readFoot").textContent=`Sijainti nelikentässä: ${zone.t} → ${row.t}, ${DEC0+t._dec*10}-luku. Aineisto sisältää -- ${ITEMS.size} korttia, ${RELS.length} suhdetta, ${ARTS.size} artikkelia. Rivijako on johdettu korttien domains-kentästä, ei kuratoitu.`;
+
+  $("#read").classList.add("on"); $("#read").scrollTop=0;
+  history.replaceState(null,"","#"+encodeURIComponent(id));
+}
+function closeRead(){$("#read").classList.remove("on");history.replaceState(null,"","#")}
+$("#readBack").addEventListener("click",closeRead);
+document.querySelectorAll("#read .rtop a").forEach(a=>a.addEventListener("click",e=>{
+  e.preventDefault();document.querySelector(a.getAttribute("href")).scrollIntoView({behavior:"smooth"})}));
+
+/* ===== Käynnistys =================================================== */
+async function boot(){
+  let d=null,a=null;
+  try{
+    [d,a]=await Promise.all([
+      fetch("suomen_murrosvaiheet_syvennetty.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}),
+      fetch("artikkelit.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()})
+    ]);
+  }catch(e){
+    $("#bootMsg").innerHTML="Tiedostoja ei löytynyt samasta kansiosta.<br>Valitse murrosvaihe- ja artikkelitiedosto:";
+    const p=$("#pick"); p.hidden=false;
+    p.addEventListener("change",async()=>{
+      let dd=null,aa=null;
+      for(const f of p.files){const j=JSON.parse(await f.text());
+        if(j.items&&j.relations)dd=j; else if(j.articles&&j.links)aa=j}
+      if(dd&&aa)start(dd,aa); else $("#bootMsg").textContent="Tarvitaan molemmat tiedostot.";
+    });
+    return;
+  }
+  start(d,a);
+}
+function start(d,a){
+  ingest(d,a); buildQuads(); initSphere(); initFind();
+  let best=0,bn=-1;
+  for(let i=0;i<DECN;i++){
+    const n=ZONES.reduce((s,z)=>s+((CELLS.get(key(z.id,i))||[]).length),0);
+    if(n>bn){bn=n;best=i}
+  }
+  focusDec=best;
+  layoutAllZones();
+  refresh();
+  $("#boot").remove();
+  const h=decodeURIComponent(location.hash.slice(1));
+  if(h&&ITEMS.has(h))openRead(h);
+  /* linkit piirretään uudelleen ikkunan koon muuttuessa */
+  let rt=null;
+  window.addEventListener("resize",()=>{drawZoneRing();
+    if(!selectedKey)return;
+    clearTimeout(rt); rt=setTimeout(()=>{const k=selectedKey;selectCell(k)},180);
+  });
+}
+boot();
+</script>
+</body>
+</html>
