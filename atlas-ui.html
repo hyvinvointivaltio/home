@@ -157,6 +157,7 @@ atlas-article{
           <option value="chart">Tilastokuvaaja</option>
           <option value="timeline">Murrosaikajana</option>
           <option value="network">Yhteysverkko</option>
+          <option value="matrix">Rakennematriisi</option>
           <option value="topic">Aihekokonaisuus</option>
         </select>
       </label>
@@ -199,6 +200,14 @@ const presets = {
   network: [
     ["K04", "1990-luvun lama / K04"],
     ["K19", "Kestävyysvaje / K19"]
+  ],
+  matrix: [
+    ["all", "Koko rakennematriisi 1800–2050"],
+    ["1850-2050", "Rakennematriisi 1850–2050"],
+    ["1900-2050", "Rakennematriisi 1900–2050"],
+    ["talous", "Talouden rakennematriisi"],
+    ["vaesto", "Väestön rakennematriisi"],
+    ["hyvinvointi", "Hyvinvoinnin rakennematriisi"]
   ],
   topic: [
     ["K04", "1990-luvun lama / K04"],
@@ -247,6 +256,27 @@ function createComponent() {
     element.setAttribute("depth", "1");
   }
 
+  if (type === "matrix") {
+    element = document.createElement("atlas-matrix");
+
+    if (value === "1850-2050") {
+      element.setAttribute("from", "1850");
+      element.setAttribute("to", "2050");
+    }
+
+    if (value === "1900-2050") {
+      element.setAttribute("from", "1900");
+      element.setAttribute("to", "2050");
+    }
+
+    if (["talous", "vaesto", "hyvinvointi"].includes(value)) {
+      const domain = value === "vaesto" ? "väestö" : value;
+      element.setAttribute("domains", domain);
+      element.setAttribute("from", "1800");
+      element.setAttribute("to", "2050");
+    }
+  }
+
   if (type === "topic") {
     element = document.createElement("atlas-topic");
     element.setAttribute("item", value);
@@ -281,6 +311,7 @@ try {
     customElements.whenDefined("atlas-stat-card"),
     customElements.whenDefined("atlas-timeline"),
     customElements.whenDefined("atlas-network"),
+    customElements.whenDefined("atlas-matrix"),
     customElements.whenDefined("atlas-topic")
   ]);
 
