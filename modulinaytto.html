@@ -1,0 +1,261 @@
+<!--
+  ASENNUSOHJE (tekninen toteuttaja, kertaluontoinen)
+
+  1) CSS: liitä alla oleva <style>-lohko murroskartta.html:n olemassa olevan
+     "/* ENHANCEMENT LAYER */" -osion loppuun, ennen </style>.
+
+  2) HTML: liitä alla oleva <section id="moduulinaytto">-lohko heti
+     </header>-tagin jälkeen, ennen riviä:
+     <section class="association-section" id="yhdistysIntro" hidden>
+
+  3) JS: liitä alla oleva <script>-lohko heti olemassa olevan
+     "fetch(ASSOCIATION_FILE)..." -lohkon jälkeen (samaan tyyliin: valinnainen
+     kerros, ei kaada sivua jos tiedostoa ei löydy).
+
+  4) Vie moduulikortit.json samaan kansioon kuin murroskartta.html ja
+     suomen_murrosvaiheet_syvennetty.json.
+
+  Tämän jälkeen AINOA asia jota hyvinvointivaltio koskaan muokkaa on
+  moduulikortit.json -- ei tätä tiedostoa, ei murroskartta.html:aa.
+-->
+
+<style>
+/* ==========================================================
+   MODUULINÄYTTÖ -- lainatut visualisoinnit (tilastomuuttujat)
+   ========================================================== */
+
+.module-showcase{
+  border-bottom:1px solid var(--line);
+  background:rgba(253,252,247,.6);
+}
+
+.module-showcase-inner{
+  max-width:1500px;
+  margin:auto;
+  padding:32px max(24px,6vw) 40px;
+}
+
+.module-showcase-head{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:16px;
+}
+
+.module-showcase-head h2{
+  margin:0;
+  color:var(--forest-deep);
+  font-size:1.3rem;
+}
+
+.module-showcase-head span{
+  color:var(--muted);
+  font:500 11px var(--mono);
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.module-hero{
+  display:flex;
+  gap:18px;
+  align-items:flex-start;
+
+  padding:20px 22px;
+  margin-bottom:16px;
+
+  border:2px solid var(--copper);
+  border-radius:16px;
+  background:var(--paper);
+  box-shadow:var(--shadow-paper);
+
+  text-align:left;
+  transition:.2s ease;
+}
+
+.module-hero:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--shadow-lift);
+}
+
+.module-hero-badge{
+  flex-shrink:0;
+
+  padding:4px 11px;
+  border-radius:999px;
+  background:var(--copper);
+
+  color:var(--paper);
+  font:600 10px var(--mono);
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.module-hero-body{
+  min-width:0;
+}
+
+.module-hero-body .mh-title{
+  margin:2px 0 4px;
+  color:var(--ink);
+  font-family:var(--serif);
+  font-size:1.3rem;
+  line-height:1.2;
+}
+
+.module-hero-body .mh-subtitle{
+  color:var(--forest-deep);
+  font-size:.85rem;
+  font-style:italic;
+}
+
+.module-hero-body .mh-desc{
+  margin-top:8px;
+  color:rgba(28,38,36,.82);
+  font-size:.88rem;
+  line-height:1.5;
+  max-width:640px;
+}
+
+.module-hero-source{
+  margin-top:10px;
+
+  color:var(--muted);
+  font:500 11px var(--mono);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.module-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(190px,1fr));
+  gap:12px;
+}
+
+.module-card{
+  display:block;
+
+  padding:14px 15px;
+
+  border:1px solid var(--line);
+  border-radius:13px;
+  background:var(--paper);
+
+  text-decoration:none;
+  transition:.15s ease;
+}
+
+.module-card:hover{
+  border-color:var(--forest);
+  transform:translateY(-1px);
+  box-shadow:var(--shadow-paper);
+}
+
+.module-card .mc-title{
+  color:var(--ink);
+  font-size:.92rem;
+  font-weight:600;
+  line-height:1.3;
+}
+
+.module-card .mc-source{
+  margin-top:6px;
+
+  color:var(--muted);
+  font:500 10px var(--mono);
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+.module-more{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:14px 15px;
+
+  border:1px dashed var(--line);
+  border-radius:13px;
+
+  color:var(--muted);
+  font-size:.85rem;
+  text-align:center;
+}
+</style>
+
+<section class="module-showcase" id="moduulinaytto" hidden>
+  <div class="module-showcase-inner">
+    <div class="module-showcase-head">
+      <h2>Tutki visualisointeja</h2>
+      <span>Tuotettu yhteistyössä · tilastomuuttujat</span>
+    </div>
+
+    <a
+      class="module-hero"
+      id="moduulinayttoHero"
+      target="_blank"
+      rel="noopener noreferrer"
+    ></a>
+
+    <div class="module-grid" id="moduulinayttoGrid"></div>
+  </div>
+</section>
+
+<script>
+"use strict";
+
+/* ==========================================================
+   MODUULINÄYTTÖ (valinnainen kerros -- ei kaada sivua jos
+   moduulikortit.json puuttuu, samaan tapaan kuin ASSOCIATION_FILE)
+   ========================================================== */
+
+const MODULE_CARDS_FILE = "moduulikortit.json";
+
+function renderModuleShowcase(data){
+  const section = document.getElementById("moduulinaytto");
+  const cards = Array.isArray(data?.cards) ? data.cards : [];
+  const visible = cards.filter(c => c.published !== false);
+
+  if(!section || !visible.length) return;
+
+  const sorted = [...visible].sort((a, b) =>
+    (a.sort_order ?? 999) - (b.sort_order ?? 999)
+  );
+
+  const featured = sorted.find(c => c.featured) || sorted[0];
+  const rest = sorted.filter(c => c.id !== featured.id).slice(0, 14);
+
+  const hero = document.getElementById("moduulinayttoHero");
+  hero.href = featured.url;
+  hero.innerHTML = `
+    <span class="module-hero-badge">Esillä nyt</span>
+    <span class="module-hero-body">
+      <span class="mh-title" style="display:block">${esc(featured.title || "")}</span>
+      ${featured.subtitle ? `<span class="mh-subtitle">${esc(featured.subtitle)}</span>` : ""}
+      ${featured.description ? `<span class="mh-desc" style="display:block">${esc(featured.description)}</span>` : ""}
+      ${featured.source_label ? `<span class="module-hero-source" style="display:block">${esc(featured.source_label)}</span>` : ""}
+    </span>
+  `;
+
+  const gridHtml = rest.map(card => `
+    <a class="module-card" href="${esc(card.url)}" target="_blank" rel="noopener noreferrer">
+      <div class="mc-title">${esc(card.title || "")}</div>
+      <div class="mc-source">${esc(card.source_label || card.subtitle || "")}</div>
+    </a>
+  `).join("");
+
+  document.getElementById("moduulinayttoGrid").innerHTML = gridHtml;
+  section.hidden = false;
+}
+
+fetch(MODULE_CARDS_FILE)
+  .then(response =>
+    response.ok
+      ? response.json()
+      : Promise.reject(new Error("moduulikortit.json ei ladattavissa"))
+  )
+  .then(renderModuleShowcase)
+  .catch(() => {
+    /* Moduulinäyttö on valinnainen: sivu toimii normaalisti ilmankin. */
+  });
+</script>
