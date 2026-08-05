@@ -4,28 +4,303 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Atlas UI Kit · Hyvinvointivaltio</title>
-<meta name="description" content="Hyvinvointivaltio-repositorion käyttöliittymä TTT:n Atlas UI Kit -komponenteille.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-<script type="module" src="https://tilastomuuttujat.github.io/TTT/atlas/components/atlas-ui.js"></script>
+
+<script
+  type="module"
+  src="https://harrikayhko.fi/atlas/components/atlas-ui.js">
+</script>
+
 <style>
-:root{--paper:#fdfcf7;--paper-2:#f7f4ec;--birch:#f4f0e6;--ink:#1c2624;--muted:#6c766f;--line:#e2dcce;--forest:#3a6b64;--forest-deep:#1f4642;--forest-shadow:#12332f;--copper:#b56a34;--radius:.85rem;--serif:"Fraunces",Georgia,serif;--sans:"Inter",system-ui,sans-serif;--mono:"JetBrains Mono",monospace}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font:16px/1.55 var(--sans);background:radial-gradient(900px 500px at 100% -10%,#efe4ca 0,transparent 60%),radial-gradient(900px 500px at -10% 5%,#dfe9e3 0,transparent 60%),var(--paper-2)}a{color:inherit}.hero{position:relative;overflow:hidden;color:var(--paper);background:linear-gradient(135deg,var(--forest-shadow),var(--forest-deep) 64%,#244f4a)}.hero:after{content:"";position:absolute;inset:0;opacity:.38;background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px);background-size:4px 4px}.hero-inner{position:relative;z-index:1;max-width:1280px;margin:auto;padding:64px max(24px,5vw) 72px}.eyebrow{font:500 11px var(--mono);letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.7)}h1,h2,h3{font-family:var(--serif);letter-spacing:-.02em}.hero h1{max-width:900px;margin:18px 0 14px;font-size:clamp(2.7rem,6vw,5.3rem);line-height:.98}.hero p{max-width:800px;margin:0;color:rgba(255,255,255,.77);font-size:1.08rem}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 17px;border:1px solid rgba(255,255,255,.25);border-radius:999px;text-decoration:none;font:600 12px var(--mono)}.btn.primary{background:var(--paper);color:var(--forest-deep)}main{max-width:1280px;margin:auto;padding:30px max(20px,4vw) 80px}.panel{padding:24px;border:1px solid var(--line);border-radius:var(--radius);background:rgba(253,252,247,.9);box-shadow:0 20px 45px -32px rgba(18,51,47,.4)}.control-panel{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:end;margin-top:-50px;position:relative;z-index:3}.control-copy h2{margin:0 0 6px;font-size:1.55rem;color:var(--forest-deep)}.control-copy p{margin:0;color:var(--muted)}.controls{display:flex;gap:10px;flex-wrap:wrap}.controls label{display:grid;gap:5px;font:600 10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}select{min-width:210px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:white;color:var(--ink);font:500 13px var(--sans)}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:46px 0 18px}.section-head h2{margin:0;color:var(--forest-deep);font-size:clamp(1.7rem,3vw,2.5rem)}.section-head p{max-width:600px;margin:0;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.wide{grid-column:1/-1}.component-frame{padding:18px;border:1px solid var(--line);border-radius:var(--radius);background:rgba(253,252,247,.75)}atlas-stat-card,atlas-topic,atlas-timeline,atlas-network,atlas-article{display:block;min-width:0;--atlas-paper:#fdfcf7;--atlas-line:#ded8ca;--atlas-title:#1f4642;--atlas-ink:#172421;--atlas-radius:14px;--atlas-serif:"Fraunces",Georgia,serif;--atlas-sans:"Inter",system-ui,sans-serif}.code{margin-top:28px;padding:20px;border-radius:14px;background:#172421;color:#f7f4ec;overflow:auto}.code h3{margin:0 0 10px;font-family:var(--sans);font-size:1rem}.code pre{margin:0;white-space:pre-wrap;font:12px/1.6 var(--mono)}@media(max-width:850px){.control-panel{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.wide{grid-column:auto}.section-head{display:block}.section-head p{margin-top:8px}}
+:root{
+  --paper:#fdfcf7;
+  --paper-2:#f7f4ec;
+  --ink:#1c2624;
+  --muted:#6c766f;
+  --line:#e2dcce;
+  --forest:#3a6b64;
+  --forest-deep:#1f4642;
+  --forest-shadow:#12332f;
+  --copper:#b56a34;
+  --radius:.85rem;
+  --serif:Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  color:var(--ink);
+  font:16px/1.55 var(--sans);
+  background:var(--paper-2);
+}
+.hero{
+  color:var(--paper);
+  background:linear-gradient(135deg,var(--forest-shadow),var(--forest-deep) 65%,#244f4a);
+}
+.hero-inner{
+  max-width:1120px;
+  margin:auto;
+  padding:56px 24px 64px;
+}
+.eyebrow{
+  color:rgba(255,255,255,.7);
+  font:600 11px var(--mono);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+h1,h2{font-family:var(--serif)}
+h1{
+  max-width:850px;
+  margin:16px 0 12px;
+  font-size:clamp(2.5rem,6vw,5rem);
+  line-height:1;
+}
+.hero p{
+  max-width:760px;
+  margin:0;
+  color:rgba(255,255,255,.78);
+}
+main{
+  width:min(1120px,calc(100% - 32px));
+  margin:auto;
+  padding:28px 0 72px;
+}
+.panel{
+  margin-top:-48px;
+  position:relative;
+  z-index:2;
+  padding:22px;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:var(--paper);
+  box-shadow:0 20px 45px -32px rgba(18,51,47,.45);
+}
+.controls{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+.controls label{
+  display:grid;
+  gap:6px;
+  color:var(--muted);
+  font:600 11px var(--mono);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+select{
+  width:100%;
+  padding:11px 13px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:white;
+  color:var(--ink);
+  font:500 14px var(--sans);
+}
+.status{
+  margin-top:14px;
+  color:var(--muted);
+  font-size:13px;
+}
+.status.error{color:#9b392c}
+.visual{
+  margin-top:26px;
+  min-height:360px;
+}
+atlas-stat-card,
+atlas-topic,
+atlas-timeline,
+atlas-network,
+atlas-article{
+  display:block;
+  min-height:260px;
+  --atlas-paper:#fdfcf7;
+  --atlas-line:#ded8ca;
+  --atlas-title:#1f4642;
+  --atlas-ink:#172421;
+  --atlas-radius:14px;
+  --atlas-serif:Georgia,serif;
+  --atlas-sans:system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+.help{
+  margin-top:18px;
+  padding:14px 16px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  color:var(--muted);
+  background:#faf8f2;
+  font-size:13px;
+}
+@media(max-width:720px){
+  .controls{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
-<header class="hero"><div class="hero-inner"><div class="eyebrow">HYVINVOINTIVALTIO · ATLAS UI KIT</div><h1>Yksi käyttöliittymä, yhteinen data</h1><p>Hyvinvointivaltio käyttää suoraan tilastomuuttujat/TTT-repositorion Web Component -kirjastoa. Data, visualisointien esiasetukset ja komponentit pysyvät TTT:ssä; tämä sivu valitsee, miten niitä käytetään.</p><div class="hero-actions"><a class="btn primary" href="#visualisoinnit">Avaa visualisoinnit</a><a class="btn" href="https://tilastomuuttujat.github.io/TTT/atlas/components/ui-demo.html">Atlas UI Kit -demo</a></div></div></header>
-<main>
-<section class="panel control-panel" aria-label="Näkymän valinta"><div class="control-copy"><h2>Visualisointien ohjauspaneeli</h2><p>Valitse valmis kortti. Hyvinvointivaltio ei piirrä kuvaajaa itse, vaan käyttää TTT:n julkaistua komponenttia ja dataa.</p></div><div class="controls"><label>Tilastokortti<select id="cardSelect"><option value="JULKINEN_VELKA_POLKU">Julkinen velka</option><option value="TYOTTOMYYS_1990_2024">Työttömyys</option><option value="TYOLLISYYS_POLKU">Työllisyys</option><option value="VAESTON_IKAANTYMINEN">Väestön ikääntyminen</option><option value="RAKENNEMUUTOS_KAUPUNGISTUMINEN">Kaupungistuminen</option><option value="SYNTYVYYS_MURROS">Syntyvyys</option></select></label></div></section>
-<section id="visualisoinnit"><div class="section-head"><div><div class="eyebrow" style="color:var(--copper)">ESIASETUS</div><h2>Valittu tilastovisualisointi</h2></div><p>Kortin tunnus vaihtuu käyttöliittymässä. Sama komponentti hakee aina ajantasaisen datan TTT-repositoriosta.</p></div><div class="component-frame"><atlas-stat-card id="activeCard" card="JULKINEN_VELKA_POLKU"></atlas-stat-card></div></section>
-<section><div class="section-head"><div><div class="eyebrow" style="color:var(--copper)">KOKONAISUUS</div><h2>Hyvinvointivaltion rakennemuutosnäkymä</h2></div><p>Alla näkyvät samassa sivussa tilastokortit, aikajana ja verkosto. Ne ovat kaikki TTT:n Atlas UI Kit -komponentteja.</p></div><div class="grid"><div class="component-frame"><atlas-stat-card card="TYOTTOMYYS_1990_2024"></atlas-stat-card></div><div class="component-frame"><atlas-stat-card card="JULKINEN_VELKA_POLKU"></atlas-stat-card></div><div class="component-frame wide"><atlas-timeline domain="talous" limit="10"></atlas-timeline></div><div class="component-frame wide"><atlas-network focus="1990-luvun-lama" depth="1"></atlas-network></div></div></section>
-<section><div class="section-head"><div><div class="eyebrow" style="color:var(--copper)">UPOTUS</div><h2>Näin muu sivu käyttää komponenttia</h2></div></div><div class="code"><h3>Yksi moduulilataus ja yksi elementti</h3><pre>&lt;script type="module"
-  src="https://tilastomuuttujat.github.io/TTT/atlas/components/atlas-ui.js"&gt;
-&lt;/script&gt;
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Hyvinvointivaltio · Atlas UI Kit</div>
+    <h1>Kuvaajat ja Atlas-visualisoinnit samassa käyttöliittymässä</h1>
+    <p>
+      Valitse ensin visualisoinnin tyyppi ja sen jälkeen esiasetus.
+      Näkymä ladataan suoraan TTT-repositorion Atlas UI Kitistä.
+    </p>
+  </div>
+</header>
 
-&lt;atlas-stat-card card="JULKINEN_VELKA_POLKU"&gt;&lt;/atlas-stat-card&gt;</pre></div></section>
+<main>
+  <section class="panel">
+    <div class="controls">
+      <label>
+        Visualisoinnin tyyppi
+        <select id="typeSelect">
+          <option value="chart">Tilastokuvaaja</option>
+          <option value="timeline">Murrosaikajana</option>
+          <option value="network">Yhteysverkko</option>
+          <option value="topic">Aihekokonaisuus</option>
+        </select>
+      </label>
+
+      <label>
+        Esiasetus
+        <select id="presetSelect"></select>
+      </label>
+    </div>
+
+    <div id="status" class="status">Ladataan Atlas UI Kit -komponentteja…</div>
+    <div id="visual" class="visual"></div>
+
+    <div class="help">
+      Aihe- ja verkkonäkymät tarvitsevat Murrosatlaksessa olevan tunnuksen.
+      Esimerkeissä käytetään tunnusta <code>K04</code>. Jos sitä ei löydy aineistosta,
+      vaihda asetukseen jokin nykyinen Murrosatlaksen item-tunnus.
+    </div>
+  </section>
 </main>
-<script>const select=document.getElementById('cardSelect');const card=document.getElementById('activeCard');select.addEventListener('change',()=>card.setAttribute('card',select.value));</script>
+
+<script type="module">
+const BASE = "https://harrikayhko.fi/atlas/";
+
+const presets = {
+  chart: [
+    ["JULKINEN_VELKA_POLKU", "Julkinen velka"],
+    ["TYOTTOMYYS_1990_2024", "Työttömyys"],
+    ["TYOLLISYYS_POLKU", "Työllisyys"],
+    ["VAESTON_IKAANTYMINEN", "Väestön ikääntyminen"],
+    ["RAKENNEMUUTOS_KAUPUNGISTUMINEN", "Kaupungistuminen"],
+    ["SYNTYVYYS_MURROS", "Syntyvyys"]
+  ],
+  timeline: [
+    ["talous", "Talouden murrokset"],
+    ["väestö", "Väestön murrokset"],
+    ["hyvinvointi", "Hyvinvoinnin murrokset"],
+    ["all", "Kaikki murrokset"]
+  ],
+  network: [
+    ["K04", "1990-luvun lama / K04"],
+    ["K19", "Kestävyysvaje / K19"]
+  ],
+  topic: [
+    ["K04", "1990-luvun lama / K04"],
+    ["K19", "Kestävyysvaje / K19"]
+  ]
+};
+
+const typeSelect = document.getElementById("typeSelect");
+const presetSelect = document.getElementById("presetSelect");
+const visual = document.getElementById("visual");
+const status = document.getElementById("status");
+
+function setStatus(message, error = false) {
+  status.textContent = message;
+  status.classList.toggle("error", error);
+}
+
+function fillPresets() {
+  const rows = presets[typeSelect.value] ?? [];
+  presetSelect.innerHTML = rows
+    .map(([value, label]) => `<option value="${value}">${label}</option>`)
+    .join("");
+}
+
+function createComponent() {
+  const type = typeSelect.value;
+  const value = presetSelect.value;
+  visual.replaceChildren();
+
+  let element;
+
+  if (type === "chart") {
+    element = document.createElement("atlas-stat-card");
+    element.setAttribute("card", value);
+  }
+
+  if (type === "timeline") {
+    element = document.createElement("atlas-timeline");
+    if (value !== "all") element.setAttribute("domain", value);
+    element.setAttribute("limit", "12");
+  }
+
+  if (type === "network") {
+    element = document.createElement("atlas-network");
+    element.setAttribute("focus", value);
+    element.setAttribute("depth", "1");
+  }
+
+  if (type === "topic") {
+    element = document.createElement("atlas-topic");
+    element.setAttribute("item", value);
+
+    if (value === "K04") {
+      element.setAttribute(
+        "cards",
+        "TYOTTOMYYS_1990_2024,JULKINEN_VELKA_POLKU"
+      );
+    }
+
+    if (value === "K19") {
+      element.setAttribute(
+        "cards",
+        "JULKINEN_VELKA_POLKU,VAESTON_IKAANTYMINEN"
+      );
+    }
+  }
+
+  if (!element) {
+    setStatus("Tuntematon visualisointityyppi.", true);
+    return;
+  }
+
+  element.setAttribute("data-base", BASE);
+  visual.appendChild(element);
+  setStatus("Visualisointi ladattu Atlas UI Kitistä.");
+}
+
+try {
+  await Promise.all([
+    customElements.whenDefined("atlas-stat-card"),
+    customElements.whenDefined("atlas-timeline"),
+    customElements.whenDefined("atlas-network"),
+    customElements.whenDefined("atlas-topic")
+  ]);
+
+  fillPresets();
+  createComponent();
+} catch (error) {
+  console.error(error);
+  setStatus(
+    "Atlas UI Kitin lataus epäonnistui: " +
+      (error?.message || "tuntematon virhe"),
+    true
+  );
+}
+
+typeSelect.addEventListener("change", () => {
+  fillPresets();
+  createComponent();
+});
+
+presetSelect.addEventListener("change", createComponent);
+</script>
 </body>
 </html>
