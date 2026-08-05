@@ -8,10 +8,7 @@
 <!-- Ladataan tässä demossa vain varmasti tarvittava komponentti.
      atlas-ui.js:n yhden muun alikomponentin virhe voisi muuten estää
      myös atlas-stat-card-komponentin rekisteröinnin. -->
-<script
-  type="module"
-  src="https://tilastomuuttujat.github.io/TTT/atlas/components/atlas-stat-card.js">
-</script>
+
 
 <style>
 :root{
@@ -166,7 +163,7 @@ code{font-family:var(--mono)}
       <atlas-stat-card
         id="activeCard"
         card="JULKINEN_VELKA_POLKU"
-        data-base="https://tilastomuuttujat.github.io/TTT/atlas/">
+        data-base="https://harrikayhko.fi/atlas/">
       </atlas-stat-card>
 
       <noscript>
@@ -186,26 +183,38 @@ function setStatus(message, isError = false) {
   status.classList.toggle("error", isError);
 }
 
-try {
-  await customElements.whenDefined("atlas-stat-card");
-  setStatus("Atlas-komponentti ladattu.");
-} catch (error) {
-  console.error(error);
-  setStatus("Atlas-komponentin lataus epäonnistui.", true);
-}
-
 select.addEventListener("change", () => {
   card.setAttribute("card", select.value);
 });
 
-setTimeout(() => {
+const componentUrl =
+  "https://harrikayhko.fi/atlas/components/atlas-stat-card.js";
+
+try {
+  await import(componentUrl);
+
   if (!customElements.get("atlas-stat-card")) {
-    setStatus(
-      "atlas-stat-card-komponenttia ei rekisteröity. Tarkista selaimen Console- ja Network-välilehdet.",
-      true
+    throw new Error(
+      "Moduuli latautui, mutta atlas-stat-card-komponenttia ei rekisteröity."
     );
   }
-}, 5000);
+
+  setStatus("Atlas-komponentti ladattu.");
+} catch (error) {
+  console.error("Atlas-komponentin latausvirhe:", error);
+
+  setStatus(
+    "Atlas-komponentin lataus epäonnistui: " +
+      (error?.message || "tuntematon virhe"),
+    true
+  );
+
+  card.innerHTML =
+    '<div class="fallback">' +
+    '<strong>Visualisointia ei voitu ladata.</strong><br>' +
+    'Tarkistettava moduuli: <code>' + componentUrl + '</code>' +
+    '</div>';
+}
 </script>
 </body>
 </html>
