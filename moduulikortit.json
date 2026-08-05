@@ -1,0 +1,64 @@
+{
+  "cards": [
+    {
+      "id": "syntyvyys-2010-juuret",
+      "published": true,
+      "featured": true,
+      "sort_order": 1,
+      "title": "Miksi syntyvyys laski 2010-luvulla?",
+      "subtitle": "Selitysatlas \u00b7 nykyhavainnosta historiallisiin juuriin",
+      "description": "Nykyhetken ilmi\u00f6 seurattuna taaksep\u00e4in aina 1970-luvun rakennemuutoksiin asti.",
+      "source_label": "tilastomuuttujat",
+      "url": "https://tilastomuuttujat.github.io/selitysatlas/?question=Q-SYNTYVYYS-2010-JUURET",
+      "icon": "value"
+    },
+    {
+      "id": "julkinen-velka-pitka",
+      "published": true,
+      "featured": false,
+      "sort_order": 2,
+      "title": "Julkinen velka pitk\u00e4ll\u00e4 aikav\u00e4lill\u00e4",
+      "subtitle": "Selitysatlas",
+      "description": "",
+      "source_label": "tilastomuuttujat",
+      "url": "https://tilastomuuttujat.github.io/selitysatlas/",
+      "icon": "risk"
+    },
+    {
+      "id": "kymmenen-linssia",
+      "published": true,
+      "featured": false,
+      "sort_order": 3,
+      "title": "Kymmenen linssi\u00e4 murrosvaiheisiin",
+      "subtitle": "Murroskartta",
+      "description": "",
+      "source_label": "tilastomuuttujat",
+      "url": "https://tilastomuuttujat.github.io/murroskartta/",
+      "icon": "generations"
+    },
+    {
+      "id": "hyvinvointivaltion-rakentuminen",
+      "published": true,
+      "featured": false,
+      "sort_order": 4,
+      "title": "Hyvinvointivaltion rakentuminen",
+      "subtitle": "Selitysatlas",
+      "description": "",
+      "source_label": "tilastomuuttujat",
+      "url": "https://tilastomuuttujat.github.io/selitysatlas/",
+      "icon": "capability"
+    },
+    {
+      "id": "peruskoulu-uudistus",
+      "published": true,
+      "featured": false,
+      "sort_order": 5,
+      "title": "Peruskoulu-uudistus",
+      "subtitle": "Murroskartta",
+      "description": "",
+      "source_label": "tilastomuuttujat",
+      "url": "https://tilastomuuttujat.github.io/murroskartta/",
+      "icon": "capability"
+    }
+  ]
+}
