@@ -21,7 +21,7 @@
       "subtitle": "Selitysatlas",
       "description": "",
       "source_label": "tilastomuuttujat",
-      "url": "https://tilastomuuttujat.github.io/selitysatlas/",
+      "url": "https://tilastomuuttujat.github.io/TTT/atlas/murroskartta.html",
       "icon": "risk"
     },
     {
@@ -33,7 +33,7 @@
       "subtitle": "Murroskartta",
       "description": "",
       "source_label": "tilastomuuttujat",
-      "url": "https://tilastomuuttujat.github.io/murroskartta/",
+      "url": "https://tilastomuuttujat.github.io/TTT/atlas/murroskartta.html",
       "icon": "generations"
     },
     {
